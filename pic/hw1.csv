@@ -1,0 +1,30 @@
+Complexity metrics,ÖÜÁù, 27 3ÔÂ 2021 15:57:06 CST
+Method,CogC,ev(G),iv(G),v(G)
+"Item.Item(String)",0,1,1,1
+"Item.diff()",5,4,3,4
+"Item.getExpr()",0,1,1,1
+"Item.getMi()",0,1,1,1
+"Item.getXishu()",0,1,1,1
+"Item.simp(String)",43,2,11,12
+"Main.main(String[])",1,1,2,2
+"Main.process(String)",2,2,2,2
+"Poly.Poly(ArrayList<Item>)",0,1,1,1
+"Poly.Poly(HashMap<BigInteger, BigInteger>)",0,1,1,1
+"Poly.diff()",4,1,4,4
+"Poly.getOutput()",19,6,10,12
+"Poly.initMap(ArrayList<Item>)",4,1,3,3
+
+Class,OCavg,OCmax,WMC
+"Item",3.33,12,20
+"Main",2.00,2,4
+"Poly",4.00,12,20
+
+Package,v(G)avg,v(G)tot
+"",3.46,45
+
+Module,v(G)avg,v(G)tot
+"week1",3.46,45
+
+Project,v(G)avg,v(G)tot
+"project",3.46,45
+
