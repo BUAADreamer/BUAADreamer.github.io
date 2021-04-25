@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="A hexo theme">
+    <meta name="keyword"  content="dusign, hexo-theme-snail">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          OO-Pre-学习笔记 - Hexo-theme-snail
+        
+    </title>
+
+    <link rel="canonical" href="https://BUAADreamer.top/2021/03/08/OO-PRE-笔记/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#BUAA-OO-2021" title="BUAA-OO-2021">BUAA-OO-2021</a>
+                            
+                              <a class="tag" href="/tags/#Java" title="Java">Java</a>
+                            
+                        </div>
+                        <h1>OO-Pre-学习笔记</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by BUAADreamer on
+                            2021-03-08
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">2.1k</span> and
+                                Reading Time <span class="post-count">9</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BUAADreamer&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+                    
+                    
+                    <li>
+                        <a href="YOUR_CHINESE_BLOG_URL" target="_blank">Chinese Blog</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>2021年OO的Pre部分学习笔记</p>
+<a id="more"></a>
+<h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><h3 id="gitlab维护代码"><a href="#gitlab维护代码" class="headerlink" title="gitlab维护代码"></a>gitlab维护代码</h3><h4 id="Command-line-instructions"><a href="#Command-line-instructions" class="headerlink" title="Command line instructions"></a>Command line instructions</h4><h5 id="Git-global-setup"><a href="#Git-global-setup" class="headerlink" title="Git global setup"></a>Git global setup</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "冯张驰"</span><br><span class="line">git config --global user.email "19373573@buaa.edu.cn"</span><br></pre></td></tr></table></figure>
+<h5 id="Create-a-new-repository"><a href="#Create-a-new-repository" class="headerlink" title="Create a new repository"></a>Create a new repository</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git clone https://gitlab.buaaoo.top/oo_homeworks_2021/仓库名.git</span><br><span class="line">cd oo_2021_pre2_19373573_pre2_task2</span><br><span class="line">touch README.md</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m "add README"</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<h5 id="Existing-folder"><a href="#Existing-folder" class="headerlink" title="Existing folder"></a>Existing folder</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd existing_folder</span><br><span class="line">git init</span><br><span class="line">git remote add origin https://gitlab.buaaoo.top/oo_homeworks_2021/仓库名.git</span><br><span class="line">git add .</span><br><span class="line">git commit -m "Initial commit"</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+<h5 id="Existing-Git-repository"><a href="#Existing-Git-repository" class="headerlink" title="Existing Git repository"></a>Existing Git repository</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd existing_repo</span><br><span class="line">git remote rename origin old-origin</span><br><span class="line">git remote add origin https://gitlab.buaaoo.top/oo_homeworks_2021/仓库名.git</span><br><span class="line">git push -u origin --all</span><br><span class="line">git push -u origin --tags</span><br></pre></td></tr></table></figure>
+<h4 id="补充-实验1git学习"><a href="#补充-实验1git学习" class="headerlink" title="补充-实验1git学习"></a>补充-实验1git学习</h4><h5 id="step-1-新建仓库"><a href="#step-1-新建仓库" class="headerlink" title="step 1 新建仓库"></a>step 1 新建仓库</h5><p>在本地新建一个空文件夹，在此目录下打开终端（bash/git bash/power shell/…）</p>
+<p>输入</p>
+<blockquote>
+<p>git init</p>
+</blockquote>
+<p>从而得到一个新的<code>git</code>仓库</p>
+<h5 id="step-2-关联远程仓库"><a href="#step-2-关联远程仓库" class="headerlink" title="step 2 关联远程仓库"></a>step 2 关联远程仓库</h5><p>目前为止，<code>step 1</code>建立的文件夹还是一个空文件夹，需要关联两个远程仓库，首先考虑第一个远程仓库</p>
+<p>第一个远程仓库是课程组提供的远程公共仓库<code>share</code></p>
+<blockquote>
+<p>git remote add share git@gitlab.buaaoo.top:oo_2021_public/experiment/exp1_public.git</p>
+</blockquote>
+<h5 id="step-3-从远程仓库拉取文件"><a href="#step-3-从远程仓库拉取文件" class="headerlink" title="step 3 从远程仓库拉取文件"></a>step 3 从远程仓库拉取文件</h5><p>关联后可以从远程仓库拉取文件</p>
+<p>执行命令</p>
+<blockquote>
+<p>git pull share master</p>
+</blockquote>
+<p>从<code>share</code>仓库的<code>master</code>分支下得到两个文件夹</p>
+<h5 id="step-4-忽略不必要的文件"><a href="#step-4-忽略不必要的文件" class="headerlink" title="step 4 忽略不必要的文件"></a>step 4 忽略不必要的文件</h5><p>文件夹<code>share</code>中的内容是实现了<code>Comparable</code>接口并按序输出的例程，可以尝试跑通</p>
+<p>文件夹<code>poly</code>中的内容是任务二中需要完善的程序，是需要提交的，而且实验要求，提交时<strong>忽略</strong><code>share</code>文件夹下的所有内容，故需要使用<code>.gitignore</code></p>
+<p>在当前工作的<strong>根目录</strong>下新建文件<code>.gitignore</code></p>
+<p>在其中写入</p>
+<blockquote>
+<p>share/*</p>
+</blockquote>
+<p>表示<code>push</code>时忽略子目录<code>share</code>下的所有文件</p>
+<h5 id="step-5-删除暂存区文件"><a href="#step-5-删除暂存区文件" class="headerlink" title="step 5 删除暂存区文件"></a>step 5 删除暂存区文件</h5><p>为了保证<code>.gitignore</code>正常工作，需要删除暂存区的文件</p>
+<blockquote>
+<p>git rm —cached . -r</p>
+</blockquote>
+<h5 id="step-6-删除与远程仓库的关联"><a href="#step-6-删除与远程仓库的关联" class="headerlink" title="step 6 删除与远程仓库的关联"></a>step 6 删除与远程仓库的关联</h5><p>为了避免不必要的干扰，需要删除与远程仓库<code>share</code>的关联</p>
+<blockquote>
+<p>git remote remove share</p>
+</blockquote>
+<h5 id="step-7-关联个人实验1仓库，并尝试一次提交"><a href="#step-7-关联个人实验1仓库，并尝试一次提交" class="headerlink" title="step 7 关联个人实验1仓库，并尝试一次提交"></a>step 7 关联个人实验1仓库，并尝试一次提交</h5><blockquote>
+<p>git remote add origin 你的个人实验1的远程仓库链接</p>
+<p>git add .</p>
+<p>git commit -m “anything you want to write”</p>
+<p>git push -u origin master</p>
+</blockquote>
+<p>关联到远程仓库<code>origin</code>，并尝试提交</p>
+<p>至此，任务一的内容已全部介绍完毕，如果按照上述步骤操作后得到预期结果（例如可以正常<code>pull</code>和<code>push</code> ，且<code>.gitignore</code>文件生效等），即可开始进行任务二，课程组会对你的<code>git</code>操作进行评判</p>
+<h4 id="平时常用操作"><a href="#平时常用操作" class="headerlink" title="平时常用操作"></a>平时常用操作</h4><h5 id="在IDEA里使用git"><a href="#在IDEA里使用git" class="headerlink" title="在IDEA里使用git"></a>在IDEA里使用git</h5><p>点击工具栏的<code>VCS</code>，选择 <code>Import into Vision Control</code> 里的 <code>Create Git Repository</code></p>
+<p>之后就可以在IDEA里完成 <code>commit</code> <code>push</code> 的操作了（右上角的对钩和绿色箭头），第一次 <code>push</code> 时可以设置远程仓库关联。还有<code>rollback</code>等操作</p>
+<h5 id="一行shell代码完成更新提交"><a href="#一行shell代码完成更新提交" class="headerlink" title="一行shell代码完成更新提交"></a>一行shell代码完成更新提交</h5><h6 id="初次提交"><a href="#初次提交" class="headerlink" title="初次提交"></a>初次提交</h6><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add . &amp;&amp; git commit -m "Initial commit" &amp;&amp; git push -u origin master</span><br></pre></td></tr></table></figure>
+<h6 id="之后提交"><a href="#之后提交" class="headerlink" title="之后提交"></a>之后提交</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add . &amp;&amp; git commit -m &quot;Initial commit&quot; &amp;&amp; git push</span><br></pre></td></tr></table></figure>
+<h5 id="代码回退"><a href="#代码回退" class="headerlink" title="代码回退"></a>代码回退</h5><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git log #查看历史版本</span><br><span class="line">git reset --hard xxx #xxx为对应版本的hashcode </span><br><span class="line">git push origin HEAD --force #远程也更新为当前版本</span><br></pre></td></tr></table></figure>
+<h5 id="一个项目配置多个远程源"><a href="#一个项目配置多个远程源" class="headerlink" title="一个项目配置多个远程源"></a>一个项目配置多个远程源</h5><p>更改源的名字</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote rename origin task1</span><br></pre></td></tr></table></figure>
+<p>一次性添加好所有 task 的 remote：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">projectName=<span class="string">"pre3"</span></span><br><span class="line">ID=19XXXXXX</span><br><span class="line">taskNum=6</span><br><span class="line"><span class="keyword">for</span> ((i=1;i&lt;=<span class="variable">$taskNum</span>;++i))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    git remote add task<span class="variable">$&#123;i&#125;</span> git@gitlab.buaaoo.top:oo_homeworks_2021/oo_2021_<span class="variable">$&#123;projectName&#125;</span>_<span class="variable">$&#123;ID&#125;</span>_<span class="variable">$&#123;projectName&#125;</span>_task<span class="variable">$&#123;i&#125;</span>.git</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>然后 push 的时候 specify 一下 push 到哪个 remote，比如：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push task3 master</span><br></pre></td></tr></table></figure>
+<p>如果某个 task 反复 push，可以将其设置为当前 branch 的 upstream：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u task3 master</span><br></pre></td></tr></table></figure>
+<p>之后直接使用 <code>git push</code> 即可。</p>
+<p>也可以在 IDEA 内直接进行 push 操作。选择 Git &gt; Push…，出现操作框。左侧显示你的 branch 和 commit，上面显示你要 push 的 remote 和 branch，点击可以选择具体要 push 的内容 / 具体要 push 到哪个 remote。</p>
+<h3 id="IDEA"><a href="#IDEA" class="headerlink" title="IDEA"></a>IDEA</h3><h4 id="使用checkstyle"><a href="#使用checkstyle" class="headerlink" title="使用checkstyle"></a>使用checkstyle</h4><h5 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h5><p>最简单的配置方式是直接在<code>Settings -&gt; Plugins</code> 里安装好</p>
+<p>然后在 <code>New Projects Settings -&gt; Settings for New Projects</code>里导入<code>config.xml</code>文件或者选择自带的两种代码风格检查方式。（这个default的设置仅适用于2020版，<strong>IDEA 2018</strong> :  <code>File -&gt; Other Settings -&gt; Default Settings</code>  <strong>IDEA 2019</strong> :  <code>File -&gt; Other Settings -&gt; Settings for New Projects</code> ）</p>
+<h5 id="平时使用"><a href="#平时使用" class="headerlink" title="平时使用"></a>平时使用</h5><p><code>鼠标右键 -&gt; Check Current File</code></p>
+<p>或者点击左下角窗口里的<code>checkstyle</code>的按钮也可</p>
+<h4 id="配置符合课程要求"><a href="#配置符合课程要求" class="headerlink" title="配置符合课程要求"></a>配置符合课程要求</h4><h5 id="设置不自动-import-xx"><a href="#设置不自动-import-xx" class="headerlink" title="设置不自动 import xx.*"></a>设置不自动 <code>import xx.*</code></h5><p><code>File -&gt; setting -&gt; Editor -&gt; Code Style -&gt; Java -&gt; Imports</code>设置两个count为大于100的数字</p>
+<h3 id="评论区规范"><a href="#评论区规范" class="headerlink" title="评论区规范"></a>评论区规范</h3><h4 id="提问方式"><a href="#提问方式" class="headerlink" title="提问方式"></a>提问方式</h4><p>针对作业内容答疑区</p>
+<ul>
+<li>作业内容，请使用“【作业内容】”</li>
+<li>评测要求，请使用“【评测要求】”</li>
+</ul>
+<p>针对公共讨论区</p>
+<ul>
+<li>课程规则，请使用“【课程规则】“</li>
+<li>系统使用，请使用”【系统使用】“</li>
+<li>技术交流，请使用”【技术交流】“</li>
+</ul>
+<h2 id="Pre2"><a href="#Pre2" class="headerlink" title="Pre2"></a>Pre2</h2><h3 id="task1"><a href="#task1" class="headerlink" title="task1"></a>task1</h3><p><strong>封装</strong>：是指隐藏对象的属性和实现细节（属性变量和内部方法用<code>private</code>修饰），仅对外提供公共访问⽅法 （访问方法使用<code>public</code>）。</p>
+<h3 id="task2"><a href="#task2" class="headerlink" title="task2"></a>task2</h3><p>java<strong>常用容器</strong>：HashSet，HashMap，ArrayList</p>
+<p>容器<strong>常用方法</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建</span></span><br><span class="line">ArrayList&lt;Bookset&gt; booksArrayList = <span class="keyword">new</span> ArrayList&lt;&gt;(<span class="number">16</span>);</span><br><span class="line">Bookset book = <span class="keyword">new</span> Bookset(name, price, num);</span><br><span class="line"><span class="comment">// 添加新元素</span></span><br><span class="line">booksArrayList.add(book);</span><br><span class="line"><span class="comment">// 判断是否存在</span></span><br><span class="line"><span class="keyword">if</span> (booksArrayList.contains(book)) &#123;</span><br><span class="line">    System.out.println(<span class="string">"We have it!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 遍历所有元素</span></span><br><span class="line"><span class="keyword">for</span> (Bookset item : booksArrayList) &#123;</span><br><span class="line">    System.out.println(item.getName());</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输出容器规模</span></span><br><span class="line">System.out.println(booksArrayList.size());</span><br><span class="line"><span class="comment">// 删除元素</span></span><br><span class="line">booksArrayList.remove(book);</span><br></pre></td></tr></table></figure>
+<p>主要的坑在 <code>BigDecimal</code> <code>BigInteger</code> 类的使用上</p>
+<p>需要用 <code>BigDecimal ans = BigDecimal.valueOf(price);</code> 这样的方式来维持精度，如果直接用 <code>BigDecimal(price)</code> 会丢失精度</p>
+<h3 id="task3"><a href="#task3" class="headerlink" title="task3"></a>task3</h3><h4 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h4><p>参考菜鸟教程<a href="https://www.runoob.com/design-pattern/factory-pattern.html" target="_blank" rel="noopener">https://www.runoob.com/design-pattern/factory-pattern.html</a></p>
+<p>步骤如下</p>
+<h5 id="1-创建一个接口"><a href="#1-创建一个接口" class="headerlink" title="1.创建一个接口"></a>1.创建一个接口</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="2-创建实体类"><a href="#2-创建实体类" class="headerlink" title="2.创建实体类"></a>2.创建实体类</h5><p>注意实体类是可以使用接口的方法去<strong>调用类内的属性值</strong>的</p>
+<p>同时可以认为这些实体类都是<strong>Shape</strong>类型的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> <span class="keyword">implements</span> <span class="title">Shape</span> </span>&#123;</span><br><span class="line">   <span class="keyword">int</span> a=<span class="number">0</span>;</span><br><span class="line">   <span class="meta">@Override</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(a);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">BookFace</span> </span>&#123;</span><br><span class="line">    <span class="function">String <span class="title">getType</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">String <span class="title">getName</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">getPrice</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">long</span> <span class="title">getNum</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function">String <span class="title">getOutput</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Bookset</span> <span class="keyword">implements</span> <span class="title">BookFace</span> </span>&#123;</span><br><span class="line">	<span class="comment">//定义各个变量</span></span><br><span class="line">    <span class="keyword">private</span> String type;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> price;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">long</span> num;   </span><br><span class="line">    <span class="keyword">private</span> String output; </span><br><span class="line">    </span><br><span class="line">    <span class="comment">//定义构造方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Bookset</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        init(); <span class="comment">//调用init函数进行初始化</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//重写各个方法</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BookShape</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Bookset <span class="title">getShape</span><span class="params">(String type)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (type) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"Other"</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> Bookset();</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"OtherA"</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> OtherA();</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"Novel"</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> Novel();</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"Poetry"</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> Poetry();</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"OtherS"</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> OtherS();</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"Math"</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> Math1();</span><br><span class="line">            <span class="keyword">case</span> <span class="string">"Computer"</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">new</span> Computer();</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">BookFace book = BookShape.getShape(type);</span><br></pre></td></tr></table></figure>
+<p>同时也可以对一个实体类进行继承，子类也是实体类</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">child</span> <span class="keyword">extends</span> <span class="title">Rectangle</span> </span>&#123;</span><br><span class="line">   <span class="keyword">int</span> a=<span class="number">0</span>;</span><br><span class="line">   <span class="keyword">int</span> b=<span class="number">0</span>;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">draw</span><span class="params">()</span> </span>&#123;</span><br><span class="line">      System.out.println(a);</span><br><span class="line">      System.out.println(b);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="3-创建工厂，生成指定类型对象"><a href="#3-创建工厂，生成指定类型对象" class="headerlink" title="3.创建工厂，生成指定类型对象"></a>3.创建工厂，生成指定类型对象</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShapeFactory</span> </span>&#123;</span><br><span class="line">   <span class="comment">//使用 getShape 方法获取形状类型的对象</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Shape <span class="title">getShape</span><span class="params">(String shapeType)</span></span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(shapeType == <span class="keyword">null</span>)&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">      &#125;        </span><br><span class="line">      <span class="keyword">if</span>(shapeType.equalsIgnoreCase(<span class="string">"RECTANGLE"</span>))&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">new</span> Rectangle();</span><br><span class="line">      &#125; <span class="keyword">else</span> <span class="keyword">if</span>(shapeType.equalsIgnoreCase(<span class="string">"child"</span>))&#123;</span><br><span class="line">         <span class="keyword">return</span> <span class="keyword">new</span> child();</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="4-使用该工厂，通过传递类型信息来获取实体类的对象。"><a href="#4-使用该工厂，通过传递类型信息来获取实体类的对象。" class="headerlink" title="4.使用该工厂，通过传递类型信息来获取实体类的对象。"></a>4.使用该工厂，通过传递类型信息来获取实体类的对象。</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ShapeFactory factory = <span class="keyword">new</span> ShapeFactory();</span><br><span class="line">Shape a = factory.getShape(<span class="string">"RECTANGLE"</span>);</span><br><span class="line">a.draw();</span><br></pre></td></tr></table></figure>
+<h3 id="task4"><a href="#task4" class="headerlink" title="task4"></a>task4</h3><h4 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h4><p>我写这里的时候用了比较拉跨的<code>if else</code>写法，不展示了，参考Roife的博客，记录一下怎么写</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> exceptions;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BooksetExistedException</span> <span class="keyword">extends</span> <span class="title">Exception</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">BooksetExistedException</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(<span class="string">"Oh, no! The "</span> + name + <span class="string">" exist."</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">---------------------------------------------------------</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> exceptions.BooksetExistedException;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    bookshelves.get(i).addNewBookset(bookset);</span><br><span class="line">&#125; <span class="keyword">catch</span> (BooksetExistedException e) &#123;</span><br><span class="line">    System.out.println(e.getMessage());</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123; <span class="comment">// 想想为啥要放在 finally 里面</span></span><br><span class="line">    scanner.nextLine();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="task5"><a href="#task5" class="headerlink" title="task5"></a>task5</h3><h4 id="clone和equals方法"><a href="#clone和equals方法" class="headerlink" title="clone和equals方法"></a>clone和equals方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">this</span> == obj) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (obj == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (getClass() != obj.getClass()) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        BookFace other = (BookFace) obj;</span><br><span class="line">        <span class="comment">//其他比较逻辑</span></span><br><span class="line">        <span class="keyword">if</span>(other.a==<span class="keyword">this</span>.a) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>() &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//对于基本类型可以直接继承主类方法即可，String是不可变类型</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> BookFace <span class="title">clone</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">super</span>.clone();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Pre3"><a href="#Pre3" class="headerlink" title="Pre3"></a>Pre3</h2><p>正则表达式菜鸟教程：<a href="https://www.runoob.com/regexp/regexp-tutorial.html" target="_blank" rel="noopener">https://www.runoob.com/regexp/regexp-tutorial.html</a></p>
+<p>java正则表达式用法：<a href="https://www.runoob.com/java/java-regular-expressions.html" target="_blank" rel="noopener">https://www.runoob.com/java/java-regular-expressions.html</a></p>
+<p>一篇补充的博客：<a href="https://blog.csdn.net/baidu_28289725/article/details/80414445" target="_blank" rel="noopener">https://blog.csdn.net/baidu_28289725/article/details/80414445</a></p>
+<h2 id="测试方法"><a href="#测试方法" class="headerlink" title="测试方法"></a>测试方法</h2><p><a href="https://blog.csdn.net/asdx1020/article/details/104956074" target="_blank" rel="noopener">https://blog.csdn.net/asdx1020/article/details/104956074</a></p>
+<p><a href="https://blog.csdn.net/asdx1020/article/details/104870918" target="_blank" rel="noopener">https://blog.csdn.net/asdx1020/article/details/104870918</a></p>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2021/03/09/OO-评测机搭建学习/" data-toggle="tooltip" data-placement="top" title="OO-评测机搭建学习">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2021/03/03/前端-jquery学习笔记/" data-toggle="tooltip" data-placement="top" title="前端-jquery学习笔记">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <div class="comment_notes">
+                    <p>
+                        This is copyright.
+                    </p>
+                </div>
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                
+<link rel="stylesheet" href="/css/music-player/fonts/iconfont.css">
+
+
+<link rel="stylesheet" href="/css/music-player/css/reset.css">
+
+
+<link rel="stylesheet" href="/css/music-player/css/player.css">
+
+
+<div class="music-player">
+    <audio class="music-player__audio" ></audio>
+    <div class="music-player__main">
+        <div class="music-player__blur"></div>
+        <div class="music-player__disc">
+            <div class="music-player__image">
+                <img width="100%" src="" alt="">
+            </div>
+            <div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div>
+        </div>
+        <div class="music-player__controls">
+            <div class="music__info">
+                <h3 class="music__info--title">...</h3>
+                <p class="music__info--singer">...</p>
+            </div>
+            <div class="player-control">
+                <div class="player-control__content">
+                    <div class="player-control__btns">
+                        <div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div>
+                        <div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div>
+                        <div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div>
+                        <div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-loop"></i></div>
+                    </div>
+                    <div class="player-control__volume">
+                        <div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div>
+                        <div class="control__volume--progress player_progress"></div>
+                    </div>
+                </div>
+                <div class="player-control__content">
+                    <div class="player__song--progress player_progress"></div>
+                    <div class="player__song--timeProgess nowTime">00:00</div>
+                    <div class="player__song--timeProgess totalTime">00:00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/music-player/utill.js"></script>
+
+
+<script src="/js/music-player/jquery.min.js"></script>
+
+<!-- netease; qqkg -->
+<!--
+<script src="/js/music-player/player.js?library=config.music.library.js"></script>
+-->
+<script src="../../../../js/music-player/player.js?library=netease&music=https://kg.qq.com/node/play?s=7deFpz7Z26Jmv7di&g_f=share_html"></script>
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#BUAA-OO-2021" title="BUAA-OO-2021">BUAA-OO-2021</a>
+                        
+                          <a class="tag" href="/tags/#Java" title="Java">Java</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://blog.csdn.net/d_Nail" target="_blank">Dusign&#39;s Blog</a></li>
+                    
+                        <li><a href="#" target="_blank">Dusign&#39;s Web</a></li>
+                    
+                        <li><a href="https://github.com/dusign" target="_blank">Dusign&#39;s Github</a></li>
+                    
+                        <li><a href="#" target="_blank">Other</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/dusign">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/dusignr">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/Gang Du">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/dusignr">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BUAADreamer 2021 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=dusign&repo=hexo-theme-snail&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://BUAADreamer.top/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects line -->
+        
+
+        
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&#34;🌱&#34;,&#34;just do it&#34;,&#34;🍀&#34;]' color='[&#34;rgb(121,93,179)&#34; ,&#34;rgb(76,180,231)&#34; ,&#34;rgb(184,90,154)&#34;]'></script>
+        
+
+        <!-- background effects end -->
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+</body>
+
+</html>

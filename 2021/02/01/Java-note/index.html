@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="A hexo theme">
+    <meta name="keyword"  content="dusign, hexo-theme-snail">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          Java笔记 - Hexo-theme-snail
+        
+    </title>
+
+    <link rel="canonical" href="https://BUAADreamer.top/2021/02/01/Java-note/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#后端" title="后端">后端</a>
+                            
+                              <a class="tag" href="/tags/#java" title="java">java</a>
+                            
+                        </div>
+                        <h1>Java笔记</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by BUAADreamer on
+                            2021-02-01
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">3.2k</span> and
+                                Reading Time <span class="post-count">12</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BUAADreamer&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+                    
+                    
+                    <li>
+                        <a href="YOUR_CHINESE_BLOG_URL" target="_blank">Chinese Blog</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>Java学习笔记</p>
+<a id="more"></a>
+<h2 id="JAVA-HOW2J教程笔记"><a href="#JAVA-HOW2J教程笔记" class="headerlink" title="JAVA-HOW2J教程笔记"></a>JAVA-HOW2J教程笔记</h2><h3 id="一、JAVA基础"><a href="#一、JAVA基础" class="headerlink" title="一、JAVA基础"></a>一、JAVA基础</h3><h4 id="1-hello-world与命令行运行"><a href="#1-hello-world与命令行运行" class="headerlink" title="1.hello world与命令行运行"></a>1.hello world与命令行运行</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//code:</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Helloworld</span></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123; <span class="comment">//main--&gt;主方法，所有代码的入口</span></span><br><span class="line">    System.out.println(<span class="string">"hello world"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//run</span></span><br><span class="line">javac hello.java <span class="comment">//编译</span></span><br><span class="line">java hello <span class="comment">//运行class文件</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-面向对象"><a href="#2-面向对象" class="headerlink" title="2.面向对象"></a>2.面向对象</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hero</span></span>&#123;</span><br><span class="line">    <span class="comment">//属性定义 名字一般为驼峰命名</span></span><br><span class="line">	String name;</span><br><span class="line">	<span class="keyword">int</span> num;</span><br><span class="line">	<span class="keyword">float</span> hp;</span><br><span class="line">    <span class="comment">//方法定义</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getNum</span><span class="params">()</span></span>&#123; </span><br><span class="line">		<span class="keyword">return</span> num;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addNum</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">		num=num+n;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;<span class="comment">//创建</span></span><br><span class="line">Hero a= <span class="keyword">new</span> Hero(); <span class="comment">//实例化类</span></span><br><span class="line">a.num=<span class="number">12</span>;</span><br><span class="line">a.hp=<span class="number">100.0</span>;</span><br><span class="line">a.name=<span class="string">"a"</span>;</span><br></pre></td></tr></table></figure>
+<h4 id="3-变量"><a href="#3-变量" class="headerlink" title="3.变量"></a>3.变量</h4><h5 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">a[基本类型]--&gt; b[整型:byte short int long]</span><br><span class="line">a--&gt;c[浮点型:float double]</span><br><span class="line">a--&gt;d[布尔型:boolean--true,false]</span><br><span class="line">a--&gt;e[字符型:char]</span><br><span class="line">a--&gt;f[注:String不是基本类型,Immutable-创建不可修改]</span><br></pre></td></tr></table></figure>
+<h5 id="变量命名"><a href="#变量命名" class="headerlink" title="变量命名"></a>变量命名</h5><p>变量命名只能使用字母 数字 $ _，首字母不能用数字</p>
+<h5 id="final"><a href="#final" class="headerlink" title="final"></a>final</h5><p>一个变量被final修饰的时候，该变量只有<strong>一次赋值</strong>的机会</p>
+<h4 id="4-操作符"><a href="#4-操作符" class="headerlink" title="4.操作符"></a>4.操作符</h4><h5 id="使用Scanner类获取输入"><a href="#使用Scanner类获取输入" class="headerlink" title="使用Scanner类获取输入"></a>使用Scanner类获取输入</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner s = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> a = s.nextInt();</span><br><span class="line">        System.out.println(<span class="string">"第一个整数："</span>+a);</span><br><span class="line">        <span class="keyword">float</span> b = s.nextFloat();</span><br><span class="line">        System.out.println(<span class="string">"第二个浮点数："</span>+b);</span><br><span class="line">        String str=s.nextLine();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-数组"><a href="#5-数组" class="headerlink" title="5.数组"></a>5.数组</h4><h5 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//create</span></span><br><span class="line"><span class="keyword">int</span>[] a=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>]; </span><br><span class="line"></span><br><span class="line"><span class="comment">//3 ways to init</span></span><br><span class="line"><span class="keyword">int</span>[] c=<span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line"><span class="keyword">int</span>[] c=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line"><span class="keyword">int</span>[] c=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//增强型for循环</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> each:values)&#123;</span><br><span class="line">    System.out.println(each);<span class="comment">//增强型for循环只能用来取值，却不能用来修改数组里的值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//copy array</span></span><br><span class="line">System.arraycopy(src, srcPos, dest, destPos, length)</span><br><span class="line">    <span class="comment">//src: 源数组</span></span><br><span class="line">    <span class="comment">//srcPos: 从源数组复制数据的起始位置</span></span><br><span class="line">    <span class="comment">//dest: 目标数组</span></span><br><span class="line">    <span class="comment">//destPos: 复制到目标数组的启始位置</span></span><br><span class="line">    <span class="comment">//length: 复制的长度  </span></span><br><span class="line"><span class="keyword">int</span>[] b;</span><br><span class="line">System.arraycopy(a, <span class="number">0</span>, b, <span class="number">0</span>, <span class="number">3</span>)</span><br><span class="line">    </span><br><span class="line"><span class="comment">//二维数组</span></span><br><span class="line"><span class="keyword">int</span> b[][] = <span class="keyword">new</span> <span class="keyword">int</span>[][]&#123;</span><br><span class="line">   &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;,</span><br><span class="line">   &#123;<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;,</span><br><span class="line">   &#123;<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="常见数组函数"><a href="#常见数组函数" class="headerlink" title="常见数组函数"></a>常见数组函数</h5><p>需要引入包 <code>import java.util.Arrays;</code></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">数组函数</th>
+<th style="text-align:center">对应操作</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Arrays.copyOfRange(int[] original, int from, int to)</td>
+<td style="text-align:center">int[] b = Arrays.copyOfRange(a, 0, 3);复制数组</td>
+</tr>
+<tr>
+<td style="text-align:center">Arrays.toString(a)</td>
+<td style="text-align:center">转换成”[1,2,3,4]”字符串形式</td>
+</tr>
+<tr>
+<td style="text-align:center">Arrays.sort(a)</td>
+<td style="text-align:center">排序</td>
+</tr>
+<tr>
+<td style="text-align:center">Arrays.binarySearch(a, 62)</td>
+<td style="text-align:center">二分查找</td>
+</tr>
+<tr>
+<td style="text-align:center">Arrays.equals(a, b)</td>
+<td style="text-align:center">判断是否相同</td>
+</tr>
+<tr>
+<td style="text-align:center">Arrays.fill(a,5)</td>
+<td style="text-align:center">使用同一个值，填充整个数组</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="6-类和对象"><a href="#6-类和对象" class="headerlink" title="6.类和对象"></a>6.类和对象</h4><h5 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h5><p>对象不是基本类型——即是引用（即指针）</p>
+<p><code>Hero h = new Hero();</code>  h为引用，代表了右边创建的的Hero类型对象，即h指向右侧的这个对象</p>
+<p><code>Hero h1 = h;</code> 则h1和h指向同一个对象</p>
+<p><code>h = new Hero()</code> h指向新的对象</p>
+<h5 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h5><p>extends关键字</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Weapon</span></span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">int</span> price;   </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Weapon</span> <span class="keyword">extends</span> <span class="title">Item</span></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> damage; <span class="comment">//攻击力 </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="重载"><a href="#重载" class="headerlink" title="重载"></a>重载</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//调用方法attack的时候，会根据传递的参数类型以及数量，自动调用对应的方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">(Hero h1)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">(Hero h1,Hero h2)</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">(Hero h1,Hero h2,Hero h3)</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="comment">//采用可变数量的参数,一个函数相当于上述三个函数 使用操作数组的方式处理参数heros即可</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">(Hero... heros)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; heros.length; i++) &#123;</span><br><span class="line">        System.out.println(name + <span class="string">" 攻击了 "</span> + heros[i].name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h5><p>类里不显示写构造函数时，为隐式构造，即<code>Hero a=Hero()</code>这样的形式</p>
+<p>写了就按照写的来，且可以重载</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Hero</span><span class="params">(String heroname)</span></span>&#123; </span><br><span class="line">	name = heroname;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="this"><a href="#this" class="headerlink" title="this"></a>this</h5><p>在对象内部表示当前这个对象</p>
+<p>在一个构造方法中，调用另一个构造方法，可以使用this()</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName3</span><span class="params">(String name)</span></span>&#123;</span><br><span class="line">    <span class="comment">//name代表的是参数name</span></span><br><span class="line">    <span class="comment">//this.name代表的是属性name this相当于是引用，打印this是地址</span></span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="传参"><a href="#传参" class="headerlink" title="传参"></a>传参</h5><p><strong>基本类型</strong>传参：函数块内<strong>不能改变</strong>原变量值，传入的参数为函数内局部变量</p>
+<p><strong>引用类型</strong>传参：函数块内<strong>能改变</strong>原变量值</p>
+<h5 id="包"><a href="#包" class="headerlink" title="包"></a>包</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> character; <span class="comment">//声明包的名字</span></span><br><span class="line"><span class="keyword">import</span> person.C <span class="comment">//引用其他包</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">A</span></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">B</span></span>&#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="访问修饰符"><a href="#访问修饰符" class="headerlink" title="访问修饰符"></a>访问修饰符</h5><p>用于修饰类或类里面的函数</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">修饰符</th>
+<th style="text-align:center">对应含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">private</td>
+<td style="text-align:center">私有的</td>
+</tr>
+<tr>
+<td style="text-align:center">package/friendly/default</td>
+<td style="text-align:center">不写修饰符，默认状态</td>
+</tr>
+<tr>
+<td style="text-align:center">protected</td>
+<td style="text-align:center">受保护的</td>
+</tr>
+<tr>
+<td style="text-align:center">public</td>
+<td style="text-align:center">公共的</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h6 id="类之间关系"><a href="#类之间关系" class="headerlink" title="类之间关系"></a>类之间关系</h6><p>自身（访问）、同包子类（<strong>同包</strong>内的类<strong>继承</strong>）、不同包子类（<strong>不同包间</strong>的类<strong>继承</strong>）、同包类（<strong>同一个包</strong>内的<strong>访问</strong>）、其他类（<strong>不同包</strong>内的<strong>访问</strong>）</p>
+<h6 id="四种修饰符及对应的访问限制"><a href="#四种修饰符及对应的访问限制" class="headerlink" title="四种修饰符及对应的访问限制"></a>四种修饰符及对应的访问限制</h6><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">修饰符</th>
+<th style="text-align:center">自身-访问</th>
+<th style="text-align:center">同包子类-继承</th>
+<th style="text-align:center">不同包子类-继承</th>
+<th style="text-align:center">同包类-访问</th>
+<th style="text-align:center">其他类-访问</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">private</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">package/friendly/default</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">protected</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">×</td>
+</tr>
+<tr>
+<td style="text-align:center">public</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+<td style="text-align:center">√</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>能不露就不露出来，<strong>作用范围最小</strong>原则</p>
+<ul>
+<li>属性用private封装</li>
+<li>方法一般用public</li>
+<li>会被子类继承的方法，用protected</li>
+<li>package用的不多</li>
+</ul>
+<h5 id="类属性（静态属性）"><a href="#类属性（静态属性）" class="headerlink" title="类属性（静态属性）"></a>类属性（静态属性）</h5><p>static修饰时，为类属性（<strong>静态</strong>属性），与之相对的是对象属性（<strong>实例属性</strong>，<strong>非静态</strong>属性）</p>
+<p>类属性所有对象都<strong>共享</strong>一个相同值</p>
+<p>访问可以用<strong><code>对象.类属性</code></strong>和<strong><code>类.类属性</code></strong>两种等价方式进行访问。</p>
+<h5 id="类方法（静态方法）"><a href="#类方法（静态方法）" class="headerlink" title="类方法（静态方法）"></a>类方法（静态方法）</h5><p>也用<code>static</code>修饰，与类属性类似，也与对象方法（实例方法，非静态方法）相对。</p>
+<p>方法里访问了对象属性，必须用对象方法</p>
+<p>没有访问对象属性，可以用类方法</p>
+<h5 id="属性初始化"><a href="#属性初始化" class="headerlink" title="属性初始化"></a>属性初始化</h5><h6 id="对象属性-三种办法初始化"><a href="#对象属性-三种办法初始化" class="headerlink" title="对象属性-三种办法初始化"></a>对象属性-三种办法初始化</h6><ol>
+<li><p>声明该属性的时候初始化 </p>
+</li>
+<li><p>构造方法中初始化 </p>
+</li>
+<li><p>初始化块 如：<code>{ x=10 }</code></p>
+</li>
+</ol>
+<h6 id="类属性-两种办法"><a href="#类属性-两种办法" class="headerlink" title="类属性-两种办法"></a>类属性-两种办法</h6><ol>
+<li>声明该属性的时候初始化</li>
+<li>静态初始化块</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> item=<span class="number">8</span>; <span class="comment">//声明时</span></span><br><span class="line"><span class="keyword">static</span>&#123;</span><br><span class="line">    item=<span class="number">6</span>; <span class="comment">//静态初始化块</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h5><h6 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h6><ul>
+<li>只有一个，通过私有化其构造方法，使得外部无法通过new 得到新的实例。</li>
+<li>提供了一个public static的getInstance方法，外部调用者通过该方法获取一个对象，而且每一次都是获取同一个对象。 从而达到单例的目的。</li>
+<li>在getInstance方法外已经创建了一个实例</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> charactor;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GiantDragon</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//私有化构造方法使得该类无法在外部通过new 进行实例化</span></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">GiantDragon</span><span class="params">()</span></span>&#123;	</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">//准备一个类属性，指向一个实例化对象。 因为是类属性，所以只有一个</span></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> GiantDragon instance = <span class="keyword">new</span> GiantDragon();</span><br><span class="line">    </span><br><span class="line">	<span class="comment">//public static 方法，提供给调用者获取定义的对象</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> GiantDragon <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="keyword">return</span> instance;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="懒汉式"><a href="#懒汉式" class="headerlink" title="懒汉式"></a>懒汉式</h6><ul>
+<li>在getInstance方法内创建了一个实例</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> charactor;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GiantDragon</span> </span>&#123;</span><br><span class="line">    <span class="comment">//私有化构造方法使得该类无法在外部通过new 进行实例化</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">GiantDragon</span><span class="params">()</span></span>&#123;        </span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//准备一个类属性，用于指向一个实例化对象，但是暂时指向null</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> GiantDragon instance;</span><br><span class="line">     </span><br><span class="line">    <span class="comment">//public static 方法，返回实例对象</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> GiantDragon <span class="title">getInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">    	<span class="comment">//第一次访问的时候，发现instance没有指向任何对象，这时实例化一个对象</span></span><br><span class="line">    	<span class="keyword">if</span>(<span class="keyword">null</span>==instance)&#123;</span><br><span class="line">    		instance = <span class="keyword">new</span> GiantDragon();</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="comment">//返回 instance指向的对象</span></span><br><span class="line">        <span class="keyword">return</span> instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="两种方式选用"><a href="#两种方式选用" class="headerlink" title="两种方式选用"></a>两种方式选用</h6><p><strong>饿汉式</strong>，是<strong>立即加载</strong>的方式，无论是否会用到这个对象，都会加载。<br>如果在构造方法里写了<strong>性能消耗较大</strong>，<strong>占时较久</strong>的代码，比如<strong>建立与数据库的连接</strong>，那么就会在启动的时候感觉稍微有些卡顿。</p>
+<p><strong>懒汉式</strong>，是<strong>延迟加载</strong>的方式，只有使用的时候才会加载。 并且有<strong>线程安全</strong>的考量。使用懒汉式，在启动的时候，会感觉到比饿汉式略快，因为并没有做对象的实例化。 但是在<strong>第一次调用</strong>的时候，会进行实例化操作，感觉上就略慢。</p>
+<p>看业务需求，如果业务上允许有比较<strong>充分的启动和初始化时间</strong>，就使用<strong>饿汉式</strong>，<strong>否则</strong>就使用<strong>懒汉式</strong></p>
+<h6 id="单例模式三元素"><a href="#单例模式三元素" class="headerlink" title="单例模式三元素"></a>单例模式三元素</h6><ol>
+<li>构造方法私有化</li>
+<li>静态属性指向实例</li>
+<li>public static的 getInstance方法，返回第二步的静态属性</li>
+</ol>
+<h5 id="枚举类型"><a href="#枚举类型" class="headerlink" title="枚举类型"></a>枚举类型</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Season &#123;</span><br><span class="line">	SPRING,SUMMER,AUTUMN,WINTER <span class="comment">//分别代表1，2，3，4</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Season season = Season.SPRING;</span><br><span class="line">		<span class="keyword">switch</span> (season) &#123;</span><br><span class="line">		<span class="keyword">case</span> SPRING:</span><br><span class="line">			System.out.println(<span class="string">"春天"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> SUMMER:</span><br><span class="line">			System.out.println(<span class="string">"夏天"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> AUTUMN:</span><br><span class="line">			System.out.println(<span class="string">"秋天"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> WINTER:</span><br><span class="line">			System.out.println(<span class="string">"冬天"</span>);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (Season s : Season.values()) &#123;  <span class="comment">//增强型for循环遍历</span></span><br><span class="line">            System.out.println(s);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="7-接口与继承"><a href="#7-接口与继承" class="headerlink" title="7.接口与继承"></a>7.接口与继承</h4><h5 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//接口定义</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">AD</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">physicAttack</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">AP</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">magicAttack</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//实现接口 使用implements 可以同时实现多个接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ADHero</span> <span class="keyword">extends</span> <span class="title">Hero</span> <span class="keyword">implements</span> <span class="title">AD</span>,<span class="title">AP</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">physicAttack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"进行物理攻击"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="对象转型"><a href="#对象转型" class="headerlink" title="对象转型"></a>对象转型</h5><p>将等号右边的类型转换为等号左边的，本质上能不能转换主要是看右边的类型能不能当成左边的来用</p>
+<h6 id="子类转父类（向上转型）"><a href="#子类转父类（向上转型）" class="headerlink" title="子类转父类（向上转型）"></a>子类转父类（向上转型）</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Hero h = <span class="keyword">new</span> Hero();</span><br><span class="line">ADHero ad = <span class="keyword">new</span> ADHero();</span><br><span class="line">h = ad; <span class="comment">//直接转换即可</span></span><br></pre></td></tr></table></figure>
+<h6 id="父类转子类（向下转型）"><a href="#父类转子类（向下转型）" class="headerlink" title="父类转子类（向下转型）"></a>父类转子类（向下转型）</h6><p>需要强制转化</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ad = (ADHero) h; <span class="comment">//强制转换</span></span><br></pre></td></tr></table></figure>
+<h6 id="没有继承关系的两个类，互相转换会失败"><a href="#没有继承关系的两个类，互相转换会失败" class="headerlink" title="没有继承关系的两个类，互相转换会失败"></a>没有继承关系的两个类，互相转换会失败</h6><h5 id="重写"><a href="#重写" class="headerlink" title="重写"></a>重写</h5><p>子类和父类定义名字一样的方法，调用时调用子类的，即重写</p>
+<h5 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h5><h6 id="操作符的多态"><a href="#操作符的多态" class="headerlink" title="操作符的多态"></a>操作符的多态</h6><p>字符串相加表示拼接，数字相加表示加法</p>
+<h6 id="类的多态"><a href="#类的多态" class="headerlink" title="类的多态"></a>类的多态</h6><p>即不同的子类，对同一个父类方法的重写</p>
+<h5 id="隐藏"><a href="#隐藏" class="headerlink" title="隐藏"></a>隐藏</h5><p>子类调用父类的静态方法（类方法）</p>
+<h5 id="super"><a href="#super" class="headerlink" title="super"></a>super</h5><p>使用<code>super对象</code>调用父类的方法和属性</p>
+<h5 id="Object类"><a href="#Object类" class="headerlink" title="Object类"></a>Object类</h5><p>声明一个类的时候，默认是继承了Object </p>
+<p><code>toString()</code>返回当前对象的<strong>字符串表达</strong></p>
+<p><code>finalize()</code>一个对象没有任何引用指向时，满足回收条件，这个方法被<code>JVM</code>自动调用</p>
+<p><code>equals()</code> 判断两个对象内容是否相同</p>
+<p><code>==</code> 判断两个引用，是否指向了同一个对象</p>
+<p><code>hashCode()</code>返回一个对象的哈希值</p>
+<p>Object还提供<strong>线程同步</strong>相关方法</p>
+<ul>
+<li><code>wait()</code></li>
+</ul>
+<ul>
+<li><code>notify()</code></li>
+<li><code>notifyAll()</code></li>
+</ul>
+<p><code>getClass()</code> 返回一个对象的类对象</p>
+<h5 id="final-1"><a href="#final-1" class="headerlink" title="final"></a>final</h5><p>用final修饰的类不能被继承</p>
+<p>修饰方法则不能被重写</p>
+<p>修饰变量，则只有一次赋值机会</p>
+<p>修饰引用，引用只有<strong>1</strong>次指向对象的机会</p>
+<p>常量：<code>public static final int a = 6;</code></p>
+<h5 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h5><p>abstract修饰符来修饰</p>
+<p>当一个类有抽象方法的时候，该类必须被声明为抽象类</p>
+<p>抽象类可以没有抽象方法</p>
+<p><strong>子类必须提供</strong>不一样的attack方法实现</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Hero</span> </span>&#123;</span><br><span class="line">    String name;</span><br><span class="line">    <span class="keyword">float</span> hp;</span><br><span class="line">    <span class="keyword">float</span> armor;</span><br><span class="line">    <span class="keyword">int</span> moveSpeed;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 抽象方法attack</span></span><br><span class="line">    <span class="comment">// Hero的子类会被要求实现attack方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="抽象类和接口的区别"><a href="#抽象类和接口的区别" class="headerlink" title="抽象类和接口的区别"></a>抽象类和接口的区别</h6><p>区别1：</p>
+<ul>
+<li>子类只能继承一个抽象类，不能继承多个</li>
+<li>子类可以实现<strong>多个</strong>接口</li>
+</ul>
+<p>区别2：</p>
+<ul>
+<li><p>抽象类可以定义</p>
+<ul>
+<li><p>public,protected,package,private</p>
+</li>
+<li><p>静态和非静态属性</p>
+</li>
+<li><p>final和非final属性</p>
+</li>
+</ul>
+</li>
+<li><p>但是接口中声明的属性，只能是</p>
+<ul>
+<li><p>public</p>
+</li>
+<li><p>静态</p>
+</li>
+<li><p>final的</p>
+</li>
+</ul>
+<p>即便没有显式的声明(默认转换为<code>public static final</code>)</p>
+</li>
+</ul>
+<p>注:抽象类和接口都可以有实体方法。 接口中的实体方法，叫做默认方法</p>
+<h5 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h5><p>分为四种：</p>
+<ul>
+<li>非静态内部类  可以直接在一个类里面定义，实例化必须建立在一个外部类对象的基础之上，即：<strong>new 外部类().new 内部类()</strong>，可以访问外部类的属性方法</li>
+<li>静态内部类 可以直接实例化，不能访问外部类的实例属性方法，但是可以访问静态属性方法</li>
+<li><p>匿名类 直接实例化一个抽象类，并“<strong>当场</strong>”实现其抽象方法。</p>
+</li>
+<li><p>本地类 有名字的匿名类</p>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> charactor;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Hero</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">()</span></span>;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Hero h = <span class="keyword">new</span> Hero()&#123;</span><br><span class="line">            <span class="comment">//当场实现attack方法</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println(<span class="string">"新的进攻手段"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        h.attack();</span><br><span class="line">        <span class="comment">//通过打印h，可以看到h这个对象属于Hero$1这么一个系统自动分配的类名 </span></span><br><span class="line">        System.out.println(h);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//本地类</span></span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">SomeHero</span> <span class="keyword">extends</span> <span class="title">Hero</span></span>&#123;</span><br><span class="line">            <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                System.out.println( name+ <span class="string">" 新的进攻手段"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        SomeHero h  =<span class="keyword">new</span> SomeHero();</span><br><span class="line">        h.name =<span class="string">"地卜师"</span>;</span><br><span class="line">        h.attack();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="默认方法"><a href="#默认方法" class="headerlink" title="默认方法"></a>默认方法</h5><p>默认方法是JDK8新特性，指的是接口也可以提供具体方法了</p>
+<p><code>default public void func(){}</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> charactor;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Mortal</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">die</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">default</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">revive</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		System.out.println(<span class="string">"本英雄复活了"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="UML图——类之间的关系"><a href="#UML图——类之间的关系" class="headerlink" title="UML图——类之间的关系"></a>UML图——类之间的关系</h5><p>UML-Unified Module Language<br>统一建模语言，可以很方便的用于描述类的属性，方法，以及类和类之间的关系</p>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2021/02/04/Python数据分析可视化笔记/" data-toggle="tooltip" data-placement="top" title="Python数据分析可视化笔记">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2021/01/31/配置环境遇到的问题和解决办法积累/" data-toggle="tooltip" data-placement="top" title="配置环境遇到的问题和解决办法积累">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <div class="comment_notes">
+                    <p>
+                        This is copyright.
+                    </p>
+                </div>
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                
+<link rel="stylesheet" href="/css/music-player/fonts/iconfont.css">
+
+
+<link rel="stylesheet" href="/css/music-player/css/reset.css">
+
+
+<link rel="stylesheet" href="/css/music-player/css/player.css">
+
+
+<div class="music-player">
+    <audio class="music-player__audio" ></audio>
+    <div class="music-player__main">
+        <div class="music-player__blur"></div>
+        <div class="music-player__disc">
+            <div class="music-player__image">
+                <img width="100%" src="" alt="">
+            </div>
+            <div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div>
+        </div>
+        <div class="music-player__controls">
+            <div class="music__info">
+                <h3 class="music__info--title">...</h3>
+                <p class="music__info--singer">...</p>
+            </div>
+            <div class="player-control">
+                <div class="player-control__content">
+                    <div class="player-control__btns">
+                        <div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div>
+                        <div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div>
+                        <div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div>
+                        <div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-loop"></i></div>
+                    </div>
+                    <div class="player-control__volume">
+                        <div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div>
+                        <div class="control__volume--progress player_progress"></div>
+                    </div>
+                </div>
+                <div class="player-control__content">
+                    <div class="player__song--progress player_progress"></div>
+                    <div class="player__song--timeProgess nowTime">00:00</div>
+                    <div class="player__song--timeProgess totalTime">00:00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/music-player/utill.js"></script>
+
+
+<script src="/js/music-player/jquery.min.js"></script>
+
+<!-- netease; qqkg -->
+<!--
+<script src="/js/music-player/player.js?library=config.music.library.js"></script>
+-->
+<script src="../../../../js/music-player/player.js?library=netease&music=https://kg.qq.com/node/play?s=7deFpz7Z26Jmv7di&g_f=share_html"></script>
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#后端" title="后端">后端</a>
+                        
+                          <a class="tag" href="/tags/#java" title="java">java</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://blog.csdn.net/d_Nail" target="_blank">Dusign&#39;s Blog</a></li>
+                    
+                        <li><a href="#" target="_blank">Dusign&#39;s Web</a></li>
+                    
+                        <li><a href="https://github.com/dusign" target="_blank">Dusign&#39;s Github</a></li>
+                    
+                        <li><a href="#" target="_blank">Other</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/dusign">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/dusignr">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/Gang Du">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/dusignr">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BUAADreamer 2021 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=dusign&repo=hexo-theme-snail&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://BUAADreamer.top/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects line -->
+        
+
+        
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&#34;🌱&#34;,&#34;just do it&#34;,&#34;🍀&#34;]' color='[&#34;rgb(121,93,179)&#34; ,&#34;rgb(76,180,231)&#34; ,&#34;rgb(184,90,154)&#34;]'></script>
+        
+
+        <!-- background effects end -->
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+</body>
+
+</html>

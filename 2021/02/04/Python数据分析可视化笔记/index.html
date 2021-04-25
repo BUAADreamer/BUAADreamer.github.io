@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="A hexo theme">
+    <meta name="keyword"  content="dusign, hexo-theme-snail">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          Python数据分析可视化笔记 - Hexo-theme-snail
+        
+    </title>
+
+    <link rel="canonical" href="https://BUAADreamer.top/2021/02/04/Python数据分析可视化笔记/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#数据科学" title="数据科学">数据科学</a>
+                            
+                        </div>
+                        <h1>Python数据分析可视化笔记</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by BUAADreamer on
+                            2021-02-04
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">1.4k</span> and
+                                Reading Time <span class="post-count">6</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BUAADreamer&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+                    
+                    
+                    <li>
+                        <a href="YOUR_CHINESE_BLOG_URL" target="_blank">Chinese Blog</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>关于python数据科学相关的知识笔记</p>
+<a id="more"></a>
+<h1 id="Python数据分析可视化笔记"><a href="#Python数据分析可视化笔记" class="headerlink" title="Python数据分析可视化笔记"></a>Python数据分析可视化笔记</h1><h4 id="jupyter-lab好东西集合"><a href="#jupyter-lab好东西集合" class="headerlink" title="jupyter lab好东西集合"></a>jupyter lab好东西集合</h4><p><a href="https://www.cnblogs.com/feffery/p/13364668.html" target="_blank" rel="noopener">https://www.cnblogs.com/feffery/p/13364668.html</a></p>
+<h2 id="pandas基本操作和概念"><a href="#pandas基本操作和概念" class="headerlink" title="pandas基本操作和概念"></a>pandas基本操作和概念</h2><p><code>DataFrame</code>对象单独取出一行即：<code>df.loc[0]</code>和一列<code>df[&quot;a&quot;]</code>都是<code>Series</code>对象</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> nunpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df.columns <span class="comment">#DataFrame对象所有表头值组成的列表</span></span><br><span class="line">df.index <span class="comment">#DataFrame对象所有索引组成的列表</span></span><br></pre></td></tr></table></figure>
+<h3 id="创建DataFrame对象"><a href="#创建DataFrame对象" class="headerlink" title="创建DataFrame对象"></a>创建DataFrame对象</h3><p>最简单也最好用：根据两个列表创建</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">index=[i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>)]</span><br><span class="line">columns=[<span class="string">"a"</span>,<span class="string">"b"</span>]</span><br><span class="line">df=pd.DataFrame(index=index,columns=columns)</span><br><span class="line">l1=[i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>)]</span><br><span class="line">l2=[<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">df[<span class="string">"a"</span>]=l1 <span class="comment">#直接用列表给df一列赋值</span></span><br><span class="line">df.loc[<span class="number">0</span>]=l2 <span class="comment">##直接用列表给df一行赋值</span></span><br></pre></td></tr></table></figure>
+<h2 id="数据分析6步"><a href="#数据分析6步" class="headerlink" title="数据分析6步"></a>数据分析6步</h2><h3 id="一、读取数据"><a href="#一、读取数据" class="headerlink" title="一、读取数据"></a>一、读取数据</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">pd.read_excel(<span class="string">"1.xlsx"</span>,)</span><br><span class="line">pd.read_csv(<span class="string">"1.csv"</span>)</span><br><span class="line"><span class="comment">#查询用法</span></span><br><span class="line">pd.read_excel?</span><br><span class="line">pd.*read*?</span><br></pre></td></tr></table></figure>
+<h3 id="二、清洗数据"><a href="#二、清洗数据" class="headerlink" title="二、清洗数据"></a>二、清洗数据</h3><h4 id="查找异常"><a href="#查找异常" class="headerlink" title="查找异常"></a>查找异常</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#设置最多显示十行</span></span><br><span class="line">pd.set_option(<span class="string">'max_rows'</span>, <span class="number">10</span>) </span><br><span class="line"><span class="comment">#查找异常</span></span><br><span class="line">df[df[<span class="string">"a"</span>].isnull()]</span><br><span class="line"><span class="comment">#查找完全重复的行</span></span><br><span class="line">df[df.duplicated()]</span><br><span class="line"><span class="comment"># 查找某⼀列重复的⾏</span></span><br><span class="line">df[df.编号.duplicated()]</span><br><span class="line"><span class="comment"># 查找a属性的所有唯⼀值</span></span><br><span class="line">df.a.unique()</span><br><span class="line"><span class="comment"># 查找a包含 30 的异常值</span></span><br><span class="line">df[df.a.isin([<span class="string">'30'</span>])]</span><br><span class="line"><span class="comment">#字符换匹配</span></span><br><span class="line">df[df.a.str.contains(<span class="string">"abc"</span>,na=<span class="literal">False</span>)]</span><br><span class="line"><span class="comment"># 查找a列值在1到5之间的⾏</span></span><br><span class="line">df[df.a.between(<span class="number">1</span>, <span class="number">5</span>)]</span><br><span class="line"><span class="comment">#逻辑运算</span></span><br><span class="line">df[(df.a &gt;= <span class="number">1</span>) &amp; (df.b &lt;= <span class="number">5</span>)]</span><br></pre></td></tr></table></figure>
+<h4 id="排除重复"><a href="#排除重复" class="headerlink" title="排除重复"></a>排除重复</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df.drop_duplicates()</span><br><span class="line">df.drop_duplicates(inplace=<span class="literal">True</span>) <span class="comment">#直接改变原数据</span></span><br><span class="line">df.drop_duplicates([<span class="string">'a'</span>]) <span class="comment"># 按某⼀列排除重复，默认保留第⼀⾏ keep='last'--&gt;删除最后一行</span></span><br></pre></td></tr></table></figure>
+<h4 id="删除缺失值"><a href="#删除缺失值" class="headerlink" title="删除缺失值"></a>删除缺失值</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">color.dropna()</span><br><span class="line">color.dropna(how=<span class="string">'all'</span>) <span class="comment"># 删除全部为空的⾏</span></span><br><span class="line">color.dropna(axis=<span class="number">1</span>) <span class="comment"># 删除包含缺失值的列</span></span><br></pre></td></tr></table></figure>
+<h4 id="补全缺失值"><a href="#补全缺失值" class="headerlink" title="补全缺失值"></a>补全缺失值</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df.fillna(<span class="string">'a'</span>) <span class="comment">#所有缺失处补上"a" 	实际工作时常补上0</span></span><br><span class="line">df.fillna(method=<span class="string">'bfill'</span>) <span class="comment">#⽤后⾯的值填充</span></span><br><span class="line">df.fillna( &#123;<span class="string">'花⾊'</span>: <span class="number">0</span>, <span class="string">'牌⾯'</span>: <span class="number">1</span>&#125; ) <span class="comment">#按照字典填充</span></span><br></pre></td></tr></table></figure>
+<h4 id="完整例子"><a href="#完整例子" class="headerlink" title="完整例子"></a>完整例子</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="comment"># 设置最多显示 10 ⾏</span></span><br><span class="line">pd.set_option(<span class="string">'max_rows'</span>, <span class="number">10</span>)</span><br><span class="line"><span class="comment"># 从 Excel ⽂件中读取原始数据</span></span><br><span class="line">df = pd.read_excel(<span class="string">'待清洗的扑克牌数据集.xlsx'</span>,sheet_name=<span class="string">"name"</span>)</span><br><span class="line"><span class="comment"># 补全缺失值</span></span><br><span class="line">df = df.fillna(<span class="string">'Joker'</span>)</span><br><span class="line"><span class="comment"># 排除重复值</span></span><br><span class="line">df = df.drop_duplicates()</span><br><span class="line"><span class="comment"># 修改异常值</span></span><br><span class="line">df.loc[<span class="number">4</span>, <span class="string">'牌⾯'</span>] = <span class="number">3</span></span><br><span class="line"><span class="comment"># 增加⼀张缺少的牌</span></span><br><span class="line">df = df.append(&#123;<span class="string">'编号'</span>: <span class="number">4</span>,<span class="string">'花⾊'</span>: <span class="string">'⿊桃♠'</span>,<span class="string">'牌⾯'</span>: <span class="number">2</span>&#125;,ignore_index=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># 按编号排序</span></span><br><span class="line">df = df.sort_values(<span class="string">'编号'</span>)</span><br><span class="line"><span class="comment"># 重置索引</span></span><br><span class="line">df = df.reset_index()</span><br><span class="line"><span class="comment"># 删除多余的列</span></span><br><span class="line">df = df.drop([<span class="string">'index'</span>], axis=<span class="number">1</span> )</span><br><span class="line"><span class="comment"># 把清洗好的数据保存到 Excel ⽂件</span></span><br><span class="line">df.to_excel(<span class="string">'完成清洗的扑克牌数据.xlsx'</span>,index=<span class="literal">False</span>)</span><br><span class="line">df</span><br></pre></td></tr></table></figure>
+<h3 id="三、操作数据"><a href="#三、操作数据" class="headerlink" title="三、操作数据"></a>三、操作数据</h3><h4 id="增加数据"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">"b"</span>]=[i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>)] <span class="comment">#相当于把df对象当字典用</span></span><br><span class="line">df.insert(<span class="number">1</span>, <span class="string">'a'</span>, [<span class="number">1</span>, <span class="number">2</span>]) <span class="comment">#指定位置插入列</span></span><br><span class="line"><span class="comment">#插入一行</span></span><br><span class="line">a=pd.DataFrame(&#123;<span class="string">"a"</span>:<span class="number">1</span>,<span class="string">"b"</span>:<span class="number">2</span>&#125;)</span><br><span class="line">df2=df.append(a,ignore_index=<span class="literal">True</span>,sort=<span class="literal">False</span>)</span><br><span class="line"><span class="comment">#拼接两个数据框</span></span><br><span class="line">pd.concat([df, a],ignore_index=<span class="literal">True</span>,sort=<span class="literal">False</span>)</span><br><span class="line">还有merge()/join()函数</span><br></pre></td></tr></table></figure>
+<h4 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df.drop([<span class="number">0</span>,<span class="number">2</span>]) <span class="comment">#删除0/2两行数据</span></span><br><span class="line">df.drop(<span class="string">"a"</span>,axis=<span class="number">1</span>) <span class="comment">#删除"a"列的数据</span></span><br><span class="line"><span class="keyword">del</span> df2[<span class="string">"a"</span>] <span class="comment">#直接删除原数据框中的a列数据</span></span><br></pre></td></tr></table></figure>
+<h4 id="修改数据"><a href="#修改数据" class="headerlink" title="修改数据"></a>修改数据</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df.replace([<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="number">3</span>,<span class="number">4</span>],<span class="string">""</span>,regex=<span class="literal">True</span>) <span class="comment">#替换多个数据 regex--&gt;正则表达式</span></span><br><span class="line">df.loc[<span class="number">0</span>,<span class="string">"a"</span>]=<span class="string">"j"</span> <span class="comment">#修改第0行a属性的值</span></span><br><span class="line">df.columns = list(<span class="string">'AB'</span>) <span class="comment">#修改列名</span></span><br><span class="line">df.rename(&#123;<span class="string">"a"</span>:<span class="string">"b"</span>&#125;,axis=<span class="number">1</span>) <span class="comment">#修改指定列名</span></span><br><span class="line">df.rename(&#123;<span class="number">1</span>:<span class="number">3</span>,<span class="number">2</span>:<span class="number">3</span>&#125;) <span class="comment">#修改行名</span></span><br></pre></td></tr></table></figure>
+<h4 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">df.head()</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">df[df.a.str.match(<span class="string">'[jk]'</span>, flags=re.IGNORECASE, na=<span class="literal">False</span>)] <span class="comment">#re.IGNORECASE--&gt;不区分大小写</span></span><br><span class="line"><span class="comment">#使用query</span></span><br><span class="line">df.query(</span><br><span class="line"> <span class="string">'1 &lt;= index &lt;= 5 \</span></span><br><span class="line"><span class="string"> and 牌⾯ not in @card '</span></span><br><span class="line">)</span><br><span class="line">df.query(</span><br><span class="line"> <span class="string">'编号 &gt; 编号.mean() \</span></span><br><span class="line"><span class="string"> and 牌⾯ == "A" '</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="四、数据转换"><a href="#四、数据转换" class="headerlink" title="四、数据转换"></a>四、数据转换</h3><h4 id="转换为时间"><a href="#转换为时间" class="headerlink" title="转换为时间"></a>转换为时间</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> dateutil.parser <span class="keyword">import</span> parse</span><br><span class="line">df[<span class="string">"time"</span>]=df.Date.transform(parse).copy()</span><br><span class="line">parse(<span class="string">"10/9/2019"</span>,dayfirst=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="转换为数值"><a href="#转换为数值" class="headerlink" title="转换为数值"></a>转换为数值</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pd.to_numeric(errors=<span class="string">'coerce'</span>) <span class="comment">#设置errors参数使得不能替换的值变为nan</span></span><br><span class="line">df.apply(pd.to_numeric,errors=<span class="string">'coerce'</span>) <span class="comment">#errors默认为ignore即略过不能转换的</span></span><br></pre></td></tr></table></figure>
+<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df.astype(str).dtypes</span><br><span class="line">对于时间型的数据，我们可以使⽤ strftime() 函数</span><br></pre></td></tr></table></figure>
+<h4 id="转换为区间"><a href="#转换为区间" class="headerlink" title="转换为区间"></a>转换为区间</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pd.cut() <span class="comment">#将数值切割为指定的区间</span></span><br><span class="line">bins=[float(<span class="string">"-inf"</span>),<span class="number">280</span>,float(<span class="string">"inf"</span>)]</span><br><span class="line">pd.cut(df.a,bins=bins,right=<span class="literal">True</span>) <span class="comment">#左开右闭，默认左闭右开</span></span><br><span class="line">pd.cut(df.a,bins=<span class="number">2</span>) <span class="comment">#按照2为间隔划分</span></span><br></pre></td></tr></table></figure>
+<h4 id="分组转换"><a href="#分组转换" class="headerlink" title="分组转换"></a>分组转换</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">df.groupby(<span class="string">"a"</span>)[<span class="string">"b"</span>].transform(sum) <span class="comment">#在⾏数保持不变的情况下，对某列进⾏分组求和</span></span><br><span class="line"><span class="comment">#能够⽅便地计算每个数据对应各⾃分组的占⽐</span></span><br><span class="line">df.groupby(<span class="string">"a"</span>)[<span class="string">"b"</span>].apply(sum) <span class="comment">#返回组数个结果</span></span><br><span class="line">df.groupby(<span class="string">"a"</span>)[<span class="string">"b"</span>].agg([sum,np.mean,<span class="string">"count"</span>])</span><br><span class="line">df.groupby(<span class="string">"month"</span>).agg(</span><br><span class="line">    天数=(<span class="string">"Date"</span>,count),</span><br><span class="line">	平均价格=(<span class="string">"Open"</span>,np.mean)) <span class="comment">#对不同列聚合，使用不同函数</span></span><br></pre></td></tr></table></figure>
+<h4 id="标准化"><a href="#标准化" class="headerlink" title="标准化"></a>标准化</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#min-max标准化</span></span><br><span class="line">(df.a-df.a.min())/(df.a.max()-df.a.min())</span><br></pre></td></tr></table></figure>
+<h3 id="五、整理数据"><a href="#五、整理数据" class="headerlink" title="五、整理数据"></a>五、整理数据</h3><h4 id="外连接-相当于并集"><a href="#外连接-相当于并集" class="headerlink" title="外连接(相当于并集)"></a>外连接(相当于并集)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.merge(df1,how=<span class="string">"outer"</span>,on=<span class="string">"用于连接的列名"</span>) <span class="comment">#缺失值用nan 得到两个表的所有⾏</span></span><br></pre></td></tr></table></figure>
+<h4 id="内连接-相当于交集"><a href="#内连接-相当于交集" class="headerlink" title="内连接(相当于交集)"></a>内连接(相当于交集)</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df.merge(df1) <span class="comment">#不指定on时以两个表共同的列名为参数</span></span><br><span class="line"><span class="comment">#只返回两个表相互匹配的数据。无nan</span></span><br></pre></td></tr></table></figure>
+<h4 id="左连接与右连接"><a href="#左连接与右连接" class="headerlink" title="左连接与右连接"></a>左连接与右连接</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.merge(df1,how=<span class="string">"left"</span>）<span class="comment">#df为左表，即使df1中某行值无也照样显示,同理右连接</span></span><br></pre></td></tr></table></figure>
+<h4 id="交叉连接"><a href="#交叉连接" class="headerlink" title="交叉连接"></a>交叉连接</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">操作:</span><br><span class="line">（<span class="number">1</span>）⽤ assign() 函数增加 key 列；</span><br><span class="line">（<span class="number">2</span>）⽤ merge() 函数进⾏连接；</span><br><span class="line">（<span class="number">3</span>）删掉 key 列。</span><br><span class="line">df.assign(key=<span class="number">1</span>).merge(df1.assign(key=<span class="number">1</span>),on=<span class="string">"key"</span>).drop(<span class="string">"key"</span>,<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="联合拼接"><a href="#联合拼接" class="headerlink" title="联合拼接"></a>联合拼接</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.concat([df1,df2],sort=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="六、分析数据"><a href="#六、分析数据" class="headerlink" title="六、分析数据"></a>六、分析数据</h3><p>比较nb的三个数据分析库</p>
+<p>参考文章：<a href="https://my.oschina.net/u/4581316/blog/4898542" target="_blank" rel="noopener">https://my.oschina.net/u/4581316/blog/4898542</a></p>
+<h4 id="pandas-profiling"><a href="#pandas-profiling" class="headerlink" title="pandas_profiling"></a>pandas_profiling</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas_profiling</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line">sns.set_style(<span class="string">"whitegrid"</span>,&#123;<span class="string">"font.sans-serif"</span>:[<span class="string">"simhei"</span>,<span class="string">"Arial"</span>]&#125;)</span><br><span class="line">x=pandas_profiling.ProfileReport(df)</span><br><span class="line">x.to_file(<span class="string">"name.html"</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="Sweetviz"><a href="#Sweetviz" class="headerlink" title="Sweetviz"></a>Sweetviz</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sweetviz <span class="keyword">as</span> sv</span><br><span class="line">my_report = sv.analyze(mpg)</span><br><span class="line">my_report.show_html()</span><br></pre></td></tr></table></figure>
+<h4 id="pandasGUI"><a href="#pandasGUI" class="headerlink" title="pandasGUI"></a>pandasGUI</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pandasgui <span class="keyword">import</span> show</span><br><span class="line"><span class="comment"># 部署GUI的数据集</span></span><br><span class="line">gui = show(mpg)</span><br></pre></td></tr></table></figure>
+<h2 id="可视化"><a href="#可视化" class="headerlink" title="可视化"></a>可视化</h2><h3 id="pyecharts"><a href="#pyecharts" class="headerlink" title="pyecharts"></a>pyecharts</h3><p>官网：<a href="https://pyecharts.org/#/zh-cn/intro" target="_blank" rel="noopener">https://pyecharts.org/#/zh-cn/intro</a></p>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2021/02/10/算法学习/" data-toggle="tooltip" data-placement="top" title="算法学习">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2021/02/01/Java-note/" data-toggle="tooltip" data-placement="top" title="Java笔记">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <div class="comment_notes">
+                    <p>
+                        This is copyright.
+                    </p>
+                </div>
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                
+<link rel="stylesheet" href="/css/music-player/fonts/iconfont.css">
+
+
+<link rel="stylesheet" href="/css/music-player/css/reset.css">
+
+
+<link rel="stylesheet" href="/css/music-player/css/player.css">
+
+
+<div class="music-player">
+    <audio class="music-player__audio" ></audio>
+    <div class="music-player__main">
+        <div class="music-player__blur"></div>
+        <div class="music-player__disc">
+            <div class="music-player__image">
+                <img width="100%" src="" alt="">
+            </div>
+            <div class="music-player__pointer"><img width="100%" src="/img/cd_tou.png" alt=""></div>
+        </div>
+        <div class="music-player__controls">
+            <div class="music__info">
+                <h3 class="music__info--title">...</h3>
+                <p class="music__info--singer">...</p>
+            </div>
+            <div class="player-control">
+                <div class="player-control__content">
+                    <div class="player-control__btns">
+                        <div class="player-control__btn player-control__btn--prev"><i class="iconfont icon-prev"></i></div>
+                        <div class="player-control__btn player-control__btn--play"><i class="iconfont icon-play"></i></div>
+                        <div class="player-control__btn player-control__btn--next"><i class="iconfont icon-next"></i></div>
+                        <div class="player-control__btn player-control__btn--mode"><i class="iconfont icon-loop"></i></div>
+                    </div>
+                    <div class="player-control__volume">
+                        <div class="control__volume--icon player-control__btn"><i class="iconfont icon-volume"></i></div>
+                        <div class="control__volume--progress player_progress"></div>
+                    </div>
+                </div>
+                <div class="player-control__content">
+                    <div class="player__song--progress player_progress"></div>
+                    <div class="player__song--timeProgess nowTime">00:00</div>
+                    <div class="player__song--timeProgess totalTime">00:00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/music-player/utill.js"></script>
+
+
+<script src="/js/music-player/jquery.min.js"></script>
+
+<!-- netease; qqkg -->
+<!--
+<script src="/js/music-player/player.js?library=config.music.library.js"></script>
+-->
+<script src="../../../../js/music-player/player.js?library=netease&music=https://kg.qq.com/node/play?s=7deFpz7Z26Jmv7di&g_f=share_html"></script>
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#数据科学" title="数据科学">数据科学</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://blog.csdn.net/d_Nail" target="_blank">Dusign&#39;s Blog</a></li>
+                    
+                        <li><a href="#" target="_blank">Dusign&#39;s Web</a></li>
+                    
+                        <li><a href="https://github.com/dusign" target="_blank">Dusign&#39;s Github</a></li>
+                    
+                        <li><a href="#" target="_blank">Other</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/dusign">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/dusignr">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/Gang Du">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/dusignr">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BUAADreamer 2021 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=dusign&repo=hexo-theme-snail&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://BUAADreamer.top/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects line -->
+        
+
+        
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&#34;🌱&#34;,&#34;just do it&#34;,&#34;🍀&#34;]' color='[&#34;rgb(121,93,179)&#34; ,&#34;rgb(76,180,231)&#34; ,&#34;rgb(184,90,154)&#34;]'></script>
+        
+
+        <!-- background effects end -->
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+</body>
+
+</html>
