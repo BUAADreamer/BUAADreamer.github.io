@@ -3,6 +3,13 @@
 
 
     <url>
+        <loc>https://buaadreamer.top/tags/BUAA-OO-2021/</loc>
+        <lastmod>2021-04-27T04:02:42.576Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://buaadreamer.top/tags/BUAA-OS-2021/</loc>
         <lastmod>2021-04-26T14:43:57.135Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -12,13 +19,6 @@
     <url>
         <loc>https://buaadreamer.top/tags/hexo-theme-snail/</loc>
         <lastmod>2021-04-26T14:38:17.575Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://buaadreamer.top/tags/BUAA-OO-2021/</loc>
-        <lastmod>2021-04-26T10:10:23.190Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
