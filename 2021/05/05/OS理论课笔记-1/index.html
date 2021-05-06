@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="A hexo theme">
+    <meta name="keyword"  content="BUAADreamer, hexo-theme-snail">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          OS理论课笔记-1 - BUAADreamer&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://BUAADreamer.top/2021/05/05/OS理论课笔记-1/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../../../img/default.jpg')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#BUAA-OS-2021" title="BUAA-OS-2021">BUAA-OS-2021</a>
+                            
+                        </div>
+                        <h1>OS理论课笔记-1</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by BUAADreamer on
+                            2021-05-05
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">3.4k</span> and
+                                Reading Time <span class="post-count">11</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BUAADreamer&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
+                        </li>
+                        
+                    
+                    
+                    
+                    <li>
+                        <a href="https://www.cnblogs.com/BUAADreamer/" target="_blank">Chinese Blog</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="第1章-引论"><a href="#第1章-引论" class="headerlink" title="第1章 引论"></a>第1章 引论</h2><p>操作系统是一个程序，是一组管理计算机硬件资源的软件集合，向计算机程序提供共性服务。</p>
+<ol>
+<li><p>控制计算机资源；</p>
+</li>
+<li><p>给用户提供<strong>接口</strong>或<strong>虚拟机</strong>。</p>
+</li>
+</ol>
+<p><img src="2021-05-05-OS理论课笔记-1/1-1.png" style="zoom: 67%;" /></p>
+<h3 id="OS的历史沿革"><a href="#OS的历史沿革" class="headerlink" title="OS的历史沿革"></a>OS的历史沿革</h3><p><img src="2021-05-05-OS理论课笔记-1/1-2.png" style="zoom: 50%;" /></p>
+<p><strong>批处理</strong>：用户提交作业成批送入计算机，由作业调度程序自动选择作业运行。涉及到<strong>Mainframe基本功能，排队论、统筹学</strong>。</p>
+<p><strong>批处理系统</strong>，分为<strong>联机批处理系统</strong>（作业的输入/输出由CPU来处理）和<strong>脱机批处理系统</strong>（输入/输出脱离主机控制）。 两者均有CPU空闲，均为<strong>单道程序系统</strong></p>
+<p><strong>多道程序系统</strong>：多个程序同时进入内存，交替使用I/O设备和CPU。</p>
+<p>多道程序系统的出现，标志着操作系统<strong>渐趋成熟</strong>的阶段，先后出现了<strong>作业调度管理</strong>、<strong>处理机管理</strong>、<strong>存储器管理</strong>、<strong>外部设备管理</strong>、<strong>文件系统管理</strong>等功能。</p>
+<p><strong>分时系统</strong>：多个用户分享使用同一台计算机。多个程序分时共享硬件和软件资源</p>
+<p>两种典型分时系统：</p>
+<ol>
+<li><p>Multics/Unix (1968/1970)</p>
+</li>
+<li><p>IBM VM 360/370 (1966/1972)</p>
+</li>
+</ol>
+<p>Unix、DOS、Windows、Linux（使用GNU）</p>
+<p><strong>分布式网络化</strong></p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p><img src="2021-05-05-OS理论课笔记-1/1-3.png" style="zoom: 60%;" /></p>
+<h3 id="操作系统基本实现机制"><a href="#操作系统基本实现机制" class="headerlink" title="操作系统基本实现机制"></a>操作系统基本实现机制</h3><h4 id="异常-exception-陷阱-trap-和中断-interrupt"><a href="#异常-exception-陷阱-trap-和中断-interrupt" class="headerlink" title="异常(exception): 陷阱(trap)和中断(interrupt)"></a>异常(exception): 陷阱(trap)和中断(interrupt)</h4><p><img src="2021-05-05-OS理论课笔记-1/1-4.png" style="zoom:50%;" /></p>
+<h3 id="操作系统的基本类型"><a href="#操作系统的基本类型" class="headerlink" title="操作系统的基本类型"></a>操作系统的基本类型</h3><ul>
+<li>批处理系统</li>
+<li>分时系统</li>
+<li>实时系统</li>
+<li>混合型</li>
+</ul>
+<h3 id="操作系统的功能"><a href="#操作系统的功能" class="headerlink" title="操作系统的功能"></a>操作系统的功能</h3><h4 id="处理机管理"><a href="#处理机管理" class="headerlink" title="处理机管理"></a>处理机管理</h4><p>核心任务：分配CPU时间 ——进程、线程管理——公平分配、保证非阻塞、按优先级分配</p>
+<p>进程管理：程序是静态实体，进程是执行中的程序。进程的调度：创建、挂起、激活。进程间通信：同步，互斥，死锁。</p>
+<h4 id="存储器-内存-管理"><a href="#存储器-内存-管理" class="headerlink" title="存储器(内存)管理"></a>存储器(内存)管理</h4><p>管理缓存、主存、磁盘等所形成的多级存储架构，为多道程序的并发提供良好的环境。</p>
+<p>– 内存分配和存储无关性：方便用户<br>– 内存保护：互不干扰<br>– 内存扩充：虚拟存储器</p>
+<h4 id="设备管理"><a href="#设备管理" class="headerlink" title="设备管理"></a>设备管理</h4><p>管理输入/输出设备，屏蔽差异性，提供并发访问</p>
+<p>– 设备无关性：逻辑设备-&gt;物理设备<br>– 设备分配：独享、共享和虚拟<br>– 设备的传输控制：中断、通道</p>
+<h4 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h4><p>将磁盘变成一个很容易使用的存储媒介提供给用户使用。<br>– 文件存储空间的管理<br>– 目录管理<br>– 文件读、写管理<br>– 文件保护<br>– 向用户提供接口</p>
+<h4 id="作业控制"><a href="#作业控制" class="headerlink" title="作业控制"></a>作业控制</h4><ul>
+<li>作业调度</li>
+<li>作业控制。<ul>
+<li>批量型作业</li>
+<li>终端型作业</li>
+</ul>
+</li>
+</ul>
+<h2 id="第2章-系统引导"><a href="#第2章-系统引导" class="headerlink" title="第2章 系统引导"></a>第2章 系统引导</h2><h3 id="BootLoader"><a href="#BootLoader" class="headerlink" title="BootLoader"></a>BootLoader</h3><p>引导加载程序，是系统<strong>加电后</strong>运行的第一段软件代码，是操作系统<strong>内核运行之前</strong>运行的一段小程序</p>
+<p><strong>BootLoader</strong>是<strong>Booter</strong>和<strong>Loader</strong>的合写，前者要<strong>初始化系统硬件</strong>使之运行起来，至少是<strong>部分运行</strong>起来；后者将<strong>操作系统映像加载到内存</strong>中，并跳转到操作系统的代码运行。</p>
+<ul>
+<li><strong>MIPS</strong>处理器大多用于<strong>嵌入式系统</strong>，嵌入式系统常用<strong>U-boot</strong>作为OS启动装载程序，U-Boot，全称 Universal Boot Loader；</li>
+<li><strong>X86</strong>处理器通常采用<strong>LILO</strong>和<strong>GRUB</strong>。</li>
+</ul>
+<h3 id="U-Boot启动流程"><a href="#U-Boot启动流程" class="headerlink" title="U-Boot启动流程"></a>U-Boot启动流程</h3><p>大多数BootLoader都分为<strong>stage1</strong>和<strong>stage2</strong>两大部分，U-boot也不例外。</p>
+<ul>
+<li>依赖于cpu体系结构的代码（如设备初始化代码等）通常都放在stage1且可以用<strong>汇编语言</strong>来实现；</li>
+<li>stage2则通常用<strong>C语言</strong>来实现，这样可以实现复杂的功能，而且有更好的可读性和移植性。</li>
+</ul>
+<h3 id="启动及OS引导"><a href="#启动及OS引导" class="headerlink" title="启动及OS引导"></a>启动及OS引导</h3><p><img src="2021-05-05-OS理论课笔记-1/2-1.png" alt=""></p>
+<h5 id="启动第一步——加载BIOS"><a href="#启动第一步——加载BIOS" class="headerlink" title="启动第一步——加载BIOS"></a>启动第一步——加载BIOS</h5><p>BIOS进行硬件自检以及读取启动顺序</p>
+<h5 id="启动第二步——读取MBR，装载MBR到内存特定地址"><a href="#启动第二步——读取MBR，装载MBR到内存特定地址" class="headerlink" title="启动第二步——读取MBR，装载MBR到内存特定地址"></a>启动第二步——读取MBR，装载MBR到内存特定地址</h5><h5 id="启动第三步——Boot-Loader，运行主引导程序"><a href="#启动第三步——Boot-Loader，运行主引导程序" class="headerlink" title="启动第三步——Boot Loader，运行主引导程序"></a>启动第三步——Boot Loader，运行主引导程序</h5><h2 id="第3章-内存管理"><a href="#第3章-内存管理" class="headerlink" title="第3章 内存管理"></a>第3章 内存管理</h2><h3 id="3-1-多道程序的存储管理"><a href="#3-1-多道程序的存储管理" class="headerlink" title="3.1 多道程序的存储管理"></a>3.1 多道程序的存储管理</h3><p>固定（静态）式分区分配，程序适应分区。系统初始化时将存储空间分为若干个区域，之后再将这些区域分配给用户作业。</p>
+<p>可变（动态）式分区分配，分区适应程序。动态确定分区边界。</p>
+<p>内外碎片造成巨大空间浪费</p>
+<p><strong>跟踪</strong>内存使用情况？<strong>位图表示法（分区表）</strong>和<strong>链表表示法（分区链表）</strong>。</p>
+<p><img src="2021-05-05-OS理论课笔记-1/2-2.png" style="zoom:40%;" /><img src="2021-05-05-OS理论课笔记-1/2-3.png" alt="2-3" style="zoom:40%;" /></p>
+<p>位图表示法空间成本固定，时间成本低，容错能力差（不知道被占用的原因）。</p>
+<p>链表表示法时间成本高，容错能力较好。</p>
+<h4 id="可变分区管理"><a href="#可变分区管理" class="headerlink" title="可变分区管理"></a>可变分区管理</h4><p>内存分配采用两张表：<strong>已分配分区表</strong>和<strong>未分配分区表</strong>。操作为分配、回收内存。</p>
+<h4 id="基于顺序搜索的分配算法"><a href="#基于顺序搜索的分配算法" class="headerlink" title="基于顺序搜索的分配算法"></a>基于顺序搜索的分配算法</h4><p><img src="2021-05-05-OS理论课笔记-1/3-1.png" style="zoom: 50%;" /></p>
+<h4 id="基于索引搜索的动态分区分配算法"><a href="#基于索引搜索的动态分区分配算法" class="headerlink" title="基于索引搜索的动态分区分配算法"></a>基于索引搜索的动态分区分配算法</h4><p>大中型系统采用</p>
+<h5 id="快速适应算法（分类搜索法）"><a href="#快速适应算法（分类搜索法）" class="headerlink" title="快速适应算法（分类搜索法）"></a>快速适应算法（分类搜索法）</h5><p>把空闲分区<strong>按容量大小</strong>进行分类，经常用到长度的空闲区设立单独的<strong>空闲区链表</strong>。为多个空闲链表设立一张<strong>管理索引表</strong>。</p>
+<h4 id="伙伴系统"><a href="#伙伴系统" class="headerlink" title="伙伴系统"></a>伙伴系统</h4><p>介于固定分区与可变分区之间的动态分区技术</p>
+<p>在分配存储块时将一个<strong>大的存储块</strong>分裂成<strong>两个大小相等的小块</strong>。</p>
+<p>已分配和空闲分区大小均为2的整数次幂。每次有一个新的大小请求先看有无最靠近这个大小的幂次的分区，没有就向上查找并分裂。</p>
+<p><img src="2021-05-05-OS理论课笔记-1/3-2.png" style="zoom:45%;" /><img src="2021-05-05-OS理论课笔记-1/3-3.png" style="zoom:45%;" /></p>
+<h3 id="3-2-程序从存储到执行"><a href="#3-2-程序从存储到执行" class="headerlink" title="3.2 程序从存储到执行"></a>3.2 程序从存储到执行</h3><h4 id="存储分配三种方式"><a href="#存储分配三种方式" class="headerlink" title="存储分配三种方式"></a>存储分配三种方式</h4><ul>
+<li>直接指定。直接使用实际地址</li>
+<li>静态分配</li>
+<li>动态分配</li>
+</ul>
+<h5 id="可重定位分区分配"><a href="#可重定位分区分配" class="headerlink" title="可重定位分区分配"></a>可重定位分区分配</h5><p>定时的或在内存紧张时，移动某些已分配区中的信息，把存储空间中<strong>所有的空白区</strong>合<strong>并为</strong>一个<strong>大的连续区</strong>。</p>
+<h4 id="程序的链接和装入"><a href="#程序的链接和装入" class="headerlink" title="程序的链接和装入"></a>程序的链接和装入</h4><ul>
+<li><strong>编译</strong>(compile)：由编译程序将用户源程序<strong>编译</strong>成<strong>若干个目标模块</strong>。</li>
+<li><strong>链接</strong>(linking)：由链接程序将<strong>目标模块</strong>和相应的<strong>库函数</strong>链接成<strong>可装载模块</strong>（<strong>可执行文件</strong>）。</li>
+<li><strong>装入</strong>(loading)：由装载程序将可装载模块<strong>装入内存</strong>。一般采用动态运行时装入方式</li>
+</ul>
+<h5 id="链接方式"><a href="#链接方式" class="headerlink" title="链接方式"></a>链接方式</h5><ul>
+<li><p>静态链接 直接将共享库中代码链接如程序代码中</p>
+</li>
+<li><p>动态链接 需要时才链接特定的模块</p>
+</li>
+</ul>
+<h5 id="重定位"><a href="#重定位" class="headerlink" title="重定位"></a>重定位</h5><p>在装入时对目标程序中的指令和数据地址的修改，或映射过程。</p>
+<h5 id="多重分区分配"><a href="#多重分区分配" class="headerlink" title="多重分区分配"></a>多重分区分配</h5><p>一个作业往往由相对独立的程序段和数据段组成，将这些片段分别装入到存储空间中不同的区域内的分配方式。</p>
+<h4 id="程序段"><a href="#程序段" class="headerlink" title="程序段"></a>程序段</h4><p>一个程序本质上都是由 bss段、data段、text段三个组成的。</p>
+<p><strong>bss段</strong>：（bss segment）用来存放程序中<strong>未初始化的全局变量</strong>的一块内存区域。bss是英文Block Started by Symbol的简称。bss段属于<strong>静态内存分配</strong>。</p>
+<p><strong>data段</strong>：数据段（data segment）用来存放程序中<strong>已初始化的全局变量</strong>的一块内存区域。数据段属于<strong>静态内存分配</strong>。</p>
+<p><strong>text段</strong>：代码段（code segment/text segment）用来存放<strong>程序执行代码</strong>的一块内存区域。这部分区域的大小在程序运行前就已经确定，并且内存区域通常属于<strong>只读</strong>(某些架构也允许代码段为可写，即允许修改程序)。在代码段中，也有可能包含一些只读的常数变量，例如<strong>字符串常量</strong>等。</p>
+<p><strong>栈(stack)</strong>：存放、交换<strong>临时数据</strong>的内存区</p>
+<ul>
+<li><p>用户存放<strong>程序局部变量</strong>的内存区域，（但不包括static声明的变量，<strong>static</strong>意味着在<strong>数据段中存放变量</strong>）。</p>
+</li>
+<li><p><strong>保存/恢复调用现场</strong>。在函数被调用时，其参数也会被压入发起调用的进程栈中，并且待到调用结束后，函数的返回值也会被存放回栈中。</p>
+</li>
+</ul>
+<p><strong>堆（heap）</strong>：存放进程运行中<strong>动态分配</strong>的内存段</p>
+<ul>
+<li>它的大小并不固定，可动态扩张或缩减。当进程调用<strong>malloc等函数分配内存</strong>时，新分配的内存就被动态添加到堆上（<strong>堆被扩张</strong>）；当利用<strong>free</strong>等函数释放内存时，被释放的内存从堆中被剔除（<strong>堆被缩减</strong>）。</li>
+</ul>
+<p><img src="2021-05-05-OS理论课笔记-1/3-4.png" alt=""></p>
+<p>C语言各个段地址解析：</p>
+<p><a href="https://blog.csdn.net/zhengshifeng123/article/details/79756830" target="_blank" rel="noopener">https://blog.csdn.net/zhengshifeng123/article/details/79756830</a></p>
+<h4 id="gcc编译与链接"><a href="#gcc编译与链接" class="headerlink" title="gcc编译与链接"></a>gcc编译与链接</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gcc -o main main.c extra.c #-o 编译+链接</span><br><span class="line">./main #运行main</span><br><span class="line"></span><br><span class="line">gcc -c main.c</span><br><span class="line">gcc -c extra.c #只编译</span><br><span class="line"></span><br><span class="line">gcc main.o extra.o -o main</span><br><span class="line">./main #只链接</span><br></pre></td></tr></table></figure>
+<p><strong>gcc调用</strong>包含的几个<strong>工具</strong>：</p>
+<ul>
+<li>cc1：预处理器和编译器</li>
+<li>as：汇编器</li>
+<li>collect2：链接器</li>
+</ul>
+<h4 id="Linux下可执行文件的格式"><a href="#Linux下可执行文件的格式" class="headerlink" title="Linux下可执行文件的格式"></a>Linux下可执行文件的格式</h4><p>ELF（Executable and Linkable Format）文件</p>
+<ol>
+<li><strong>可重定位（relocatable）文件</strong>，保存着代码和适当的数据，用来和其他的object文件一起来创建一个可执行文件或者是一个共享文件。</li>
+<li><strong>可执行（executable）文件</strong>，保存着一个用来执行的程序，该文件指出了exec（BA_OS）如何来创建程序进程映像</li>
+<li><strong>共享object文件</strong>，保存着代码和合适的数据，用来被下面的两个链接器链接。第一个是链接编辑器（静态链接），可以和其他的可重定位和共享object文件一起来创建object文件；第二个是动态链接器，联合一个可执行文件和其他的共享object文件来创建一个进程映象。</li>
+</ol>
+<p><strong>编译，链接，重定位，装载，运行</strong>。五个步骤完成程序的执行全流程。</p>
+<h3 id="3-3-页式内存管理"><a href="#3-3-页式内存管理" class="headerlink" title="3.3 页式内存管理"></a>3.3 页式内存管理</h3><h4 id="程序、进程和作业"><a href="#程序、进程和作业" class="headerlink" title="程序、进程和作业"></a>程序、进程和作业</h4><p><strong>程序</strong>—<strong>静止</strong>的，是存放在磁盘上的可执行文件</p>
+<p><strong>进程</strong>—<strong>动态</strong>的，包括程序和程序处理对象，是分配资源的基本单位。</p>
+<ul>
+<li><p>完成操作系统功能的进程是<strong>系统进程</strong>。</p>
+</li>
+<li><p>完成用户功能的进程称为<strong>用户进程</strong>。</p>
+</li>
+</ul>
+<p><strong>作业</strong>—是用户需要计算机完成的<strong>某项任务</strong>，是要求计算机<strong>所做工作的集合</strong>。</p>
+<p>一个<strong>作业</strong>划分为<strong>多个进程</strong>来完成，一个进程又由其<strong>实体</strong>—<strong>程序和数据集合</strong>来组成。</p>
+<h4 id="分页式存储管理"><a href="#分页式存储管理" class="headerlink" title="分页式存储管理"></a>分页式存储管理</h4><p><strong>纯分页系统</strong>：没有页面置换功能。所有页<strong>一次性全部装入主存</strong>。</p>
+<p><strong>页</strong>：每个作业的<strong>地址空间</strong>分成一些<strong>大小相等的片</strong>，称之为<strong>页面</strong>或<strong>页</strong>。</p>
+<p><strong>存储块</strong>：主存的<strong>存储空间</strong>也分成和<strong>页面相同大小的片</strong>，称为<strong>存储块</strong>，或<strong>页框</strong>。</p>
+<p><strong>分页地址结构</strong>：</p>
+<h5 id="逻辑地址"><a href="#逻辑地址" class="headerlink" title="逻辑地址"></a>逻辑地址</h5><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">31-12</th>
+<th style="text-align:center">11-0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">页号p</td>
+<td style="text-align:center">页内偏移w</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h5 id="物理地址"><a href="#物理地址" class="headerlink" title="物理地址"></a>物理地址</h5><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">21-12</th>
+<th style="text-align:center">11-0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">块号</td>
+<td style="text-align:center">块内偏移d</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>现代操作系统中最常用的页面大小为4KB</p>
+<h5 id="内存分配基本思想"><a href="#内存分配基本思想" class="headerlink" title="内存分配基本思想"></a>内存分配基本思想</h5><ul>
+<li>以<strong>页</strong>为单位进行分配，并按程序（作业）的<strong>长度（页数）</strong>进行分配；</li>
+<li><strong>逻辑上相邻</strong>的页，<strong>物理上不一定相邻</strong>。</li>
+</ul>
+<h5 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h5><p>每个进程有一个<strong>进程页表</strong>，描述该进程<strong>占用的物理页面</strong>及<strong>逻辑排列顺序</strong>。</p>
+<p>整个系统有一个<strong>物理页面表</strong>，描述物理内存空间<strong>分配使用</strong>情况。</p>
+<p>整个系统有一个<strong>请求表</strong>，描述系统内各个<strong>进程页表的位置</strong>和<strong>大小</strong>，用于<strong>地址转换</strong>，也可以结合到各进程的PCB里。</p>
+<h5 id="地址变换—页表查找"><a href="#地址变换—页表查找" class="headerlink" title="地址变换—页表查找"></a>地址变换—页表查找</h5><p><img src="2021-05-05-OS理论课笔记-1/3-5.png" style="zoom: 80%;" /></p>
+<h5 id="关于页表"><a href="#关于页表" class="headerlink" title="关于页表"></a>关于页表</h5><ul>
+<li>页表<strong>放置在内存中</strong>，记录了进程的<strong>现场信息</strong>。记录进程的<strong>内存分配情况</strong>以及实现进程运行时的<strong>动态重定位</strong>。</li>
+<li>访问一个数据需要访问内存<strong>两次</strong>（页表一次，内存一次）。</li>
+<li>页表的<strong>基址</strong>及<strong>长度</strong>由<strong>页表寄存器</strong>给出。</li>
+</ul>
+<h5 id="地址转换机构"><a href="#地址转换机构" class="headerlink" title="地址转换机构"></a>地址转换机构</h5><p><img src="2021-05-05-OS理论课笔记-1/3-6.png" style="zoom:80%;" /></p>
+<p>逻辑地址分为页号和页内地址两部分。先进行越界保护。之后进行页表定位：页表始址+页号*页表项长度</p>
+<p>查询页表，读出块号。物理地址=块号+块内地址（块内地址=页内地址）</p>
+<h4 id="提高分页效率"><a href="#提高分页效率" class="headerlink" title="提高分页效率"></a>提高分页效率</h4><ul>
+<li>减少页表大小</li>
+<li>提高地址映射速度</li>
+</ul>
+<h5 id="解决问题方法"><a href="#解决问题方法" class="headerlink" title="解决问题方法"></a>解决问题方法</h5><ul>
+<li>动态调入页表：只将需用的部分页表项调入内存</li>
+<li>多级页表</li>
+</ul>
+<p><strong>二级页表</strong>：</p>
+<ul>
+<li>一级目录：页目录表</li>
+<li>二级目录：页表</li>
+</ul>
+<p>参考博客：<a href="https://www.jianshu.com/p/51c2286a6268" target="_blank" rel="noopener">https://www.jianshu.com/p/51c2286a6268</a></p>
+<p><img src="2021-05-05-OS理论课笔记-1/3-7.jpg" style="zoom: 67%;" /></p>
+<p><img src="2021-05-05-OS理论课笔记-1/3-8.png" style="zoom:67%;" /></p>
+<blockquote>
+<p>如果是64位操作系统，内存也是4G，每个页面大小也为4KB，采用三级页表，需要字对齐，则虚拟地址应该为多少位？</p>
+</blockquote>
+<p>首先每一级页表的所占空间大小应该都是一个页面的大小。即4KB（因为自映射机制）</p>
+<p>又由于64位操作系统需要字对齐，所以实际上每一级目录只占用12-3=9位。</p>
+<p>因此三级目录就需要9*3+12=39位</p>
+<p>多级页表带来访存效率低下问题</p>
+<h4 id="页表快速访问机制——MMU"><a href="#页表快速访问机制——MMU" class="headerlink" title="页表快速访问机制——MMU"></a>页表快速访问机制——MMU</h4><p>CPU内部增加了一个硬件单元，称为<strong>存储管理单元MMU</strong>（Memory Management Unit）</p>
+<ul>
+<li><strong>页表Cache</strong>：又称为<strong>TLB</strong>，用于存放<strong>虚拟地址</strong>与<strong>相应</strong>的<strong>物理地址</strong>；</li>
+<li><strong>TLB控制单元</strong>：TLB内容<strong>填充、刷新、覆盖，以及越界检查</strong>。</li>
+<li><strong>页表（遍历）查找单元</strong>：若TLB未命中，自动查找多级页表，将找到的物理地址<strong>送与TLB控制单元</strong>。（可用软件实现）</li>
+</ul>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2021/04/24/OO-Unit2-小结/" data-toggle="tooltip" data-placement="top" title="OO-Unit2-总结">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      
+        <aside id="sidebar">
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">Contents</strong>
+          
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第1章-引论"><span class="toc-nav-text">第1章 引论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#OS的历史沿革"><span class="toc-nav-text">OS的历史沿革</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#小结"><span class="toc-nav-text">小结</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#操作系统基本实现机制"><span class="toc-nav-text">操作系统基本实现机制</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#异常-exception-陷阱-trap-和中断-interrupt"><span class="toc-nav-text">异常(exception): 陷阱(trap)和中断(interrupt)</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#操作系统的基本类型"><span class="toc-nav-text">操作系统的基本类型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#操作系统的功能"><span class="toc-nav-text">操作系统的功能</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#处理机管理"><span class="toc-nav-text">处理机管理</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#存储器-内存-管理"><span class="toc-nav-text">存储器(内存)管理</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#设备管理"><span class="toc-nav-text">设备管理</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#文件系统"><span class="toc-nav-text">文件系统</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#作业控制"><span class="toc-nav-text">作业控制</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第2章-系统引导"><span class="toc-nav-text">第2章 系统引导</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#BootLoader"><span class="toc-nav-text">BootLoader</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#U-Boot启动流程"><span class="toc-nav-text">U-Boot启动流程</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#启动及OS引导"><span class="toc-nav-text">启动及OS引导</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#启动第一步——加载BIOS"><span class="toc-nav-text">启动第一步——加载BIOS</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#启动第二步——读取MBR，装载MBR到内存特定地址"><span class="toc-nav-text">启动第二步——读取MBR，装载MBR到内存特定地址</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#启动第三步——Boot-Loader，运行主引导程序"><span class="toc-nav-text">启动第三步——Boot Loader，运行主引导程序</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第3章-内存管理"><span class="toc-nav-text">第3章 内存管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-1-多道程序的存储管理"><span class="toc-nav-text">3.1 多道程序的存储管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#可变分区管理"><span class="toc-nav-text">可变分区管理</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#基于顺序搜索的分配算法"><span class="toc-nav-text">基于顺序搜索的分配算法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#基于索引搜索的动态分区分配算法"><span class="toc-nav-text">基于索引搜索的动态分区分配算法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#快速适应算法（分类搜索法）"><span class="toc-nav-text">快速适应算法（分类搜索法）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#伙伴系统"><span class="toc-nav-text">伙伴系统</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-2-程序从存储到执行"><span class="toc-nav-text">3.2 程序从存储到执行</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#存储分配三种方式"><span class="toc-nav-text">存储分配三种方式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#可重定位分区分配"><span class="toc-nav-text">可重定位分区分配</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#程序的链接和装入"><span class="toc-nav-text">程序的链接和装入</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#链接方式"><span class="toc-nav-text">链接方式</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#重定位"><span class="toc-nav-text">重定位</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#多重分区分配"><span class="toc-nav-text">多重分区分配</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#程序段"><span class="toc-nav-text">程序段</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#gcc编译与链接"><span class="toc-nav-text">gcc编译与链接</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#Linux下可执行文件的格式"><span class="toc-nav-text">Linux下可执行文件的格式</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-3-页式内存管理"><span class="toc-nav-text">3.3 页式内存管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#程序、进程和作业"><span class="toc-nav-text">程序、进程和作业</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#分页式存储管理"><span class="toc-nav-text">分页式存储管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#逻辑地址"><span class="toc-nav-text">逻辑地址</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#物理地址"><span class="toc-nav-text">物理地址</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#内存分配基本思想"><span class="toc-nav-text">内存分配基本思想</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#数据结构"><span class="toc-nav-text">数据结构</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#地址变换—页表查找"><span class="toc-nav-text">地址变换—页表查找</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#关于页表"><span class="toc-nav-text">关于页表</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#地址转换机构"><span class="toc-nav-text">地址转换机构</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#提高分页效率"><span class="toc-nav-text">提高分页效率</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#解决问题方法"><span class="toc-nav-text">解决问题方法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#页表快速访问机制——MMU"><span class="toc-nav-text">页表快速访问机制——MMU</span></a></li></ol></li></ol></li></ol>
+            
+          
+          </div>
+        </aside>
+      
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#BUAA-OS-2021" title="BUAA-OS-2021">BUAA-OS-2021</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://roife.github.io" target="_blank">Roife</a></li>
+                    
+                        <li><a href="https://coekjan.cn" target="_blank">Coekjan</a></li>
+                    
+                        <li><a href="https://www.dusign.net/" target="_blank">Dusign</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+<script src="https://utteranc.es/client.js"
+        repo="buaadreamer/buaadreamer.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/BUAADreamer">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BUAADreamer 2021 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=dusign&repo=hexo-theme-snail&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://BUAADreamer.top/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects line -->
+        
+
+        
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it&quot;,&quot;🍀&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
+        
+
+        <!-- background effects end -->
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>
