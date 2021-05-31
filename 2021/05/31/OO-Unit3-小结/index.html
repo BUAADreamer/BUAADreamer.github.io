@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="A hexo theme">
+    <meta name="keyword"  content="BUAADreamer, hexo-theme-snail">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          OO-Unit3-小结 - BUAADreamer&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://BUAADreamer.top/2021/05/31/OO-Unit3-小结/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../../../img/default.jpg')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#BUAA-OO-2021" title="BUAA-OO-2021">BUAA-OO-2021</a>
+                            
+                        </div>
+                        <h1>OO-Unit3-小结</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by BUAADreamer on
+                            2021-05-31
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">3.6k</span> and
+                                Reading Time <span class="post-count">13</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BUAADreamer&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
+                        </li>
+                        
+                    
+                    
+                    
+                    <li>
+                        <a href="https://www.cnblogs.com/BUAADreamer/" target="_blank">Chinese Blog</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>OO第三单元JML规格设计学习总结与分析</p>
+<h1 id="OO-Unit3-小结"><a href="#OO-Unit3-小结" class="headerlink" title="OO-Unit3-小结"></a>OO-Unit3-小结</h1><h2 id="1-JML规格设计策略"><a href="#1-JML规格设计策略" class="headerlink" title="1.JML规格设计策略"></a>1.JML规格设计策略</h2><p>由于JML的规格描述较复杂，本单元的JML规格设计我往往采用<strong>由简入难</strong>的<strong>迭代开发</strong>策略。</p>
+<p>即一开始不着急开发出最为复杂，性能最好的代码，先<strong>严格按照JML</strong>描述写一遍代码，<strong>实现基本功能</strong>。比如类似<code>public instance model non_null Person[] acquaintance;</code>这样的规格，第9次作业开始时先直接按照<code>ArrayList</code>处理，这样各个函数中实际的代码和JML描述近乎一致，<strong>方便检查</strong>。之后在完成了基本功能后，在已经理解了基本功能描述后，对各个容器和方法算法性能进行<strong>优化设计迭代</strong>。</p>
+<p>同时，一般简单的方法和容器设计虽然性能较差，但正确性一般较好，因此个人认为也可以作为之后的迭代优化版本的<strong>正确性测试参考的标程</strong>（不过实际开发过程中也不可能先开发一版低性能保证正确性，所以还是直接全盘考虑好再写高效一点）。</p>
+<p>对于每个方法而言。先确定<code>normal_behavior</code>和<code>exceptional_behavior</code>。确定进入函数后不同参数对应的<strong>分支条件</strong>。并把<strong>条件判断语句</strong>写好，搭好基本框架。之后再看<code>assignable</code>会涉及到的变量。再根据<code>ensures</code>确定<strong>结果返回值</strong>和应该如何<strong>改动变量</strong>。对于异常处理里的分支逻辑也是类似的编写方式。此外，每个方法编写时也可以通过函数名字推敲涵义，从而提高正确性。</p>
+<p>同时对于迭代增量开发，每次都要重新阅读<strong>之前实现过的方法内的JML规格</strong>，因为可能会发生变化，比如第二次到第三次作业中的<code>sendMessage</code>方法。此外要特别注意<strong>JML没写出</strong>，但是你<strong>需要实现</strong>的代码，比如<code>MyGroup内的delPerson方法</code>，如果输入的<code>person</code>是个<code>null</code>需要直接返回；<code>MyPerson</code>类内需要加一个<code>addAcquaitance</code>方法以及<code>getAcquaitance</code>方法等。</p>
+<h2 id="2-JML测试方法和策略"><a href="#2-JML测试方法和策略" class="headerlink" title="2.JML测试方法和策略"></a>2.JML测试方法和策略</h2><p>本单元的JML规格设计由于JML细节较多，很难保证某一份代码是完全正确的，因此测试上最方便最简单的当然就是<strong>多人对拍找少数派</strong>（即<del>多人运动</del>）的方式了。这个方法在<strong>第一单元</strong>中也用到过，总结来说，对于这种<strong>输入一样</strong>，<strong>输出结果</strong>就应该一样的代码，这种方式测试效率还是很高的。此外，还有Junit单元测试，以及openJML等其他JML工具。</p>
+<h3 id="Junit单元测试"><a href="#Junit单元测试" class="headerlink" title="Junit单元测试"></a>Junit单元测试</h3><p>Junit测试简单，可以进行对类内每个方法编写自己的测试逻辑。IDEA里最简单的使用方式就是<code>右键点击代码里的类名--&gt;点击Go to--&gt;点击Test</code>，选择<strong>需要测试的函数</strong>和<strong>选项</strong>，就生成了<strong>测试文件</strong>。</p>
+<p>本单元中主要针对一些比较容易出现错误的方法比如<code>isCircle</code>和<code>queryBlockSum</code>进行了测试，以这两个函数为例。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> com.oocourse.spec3.exceptions.PersonIdNotFoundException;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.AfterEach;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.BeforeEach;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertFalse;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertTrue;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyNetworkTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> MyPerson pa = <span class="keyword">new</span> MyPerson(<span class="number">1</span>, <span class="string">"a"</span>, <span class="number">12</span>);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> MyPerson pb = <span class="keyword">new</span> MyPerson(<span class="number">2</span>, <span class="string">"b"</span>, <span class="number">13</span>);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> MyPerson pc = <span class="keyword">new</span> MyPerson(<span class="number">3</span>, <span class="string">"c"</span>, <span class="number">14</span>);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> MyPerson pd = <span class="keyword">new</span> MyPerson(<span class="number">4</span>, <span class="string">"d"</span>, <span class="number">15</span>);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> MyPerson pe = <span class="keyword">new</span> MyPerson(<span class="number">5</span>, <span class="string">"e"</span>, <span class="number">16</span>);</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> MyPerson pf = <span class="keyword">new</span> MyPerson(<span class="number">6</span>, <span class="string">"f"</span>, <span class="number">16</span>);</span><br><span class="line">    <span class="keyword">private</span> MyNetwork net = <span class="keyword">new</span> MyNetwork();</span><br><span class="line"></span><br><span class="line">    <span class="meta">@BeforeEach</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">setUp</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        net.addPerson(pa);</span><br><span class="line">        net.addPerson(pb);</span><br><span class="line">        net.addPerson(pc);</span><br><span class="line">        net.addPerson(pd);</span><br><span class="line">        net.addPerson(pe);</span><br><span class="line">        net.addPerson(pf);</span><br><span class="line">        net.addRelation(<span class="number">1</span>, <span class="number">2</span>, <span class="number">10</span>);</span><br><span class="line">        net.addRelation(<span class="number">1</span>, <span class="number">3</span>, <span class="number">20</span>);</span><br><span class="line">        net.addRelation(<span class="number">3</span>, <span class="number">4</span>, <span class="number">10</span>);</span><br><span class="line">        net.addRelation(<span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>);</span><br><span class="line">        net.addRelation(<span class="number">3</span>, <span class="number">5</span>, <span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@AfterEach</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">tearDown</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">isCircle</span><span class="params">()</span> <span class="keyword">throws</span> PersonIdNotFoundException </span>&#123;</span><br><span class="line">        assertTrue(net.isCircle(<span class="number">1</span>, <span class="number">4</span>));</span><br><span class="line">        assertFalse(net.isCircle(<span class="number">1</span>, <span class="number">6</span>));</span><br><span class="line">        assertTrue(net.isCircle(<span class="number">1</span>, <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">queryBlockSum</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        assertEquals(<span class="number">2</span>, net.queryBlockSum());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行后就会出现<strong>令人舒适</strong>的评测信息，这样的单元测试，怎能不爱😍。</p>
+<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit3/8.png" style="zoom:80%;"></p>
+<p>一般来说就在<code>BeforeEach</code>和<code>AfterEach</code>里分别编写数据构造和初始化以及其他的评测信息。但是注意到这样的测试方式是对于每个<code>@Test</code>处的函数都分别调用了一次测试，即每个这样的函数对应一个点。这样有时体现不出一个类整体连续性，比如某几个方法之间的联系。参考官网写出了连续的测试方式，相当于所有方法在一次程序执行内跑完。</p>
+<p>同时，Junit实在太强大，几乎可以测试所有的情况，比如空指针，异常抛出等，用以下代码举例。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Nested</span></span><br><span class="line">  <span class="meta">@DisplayName</span>(<span class="string">"when new"</span>)</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">WhenNew</span> </span>&#123;</span><br><span class="line">      <span class="keyword">private</span> <span class="keyword">final</span> MyPerson pa = <span class="keyword">new</span> MyPerson(<span class="number">1</span>, <span class="string">"a"</span>, <span class="number">12</span>);</span><br><span class="line">      <span class="keyword">private</span> <span class="keyword">final</span> MyPerson pb = <span class="keyword">new</span> MyPerson(<span class="number">2</span>, <span class="string">"b"</span>, <span class="number">13</span>);</span><br><span class="line">      <span class="keyword">private</span> <span class="keyword">final</span> MyPerson pc = <span class="keyword">new</span> MyPerson(<span class="number">3</span>, <span class="string">"c"</span>, <span class="number">14</span>);</span><br><span class="line">      <span class="keyword">private</span> <span class="keyword">final</span> MyPerson pd = <span class="keyword">new</span> MyPerson(<span class="number">4</span>, <span class="string">"d"</span>, <span class="number">15</span>);</span><br><span class="line">      <span class="keyword">private</span> <span class="keyword">final</span> MyPerson pe = <span class="keyword">new</span> MyPerson(<span class="number">5</span>, <span class="string">"e"</span>, <span class="number">16</span>);</span><br><span class="line">      <span class="keyword">private</span> <span class="keyword">final</span> MyPerson pf = <span class="keyword">new</span> MyPerson(<span class="number">6</span>, <span class="string">"f"</span>, <span class="number">16</span>);</span><br><span class="line">      <span class="keyword">private</span> MyNetwork net = <span class="keyword">new</span> MyNetwork();</span><br><span class="line"></span><br><span class="line">      <span class="meta">@BeforeEach</span></span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">createNewNetwork</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">          net = <span class="keyword">new</span> MyNetwork();</span><br><span class="line">          net.addPerson(pa);</span><br><span class="line">          net.addPerson(pb);</span><br><span class="line">          net.addPerson(pc);</span><br><span class="line">          net.addPerson(pd);</span><br><span class="line">          net.addPerson(pe);</span><br><span class="line">          net.addPerson(pf);</span><br><span class="line">          net.addRelation(<span class="number">1</span>, <span class="number">2</span>, <span class="number">10</span>);</span><br><span class="line">          net.addRelation(<span class="number">1</span>, <span class="number">3</span>, <span class="number">20</span>);</span><br><span class="line">          net.addRelation(<span class="number">3</span>, <span class="number">4</span>, <span class="number">10</span>);</span><br><span class="line">          net.addRelation(<span class="number">4</span>, <span class="number">5</span>, <span class="number">1</span>);</span><br><span class="line">          net.addRelation(<span class="number">3</span>, <span class="number">5</span>, <span class="number">10</span>);</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="meta">@Test</span></span><br><span class="line">      <span class="meta">@DisplayName</span>(<span class="string">"throws MyPersonIdNotFoundException when query a unexist id"</span>)</span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">throwsMyPersonIdNotFoundException</span><span class="params">()</span> </span>&#123;</span><br><span class="line">          assertThrows(MyPersonIdNotFoundException<span class="class">.<span class="keyword">class</span>, () -&gt; <span class="title">net</span>.<span class="title">addRelation</span>(1, 7, 10))</span>; <span class="comment">//这里的()-&gt;是个啥实在没理解，但是加上就可以这么测试了</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="meta">@Nested</span></span><br><span class="line">      <span class="meta">@DisplayName</span>(<span class="string">"after init"</span>)</span><br><span class="line">      <span class="class"><span class="keyword">class</span> <span class="title">AfterInit</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">          <span class="meta">@Test</span></span><br><span class="line">          <span class="meta">@DisplayName</span>(<span class="string">"contains"</span>)</span><br><span class="line">          <span class="function"><span class="keyword">void</span> <span class="title">containsTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">              assertTrue(net.contains(<span class="number">4</span>));</span><br><span class="line">              assertFalse(net.contains(<span class="number">10</span>));</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          <span class="meta">@Test</span></span><br><span class="line">          <span class="meta">@DisplayName</span>(<span class="string">"qps test"</span>)</span><br><span class="line">          <span class="function"><span class="keyword">void</span> <span class="title">queryPeopleSumTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">              assertEquals(<span class="number">6</span>, net.queryPeopleSum());</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Python对拍评测"><a href="#Python对拍评测" class="headerlink" title="Python对拍评测"></a>Python对拍评测</h3><p>与第一单元类似，主要分为<strong>双人对拍</strong>和<strong>多人运动</strong>。本次作业单独写了两个文件。<code>relation_testdata</code>产生测试数据。<code>relationTest</code>进行对拍测试。</p>
+<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit3/2.png" alt></p>
+<p>测试数据产生主要分为<strong>随机生成用例</strong>和生成复杂的<strong>卡时间的用例</strong>。具体的生成的方式都封装在<code>getOneTestPoint()</code>方法中。根据<strong>作业次数</strong>和<strong>数据特点变量</strong>生成相应用例。其中随机生成用例要保证一定的强度，比如每个测试点都是5000条指令，保证每个测试点覆盖了所有的指令（对每个指令的个数进行计数）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">datas_src = <span class="string">"test_data/"</span></span><br><span class="line">n = <span class="number">100</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        src = datas_src + <span class="string">"%d.txt"</span> % (i + <span class="number">1</span>)</span><br><span class="line">        writeToFile(getOneTestPoint(), src)</span><br></pre></td></tr></table></figure>
+<p>对拍测试中先进行<strong>多人团建</strong>。挨个检查所有每个文件对测试点的CPU使用时间测试性能。之后再通过比对所有人的答案检验正确性。如果大家答案均一样且没有人超时，则认为所有人正确。这里使用的是<code>test</code>函数，对输入的一个<code>jar</code>文件名字列表进行处理。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    nameList = [<span class="string">'Archer.jar'</span>, <span class="string">'Saber.jar'</span>, <span class="string">'Rider.jar'</span>, <span class="string">'Caster.jar'</span>, <span class="string">'Berserker.jar'</span>, <span class="string">'Assassin.jar'</span>]</span><br><span class="line">    test(nameList)</span><br></pre></td></tr></table></figure>
+<p>效果如下</p>
+<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit3/3.png" style="zoom:80%;"></p>
+<p>在一波多人运动后，一般会发现团队中有个别成员（比如自己的代码）存在一定的问题，这时就可以选择<code>1-2</code>个优秀的成员作为<strong>标程</strong>和其他代码进行对拍。使用<code>beatTest</code>函数进行<strong>重点爆破</strong>，提高寻找<code>bug</code>的效率。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">beatTest(<span class="string">'homework11.jar'</span>, <span class="string">'Berserker.jar'</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit3/6.png" style="zoom:80%;"></p>
+<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit3/7.png" style="zoom:80%;"></p>
+<p>总的来说，1、3单元对多人的代码进行测试的方式比较可取的就是每个人单独跑数据看时间，使用多人对拍评价正确性。</p>
+<h3 id="openJML工具使用"><a href="#openJML工具使用" class="headerlink" title="openJML工具使用"></a>openJML工具使用</h3><p>代码静态检查命令如下，感觉输出好奇怪，调了半天也没调好，只好放弃了。</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java <span class="literal">-jar</span> .\openjml.jar <span class="literal">-exec</span> (SMT Solvers的路径) .\Solvers<span class="literal">-windows</span>\z3<span class="literal">-4</span>.<span class="number">7.1</span>.exe <span class="literal">-esc</span> <span class="literal">-dir</span> (项目目录)</span><br><span class="line">java <span class="literal">-jar</span> .\openjml.jar <span class="literal">-exec</span> .\Solvers<span class="literal">-windows</span>\z3<span class="literal">-4</span>.<span class="number">7.1</span>.exe <span class="literal">-esc</span> <span class="literal">-dir</span> ..\test_src\Archer\src\</span><br><span class="line">java <span class="literal">-jar</span> openjml.jar <span class="literal">-esc</span> <span class="literal">-progress</span> MyPerson.java</span><br></pre></td></tr></table></figure>
+<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit3/9.png" alt></p>
+<h3 id="JMLUnitNG"><a href="#JMLUnitNG" class="headerlink" title="JMLUnitNG"></a>JMLUnitNG</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">java -jar jmlunitng.jar test/MyGroup.java</span><br><span class="line">javac -cp jmlunitng.jar test/MyGroup.java</span><br><span class="line">java -cp jmlunitng.jar test.MyGroup_JML_Test</span><br></pre></td></tr></table></figure>
+<p>这种方式只检查了边界数据，因此只是简单了解了一下，没有怎么使用。</p>
+<h2 id="3-容器选择与使用"><a href="#3-容器选择与使用" class="headerlink" title="3.容器选择与使用"></a>3.容器选择与使用</h2><p>由于本单元作业需要对容器内元素进行高频率增删改查的操作，选用普通数组实现JML效率非常低下，因此大部分容器都采用<code>HashMap</code>进行设计。</p>
+<h3 id="homework9"><a href="#homework9" class="headerlink" title="homework9"></a>homework9</h3><p>本次作业由于性能要求较低，除了为了<code>isCircle</code>函数的广度优先搜索算法编写的<code>visit</code>数组使用了<code>HashMap&lt;MyPerson,Boolean&gt;</code>外其余的容器均使用<code>ArrayList</code>，即<code>acquaintance/value/people</code>。使用时基本和<code>JML</code>描述写法一致。</p>
+<h3 id="homework10-homework11"><a href="#homework10-homework11" class="headerlink" title="homework10/homework11"></a>homework10/homework11</h3><p>在这两次作业中由于指令数量增多，性能要求提升，将第9次作业中所有的<code>ArrayList</code>全部替换成了<code>HashMap</code>。包括<code>MyNetwork</code>类中的<code>people/id2group/id2message/id2bossid</code>以及<code>MyPerson</code>中的<code>acquaintance</code>。同时新增的方法和变量也尽量使用了<code>HashMap</code>保证性能要求。</p>
+<h2 id="4-bug分析"><a href="#4-bug分析" class="headerlink" title="4.bug分析"></a>4.bug分析</h2><p>本单元的bug主要集中在两方面，即：</p>
+<ul>
+<li>因为JML阅读不细致导致的程序<strong>正确性</strong>问题。</li>
+<li>因为算法/容器设计不合理导致的<strong>CPU时间</strong>问题。</li>
+</ul>
+<h3 id="homework9-1"><a href="#homework9-1" class="headerlink" title="homework9"></a>homework9</h3><h4 id="自己的bug"><a href="#自己的bug" class="headerlink" title="自己的bug"></a>自己的bug</h4><p>这一次作业性能要求不高，但由于没有仔细思考，采用了<code>dfs</code>算法进行<code>isCircle</code>函数设计，同时在<code>qbs</code>函数中直接采用二层循环进行遍历查找，导致非常慢，出现了性能问题。强测被hack一个点，互测被hack7个点，全部是<code>CTLE</code>。修复<code>bug</code>时将<code>isCircle</code>采用<code>bfs</code>实现<code>qbs</code>和<code>isCircle</code>函数。</p>
+<h4 id="他人的bug"><a href="#他人的bug" class="headerlink" title="他人的bug"></a>他人的bug</h4><p>测试时由于这一单元正确性较简单，主要针对多人的复杂网络进行了数据构造，至少增加200人以及200条关系之后在最后的几百条指令全部用<code>qbs</code>和<code>qci</code>进行轰炸。效果还可，很快就刀到了两个同样使用<code>dfs</code>的难兄难弟，之后基本就收手了，看了房间里被hack的代码都是这两个的性能问题导致。</p>
+<h3 id="homework10"><a href="#homework10" class="headerlink" title="homework10"></a>homework10</h3><p>本次作业个人测试时主要注重性能，没有很关注正确性，导致代码里有大量正确性问题，导致第一次没进互测，心态崩溃的同时，也对各个写错的地方认真进行了审视。</p>
+<h4 id="自己的bug-1"><a href="#自己的bug-1" class="headerlink" title="自己的bug"></a>自己的bug</h4><ul>
+<li><code>MyGroup</code>类内删除人的时候没有把总年龄和减去删除的人的年龄导致错误。</li>
+<li><code>MyNetwork</code>类<code>addToGroup</code>方法内不存在新加的人且<code>group</code>内人数大于等于1111时没有直接返回而是进入了异常。异常里存在这个人时。<code>addMessage</code>内当加入的邮件里两个人id相同时抛出异常使用的id是<code>messageId</code>。</li>
+<li><code>sendMeesage</code>方法内当类型为0时没有把<code>person1</code>加入<code>person2</code>的关系数组里。</li>
+<li><code>getReceivedMessages</code>方法内误以为只返回一个小于等于3的<code>Message</code>数组，实际上是返回一个小于等于4的<code>Message</code>数组。</li>
+</ul>
+<p>这次作业的bug主要都是因为在阅读JML代码时过于草率，很多地方都是漏看了一句话导致了问题的出现，且测试不够充分。这启发我在以后的JML规格编写时要认真细致地阅读每一行说明，编写后要进行充分细致的单元测试和黑箱测试。此外，本次作业在自己构造数据时往往关注时间，构造了和第一次差不多的数据，对第二次作业涉及的指令覆盖很有限，这也导致了问题的出现。同时之后也发现自己的测试脚本中也是有问题的，很多时候可能测试数据里只有第一次的指令，因此问题也很难找出来。所以以后对自己的测试数据生成脚本不能过于自信，要仔细审查。</p>
+<p>正确性虽然被<code>hack</code>惨了，但是时间性能上由于使用了<strong>并查集</strong>进行搜索，没有出现问题。并查集对每个新进入的人先设置他的<code>bossid</code>为他自己的<code>id</code>，之后新增的关系中，如果他们的bossid不一样，则把一个人的最高级的<code>bossid</code>（<code>p.bossid==p.id</code>)设置为另一个人的最高级<code>bossid</code>即可。</p>
+<h3 id="homework11"><a href="#homework11" class="headerlink" title="homework11"></a>homework11</h3><h4 id="自己的bug-2"><a href="#自己的bug-2" class="headerlink" title="自己的bug"></a>自己的bug</h4><p>本次强测互测均未被hack。</p>
+<p>有了上一次的惨痛教训，本次在测试时非常细致。仍然找出来了与上次作业中类似的正确性的错误，对于各个类中的方法进行了多次修改，值得一提的是很多错误都是由于想当然以为上次的方法这次不变导致的，这一点以后也需要注意。同时重点设计了最短路径查找算法，使用了堆优化的<code>Dijistra</code>算法，新增一个Node节点类保存了距离和id，使用优先队列模拟堆，避免了每一轮循环都进行全部的遍历查找，保证了时间性能。此外在<code>MyGroup</code>类中加入了<code>valueSum</code>变量，每次有人员变动时就修改<code>valueSum</code>。从而保证了<code>qgvs</code>指令的性能。</p>
+<h4 id="他人的bug-1"><a href="#他人的bug-1" class="headerlink" title="他人的bug"></a>他人的bug</h4><p>本次由于限制了5000条指令，且上限为6s，从时间上hack是极难，尝试构造了很多复杂的数据都未成功。最后通过大量随机生成用例hack了一人。阅读代码发现是经典的问题：<code>isCircle</code>函数输入相同的<code>id</code>时没有返回<code>true</code></p>
+<h2 id="5-作业架构设计"><a href="#5-作业架构设计" class="headerlink" title="5.作业架构设计"></a>5.作业架构设计</h2><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit3/Top-Level Package.png" style="zoom:80%;"></p>
+<p>本单元作业架构相对固定且是官方给出的，每个基本类相对固定，活动空间主要是对于图模型的管理维护。由于代码量并不大，本单元我直接将全部的图相关算法和主要数据、方法都写在了<code>MyNetwork</code>类内，同时将具体算法函数与功能函数分开。在<code>isCircle</code>内调用不同的<code>find</code>方法从而方便优化性能，有过<code>dfsFind(id1,id2)  bfsFind(id1,id2)  unionFind(id1,id2)</code>共三个查找的算法函数。同时在<code>sendIndirectMessage</code>函数中也是调用<code>Dijistra</code>函数进行操作，且调动了一个外部类<code>Node</code>进行堆优化操作。同时，使用一个<code>HashMap</code>保存每个PersonId对应的<code>bossId</code>进行并查集数据管理。</p>
+<p>同时，各个类内最终都基本使用了<code>HashMap</code>作为数组的实现容器，且这些都采用<code>id</code>作为<code>key</code>值进行查找。</p>
+<p>本次的异常类采用<code>static</code>类<code>count</code>对异常数据进行管理，确定了统一接口进行查询和存储异常次数。每次新增时只需要新增新的<code>HashMap</code>的<code>key</code>值即可。</p>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2021/05/05/OS理论课笔记-1/" data-toggle="tooltip" data-placement="top" title="OS理论课笔记-1">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      
+        <aside id="sidebar">
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">Contents</strong>
+          
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#OO-Unit3-小结"><span class="toc-nav-text">OO-Unit3-小结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-JML规格设计策略"><span class="toc-nav-text">1.JML规格设计策略</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-JML测试方法和策略"><span class="toc-nav-text">2.JML测试方法和策略</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Junit单元测试"><span class="toc-nav-text">Junit单元测试</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Python对拍评测"><span class="toc-nav-text">Python对拍评测</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#openJML工具使用"><span class="toc-nav-text">openJML工具使用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JMLUnitNG"><span class="toc-nav-text">JMLUnitNG</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-容器选择与使用"><span class="toc-nav-text">3.容器选择与使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework9"><span class="toc-nav-text">homework9</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework10-homework11"><span class="toc-nav-text">homework10&#x2F;homework11</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-bug分析"><span class="toc-nav-text">4.bug分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework9-1"><span class="toc-nav-text">homework9</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug"><span class="toc-nav-text">自己的bug</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#他人的bug"><span class="toc-nav-text">他人的bug</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework10"><span class="toc-nav-text">homework10</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug-1"><span class="toc-nav-text">自己的bug</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework11"><span class="toc-nav-text">homework11</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug-2"><span class="toc-nav-text">自己的bug</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#他人的bug-1"><span class="toc-nav-text">他人的bug</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-作业架构设计"><span class="toc-nav-text">5.作业架构设计</span></a></li></ol></li></ol>
+            
+          
+          </div>
+        </aside>
+      
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#BUAA-OO-2021" title="BUAA-OO-2021">BUAA-OO-2021</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://roife.github.io" target="_blank">Roife</a></li>
+                    
+                        <li><a href="https://coekjan.cn" target="_blank">Coekjan</a></li>
+                    
+                        <li><a href="https://www.dusign.net/" target="_blank">Dusign</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+<script src="https://utteranc.es/client.js"
+        repo="buaadreamer/buaadreamer.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/BUAADreamer">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BUAADreamer 2021 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=dusign&repo=hexo-theme-snail&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://BUAADreamer.top/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects line -->
+        
+
+        
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&#34;🌱&#34;,&#34;just do it&#34;,&#34;🍀&#34;]' color='[&#34;rgb(121,93,179)&#34; ,&#34;rgb(76,180,231)&#34; ,&#34;rgb(184,90,154)&#34;]'></script>
+        
+
+        <!-- background effects end -->
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+</body>
+
+</html>
