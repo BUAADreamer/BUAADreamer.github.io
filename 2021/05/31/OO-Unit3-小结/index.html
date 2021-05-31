@@ -125,8 +125,8 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">3.6k</span> and
-                                Reading Time <span class="post-count">13</span> Minutes
+                                Words <span class="post-count">3.8k</span> and
+                                Reading Time <span class="post-count">14</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -327,12 +327,16 @@
 <p>这次作业的bug主要都是因为在阅读JML代码时过于草率，很多地方都是漏看了一句话导致了问题的出现，且测试不够充分。这启发我在以后的JML规格编写时要认真细致地阅读每一行说明，编写后要进行充分细致的单元测试和黑箱测试。此外，本次作业在自己构造数据时往往关注时间，构造了和第一次差不多的数据，对第二次作业涉及的指令覆盖很有限，这也导致了问题的出现。同时之后也发现自己的测试脚本中也是有问题的，很多时候可能测试数据里只有第一次的指令，因此问题也很难找出来。所以以后对自己的测试数据生成脚本不能过于自信，要仔细审查。</p>
 <p>正确性虽然被<code>hack</code>惨了，但是时间性能上由于使用了<strong>并查集</strong>进行搜索，没有出现问题。并查集对每个新进入的人先设置他的<code>bossid</code>为他自己的<code>id</code>，之后新增的关系中，如果他们的bossid不一样，则把一个人的最高级的<code>bossid</code>（<code>p.bossid==p.id</code>)设置为另一个人的最高级<code>bossid</code>即可。</p>
 <h3 id="homework11"><a href="#homework11" class="headerlink" title="homework11"></a>homework11</h3><h4 id="自己的bug-2"><a href="#自己的bug-2" class="headerlink" title="自己的bug"></a>自己的bug</h4><p>本次强测互测均未被hack。</p>
-<p>有了上一次的惨痛教训，本次在测试时非常细致。仍然找出来了与上次作业中类似的正确性的错误，对于各个类中的方法进行了多次修改，值得一提的是很多错误都是由于想当然以为上次的方法这次不变导致的，这一点以后也需要注意。同时重点设计了最短路径查找算法，使用了堆优化的<code>Dijistra</code>算法，新增一个Node节点类保存了距离和id，使用优先队列模拟堆，避免了每一轮循环都进行全部的遍历查找，保证了时间性能。此外在<code>MyGroup</code>类中加入了<code>valueSum</code>变量，每次有人员变动时就修改<code>valueSum</code>。从而保证了<code>qgvs</code>指令的性能。</p>
+<p>有了上一次的惨痛教训，本次在测试时非常细致，结合了ch大佬的数据和自己的数据进行了多轮校验。这次自测时仍然找出来了与上次作业中类似的正确性的错误，对于各个类中的方法进行了多次修改，值得一提的是很多错误都是由于想当然以为上次的方法这次不变导致的，这一点以后也需要注意。同时重点设计了最短路径查找算法，使用了堆优化的<code>Dijistra</code>算法，新增一个Node节点类保存了距离和id，使用优先队列模拟堆，避免了每一轮循环都进行全部的遍历查找，保证了时间性能。此外在<code>MyGroup</code>类中加入了<code>valueSum</code>变量，每次有人员变动时就修改<code>valueSum</code>。从而保证了<code>qgvs</code>指令的性能。</p>
 <h4 id="他人的bug-1"><a href="#他人的bug-1" class="headerlink" title="他人的bug"></a>他人的bug</h4><p>本次由于限制了5000条指令，且上限为6s，从时间上hack是极难，尝试构造了很多复杂的数据都未成功。最后通过大量随机生成用例hack了一人。阅读代码发现是经典的问题：<code>isCircle</code>函数输入相同的<code>id</code>时没有返回<code>true</code></p>
 <h2 id="5-作业架构设计"><a href="#5-作业架构设计" class="headerlink" title="5.作业架构设计"></a>5.作业架构设计</h2><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit3/Top-Level Package.png" style="zoom:80%;"></p>
 <p>本单元作业架构相对固定且是官方给出的，每个基本类相对固定，活动空间主要是对于图模型的管理维护。由于代码量并不大，本单元我直接将全部的图相关算法和主要数据、方法都写在了<code>MyNetwork</code>类内，同时将具体算法函数与功能函数分开。在<code>isCircle</code>内调用不同的<code>find</code>方法从而方便优化性能，有过<code>dfsFind(id1,id2)  bfsFind(id1,id2)  unionFind(id1,id2)</code>共三个查找的算法函数。同时在<code>sendIndirectMessage</code>函数中也是调用<code>Dijistra</code>函数进行操作，且调动了一个外部类<code>Node</code>进行堆优化操作。同时，使用一个<code>HashMap</code>保存每个PersonId对应的<code>bossId</code>进行并查集数据管理。</p>
 <p>同时，各个类内最终都基本使用了<code>HashMap</code>作为数组的实现容器，且这些都采用<code>id</code>作为<code>key</code>值进行查找。</p>
 <p>本次的异常类采用<code>static</code>类<code>count</code>对异常数据进行管理，确定了统一接口进行查询和存储异常次数。每次新增时只需要新增新的<code>HashMap</code>的<code>key</code>值即可。</p>
+<h2 id="6-感想与体会"><a href="#6-感想与体会" class="headerlink" title="6.感想与体会"></a>6.感想与体会</h2><ul>
+<li>本单元是圣杯战争最后一战了，回想参加的8次互测，整体来说体验还是很好的，在这个过程中学到了不少和测试相关的知识，也加深了对java和python这两门语言的理解。非常感谢课程组给我们设置的这种课程体制，让我们对测试这门艺术有所理解和掌握</li>
+<li>JML对代码的限制还是很强的，之后在开发之前不妨先写上JML再进行后续的开发，这样正确性能够有大幅提升。同时，JML也确实太复杂了，感谢为我们的作业献出那么多力量的助教和老师们，真的辛苦你们了！</li>
+</ul>
 
                 
                 <hr>
@@ -388,7 +392,7 @@
           <strong class="toc-title">Contents</strong>
           
             
-              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#OO-Unit3-小结"><span class="toc-nav-text">OO-Unit3-小结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-JML规格设计策略"><span class="toc-nav-text">1.JML规格设计策略</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-JML测试方法和策略"><span class="toc-nav-text">2.JML测试方法和策略</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Junit单元测试"><span class="toc-nav-text">Junit单元测试</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Python对拍评测"><span class="toc-nav-text">Python对拍评测</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#openJML工具使用"><span class="toc-nav-text">openJML工具使用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JMLUnitNG"><span class="toc-nav-text">JMLUnitNG</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-容器选择与使用"><span class="toc-nav-text">3.容器选择与使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework9"><span class="toc-nav-text">homework9</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework10-homework11"><span class="toc-nav-text">homework10&#x2F;homework11</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-bug分析"><span class="toc-nav-text">4.bug分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework9-1"><span class="toc-nav-text">homework9</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug"><span class="toc-nav-text">自己的bug</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#他人的bug"><span class="toc-nav-text">他人的bug</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework10"><span class="toc-nav-text">homework10</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug-1"><span class="toc-nav-text">自己的bug</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework11"><span class="toc-nav-text">homework11</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug-2"><span class="toc-nav-text">自己的bug</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#他人的bug-1"><span class="toc-nav-text">他人的bug</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-作业架构设计"><span class="toc-nav-text">5.作业架构设计</span></a></li></ol></li></ol>
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#OO-Unit3-小结"><span class="toc-nav-text">OO-Unit3-小结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-JML规格设计策略"><span class="toc-nav-text">1.JML规格设计策略</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-JML测试方法和策略"><span class="toc-nav-text">2.JML测试方法和策略</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Junit单元测试"><span class="toc-nav-text">Junit单元测试</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Python对拍评测"><span class="toc-nav-text">Python对拍评测</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#openJML工具使用"><span class="toc-nav-text">openJML工具使用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JMLUnitNG"><span class="toc-nav-text">JMLUnitNG</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-容器选择与使用"><span class="toc-nav-text">3.容器选择与使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework9"><span class="toc-nav-text">homework9</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework10-homework11"><span class="toc-nav-text">homework10&#x2F;homework11</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-bug分析"><span class="toc-nav-text">4.bug分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework9-1"><span class="toc-nav-text">homework9</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug"><span class="toc-nav-text">自己的bug</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#他人的bug"><span class="toc-nav-text">他人的bug</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework10"><span class="toc-nav-text">homework10</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug-1"><span class="toc-nav-text">自己的bug</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework11"><span class="toc-nav-text">homework11</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug-2"><span class="toc-nav-text">自己的bug</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#他人的bug-1"><span class="toc-nav-text">他人的bug</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-作业架构设计"><span class="toc-nav-text">5.作业架构设计</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-感想与体会"><span class="toc-nav-text">6.感想与体会</span></a></li></ol></li></ol>
             
           
           </div>
@@ -642,7 +646,7 @@
         
 
         
-            <script type="text/javascript" src="/js/mouse-click.js" content='[&#34;🌱&#34;,&#34;just do it&#34;,&#34;🍀&#34;]' color='[&#34;rgb(121,93,179)&#34; ,&#34;rgb(76,180,231)&#34; ,&#34;rgb(184,90,154)&#34;]'></script>
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it&quot;,&quot;🍀&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
         
 
         <!-- background effects end -->
@@ -652,6 +656,21 @@
     
         <script src="/js/ribbonDynamic.js"></script>
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
