@@ -16,7 +16,7 @@
     <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
     <title>
         
-          OO-Unit3-小结 - BUAADreamer&#39;s Blog
+          OO-Unit3-总结 - BUAADreamer&#39;s Blog
         
     </title>
 
@@ -115,7 +115,7 @@
                               <a class="tag" href="/tags/#BUAA-OO-2021" title="BUAA-OO-2021">BUAA-OO-2021</a>
                             
                         </div>
-                        <h1>OO-Unit3-小结</h1>
+                        <h1>OO-Unit3-总结</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by BUAADreamer on
@@ -275,7 +275,7 @@
                 post-container">
 
                 <p>OO第三单元JML规格设计学习总结与分析</p>
-<h1 id="OO-Unit3-小结"><a href="#OO-Unit3-小结" class="headerlink" title="OO-Unit3-小结"></a>OO-Unit3-小结</h1><h2 id="1-JML规格设计策略"><a href="#1-JML规格设计策略" class="headerlink" title="1.JML规格设计策略"></a>1.JML规格设计策略</h2><p>由于JML的规格描述较复杂，本单元的JML规格设计我往往采用<strong>由简入难</strong>的<strong>迭代开发</strong>策略。</p>
+<h1 id="OO-Unit3-总结"><a href="#OO-Unit3-总结" class="headerlink" title="OO-Unit3-总结"></a>OO-Unit3-总结</h1><h2 id="1-JML规格设计策略"><a href="#1-JML规格设计策略" class="headerlink" title="1.JML规格设计策略"></a>1.JML规格设计策略</h2><p>由于JML的规格描述较复杂，本单元的JML规格设计我往往采用<strong>由简入难</strong>的<strong>迭代开发</strong>策略。</p>
 <p>即一开始不着急开发出最为复杂，性能最好的代码，先<strong>严格按照JML</strong>描述写一遍代码，<strong>实现基本功能</strong>。比如类似<code>public instance model non_null Person[] acquaintance;</code>这样的规格，第9次作业开始时先直接按照<code>ArrayList</code>处理，这样各个函数中实际的代码和JML描述近乎一致，<strong>方便检查</strong>。之后在完成了基本功能后，在已经理解了基本功能描述后，对各个容器和方法算法性能进行<strong>优化设计迭代</strong>。</p>
 <p>同时，一般简单的方法和容器设计虽然性能较差，但正确性一般较好，因此个人认为也可以作为之后的迭代优化版本的<strong>正确性测试参考的标程</strong>（不过实际开发过程中也不可能先开发一版低性能保证正确性，所以还是直接全盘考虑好再写高效一点）。</p>
 <p>对于每个方法而言。先确定<code>normal_behavior</code>和<code>exceptional_behavior</code>。确定进入函数后不同参数对应的<strong>分支条件</strong>。并把<strong>条件判断语句</strong>写好，搭好基本框架。之后再看<code>assignable</code>会涉及到的变量。再根据<code>ensures</code>确定<strong>结果返回值</strong>和应该如何<strong>改动变量</strong>。对于异常处理里的分支逻辑也是类似的编写方式。此外，每个方法编写时也可以通过函数名字推敲涵义，从而提高正确性。</p>
@@ -392,7 +392,7 @@
           <strong class="toc-title">Contents</strong>
           
             
-              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#OO-Unit3-小结"><span class="toc-nav-text">OO-Unit3-小结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-JML规格设计策略"><span class="toc-nav-text">1.JML规格设计策略</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-JML测试方法和策略"><span class="toc-nav-text">2.JML测试方法和策略</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Junit单元测试"><span class="toc-nav-text">Junit单元测试</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Python对拍评测"><span class="toc-nav-text">Python对拍评测</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#openJML工具使用"><span class="toc-nav-text">openJML工具使用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JMLUnitNG"><span class="toc-nav-text">JMLUnitNG</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-容器选择与使用"><span class="toc-nav-text">3.容器选择与使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework9"><span class="toc-nav-text">homework9</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework10-homework11"><span class="toc-nav-text">homework10&#x2F;homework11</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-bug分析"><span class="toc-nav-text">4.bug分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework9-1"><span class="toc-nav-text">homework9</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug"><span class="toc-nav-text">自己的bug</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#他人的bug"><span class="toc-nav-text">他人的bug</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework10"><span class="toc-nav-text">homework10</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug-1"><span class="toc-nav-text">自己的bug</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework11"><span class="toc-nav-text">homework11</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug-2"><span class="toc-nav-text">自己的bug</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#他人的bug-1"><span class="toc-nav-text">他人的bug</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-作业架构设计"><span class="toc-nav-text">5.作业架构设计</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-感想与体会"><span class="toc-nav-text">6.感想与体会</span></a></li></ol></li></ol>
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#OO-Unit3-总结"><span class="toc-nav-text">OO-Unit3-总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-JML规格设计策略"><span class="toc-nav-text">1.JML规格设计策略</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-JML测试方法和策略"><span class="toc-nav-text">2.JML测试方法和策略</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Junit单元测试"><span class="toc-nav-text">Junit单元测试</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Python对拍评测"><span class="toc-nav-text">Python对拍评测</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#openJML工具使用"><span class="toc-nav-text">openJML工具使用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#JMLUnitNG"><span class="toc-nav-text">JMLUnitNG</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-容器选择与使用"><span class="toc-nav-text">3.容器选择与使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework9"><span class="toc-nav-text">homework9</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework10-homework11"><span class="toc-nav-text">homework10&#x2F;homework11</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-bug分析"><span class="toc-nav-text">4.bug分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework9-1"><span class="toc-nav-text">homework9</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug"><span class="toc-nav-text">自己的bug</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#他人的bug"><span class="toc-nav-text">他人的bug</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework10"><span class="toc-nav-text">homework10</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug-1"><span class="toc-nav-text">自己的bug</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#homework11"><span class="toc-nav-text">homework11</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug-2"><span class="toc-nav-text">自己的bug</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#他人的bug-1"><span class="toc-nav-text">他人的bug</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-作业架构设计"><span class="toc-nav-text">5.作业架构设计</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-感想与体会"><span class="toc-nav-text">6.感想与体会</span></a></li></ol></li></ol>
             
           
           </div>
@@ -646,7 +646,7 @@
         
 
         
-            <script type="text/javascript" src="/js/mouse-click.js" content='[&#34;🌱&#34;,&#34;just do it&#34;,&#34;🍀&#34;]' color='[&#34;rgb(121,93,179)&#34; ,&#34;rgb(76,180,231)&#34; ,&#34;rgb(184,90,154)&#34;]'></script>
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it&quot;,&quot;🍀&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
         
 
         <!-- background effects end -->
@@ -656,6 +656,21 @@
     
         <script src="/js/ribbonDynamic.js"></script>
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>
