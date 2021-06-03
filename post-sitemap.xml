@@ -8,8 +8,16 @@
     </url>
 
     <url>
+        <loc>https://BUAADreamer.top/2021/01/29/hello-myblog/</loc>
+        <lastmod>2021-06-03T14:52:57.675Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://BUAADreamer.top/2021/05/05/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/</loc>
-        <lastmod>2021-06-03T14:40:18.614Z</lastmod>
+        <lastmod>2021-06-03T14:52:00.290Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -210,14 +218,6 @@
     <url>
         <loc>https://BUAADreamer.top/2019/11/01/Hexo-Theme-Snail/</loc>
         <lastmod>2021-04-26T14:38:17.575Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://BUAADreamer.top/2021/01/29/hello-myblog/</loc>
-        <lastmod>2021-04-25T06:29:37.455Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
