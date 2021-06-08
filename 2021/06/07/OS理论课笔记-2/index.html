@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="A hexo theme">
+    <meta name="keyword"  content="BUAADreamer, hexo-theme-snail">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          OS理论课笔记-IO/磁盘管理/文件系统/安全/分布式OS - BUAADreamer&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://BUAADreamer.top/2021/06/07/OS理论课笔记-2/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../../../img/default.jpg')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#BUAA-OS-2021" title="BUAA-OS-2021">BUAA-OS-2021</a>
+                            
+                        </div>
+                        <h1>OS理论课笔记-IO/磁盘管理/文件系统/安全/分布式OS</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by BUAADreamer on
+                            2021-06-07
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">1.8k</span> and
+                                Reading Time <span class="post-count">6</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BUAADreamer&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
+                        </li>
+                        
+                    
+                    
+                    
+                    <li>
+                        <a href="https://www.cnblogs.com/BUAADreamer/" target="_blank">Chinese Blog</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="第五章-输入输出系统"><a href="#第五章-输入输出系统" class="headerlink" title="第五章 输入输出系统"></a>第五章 输入输出系统</h1><h2 id="5-1-I-O硬件基本原理"><a href="#5-1-I-O硬件基本原理" class="headerlink" title="5.1 I/O硬件基本原理"></a>5.1 I/O硬件基本原理</h2><h3 id="I-O设备分类"><a href="#I-O设备分类" class="headerlink" title="I/O设备分类"></a>I/O设备分类</h3><p><strong>传输速度</strong>：低速中速高速</p>
+<p><strong>信息交换单位</strong>：块设备和字符设备</p>
+<p><strong>共享属性</strong>：独占设备，共享设备，虚拟设备</p>
+<h2 id="5-2-I-O软件基本原理"><a href="#5-2-I-O软件基本原理" class="headerlink" title="5.2 I/O软件基本原理"></a>5.2 I/O软件基本原理</h2><h3 id="I-O控制技术"><a href="#I-O控制技术" class="headerlink" title="I/O控制技术"></a>I/O控制技术</h3><h4 id="程序控制I-O-PIO-Programmed-I-O"><a href="#程序控制I-O-PIO-Programmed-I-O" class="headerlink" title="程序控制I/O(PIO,Programmed I/O)"></a>程序控制I/O(PIO,Programmed I/O)</h4><p>轮询或查询方式IO</p>
+<p>CPU代进程向IO模块发出指令，之后忙等，直到操作完成进程继续执行</p>
+<h4 id="中断驱动方式-Interrupt-driven-I-O"><a href="#中断驱动方式-Interrupt-driven-I-O" class="headerlink" title="中断驱动方式(Interrupt-driven I/O)"></a>中断驱动方式(Interrupt-driven I/O)</h4><p>I/O操作结束后由设备控制器主动通知程序结束信息，不用轮询</p>
+<p>外设数据处理时CPU不需等待，但是每输入输出一个数据CPU都要中断，浪费CPU时间</p>
+<h4 id="直接存储访问方式-DMA-Direct-Memory-Access"><a href="#直接存储访问方式-DMA-Direct-Memory-Access" class="headerlink" title="直接存储访问方式(DMA, Direct Memory Access)"></a>直接存储访问方式(DMA, Direct Memory Access)</h4><p><strong>直接存储器访问</strong>方式</p>
+<p>由一个<strong>专门的控制器</strong>完成数据从<strong>内存到设备</strong>或者<strong>设备到内存</strong>的传输工作，是数据块的传输</p>
+<h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><ul>
+<li>CPU只干预I/O操作的<strong>开始</strong>和<strong>结束</strong>， 而当中的数据读写过程无需CPU控制，适于<strong>高速设备</strong></li>
+</ul>
+<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><ul>
+<li>数据<strong>传送的方向、存放数据的内存地址及传送数据的长度</strong>等都由CPU控制，占 用了CPU时间。</li>
+<li><strong>每个设备</strong>占用<strong>一个</strong>DMA 控制器，当设备增加时，需要增加新的DMA 控制器</li>
+</ul>
+<h4 id="通道技术（Channel）"><a href="#通道技术（Channel）" class="headerlink" title="通道技术（Channel）"></a>通道技术（Channel）</h4><p>与DMA几乎一样</p>
+<p>通道是一个<strong>特殊功能的处理器</strong>，有自己的指令体系，专门负责数据输入输出的传输控制，与CPU分别使用内存，实现运算与IO的并行</p>
+<p>执行一个通道程序可完成几组IO操作，减少了CPU干预，但费用较高</p>
+<p>可<strong>同时控制多种设备</strong>，区别于DMA只能控制一台或少数几台同类设备</p>
+<h3 id="缓冲技术"><a href="#缓冲技术" class="headerlink" title="缓冲技术"></a>缓冲技术</h3><p>匹配CPU和外设不同处理速度，减少CPU中断次数，提高并行性</p>
+<ul>
+<li><strong>单缓冲</strong>： 1个缓冲区，CPU外设轮流使用</li>
+<li><strong>双缓冲</strong>： 2个缓冲区，CPU和外设可以连续处理，但要求速度相近</li>
+<li><strong>环形缓冲</strong>：<strong>生产者—消费者</strong>问题</li>
+</ul>
+<h4 id="缓冲池"><a href="#缓冲池" class="headerlink" title="缓冲池"></a>缓冲池</h4><p>缓冲区队列：</p>
+<ul>
+<li>空闲缓冲区</li>
+<li>输入缓冲区</li>
+<li>输出缓冲区</li>
+</ul>
+<h3 id="设备分配"><a href="#设备分配" class="headerlink" title="设备分配"></a>设备分配</h3><p>对进程使用外设过程的管理。</p>
+<p><strong>两个做法</strong>：</p>
+<ol>
+<li>在进程间切换使用外设，如<strong>键盘</strong>和<strong>鼠标</strong>；</li>
+<li>通过一个虚拟设备把<strong>外设与应用进程隔开</strong>，只由<strong>虚拟设备</strong>来使用设备。</li>
+</ol>
+<h4 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h4><ol>
+<li>设备控制表  DCT 每个设备一张</li>
+<li>控制器控制表  I/O控制器的配置和状态</li>
+<li>通道控制表  每个通道一张</li>
+<li>系统设备表 系统内一张 记录所有设备状态和对应的控制表入口</li>
+</ol>
+<h4 id="单通道IO设备系统分配"><a href="#单通道IO设备系统分配" class="headerlink" title="单通道IO设备系统分配"></a>单通道IO设备系统分配</h4><p>一个设备对应一个控制器，一个控制器对应一个通道 </p>
+<h4 id="多通道IO系统设备分配"><a href="#多通道IO系统设备分配" class="headerlink" title="多通道IO系统设备分配"></a>多通道IO系统设备分配</h4><p><strong>一个设备</strong>与<strong>几个控制器</strong>相连，<strong>一个控制器</strong>与<strong>几个通道</strong>相连 </p>
+<h4 id="假脱机技术SPOOLing"><a href="#假脱机技术SPOOLing" class="headerlink" title="假脱机技术SPOOLing"></a>假脱机技术SPOOLing</h4><p>把<strong>独享设备</strong>转变成具有<strong>共享特征的虚拟设备</strong>，从而提高设备利用率</p>
+<h3 id="中断处理程序"><a href="#中断处理程序" class="headerlink" title="中断处理程序"></a>中断处理程序</h3><ul>
+<li>关中断 </li>
+<li>保存现场 </li>
+<li>转入设备中断处理程序 </li>
+<li>进行中断处理 </li>
+<li>恢复被中断进程的现场 </li>
+<li>开中断 </li>
+<li>设置MMU以执行下一个进程</li>
+</ul>
+<h3 id="设备驱动程序"><a href="#设备驱动程序" class="headerlink" title="设备驱动程序"></a>设备驱动程序</h3><ul>
+<li>将抽象I/O请求转换为对物理设备的请求 </li>
+<li>检查I/O请求的合法性 </li>
+<li>初始化设备 </li>
+<li>启动设备 </li>
+<li>发出I/O命令 </li>
+<li>响应中断请求 </li>
+<li>构造通道程序</li>
+</ul>
+<h2 id="5-3-OS设备管理实例"><a href="#5-3-OS设备管理实例" class="headerlink" title="5.3 OS设备管理实例"></a>5.3 OS设备管理实例</h2><h1 id="第六章-磁盘存储管理"><a href="#第六章-磁盘存储管理" class="headerlink" title="第六章 磁盘存储管理"></a>第六章 磁盘存储管理</h1><h2 id="6-1-磁盘存储的工作原理"><a href="#6-1-磁盘存储的工作原理" class="headerlink" title="6.1 磁盘存储的工作原理"></a>6.1 磁盘存储的工作原理</h2><p>温切斯特盘</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li><strong>扇区</strong>（sector） 盘片被分成许多<strong>扇形的区域</strong></li>
+<li><strong>磁道</strong>（track） 盘片上以盘片中心为圆心，不同半径的<strong>同心圆</strong>。</li>
+<li><strong>柱面</strong>（cylinder) 硬盘中，不同盘片相同半径的磁道所组成的<strong>圆柱</strong>。</li>
+<li>每个<strong>磁盘有两个面</strong>，每个面都有一个<strong>磁头</strong>(head)。</li>
+</ul>
+<p><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-2/6-1.png" style="zoom:50%;"></p>
+<h3 id="磁盘的组织"><a href="#磁盘的组织" class="headerlink" title="磁盘的组织"></a>磁盘的组织</h3><p>读一个扇区需要<strong>柱面/磁头/扇区</strong>。</p>
+<p>一维逻辑块数组按照顺序映射到磁盘扇区</p>
+<p><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-2/6-2.png" style="zoom: 33%;"></p>
+<h3 id="磁盘访问时间"><a href="#磁盘访问时间" class="headerlink" title="磁盘访问时间"></a>磁盘访问时间</h3><p>磁盘延迟=软件的Queue处理+Disk Service Time(寻道+旋转+传输)</p>
+<h4 id="寻道时间"><a href="#寻道时间" class="headerlink" title="寻道时间"></a>寻道时间</h4><p>磁头从当前位置移到指定磁道上所经历时间</p>
+<p>$s:启动磁盘时间$</p>
+<p>$m:磁头移动一条磁道所花时间$</p>
+<p>$T_s=m*n+s$</p>
+<h4 id="旋转延迟时间"><a href="#旋转延迟时间" class="headerlink" title="旋转延迟时间"></a>旋转延迟时间</h4><p>平均$T_r$为$50到100ms$</p>
+<p>$T_r=1/(2r)$</p>
+<h4 id="传输时间"><a href="#传输时间" class="headerlink" title="传输时间"></a>传输时间</h4><p>$T_t$为与磁盘进行数据交换（读出或写入）的时间</p>
+<p>$T_t$的大小与每次所<strong>读／写的字节数</strong>b，<strong>旋转速度r</strong>以及磁道上的<strong>字节数N</strong>有关</p>
+<p>$T_t = b/(rN)$</p>
+<p>$b/N—需要多少转$</p>
+<p>$r—多少转/s$</p>
+<p>传输数据的大小 (通常是1个扇区): 512B</p>
+<p>旋转速度：3600 RPM ~ 15000 RPM</p>
+<p>典型的传输速度：2MB~50 MB/秒</p>
+<h4 id="总访问时间"><a href="#总访问时间" class="headerlink" title="总访问时间"></a>总访问时间</h4><p>$T_a=T_s+1/(2r)+b/(rN)$</p>
+<h3 id="磁盘调度算法"><a href="#磁盘调度算法" class="headerlink" title="磁盘调度算法"></a>磁盘调度算法</h3><h4 id="先来先服务-FCFS"><a href="#先来先服务-FCFS" class="headerlink" title="先来先服务 FCFS"></a>先来先服务 FCFS</h4><p>按访问请求先后次序服务</p>
+<h4 id="最短寻道时间优先-SSTF"><a href="#最短寻道时间优先-SSTF" class="headerlink" title="最短寻道时间优先 SSTF"></a>最短寻道时间优先 SSTF</h4><p>优先选择<strong>距当前磁头最近的访问请求</strong>进行服务，主要考虑<strong>寻道优先</strong>。</p>
+<p>可能导致饥饿，即一些请求长时间得不到服务</p>
+<h4 id="扫描算法-SCAN-电梯调度"><a href="#扫描算法-SCAN-电梯调度" class="headerlink" title="扫描算法 SCAN 电梯调度"></a>扫描算法 SCAN 电梯调度</h4><p>磁盘臂沿特定方向移动到最后一层, 满足路径中的所有请求。</p>
+<p>然后转回并反向移动, 满足路径中的所有请求。</p>
+<h4 id="循环扫描算法-CSCAN"><a href="#循环扫描算法-CSCAN" class="headerlink" title="循环扫描算法 CSCAN"></a>循环扫描算法 CSCAN</h4><ul>
+<li>按照所要访问的柱面位置的次序去选择访问者。</li>
+<li>移动臂到达最后一个柱面后，<strong>立即</strong>带动读写磁头快速<strong>返回到0号柱面</strong>。</li>
+<li>返回时<strong>不为任何的等待</strong>访问者<strong>服务</strong>。</li>
+<li>返回后可再次进行扫描。</li>
+</ul>
+<p>SCAN算法偏向于处理最里或最外的磁道访问请求，CSCAN可以避免</p>
+<h4 id="LOOK算法"><a href="#LOOK算法" class="headerlink" title="LOOK算法"></a>LOOK算法</h4><p>SCAN算法改进</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">	a0[有请求时]--&gt;a</span><br><span class="line">	a[磁头按一个方向移动]--&gt;A</span><br><span class="line">    A[对遇到的访问请求进行服务] --&gt; B&#123;是否还有访问请求?&#125;;</span><br><span class="line">    B --&gt;|有| C[继续扫描];</span><br><span class="line">    B --&gt;|无| E[改变移动方向];</span><br><span class="line">    E --&gt;F[为经过访问请求服务];</span><br></pre></td></tr></table></figure>
+<h4 id="CLOOK算法"><a href="#CLOOK算法" class="headerlink" title="CLOOK算法"></a>CLOOK算法</h4><p>CSCAN算法改进</p>
+<p>每次向一个方向移动到最高请求柱面，之后返回最低请求柱面，不理会返回路径上的请求</p>
+<h2 id="6-2-保证磁盘可靠性"><a href="#6-2-保证磁盘可靠性" class="headerlink" title="6.2 保证磁盘可靠性"></a>6.2 保证磁盘可靠性</h2><h3 id="RAID"><a href="#RAID" class="headerlink" title="RAID"></a>RAID</h3><p><strong>廉价冗余磁盘阵列</strong>,Redundant arrays of inexpensive disks</p>
+<ul>
+<li>冗余技术提高可靠性</li>
+<li>并行提高性能</li>
+</ul>
+<p>数据分段并行交叉存取</p>
+<p>组成磁盘阵列的不同方式称为RAID级别，分为0-6 7个级别，还有一个RAID10</p>
+<p><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-2/6-3.png" style="zoom:67%;"></p>
+<h2 id="6-3-提高I-O访问速度"><a href="#6-3-提高I-O访问速度" class="headerlink" title="6.3 提高I/O访问速度"></a>6.3 提高I/O访问速度</h2><h3 id="主要途径"><a href="#主要途径" class="headerlink" title="主要途径"></a>主要途径</h3><ul>
+<li>选择性能好的磁盘</li>
+<li>并行化</li>
+<li>采用适当的调度算法</li>
+<li>设置磁盘高速缓冲区</li>
+</ul>
+<h3 id="提高磁盘I-O速度——缓存"><a href="#提高磁盘I-O速度——缓存" class="headerlink" title="提高磁盘I/O速度——缓存"></a>提高磁盘I/O速度——缓存</h3><ul>
+<li>独立缓存/以虚拟内存为缓存</li>
+<li>置换算法 LRU</li>
+<li>周期性写回</li>
+</ul>
+<h3 id="优化数据布局"><a href="#优化数据布局" class="headerlink" title="优化数据布局"></a>优化数据布局</h3><ul>
+<li>优化物理块的分布</li>
+<li>优化索引节点的分布</li>
+</ul>
+<h3 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h3><ul>
+<li>提前读</li>
+<li>延迟写</li>
+<li>虚拟盘</li>
+</ul>
+<h2 id="6-4-磁盘管理的实例"><a href="#6-4-磁盘管理的实例" class="headerlink" title="6.4 磁盘管理的实例"></a>6.4 磁盘管理的实例</h2><h1 id="第七章-文件系统"><a href="#第七章-文件系统" class="headerlink" title="第七章 文件系统"></a>第七章 文件系统</h1>
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2021/06/07/OS理论课笔记-1/" data-toggle="tooltip" data-placement="top" title="OS理论课笔记-系统引导/内存管理/进程与并发程序设计">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      
+        <aside id="sidebar">
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">Contents</strong>
+          
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#第五章-输入输出系统"><span class="toc-nav-text">第五章 输入输出系统</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-1-I-O硬件基本原理"><span class="toc-nav-text">5.1 I&#x2F;O硬件基本原理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#I-O设备分类"><span class="toc-nav-text">I&#x2F;O设备分类</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-2-I-O软件基本原理"><span class="toc-nav-text">5.2 I&#x2F;O软件基本原理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#I-O控制技术"><span class="toc-nav-text">I&#x2F;O控制技术</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#程序控制I-O-PIO-Programmed-I-O"><span class="toc-nav-text">程序控制I&#x2F;O(PIO,Programmed I&#x2F;O)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#中断驱动方式-Interrupt-driven-I-O"><span class="toc-nav-text">中断驱动方式(Interrupt-driven I&#x2F;O)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#直接存储访问方式-DMA-Direct-Memory-Access"><span class="toc-nav-text">直接存储访问方式(DMA, Direct Memory Access)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#优点"><span class="toc-nav-text">优点</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#缺点"><span class="toc-nav-text">缺点</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#通道技术（Channel）"><span class="toc-nav-text">通道技术（Channel）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#缓冲技术"><span class="toc-nav-text">缓冲技术</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#缓冲池"><span class="toc-nav-text">缓冲池</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#设备分配"><span class="toc-nav-text">设备分配</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#数据结构"><span class="toc-nav-text">数据结构</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#单通道IO设备系统分配"><span class="toc-nav-text">单通道IO设备系统分配</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#多通道IO系统设备分配"><span class="toc-nav-text">多通道IO系统设备分配</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#假脱机技术SPOOLing"><span class="toc-nav-text">假脱机技术SPOOLing</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#中断处理程序"><span class="toc-nav-text">中断处理程序</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#设备驱动程序"><span class="toc-nav-text">设备驱动程序</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-3-OS设备管理实例"><span class="toc-nav-text">5.3 OS设备管理实例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#第六章-磁盘存储管理"><span class="toc-nav-text">第六章 磁盘存储管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-1-磁盘存储的工作原理"><span class="toc-nav-text">6.1 磁盘存储的工作原理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#基本概念"><span class="toc-nav-text">基本概念</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#磁盘的组织"><span class="toc-nav-text">磁盘的组织</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#磁盘访问时间"><span class="toc-nav-text">磁盘访问时间</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#寻道时间"><span class="toc-nav-text">寻道时间</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#旋转延迟时间"><span class="toc-nav-text">旋转延迟时间</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#传输时间"><span class="toc-nav-text">传输时间</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#总访问时间"><span class="toc-nav-text">总访问时间</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#磁盘调度算法"><span class="toc-nav-text">磁盘调度算法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#先来先服务-FCFS"><span class="toc-nav-text">先来先服务 FCFS</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#最短寻道时间优先-SSTF"><span class="toc-nav-text">最短寻道时间优先 SSTF</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#扫描算法-SCAN-电梯调度"><span class="toc-nav-text">扫描算法 SCAN 电梯调度</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#循环扫描算法-CSCAN"><span class="toc-nav-text">循环扫描算法 CSCAN</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#LOOK算法"><span class="toc-nav-text">LOOK算法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#CLOOK算法"><span class="toc-nav-text">CLOOK算法</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-2-保证磁盘可靠性"><span class="toc-nav-text">6.2 保证磁盘可靠性</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#RAID"><span class="toc-nav-text">RAID</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-3-提高I-O访问速度"><span class="toc-nav-text">6.3 提高I&#x2F;O访问速度</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#主要途径"><span class="toc-nav-text">主要途径</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#提高磁盘I-O速度——缓存"><span class="toc-nav-text">提高磁盘I&#x2F;O速度——缓存</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#优化数据布局"><span class="toc-nav-text">优化数据布局</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#其他方法"><span class="toc-nav-text">其他方法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#6-4-磁盘管理的实例"><span class="toc-nav-text">6.4 磁盘管理的实例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#第七章-文件系统"><span class="toc-nav-text">第七章 文件系统</span></a></li></ol>
+            
+          
+          </div>
+        </aside>
+      
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#BUAA-OS-2021" title="BUAA-OS-2021">BUAA-OS-2021</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://roife.github.io" target="_blank">Roife</a></li>
+                    
+                        <li><a href="https://coekjan.cn" target="_blank">Coekjan</a></li>
+                    
+                        <li><a href="https://www.dusign.net/" target="_blank">Dusign</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+<script src="https://utteranc.es/client.js"
+        repo="buaadreamer/buaadreamer.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/BUAADreamer">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BUAADreamer 2021 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=dusign&repo=hexo-theme-snail&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://BUAADreamer.top/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects line -->
+        
+
+        
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it&quot;,&quot;🍀&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
+        
+
+        <!-- background effects end -->
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>
