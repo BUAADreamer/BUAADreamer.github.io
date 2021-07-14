@@ -20,7 +20,7 @@
         
     </title>
 
-    <link rel="canonical" href="https://BUAADreamer.top/2021/02/10/算法学习/">
+    <link rel="canonical" href="https://BUAADreamer.top/2021/07/10/算法学习/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -121,7 +121,7 @@
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by BUAADreamer on
-                            2021-02-10
+                            2021-07-10
                         </span>
 
                         
@@ -342,7 +342,7 @@
 <p>小于就y++</p>
 <h2><span id="二-栈">二、栈</span></h2><p>后进先出</p>
 <p>需要实现top() size() pop() push(x)四个操作</p>
-<h1><span id="labuladong算法小抄笔记">《labuladong算法小抄》笔记</span></h1><h2><span id="一-语言基础">一、语言基础</span></h2><h3><span id="c">C++</span></h3><p>传参用<code>&amp;</code>表示引用</p>
+<h3><span id="括号匹配">括号匹配</span></h3><h3><span id="表达式计算">表达式计算</span></h3><h1><span id="labuladong算法小抄笔记">《labuladong算法小抄》笔记</span></h1><h2><span id="一-语言基础">一、语言基础</span></h2><h3><span id="c">C++</span></h3><p>传参用<code>&amp;</code>表示引用</p>
 <h4><span id="1动态数组vector">1.动态数组vector</span></h4><h5><span id="初始化">初始化</span></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> n=<span class="number">7</span>,m=<span class="number">8</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums;</span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">nums</span><span class="params">(n)</span></span>; <span class="comment">//数组中全部为0</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; nums&#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">5</span>&#125;; <span class="comment">//初始化为1,3,5</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; <span class="title">nums</span><span class="params">(n,<span class="number">2</span>)</span></span>; <span class="comment">//初始化一个长度为n且全为2的数组</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; dp; <span class="comment">//初始一个二维数组</span></span><br><span class="line"><span class="function"><span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;&gt; <span class="title">dp</span><span class="params">(m,<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;(n,<span class="literal">true</span>))</span></span>; <span class="comment">//初始一个m*n的二维布尔数组 且值全为true</span></span><br></pre></td></tr></table></figure>
 <h5><span id="成员函数">成员函数</span></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span> <span class="comment">//返回是否为空</span></span></span><br><span class="line"><span class="function">size_type <span class="title">size</span><span class="params">()</span></span>; <span class="comment">//返回大小</span></span><br><span class="line"><span class="function">reference <span class="title">back</span><span class="params">()</span></span>; <span class="comment">//返回最后一个值的引用</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">push_back</span><span class="params">(<span class="keyword">const</span> value_type&amp; val)</span></span>; <span class="comment">//尾部插入一个元素val</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pop_back</span><span class="params">()</span></span>; <span class="comment">//删除尾部元素</span></span><br></pre></td></tr></table></figure>
 <h4><span id="2字符串string">2.字符串string</span></h4><h5><span id="初始化">初始化</span></h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s; <span class="comment">//s--&gt;""</span></span><br><span class="line"><span class="built_in">string</span> s=<span class="string">"abc"</span>;</span><br></pre></td></tr></table></figure>
@@ -375,12 +375,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2021/02/12/missingCourseForCsers-note-stanford/" data-toggle="tooltip" data-placement="top" title="missingCourseForCsers_note_stanford">&larr; Previous Post</a>
+                        <a href="/2021/07/11/Django-vue项目部署/" data-toggle="tooltip" data-placement="top" title="Django+vue项目部署">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2021/02/04/Python数据分析可视化笔记/" data-toggle="tooltip" data-placement="top" title="Python数据分析可视化笔记">Next Post &rarr;</a>
+                        <a href="/2021/07/01/读书笔记/" data-toggle="tooltip" data-placement="top" title="读书笔记">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
