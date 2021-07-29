@@ -123,8 +123,8 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">340</span> and
-                                Reading Time <span class="post-count">1</span> Minutes
+                                Words <span class="post-count">408</span> and
+                                Reading Time <span class="post-count">2</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -302,13 +302,20 @@
 <p>npm install</p>
 <p>npm run build:prod</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ps -aux |grep uwsgi</span><br><span class="line">kill -9 3539 #最后这个号码是最上面那个</span><br><span class="line">uwsgi --ini mywsgi.ini #再重启uwsgi就好了</span><br></pre></td></tr></table></figure>
-<h2><span id="部署完成">部署完成</span></h2><p>118.195.186.173:8001</p>
-<h3><span id="修改用户密码">修改用户密码</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py shell</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth <span class="keyword">import</span> get_user_model</span><br><span class="line">User = get_user_model()</span><br><span class="line">user=User.objects.get(username=<span class="string">'XXX'</span>)</span><br><span class="line">user.set_password(<span class="string">'new_password'</span>)</span><br><span class="line">user.save()</span><br><span class="line">或者</span><br><span class="line">python3 manage.py changepassword username</span><br></pre></td></tr></table></figure>
+<h3><span id="前端问题解决">前端问题解决</span></h3><p><a href="http://blog.itblood.com/2455.html" target="_blank" rel="noopener">Error:Rule can only have resource source(provided resource test include exclude【解决办法】</a> 重装webpack</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm cache clean --force #清除缓存</span><br></pre></td></tr></table></figure>
+<p>npm install一定要保证全局的存储地址有充足的空间！！！（默认在C盘）</p>
+<h2><span id="部署完成">部署完成</span></h2><h3><span id="修改用户密码">修改用户密码</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py shell</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth <span class="keyword">import</span> get_user_model</span><br><span class="line">User = get_user_model()</span><br><span class="line">user=User.objects.get(username=<span class="string">'XXX'</span>)</span><br><span class="line">user.set_password(<span class="string">'new_password'</span>)</span><br><span class="line">user.save()</span><br><span class="line">或者</span><br><span class="line">python3 manage.py changepassword username</span><br></pre></td></tr></table></figure>
+<h3><span id="连接远程服务器">连接远程服务器</span></h3><p><a href="https://www.cnblogs.com/zhuminghui/p/10947930.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhuminghui/p/10947930.html</a></p>
 
                 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2021/07/15/rubyonrails-Learning/" data-toggle="tooltip" data-placement="top" title="rubyonrails-Learning">&larr; Previous Post</a>
+                    </li>
                     
                     
                     <li class="next">
@@ -359,7 +366,7 @@
           <strong class="toc-title">Contents</strong>
           
             
-              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">后端配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">ngnix配置</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">前端配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">安装npm</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">部署完成</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">修改用户密码</span></a></li></ol></li></ol>
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">后端配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">ngnix配置</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">前端配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">安装npm</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">前端问题解决</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">部署完成</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">修改用户密码</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">连接远程服务器</span></a></li></ol></li></ol>
             
           
           </div>
