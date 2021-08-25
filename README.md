@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is my personal blog repo. The website is :[buaadreamer.top](buaadreamer.top).
+This is my personal blog repo. The website is :[buaadreamer.top](https://buaadreamer.top).
 
 The blog's web code is on gh-pages branch,you can checkout it and read.
 
