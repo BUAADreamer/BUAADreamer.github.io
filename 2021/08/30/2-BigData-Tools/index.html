@@ -16,11 +16,11 @@
     <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
     <title>
         
-          OO-Unit4小结及课程总结 - BUAADreamer&#39;s Blog
+          2_BigData_Tools - BUAADreamer&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="https://BUAADreamer.top/2021/06/26/OO-Unit4小结及课程总结/">
+    <link rel="canonical" href="https://BUAADreamer.top/2021/08/30/2-BigData-Tools/">
 
     <!-- Bootstrap Core CSS -->
     
@@ -112,21 +112,19 @@
                     <div class="post-heading">
                         <div class="tags">
                             
-                              <a class="tag" href="/tags/#BUAA-OO-2021" title="BUAA-OO-2021">BUAA-OO-2021</a>
-                            
                         </div>
-                        <h1>OO-Unit4小结及课程总结</h1>
+                        <h1>2_BigData_Tools</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by BUAADreamer on
-                            2021-06-26
+                            2021-08-30
                         </span>
 
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">3.7k</span> and
-                                Reading Time <span class="post-count">12</span> Minutes
+                                Words <span class="post-count">21</span> and
+                                Reading Time <span class="post-count">1</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -274,68 +272,18 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="oo-unit4小结amp课程总结">OO-Unit4小结&amp;课程总结</span></h1><p>终于迎来了OO的终章——UML解析器编写。今天还刚好是考完航概的烤漆最后一天，在这样的日子里来写这篇博客自然要放松点啦，这篇就把这学期的一些体会感悟都好好记录一下，算是对艰苦奋战“<strong>昆仑课程</strong>”一学期的完美留念。</p>
-<h2><span id="本单元作业架构设计">本单元作业架构设计</span></h2><p>本单元需要对各个<code>UML</code>类进行解析建模。官方包已经提供了对于特定的<code>json</code>数据的输出处理以及相应的官方<code>Uml</code>的一些基本类，但是这些考虑到基本类只包含了<code>id name</code>等基本属性，而缺少某些<code>Uml</code>类的重要数据属性，因此需要对每次作业中一些涉及到评测的类进行单独的<strong>自定义类建模</strong>，与此同时在初始化中也需要加入的中间变量或容器对这些自定义类进行初始化。这一单元的架构大体上是将初始化过程，主类的各个评测函数，以及各个需要用到的自定义类进行分块包装，最终组合起来形成<code>Uml</code>解析器。</p>
-<p>本单元经历了充分的测试，终于是第一次AK了，虽然很大程度上还是要感谢ch大佬的数据支持，感觉应该给他专门颁发一个特殊的奖才能感谢他帮我们找出的这么多bug！</p>
-<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit4/hw13.png" style="zoom:50%;"></p>
-<p>第一次作业的要求相对简单，是对类图的解析。于是大体上在主类里实现了<code>init</code>函数，各个具体的返回值函数，以及建立了有必要的<code>MyClass</code>、<code>MyInterface</code>、<code>MyOperation</code>三个类，这三个自定义类里包含了有用的各种内部属性和方法。其中<code>MyClass</code>引用了其他两个类，而这三个类在<code>MyUmlInteraction</code>都有相应的引用。</p>
-<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit4/hw14.png" alt="hw14" style="zoom: 25%;"></p>
-<p>第二次作业在第一次作业基础上实现了对时序图和状态转移图的解析。在第一次基础上新增了<code>MyInteraction</code>和<code>MyStateMachine</code>两个自定义类对新增的两种图的数据和方法进行实现。</p>
-<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit4/hw15.png" alt="hw15" style="zoom: 25%;"></p>
-<p>第三次作业新增了一个<code>init</code>类对开始的初始化操作和初始化变量进行操作从而减少主功能类的行数，代码架构更合理，每个类的功能更独立。</p>
-<h2><span id="四个单元中架构设计及oo方法理解的演进">四个单元中架构设计及OO方法理解的演进</span></h2><p>四次作业中唯一的一次重构就发生在第一单元的求导计算的1-2次作业中，由于没有想到之后的第二三次作业的改动力度之大且刚开始面向对象，没有那么好的封装思路。之后的三个单元均是在之前架构基础上微调或者增量开发。</p>
-<p>第一次作业中对于对于三角函数，多项式，项等各个部分进行单独的封装，同时对各个求导规则和方法进行单独的封装，体现了层次化结构化的思想。</p>
-<p>第二次作业中对于多线程的原理和应用进行了学习和实践，学习了生产者消费者模式和worker-threads模式。采用了集中式调度，调度器和输入线程为一对生产者消费者，调度器和各个电梯间也形成了生产者消费者关系。</p>
-<p>第三单元了解了JML规格编写和阅读方法，知道了如何用形式化的语言来描述和检查代码。这一单元的代码架构固定，只建立了个别必要的图管理类。</p>
-<p>第四单元了解了UML可视化代码规格方式，知道了如何形象的对代码从类图，代码时序动态图，状态图等方面进行描述。建立了抽象分离初始化，具体功能类，返回函数主类三个层次的体系。</p>
-<h2><span id="四个单元中测试理解与实践的演进">四个单元中测试理解与实践的演进</span></h2><p>四个单元的学习过程中，评测机不断扩充完善。造数据和<code>debug</code>能力也不断增强。总的来说的方法还是三个，形式验证（比对指导书需求，看代码），黑盒测试（与他人或标答对拍），白盒测试。</p>
-<p>第一单元主要采用了<code>xeger</code>根据正则表达式生成一定强度的数据，以及递归下降构造数据的方式。然后利用<code>sympy</code>库计算结果或化简表达式进行对拍和评测的方式。</p>
-<p>第二单元由于事情繁多，只完成了基本的导出结果的功能。投放数据采用<code>subprocess</code>库来完成。这一单元主要是合理利用强测数据，多尝试，多跑点，就能找出很多bug。</p>
-<p>第三单元采用<code>Junit</code>白盒单元测试和黑盒测试相结合，针对每次作业的核心耗时算法构造出相应的数据点进行性能测试，构造长随机指令覆盖用例对正确性进行测试。</p>
-<p>第四单元和第三单元类似，也是单元测试+黑盒测试结合的方式，而针对这次作业的特点，我采用了手动<code>Uml</code>图并实现<code>利用官方包的命令自动导出相应的json数据-&gt;解析json数据-&gt;自动构造这个图能够出现的所有指令-&gt;组合成一个数据</code>，总的来说就是物尽其用的思想，由于没有精力实现像第三单元一样的随机生成的代码，那就只能尽可能<strong>压榨</strong>每一个<code>Uml</code>图的价值。对每一个<code>Uml</code>图都生成出所有可能出现的图模型和相应的所有指令。这样虽然不能保证图的复杂性，但是至少保证了每个数据都是这个图的最全数据。具体的效果如下图所示，对于每个图都导出了所有的模型和相应的数据，同时保存了对于每个数据点的描述方便之后<code>debug</code>。</p>
-<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit4/t1.png" style="zoom:67%;"></p>
-<p>总的来说，本学期OO的评测机我的思路就是将评测分成<code>时间评测和获取输出</code>、<code>评测正确性</code>两步走的思路。前一部分向每个不同程序投喂输入数据，检测运行时间和CPU时间是否超时，并保存相应的输出结果。后一部分将每个数据的标准输出或者多人的输出进行对拍，找少数派或者直接评价正确性。</p>
-<p>而数据构造则也分为了对于每个数据点的构造，一组数据点的构造，和具体的构造函数。大体上实现解耦。</p>
-<p>从刚开始到最后一次的评测机，我的<code>OO-test</code>项目一直有一些新东西，这个过程是不断完善测试体验和提高测试效率的过程。以下记录一下点自认为觉得写的较好的功能。</p>
-<ol>
-<li><p>让<code>Pycharm</code>里的评测输出<strong>五颜六色</strong>、花哨、完整起来，丰富的颜色让测试变得有趣。还看到有的同学写了<code>GUI</code>（太神仙了），本来也想尝试但是觉得没太大必要就作罢了。还有ch大佬的丰富多样、有趣的调试信息也是值得学习的。我的输出主要包含了时间性能评测信息，对拍评测信息。如果测试对象只有两个人会显示具体哪一行不同，1/3/4单元还会显示具体是什么指令/数据的错误，最后一单元还给出了可能错误的原因。这些贴心的输出都为debug提供了极大的便利，很多时候稍微造一造数据跑出来就可以知道错误是什么原因（不过数据还是根本，还是要感谢各位大佬的数据支援）。</p>
-<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit4/t2.png" style="zoom: 80%;"></p>
-</li>
-<li><p>一个<code>test</code>搞定一切。实现了一个<code>test</code>函数，输入为一个<code>jar</code>名字列表，同时在外围实现了<code>beatTest</code>、<code>testWithOther</code>、<code>testSingle</code>、<code>init</code>等方法对单独测试，双人对拍，多人运动进行单独封装，根据名字列表长度调用相关函数做相应的测试。如下图所示。</p>
-<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit4/t3.png" alt></p>
-</li>
-</ol>
-<p>最后的评测机大概就这样了。基本每个单元都会有一个生成数据的代码和测试代码。</p>
-<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit4/t4.png" alt></p>
-<h2><span id="课程收获">课程收获</span></h2><p>本学期的OO课程从层次化，多线程，规格化，模型化四个方面进行了学习，知识上学习了层次化架构设计，线程安全与一般设计模式，JML结构化语言描述，UML模型。工具链上，对于<code>IDEA</code>内的各种代码分析插件以及调试插件，<code>Pycharm</code>内的一些插件，<code>StarUML</code>等有了一定的使用心得。了解了一般的面向对象的编写方式，以及从前期需求对接，到增量迭代开发、重构优化，到测试交付以及bug修复的软件开发全流程体验，这个过程中<code>Java</code>的面向对象编程能力和基于<code>Python</code>的测试能力也不断提升，对于基本的程序测试也有了一定的认知，不过需要改进的地方就是缺少了对于数据本身的强度评测，具体来说就是没有对每个分支的覆盖程度进行反馈，之后的评测中需要加入相应的代码进行更全面的测试。</p>
-<p>另外，OO研讨课上我做了两次分享，第一次主要介绍了包括黑盒测试，白盒测试，灰盒测试和评测机架构在内的测试理论实践知识，最后一次介绍了代码注释，博客编写和课程体会，这两次研讨的PPT我都花了至少4个小时进行制作，虽然内容并不是非常硬核，但是这个过程中对于这些知识的理解确实也更到位了，也体会到了分享的乐趣，当知道真的有个别同学觉得我的讲解有一点用处时，内心还是很充实而欣慰的。同时，写博客，阅读他人博客和代码，听其他同学的研讨分享也学到了很多东西，可以说，OO这门课除了让我们打好了面向对象的基础，也让我增强了技术分享、表达和向他人学习的能力。同时，这种可以阅读、hack他人代码，几乎全透明的学习方式也让人感到耳目一新，体验极佳，启发了更多的学习方式。</p>
-<p>此外对于每次作业还有一些小的碎碎念，在最后一次研讨课我也分享了一下，这里偷个懒，直接搬运过来。作为补充总结。</p>
-<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit4/4.png" style="zoom: 33%;"></p>
-<h2><span id="对于课程的具体改进建议">对于课程的具体改进建议</span></h2><ol>
-<li>博客环节可以适当改善。可以鼓励大家多阅读他人博客，并积极写评论进行交流。感觉一学期下来虽然写了四篇博客，但并不是所有同学都非常清楚一篇好的博客到底是什么样的以及写这个的意义和目的。可以尝试让同学进行互评，适当公开评价细则，设置自定义任务模块（比如可以让同学们写某个方面技术分享博客，根据质量给相应奖励之类，不过感觉这样又和评论区重复了）等鼓励同学们写更多的优质博客。</li>
-<li>研讨课可以安排更多的活动，比如没有人讲的时候可以组织包括辩论赛（针对某个热点信息科技话题进行辩论），圆桌会议（讨论技术热点和未来的研究方向，头脑风暴，对于OO课内的一些技术的创新点进行讨论），甚至是翻转课堂的形式（让同学们代替老师讲授某一部分内容，减轻老师的教学压力），或者如果可爱的助教大大们愿意讲点啥课程组也不能拒绝对吧😀。</li>
-<li>课外可以安排一些其他的任务，比如类似软院软工项目图书管理系统，飞机订票系统之类的小软件项目，可以考虑提供前后端框架代码让大家进行补全，也可以自定义题目让大家自行从0开发。让有兴趣的同学自行组队完成并进行一定的展示和加分。通过一些有实际功能的实际系统可以让大家更好地掌握面向对象知识在实际开发中的使用方式。</li>
-<li>每次互测可以让大家评选出本房间内彼此的代码进行打分和评价，鼓励互测房内同学更好地学习彼此代码。官方也可以分享和总结一些好的代码思路，比如提供几份公认较好的架构思路供大家参考。可以让同学们写一写自己在互测中读到的好代码好在哪，学到和借鉴到了什么东西。</li>
-<li>可以从第一次作业开始鼓励同学们写好注释，按照<code>javadoc</code>规范来写，每个单元结束时生成一份<code>javadoc</code>。而且好的注释可以帮助他人阅读自己代码，节省大家宝贵的互测时间。</li>
-<li>完善前期的<code>java</code>先修课程，稍微增加一些对于java细枝末节知识的介绍，完善现有的教程。也可以考虑在现有的部分课程基础上加一些视频讲解之类。课程内容可以增加一些对于java的目前应用内容，比如具体的Spring后端开发，hadoop大数据分析等方面的简单讲解。</li>
-</ol>
-<p>最后的最后，还是感谢一起在这么多个日日夜夜一起对拍的阿强和阿勇两位舍友，以及给过我很多帮助的战哥，昊哥，lyj、lkl助教，吴老师，以及各位大佬们，没有你们，可能无数次迎接我的都是：</p>
-<p>$\color{green} {恭喜你在强测中获得0分！}$ </p>
-<p>$\color{red} {不存在此互测成员}$ </p>
-<p>这样的消息吧！希望未来可以把学到的面向对象的知识用于实际工程中，不断提升自己OO的能力！OO课完结撒花了！！</p>
+                <h2><span id="milvus">milvus</span></h2><p><a href="https://milvus.io/docs/v2.0.0/home" target="_blank" rel="noopener">https://milvus.io/docs/v2.0.0/home</a></p>
+<h2><span id="elasticsearch">elasticsearch</span></h2><p><a href="https://github.com/elastic/elasticsearch" target="_blank" rel="noopener">https://github.com/elastic/elasticsearch</a></p>
+<p><a href="https://www.elastic.co/guide/cn/index.html" target="_blank" rel="noopener">https://www.elastic.co/guide/cn/index.html</a></p>
 
                 
                 <hr>
                 <!-- Pager -->
                 <ul class="pager">
                     
-                    <li class="previous">
-                        <a href="/2021/07/01/读书笔记/" data-toggle="tooltip" data-placement="top" title="读书笔记">&larr; Previous Post</a>
-                    </li>
-                    
                     
                     <li class="next">
-                        <a href="/2021/06/14/离散数学3/" data-toggle="tooltip" data-placement="top" title="离散数学3">Next Post &rarr;</a>
+                        <a href="/2021/08/09/算法导论笔记/" data-toggle="tooltip" data-placement="top" title="算法导论笔记">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -382,7 +330,7 @@
           <strong class="toc-title">Contents</strong>
           
             
-              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">OO-Unit4小结&amp;课程总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">本单元作业架构设计</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">四个单元中架构设计及OO方法理解的演进</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">四个单元中测试理解与实践的演进</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">课程收获</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">对于课程的具体改进建议</span></a></li></ol></li></ol>
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">milvus</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">elasticsearch</span></a></li></ol>
             
           
           </div>
@@ -404,8 +352,6 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#BUAA-OO-2021" title="BUAA-OO-2021">BUAA-OO-2021</a>
-                        
                     </div>
                 </section>
                 
