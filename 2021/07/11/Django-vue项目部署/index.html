@@ -123,7 +123,7 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">408</span> and
+                                Words <span class="post-count">449</span> and
                                 Reading Time <span class="post-count">2</span> Minutes
                             </span>
                             <div class="blank_box"></div>
@@ -307,6 +307,8 @@
 <p>npm install一定要保证全局的存储地址有充足的空间！！！（默认在C盘）</p>
 <h2><span id="部署完成">部署完成</span></h2><h3><span id="修改用户密码">修改用户密码</span></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py shell</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth <span class="keyword">import</span> get_user_model</span><br><span class="line">User = get_user_model()</span><br><span class="line">user=User.objects.get(username=<span class="string">'XXX'</span>)</span><br><span class="line">user.set_password(<span class="string">'new_password'</span>)</span><br><span class="line">user.save()</span><br><span class="line">或者</span><br><span class="line">python3 manage.py changepassword username</span><br></pre></td></tr></table></figure>
 <h3><span id="连接远程服务器">连接远程服务器</span></h3><p><a href="https://www.cnblogs.com/zhuminghui/p/10947930.html" target="_blank" rel="noopener">https://www.cnblogs.com/zhuminghui/p/10947930.html</a></p>
+<h3><span id="自动部署">自动部署</span></h3><h4><span id="生成公私钥">生成公私钥</span></h4><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -o</span><br></pre></td></tr></table></figure>
+<p>将公钥放到仓库的公钥列表中，并将.git文件夹下的config文件中的url改为ssh地址</p>
 
                 
                 <hr>
@@ -366,7 +368,7 @@
           <strong class="toc-title">Contents</strong>
           
             
-              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">后端配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">ngnix配置</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">前端配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">安装npm</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">前端问题解决</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">部署完成</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">修改用户密码</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">连接远程服务器</span></a></li></ol></li></ol>
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">后端配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">ngnix配置</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">前端配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">安装npm</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">前端问题解决</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">部署完成</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">修改用户密码</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">连接远程服务器</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">自动部署</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">生成公私钥</span></a></li></ol></li></ol></li></ol>
             
           
           </div>
