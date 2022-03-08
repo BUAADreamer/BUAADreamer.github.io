@@ -291,7 +291,7 @@
 <li><p>$f(n)=\Omega(n^{log_b^{a+\epsilon}})且\exists c\lt1,s.t.\forall n, af(n/b)\leq cf(n)(正则条件)\rightarrow T(n)=\Theta(f(n))$ </p>
 </li>
 </ol>
-<p>主定理理解：情况1和3的小于和大于必须是<strong>多项式意义</strong>的大小关系，即如果没有相差$n^\epsilon$因子，则进入了1/2或者2/3的缝隙</p>
+<p>主定理理解：情况1和3的小于和大于必须是<strong>多项式意义</strong>的大小关系，即如果没有相差$n^\epsilon$因子，则进入了1和2或者2和3的缝隙</p>
 <h2><span id="第五章-概率分析与随机算法">第五章 概率分析与随机算法</span></h2><h3><span id="雇用问题">雇用问题</span></h3><p>随机化输入之后复杂度为$O(\ln n)$</p>
 <h3><span id="随机化序列方法">随机化序列方法</span></h3><p>PERMUTE-BY-SORTING方法随机化优先级，根据优先级对数组排列</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">permutes=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">    permutes.append((A[i],random.randint(<span class="number">0</span>,n*n*n)))</span><br><span class="line">permutes.sort(key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>])</span><br><span class="line">A=[permutes[i][<span class="number">0</span>] <span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br></pre></td></tr></table></figure>
@@ -565,7 +565,7 @@
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; BUAADreamer 2021 
+                    Copyright &copy; BUAADreamer 2022 
                     <br>
                     Powered by 
                     <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
