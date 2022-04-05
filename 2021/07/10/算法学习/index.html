@@ -295,7 +295,7 @@
 <li>数组长度小于2直接返回原数组</li>
 <li>从后往前扫描找到一个序号i使得nums[i]&gt;nums[i+1]</li>
 <li>在nums[i+1,n-1]之间找到一个小于nums[i]且最大的数的序号maxi，将maxi和i处的数交换</li>
-<li>将i位置之后的数组逆序（由从小到小变为从大到小）</li>
+<li>将i位置之后的数组逆序（由从小到大变为从大到小）</li>
 </ol>
 <p>逆序过程可以用sort函数</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sort(nums+i,nums+n<span class="number">-1</span>,cmp); <span class="comment">//n=nums.size()</span></span><br><span class="line">sort(nums.<span class="built_in">begin</span>()+i,nums.<span class="built_in">end</span>(),cmp); <span class="comment">//另一种写法</span></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">const</span> <span class="keyword">int</span> a,<span class="keyword">const</span> <span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a&gt;b; <span class="comment">//从大到小排序 a&lt;b则是从小到大</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
