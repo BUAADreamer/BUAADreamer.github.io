@@ -125,7 +125,7 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">728</span> and
+                                Words <span class="post-count">724</span> and
                                 Reading Time <span class="post-count">3</span> Minutes
                             </span>
                             <div class="blank_box"></div>
@@ -201,7 +201,7 @@
 
                         
                         <li>
-                            <a href="/photography/">Photography</a>
+                            <a href="/categories/">Categories</a>
                         </li>
                         
                     
@@ -215,7 +215,7 @@
 
                         
                         <li>
-                            <a href="/categories/">Categories</a>
+                            <a href="/photography/">Photography</a>
                         </li>
                         
                     
@@ -274,27 +274,33 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="第4章-汇编语言程序格式">第4章 汇编语言程序格式</span></h1><h2><span id="41-分段式程序结构">4.1 分段式程序结构</span></h2><p>SEGMENT ENDS DW EQU ASSUME ENDP END都是常见伪指令</p>
+                <h1><span id="第4章-汇编语言程序格式">第4章 汇编语言程序格式</span></h1>
+<h2><span id="41-分段式程序结构">4.1 分段式程序结构</span></h2>
+<p>SEGMENT ENDS DW EQU ASSUME ENDP END都是常见伪指令</p>
 <p>标号命名必须以<code>@/-/?</code> 或者字母开头，指令与伪指令的常数以字母开头 <code>A/B/C/D/E/F</code> 开头需要在前面加0，避免混淆，不区分大小写！</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">STACK 	SEGMENT PARA STACK ;PARA STACK定义了堆栈</span><br><span class="line">        STACK_AREA	DW	100H DUP(?)</span><br><span class="line">        STACK_BTM	EQU	$-STACK_AREA</span><br><span class="line">STACK 	ENDS 	;1-4行定义堆栈段 SEGMENTS和ENDS是一对</span><br><span class="line">DATA 	SEGMENT</span><br><span class="line">        TABLE_LEN 	DW 16</span><br><span class="line">        TABLE 	DW 19,06,19,73,11,22,33,44</span><br><span class="line">                DW 20,06,20,74,55,66,77,88</span><br><span class="line">DATA	ENDS 	;5-9行定义数据段</span><br><span class="line">CODE 	SEGMENT </span><br><span class="line">		ASSUME 	CS:CODE,DS:DATA,SS:STACK ;为了阅读方便和整齐，需要字段对齐 指令语句和伪指令语句不能换行 这里其实没有真正的设置CS DS SS</span><br><span class="line">MAIN 	PROC 	FAR ;PROC和ENDP是一对 如果只有一个过程则可以直接在代码段写指令</span><br><span class="line">        MOV		AX,STACK</span><br><span class="line">        MOV		SS,AX			</span><br><span class="line">        MOV 	SP,STACK_BTM 	;栈底交给SP</span><br><span class="line">        MOV		AX,DATA</span><br><span class="line">        MOV		DS,AX</span><br><span class="line">LP1:	MOV 	BX,1</span><br><span class="line">		MOV		CX,TABLE_LEN</span><br><span class="line">		DEC		CX</span><br><span class="line">		MOV		SI,OFFSET TABLE	;把TABLE的偏移地址送给SI</span><br><span class="line">LP2:	MOV 	AX,[SI] 		;利用SI进行间接寻址</span><br><span class="line">		CMP 	AX,[SI+2]		;比较TABLE[i]与TABLE[i+1]的大小</span><br><span class="line">		JBE		CONTINUE		;小于等于则跳转到CONTINUE 无符号数比较是JB&#x2F;JA&#x2F;JE 有符号数是 JG&#x2F;JL&#x2F;JE</span><br><span class="line">		XCHG	AX,[SI+2]		;大于则交换，用AX当TEMP</span><br><span class="line">		MOV		[SI],AX			</span><br><span class="line">		MOV		BX,0			;清零标志变量</span><br><span class="line">CONTINUE:	ADD SI,2</span><br><span class="line">		LOOP	LP2				;&lt;&#x3D;&#x3D;&gt; 先CX-- CX不为0就跳转到 LP2 CX为0则继续往下执行</span><br><span class="line">		CMP		BX,1</span><br><span class="line">		JZ		EXIT			;ZF为0则跳转到EXIT</span><br><span class="line">		JMP		SHORT LP1		;SHORT是相距较近的代码时用的</span><br><span class="line">EXIT:	MOV 	AX,4C00H  	;AH-功能号 AL-返回码 相当于exit(0)，返回MS-DOS命令提示符</span><br><span class="line">		INT		21H			;调用MS-DOS例程</span><br><span class="line">MAIN	ENDP</span><br><span class="line">CODE1 	ENDS 	;10-36行定义代码段</span><br><span class="line">		END		MAIN ;告诉编译器程序入口在MAIN</span><br></pre></td></tr></table></figure>
-
-<h2><span id="42-定义程序结构的伪指令">4.2 定义程序结构的伪指令</span></h2><h2><span id="43-数据定义与内存分配">4.3 数据定义与内存分配</span></h2><h3><span id="常数与常量">常数与常量</span></h3><p>二进制数：0-1序列，B结尾，比如：010B</p>
+<h2><span id="42-定义程序结构的伪指令">4.2 定义程序结构的伪指令</span></h2>
+<h2><span id="43-数据定义与内存分配">4.3 数据定义与内存分配</span></h2>
+<h3><span id="常数与常量">常数与常量</span></h3>
+<p>二进制数：0-1序列，B结尾，比如：010B</p>
 <p>八进制数：0-7组成序列，Q结尾，比如：127Q</p>
-<p>十进制数：0-9组成序列，D结尾，D也可以省略。比如：129&#x2F;129D</p>
+<p>十进制数：0-9组成序列，D结尾，D也可以省略。比如：129/129D</p>
 <p>十六进制数：0-9，A-F组成序列，H结尾</p>
-<p>字符或字符串：单引号或双引号括起来的字符：’A’,”ABC”</p>
+<p>字符或字符串：单引号或双引号括起来的字符：‘A’,“ABC”</p>
 <p>实数：整数，小数，指数三部分，比如1.234E-5</p>
 <p>EQU指令指定常量 比如：<code>A EQU 12H</code></p>
 <p>当前位置计数器 <code>$</code>，常用来计算长度，比如 <code>SRACK_BTM EQU-TABLE</code></p>
-<h3><span id="变量与变量定义">变量与变量定义</span></h3><p>x86中所有的地址+1，都是+1个BYTE对应的地址</p>
-<p><code>String1 DB &#39;ABCD&#39;,0DH,0AH,&#39;$&#39;</code> 这里其实定义了7个字，即A B C D 0DH 0AH $</p>
+<h3><span id="变量与变量定义">变量与变量定义</span></h3>
+<p>x86中所有的地址+1，都是+1个BYTE对应的地址</p>
+<p><code>String1 DB 'ABCD',0DH,0AH,'$'</code> 这里其实定义了7个字，即A B C D 0DH 0AH $</p>
 <p><code>ARRAY1 DB 10 DUP(?)</code></p>
 <p><code>ARRAY2D DB 5 DUP(1,2,3,4,?)</code> 二维数组定义</p>
-<h3><span id="汇编链接运行">汇编，链接，运行</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">masm code.asm</span><br><span class="line">link code.asm</span><br><span class="line">code.asm</span><br></pre></td></tr></table></figure>
-
-<h3><span id="调试与debug">调试与DEBUG</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">debug code.exe</span><br></pre></td></tr></table></figure>
-
+<h3><span id="汇编链接运行">汇编，链接，运行</span></h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">masm code.asm</span><br><span class="line">link code.asm</span><br><span class="line">code.asm</span><br></pre></td></tr></table></figure>
+<h3><span id="调试与debug">调试与DEBUG</span></h3>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">debug code.exe</span><br></pre></td></tr></table></figure>
 <h1><span id="第5章-分支与循环程序设计">第5章 分支与循环程序设计</span></h1>
+
                 
                 <hr>
                 <!-- Pager -->

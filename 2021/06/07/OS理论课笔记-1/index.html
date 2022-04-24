@@ -201,7 +201,7 @@
 
                         
                         <li>
-                            <a href="/photography/">Photography</a>
+                            <a href="/categories/">Categories</a>
                         </li>
                         
                     
@@ -215,7 +215,7 @@
 
                         
                         <li>
-                            <a href="/categories/">Categories</a>
+                            <a href="/photography/">Photography</a>
                         </li>
                         
                     
@@ -274,197 +274,259 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="第1章-引论">第1章 引论</span></h1><p>操作系统是一个程序，是一组管理计算机硬件资源的软件集合，向计算机程序提供共性服务。</p>
+                <h1><span id="第1章-引论">第1章 引论</span></h1>
+<p>操作系统是一个程序，是一组管理计算机硬件资源的软件集合，向计算机程序提供共性服务。</p>
 <ol>
 <li>控制计算机资源；</li>
 <li>给用户提供<strong>接口</strong>或<strong>虚拟机</strong>。</li>
 </ol>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/1-1.png" style="zoom:67%;">
-
-<h2><span id="os的历史沿革">OS的历史沿革</span></h2><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/1-2.png" style="zoom: 50%;">
-
+<h2><span id="os的历史沿革">OS的历史沿革</span></h2>
+<img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/1-2.png" style="zoom: 50%;">
 <p><strong>批处理</strong>：用户提交作业成批送入计算机，由作业调度程序自动选择作业运行。涉及到<strong>Mainframe基本功能，排队论、统筹学</strong>。</p>
-<p><strong>批处理系统</strong>，分为<strong>联机批处理系统</strong>（作业的输入&#x2F;输出由CPU来处理）和<strong>脱机批处理系统</strong>（输入&#x2F;输出脱离主机控制）。 两者均有CPU空闲，均为<strong>单道程序系统</strong></p>
-<p><strong>多道程序系统</strong>：多个程序同时进入内存，交替使用I&#x2F;O设备和CPU。</p>
+<p><strong>批处理系统</strong>，分为<strong>联机批处理系统</strong>（作业的输入/输出由CPU来处理）和<strong>脱机批处理系统</strong>（输入/输出脱离主机控制）。 两者均有CPU空闲，均为<strong>单道程序系统</strong></p>
+<p><strong>多道程序系统</strong>：多个程序同时进入内存，交替使用I/O设备和CPU。</p>
 <p>多道程序系统的出现，标志着操作系统<strong>渐趋成熟</strong>的阶段，先后出现了<strong>作业调度管理</strong>、<strong>处理机管理</strong>、<strong>存储器管理</strong>、<strong>外部设备管理</strong>、<strong>文件系统管理</strong>等功能。</p>
 <p><strong>分时系统</strong>：多个用户分享使用同一台计算机。多个程序分时共享硬件和软件资源</p>
 <p>两种典型分时系统：</p>
 <ol>
-<li><p>Multics&#x2F;Unix (1968&#x2F;1970)</p>
+<li>
+<p>Multics/Unix (1968/1970)</p>
 </li>
-<li><p>IBM VM 360&#x2F;370 (1966&#x2F;1972)</p>
+<li>
+<p>IBM VM 360/370 (1966/1972)</p>
 </li>
 </ol>
 <p>Unix、DOS、Windows、Linux（使用GNU）</p>
 <p><strong>分布式网络化</strong></p>
-<h2><span id="小结">小结</span></h2><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/1-3.png" style="zoom: 60%;">
-
-<h2><span id="操作系统基本实现机制">操作系统基本实现机制</span></h2><h3><span id="异常exception-陷阱trap和中断interrupt">异常(exception): 陷阱(trap)和中断(interrupt)</span></h3><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/1-4.png" style="zoom:50%;">
-
-<h2><span id="操作系统的基本类型">操作系统的基本类型</span></h2><ul>
+<h2><span id="小结">小结</span></h2>
+<img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/1-3.png" style="zoom: 60%;">
+<h2><span id="操作系统基本实现机制">操作系统基本实现机制</span></h2>
+<h3><span id="异常exception-陷阱trap和中断interrupt">异常(exception): 陷阱(trap)和中断(interrupt)</span></h3>
+<img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/1-4.png" style="zoom:50%;">
+<h2><span id="操作系统的基本类型">操作系统的基本类型</span></h2>
+<ul>
 <li>批处理系统</li>
 <li>分时系统</li>
 <li>实时系统</li>
 <li>混合型</li>
 </ul>
-<h2><span id="操作系统的功能">操作系统的功能</span></h2><h3><span id="处理机管理">处理机管理</span></h3><p>核心任务：分配CPU时间 ——进程、线程管理——公平分配、保证非阻塞、按优先级分配</p>
+<h2><span id="操作系统的功能">操作系统的功能</span></h2>
+<h3><span id="处理机管理">处理机管理</span></h3>
+<p>核心任务：分配CPU时间 ——进程、线程管理——公平分配、保证非阻塞、按优先级分配</p>
 <p>进程管理：程序是静态实体，进程是执行中的程序。进程的调度：创建、挂起、激活。进程间通信：同步，互斥，死锁。</p>
-<h3><span id="存储器内存管理">存储器(内存)管理</span></h3><p>管理缓存、主存、磁盘等所形成的多级存储架构，为多道程序的并发提供良好的环境。</p>
-<p>– 内存分配和存储无关性：方便用户<br>– 内存保护：互不干扰<br>– 内存扩充：虚拟存储器</p>
-<h3><span id="设备管理">设备管理</span></h3><p>管理输入&#x2F;输出设备，屏蔽差异性，提供并发访问</p>
-<p>– 设备无关性：逻辑设备-&gt;物理设备<br>– 设备分配：独享、共享和虚拟<br>– 设备的传输控制：中断、通道</p>
-<h3><span id="文件系统">文件系统</span></h3><p>将磁盘变成一个很容易使用的存储媒介提供给用户使用。<br>– 文件存储空间的管理<br>– 目录管理<br>– 文件读、写管理<br>– 文件保护<br>– 向用户提供接口</p>
-<h3><span id="作业控制">作业控制</span></h3><ul>
+<h3><span id="存储器内存管理">存储器(内存)管理</span></h3>
+<p>管理缓存、主存、磁盘等所形成的多级存储架构，为多道程序的并发提供良好的环境。</p>
+<p>– 内存分配和存储无关性：方便用户
+– 内存保护：互不干扰
+– 内存扩充：虚拟存储器</p>
+<h3><span id="设备管理">设备管理</span></h3>
+<p>管理输入/输出设备，屏蔽差异性，提供并发访问</p>
+<p>– 设备无关性：逻辑设备-&gt;物理设备
+– 设备分配：独享、共享和虚拟
+– 设备的传输控制：中断、通道</p>
+<h3><span id="文件系统">文件系统</span></h3>
+<p>将磁盘变成一个很容易使用的存储媒介提供给用户使用。
+– 文件存储空间的管理
+– 目录管理
+– 文件读、写管理
+– 文件保护
+– 向用户提供接口</p>
+<h3><span id="作业控制">作业控制</span></h3>
+<ul>
 <li>作业调度</li>
-<li>作业控制。<ul>
+<li>作业控制。
+<ul>
 <li>批量型作业</li>
 <li>终端型作业</li>
 </ul>
 </li>
 </ul>
-<h1><span id="第2章-系统引导">第2章 系统引导</span></h1><h2><span id="bootloader">BootLoader</span></h2><p>引导加载程序，是系统<strong>加电后</strong>运行的第一段软件代码，是操作系统<strong>内核运行之前</strong>运行的一段小程序</p>
+<h1><span id="第2章-系统引导">第2章 系统引导</span></h1>
+<h2><span id="bootloader">BootLoader</span></h2>
+<p>引导加载程序，是系统<strong>加电后</strong>运行的第一段软件代码，是操作系统<strong>内核运行之前</strong>运行的一段小程序</p>
 <p><strong>BootLoader</strong>是<strong>Booter</strong>和<strong>Loader</strong>的合写，前者要<strong>初始化系统硬件</strong>使之运行起来，至少是<strong>部分运行</strong>起来；后者将<strong>操作系统映像加载到内存</strong>中，并跳转到操作系统的代码运行。</p>
 <ul>
 <li><strong>MIPS</strong>处理器大多用于<strong>嵌入式系统</strong>，嵌入式系统常用<strong>U-boot</strong>作为OS启动装载程序，U-Boot，全称 Universal Boot Loader；</li>
 <li><strong>X86</strong>处理器通常采用<strong>LILO</strong>和<strong>GRUB</strong>。</li>
 </ul>
-<h2><span id="u-boot启动流程">U-Boot启动流程</span></h2><p>大多数BootLoader都分为<strong>stage1</strong>和<strong>stage2</strong>两大部分，U-boot也不例外。</p>
+<h2><span id="u-boot启动流程">U-Boot启动流程</span></h2>
+<p>大多数BootLoader都分为<strong>stage1</strong>和<strong>stage2</strong>两大部分，U-boot也不例外。</p>
 <ul>
 <li>依赖于cpu体系结构的代码（如设备初始化代码等）通常都放在stage1且可以用<strong>汇编语言</strong>来实现；</li>
 <li>stage2则通常用<strong>C语言</strong>来实现，这样可以实现复杂的功能，而且有更好的可读性和移植性。</li>
 </ul>
-<h2><span id="启动及os引导">启动及OS引导</span></h2><p><img src="/2021-06-07-OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/2-1.png"></p>
-<h4><span id="启动第一步加载bios">启动第一步——加载BIOS</span></h4><p>BIOS进行硬件自检以及读取启动顺序</p>
-<h4><span id="启动第二步读取mbr装载mbr到内存特定地址">启动第二步——读取MBR，装载MBR到内存特定地址</span></h4><h4><span id="启动第三步boot-loader运行主引导程序">启动第三步——Boot Loader，运行主引导程序</span></h4><h1><span id="第3章-内存管理">第3章 内存管理</span></h1><h2><span id="31-多道程序的存储管理">3.1 多道程序的存储管理</span></h2><p>固定（静态）式分区分配，程序适应分区。系统初始化时将存储空间分为若干个区域，之后再将这些区域分配给用户作业。</p>
+<h2><span id="启动及os引导">启动及OS引导</span></h2>
+<p><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/2-1.png" alt></p>
+<h4><span id="启动第一步加载bios">启动第一步——加载BIOS</span></h4>
+<p>BIOS进行硬件自检以及读取启动顺序</p>
+<h4><span id="启动第二步读取mbr装载mbr到内存特定地址">启动第二步——读取MBR，装载MBR到内存特定地址</span></h4>
+<h4><span id="启动第三步boot-loader运行主引导程序">启动第三步——Boot Loader，运行主引导程序</span></h4>
+<h1><span id="第3章-内存管理">第3章 内存管理</span></h1>
+<h2><span id="31-多道程序的存储管理">3.1 多道程序的存储管理</span></h2>
+<p>固定（静态）式分区分配，程序适应分区。系统初始化时将存储空间分为若干个区域，之后再将这些区域分配给用户作业。</p>
 <p>可变（动态）式分区分配，分区适应程序。动态确定分区边界。</p>
 <p>内外碎片造成巨大空间浪费</p>
-<p><strong>跟踪</strong>内存使用情况？<strong>位图表示法（分区表）</strong>和<strong>链表表示法（分区链表）</strong>。</p>
+<p><strong>跟踪</strong>内存使用情况？<strong>位图表示法（分区表）<strong>和</strong>链表表示法（分区链表）</strong>。</p>
 <p><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/2-2.png" style="zoom:40%;"><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/2-3.png" alt="2-3" style="zoom:40%;"></p>
 <p>位图表示法空间成本固定，时间成本低，容错能力差（不知道被占用的原因）。</p>
 <p>链表表示法时间成本高，容错能力较好。</p>
-<h3><span id="可变分区管理">可变分区管理</span></h3><p>内存分配采用两张表：<strong>已分配分区表</strong>和<strong>未分配分区表</strong>。操作为分配、回收内存。</p>
-<h3><span id="基于顺序搜索的分配算法">基于顺序搜索的分配算法</span></h3><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-1.png" style="zoom: 50%;">
-
-<h3><span id="基于索引搜索的动态分区分配算法">基于索引搜索的动态分区分配算法</span></h3><p>大中型系统采用</p>
-<h4><span id="快速适应算法分类搜索法">快速适应算法（分类搜索法）</span></h4><p>把空闲分区<strong>按容量大小</strong>进行分类，经常用到长度的空闲区设立单独的<strong>空闲区链表</strong>。为多个空闲链表设立一张<strong>管理索引表</strong>。</p>
-<h3><span id="伙伴系统">伙伴系统</span></h3><p>介于固定分区与可变分区之间的动态分区技术</p>
+<h3><span id="可变分区管理">可变分区管理</span></h3>
+<p>内存分配采用两张表：<strong>已分配分区表</strong>和<strong>未分配分区表</strong>。操作为分配、回收内存。</p>
+<h3><span id="基于顺序搜索的分配算法">基于顺序搜索的分配算法</span></h3>
+<img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-1.png" style="zoom: 50%;">
+<h3><span id="基于索引搜索的动态分区分配算法">基于索引搜索的动态分区分配算法</span></h3>
+<p>大中型系统采用</p>
+<h4><span id="快速适应算法分类搜索法">快速适应算法（分类搜索法）</span></h4>
+<p>把空闲分区<strong>按容量大小</strong>进行分类，经常用到长度的空闲区设立单独的<strong>空闲区链表</strong>。为多个空闲链表设立一张<strong>管理索引表</strong>。</p>
+<h3><span id="伙伴系统">伙伴系统</span></h3>
+<p>介于固定分区与可变分区之间的动态分区技术</p>
 <p>在分配存储块时将一个<strong>大的存储块</strong>分裂成<strong>两个大小相等的小块</strong>。</p>
 <p>已分配和空闲分区大小均为2的整数次幂。每次有一个新的大小请求先看有无最靠近这个大小的幂次的分区，没有就向上查找并分裂。</p>
 <p><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-2.png" style="zoom:45%;"><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-3.png" style="zoom:45%;"></p>
-<h2><span id="32-程序从存储到执行">3.2 程序从存储到执行</span></h2><h3><span id="存储分配三种方式">存储分配三种方式</span></h3><ul>
+<h2><span id="32-程序从存储到执行">3.2 程序从存储到执行</span></h2>
+<h3><span id="存储分配三种方式">存储分配三种方式</span></h3>
+<ul>
 <li>直接指定。直接使用实际地址</li>
 <li>静态分配</li>
 <li>动态分配</li>
 </ul>
-<h4><span id="可重定位分区分配">可重定位分区分配</span></h4><p>定时的或在内存紧张时，移动某些已分配区中的信息，把存储空间中<strong>所有的空白区</strong>合<strong>并为</strong>一个<strong>大的连续区</strong>。</p>
-<h3><span id="程序的链接和装入">程序的链接和装入</span></h3><ul>
+<h4><span id="可重定位分区分配">可重定位分区分配</span></h4>
+<p>定时的或在内存紧张时，移动某些已分配区中的信息，把存储空间中<strong>所有的空白区</strong>合<strong>并为</strong>一个<strong>大的连续区</strong>。</p>
+<h3><span id="程序的链接和装入">程序的链接和装入</span></h3>
+<ul>
 <li><strong>编译</strong>(compile)：由编译程序将用户源程序<strong>编译</strong>成<strong>若干个目标模块</strong>。</li>
 <li><strong>链接</strong>(linking)：由链接程序将<strong>目标模块</strong>和相应的<strong>库函数</strong>链接成<strong>可装载模块</strong>（<strong>可执行文件</strong>）。</li>
 <li><strong>装入</strong>(loading)：由装载程序将可装载模块<strong>装入内存</strong>。一般采用动态运行时装入方式</li>
 </ul>
-<h4><span id="链接方式">链接方式</span></h4><ul>
-<li><p>静态链接 直接将共享库中代码链接如程序代码中</p>
+<h4><span id="链接方式">链接方式</span></h4>
+<ul>
+<li>
+<p>静态链接 直接将共享库中代码链接如程序代码中</p>
 </li>
-<li><p>动态链接 需要时才链接特定的模块</p>
+<li>
+<p>动态链接 需要时才链接特定的模块</p>
 </li>
 </ul>
-<h4><span id="重定位">重定位</span></h4><p>在装入时对目标程序中的指令和数据地址的修改，或映射过程。</p>
-<h4><span id="多重分区分配">多重分区分配</span></h4><p>一个作业往往由相对独立的程序段和数据段组成，将这些片段分别装入到存储空间中不同的区域内的分配方式。</p>
-<h3><span id="程序段">程序段</span></h3><p>一个程序本质上都是由 bss段、data段、text段三个组成的。</p>
+<h4><span id="重定位">重定位</span></h4>
+<p>在装入时对目标程序中的指令和数据地址的修改，或映射过程。</p>
+<h4><span id="多重分区分配">多重分区分配</span></h4>
+<p>一个作业往往由相对独立的程序段和数据段组成，将这些片段分别装入到存储空间中不同的区域内的分配方式。</p>
+<h3><span id="程序段">程序段</span></h3>
+<p>一个程序本质上都是由 bss段、data段、text段三个组成的。</p>
 <p><strong>bss段</strong>：（bss segment）用来存放程序中<strong>未初始化的全局变量</strong>的一块内存区域。bss是英文Block Started by Symbol的简称。bss段属于<strong>静态内存分配</strong>。</p>
 <p><strong>data段</strong>：数据段（data segment）用来存放程序中<strong>已初始化的全局变量</strong>的一块内存区域。数据段属于<strong>静态内存分配</strong>。</p>
-<p><strong>text段</strong>：代码段（code segment&#x2F;text segment）用来存放<strong>程序执行代码</strong>的一块内存区域。这部分区域的大小在程序运行前就已经确定，并且内存区域通常属于<strong>只读</strong>(某些架构也允许代码段为可写，即允许修改程序)。在代码段中，也有可能包含一些只读的常数变量，例如<strong>字符串常量</strong>等。</p>
-<p><strong>栈(stack)<strong>：存放、交换</strong>临时数据</strong>的内存区</p>
+<p><strong>text段</strong>：代码段（code segment/text segment）用来存放<strong>程序执行代码</strong>的一块内存区域。这部分区域的大小在程序运行前就已经确定，并且内存区域通常属于<strong>只读</strong>(某些架构也允许代码段为可写，即允许修改程序)。在代码段中，也有可能包含一些只读的常数变量，例如<strong>字符串常量</strong>等。</p>
+<p><strong>栈(stack)</strong>：存放、交换<strong>临时数据</strong>的内存区</p>
 <ul>
-<li><p>用户存放<strong>程序局部变量</strong>的内存区域，（但不包括static声明的变量，<strong>static</strong>意味着在<strong>数据段中存放变量</strong>）。</p>
+<li>
+<p>用户存放<strong>程序局部变量</strong>的内存区域，（但不包括static声明的变量，<strong>static</strong>意味着在<strong>数据段中存放变量</strong>）。</p>
 </li>
-<li><p><strong>保存&#x2F;恢复调用现场</strong>。在函数被调用时，其参数也会被压入发起调用的进程栈中，并且待到调用结束后，函数的返回值也会被存放回栈中。</p>
+<li>
+<p><strong>保存/恢复调用现场</strong>。在函数被调用时，其参数也会被压入发起调用的进程栈中，并且待到调用结束后，函数的返回值也会被存放回栈中。</p>
 </li>
 </ul>
 <p><strong>堆（heap）</strong>：存放进程运行中<strong>动态分配</strong>的内存段</p>
 <ul>
 <li>它的大小并不固定，可动态扩张或缩减。当进程调用<strong>malloc等函数分配内存</strong>时，新分配的内存就被动态添加到堆上（<strong>堆被扩张</strong>）；当利用<strong>free</strong>等函数释放内存时，被释放的内存从堆中被剔除（<strong>堆被缩减</strong>）。</li>
 </ul>
-<p><img src="/2021-06-07-OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-4.png"></p>
+<p><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-4.png" alt></p>
 <p>C语言各个段地址解析：</p>
-<p><a href="https://blog.csdn.net/zhengshifeng123/article/details/79756830" target="_blank" rel="noopener">https://blog.csdn.net/zhengshifeng123/article/details/79756830</a></p>
-<h3><span id="gcc编译与链接">gcc编译与链接</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gcc -o main main.c extra.c #-o 编译+链接</span><br><span class="line">./main #运行main</span><br><span class="line"></span><br><span class="line">gcc -c main.c</span><br><span class="line">gcc -c extra.c #只编译</span><br><span class="line"></span><br><span class="line">gcc main.o extra.o -o main</span><br><span class="line">./main #只链接</span><br></pre></td></tr></table></figure>
-
+<p>https://blog.csdn.net/zhengshifeng123/article/details/79756830</p>
+<h3><span id="gcc编译与链接">gcc编译与链接</span></h3>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gcc -o main main.c extra.c #-o 编译+链接</span><br><span class="line">./main #运行main</span><br><span class="line"></span><br><span class="line">gcc -c main.c</span><br><span class="line">gcc -c extra.c #只编译</span><br><span class="line"></span><br><span class="line">gcc main.o extra.o -o main</span><br><span class="line">./main #只链接</span><br></pre></td></tr></table></figure>
 <p><strong>gcc调用</strong>包含的几个<strong>工具</strong>：</p>
 <ul>
 <li>cc1：预处理器和编译器</li>
 <li>as：汇编器</li>
 <li>collect2：链接器</li>
 </ul>
-<h3><span id="linux下可执行文件的格式">Linux下可执行文件的格式</span></h3><p>ELF（Executable and Linkable Format）文件</p>
+<h3><span id="linux下可执行文件的格式">Linux下可执行文件的格式</span></h3>
+<p>ELF（Executable and Linkable Format）文件</p>
 <ol>
 <li><strong>可重定位（relocatable）文件</strong>，保存着代码和适当的数据，用来和其他的object文件一起来创建一个可执行文件或者是一个共享文件。</li>
 <li><strong>可执行（executable）文件</strong>，保存着一个用来执行的程序，该文件指出了exec（BA_OS）如何来创建程序进程映像</li>
 <li><strong>共享object文件</strong>，保存着代码和合适的数据，用来被下面的两个链接器链接。第一个是链接编辑器（静态链接），可以和其他的可重定位和共享object文件一起来创建object文件；第二个是动态链接器，联合一个可执行文件和其他的共享object文件来创建一个进程映象。</li>
 </ol>
 <p><strong>编译，链接，重定位，装载，运行</strong>。五个步骤完成程序的执行全流程。</p>
-<h2><span id="33-页式内存管理">3.3 页式内存管理</span></h2><h3><span id="程序-进程和作业">程序、进程和作业</span></h3><p><strong>程序</strong>—<strong>静止</strong>的，是存放在磁盘上的可执行文件</p>
+<h2><span id="33-页式内存管理">3.3 页式内存管理</span></h2>
+<h3><span id="程序-进程和作业">程序、进程和作业</span></h3>
+<p><strong>程序</strong>—<strong>静止</strong>的，是存放在磁盘上的可执行文件</p>
 <p><strong>进程</strong>—<strong>动态</strong>的，包括程序和程序处理对象，是分配资源的基本单位。</p>
 <ul>
-<li><p>完成操作系统功能的进程是<strong>系统进程</strong>。</p>
+<li>
+<p>完成操作系统功能的进程是<strong>系统进程</strong>。</p>
 </li>
-<li><p>完成用户功能的进程称为<strong>用户进程</strong>。</p>
+<li>
+<p>完成用户功能的进程称为<strong>用户进程</strong>。</p>
 </li>
 </ul>
 <p><strong>作业</strong>—是用户需要计算机完成的<strong>某项任务</strong>，是要求计算机<strong>所做工作的集合</strong>。</p>
 <p>一个<strong>作业</strong>划分为<strong>多个进程</strong>来完成，一个进程又由其<strong>实体</strong>—<strong>程序和数据集合</strong>来组成。</p>
-<h3><span id="分页式存储管理">分页式存储管理</span></h3><p><strong>纯分页系统</strong>：没有页面置换功能。所有页<strong>一次性全部装入主存</strong>。</p>
+<h3><span id="分页式存储管理">分页式存储管理</span></h3>
+<p><strong>纯分页系统</strong>：没有页面置换功能。所有页<strong>一次性全部装入主存</strong>。</p>
 <p><strong>页</strong>：每个作业的<strong>地址空间</strong>分成一些<strong>大小相等的片</strong>，称之为<strong>页面</strong>或<strong>页</strong>。</p>
 <p><strong>存储块</strong>：主存的<strong>存储空间</strong>也分成和<strong>页面相同大小的片</strong>，称为<strong>存储块</strong>，或<strong>页框</strong>。</p>
 <p><strong>分页地址结构</strong>：</p>
-<h5><span id="逻辑地址">逻辑地址</span></h5><table>
+<h5><span id="逻辑地址">逻辑地址</span></h5>
+<table>
 <thead>
 <tr>
-<th align="center">31-12</th>
-<th align="center">11-0</th>
+<th style="text-align:center">31-12</th>
+<th style="text-align:center">11-0</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">页号p</td>
-<td align="center">页内偏移w</td>
+<tbody>
+<tr>
+<td style="text-align:center">页号p</td>
+<td style="text-align:center">页内偏移w</td>
 </tr>
-</tbody></table>
-<h5><span id="物理地址">物理地址</span></h5><table>
+</tbody>
+</table>
+<h5><span id="物理地址">物理地址</span></h5>
+<table>
 <thead>
 <tr>
-<th align="center">21-12</th>
-<th align="center">11-0</th>
+<th style="text-align:center">21-12</th>
+<th style="text-align:center">11-0</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">块号</td>
-<td align="center">块内偏移d</td>
+<tbody>
+<tr>
+<td style="text-align:center">块号</td>
+<td style="text-align:center">块内偏移d</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p>现代操作系统中最常用的页面大小为4KB</p>
-<h4><span id="内存分配基本思想">内存分配基本思想</span></h4><ul>
-<li>以<strong>页</strong>为单位进行分配，并按程序（作业）的<strong>长度（页数）</strong>进行分配；</li>
+<h4><span id="内存分配基本思想">内存分配基本思想</span></h4>
+<ul>
+<li>以<strong>页</strong>为单位进行分配，并按程序（作业）的**长度（页数）**进行分配；</li>
 <li><strong>逻辑上相邻</strong>的页，<strong>物理上不一定相邻</strong>。</li>
 </ul>
-<h4><span id="数据结构">数据结构</span></h4><p>每个进程有一个<strong>进程页表</strong>，描述该进程<strong>占用的物理页面</strong>及<strong>逻辑排列顺序</strong>。</p>
+<h4><span id="数据结构">数据结构</span></h4>
+<p>每个进程有一个<strong>进程页表</strong>，描述该进程<strong>占用的物理页面</strong>及<strong>逻辑排列顺序</strong>。</p>
 <p>整个系统有一个<strong>物理页面表</strong>，描述物理内存空间<strong>分配使用</strong>情况。</p>
 <p>整个系统有一个<strong>请求表</strong>，描述系统内各个<strong>进程页表的位置</strong>和<strong>大小</strong>，用于<strong>地址转换</strong>，也可以结合到各进程的PCB里。</p>
-<h4><span id="地址变换页表查找">地址变换—页表查找</span></h4><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-5.png" style="zoom: 80%;">
-
-<h4><span id="关于页表">关于页表</span></h4><ul>
+<h4><span id="地址变换页表查找">地址变换—页表查找</span></h4>
+<img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-5.png" style="zoom: 80%;">
+<h4><span id="关于页表">关于页表</span></h4>
+<ul>
 <li>页表<strong>放置在内存中</strong>，记录了进程的<strong>现场信息</strong>。记录进程的<strong>内存分配情况</strong>以及实现进程运行时的<strong>动态重定位</strong>。</li>
 <li>访问一个数据需要访问内存<strong>两次</strong>（页表一次，内存一次）。</li>
 <li>页表的<strong>基址</strong>及<strong>长度</strong>由<strong>页表寄存器</strong>给出。</li>
 </ul>
-<h4><span id="地址转换机构">地址转换机构</span></h4><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-6.png" style="zoom:80%;">
-
+<h4><span id="地址转换机构">地址转换机构</span></h4>
+<img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-6.png" style="zoom:80%;">
 <p>逻辑地址分为页号和页内地址两部分。先进行越界保护。之后进行页表定位：页表始址+页号*页表项长度</p>
-<p>查询页表，读出块号。物理地址&#x3D;块号+块内地址（块内地址&#x3D;页内地址）</p>
-<h3><span id="提高分页效率">提高分页效率</span></h3><ul>
+<p>查询页表，读出块号。物理地址=块号+块内地址（块内地址=页内地址）</p>
+<h3><span id="提高分页效率">提高分页效率</span></h3>
+<ul>
 <li>减少页表大小</li>
 <li>提高地址映射速度</li>
 </ul>
-<h4><span id="解决问题方法">解决问题方法</span></h4><ul>
+<h4><span id="解决问题方法">解决问题方法</span></h4>
+<ul>
 <li>动态调入页表：只将需用的部分页表项调入内存</li>
 <li>多级页表</li>
 </ul>
@@ -475,58 +537,61 @@
 </ul>
 <p>参考博客：<a href="https://www.jianshu.com/p/51c2286a6268" target="_blank" rel="noopener">https://www.jianshu.com/p/51c2286a6268</a></p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-7.jpg" style="zoom: 67%;">
-
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-8.png" style="zoom:67%;">
-
 <blockquote>
 <p>如果是64位操作系统，内存也是4G，每个页面大小也为4KB，采用三级页表，需要字对齐，则虚拟地址应该为多少位？</p>
 </blockquote>
 <p>首先每一级页表的所占空间大小应该都是一个页面的大小。即4KB（因为自映射机制）</p>
-<p>又由于64位操作系统需要字对齐，所以实际上每一级目录只占用12-3&#x3D;9位。</p>
-<p>因此三级目录就需要9*3+12&#x3D;39位</p>
+<p>又由于64位操作系统需要字对齐，所以实际上每一级目录只占用12-3=9位。</p>
+<p>因此三级目录就需要9*3+12=39位</p>
 <p>多级页表带来访存效率低下问题</p>
-<h3><span id="页表快速访问机制mmu">页表快速访问机制——MMU</span></h3><p>CPU内部增加了一个硬件单元，称为<strong>存储管理单元MMU</strong>（Memory Management Unit）</p>
+<h3><span id="页表快速访问机制mmu">页表快速访问机制——MMU</span></h3>
+<p>CPU内部增加了一个硬件单元，称为<strong>存储管理单元MMU</strong>（Memory Management Unit）</p>
 <ul>
 <li><strong>页表Cache</strong>：又称为<strong>TLB</strong>，用于存放<strong>虚拟地址</strong>与<strong>相应</strong>的<strong>物理地址</strong>；</li>
 <li><strong>TLB控制单元</strong>：TLB内容<strong>填充、刷新、覆盖，以及越界检查</strong>。</li>
 <li><strong>页表（遍历）查找单元</strong>：若TLB未命中，自动查找多级页表，将找到的物理地址<strong>送与TLB控制单元</strong>。（可用软件实现）</li>
 </ul>
-<p><img src="/./2021-06-07-OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-21.png"></p>
-<h3><span id="反向页表-哈希页表">反向页表、哈希页表</span></h3><h3><span id="页的保护">页的保护</span></h3><ul>
+<p><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-21.png" alt></p>
+<h3><span id="反向页表-哈希页表">反向页表、哈希页表</span></h3>
+<h3><span id="页的保护">页的保护</span></h3>
+<ul>
 <li>地址<strong>越界</strong>保护</li>
 <li>页表中设置<strong>保护位</strong>（只读，读写，执行）</li>
 </ul>
-<h3><span id="页面大小习题">页面大小习题</span></h3><p>假设进程的平均大小是1MB(s&#x3D;1MB)，每个页表项需要8个字节(e&#x3D;8B)。页面大小设置为多少字节比较好？</p>
-<p>答：$f(p)&#x3D;s*e&#x2F;p+p&#x2F;2，求minf(p)$ $为4kB$</p>
-<h3><span id="多级页表再理解">多级页表再理解</span></h3><p>指令给出的地址除<strong>偏移地址之外</strong>的<strong>各部分</strong>全是各级页表的<strong>页表号</strong>或<strong>页号</strong>，且都是<strong>物理页号</strong></p>
+<h3><span id="页面大小习题">页面大小习题</span></h3>
+<p>假设进程的平均大小是1MB(s=1MB)，每个页表项需要8个字节(e=8B)。页面大小设置为多少字节比较好？</p>
+<p>答：$f§=s*e/p+p/2，求minf§$ $为4kB$</p>
+<h3><span id="多级页表再理解">多级页表再理解</span></h3>
+<p>指令给出的地址除<strong>偏移地址之外</strong>的<strong>各部分</strong>全是各级页表的<strong>页表号</strong>或<strong>页号</strong>，且都是<strong>物理页号</strong></p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-9.png" style="zoom: 67%;">
-
-<h2><span id="34-分段存储管理">3.4 分段存储管理</span></h2><p>逻辑地址结构为：<strong>段号S+位移量W</strong></p>
+<h2><span id="34-分段存储管理">3.4 分段存储管理</span></h2>
+<p>逻辑地址结构为：<strong>段号S+位移量W</strong></p>
 <p><strong>段表</strong>记录了段与内存位置对应关系，保存在内存中。</p>
-<p>段表<strong>基地址</strong>和<strong>长度</strong>由段表寄存器给出。访问一个字节数据&#x2F;指令需要<strong>访问内存两次</strong>（段表1次，内存1次）。</p>
+<p>段表<strong>基地址</strong>和<strong>长度</strong>由段表寄存器给出。访问一个字节数据/指令需要<strong>访问内存两次</strong>（段表1次，内存1次）。</p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-10.png" style="zoom:80%;">
-
 <p>先比较段号S和段表长度TL，不越界则检查段内地址d是否超过段长。</p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-11.png" style="zoom:80%;">
-
 <p><strong>信息共享</strong>——<strong>可重入代码</strong>（<strong>纯代码Pure Code</strong>），允许多个进程<strong>同时访问</strong>，但<strong>不允许</strong>任何进程对其进行<strong>修改</strong>。</p>
 <p>可采用<strong>分段共享</strong>，</p>
-<h3><span id="段页式存储管理">段页式存储管理</span></h3><p><strong>分段方法</strong>——分配和管理<strong>虚拟存储器</strong></p>
+<h3><span id="段页式存储管理">段页式存储管理</span></h3>
+<p><strong>分段方法</strong>——分配和管理<strong>虚拟存储器</strong></p>
 <p><strong>分页方法</strong>——分配和管理<strong>实存储器</strong></p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-12.png" style="zoom:80%;">
-
-<h2><span id="35-虚拟存储管理">3.5 虚拟存储管理（※）</span></h2><p><strong>虚拟地址空间</strong>：并不真实存在，格式按<strong>字节从0开始编址</strong>所形成的空间</p>
+<h2><span id="35-虚拟存储管理">3.5 虚拟存储管理（※）</span></h2>
+<p><strong>虚拟地址空间</strong>：并不真实存在，格式按<strong>字节从0开始编址</strong>所形成的空间</p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-13.png" style="zoom: 67%;">
-
-<h3><span id="虚拟存储的基本原理">虚拟存储的基本原理</span></h3><ul>
+<h3><span id="虚拟存储的基本原理">虚拟存储的基本原理</span></h3>
+<ul>
 <li>按需装载</li>
 <li>缺页调入</li>
 <li>不用调出</li>
 </ul>
-<h3><span id="缺页错误-page-fault处理机制">缺页错误（ Page Fault）处理机制</span></h3><p>当进程执行过程中需访问的页面不在物理存储器中时，会引发发生缺页中断，进行所需页面换入，步骤如下：</p>
+<h3><span id="缺页错误-page-fault处理机制">缺页错误（ Page Fault）处理机制</span></h3>
+<p>当进程执行过程中需访问的页面不在物理存储器中时，会引发发生缺页中断，进行所需页面换入，步骤如下：</p>
 <ol>
 <li>陷入内核态，保存必要的信息（OS及用户进程状态相关的信息）。（现场保护）</li>
-<li>查找出来发生页面中断的虚拟页面（进程地址空间中的页面）。这个虚拟页面的信息通常会保存在一个硬<br>件寄存器中，如果没有的话，操作系统必须检索程序计数器，取出这条指令，用软件分析该指令，通过分析找出发生页面中断的虚拟页面。（页面定位）</li>
+<li>查找出来发生页面中断的虚拟页面（进程地址空间中的页面）。这个虚拟页面的信息通常会保存在一个硬件寄存器中，如果没有的话，操作系统必须检索程序计数器，取出这条指令，用软件分析该指令，通过分析找出发生页面中断的虚拟页面。（页面定位）</li>
 <li>检查虚拟地址的有效性及安全保护位。如果发生保护错误，则杀死该进程。（权限检查）</li>
 <li>查找一个空闲的页框(物理内存中的页面)，如果没有空闲页框则需要通过页面置换算法找到一个需要换出的页框。（新页面调入（1））</li>
 <li>如果找的页框中的内容被修改了，则需要将修改的内容保存到磁盘上。（注：此时需要将页框置为忙状态，以防页框被其它进程抢占掉）（旧页面写回）</li>
@@ -535,53 +600,70 @@
 <li>恢复缺页中断发生前的状态，将程序指针重新指向引起缺页中断的指令。（恢复现场）</li>
 <li>程序重新执行引发缺页中断的指令，进行存储访问。（继续执行）缺页处理过程涉及了用户态和内核态之间的切换，虚拟地址和物理地址之间的转换（这个转换过程需要使用MMU和TLB）</li>
 </ol>
-<h2><span id="36-页面置换">3.6 页面置换</span></h2><h3><span id="1最优置换-opt">1.最优置换 OPT</span></h3><ul>
-<li><p>需要用<strong>先验知识</strong>，无法实现，作为<strong>基准</strong>衡量其他算法效果。</p>
+<h2><span id="36-页面置换">3.6 页面置换</span></h2>
+<h3><span id="1最优置换-opt">1.最优置换 OPT</span></h3>
+<ul>
+<li>
+<p>需要用<strong>先验知识</strong>，无法实现，作为<strong>基准</strong>衡量其他算法效果。</p>
 </li>
-<li><p>置换掉<strong>未来最久不被使用</strong>的页</p>
+<li>
+<p>置换掉<strong>未来最久不被使用</strong>的页</p>
 </li>
 </ul>
-<h3><span id="2fifo类算法">2.FIFO类算法</span></h3><h4><span id="先进先出-fifo">先进先出 FIFO</span></h4><p>用一个<strong>队列</strong>维护</p>
+<h3><span id="2fifo类算法">2.FIFO类算法</span></h3>
+<h4><span id="先进先出-fifo">先进先出 FIFO</span></h4>
+<p>用一个<strong>队列</strong>维护</p>
 <p><strong>性能较差</strong>，因为<strong>较早调入</strong>的页往往<strong>访问频率高</strong></p>
-<h4><span id="belady-现象">Belady 现象</span></h4><p>FIFO容易出现</p>
+<h4><span id="belady-现象">Belady 现象</span></h4>
+<p>FIFO容易出现</p>
 <p>分配页面增多，<strong>缺页率</strong>反而<strong>增高</strong></p>
-<h4><span id="改进fifosecond-chance">改进FIFO—Second Chance</span></h4><p>每个页面增加一个<strong>访问标志位</strong>，标识进入<strong>缓存队列</strong>后是否再次被访问过</p>
+<h4><span id="改进fifosecond-chance">改进FIFO—Second Chance</span></h4>
+<p>每个页面增加一个<strong>访问标志位</strong>，标识进入<strong>缓存队列</strong>后是否再次被访问过</p>
 <p>如果一个页面进入后被访问，则设置标识位为1。在将要淘汰A时，将A标识位设成0，并将A移动到<strong>队列头（视为新加入的）</strong></p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-15.png" style="zoom: 80%;">
-
-<h4><span id="改进fifoclock">改进FIFO—Clock</span></h4><p>Second Chance的改进版，也叫最近未使用算法</p>
+<h4><span id="改进fifoclock">改进FIFO—Clock</span></h4>
+<p>Second Chance的改进版，也叫最近未使用算法</p>
 <p>使用<strong>环形队列</strong>，缺页时当前指针指向的P如果访问标记为1，则清零并移动指针到P的下一个</p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-14.png" style="zoom:67%;">
-
 <p>FIFO类算法命中率较低，<strong>实际应用</strong>较少。</p>
-<h4><span id="fifo算法性能比较">FIFO算法性能比较</span></h4><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-16.png" style="zoom: 50%;">
-
-<h3><span id="3最近最少使用-lru算法">3.最近最少使用 LRU算法</span></h3><p><strong>核心思想</strong>：最近被访问过，将来被访问概率增高</p>
+<h4><span id="fifo算法性能比较">FIFO算法性能比较</span></h4>
+<img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-16.png" style="zoom: 50%;">
+<h3><span id="3最近最少使用-lru算法">3.最近最少使用 LRU算法</span></h3>
+<p><strong>核心思想</strong>：最近被访问过，将来被访问概率增高</p>
 <p>淘汰掉<strong>最先进入队列</strong>里且被<strong>访问次数最少</strong>的页面，可采用链表实现</p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-17.png" style="zoom: 50%;">
-
-<h3><span id="4其他替换算法">4.其他替换算法</span></h3><ul>
-<li><p>LRU类：LRU2， Two queues（2Q）， Multi Queue（MQ）</p>
+<h3><span id="4其他替换算法">4.其他替换算法</span></h3>
+<ul>
+<li>
+<p>LRU类：LRU2， Two queues（2Q）， Multi Queue（MQ）</p>
 </li>
-<li><p>LFU类： LFU（Least Frequently Used）， LFU-Aging， LFU*-Aging， Window-LFU； </p>
+<li>
+<p>LFU类： LFU（Least Frequently Used）， LFU-Aging， LFU*-Aging， Window-LFU；</p>
 </li>
-<li><p>其它： Most Recently Used（MRU），Adaptive Replacement Cache（ARC），Working Set（WS），Working Set Clock（WSclock）</p>
+<li>
+<p>其它： Most Recently Used（MRU），Adaptive Replacement Cache（ARC），Working Set（WS），Working Set Clock（WSclock）</p>
 </li>
 </ul>
-<h3><span id="写时复制">写时复制</span></h3><ul>
+<h3><span id="写时复制">写时复制</span></h3>
+<ul>
 <li><strong>两个进程共享</strong>同一块物理内存，每个页面都被标志成了<strong>写时复制</strong>。共享的物理内存中每个页面都是只读的。</li>
 <li>如果某个进程想改变某个页面时，就会与<strong>只读标记</strong>冲突，而系统在检测出页面是<strong>写时复制</strong>的，则会在内存中复制一个页面，然后进行写操作。</li>
 <li>新复制的页面对执行写操作的进程是私有的，对其他共享写时复制页面的进程是不可见的。</li>
 </ul>
-<h2><span id="37-页目录自映射">3.7 页目录自映射</span></h2><p><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-18.png" style="zoom: 40%;"><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-19.png" style="zoom:40%;"><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-20.png" style="zoom:40%;"></p>
-<h1><span id="第4章-进程与并发程序设计">第4章 进程与并发程序设计</span></h1><h2><span id="41-进程与线程">4.1 进程与线程</span></h2><h3><span id="并发与并行">并发与并行</span></h3><p>并发：两个活动都处在各自的<strong>起点到终点间的某一处</strong>。</p>
+<h2><span id="37-页目录自映射">3.7 页目录自映射</span></h2>
+<p><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-18.png" style="zoom: 40%;"><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-19.png" style="zoom:40%;"><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/3-20.png" style="zoom:40%;"></p>
+<h1><span id="第4章-进程与并发程序设计">第4章 进程与并发程序设计</span></h1>
+<h2><span id="41-进程与线程">4.1 进程与线程</span></h2>
+<h3><span id="并发与并行">并发与并行</span></h3>
+<p>并发：两个活动都处在各自的<strong>起点到终点间的某一处</strong>。</p>
 <p>并行：<strong>同一时间度量</strong>下<strong>同时运行</strong>在<strong>不同的处理机</strong>上</p>
 <p>并发不一定是并行</p>
-<h4><span id="并行性的确定bernstein条件">并行性的确定—Bernstein条件</span></h4><p>程序并发执行出现<strong>竞争</strong></p>
+<h4><span id="并行性的确定bernstein条件">并行性的确定—Bernstein条件</span></h4>
+<p>程序并发执行出现<strong>竞争</strong></p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/4-1.png" style="zoom:50%;">
-
 <p>归结为：<strong>不存在一个数据集</strong>两个进程<strong>同时需要写</strong></p>
-<h3><span id="进程概念">进程概念</span></h3><p><strong>结构特征</strong>：包含<strong>程序段，数据段，进程控制块（PCB）</strong></p>
+<h3><span id="进程概念">进程概念</span></h3>
+<p><strong>结构特征</strong>：包含<strong>程序段，数据段，进程控制块（PCB）</strong></p>
 <p>一个进程应该包括：</p>
 <ul>
 <li>程序的代码；</li>
@@ -590,186 +672,231 @@
 <li>一组通用的寄存器的当前值，堆、栈；</li>
 <li>一组系统资源（如打开的文件）</li>
 </ul>
-<h3><span id="进程状态与控制">进程状态与控制</span></h3><p>进程控制实现：<strong>原语</strong>——常驻内存，只在内核态下执行，指令序列连续不可分割</p>
+<h3><span id="进程状态与控制">进程状态与控制</span></h3>
+<p>进程控制实现：<strong>原语</strong>——常驻内存，只在内核态下执行，指令序列连续不可分割</p>
 <p>创建原语(fork exec)</p>
 <p>撤销原语(kill)</p>
-<h4><span id="进程三种基本状态">进程三种基本状态</span></h4><p>就绪(Ready)：已获得处理机外所需资源，等待CPU的分配</p>
+<h4><span id="进程三种基本状态">进程三种基本状态</span></h4>
+<p>就绪(Ready)：已获得处理机外所需资源，等待CPU的分配</p>
 <p>执行(Running)：<strong>占用处理机</strong>资源。无进程可执行时，自动执行系统idle进程（相当于空操作）</p>
 <p>阻塞(Blocked)：正在执行的进程，因等待某事件，<strong>暂时无法</strong>继续执行，放弃处理机处于<strong>暂停</strong>状态</p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/4-2.png" style="zoom: 67%;">
-
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/4-3.png" style="zoom: 80%;">
-
-<h4><span id="挂起进程模型">挂起进程模型</span></h4><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/4-4.png" style="zoom: 67%;">
-
-<h4><span id="进程控制块">进程控制块</span></h4><ul>
+<h4><span id="挂起进程模型">挂起进程模型</span></h4>
+<img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/4-4.png" style="zoom: 67%;">
+<h4><span id="进程控制块">进程控制块</span></h4>
+<ul>
 <li><strong>进程标识符</strong> （进程ID）</li>
 <li><strong>程序、数据地址</strong></li>
 <li><strong>当前状态</strong> 系统会把相同状态的进程组成队列</li>
 <li><strong>现场保护区</strong> 需要等待时保存CPU各种状态信息</li>
 <li><strong>同步与同步机制</strong> 实现进程间互斥同步、通信所需的信号量</li>
-<li><strong>优先级</strong> </li>
+<li><strong>优先级</strong></li>
 <li><strong>资源清单</strong> 拥有的除CPU外的资源记录</li>
 <li><strong>链接字</strong> 该进程所在队列中下一个进程PCB首地址</li>
 </ul>
-<h3><span id="线程概念">线程概念</span></h3><p>进程 (process task) 包含了两个概念：<strong>资源拥有者</strong>和<strong>可执行单元</strong></p>
+<h3><span id="线程概念">线程概念</span></h3>
+<p>进程 (process task) 包含了两个概念：<strong>资源拥有者</strong>和<strong>可执行单元</strong></p>
 <p>可执行单元——线程(thread)  将<strong>资源与计算</strong>分离，提高并发效率</p>
 <p><strong>进程</strong>是<strong>资源分配</strong>的基本单位，<strong>线程</strong>是<strong>处理机调度</strong>的基本单位</p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/4-5.png" style="zoom:50%;">
-
-<h3><span id="线程的实现方式">线程的实现方式 ※※</span></h3><h4><span id="用户级线程user-level-threadsult">用户级线程：User level threads(ULT)</span></h4><p>线程在用户空间,通过library模拟的thread</p>
-<h4><span id="内核级线程kernel-level-threads-klt">内核级线程：Kernel level threads (KLT)</span></h4><p>kernel有好几个分身 多线程内核</p>
-<h4><span id="混合实现方式">混合实现方式</span></h4><p>使用内核级线程，将<strong>用户级线程</strong>与<strong>某些</strong>或者<strong>全部</strong>内核线程<strong>多路复用</strong>起来，形成混合的线程实现方式。</p>
-<h4><span id="线程模型">线程模型</span></h4><ul>
-<li><strong>Many-to-One Model</strong> 多个用户级线程映射到一个内核级线程，线程管理在用户空间完成。<ul>
+<h3><span id="线程的实现方式">线程的实现方式 ※※</span></h3>
+<h4><span id="用户级线程user-level-threadsult">用户级线程：User level threads(ULT)</span></h4>
+<p>线程在用户空间,通过library模拟的thread</p>
+<h4><span id="内核级线程kernel-level-threads-klt">内核级线程：Kernel level threads (KLT)</span></h4>
+<p>kernel有好几个分身 多线程内核</p>
+<h4><span id="混合实现方式">混合实现方式</span></h4>
+<p>使用内核级线程，将<strong>用户级线程</strong>与<strong>某些</strong>或者<strong>全部</strong>内核线程<strong>多路复用</strong>起来，形成混合的线程实现方式。</p>
+<h4><span id="线程模型">线程模型</span></h4>
+<ul>
+<li><strong>Many-to-One Model</strong> 多个用户级线程映射到一个内核级线程，线程管理在用户空间完成。
+<ul>
 <li>优点：线程管理在用户空间进行，<strong>效率高</strong></li>
 <li>缺点：一个线程被阻塞，整个进程被阻塞；<strong>多个线程不能并行</strong>运行在多处理机上</li>
 </ul>
 </li>
-<li><strong>One-to-one Model</strong>  将每个用户级线程映射到一个内核级线程<ul>
+<li><strong>One-to-one Model</strong>  将每个用户级线程映射到一个内核级线程
+<ul>
 <li>优点：一个进程阻塞可以让另一线程继续，<strong>并发能力强</strong></li>
 <li>缺点：每创1个用户级线程都需要创1个内核级线程，<strong>开销大</strong></li>
 </ul>
 </li>
-<li><strong>Many-to-Many Model</strong>  将 n 个用户级线程映射到m 个内核级线程上，要求m &lt;&#x3D; n。<ul>
+<li><strong>Many-to-Many Model</strong>  将 n 个用户级线程映射到m 个内核级线程上，要求m &lt;= n。
+<ul>
 <li>特点：集前2者之长</li>
 </ul>
 </li>
 </ul>
-<h2><span id="42-同步与互斥">4.2 同步与互斥</span></h2><p>互斥-间接制约：多个进程不能同时进入<strong>同一组共享变量临界区域</strong></p>
+<h2><span id="42-同步与互斥">4.2 同步与互斥</span></h2>
+<p>互斥-间接制约：多个进程不能同时进入<strong>同一组共享变量临界区域</strong></p>
 <p>同步-直接制约：有效地共享资源、相互合作</p>
-<h3><span id="基于忙等的方式">基于忙等的方式</span></h3><p>软硬件方法都不可取 </p>
+<h3><span id="基于忙等的方式">基于忙等的方式</span></h3>
+<p>软硬件方法都不可取</p>
 <p>Lamport面包店算法、Eisenberg算法</p>
-<h3><span id="基于信号量的方法">基于信号量的方法</span></h3><h4><span id="经典信号量机制">经典信号量机制</span></h4><figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//简单表述</span></span><br><span class="line">P(S): <span class="keyword">while</span> S&lt;=<span class="number">0</span> <span class="keyword">do</span> skip</span><br><span class="line">	  S:=S-<span class="number">1</span>;</span><br><span class="line">V(S): S:=S+<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//详细表述</span></span><br><span class="line"><span class="keyword">Type</span> semaphore = <span class="keyword">record</span></span><br><span class="line">    value : integer;</span><br><span class="line">    L : list <span class="keyword">of</span> process;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="function"><span class="keyword">Procedure</span> <span class="title">P</span><span class="params">(S)</span></span></span><br><span class="line"><span class="function">    <span class="title">var</span> <span class="title">S</span> :</span> semaphore;</span><br><span class="line">    <span class="keyword">begin</span> </span><br><span class="line">        S.value := S.value -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> S.value&lt;<span class="number">0</span> <span class="keyword">then</span> block(S.L);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">V</span><span class="params">(S)</span></span></span><br><span class="line"><span class="function">    <span class="title">var</span> <span class="title">S</span> :</span> semaphore;</span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        S.value := S.value + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> S.value&lt;=<span class="number">0</span> <span class="keyword">then</span> wakeup(S.L);</span><br><span class="line">    <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
-
-<p>信号量必须且只能置一次初值，且只能由P&#x2F;V操作来改变</p>
-<h4><span id="物理意义">物理意义</span></h4><ul>
+<h3><span id="基于信号量的方法">基于信号量的方法</span></h3>
+<h4><span id="经典信号量机制">经典信号量机制</span></h4>
+<figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//简单表述</span></span><br><span class="line">P(S): <span class="keyword">while</span> S&lt;=<span class="number">0</span> <span class="keyword">do</span> skip</span><br><span class="line">	  S:=S-<span class="number">1</span>;</span><br><span class="line">V(S): S:=S+<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//详细表述</span></span><br><span class="line"><span class="keyword">Type</span> semaphore = <span class="keyword">record</span></span><br><span class="line">    value : integer;</span><br><span class="line">    L : list <span class="keyword">of</span> process;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="function"><span class="keyword">Procedure</span> <span class="title">P</span><span class="params">(S)</span></span></span><br><span class="line"><span class="function">    <span class="title">var</span> <span class="title">S</span> :</span> semaphore;</span><br><span class="line">    <span class="keyword">begin</span> </span><br><span class="line">        S.value := S.value -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> S.value&lt;<span class="number">0</span> <span class="keyword">then</span> block(S.L);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="function"><span class="keyword">procedure</span> <span class="title">V</span><span class="params">(S)</span></span></span><br><span class="line"><span class="function">    <span class="title">var</span> <span class="title">S</span> :</span> semaphore;</span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        S.value := S.value + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> S.value&lt;=<span class="number">0</span> <span class="keyword">then</span> wakeup(S.L);</span><br><span class="line">    <span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>信号量必须且只能置一次初值，且只能由P/V操作来改变</p>
+<h4><span id="物理意义">物理意义</span></h4>
+<ul>
 <li>S.value为正时表示<strong>资源的个数</strong></li>
 <li>S.value为负时表示<strong>等待进程</strong>的<strong>个数</strong></li>
 <li>P操作<strong>分配</strong>资源</li>
 <li>V操作<strong>释放</strong>资源</li>
 </ul>
-<h4><span id="应用">应用</span></h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#互斥 初始化S=1</span></span><br><span class="line"><span class="comment">#有限n并发可以把S初始值设为n</span></span><br><span class="line">P(S)   P(S)</span><br><span class="line">临界区  临界区</span><br><span class="line">V(S)   V(S)</span><br><span class="line"></span><br><span class="line"><span class="comment">#同步 初始化S=0 先运行code1 再运行code2</span></span><br><span class="line">P(S)   code1</span><br><span class="line">code2  V(S)</span><br></pre></td></tr></table></figure>
-
-<h3><span id="基于管程的同步与互斥">基于管程的同步与互斥</span></h3><p>管程：高级同步原语</p>
+<h4><span id="应用">应用</span></h4>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#互斥 初始化S=1</span></span><br><span class="line"><span class="comment">#有限n并发可以把S初始值设为n</span></span><br><span class="line">P(S)   P(S)</span><br><span class="line">临界区  临界区</span><br><span class="line">V(S)   V(S)</span><br><span class="line"></span><br><span class="line"><span class="comment">#同步 初始化S=0 先运行code1 再运行code2</span></span><br><span class="line">P(S)   code1</span><br><span class="line">code2  V(S)</span><br></pre></td></tr></table></figure>
+<h3><span id="基于管程的同步与互斥">基于管程的同步与互斥</span></h3>
+<p>管程：高级同步原语</p>
 <p>把<strong>分散的临界区集中</strong>起来，为每个可共享资源设计一个<strong>专门机构</strong>来<strong>统一管理</strong>各进程对该资源的访问，这个<strong>专门机构</strong>称为管程。</p>
 <p>管程互斥进入，由编译器进行实现、</p>
-<h3><span id="进程间通信inter-process-comm">进程间通信(Inter-Process-Comm)</span></h3><ul>
-<li>管道（Pipe）及命名管道（Named pipe或FIFO） </li>
-<li>消息队列（Message） 两个通信原语<ul>
+<h3><span id="进程间通信inter-process-comm">进程间通信(Inter-Process-Comm)</span></h3>
+<ul>
+<li>管道（Pipe）及命名管道（Named pipe或FIFO）</li>
+<li>消息队列（Message） 两个通信原语
+<ul>
 <li>send(destination, &amp;message)</li>
 <li>receive(source, &amp;message)</li>
 </ul>
 </li>
-<li>共享内存（Shared memory） <ul>
+<li>共享内存（Shared memory）
+<ul>
 <li>最有用,最快</li>
 <li>同一块物理内存被映射到进程A、B各自的进程地址空间</li>
 <li>共享内存可以同时读但不能同时写，则需要<strong>同步机制</strong>约束</li>
 </ul>
 </li>
-<li>信号量（Semaphore） </li>
-<li>套接字（Socket） </li>
+<li>信号量（Semaphore）</li>
+<li>套接字（Socket）</li>
 <li>信号（Signal）</li>
 </ul>
-<h2><span id="43-经典进程同步问题">4.3 经典进程同步问题</span></h2><h3><span id="生产者-消费者问题the-producer-consumer-problem">生产者－消费者问题(the producer consumer problem)</span></h3><blockquote>
+<h2><span id="43-经典进程同步问题">4.3 经典进程同步问题</span></h2>
+<h3><span id="生产者-消费者问题the-producer-consumer-problem">生产者－消费者问题(the producer consumer problem)</span></h3>
+<blockquote>
 <p>若干进程通过有限的共享缓冲区交换数据。其中，“生产者”进程不断写入，而 “消费者”进程不断读出；共享缓冲区共有 N个；任何时刻只能有一个进程可对共享缓冲区进行操作。</p>
 </blockquote>
-<h4><span id="信号量写法">信号量写法</span></h4><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/4-6.png" style="zoom:50%;">
-
-<h4><span id="管程写法">管程写法</span></h4><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/4-7.png" style="zoom: 67%;">
-
-<h3><span id="读者-写者问题the-readers-writers-problem">读者－写者问题(the readers-writers problem)</span></h3><blockquote>
+<h4><span id="信号量写法">信号量写法</span></h4>
+<img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/4-6.png" style="zoom:50%;">
+<h4><span id="管程写法">管程写法</span></h4>
+<img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/4-7.png" style="zoom: 67%;">
+<h3><span id="读者-写者问题the-readers-writers-problem">读者－写者问题(the readers-writers problem)</span></h3>
+<blockquote>
 <p>问题描述：对共享资源的读写操作，任一时刻 “写者”最多只允许一个，而 “读者”则允许多个，即 “读－写”互斥，“写－写”互斥，“读－读”允许</p>
 </blockquote>
 <figure class="highlight pascal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1.读者占优势算法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//wmutex表示“允许写”，初值是1。 </span></span><br><span class="line"><span class="comment">//公共变量readcount表示“正在读”的进程数，初值是0； </span></span><br><span class="line"><span class="comment">//mutex表示对readcount的互斥操作，初值是1。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Writer</span></span><br><span class="line">P(wmutex);</span><br><span class="line">	<span class="keyword">write</span></span><br><span class="line">V(wmutex);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Reader</span></span><br><span class="line">P(mutex);</span><br><span class="line">    <span class="keyword">if</span> readcount=<span class="number">0</span> <span class="keyword">then</span> P(wmutex);</span><br><span class="line">    readcount := readcount +<span class="number">1</span>;</span><br><span class="line">V(mutex);</span><br><span class="line"><span class="keyword">read</span></span><br><span class="line">P(mutex);</span><br><span class="line">    readcount := readcount -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> readcount=<span class="number">0</span> <span class="keyword">then</span> V(wmutex);</span><br><span class="line">V(mutex);</span><br><span class="line"></span><br><span class="line"><span class="comment">//2.读写公平算法</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//新增读写互斥变量rwmutex=1</span></span><br><span class="line"><span class="comment">//相当于读完1个之后不能继续下一个人读</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Writer</span></span><br><span class="line">P(rwmutex);</span><br><span class="line">P(wmutex);</span><br><span class="line">	<span class="keyword">write</span></span><br><span class="line">V(wmutex);</span><br><span class="line">V(rwmutex);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Reader</span></span><br><span class="line">P(rwmutex);</span><br><span class="line">P(mutex);</span><br><span class="line">    <span class="keyword">if</span> readcount=<span class="number">0</span> <span class="keyword">then</span> P(wmutex);</span><br><span class="line">    readcount := readcount +<span class="number">1</span>;</span><br><span class="line">V(mutex);</span><br><span class="line">V(rwmutex);  <span class="comment">//释放rwmutex从而让写者先写</span></span><br><span class="line"><span class="keyword">read</span></span><br><span class="line">P(mutex);</span><br><span class="line">    readcount := readcount -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> readcount=<span class="number">0</span> <span class="keyword">then</span> V(wmutex);</span><br><span class="line">V(mutex);</span><br></pre></td></tr></table></figure>
-
-<h3><span id="哲学家进餐问题the-dining-philosophers-problem">哲学家进餐问题(the dining philosophers problem)</span></h3><blockquote>
+<h3><span id="哲学家进餐问题the-dining-philosophers-problem">哲学家进餐问题(the dining philosophers problem)</span></h3>
+<blockquote>
 <p>问题描述：（由Dijkstra首先提出并解决）5个哲学家围绕一张圆桌而坐，桌子上放着5支筷子，每两个哲学家之间放一支；</p>
 <p>哲学家的动作包括思考和进餐，进餐时需要同时拿起他左边和右边的两支筷子，思考时则同时将两支筷子放回原处。</p>
 <p>如何保证哲学家们的动作有序进行？如：不出现相邻者同时进餐；不出现有人永远拿不到筷子。</p>
 </blockquote>
-<h3><span id="理发师问题">理发师问题</span></h3><blockquote>
+<h3><span id="理发师问题">理发师问题</span></h3>
+<blockquote>
 <p>理发店里有一位理发师、一把理发椅和n把供等候理发的顾客坐的椅子；</p>
 <p>如果没有顾客，理发师便在理发椅上睡觉，当一个顾客到来时，叫醒理发师；</p>
 <p>如果理发师正在理发时，又有顾客来到，则如果有空椅子可坐，就坐下来等待，否则就离开。</p>
 </blockquote>
-<h3><span id="吸烟者问题">吸烟者问题</span></h3><blockquote>
+<h3><span id="吸烟者问题">吸烟者问题</span></h3>
+<blockquote>
 <p>三个吸烟者在一间房间内，还有一个香烟供应者。为了制造并抽掉香烟，每个吸烟者需要三样东西：烟草、纸和火柴。供应者有丰富的货物提供。</p>
 <p>三个吸烟者中，第一个有自己的烟草，第二个有自己的纸，第三个有自己的火柴。</p>
 <p>供应者将两样东西放在桌子上，允许一个吸烟者吸烟。当吸烟者完成吸烟后唤醒供应者，供应者再放两样东西（随机地）在桌面上，然后唤醒另一个吸烟者。</p>
 <p>试为吸烟者和供应者编写程序解决问题。</p>
 </blockquote>
-<h2><span id="44调度">4.4调度</span></h2><h3><span id="基本概念">基本概念</span></h3><p>控制协调多个进程对CPU的竞争</p>
-<h4><span id="调度类型">调度类型</span></h4><ul>
+<h2><span id="44调度">4.4调度</span></h2>
+<h3><span id="基本概念">基本概念</span></h3>
+<p>控制协调多个进程对CPU的竞争</p>
+<h4><span id="调度类型">调度类型</span></h4>
+<ul>
 <li>高级调度：接纳多少个作业，接纳哪些作业</li>
 <li>中级调度：内外存交换</li>
 <li>低级调度：CPU资源角度，非抢占式和抢占式（时间片原则，优先权原则，短作业（进程）优先</li>
 </ul>
-<h3><span id="设计调度算法要考虑的问题设计要点">设计调度算法要考虑的问题（设计要点）</span></h3><h4><span id="进程优先级数">进程优先级（数）</span></h4><p>优先数反映了某个优先级</p>
+<h3><span id="设计调度算法要考虑的问题设计要点">设计调度算法要考虑的问题（设计要点）</span></h3>
+<h4><span id="进程优先级数">进程优先级（数）</span></h4>
+<p>优先数反映了某个优先级</p>
 <p>静态优先级、动态优先级</p>
-<h4><span id="进程就绪队列组织">进程就绪队列组织</span></h4><p>按优先级排队方式</p>
-<h4><span id="占用cpu的方式">占用CPU的方式</span></h4><ul>
-<li><strong>不可抢占式方式</strong>。一直占用处理器，直到该进程自己因调用原语操作，或等待I&#x2F;O等原因进入阻塞状态，或时间片用完时才让出处理器，重新进行。</li>
+<h4><span id="进程就绪队列组织">进程就绪队列组织</span></h4>
+<p>按优先级排队方式</p>
+<h4><span id="占用cpu的方式">占用CPU的方式</span></h4>
+<ul>
+<li><strong>不可抢占式方式</strong>。一直占用处理器，直到该进程自己因调用原语操作，或等待I/O等原因进入阻塞状态，或时间片用完时才让出处理器，重新进行。</li>
 <li><strong>抢占式方式</strong>。就绪队列中一旦有优先级高于当前运行进程优先级的进程存在时，便立即进行进程调度，把处理器转给优先级高的进程</li>
 </ul>
-<h4><span id="进程的分类">进程的分类</span></h4><h4><span id="分类1">分类1</span></h4><ul>
-<li>I&#x2F;O Bound（I&#x2F;O密集型）</li>
+<h4><span id="进程的分类">进程的分类</span></h4>
+<h4><span id="分类1">分类1</span></h4>
+<ul>
+<li>I/O Bound（I/O密集型）</li>
 <li>CPU bound（CPU密集型）</li>
 </ul>
-<h4><span id="分类2">分类2</span></h4><ul>
+<h4><span id="分类2">分类2</span></h4>
+<ul>
 <li>批处理进程（Batch Process) 编译器，科学计算</li>
 <li>交互式进程（Interactive Process) Word 触控性GUI</li>
 <li>实时进程（Real-time Process) 视频、音频</li>
 </ul>
-<h3><span id="批处理系统的调度算法">批处理系统的调度算法</span></h3><h4><span id="吞吐量-平均等待时间和平均周转时间">吞吐量、平均等待时间和平均周转时间</span></h4><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/4-8.png" style="zoom: 67%;">
-
-<h4><span id="批处理常用调度算法">批处理常用调度算法</span></h4><ul>
-<li><strong>先来先服务</strong>（FCFS：First Come First Serve)。<ul>
+<h3><span id="批处理系统的调度算法">批处理系统的调度算法</span></h3>
+<h4><span id="吞吐量-平均等待时间和平均周转时间">吞吐量、平均等待时间和平均周转时间</span></h4>
+<img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/4-8.png" style="zoom: 67%;">
+<h4><span id="批处理常用调度算法">批处理常用调度算法</span></h4>
+<ul>
+<li><strong>先来先服务</strong>（FCFS：First Come First Serve)。
+<ul>
 <li>按先后次序分派CPU，当前进程或作业直到执行完或阻塞才让出CPU。唤醒进程后等到当前作业或进程让出CPU。</li>
 <li>利于长作业，不利于短作业</li>
 <li>利于CPU密集型，不利于IO密集型</li>
 </ul>
 </li>
-<li><strong>最短作业优先</strong>（SJF：Shortest Job First)<ul>
+<li><strong>最短作业优先</strong>（SJF：Shortest Job First)
+<ul>
 <li>对长作业不利</li>
 </ul>
 </li>
-<li><strong>最短剩余时间优先</strong>（SRTF：Shortest Remaining Time First） <ul>
+<li><strong>最短剩余时间优先</strong>（SRTF：Shortest Remaining Time First）
+<ul>
 <li><strong>短作业改进</strong>为<strong>抢占式</strong>。新就绪进程比当前进程完成时间更短，则抢占。</li>
 </ul>
 </li>
-<li><strong>最高响应比优先</strong>（HRRF：Highest Response Ratio First）<ul>
-<li>响应比：$RP&#x3D;1+\frac {已等待时间} {要求运行时间}$</li>
+<li><strong>最高响应比优先</strong>（HRRF：Highest Response Ratio First）
+<ul>
+<li>响应比：$RP=1+\frac {已等待时间} {要求运行时间}$</li>
 <li>既照顾了短作业，又不让长作业等太久</li>
 </ul>
 </li>
 </ul>
-<h3><span id="交互式系统">交互式系统</span></h3><ul>
-<li><p><strong>时间片轮转</strong>(RR：Round Robin) </p>
+<h3><span id="交互式系统">交互式系统</span></h3>
+<ul>
+<li>
+<p><strong>时间片轮转</strong>(RR：Round Robin)</p>
 <ul>
 <li>排队(FCFS原则)—轮转(每次就绪队列队首进程执行一个时间片)—中断(时间片结束发生中断)—抢占（暂停当前进程并移到就绪队列末尾)—出让(可以未使用完时间片就出让)</li>
 <li>静态动态优先级</li>
 </ul>
 </li>
-<li><p><strong>多级队列</strong>(MQ：Multi-level Queue)</p>
+<li>
+<p><strong>多级队列</strong>(MQ：Multi-level Queue)</p>
 <ul>
 <li>引入多个就绪队列，并区别对待各个队列</li>
 </ul>
 </li>
-<li><p><strong>多级反馈队列</strong>(MFQ： Multi-level Feedback Queue)</p>
+<li>
+<p><strong>多级反馈队列</strong>(MFQ： Multi-level Feedback Queue)</p>
 </li>
 </ul>
-<h3><span id="实时系统">实时系统</span></h3><ul>
+<h3><span id="实时系统">实时系统</span></h3>
+<ul>
 <li>静态表调度Static table-driven scheduling</li>
 <li>单调速率调度RMS：Rate Monotonic Scheduling</li>
 <li>最早截止时间优先算法EDF：Earliest Deadline First</li>
 </ul>
-<h3><span id="多处理机调度">多处理机调度</span></h3><ul>
+<h3><span id="多处理机调度">多处理机调度</span></h3>
+<ul>
 <li>自调度</li>
 <li>成组调度</li>
 <li>专用处理机调度</li>
 </ul>
-<h2><span id="45-死锁">4.5 死锁</span></h2><blockquote>
+<h2><span id="45-死锁">4.5 死锁</span></h2>
+<blockquote>
 <p><strong>死锁定义</strong>：一组进程中，每个进程都<strong>无限等待</strong>被该组进程中其它进程所占有的资源，在无外力介入的条件下，将因<strong>永远分配不到资源</strong>而<strong>无法运行</strong>的现象。</p>
 </blockquote>
 <p><strong>发生原因</strong></p>
@@ -777,31 +904,38 @@
 <li>资源<strong>竞争</strong></li>
 <li>并行<strong>执行顺序</strong>不当</li>
 </ul>
-<h3><span id="死锁发生的四个必要条件">死锁发生的四个必要条件</span></h3><ul>
+<h3><span id="死锁发生的四个必要条件">死锁发生的四个必要条件</span></h3>
+<ul>
 <li>互斥条件</li>
 <li>请求和占有条件</li>
 <li>不可剥夺条件</li>
 <li>环路等待条件</li>
 </ul>
-<h3><span id="死锁预防">死锁预防</span></h3><ul>
+<h3><span id="死锁预防">死锁预防</span></h3>
+<ul>
 <li>打破互斥条件</li>
 <li>打破占有且申请条件</li>
 <li>打破不可剥夺条件</li>
 <li>打破循环等待条件</li>
 </ul>
-<h3><span id="资源分配图rag算法">资源分配图（RAG）算法</span></h3><p>有向图G的顶点为资源或进程，从<strong>资源R到进程P</strong>的边表示<strong>R已分配给P</strong>，从<strong>进程P到资源R</strong>的边表示<strong>P正因请求R</strong>而处于<strong>等待</strong>状态。</p>
+<h3><span id="资源分配图rag算法">资源分配图（RAG）算法</span></h3>
+<p>有向图G的顶点为资源或进程，从<strong>资源R到进程P</strong>的边表示<strong>R已分配给P</strong>，从<strong>进程P到资源R</strong>的边表示<strong>P正因请求R</strong>而处于<strong>等待</strong>状态。</p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/4-10.png" style="zoom:80%;">
-
-<h4><span id="封锁进程">封锁进程</span></h4><p>是指某个进程由于请求了超过了系统中现有的未分配资源数目的资源，而被系统封锁的进程。</p>
-<h4><span id="非封锁进程">非封锁进程</span></h4><p>即没有被系统封锁的进程</p>
-<h4><span id="资源分配图的化简方法">资源分配图的化简方法</span></h4><p>假设某个RAG中存在一个进程Pi，此刻Pi是非封锁进程，那么可以进行如下化简：</p>
+<h4><span id="封锁进程">封锁进程</span></h4>
+<p>是指某个进程由于请求了超过了系统中现有的未分配资源数目的资源，而被系统封锁的进程。</p>
+<h4><span id="非封锁进程">非封锁进程</span></h4>
+<p>即没有被系统封锁的进程</p>
+<h4><span id="资源分配图的化简方法">资源分配图的化简方法</span></h4>
+<p>假设某个RAG中存在一个进程Pi，此刻Pi是非封锁进程，那么可以进行如下化简：</p>
 <p>当Pi有请求边时，首先将其请求边变成分配边(即满足Pi的资源请求)，而一旦Pi的所有资源请求都得到满足，Pi就能在有限的时间内运行结束，并释放其所占用的全部资源，此时Pi只有分配边，删去这些分配边（实际上相当于消去了Pi的所有请求边和分配边），使Pi成为孤立结点。（反复进行）</p>
-<h4><span id="死锁定理">死锁定理</span></h4><p>系统中某个时刻<strong>t为死锁状态</strong>的充要条件是t时刻系统的<strong>资源分配图是不可完全化简</strong>的。</p>
+<h4><span id="死锁定理">死锁定理</span></h4>
+<p>系统中某个时刻<strong>t为死锁状态</strong>的充要条件是t时刻系统的<strong>资源分配图是不可完全化简</strong>的。</p>
 <p>在经过<strong>一系列的简化</strong>后，若<strong>能消去图中的所有边</strong>，使所有的进程都成为孤立结点，则称该图是<strong>可完全化简</strong>的；反之的是不可完全化简的</p>
-<h3><span id="安全序列与安全状态">安全序列与安全状态</span></h3><p><strong>安全状态</strong>：系统存在一个进程执行序列&lt;p1,p2,…pn&gt;可顺利完成（里面有一个进程需要的附加资源可以被当前系统中可用资源加上上所有进程Pj（j &lt; i）当前占有资源之和所满足</p>
+<h3><span id="安全序列与安全状态">安全序列与安全状态</span></h3>
+<p><strong>安全状态</strong>：系统存在一个进程执行序列&lt;p1,p2,…pn&gt;可顺利完成（里面有一个进程需要的附加资源可以被当前系统中可用资源加上上所有进程Pj（j &lt; i）当前占有资源之和所满足</p>
 <p>不安全状态不一定死锁，但死锁一定不安全</p>
-<h4><span id="安全与不安全示例">安全与不安全示例</span></h4><img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/4-9.png" style="zoom:67%;">
-
+<h4><span id="安全与不安全示例">安全与不安全示例</span></h4>
+<img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-1/4-9.png" style="zoom:67%;">
 
                 
                 <hr>

@@ -125,7 +125,7 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">618</span> and
+                                Words <span class="post-count">617</span> and
                                 Reading Time <span class="post-count">2</span> Minutes
                             </span>
                             <div class="blank_box"></div>
@@ -201,7 +201,7 @@
 
                         
                         <li>
-                            <a href="/photography/">Photography</a>
+                            <a href="/categories/">Categories</a>
                         </li>
                         
                     
@@ -215,7 +215,7 @@
 
                         
                         <li>
-                            <a href="/categories/">Categories</a>
+                            <a href="/photography/">Photography</a>
                         </li>
                         
                     
@@ -276,32 +276,40 @@
 
                 <p>北航计算机组成原理课程设计的Project0笔记，主要是关于logisim的使用和状态机的搭建。</p>
 <a id="more"></a>
-
-<h2><span id="p0复习logisim">p0复习（logisim）</span></h2><h3><span id="注意的点">注意的点</span></h3><ul>
+<h2><span id="p0复习logisim">p0复习（logisim）</span></h2>
+<h3><span id="注意的点">注意的点</span></h3>
+<ul>
 <li>输入信号一般是通过<strong>MUX，多路选择器</strong>来实现对输出结果的控制。</li>
 <li>刚连接好电路时或者连接电路中，可能出现有一些线路<strong>莫名其妙是蓝色</strong>，这时<strong>关闭logisim后再次打开</strong>往往就好了。</li>
 <li><strong>comparator</strong>器件默认是有符号的，要调成<strong>unsigned</strong>来避免出现无符号数比较出现错误。</li>
 <li>一些<strong>Arithmetic</strong>模块器件使用时，由于<strong>上下两侧也有输出端</strong>，如果连在一起可能出现意外。</li>
 <li>组合逻辑部分如果输入、输出的位数较少，可直接用<strong>combinational analysis</strong> 里的 <strong>table</strong> 傻瓜式生成电路。</li>
-<li>出现“xxxx”或者“EEEE”往往是因为电路中有<strong>连错的电路</strong>，比如<strong>把输入当成输出元件连了；某条线没有连接在模块&#x2F;元件的端口上，而是连在了空白区域</strong>。</li>
+<li>出现“xxxx”或者“EEEE”往往是因为电路中有<strong>连错的电路</strong>，比如<strong>把输入当成输出元件连了；某条线没有连接在模块/元件的端口上，而是连在了空白区域</strong>。</li>
 <li>出现“ ”、fewer than output we expected可能是时序问题，比如超出了题目给出的时间。或者期待输出非零值时输出了0。也有可能是<strong>appearance</strong>不对</li>
 <li>DMX最好设置成 <strong>Three-state:Yes</strong>    <strong>Disabled output:Float</strong>  如果Three state勾选为yes，那么DMX输出端<strong>没有被选中的路径</strong>会<strong>保持</strong>原来的值不变</li>
 </ul>
-<h3><span id="时序逻辑状态机">时序逻辑—状态机</span></h3><p><strong>参考文章</strong>：<a href="https://www.cnblogs.com/BUAA-YiFei/articles/13855136.html" target="_blank" rel="noopener">lyyf的logisim状态机博客</a></p>
-<h4><span id="注意">注意</span></h4><ul>
+<h3><span id="时序逻辑状态机">时序逻辑—状态机</span></h3>
+<p><strong>参考文章</strong>：<a href="https://www.cnblogs.com/BUAA-YiFei/articles/13855136.html" target="_blank" rel="noopener">lyyf的logisim状态机博客</a></p>
+<h4><span id="注意">注意</span></h4>
+<ul>
 <li><strong>状态转移、输出逻辑</strong>用<strong>真值表生成</strong>。</li>
 <li>寄存器的Q端在<strong>时钟信号为0时</strong>的值为<strong>初态</strong>，时钟信号的<strong>上升沿</strong>更新为<strong>次态</strong>。</li>
 <li><strong>Moore输出逻辑</strong>，只和<strong>当前状态</strong>有关。</li>
 <li><strong>Mealy输出逻辑</strong>，除了<strong>当前状态</strong>，还必须和<strong>输入</strong>发生联系。</li>
 <li>（<strong>当前状态值</strong>：时钟上升沿前是寄存器现有的值，上升沿时是状态转移模块的输出值s’）</li>
 </ul>
-<h4><span id="moore型">Moore型</span></h4><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/moore.png"></p>
-<h4><span id="mealy型">Mealy型</span></h4><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/mealy.png"></p>
-<h4><span id="同步复位">同步复位</span></h4><p>具体来说就是用一个多路选择器，如果复位信号<strong>为0</strong>，则<strong>正常更新状态值</strong>，<strong>如果为1</strong>，就直接赋值给寄存器<strong>常量0</strong>。</p>
-<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/%E5%90%8C%E6%AD%A5%E5%A4%8D%E4%BD%8D.png"></p>
-<h4><span id="异步复位">异步复位</span></h4><p>直接使用寄存器自带的<strong>clear</strong>端口进行复位即可</p>
-<p>王pb助教的logisim评测帖子：<a href="http://cscore.net.cn/courses/course-v1:Internal+B3I062410+2020_T1/discussion/forum/course/threads/5f8ab909cf9bcc0efe0000bd" target="_blank" rel="noopener">http://cscore.net.cn/courses/course-v1:Internal+B3I062410+2020_T1/discussion/forum/course/threads/5f8ab909cf9bcc0efe0000bd</a></p>
-<h3><span id="logisim命令行调试">logisim命令行调试</span></h3><p>要用 jar 文件</p>
+<h4><span id="moore型">Moore型</span></h4>
+<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/moore.png" alt></p>
+<h4><span id="mealy型">Mealy型</span></h4>
+<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/mealy.png" alt></p>
+<h4><span id="同步复位">同步复位</span></h4>
+<p>具体来说就是用一个多路选择器，如果复位信号<strong>为0</strong>，则<strong>正常更新状态值</strong>，<strong>如果为1</strong>，就直接赋值给寄存器<strong>常量0</strong>。</p>
+<p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/%E5%90%8C%E6%AD%A5%E5%A4%8D%E4%BD%8D.png" alt></p>
+<h4><span id="异步复位">异步复位</span></h4>
+<p>直接使用寄存器自带的<strong>clear</strong>端口进行复位即可</p>
+<p>王pb助教的logisim评测帖子：http://cscore.net.cn/courses/course-v1:Internal+B3I062410+2020_T1/discussion/forum/course/threads/5f8ab909cf9bcc0efe0000bd</p>
+<h3><span id="logisim命令行调试">logisim命令行调试</span></h3>
+<p>要用 jar 文件</p>
 <p>我的电脑：java -jar logisim-generic-2.7.1.jar fsm.circ -tty table</p>
 
                 
@@ -310,12 +318,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2021/01/29/git-liaoxuefeng-note/" data-toggle="tooltip" data-placement="top" title="廖雪峰git课程笔记">&larr; Previous Post</a>
+                        <a href="/2021/01/29/sql-note/" data-toggle="tooltip" data-placement="top" title="SQL学习笔记">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2021/01/29/hello-myblog/" data-toggle="tooltip" data-placement="top" title="Hello,My personal Blog!个人博客搭建总结">Next Post &rarr;</a>
+                        <a href="/2021/01/29/git-liaoxuefeng-note/" data-toggle="tooltip" data-placement="top" title="廖雪峰git课程笔记">Next Post &rarr;</a>
                     </li>
                     
                 </ul>

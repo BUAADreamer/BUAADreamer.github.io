@@ -201,7 +201,7 @@
 
                         
                         <li>
-                            <a href="/photography/">Photography</a>
+                            <a href="/categories/">Categories</a>
                         </li>
                         
                     
@@ -215,7 +215,7 @@
 
                         
                         <li>
-                            <a href="/categories/">Categories</a>
+                            <a href="/photography/">Photography</a>
                         </li>
                         
                     
@@ -274,118 +274,154 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="第五章-输入输出系统">第五章 输入输出系统</span></h1><h2><span id="51-ix2fo硬件基本原理">5.1 I&#x2F;O硬件基本原理</span></h2><h3><span id="ix2fo设备分类">I&#x2F;O设备分类</span></h3><p><strong>传输速度</strong>：低速中速高速</p>
+                <h1><span id="第五章-输入输出系统">第五章 输入输出系统</span></h1>
+<h2><span id="51-io硬件基本原理">5.1 I/O硬件基本原理</span></h2>
+<h3><span id="io设备分类">I/O设备分类</span></h3>
+<p><strong>传输速度</strong>：低速中速高速</p>
 <p><strong>信息交换单位</strong>：块设备和字符设备</p>
 <p><strong>共享属性</strong>：独占设备，共享设备，虚拟设备</p>
-<h2><span id="52-ix2fo软件基本原理">5.2 I&#x2F;O软件基本原理</span></h2><h3><span id="ix2fo控制技术">I&#x2F;O控制技术</span></h3><h4><span id="程序控制ix2fopioprogrammed-ix2fo">程序控制I&#x2F;O(PIO,Programmed I&#x2F;O)</span></h4><p>轮询或查询方式IO</p>
+<h2><span id="52-io软件基本原理">5.2 I/O软件基本原理</span></h2>
+<h3><span id="io控制技术">I/O控制技术</span></h3>
+<h4><span id="程序控制iopioprogrammed-io">程序控制I/O(PIO,Programmed I/O)</span></h4>
+<p>轮询或查询方式IO</p>
 <p>CPU代进程向IO模块发出指令，之后忙等，直到操作完成进程继续执行</p>
-<h4><span id="中断驱动方式interrupt-driven-ix2fo">中断驱动方式(Interrupt-driven I&#x2F;O)</span></h4><p>I&#x2F;O操作结束后由设备控制器主动通知程序结束信息，不用轮询</p>
+<h4><span id="中断驱动方式interrupt-driven-io">中断驱动方式(Interrupt-driven I/O)</span></h4>
+<p>I/O操作结束后由设备控制器主动通知程序结束信息，不用轮询</p>
 <p>外设数据处理时CPU不需等待，但是每输入输出一个数据CPU都要中断，浪费CPU时间</p>
-<h4><span id="直接存储访问方式dma-direct-memory-access">直接存储访问方式(DMA, Direct Memory Access)</span></h4><p><strong>直接存储器访问</strong>方式</p>
+<h4><span id="直接存储访问方式dma-direct-memory-access">直接存储访问方式(DMA, Direct Memory Access)</span></h4>
+<p><strong>直接存储器访问</strong>方式</p>
 <p>由一个<strong>专门的控制器</strong>完成数据从<strong>内存到设备</strong>或者<strong>设备到内存</strong>的传输工作，是数据块的传输</p>
-<h5><span id="优点">优点</span></h5><ul>
-<li>CPU只干预I&#x2F;O操作的<strong>开始</strong>和<strong>结束</strong>， 而当中的数据读写过程无需CPU控制，适于<strong>高速设备</strong></li>
+<h5><span id="优点">优点</span></h5>
+<ul>
+<li>CPU只干预I/O操作的<strong>开始</strong>和<strong>结束</strong>， 而当中的数据读写过程无需CPU控制，适于<strong>高速设备</strong></li>
 </ul>
-<h5><span id="缺点">缺点</span></h5><ul>
+<h5><span id="缺点">缺点</span></h5>
+<ul>
 <li>数据<strong>传送的方向、存放数据的内存地址及传送数据的长度</strong>等都由CPU控制，占 用了CPU时间。</li>
 <li><strong>每个设备</strong>占用<strong>一个</strong>DMA 控制器，当设备增加时，需要增加新的DMA 控制器</li>
 </ul>
-<h4><span id="通道技术channel">通道技术（Channel）</span></h4><p>与DMA几乎一样</p>
+<h4><span id="通道技术channel">通道技术（Channel）</span></h4>
+<p>与DMA几乎一样</p>
 <p>通道是一个<strong>特殊功能的处理器</strong>，有自己的指令体系，专门负责数据输入输出的传输控制，与CPU分别使用内存，实现运算与IO的并行</p>
 <p>执行一个通道程序可完成几组IO操作，减少了CPU干预，但费用较高</p>
 <p>可<strong>同时控制多种设备</strong>，区别于DMA只能控制一台或少数几台同类设备</p>
-<h3><span id="缓冲技术">缓冲技术</span></h3><p>匹配CPU和外设不同处理速度，减少CPU中断次数，提高并行性</p>
+<h3><span id="缓冲技术">缓冲技术</span></h3>
+<p>匹配CPU和外设不同处理速度，减少CPU中断次数，提高并行性</p>
 <ul>
 <li><strong>单缓冲</strong>： 1个缓冲区，CPU外设轮流使用</li>
 <li><strong>双缓冲</strong>： 2个缓冲区，CPU和外设可以连续处理，但要求速度相近</li>
 <li><strong>环形缓冲</strong>：<strong>生产者—消费者</strong>问题</li>
 </ul>
-<h4><span id="缓冲池">缓冲池</span></h4><p>缓冲区队列：</p>
+<h4><span id="缓冲池">缓冲池</span></h4>
+<p>缓冲区队列：</p>
 <ul>
 <li>空闲缓冲区</li>
 <li>输入缓冲区</li>
 <li>输出缓冲区</li>
 </ul>
-<h3><span id="设备分配">设备分配</span></h3><p>对进程使用外设过程的管理。</p>
+<h3><span id="设备分配">设备分配</span></h3>
+<p>对进程使用外设过程的管理。</p>
 <p><strong>两个做法</strong>：</p>
 <ol>
 <li>在进程间切换使用外设，如<strong>键盘</strong>和<strong>鼠标</strong>；</li>
 <li>通过一个虚拟设备把<strong>外设与应用进程隔开</strong>，只由<strong>虚拟设备</strong>来使用设备。</li>
 </ol>
-<h4><span id="数据结构">数据结构</span></h4><ol>
+<h4><span id="数据结构">数据结构</span></h4>
+<ol>
 <li>设备控制表  DCT 每个设备一张</li>
-<li>控制器控制表  I&#x2F;O控制器的配置和状态</li>
+<li>控制器控制表  I/O控制器的配置和状态</li>
 <li>通道控制表  每个通道一张</li>
 <li>系统设备表 系统内一张 记录所有设备状态和对应的控制表入口</li>
 </ol>
-<h4><span id="单通道io设备系统分配">单通道IO设备系统分配</span></h4><p>一个设备对应一个控制器，一个控制器对应一个通道 </p>
-<h4><span id="多通道io系统设备分配">多通道IO系统设备分配</span></h4><p><strong>一个设备</strong>与<strong>几个控制器</strong>相连，<strong>一个控制器</strong>与<strong>几个通道</strong>相连 </p>
-<h4><span id="假脱机技术spooling">假脱机技术SPOOLing</span></h4><p>把<strong>独享设备</strong>转变成具有<strong>共享特征的虚拟设备</strong>，从而提高设备利用率</p>
-<h3><span id="中断处理程序">中断处理程序</span></h3><ul>
-<li>关中断 </li>
-<li>保存现场 </li>
-<li>转入设备中断处理程序 </li>
-<li>进行中断处理 </li>
-<li>恢复被中断进程的现场 </li>
-<li>开中断 </li>
+<h4><span id="单通道io设备系统分配">单通道IO设备系统分配</span></h4>
+<p>一个设备对应一个控制器，一个控制器对应一个通道</p>
+<h4><span id="多通道io系统设备分配">多通道IO系统设备分配</span></h4>
+<p><strong>一个设备</strong>与<strong>几个控制器</strong>相连，<strong>一个控制器</strong>与<strong>几个通道</strong>相连</p>
+<h4><span id="假脱机技术spooling">假脱机技术SPOOLing</span></h4>
+<p>把<strong>独享设备</strong>转变成具有<strong>共享特征的虚拟设备</strong>，从而提高设备利用率</p>
+<h3><span id="中断处理程序">中断处理程序</span></h3>
+<ul>
+<li>关中断</li>
+<li>保存现场</li>
+<li>转入设备中断处理程序</li>
+<li>进行中断处理</li>
+<li>恢复被中断进程的现场</li>
+<li>开中断</li>
 <li>设置MMU以执行下一个进程</li>
 </ul>
-<h3><span id="设备驱动程序">设备驱动程序</span></h3><ul>
-<li>将抽象I&#x2F;O请求转换为对物理设备的请求 </li>
-<li>检查I&#x2F;O请求的合法性 </li>
-<li>初始化设备 </li>
-<li>启动设备 </li>
-<li>发出I&#x2F;O命令 </li>
-<li>响应中断请求 </li>
+<h3><span id="设备驱动程序">设备驱动程序</span></h3>
+<ul>
+<li>将抽象I/O请求转换为对物理设备的请求</li>
+<li>检查I/O请求的合法性</li>
+<li>初始化设备</li>
+<li>启动设备</li>
+<li>发出I/O命令</li>
+<li>响应中断请求</li>
 <li>构造通道程序</li>
 </ul>
-<h2><span id="53-os设备管理实例">5.3 OS设备管理实例</span></h2><h1><span id="第六章-磁盘存储管理">第六章 磁盘存储管理</span></h1><h2><span id="61-磁盘存储的工作原理">6.1 磁盘存储的工作原理</span></h2><p>温切斯特盘</p>
-<h3><span id="基本概念">基本概念</span></h3><ul>
+<h2><span id="53-os设备管理实例">5.3 OS设备管理实例</span></h2>
+<h1><span id="第六章-磁盘存储管理">第六章 磁盘存储管理</span></h1>
+<h2><span id="61-磁盘存储的工作原理">6.1 磁盘存储的工作原理</span></h2>
+<p>温切斯特盘</p>
+<h3><span id="基本概念">基本概念</span></h3>
+<ul>
 <li><strong>扇区</strong>（sector） 盘片被分成许多<strong>扇形的区域</strong></li>
 <li><strong>磁道</strong>（track） 盘片上以盘片中心为圆心，不同半径的<strong>同心圆</strong>。</li>
 <li><strong>柱面</strong>（cylinder) 硬盘中，不同盘片相同半径的磁道所组成的<strong>圆柱</strong>。</li>
 <li>每个<strong>磁盘有两个面</strong>，每个面都有一个<strong>磁头</strong>(head)。</li>
 </ul>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-2/6-1.png" style="zoom:50%;">
-
-<h3><span id="磁盘的组织">磁盘的组织</span></h3><p>读一个扇区需要<strong>柱面&#x2F;磁头&#x2F;扇区</strong>。</p>
+<h3><span id="磁盘的组织">磁盘的组织</span></h3>
+<p>读一个扇区需要<strong>柱面/磁头/扇区</strong>。</p>
 <p>一维逻辑块数组按照顺序映射到磁盘扇区</p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-2/6-2.png" style="zoom: 33%;">
-
-<h3><span id="磁盘访问时间">磁盘访问时间</span></h3><p>磁盘延迟&#x3D;软件的Queue处理+Disk Service Time(寻道+旋转+传输)</p>
-<h4><span id="寻道时间">寻道时间</span></h4><p>磁头从当前位置移到指定磁道上所经历时间</p>
+<h3><span id="磁盘访问时间">磁盘访问时间</span></h3>
+<p>磁盘延迟=软件的Queue处理+Disk Service Time(寻道+旋转+传输)</p>
+<h4><span id="寻道时间">寻道时间</span></h4>
+<p>磁头从当前位置移到指定磁道上所经历时间</p>
 <p>$s:启动磁盘时间$</p>
 <p>$m:磁头移动一条磁道所花时间$</p>
-<p>$T_s&#x3D;m*n+s$</p>
-<h4><span id="旋转延迟时间">旋转延迟时间</span></h4><p>平均$T_r$为$50到100ms$</p>
-<p>$T_r&#x3D;1&#x2F;(2r)$</p>
-<h4><span id="传输时间">传输时间</span></h4><p>$T_t$为与磁盘进行数据交换（读出或写入）的时间</p>
+<p>$T_s=m*n+s$</p>
+<h4><span id="旋转延迟时间">旋转延迟时间</span></h4>
+<p>平均$T_r$为$50到100ms$</p>
+<p>$T_r=1/(2r)$</p>
+<h4><span id="传输时间">传输时间</span></h4>
+<p>$T_t$为与磁盘进行数据交换（读出或写入）的时间</p>
 <p>$T_t$的大小与每次所<strong>读／写的字节数</strong>b，<strong>旋转速度r</strong>以及磁道上的<strong>字节数N</strong>有关</p>
-<p>$T_t &#x3D; b&#x2F;(rN)$</p>
-<p>$b&#x2F;N—需要多少转$</p>
-<p>$r—多少转&#x2F;s$</p>
+<p>$T_t = b/(rN)$</p>
+<p>$b/N—需要多少转$</p>
+<p>$r—多少转/s$</p>
 <p>传输数据的大小 (通常是1个扇区): 512B</p>
 <p>旋转速度：3600 RPM ~ 15000 RPM</p>
-<p>典型的传输速度：2MB~50 MB&#x2F;秒</p>
-<h4><span id="总访问时间">总访问时间</span></h4><p>$T_a&#x3D;T_s+1&#x2F;(2r)+b&#x2F;(rN)$</p>
-<h3><span id="磁盘调度算法">磁盘调度算法</span></h3><h4><span id="先来先服务-fcfs">先来先服务 FCFS</span></h4><p>按访问请求先后次序服务</p>
-<h4><span id="最短寻道时间优先-sstf">最短寻道时间优先 SSTF</span></h4><p>优先选择<strong>距当前磁头最近的访问请求</strong>进行服务，主要考虑<strong>寻道优先</strong>。</p>
+<p>典型的传输速度：2MB~50 MB/秒</p>
+<h4><span id="总访问时间">总访问时间</span></h4>
+<p>$T_a=T_s+1/(2r)+b/(rN)$</p>
+<h3><span id="磁盘调度算法">磁盘调度算法</span></h3>
+<h4><span id="先来先服务-fcfs">先来先服务 FCFS</span></h4>
+<p>按访问请求先后次序服务</p>
+<h4><span id="最短寻道时间优先-sstf">最短寻道时间优先 SSTF</span></h4>
+<p>优先选择<strong>距当前磁头最近的访问请求</strong>进行服务，主要考虑<strong>寻道优先</strong>。</p>
 <p>可能导致饥饿，即一些请求长时间得不到服务</p>
-<h4><span id="扫描算法-scan-电梯调度">扫描算法 SCAN 电梯调度</span></h4><p>磁盘臂沿特定方向移动到最后一层, 满足路径中的所有请求。</p>
+<h4><span id="扫描算法-scan-电梯调度">扫描算法 SCAN 电梯调度</span></h4>
+<p>磁盘臂沿特定方向移动到最后一层, 满足路径中的所有请求。</p>
 <p>然后转回并反向移动至最低层, 满足路径中的所有请求。</p>
-<h4><span id="循环扫描算法-cscan">循环扫描算法 CSCAN</span></h4><ul>
+<h4><span id="循环扫描算法-cscan">循环扫描算法 CSCAN</span></h4>
+<ul>
 <li>按照所要访问的柱面位置的次序去选择访问者。</li>
 <li>移动臂到达最后一个柱面后，<strong>立即</strong>带动读写磁头快速<strong>返回到0号柱面</strong>。</li>
 <li>返回时<strong>不为任何的等待</strong>访问者<strong>服务</strong>。</li>
 <li>返回后可再次进行扫描。</li>
 </ul>
 <p>SCAN算法偏向于处理最里或最外的磁道访问请求，CSCAN可以避免</p>
-<h4><span id="look算法">LOOK算法</span></h4><p>SCAN算法改进</p>
+<h4><span id="look算法">LOOK算法</span></h4>
+<p>SCAN算法改进</p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-2/6-4.png" style="zoom:80%;">
-
-<h4><span id="clook算法">CLOOK算法</span></h4><p>CSCAN算法改进</p>
+<h4><span id="clook算法">CLOOK算法</span></h4>
+<p>CSCAN算法改进</p>
 <p>每次向一个方向移动到最高请求柱面，之后返回最低请求柱面，不理会返回路径上的请求</p>
-<h2><span id="62-保证磁盘可靠性">6.2 保证磁盘可靠性</span></h2><h3><span id="raid">RAID</span></h3><p><strong>廉价冗余磁盘阵列</strong>,Redundant arrays of inexpensive disks</p>
+<h2><span id="62-保证磁盘可靠性">6.2 保证磁盘可靠性</span></h2>
+<h3><span id="raid">RAID</span></h3>
+<p><strong>廉价冗余磁盘阵列</strong>,Redundant arrays of inexpensive disks</p>
 <ul>
 <li>冗余技术提高可靠性</li>
 <li>并行提高性能</li>
@@ -393,28 +429,35 @@
 <p>数据分段并行交叉存取</p>
 <p>组成磁盘阵列的不同方式称为RAID级别，分为0-6 7个级别，还有一个RAID10</p>
 <img src="/2021/06/07/OS%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0-2/6-3.png" style="zoom:67%;">
-
-<h2><span id="63-提高ix2fo访问速度">6.3 提高I&#x2F;O访问速度</span></h2><h3><span id="主要途径">主要途径</span></h3><ul>
+<h2><span id="63-提高io访问速度">6.3 提高I/O访问速度</span></h2>
+<h3><span id="主要途径">主要途径</span></h3>
+<ul>
 <li>选择性能好的磁盘</li>
 <li>并行化</li>
 <li>采用适当的调度算法</li>
 <li>设置磁盘高速缓冲区</li>
 </ul>
-<h3><span id="提高磁盘ix2fo速度缓存">提高磁盘I&#x2F;O速度——缓存</span></h3><ul>
-<li>独立缓存&#x2F;以虚拟内存为缓存</li>
+<h3><span id="提高磁盘io速度缓存">提高磁盘I/O速度——缓存</span></h3>
+<ul>
+<li>独立缓存/以虚拟内存为缓存</li>
 <li>置换算法 LRU</li>
 <li>周期性写回</li>
 </ul>
-<h3><span id="优化数据布局">优化数据布局</span></h3><ul>
+<h3><span id="优化数据布局">优化数据布局</span></h3>
+<ul>
 <li>优化物理块的分布</li>
 <li>优化索引节点的分布</li>
 </ul>
-<h3><span id="其他方法">其他方法</span></h3><ul>
+<h3><span id="其他方法">其他方法</span></h3>
+<ul>
 <li>提前读</li>
 <li>延迟写</li>
 <li>虚拟盘</li>
 </ul>
-<h2><span id="64-磁盘管理的实例">6.4 磁盘管理的实例</span></h2><h1><span id="第七章-文件系统">第七章 文件系统</span></h1><h2><span id="71-文件系统基本概念">7.1 文件系统基本概念</span></h2><p>文件作为数据的存储和访问单位</p>
+<h2><span id="64-磁盘管理的实例">6.4 磁盘管理的实例</span></h2>
+<h1><span id="第七章-文件系统">第七章 文件系统</span></h1>
+<h2><span id="71-文件系统基本概念">7.1 文件系统基本概念</span></h2>
+<p>文件作为数据的存储和访问单位</p>
 <p>文件包括：</p>
 <ul>
 <li>文件体：文件本身内容 （data）</li>
@@ -422,83 +465,116 @@
 </ul>
 <p>文件可以视为与进程地址空间无关的一段单独连续的逻辑地址空间</p>
 <p>现代OS：一切皆文件</p>
-<h2><span id="72-文件系统实现方法">7.2 文件系统实现方法</span></h2><p>文件系统管理对象：</p>
+<h2><span id="72-文件系统实现方法">7.2 文件系统实现方法</span></h2>
+<p>文件系统管理对象：</p>
 <ul>
 <li>文件</li>
 <li>目录</li>
 <li>磁盘存储空间</li>
 </ul>
-<h3><span id="文件控制块-fcb">文件控制块 FCB</span></h3><h4><span id="基本信息">基本信息</span></h4><ul>
+<h3><span id="文件控制块-fcb">文件控制块 FCB</span></h3>
+<h4><span id="基本信息">基本信息</span></h4>
+<ul>
 <li>文件名</li>
-<li>物理位置 </li>
+<li>物理位置</li>
 <li>文件逻辑结构 有无结构</li>
 <li>文件物理结构 （顺序、索引）</li>
 </ul>
-<h4><span id="访问控制信息">访问控制信息</span></h4><ul>
+<h4><span id="访问控制信息">访问控制信息</span></h4>
+<ul>
 <li>文件所有者 创建的用户</li>
 <li>访问权限 读、写、执行、删除</li>
 </ul>
-<h4><span id="使用信息">使用信息</span></h4><ul>
+<h4><span id="使用信息">使用信息</span></h4>
+<ul>
 <li>创建时间，上一次修改时间，当前使用信息等等</li>
 </ul>
-<h3><span id="文件逻辑结构和物理结构">文件逻辑结构和物理结构</span></h3><h4><span id="文件逻辑结构文件组织">文件逻辑结构（文件组织）</span></h4><h4><span id="文件物理结构">文件物理结构</span></h4><p>文件存放方式，在存储介质上的位置、链接和编目方法</p>
+<h3><span id="文件逻辑结构和物理结构">文件逻辑结构和物理结构</span></h3>
+<h4><span id="文件逻辑结构文件组织">文件逻辑结构（文件组织）</span></h4>
+<h4><span id="文件物理结构">文件物理结构</span></h4>
+<p>文件存放方式，在存储介质上的位置、链接和编目方法</p>
 <p>主要结构：连续结构（顺序存取，适用于变化不大的顺序访问文件）、索引结构、串联结构（随机存取，采用链接指针，动态性好，易于扩充）</p>
-<h3><span id="索引结构">索引结构 ※※※</span></h3><p>为每个文件建立<strong>逻辑块号与物理块号的对照表</strong>：<strong>索引表</strong>。</p>
+<h3><span id="索引结构">索引结构 ※※※</span></h3>
+<p>为每个文件建立<strong>逻辑块号与物理块号的对照表</strong>：<strong>索引表</strong>。</p>
 <p>文件由<strong>数据文件</strong>和<strong>索引表</strong>构成，这种文件称为：<strong>索引文件</strong>。</p>
 <p>索引表位置：文件目录中，文件开头</p>
-<p>索引表大小：固定&#x2F;非固定大小</p>
+<p>索引表大小：固定/非固定大小</p>
 <p>索引文件在存储区占两个区，<strong>索引区–放索引表</strong>，<strong>数据区–放数据文件本身</strong>。</p>
-<h4><span id="访问索引文件">访问索引文件</span></h4><ul>
+<h4><span id="访问索引文件">访问索引文件</span></h4>
+<ul>
 <li>先查文件索引号，由<strong>逻辑块号查得物理块号</strong></li>
 <li>由此<strong>物理块号</strong>获得所要求的信息</li>
 </ul>
-<h4><span id="索引表的组织">索引表的组织</span></h4><ul>
-<li>链接模式<ul>
+<h4><span id="索引表的组织">索引表的组织</span></h4>
+<ul>
+<li>链接模式
+<ul>
 <li>多个索引表链接起来</li>
 </ul>
 </li>
 <li>多级索引</li>
-<li>综合模式<ul>
+<li>综合模式
+<ul>
 <li>直接索引与间接索引结合</li>
 </ul>
 </li>
 </ul>
-<h3><span id="目录">目录</span></h3><h4><span id="目录的实现">目录的实现</span></h4><p>直接法：目录项&#x3D;文件名+FCB</p>
-<p>间接法：目录项&#x3D;文件名+FCB地址</p>
-<h4><span id="符号文件目录的查询">符号文件目录的查询</span></h4><h5><span id="顺序查寻法">顺序查寻法</span></h5><p>依次比对名字</p>
-<h5><span id="hash方法">Hash方法</span></h5><p>将符号名唯一的变换为符号表中的表目索引</p>
-<h3><span id="磁盘空间管理">磁盘空间管理</span></h3><h4><span id="空闲表法">空闲表法</span></h4><table>
+<h3><span id="目录">目录</span></h3>
+<h4><span id="目录的实现">目录的实现</span></h4>
+<p>直接法：目录项=文件名+FCB</p>
+<p>间接法：目录项=文件名+FCB地址</p>
+<h4><span id="符号文件目录的查询">符号文件目录的查询</span></h4>
+<h5><span id="顺序查寻法">顺序查寻法</span></h5>
+<p>依次比对名字</p>
+<h5><span id="hash方法">Hash方法</span></h5>
+<p>将符号名唯一的变换为符号表中的表目索引</p>
+<h3><span id="磁盘空间管理">磁盘空间管理</span></h3>
+<h4><span id="空闲表法">空闲表法</span></h4>
+<table>
 <thead>
 <tr>
-<th align="center">序号</th>
-<th align="center">第一空闲盘块号</th>
-<th align="center">空闲盘块数</th>
+<th style="text-align:center">序号</th>
+<th style="text-align:center">第一空闲盘块号</th>
+<th style="text-align:center">空闲盘块数</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="center">1</td>
-<td align="center">2</td>
-<td align="center">4</td>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">4</td>
 </tr>
 <tr>
-<td align="center">2</td>
-<td align="center">3</td>
-<td align="center">3</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">3</td>
 </tr>
-</tbody></table>
-<h4><span id="空闲链表法">空闲链表法</span></h4><p>分为<strong>空闲盘区链</strong>和<strong>空闲盘块链</strong></p>
-<h4><span id="位示图位图法">位示图（位图法）</span></h4><h4><span id="成组链表法">成组链表法</span></h4><p>每组的<strong>第一个空闲块</strong>记录下一组空闲块的<strong>物理盘块号</strong>和<strong>空闲块总数</strong>。</p>
-<h3><span id="保护文件的方法">保护文件的方法</span></h3><ul>
+</tbody>
+</table>
+<h4><span id="空闲链表法">空闲链表法</span></h4>
+<p>分为<strong>空闲盘区链</strong>和<strong>空闲盘块链</strong></p>
+<h4><span id="位示图位图法">位示图（位图法）</span></h4>
+<h4><span id="成组链表法">成组链表法</span></h4>
+<p>每组的<strong>第一个空闲块</strong>记录下一组空闲块的<strong>物理盘块号</strong>和<strong>空闲块总数</strong>。</p>
+<h3><span id="保护文件的方法">保护文件的方法</span></h3>
+<ul>
 <li>建立副本</li>
 <li>定时转储</li>
 <li>规定文件的权限</li>
 </ul>
-<h2><span id="73-文件系统实例分析">7.3 文件系统实例分析</span></h2><h3><span id="fat">FAT</span></h3><h3><span id="ext2">EXT2</span></h3><h3><span id="linux-vfs">Linux VFS</span></h3><h3><span id="lfs">LFS</span></h3><h1><span id="习题">习题</span></h1><h2><span id="文件系统">文件系统</span></h2><p>一个Unix文件系统采用2KB大小的数据块和4字节的数据块地址。每个i节点包括10个直接索引，1个一级间接索引和1个二级间接索引。<br>（1）该文件系统中文件最大为多少KB？（本小题5分）<br>（2）假设磁盘上一半的文件大小恰好为2KB，另一半文件的大小恰好为1.5KB，那么磁盘空间的利用率是多少？如果数据块大小改为1KB，磁盘空间利用率是多少？（只考虑存储文件数据的磁盘块）（本小题6分）<br>（3）小明编写了一个读取文件的程序，可以从不同大小的文件中随机读取一定量数据，结果发现读取大文件时的平均性能有明显下降。请分析主要原因，并尝试给出解决该问题的思路。（本小题4分）</p>
+<h2><span id="73-文件系统实例分析">7.3 文件系统实例分析</span></h2>
+<h3><span id="fat">FAT</span></h3>
+<h3><span id="ext2">EXT2</span></h3>
+<h3><span id="linux-vfs">Linux VFS</span></h3>
+<h3><span id="lfs">LFS</span></h3>
+<h1><span id="习题">习题</span></h1>
+<h2><span id="文件系统">文件系统</span></h2>
+<p>一个Unix文件系统采用2KB大小的数据块和4字节的数据块地址。每个i节点包括10个直接索引，1个一级间接索引和1个二级间接索引。（1）该文件系统中文件最大为多少KB？（本小题5分）（2）假设磁盘上一半的文件大小恰好为2KB，另一半文件的大小恰好为1.5KB，那么磁盘空间的利用率是多少？如果数据块大小改为1KB，磁盘空间利用率是多少？（只考虑存储文件数据的磁盘块）（本小题6分）（3）小明编写了一个读取文件的程序，可以从不同大小的文件中随机读取一定量数据，结果发现读取大文件时的平均性能有明显下降。请分析主要原因，并尝试给出解决该问题的思路。（本小题4分）</p>
 <p>(1)</p>
-<p>2KB&#x2F;4&#x3D;512个磁盘块</p>
-<p>(10+1*512+1*512*512)*2KB&#x3D;</p>
+<p>2KB/4=512个磁盘块</p>
+<p>(10+1*512+1*512*512)*2KB=</p>
 <p>(2)</p>
-<p>(2&#x2F;2+1.5&#x2F;2)&#x2F;2&#x3D;0.875</p>
+<p>(2/2+1.5/2)/2=0.875</p>
 
                 
                 <hr>
