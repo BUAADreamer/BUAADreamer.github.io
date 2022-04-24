@@ -201,14 +201,14 @@
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/photography/">Photography</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/photography/">Photography</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -275,12 +275,12 @@
                 post-container">
 
                 <p>OO第二单元电梯调度总结与分析。</p>
-<h1 id="OO-Unit2-总结"><a href="#OO-Unit2-总结" class="headerlink" title="OO-Unit2-总结"></a>OO-Unit2-总结</h1><h2 id="一、程序结构分析"><a href="#一、程序结构分析" class="headerlink" title="一、程序结构分析"></a>一、程序结构分析</h2><h3 id="第五次作业"><a href="#第五次作业" class="headerlink" title="第五次作业"></a>第五次作业</h3><h4 id="代码可视化与数据统计"><a href="#代码可视化与数据统计" class="headerlink" title="代码可视化与数据统计"></a>代码可视化与数据统计</h4><h5 id="程序类图"><a href="#程序类图" class="headerlink" title="程序类图"></a>程序类图</h5><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit2/hw5.png" style="zoom:80%;" /></p>
+<h1><span id="oo-unit2-总结">OO-Unit2-总结</span></h1><h2><span id="一-程序结构分析">一、程序结构分析</span></h2><h3><span id="第五次作业">第五次作业</span></h3><h4><span id="代码可视化与数据统计">代码可视化与数据统计</span></h4><h5><span id="程序类图">程序类图</span></h5><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit2/hw5.png" style="zoom:80%;">
+
 <p>由于本次只有一台电梯，因此没有使用调度器，而是只设计了一个策略类<code>Scheduler</code>类来实现每到一个楼层根据当前等待的乘客和电梯中的乘客请求来确定目标楼层的功能。而电梯类和输入线程类则是本次作业的两个线程类，分别对应消费者和生产者。</p>
-<h5 id="程序复杂度分析"><a href="#程序复杂度分析" class="headerlink" title="程序复杂度分析"></a>程序复杂度分析</h5><ul>
+<h5><span id="程序复杂度分析">程序复杂度分析</span></h5><ul>
 <li>类复杂度</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -290,8 +290,7 @@
 <th>WMC</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Elevator</td>
 <td>4.5</td>
 <td>7</td>
@@ -327,14 +326,11 @@
 <td>1</td>
 <td>7</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>可以看出，在<code>Elevator</code>类和<code>Scheduler</code>类中代码复杂度较高。两者构成了电梯的核心逻辑，包含较多分支。</p>
 <ul>
 <li>方法复杂度</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -345,8 +341,7 @@
 <th>v(G)</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Elevator.Elevator(WaitQueue,InitQueue,String)</td>
 <td>0</td>
 <td>1</td>
@@ -528,24 +523,22 @@
 <td>1</td>
 <td>1</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>可以看到，<code>getDesFloor、getFloor</code>方法和电梯类中的<code>run</code>方法由于需要处理电梯的运行，调用了很多其他方法和变量，复杂度较高。</p>
-<h5 id="程序行数统计"><a href="#程序行数统计" class="headerlink" title="程序行数统计"></a>程序行数统计</h5><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit2/hw5line.png" alt=""></p>
+<h5><span id="程序行数统计">程序行数统计</span></h5><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit2/hw5line.png"></p>
 <p>与之前代码复杂度分析保持一致，仍然是<code>Elevator</code>类和<code>Scheduler</code>类的行数最多。总有效代码函数为423行。</p>
-<h4 id="代码分析"><a href="#代码分析" class="headerlink" title="代码分析"></a>代码分析</h4><h5 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h5><p>本次作业定义了一个<code>waitqueue</code>作为生产者消费者之间的托盘，在各个类之间进行共享。当<code>Main</code>类开始后，先读入这份数据的到达模式，之后启动输入线程和电梯线程，输入线程不断读入新的请求，将请求加入到等待队列中，同时<code>Elevator</code>类不断处理等待队列中的请求，处理时每到一个新的楼层就会询问<code>Scheduler</code>类获得新的目标楼层。当输入到EOF时，输入线程结束。电梯内外的全部请求都处理结束时，电梯线程也结束，之后<code>Main</code>类主线程就会结束。</p>
+<h4><span id="代码分析">代码分析</span></h4><h5><span id="原理分析">原理分析</span></h5><p>本次作业定义了一个<code>waitqueue</code>作为生产者消费者之间的托盘，在各个类之间进行共享。当<code>Main</code>类开始后，先读入这份数据的到达模式，之后启动输入线程和电梯线程，输入线程不断读入新的请求，将请求加入到等待队列中，同时<code>Elevator</code>类不断处理等待队列中的请求，处理时每到一个新的楼层就会询问<code>Scheduler</code>类获得新的目标楼层。当输入到EOF时，输入线程结束。电梯内外的全部请求都处理结束时，电梯线程也结束，之后<code>Main</code>类主线程就会结束。</p>
 <p>具体对于三种到达模式。<code>Random</code>直接使用了<code>ALS</code>进行调度。而<code>Morning</code>模式下则是先等待2s再开始接送乘客，且当电梯内没有乘客时自动返回1楼。<code>Night</code>模式下则是对当前的等待队列进行从大到小的排序，先接高楼层的乘客，接满后直接返回1层，反复如此进行下去。</p>
-<h5 id="同步块的设置和锁的选择"><a href="#同步块的设置和锁的选择" class="headerlink" title="同步块的设置和锁的选择"></a>同步块的设置和锁的选择</h5><p>本次的共享变量主要有<code>waitqueue</code>和<code>initqueue</code>。前者被电梯类，策略类和输入类三者共享，后者只被电梯类和策略类两者共享（此处忽略了同样共享的主类）。</p>
+<h5><span id="同步块的设置和锁的选择">同步块的设置和锁的选择</span></h5><p>本次的共享变量主要有<code>waitqueue</code>和<code>initqueue</code>。前者被电梯类，策略类和输入类三者共享，后者只被电梯类和策略类两者共享（此处忽略了同样共享的主类）。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Elevator.run</span></span><br><span class="line"><span class="keyword">if</span> (initQueue.noWaiting() &amp;&amp; waitQueue.noWaiting()) &#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (waitQueue) &#123; </span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            waitQueue.wait(); <span class="comment">//等待队列为空，需要先等输入线程接受新的输入</span></span><br><span class="line">        &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (pattern.equals(<span class="string">"Night"</span>)) &#123;</span><br><span class="line">    <span class="keyword">synchronized</span> (waitQueue.getRequests()) &#123; <span class="comment">//Night模式下需要排序，给waitQueue类里的请求列表加锁</span></span><br><span class="line">        waitQueue.getRequests()</span><br><span class="line">            .sort(Comparator.comparingInt(PersonRequest::getFromFloor)); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//InputThread.run</span></span><br><span class="line"><span class="keyword">synchronized</span> (waitQueue) &#123; <span class="comment">//给waitQueue加锁保证线程安全</span></span><br><span class="line">    <span class="keyword">if</span> (request == <span class="keyword">null</span>) &#123;</span><br><span class="line">        waitQueue.close();</span><br><span class="line">        waitQueue.notifyAll(); <span class="comment">//输入结束时唤醒等待队列，让Elevator类继续处理请求</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            elevatorInput.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        waitQueue.addRequest(request);</span><br><span class="line">        waitQueue.notifyAll(); <span class="comment">//有新的输入时唤醒等待队列，让Elevator类继续处理请求</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Main.main </span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    inputThread.join();</span><br><span class="line">&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    elevator.join();</span><br><span class="line">&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">&#125; <span class="comment">//等两个线程均结束，主线程才结束</span></span><br></pre></td></tr></table></figure>
-<h5 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h5><p>架构较为清晰，每个类的功能都比较独立，且将策略类和电梯类分开，易于更换策略。对一个电梯的建模比较完整，便于第六次作业中增加电梯。</p>
-<h5 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h5><p><code>Random</code>模式下只采用了标准的ALS调度方式，导致性能较差。</p>
-<h3 id="第六次作业"><a href="#第六次作业" class="headerlink" title="第六次作业"></a>第六次作业</h3><h4 id="代码可视化与数据统计-1"><a href="#代码可视化与数据统计-1" class="headerlink" title="代码可视化与数据统计"></a>代码可视化与数据统计</h4><h5 id="程序类图-1"><a href="#程序类图-1" class="headerlink" title="程序类图"></a>程序类图</h5><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit2/hw6.png" alt=""></p>
+
+<h5><span id="优点">优点</span></h5><p>架构较为清晰，每个类的功能都比较独立，且将策略类和电梯类分开，易于更换策略。对一个电梯的建模比较完整，便于第六次作业中增加电梯。</p>
+<h5><span id="缺点">缺点</span></h5><p><code>Random</code>模式下只采用了标准的ALS调度方式，导致性能较差。</p>
+<h3><span id="第六次作业">第六次作业</span></h3><h4><span id="代码可视化与数据统计">代码可视化与数据统计</span></h4><h5><span id="程序类图">程序类图</span></h5><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit2/hw6.png"></p>
 <p>本次作业和上次作业相比改动幅度不大，只增加了一个调度器类。</p>
-<h5 id="程序复杂度分析-1"><a href="#程序复杂度分析-1" class="headerlink" title="程序复杂度分析"></a>程序复杂度分析</h5><ul>
+<h5><span id="程序复杂度分析">程序复杂度分析</span></h5><ul>
 <li>类复杂度</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -555,8 +548,7 @@
 <th>WMC</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Dispatcher</td>
 <td>3.5</td>
 <td>10</td>
@@ -598,14 +590,11 @@
 <td>1</td>
 <td>7</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>可以看出<code>Dispatcher</code>和<code>Elevator、Scheduler</code>类的复杂度较高。这三个类也是本次作业的核心类。</p>
 <ul>
 <li>方法复杂度</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -616,9 +605,8 @@
 <th>v(G)</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>Dispatcher.Dispatcher(WaitQueue,ArrayList<Elevator>,String)</td>
+<tbody><tr>
+<td>Dispatcher.Dispatcher(WaitQueue,ArrayList<elevator>,String)</elevator></td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -779,7 +767,7 @@
 <td>1</td>
 </tr>
 <tr>
-<td>InputThread.InputThread(WaitQueue,ElevatorInput,ArrayList<Elevator>,String)</td>
+<td>InputThread.InputThread(WaitQueue,ElevatorInput,ArrayList<elevator>,String)</elevator></td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -883,23 +871,21 @@
 <td>1</td>
 <td>1</td>
 </tr>
-</tbody>
-</table>
-</div>
-<p>本次复杂度较高的是调度器的<code>dispatch</code>方法，以及获得目标楼层的<code>`getDesFloor</code>方法和电梯运行的<code>run</code>方法。</p>
-<h5 id="程序行数统计-1"><a href="#程序行数统计-1" class="headerlink" title="程序行数统计"></a>程序行数统计</h5><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit2/hw6line.png" alt=""></p>
+</tbody></table>
+<p>本次复杂度较高的是调度器的<code>dispatch</code>方法，以及获得目标楼层的&#96;&#96;getDesFloor<code>方法和电梯运行的</code>run&#96;方法。</p>
+<h5><span id="程序行数统计">程序行数统计</span></h5><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit2/hw6line.png"></p>
 <p>本次作业代码量较大，总有效行数是571行。</p>
-<h4 id="代码分析-1"><a href="#代码分析-1" class="headerlink" title="代码分析"></a>代码分析</h4><h5 id="原理分析-1"><a href="#原理分析-1" class="headerlink" title="原理分析"></a>原理分析</h5><p>本次作业在上一次作业基础上主要增加了调度器类，用来实现各个电梯的负载均衡调度，采用了分布式调度，即将一个大的请求队列分配给各个电梯自己的请求队列，由各个电梯对自己的请求队列进行处理。相当于采用了两对消费者-生产者，一对是输入线程和调度器线程，一对是调度器线程和各个电梯。输入线程终止条件与上次作业相同，而调度器线程终止条件则是没有新的输入且总的请求队列为空。各个电梯自己的终止条件是自身的请求等待队列为空。具体策略上，本次作业采用了和上次作业一致的策略。</p>
-<h5 id="同步块的设置和锁的选择-1"><a href="#同步块的设置和锁的选择-1" class="headerlink" title="同步块的设置和锁的选择"></a>同步块的设置和锁的选择</h5><p>本次作业共享的变量为总请求等待队列，各个电梯自身的请求等待队列和电梯内请求队列。<code>Elevator</code>和<code>Scheduler</code>类的同步与上次一致，不再赘述。</p>
+<h4><span id="代码分析">代码分析</span></h4><h5><span id="原理分析">原理分析</span></h5><p>本次作业在上一次作业基础上主要增加了调度器类，用来实现各个电梯的负载均衡调度，采用了分布式调度，即将一个大的请求队列分配给各个电梯自己的请求队列，由各个电梯对自己的请求队列进行处理。相当于采用了两对消费者-生产者，一对是输入线程和调度器线程，一对是调度器线程和各个电梯。输入线程终止条件与上次作业相同，而调度器线程终止条件则是没有新的输入且总的请求队列为空。各个电梯自己的终止条件是自身的请求等待队列为空。具体策略上，本次作业采用了和上次作业一致的策略。</p>
+<h5><span id="同步块的设置和锁的选择">同步块的设置和锁的选择</span></h5><p>本次作业共享的变量为总请求等待队列，各个电梯自身的请求等待队列和电梯内请求队列。<code>Elevator</code>和<code>Scheduler</code>类的同步与上次一致，不再赘述。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Dispatcher.dispatch</span></span><br><span class="line"><span class="keyword">if</span> (waitQueue.isEnd() &amp;&amp; waitQueue.noWaiting()) &#123;</span><br><span class="line">    <span class="keyword">for</span> (Elevator elevator : elevators) &#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (elevator.getWaitQueue()) &#123; <span class="comment">//遍历时给每个电梯的等待队列类加上锁保证安全</span></span><br><span class="line">            elevator.getWaitQueue().close();</span><br><span class="line">            elevator.getWaitQueue().notifyAll(); </span><br><span class="line">            <span class="comment">//输入线程结束且总等待队列为空将所有电梯的等待队列关闭，同时唤醒所有电梯</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (waitQueue.noWaiting()) &#123;</span><br><span class="line">        <span class="keyword">synchronized</span> (waitQueue) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                waitQueue.wait(); <span class="comment">//总等待队列为空但输入线程并未结束时，先等待</span></span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;...&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//InputThread.run</span></span><br><span class="line"><span class="keyword">synchronized</span> (waitQueue) &#123; <span class="comment">//给总等待队列加锁，防止与调度器线程冲突</span></span><br><span class="line">    <span class="keyword">if</span> (request == <span class="keyword">null</span>) &#123;</span><br><span class="line">        waitQueue.close(); <span class="comment">//关闭总请求队列</span></span><br><span class="line">        waitQueue.notifyAll(); <span class="comment">//输入结束时唤醒调度器内的总等待队列</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            elevatorInput.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (request <span class="keyword">instanceof</span> PersonRequest) &#123;</span><br><span class="line">            waitQueue.addRequest((PersonRequest) request);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (request <span class="keyword">instanceof</span> ElevatorRequest) &#123;</span><br><span class="line">            Elevator elevator = <span class="keyword">new</span> Elevator(<span class="keyword">new</span> WaitQueue(), <span class="keyword">new</span> InitQueue(),</span><br><span class="line">                                             pattern, ((ElevatorRequest) request).getElevatorId());</span><br><span class="line">            <span class="keyword">synchronized</span> (elevators) &#123; <span class="comment">//给电梯数组加锁，保证线程安全</span></span><br><span class="line">                elevators.add(elevator);</span><br><span class="line">                elevator.start();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        waitQueue.notifyAll(); <span class="comment">//在新的请求进入等待队列中或者加入了新电梯后唤醒所有的等待队列。</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h5><p>在没有非必要的对第五次作业的修改基础上，只通过新增一个调度器线程类对请求进行处理，复用了电梯类和策略类，层次架构较清晰，是一次比较好的增量开发。同时，调度器每次分配请求时对现有的每个电梯内的请求人数进行比较，较好的考虑了负载均衡。</p>
-<h5 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h5><p>因为写代码不谨慎，出现了一处潜在的死循环发生区。</p>
-<h3 id="第七次作业"><a href="#第七次作业" class="headerlink" title="第七次作业"></a>第七次作业</h3><h4 id="代码可视化与数据统计-2"><a href="#代码可视化与数据统计-2" class="headerlink" title="代码可视化与数据统计"></a>代码可视化与数据统计</h4><h5 id="程序类图-2"><a href="#程序类图-2" class="headerlink" title="程序类图"></a>程序类图</h5><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit2/hw7.png" alt=""></p>
+
+<h5><span id="优点">优点</span></h5><p>在没有非必要的对第五次作业的修改基础上，只通过新增一个调度器线程类对请求进行处理，复用了电梯类和策略类，层次架构较清晰，是一次比较好的增量开发。同时，调度器每次分配请求时对现有的每个电梯内的请求人数进行比较，较好的考虑了负载均衡。</p>
+<h5><span id="缺点">缺点</span></h5><p>因为写代码不谨慎，出现了一处潜在的死循环发生区。</p>
+<h3><span id="第七次作业">第七次作业</span></h3><h4><span id="代码可视化与数据统计">代码可视化与数据统计</span></h4><h5><span id="程序类图">程序类图</span></h5><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit2/hw7.png"></p>
 <p>本次作业的架构与上次一致。</p>
-<h5 id="程序复杂度分析-2"><a href="#程序复杂度分析-2" class="headerlink" title="程序复杂度分析"></a>程序复杂度分析</h5><ul>
+<h5><span id="程序复杂度分析">程序复杂度分析</span></h5><ul>
 <li>类复杂度</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -909,8 +895,7 @@
 <th>WMC</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>Dispatcher</td>
 <td>3.75</td>
 <td>9</td>
@@ -952,13 +937,10 @@
 <td>1</td>
 <td>7</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <ul>
 <li>方法复杂度</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -969,9 +951,8 @@
 <th>v(G)</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>Dispatcher.Dispatcher(WaitQueue,ArrayList<Elevator>,HashSet<Integer>)</td>
+<tbody><tr>
+<td>Dispatcher.Dispatcher(WaitQueue,ArrayList<elevator>,HashSet<integer>)</integer></elevator></td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -999,7 +980,7 @@
 <td>1</td>
 </tr>
 <tr>
-<td>Elevator.Elevator(WaitQueue,InitQueue,String,String,String,WaitQueue,HashSet<Integer>)</td>
+<td>Elevator.Elevator(WaitQueue,InitQueue,String,String,String,WaitQueue,HashSet<integer>)</integer></td>
 <td>3</td>
 <td>1</td>
 <td>2</td>
@@ -1146,7 +1127,7 @@
 <td>1</td>
 </tr>
 <tr>
-<td>InputThread.InputThread(WaitQueue,ElevatorInput,ArrayList<Elevator>,String,HashSet<Integer>)</td>
+<td>InputThread.InputThread(WaitQueue,ElevatorInput,ArrayList<elevator>,String,HashSet<integer>)</integer></elevator></td>
 <td>0</td>
 <td>1</td>
 <td>1</td>
@@ -1250,62 +1231,69 @@
 <td>1</td>
 <td>1</td>
 </tr>
-</tbody>
-</table>
-</div>
-<h5 id="程序行数统计-2"><a href="#程序行数统计-2" class="headerlink" title="程序行数统计"></a>程序行数统计</h5><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit2/hw7line.png" alt=""></p>
+</tbody></table>
+<h5><span id="程序行数统计">程序行数统计</span></h5><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit2/hw7line.png"></p>
 <p>本次代码量较上次增加了60行，主要增加了与电梯性质和换乘相关的代码。</p>
-<h4 id="代码分析-2"><a href="#代码分析-2" class="headerlink" title="代码分析"></a>代码分析</h4><h5 id="原理分析-2"><a href="#原理分析-2" class="headerlink" title="原理分析"></a>原理分析</h5><p>本次作业架构与上次一致。对调度器内部的负载均衡判定方法除了考虑电梯现有请求队列人数，加入了判断是否能停留的逻辑和优先级的逻辑（速度快的优先级高）,加入了换乘的处理逻辑。同时，改变了调度器线程的终止条件，当且仅当输入线程终止且所有换乘乘客均已到达目的地，才结束。而调度器线程的结束也才会导致若干个电梯线程的结束。具体电梯的策略类和前两次作业保持一致。</p>
-<h5 id="同步块的设置和锁的选择-2"><a href="#同步块的设置和锁的选择-2" class="headerlink" title="同步块的设置和锁的选择"></a>同步块的设置和锁的选择</h5><p>本次作业与前两次作业比起来，由于要处理换乘的情况，加入了一个记录换乘乘客id的集合<code>checkidset</code>用来判断调度器线程的终止条件。核心的线程安全问题也主要集中在对这个集合的处理上。</p>
+<h4><span id="代码分析">代码分析</span></h4><h5><span id="原理分析">原理分析</span></h5><p>本次作业架构与上次一致。对调度器内部的负载均衡判定方法除了考虑电梯现有请求队列人数，加入了判断是否能停留的逻辑和优先级的逻辑（速度快的优先级高）,加入了换乘的处理逻辑。同时，改变了调度器线程的终止条件，当且仅当输入线程终止且所有换乘乘客均已到达目的地，才结束。而调度器线程的结束也才会导致若干个电梯线程的结束。具体电梯的策略类和前两次作业保持一致。</p>
+<h5><span id="同步块的设置和锁的选择">同步块的设置和锁的选择</span></h5><p>本次作业与前两次作业比起来，由于要处理换乘的情况，加入了一个记录换乘乘客id的集合<code>checkidset</code>用来判断调度器线程的终止条件。核心的线程安全问题也主要集中在对这个集合的处理上。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Elevator.run</span></span><br><span class="line"><span class="keyword">if</span> (d == <span class="number">0</span>) &#123; <span class="comment">//乘客到达目的地时</span></span><br><span class="line">    ...</span><br><span class="line">    TimableOutput.println(</span><br><span class="line">        String.format(<span class="string">"OUT-%d-%d-%s"</span>, request.getPersonId(), floor, id));</span><br><span class="line">    <span class="keyword">synchronized</span> (checkidset) &#123;</span><br><span class="line">        checkidset.remove(request.getPersonId()); <span class="comment">//将这个id从换乘id集合中移除</span></span><br><span class="line">        checkidset.notifyAll(); <span class="comment">//唤醒换乘人集合，让调度器继续作业</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> ((type.equals(<span class="string">"B"</span>) &amp;&amp; canBOut(request))) &#123; <span class="comment">//到达中转站</span></span><br><span class="line">  	...</span><br><span class="line">    TimableOutput.println(String.format(<span class="string">"OUT-%d-%d-%s"</span>,</span><br><span class="line">                                        request.getPersonId(), floor, id));</span><br><span class="line">    <span class="keyword">synchronized</span> (allWaitQueue) &#123;</span><br><span class="line">        PersonRequest newrequest = <span class="keyword">new</span> PersonRequest(floor,</span><br><span class="line">                                                    request.getToFloor(), request.getPersonId());</span><br><span class="line">        allWaitQueue.addRequest(newrequest); <span class="comment">//总请求等待队列新增请求</span></span><br><span class="line">        allWaitQueue.notifyAll(); <span class="comment">//唤醒总请求等待对列，让调度器继续分配请求</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">synchronized</span> (checkidset) &#123; checkidset.notifyAll(); &#125; <span class="comment">//唤醒换乘人集合，让调度器继续作业</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Dispatcher.dispatch</span></span><br><span class="line"><span class="keyword">if</span> (waitQueue.isEnd() &amp;&amp; waitQueue.noWaiting()) &#123; <span class="comment">//当输入线程已经终止时</span></span><br><span class="line">    <span class="keyword">synchronized</span> (checkidset) &#123; <span class="comment">//给换乘人集合加锁</span></span><br><span class="line">        <span class="keyword">if</span> (checkidset.size() &gt; <span class="number">0</span>) &#123; <span class="comment">//当前还有换乘的乘客没有到达目的地</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                checkidset.wait(); <span class="comment">//等待乘客到达目的地或者新的换乘请求加入</span></span><br><span class="line">            &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                e.printStackTrace();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">synchronized</span> (waitQueue) &#123; <span class="comment">//处理现在的请求</span></span><br><span class="line">                ArrayList&lt;PersonRequest&gt; requests = waitQueue.getRequests();</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; requests.size(); i++) &#123;</span><br><span class="line">                    <span class="keyword">int</span> mini = getMinElevatori(requests.get(i));</span><br><span class="line">                    elevators.get(mini).addRequest(requests.get(i));</span><br><span class="line">                    <span class="keyword">synchronized</span> (elevators.get(mini).getWaitQueue()) &#123;</span><br><span class="line">                        elevators.get(mini).getWaitQueue().notifyAll();</span><br><span class="line">                    &#125;</span><br><span class="line">                    requests.remove(i);</span><br><span class="line">                    i--;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (checkidset.size() &gt; <span class="number">0</span>) &#123; <span class="comment">//如果还有没到达的换乘乘客，继续下一轮循环</span></span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (Elevator elevator : elevators) &#123; <span class="comment">//所有换乘乘客均已到达，可以关闭各个线程的等待队列了</span></span><br><span class="line">        <span class="keyword">synchronized</span> (elevator.getWaitQueue()) &#123;</span><br><span class="line">            elevator.getWaitQueue().close(); </span><br><span class="line">            elevator.getWaitQueue().notifyAll();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;...&#125; <span class="comment">//输入线程未终止，正常分配请求</span></span><br></pre></td></tr></table></figure>
-<h5 id="UML时序图"><a href="#UML时序图" class="headerlink" title="UML时序图"></a>UML时序图</h5><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit2/hw7-0.png" alt=""></p>
+
+<h5><span id="uml时序图">UML时序图</span></h5><p><img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit2/hw7-0.png"></p>
 <p>时序图说明：只保留了几个线程类，主要展示了整个时序流程而省略了实现细节。图中Elevator类是所有elevator的代表</p>
-<h5 id="可扩展性分析"><a href="#可扩展性分析" class="headerlink" title="可扩展性分析"></a>可扩展性分析</h5><ol>
+<h5><span id="可扩展性分析">可扩展性分析</span></h5><ol>
 <li><strong>功能设计</strong>上。由于上次作业架构较为合理，本次作业整体改动不大，同时，在完善了对电梯类型和电梯属性的扩展后，现在的电梯的可扩展性较强，之后改动时只需要针对不同的电梯种类在电梯类做出相应的改变和扩展即可。其他地方不用改变。</li>
 <li><strong>性能设计</strong>上。本次作业实现了换乘，但是由于各种原因没有实现对所有电梯状态的整体把握和换乘考虑，因此性能表现一般。</li>
 </ol>
-<h2 id="二、bug分析"><a href="#二、bug分析" class="headerlink" title="二、bug分析"></a>二、bug分析</h2><h3 id="第五次作业-1"><a href="#第五次作业-1" class="headerlink" title="第五次作业"></a>第五次作业</h3><h4 id="自己的bug"><a href="#自己的bug" class="headerlink" title="自己的bug"></a>自己的bug</h4><h5 id="bug描述"><a href="#bug描述" class="headerlink" title="bug描述"></a>bug描述</h5><p>本次作业在强测中AK，在互测中被找出一个bug</p>
+<h2><span id="二-bug分析">二、bug分析</span></h2><h3><span id="第五次作业">第五次作业</span></h3><h4><span id="自己的bug">自己的bug</span></h4><h5><span id="bug描述">bug描述</span></h5><p>本次作业在强测中AK，在互测中被找出一个bug</p>
 <p>原因是线程安全没考虑周全</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread <span class="string">"Thread-1"</span> java.util.ConcurrentModificationException</span><br><span class="line">	at java.util.ArrayList.sort(ArrayList.java:<span class="number">1464</span>)</span><br><span class="line">	at Elevator.run(Elevator.java:<span class="number">68</span>)</span><br></pre></td></tr></table></figure>
+
 <p>问题原因其实就是源于以下的代码。即是因为<code>Elevator</code>类在<code>Night</code>模式下对等待请求队列排序的处理有误。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (pattern.equals(<span class="string">"Night"</span>)) &#123;</span><br><span class="line">        waitQueue.getRequests()</span><br><span class="line">            .sort(Comparator.comparingInt(PersonRequest::getFromFloor));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="bug修复总结"><a href="#bug修复总结" class="headerlink" title="bug修复总结"></a>bug修复总结</h5><p>是非常明显的线程安全问题，只要给<code>waitQueue.getRequests()</code>加锁就没问题了。出现原因本质上还是自己对多线程的理解不深刻，没有养成勤加锁的好习惯。</p>
-<h4 id="他人的bug"><a href="#他人的bug" class="headerlink" title="他人的bug"></a>他人的bug</h4><h5 id="bug描述-1"><a href="#bug描述-1" class="headerlink" title="bug描述"></a>bug描述</h5><p>本次共分别找到三个人的共计三个bug，都是由于线程安全所致，均导致了RTLE。</p>
+
+<h5><span id="bug修复总结">bug修复总结</span></h5><p>是非常明显的线程安全问题，只要给<code>waitQueue.getRequests()</code>加锁就没问题了。出现原因本质上还是自己对多线程的理解不深刻，没有养成勤加锁的好习惯。</p>
+<h4><span id="他人的bug">他人的bug</span></h4><h5><span id="bug描述">bug描述</span></h5><p>本次共分别找到三个人的共计三个bug，都是由于线程安全所致，均导致了RTLE。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">1 Random hack了3个同学 </span></span><br><span class="line">[1.0]Random</span><br><span class="line">[1.0]1-FROM-19-TO-1</span><br><span class="line">[1.0]2-FROM-19-TO-1</span><br><span class="line">[1.0]3-FROM-19-TO-1</span><br><span class="line">[1.0]4-FROM-19-TO-1</span><br><span class="line">[1.0]5-FROM-19-TO-1</span><br><span class="line">[1.0]133-FROM-19-TO-1</span><br><span class="line">[1.0]134-FROM-19-TO-1</span><br><span class="line">[1.0]135-FROM-19-TO-1</span><br><span class="line">[1.0]136-FROM-19-TO-1</span><br><span class="line">[1.0]137-FROM-19-TO-1</span><br><span class="line">[1.0]138-FROM-19-TO-1</span><br><span class="line">[1.0]139-FROM-19-TO-1</span><br><span class="line">[1.0]130-FROM-19-TO-1</span><br><span class="line">[1.0]6-FROM-19-TO-1</span><br><span class="line">[1.0]131-FROM-19-TO-1</span><br><span class="line">[1.0]132-FROM-19-TO-1</span><br><span class="line">[2.0]7-FROM-19-TO-1</span><br><span class="line">[2.0]8-FROM-19-TO-1</span><br><span class="line">[2.0]9-FROM-19-TO-1</span><br><span class="line">[2.0]10-FROM-19-TO-1</span><br><span class="line">[2.0]11-FROM-19-TO-1</span><br><span class="line">[2.0]12-FROM-19-TO-1</span><br><span class="line">[2.0]13-FROM-19-TO-1</span><br><span class="line">[10.0]14-FROM-19-TO-17</span><br><span class="line">[10.0]15-FROM-15-TO-19</span><br><span class="line">[10.0]16-FROM-18-TO-1</span><br><span class="line">[10.0]17-FROM-2-TO-20</span><br><span class="line">[10.0]18-FROM-20-TO-4</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">2 Night hack了1个同学</span></span><br><span class="line">[1.0]Night</span><br><span class="line">[1.0]1-FROM-19-TO-1</span><br><span class="line">[1.0]2-FROM-19-TO-1</span><br><span class="line">[1.0]3-FROM-19-TO-1</span><br><span class="line">[1.0]4-FROM-19-TO-1</span><br><span class="line">[1.0]5-FROM-19-TO-1</span><br><span class="line">[1.0]133-FROM-19-TO-1</span><br><span class="line">[1.0]134-FROM-19-TO-1</span><br><span class="line">[1.0]135-FROM-19-TO-1</span><br><span class="line">[1.0]136-FROM-19-TO-1</span><br><span class="line">[1.0]137-FROM-19-TO-1</span><br><span class="line">[1.0]138-FROM-19-TO-1</span><br><span class="line">[1.0]139-FROM-19-TO-1</span><br><span class="line">[1.0]130-FROM-19-TO-1</span><br><span class="line">[1.0]6-FROM-19-TO-1</span><br><span class="line">[1.0]131-FROM-19-TO-1</span><br><span class="line">[1.0]132-FROM-19-TO-1</span><br><span class="line">[1.0]7-FROM-19-TO-1</span><br><span class="line">[1.0]8-FROM-19-TO-1</span><br><span class="line">[1.0]9-FROM-19-TO-1</span><br><span class="line">[1.0]10-FROM-19-TO-1</span><br><span class="line">[1.0]11-FROM-19-TO-1</span><br><span class="line">[1.0]12-FROM-19-TO-1</span><br><span class="line">[1.0]13-FROM-19-TO-1</span><br><span class="line">[1.0]14-FROM-19-TO-1</span><br><span class="line">[1.0]15-FROM-19-TO-1</span><br><span class="line">[1.0]16-FROM-19-TO-1</span><br><span class="line">[1.0]17-FROM-19-TO-1</span><br><span class="line">[1.0]18-FROM-19-TO-1</span><br><span class="line">[1.0]19-FROM-19-TO-1</span><br></pre></td></tr></table></figure>
-<h5 id="测试方式"><a href="#测试方式" class="headerlink" title="测试方式"></a>测试方式</h5><p>本单元由于与很多事情相撞，没完成评测机，所以只能一直采用阅读代码加上手动构造复杂的测试用例的方式来进行互测。基本原则就是构造请求数量和最大限制一样，且出现很多楼层跨度很大的电梯请求的测试数据。</p>
-<h3 id="第六次作业-1"><a href="#第六次作业-1" class="headerlink" title="第六次作业"></a>第六次作业</h3><h4 id="自己的bug-1"><a href="#自己的bug-1" class="headerlink" title="自己的bug"></a>自己的bug</h4><p>本次强测中被hack1个点，互测中未被hack。</p>
-<h5 id="bug描述-2"><a href="#bug描述-2" class="headerlink" title="bug描述"></a>bug描述</h5><p>RTLE，运行时间超过了210s</p>
-<h5 id="bug修复总结-1"><a href="#bug修复总结-1" class="headerlink" title="bug修复总结"></a>bug修复总结</h5><p>原因如下所示</p>
+
+<h5><span id="测试方式">测试方式</span></h5><p>本单元由于与很多事情相撞，没完成评测机，所以只能一直采用阅读代码加上手动构造复杂的测试用例的方式来进行互测。基本原则就是构造请求数量和最大限制一样，且出现很多楼层跨度很大的电梯请求的测试数据。</p>
+<h3><span id="第六次作业">第六次作业</span></h3><h4><span id="自己的bug">自己的bug</span></h4><p>本次强测中被hack1个点，互测中未被hack。</p>
+<h5><span id="bug描述">bug描述</span></h5><p>RTLE，运行时间超过了210s</p>
+<h5><span id="bug修复总结">bug修复总结</span></h5><p>原因如下所示</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (floor != desFloor1) &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        sleep(<span class="number">400</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">    floor += step;</span><br><span class="line">    TimableOutput.println(</span><br><span class="line">        String.format(<span class="string">"ARRIVE-%d-%s"</span>, floor, id));</span><br><span class="line">    desFloor1 = scheduler.getDesFloor(floor);</span><br><span class="line">    <span class="comment">//缺少这行:step=floor&lt;desFloor1?:1:-1;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>即我每到一个楼层都会更新下一个目标楼层，而与此同时却没有更新方向。因此出现了问题。当出现新的请求与当前请求方向不一致时，会一直死循环，导致电梯通向天堂或者地狱。</p>
-<h4 id="他人的bug-1"><a href="#他人的bug-1" class="headerlink" title="他人的bug"></a>他人的bug</h4><p>本次未发现他人bug。</p>
+<h4><span id="他人的bug">他人的bug</span></h4><p>本次未发现他人bug。</p>
 <p>尝试用上次的强测用例修改后进行hack，没有成功。</p>
-<h3 id="第七次作业-1"><a href="#第七次作业-1" class="headerlink" title="第七次作业"></a>第七次作业</h3><h4 id="自己的bug-2"><a href="#自己的bug-2" class="headerlink" title="自己的bug"></a>自己的bug</h4><p>本次强测被hack四个点，互测被hack四个点。主要原因是因为换乘导致的唤醒遗漏问题以及两处代码逻辑问题。</p>
+<h3><span id="第七次作业">第七次作业</span></h3><h4><span id="自己的bug">自己的bug</span></h4><p>本次强测被hack四个点，互测被hack四个点。主要原因是因为换乘导致的唤醒遗漏问题以及两处代码逻辑问题。</p>
 <p><strong>唤醒遗漏</strong>主要发生在B电梯的换乘处理上。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">TimableOutput.println(String.format(<span class="string">"OUT-%d-%d-%s"</span>,request.getPersonId(), floor, id));</span><br><span class="line"><span class="keyword">synchronized</span> (allWaitQueue) &#123;</span><br><span class="line">    PersonRequest newrequest = <span class="keyword">new</span> PersonRequest(floor,request.getToFloor(), request.getPersonId());</span><br><span class="line">    allWaitQueue.addRequest(newrequest);</span><br><span class="line">    allWaitQueue.notifyAll();</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
 <p>代码中，显然只对总的等待请求队列做了唤醒处理，却没有对checkidset也就是换乘乘客id的集合做唤醒处理，导致了在Dispatcher类中一直卡死，无法结束线程。</p>
 <p><strong>处理逻辑</strong>主要是对B电梯的处理上有问题。一处是当B电梯中有偶数层目的地的乘客时，在到达偶数层会一直循环卡死在这一层。通过设置B电梯且为偶数层跳过的逻辑就解决了。即：<code>if (type.equals(&quot;B&quot;) &amp;&amp; floor % 2 == 0) { continue; }</code>。另一处如下所示</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (lenInit == maxnum || (!initReqs.contains(mainRequest) &amp;&amp; lenInit == maxnum - <span class="number">1</span>)) &#123;</span><br><span class="line">    <span class="keyword">return</span> mainDesFloor;</span><br><span class="line">&#125;</span><br><span class="line">mainDesFloor = maxnum == <span class="number">6</span> ? getBFloor(floor, mainDesFloor) : mainDesFloor;</span><br></pre></td></tr></table></figure>
+
 <p>当B电梯进行换乘时，我的代码逻辑在某些情况直接返回了主请求的目的地，而不是经过<code>getBFloor</code>函数转换后再做将进一步处理。于是导致了问题。只需要将转换的代码放在前面即可</p>
 <p>如下所示：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mainDesFloor &#x3D; maxnum &#x3D;&#x3D; 6 ? getBFloor(floor, mainDesFloor) : mainDesFloor;</span><br><span class="line">if (lenInit &#x3D;&#x3D; maxnum || (!initReqs.contains(mainRequest) &amp;&amp; lenInit &#x3D;&#x3D; maxnum - 1)) &#123;</span><br><span class="line">    return mainDesFloor;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="他人的bug-2"><a href="#他人的bug-2" class="headerlink" title="他人的bug"></a>他人的bug</h4><p>本次未发现他人bug。</p>
-<h2 id="三、心得体会"><a href="#三、心得体会" class="headerlink" title="三、心得体会"></a>三、心得体会</h2><h4 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h4><ul>
+
+<h4><span id="他人的bug">他人的bug</span></h4><p>本次未发现他人bug。</p>
+<h2><span id="三-心得体会">三、心得体会</span></h2><h4><span id="线程安全">线程安全</span></h4><ul>
 <li>一定要勤给变量加锁，同时也要注意锁的先后顺序避免出现死锁。</li>
 <li>加锁后如果进行了<code>wait</code>操作一定要注意在合适的地方进行唤醒，否则就会一直卡死。这个时候最好枚举出所有需要唤醒的情况。</li>
 <li>共享变量的维护很重要，尽量减少共享变量，同时对于共享变量一定要加锁进行操作。</li>
 <li>一定要注意每个线程的终止条件，要考虑到尽可能全面的情况，比如第七次作业的输入结束后又产生新的换乘请求的情况。一般需要加一个新的变量来处理。</li>
 </ul>
-<h4 id="层次化设计"><a href="#层次化设计" class="headerlink" title="层次化设计"></a>层次化设计</h4><ul>
+<h4><span id="层次化设计">层次化设计</span></h4><ul>
 <li>在进行系统设计时，往往需要多线程模式。而这就往往需要对一些对象进行精细的不依赖于上层的建模，比如本次的单台电梯。只要写好一个电梯线程，就可以加无数个电梯，便于之后的扩展。建模过程中要注意不同模块之间的解耦，比如本单元作业就可以将电梯类和策略类分开，便于之后更换策略。</li>
 <li>写之前要理清不同线程、不同类之间的交互关系和共享变量，并尽可能使得关系更加简洁，共享变量尽可能少。关系清晰了，才不容易出线程安全错误。</li>
 </ul>
-<h4 id="经验教训"><a href="#经验教训" class="headerlink" title="经验教训"></a>经验教训</h4><ul>
+<h4><span id="经验教训">经验教训</span></h4><ul>
 <li><p>对一个版本底气不足时不如老老实实交把握大的版本。第7次作业最后一次交的时候自知换乘的版本有很多问题，但是时间原因没法进一步debug了，就交上去了。但其实选择更稳妥的没换乘的方式至少正确性可能会好很多。</p>
 </li>
 <li><p>评测机很重要！！上一单元因为有较完善的评测机互测自测都很顺利。本单元没有实现评测机导致很多时候比较被动。</p>
 </li>
-<li>修复bug的时候最重要的是通过，所以修改的时候可以不考虑性能，纯考虑正确性来进行修改。另外<del>修复bug的时候不要按<code>Alt+Ctrl+L</code></del>，原因懂得都懂。</li>
+<li><p>修复bug的时候最重要的是通过，所以修改的时候可以不考虑性能，纯考虑正确性来进行修改。另外<del>修复bug的时候不要按<code>Alt+Ctrl+L</code></del>，原因懂得都懂。</p>
+</li>
 </ul>
 
                 
@@ -1366,7 +1354,7 @@
           <strong class="toc-title">Contents</strong>
           
             
-              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#OO-Unit2-总结"><span class="toc-nav-text">OO-Unit2-总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#一、程序结构分析"><span class="toc-nav-text">一、程序结构分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第五次作业"><span class="toc-nav-text">第五次作业</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#代码可视化与数据统计"><span class="toc-nav-text">代码可视化与数据统计</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#程序类图"><span class="toc-nav-text">程序类图</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#程序复杂度分析"><span class="toc-nav-text">程序复杂度分析</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#程序行数统计"><span class="toc-nav-text">程序行数统计</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#代码分析"><span class="toc-nav-text">代码分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#原理分析"><span class="toc-nav-text">原理分析</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#同步块的设置和锁的选择"><span class="toc-nav-text">同步块的设置和锁的选择</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#优点"><span class="toc-nav-text">优点</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#缺点"><span class="toc-nav-text">缺点</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第六次作业"><span class="toc-nav-text">第六次作业</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#代码可视化与数据统计-1"><span class="toc-nav-text">代码可视化与数据统计</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#程序类图-1"><span class="toc-nav-text">程序类图</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#程序复杂度分析-1"><span class="toc-nav-text">程序复杂度分析</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#程序行数统计-1"><span class="toc-nav-text">程序行数统计</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#代码分析-1"><span class="toc-nav-text">代码分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#原理分析-1"><span class="toc-nav-text">原理分析</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#同步块的设置和锁的选择-1"><span class="toc-nav-text">同步块的设置和锁的选择</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#优点-1"><span class="toc-nav-text">优点</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#缺点-1"><span class="toc-nav-text">缺点</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第七次作业"><span class="toc-nav-text">第七次作业</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#代码可视化与数据统计-2"><span class="toc-nav-text">代码可视化与数据统计</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#程序类图-2"><span class="toc-nav-text">程序类图</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#程序复杂度分析-2"><span class="toc-nav-text">程序复杂度分析</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#程序行数统计-2"><span class="toc-nav-text">程序行数统计</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#代码分析-2"><span class="toc-nav-text">代码分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#原理分析-2"><span class="toc-nav-text">原理分析</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#同步块的设置和锁的选择-2"><span class="toc-nav-text">同步块的设置和锁的选择</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#UML时序图"><span class="toc-nav-text">UML时序图</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#可扩展性分析"><span class="toc-nav-text">可扩展性分析</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#二、bug分析"><span class="toc-nav-text">二、bug分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第五次作业-1"><span class="toc-nav-text">第五次作业</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug"><span class="toc-nav-text">自己的bug</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#bug描述"><span class="toc-nav-text">bug描述</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#bug修复总结"><span class="toc-nav-text">bug修复总结</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#他人的bug"><span class="toc-nav-text">他人的bug</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#bug描述-1"><span class="toc-nav-text">bug描述</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#测试方式"><span class="toc-nav-text">测试方式</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第六次作业-1"><span class="toc-nav-text">第六次作业</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug-1"><span class="toc-nav-text">自己的bug</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#bug描述-2"><span class="toc-nav-text">bug描述</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#bug修复总结-1"><span class="toc-nav-text">bug修复总结</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#他人的bug-1"><span class="toc-nav-text">他人的bug</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第七次作业-1"><span class="toc-nav-text">第七次作业</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自己的bug-2"><span class="toc-nav-text">自己的bug</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#他人的bug-2"><span class="toc-nav-text">他人的bug</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#三、心得体会"><span class="toc-nav-text">三、心得体会</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#线程安全"><span class="toc-nav-text">线程安全</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#层次化设计"><span class="toc-nav-text">层次化设计</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#经验教训"><span class="toc-nav-text">经验教训</span></a></li></ol></li></ol></li></ol></li></ol>
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">OO-Unit2-总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">一、程序结构分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">第五次作业</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">代码可视化与数据统计</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">程序类图</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">程序复杂度分析</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">程序行数统计</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">代码分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">原理分析</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">同步块的设置和锁的选择</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">优点</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">缺点</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">第六次作业</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">代码可视化与数据统计</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">程序类图</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">程序复杂度分析</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">程序行数统计</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">代码分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">原理分析</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">同步块的设置和锁的选择</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">优点</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">缺点</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">第七次作业</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">代码可视化与数据统计</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">程序类图</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">程序复杂度分析</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">程序行数统计</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">代码分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">原理分析</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">同步块的设置和锁的选择</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">UML时序图</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">可扩展性分析</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">二、bug分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">第五次作业</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">自己的bug</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">bug描述</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">bug修复总结</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">他人的bug</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">bug描述</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">测试方式</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">第六次作业</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">自己的bug</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">bug描述</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">bug修复总结</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">他人的bug</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">第七次作业</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">自己的bug</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">他人的bug</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">三、心得体会</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">线程安全</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">层次化设计</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">经验教训</span></a></li></ol></li></ol></li></ol></li></ol>
             
           
           </div>

@@ -201,14 +201,14 @@
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/photography/">Photography</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/photography/">Photography</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -276,45 +276,53 @@
 
                 <p>关于一些CS必备工具使用的笔记，根据斯坦福的缺失的一课课程以及一些其他网络教程整理得来。</p>
 <a id="more"></a>
+
 <p><a href="https://missing-semester-cn.github.io/" target="_blank" rel="noopener">https://missing-semester-cn.github.io/</a></p>
-<h2 id="一、shell脚本"><a href="#一、shell脚本" class="headerlink" title="一、shell脚本"></a>一、shell脚本</h2><p><code>Bourne Again SHell</code>——Bash</p>
+<h2><span id="一-shell脚本">一、shell脚本</span></h2><p><code>Bourne Again SHell</code>——Bash</p>
 <p>终端，文字接口，Shell</p>
-<h3 id="使用shell执行程序"><a href="#使用shell执行程序" class="headerlink" title="使用shell执行程序"></a>使用shell执行程序</h3><p>如果执行的程序不是shell编程关键字，则咨询环境变量</p>
+<h3><span id="使用shell执行程序">使用shell执行程序</span></h3><p>如果执行的程序不是shell编程关键字，则咨询环境变量</p>
 <p>shell使用空格分割命令</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">打开后看到的:</span></span><br><span class="line">muller:~$ #$表示不是root用户 muller--&gt;用户名	下面的代码略去了用户名，只保留$后的</span><br><span class="line"><span class="meta">$</span><span class="bash"> date <span class="comment">#执行程序，打印当前时间</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> hello <span class="comment">#echo--&gt;打印函数 hello为参数 特殊字符(比如空格)可以用""、''将后面的参数括起来，也可以用转义字符</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> <span class="variable">$path</span> <span class="comment">#打印环境变量所在路径</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">which</span> <span class="built_in">echo</span> <span class="comment">#打印echo的环境变量路径</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> /bin/<span class="built_in">echo</span> <span class="variable">$path</span> <span class="comment">#直接使用路径名执行echo程序</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="在shell中导航"><a href="#在shell中导航" class="headerlink" title="在shell中导航"></a>在shell中导航</h3><p><code>linux</code>系统中<code>/</code>开头的都是<strong>绝对路径</strong>。</p>
+
+<h3><span id="在shell中导航">在shell中导航</span></h3><p><code>linux</code>系统中<code>/</code>开头的都是<strong>绝对路径</strong>。</p>
 <p>命令后带<code>-</code>接受标记和选项</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">pwd</span> <span class="comment">#获取当前目录</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> ../a <span class="comment">#cd 切换到上级目录中的a文件夹 .表示当前目录 ..表示上一级目录</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls <span class="comment">#查看目录下包含的文件</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ls -<span class="built_in">help</span> <span class="comment">#或ls -h</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mv 1.txt a.txt <span class="comment">#重命名或移动文件</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cp 1.txt <span class="comment">#拷贝文件</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mkdir <span class="comment">#新建文件目录</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> man ls <span class="comment">#man获取ls的手册 使用q退出</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> touch 1.txt <span class="comment">#创建空文件</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="在程序间创建连接"><a href="#在程序间创建连接" class="headerlink" title="在程序间创建连接"></a>在程序间创建连接</h3><p>shell中有输入输出流</p>
+
+<h3><span id="在程序间创建连接">在程序间创建连接</span></h3><p>shell中有输入输出流</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> hello &gt; hello.txt <span class="comment">#最简单的重定向输出，如果不存在hello.txt文件则生成出来一个</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat hello txt <span class="comment">#获取文件内容</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat &lt; hello.txt</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> cat &lt; hello.txt &gt; hello2.txt</span></span><br></pre></td></tr></table></figure>
+
 <p>使用&gt;&gt;可以进行追加输出</p>
-<p>根用户：<code>sudo</code> 命令开头，变为<code>root</code>用户</p>
-<h3 id="变量，控制语句"><a href="#变量，控制语句" class="headerlink" title="变量，控制语句"></a>变量，控制语句</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> a=1 <span class="comment">#变量赋值</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> <span class="string">'$a'</span> <span class="comment">#打印出 $a</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> <span class="string">"<span class="variable">$a</span>"</span> <span class="comment">#打印出a变量的值，即1</span></span></span><br></pre></td></tr></table></figure>
-<p>以<strong><code>&#39;</code>定义</strong>的字符串为<strong>原义字符串</strong>，其中的变量不会被转义，而 <strong><code>&quot;</code>定义</strong>的字符串会<strong>将变量值进行替换</strong>。</p>
+<p>根用户：<code>sudo </code> 命令开头，变为<code>root</code>用户</p>
+<h3><span id="变量控制语句">变量，控制语句</span></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> a=1 <span class="comment">#变量赋值</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> <span class="string">'$a'</span> <span class="comment">#打印出 $a</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> <span class="string">"<span class="variable">$a</span>"</span> <span class="comment">#打印出a变量的值，即1</span></span></span><br></pre></td></tr></table></figure>
+
+<p>以**<code>&#39;</code>定义<strong>的字符串为</strong>原义字符串<strong>，其中的变量不会被转义，而 <strong><code>&quot;</code>定义</strong>的字符串会</strong>将变量值进行替换**。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mcd () &#123;</span><br><span class="line">    mkdir -p "$1"</span><br><span class="line">    cd "$1"</span><br><span class="line">&#125;  #函数定义</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>$0</code> - 脚本名</li>
 <li><code>$1</code> 到 <code>$9</code> - 脚本的参数。 <code>$1</code> 是第一个参数，依此类推。</li>
 <li><code>$@</code> - 所有参数</li>
 <li><code>$#</code> - 参数个数</li>
 <li><code>$?</code> - 前一个命令的返回值</li>
-<li>$$$$ - 当前脚本的进程识别码</li>
+<li><code>$$</code> - 当前脚本的进程识别码</li>
 <li><code>!!</code> - 完整的上一条命令，包括参数。常见应用：当你因为权限不足执行命令失败时，可以使用 <code>sudo !!</code>再尝试一次。</li>
 <li><code>$_</code> - 上一条命令的最后一个参数。如果你正在使用的是交互式shell，你可以通过按下 <code>Esc</code> 之后键入 . 来获取这个值。</li>
 </ul>
 <p>命令通常使用 <code>STDOUT</code>来返回输出值，使用<code>STDERR</code> 来返回错误及错误码</p>
 <p><strong>返回值0</strong>表示<strong>正常执行</strong>，其他所有<strong>非0的返回值</strong>都表示<strong>有错误发生</strong>。</p>
 <p>可以使用<code>false</code>和<code>true</code>以及<code>&amp;&amp;</code> <code>||</code>等逻辑表达式来作为条件，例如：<code>false || echo &quot;1234&quot;</code></p>
-<h3 id="Shell工具"><a href="#Shell工具" class="headerlink" title="Shell工具"></a>Shell工具</h3><h4 id="查找文件"><a href="#查找文件" class="headerlink" title="查找文件"></a>查找文件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查找所有名称为src的文件夹</span></span><br><span class="line">find . -name src -type d</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查找所有文件夹路径中包含<span class="built_in">test</span>的python文件</span></span><br><span class="line">find . -path '**/test/**/*.py' -type f</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查找前一天修改的所有文件</span></span><br><span class="line">find . -mtime -1</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查找所有大小在500k至10M的tar.gz文件</span></span><br><span class="line">find . -size +500k -size -10M -name '*.tar.gz'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">对找到文件进行操作</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Delete all files with .tmp extension</span></span><br><span class="line">find . -name '*.tmp' -exec rm &#123;&#125; \;</span><br><span class="line"><span class="meta">#</span><span class="bash"> Find all PNG files and convert them to JPG</span></span><br><span class="line">find . -name '*.png' -exec convert &#123;&#125; &#123;&#125;.jpg \;</span><br></pre></td></tr></table></figure>
+<h3><span id="shell工具">Shell工具</span></h3><h4><span id="查找文件">查找文件</span></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查找所有名称为src的文件夹</span></span><br><span class="line">find . -name src -type d</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查找所有文件夹路径中包含<span class="built_in">test</span>的python文件</span></span><br><span class="line">find . -path '**/test/**/*.py' -type f</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查找前一天修改的所有文件</span></span><br><span class="line">find . -mtime -1</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查找所有大小在500k至10M的tar.gz文件</span></span><br><span class="line">find . -size +500k -size -10M -name '*.tar.gz'</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">对找到文件进行操作</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> Delete all files with .tmp extension</span></span><br><span class="line">find . -name '*.tmp' -exec rm &#123;&#125; \;</span><br><span class="line"><span class="meta">#</span><span class="bash"> Find all PNG files and convert them to JPG</span></span><br><span class="line">find . -name '*.png' -exec convert &#123;&#125; &#123;&#125;.jpg \;</span><br></pre></td></tr></table></figure>
+
 <p><code>fd</code> <code>locate</code> 是另外两个查找工具</p>
-<h4 id="查找代码"><a href="#查找代码" class="headerlink" title="查找代码"></a>查找代码</h4><p><code>grep</code> <code>ack</code> <code>ag</code> <code>rg</code></p>
+<h4><span id="查找代码">查找代码</span></h4><p><code>grep</code> <code>ack</code> <code>ag</code> <code>rg</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 查找所有使用了 requests 库的文件</span></span><br><span class="line">rg -t py 'import requests'</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查找所有没有写 shebang 的文件（包含隐藏文件）</span></span><br><span class="line">rg -u --files-without-match "^#!"</span><br><span class="line"><span class="meta">#</span><span class="bash"> 查找所有的foo字符串，并打印其之后的5行</span></span><br><span class="line">rg foo -A 5</span><br><span class="line"><span class="meta">#</span><span class="bash"> 打印匹配的统计信息（匹配的行和文件的数量）</span></span><br><span class="line">rg --stats PATTERN</span><br></pre></td></tr></table></figure>
-<h4 id="查找shell命令"><a href="#查找shell命令" class="headerlink" title="查找shell命令"></a>查找shell命令</h4><p><code>history</code> 命令允许您以程序员的方式来访问shell中输入的历史命令</p>
+
+<h4><span id="查找shell命令">查找shell命令</span></h4><p><code>history</code> 命令允许您以程序员的方式来访问shell中输入的历史命令</p>
 <p>使用 <code>Ctrl+R</code> 对命令历史记录进行回溯搜索。可以配合 <a href="https://github.com/junegunn/fzf/wiki/Configuring-shell-key-bindings#ctrl-r" target="_blank" rel="noopener"><code>fzf</code></a> 使用</p>
-<h4 id="文件夹导航"><a href="#文件夹导航" class="headerlink" title="文件夹导航"></a>文件夹导航</h4><p>Fasd 基于 <a href="https://developer.mozilla.org/en/The_Places_frecency_algorithm" target="_blank" rel="noopener"><code>frecency</code></a> 对文件和文件排序，也就是说它会同时针对频率（frequency ）和时效（ recency）进行排序。</p>
+<h4><span id="文件夹导航">文件夹导航</span></h4><p>Fasd 基于 <a href="https://developer.mozilla.org/en/The_Places_frecency_algorithm" target="_blank" rel="noopener"><code>frecency</code></a> 对文件和文件排序，也就是说它会同时针对频率（frequency ）和时效（ recency）进行排序。</p>
 <p>对于常用的目录，目录名子串前加入一个命令 <code>z</code> 就可以快速切换命令到该目录</p>
 <p>还有一些更复杂的工具可以用来概览目录结构，例如 <a href="https://linux.die.net/man/1/tree" target="_blank" rel="noopener"><code>tree</code></a>, <a href="https://github.com/Canop/broot" target="_blank" rel="noopener"><code>broot</code></a> 或更加完整的文件管理器，例如 <a href="https://github.com/jarun/nnn" target="_blank" rel="noopener"><code>nnn</code></a> 或 <a href="https://github.com/ranger/ranger" target="_blank" rel="noopener"><code>ranger</code></a>。</p>
-<h2 id="二、Vim编辑器"><a href="#二、Vim编辑器" class="headerlink" title="二、Vim编辑器"></a>二、Vim编辑器</h2><h3 id="编辑模式"><a href="#编辑模式" class="headerlink" title="编辑模式"></a>编辑模式</h3><ul>
+<h2><span id="二-vim编辑器">二、Vim编辑器</span></h2><h3><span id="编辑模式">编辑模式</span></h3><ul>
 <li>正常模式：在文件中四处移动光标进行修改（默认的模式）</li>
 <li>插入模式：插入文本 </li>
 <li>替换模式：替换文本</li>
@@ -322,7 +330,7 @@
 <li>命令模式：用于执行命令</li>
 </ul>
 <p>按下 <code>&lt;ESC&gt;</code> （退出键） 从任何其他模式返回正常模式。 正常模式和插入模式是最常用的两个模式</p>
-<h4 id="正常模式与各个模式切换"><a href="#正常模式与各个模式切换" class="headerlink" title="正常模式与各个模式切换"></a>正常模式与各个模式切换</h4><p>键入 <code>i</code> 进入插入 模式， <code>R</code> 进入替换模式</p>
+<h4><span id="正常模式与各个模式切换">正常模式与各个模式切换</span></h4><p>键入 <code>i</code> 进入插入 模式， <code>R</code> 进入替换模式</p>
 <p> <code>v</code> 进入可视（一般）模式， <code>V</code> 进入可视（行）模式， <code>&lt;C-v&gt;</code> （Ctrl-V, 有时也写作 <code>^V</code>）进入可视（块）模式，</p>
 <p> <code>:</code> 进入命令模式。</p>
 <ul>
@@ -337,7 +345,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h3><ul>
+<h3><span id="移动">移动</span></h3><ul>
 <li>基本移动: <code>hjkl</code> （左， 下， 上， 右）</li>
 <li>词： <code>w</code> （下一个词）， <code>b</code> （词初）， <code>e</code> （词尾）</li>
 <li>行： <code>0</code> （行初）， <code>^</code> （第一个非空格字符）， <code>$</code> （行尾）</li>
@@ -345,20 +353,20 @@
 <li>翻页： <code>Ctrl-u</code> （上翻）， <code>Ctrl-d</code> （下翻）</li>
 <li>文件： <code>gg</code> （文件头）， <code>G</code> （文件尾）</li>
 <li>行数： <code>:{行数}&lt;CR&gt;</code> 或者 <code>{行数}G</code> ({行数}为行数)</li>
-<li>杂项： <code>%</code> （找到配对，比如括号或者 /<em> </em>/ 之类的注释对）</li>
+<li>杂项： <code>%</code> （找到配对，比如括号或者 &#x2F;* *&#x2F; 之类的注释对）</li>
 <li>查找：<code>f{字符}</code> <code>t{字符}</code> <code>F{字符}</code> <code>T{字符}</code><ul>
-<li>查找/到 向前/向后 在本行的{字符}</li>
-<li><code>,</code> / <code>;</code> 用于导航匹配</li>
+<li>查找&#x2F;到 向前&#x2F;向后 在本行的{字符}</li>
+<li><code>,</code> &#x2F; <code>;</code> 用于导航匹配</li>
 </ul>
 </li>
-<li>搜索: <code>/{正则表达式}</code>, <code>n</code> / <code>N</code> 用于导航匹配</li>
+<li>搜索: <code>/{正则表达式}</code>, <code>n</code> &#x2F; <code>N</code> 用于导航匹配</li>
 </ul>
-<h3 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h3><ul>
+<h3><span id="编辑">编辑</span></h3><ul>
 <li><code>i</code>进入插入模式<ul>
-<li>但是对于操纵/编辑文本，不单想用退格键完成</li>
+<li>但是对于操纵&#x2F;编辑文本，不单想用退格键完成</li>
 </ul>
 </li>
-<li><code>O</code> / <code>o</code> 在之上/之下插入行</li>
+<li><code>O</code> &#x2F; <code>o</code> 在之上&#x2F;之下插入行</li>
 <li><code>d{移动命令}</code> 删除 {移动命令}<ul>
 <li>例如， <code>dw</code> 删除词, <code>d$</code> 删除到行尾, <code>d0</code> 删除到行头。</li>
 </ul>
@@ -375,7 +383,7 @@
 </ul>
 </li>
 <li><code>u</code> 撤销, <code>&lt;C-r&gt;</code> 重做</li>
-<li><code>y</code> 复制 / “yank” （其他一些命令比如 <code>d</code> 也会复制）</li>
+<li><code>y</code> 复制 &#x2F; “yank” （其他一些命令比如 <code>d</code> 也会复制）</li>
 <li><code>p</code> 粘贴</li>
 <li>更多值得学习的: 比如 <code>~</code> 改变字符的大小写</li>
 </ul>

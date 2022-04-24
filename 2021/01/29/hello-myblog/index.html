@@ -201,14 +201,14 @@
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/photography/">Photography</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/photography/">Photography</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
@@ -277,14 +277,15 @@
                 <p>经过了好几天的摸索，终于大概部署好了个人博客，之后会把所学的一些CS知识技术整理成笔记记录在这里，欢迎大家时不时来踩一踩！</p>
 <p>这篇博客主要是关于个人博客搭建和更新方法的笔记，怕之后忘了所以赶紧记一下。目前博客仅仅是实现了基本功能，之后可能会视情况设置一下评论区，点赞，社交等功能。</p>
 <a id="more"></a>
-<h3 id="个人博客搭建总结"><a href="#个人博客搭建总结" class="headerlink" title="个人博客搭建总结"></a>个人博客搭建总结</h3><h4 id="Jekyll"><a href="#Jekyll" class="headerlink" title="Jekyll"></a>Jekyll</h4><p>这段时间为了搭建一下自己的博客尝试了两种方式，一种是基于<code>Jekyll</code>的，这种方式比较简单，但是有时过于简单了，之前试过用一个cayman的主题，但由于本人太菜，这个模板需要配置太多，只好放弃了，改用hexo搭建。如果想用<code>Jekyll</code>的可以参考这个网站：<a href="http://jekyllcn.com/" target="_blank" rel="noopener">http://jekyllcn.com/</a> ，此站目标是<strong>成为 Jekyll 的全面指南</strong>，内容详细，值得看一看。</p>
-<h4 id="hexo搭建大致流程"><a href="#hexo搭建大致流程" class="headerlink" title="hexo搭建大致流程"></a>hexo搭建大致流程</h4><p>大致参考了以下几篇博客</p>
-<p><a href="https://blog.csdn.net/jinxiaonian11/article/details/82900119（这个作者有两篇这方面的博客，讲的挺详细的）" target="_blank" rel="noopener">https://blog.csdn.net/jinxiaonian11/article/details/82900119（这个作者有两篇这方面的博客，讲的挺详细的）</a></p>
+
+<h3><span id="个人博客搭建总结">个人博客搭建总结</span></h3><h4><span id="jekyll">Jekyll</span></h4><p>这段时间为了搭建一下自己的博客尝试了两种方式，一种是基于<code>Jekyll</code>的，这种方式比较简单，但是有时过于简单了，之前试过用一个cayman的主题，但由于本人太菜，这个模板需要配置太多，只好放弃了，改用hexo搭建。如果想用<code>Jekyll</code>的可以参考这个网站：<a href="http://jekyllcn.com/" target="_blank" rel="noopener">http://jekyllcn.com/</a> ，此站目标是<strong>成为 Jekyll 的全面指南</strong>，内容详细，值得看一看。</p>
+<h4><span id="hexo搭建大致流程">hexo搭建大致流程</span></h4><p>大致参考了以下几篇博客</p>
+<p><a href="https://blog.csdn.net/jinxiaonian11/article/details/82900119%EF%BC%88%E8%BF%99%E4%B8%AA%E4%BD%9C%E8%80%85%E6%9C%89%E4%B8%A4%E7%AF%87%E8%BF%99%E6%96%B9%E9%9D%A2%E7%9A%84%E5%8D%9A%E5%AE%A2%EF%BC%8C%E8%AE%B2%E7%9A%84%E6%8C%BA%E8%AF%A6%E7%BB%86%E7%9A%84%EF%BC%89" target="_blank" rel="noopener">https://blog.csdn.net/jinxiaonian11/article/details/82900119（这个作者有两篇这方面的博客，讲的挺详细的）</a></p>
 <p><a href="https://blog.csdn.net/qq_37210523/article/details/80909983" target="_blank" rel="noopener">https://blog.csdn.net/qq_37210523/article/details/80909983</a></p>
 <ol>
 <li><p>选好一个空文件夹，最好不要有中文路径，之后用bash cd到这个路径下，继续下面的操作。</p>
 </li>
-<li><p>安装配置好node.js（node.js下载地址：<a href="https://nodejs.org/en/download/），hexo" target="_blank" rel="noopener">https://nodejs.org/en/download/），hexo</a> (<code>npm install hexo -g</code>)。</p>
+<li><p>安装配置好node.js（node.js下载地址：<a href="https://nodejs.org/en/download/%EF%BC%89%EF%BC%8Chexo" target="_blank" rel="noopener">https://nodejs.org/en/download/），hexo</a> (<code>npm install hexo -g</code>)。</p>
 <p>npm安装hexo时可能会出问题，更换一下镜像就好了。（如：<code>npm config set registry http://registry.npm.taobao.org</code></p>
 </li>
 <li><p>安装必要的组件：<code>npm install</code>，之后输入处理命令 <code>hexo g</code>   并开启服务器<code>hexo s</code> 出现了能够打开本地网页的提示（这个打开和那个线上的是一样的效果）就说明已经成功了，之后<code>ctrl+C</code>退出继续下面步骤</p>
@@ -293,7 +294,8 @@
 </li>
 </ol>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:BUAADreamer/BUAADreamer.github.io.git</span> </span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
-<ol>
+
+<ol start="5">
 <li><p>之后选好主题，并利用作者提供的方式git clone到本地theme文件夹下即可，并在根目录下的)_config.yml改一下theme设置，很多人推荐next，我的这个用的是ocean，也看到有同学用的黄玄大神的<a href="https://huangxuan.me/" target="_blank" rel="noopener">https://huangxuan.me/</a>  </p>
 <p>然后创建博客：<code>hexo new blog-name</code>，之后一行代码部署到github上即可：<code>hexo d -g</code>，再打开自己的网站：username.github.io即可看到了！</p>
 </li>
@@ -308,28 +310,32 @@
 </ul>
 </li>
 </ol>
-<h4 id="问题和个人用法总结"><a href="#问题和个人用法总结" class="headerlink" title="问题和个人用法总结"></a>问题和个人用法总结</h4><ol>
+<h4><span id="问题和个人用法总结">问题和个人用法总结</span></h4><ol>
 <li>图片用的腾讯云对象存储</li>
 <li>md文件配置时一定是类似<code>tags: 123</code>这样的格式。<code>tags</code>和<code>123</code>之间<strong>一定要有空格</strong>！！！</li>
 </ol>
-<h4 id="评论功能"><a href="#评论功能" class="headerlink" title="评论功能"></a>评论功能</h4><p>我的博客使用的<code>Utterances</code>，配置非常简单，并且也比较安全简洁。</p>
+<h4><span id="评论功能">评论功能</span></h4><p>我的博客使用的<code>Utterances</code>，配置非常简单，并且也比较安全简洁。</p>
 <p>可以参考这篇文章：<a href="https://roife.github.io/2021/02/12/use-utterances-for-comment/" target="_blank" rel="noopener">https://roife.github.io/2021/02/12/use-utterances-for-comment/</a></p>
 <p>其他的还有<code>Gitalk</code>,<code>Valine</code>，也可以用，但是<code>Gitalk</code>配置麻烦且很容易挂，后者貌似需要花钱。</p>
-<h4 id="更换代理"><a href="#更换代理" class="headerlink" title="更换代理"></a>更换代理</h4><p>同时参考下面这<strong>两篇</strong>文章，因为都有些不全面。记得要实名认证+获取证书+域名解析</p>
+<h4><span id="更换代理">更换代理</span></h4><p>同时参考下面这<strong>两篇</strong>文章，因为都有些不全面。记得要实名认证+获取证书+域名解析</p>
 <p><a href="https://blog.csdn.net/obsession753/article/details/84110360" target="_blank" rel="noopener">https://blog.csdn.net/obsession753/article/details/84110360</a></p>
 <p><a href="https://blog.csdn.net/i042416/article/details/89926005" target="_blank" rel="noopener">https://blog.csdn.net/i042416/article/details/89926005</a></p>
-<h4 id="2021-4-24"><a href="#2021-4-24" class="headerlink" title="2021.4.24"></a>2021.4.24</h4><p>更换了主题，换成了感觉更美观的huxblog主题</p>
+<h4><span id="2021424">2021.4.24</span></h4><p>更换了主题，换成了感觉更美观的huxblog主题</p>
 <p>更换过程很简单，只需要到<a href="https://github.com/Kaijun/hexo-theme-huxblog" target="_blank" rel="noopener">https://github.com/Kaijun/hexo-theme-huxblog</a> 这个网站下载代码，之后将themes里的huxblog文件夹copy到你自己的themes目录下，然后在根目录下的_config.xml修改themes名字为huxblog即可。</p>
-<h4 id="2021-4-25"><a href="#2021-4-25" class="headerlink" title="2021.4.25"></a>2021.4.25</h4><p>调换过程很简单，但是由于hexo版的黄玄主题作者已经不维护了，出现了各式各样的问题，于是决定换成长得差不多的snail主题，这个主题作者给了详细的说明文档。<a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">https://github.com/dusign/hexo-theme-snail</a></p>
-<h4 id="2021-6-3-图片配置"><a href="#2021-6-3-图片配置" class="headerlink" title="2021.6.3 图片配置"></a>2021.6.3 图片配置</h4><p>以下内容搬运自：<a href="https://blog.csdn.net/qq_36408085/article/details/104117319" target="_blank" rel="noopener">https://blog.csdn.net/qq_36408085/article/details/104117319</a></p>
+<h4><span id="2021425">2021.4.25</span></h4><p>调换过程很简单，但是由于hexo版的黄玄主题作者已经不维护了，出现了各式各样的问题，于是决定换成长得差不多的snail主题，这个主题作者给了详细的说明文档。<a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">https://github.com/dusign/hexo-theme-snail</a></p>
+<h4><span id="202163-图片配置">2021.6.3 图片配置</span></h4><p>以下内容搬运自：<a href="https://blog.csdn.net/qq_36408085/article/details/104117319" target="_blank" rel="noopener">https://blog.csdn.net/qq_36408085/article/details/104117319</a></p>
 <p>修改 hexo 目录下的 .config.yml 文件，将 post_asset_folder: false 修改为 post_asset_folder: true。</p>
 <p>安装一个图片路径转换的插件。在hexo文件夹下打开 Git bush。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install https://github.com/7ym0n/hexo-asset-image --save  <span class="comment">#注意，不是官方的那个！！！</span></span><br></pre></td></tr></table></figure>
+
 <p>这样就可以让本地和远程显示一样了！就正常使用绝对或相对路径插入图片代码即可</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![](文章名/1.png)</span><br></pre></td></tr></table></figure>
-<p><strong>注意</strong>： 这是经过修改的插件代码，网上流传的另一份代码 npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="noopener">https://github.com/CodeFalling/hexo-asset-image</a> —save 并不能使用。</p>
-<p>如果你之前安装了这个错误的插件，请将 /node_modules/hexo-asset-image/index.js<br>这个文件替换成下面的代码：</p>
+
+<p><strong>注意</strong>： 这是经过修改的插件代码，网上流传的另一份代码 npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="noopener">https://github.com/CodeFalling/hexo-asset-image</a> –save 并不能使用。</p>
+<p>如果你之前安装了这个错误的插件，请将 &#x2F;node_modules&#x2F;hexo-asset-image&#x2F;index.js<br>这个文件替换成下面的代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> cheerio = <span class="built_in">require</span>(<span class="string">'cheerio'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPosition</span>(<span class="params">str, m, i</span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> str.split(m, i).join(m).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> version = <span class="built_in">String</span>(hexo.version).split(<span class="string">'.'</span>);</span><br><span class="line">hexo.extend.filter.register(<span class="string">'after_post_render'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> config = hexo.config;</span><br><span class="line"><span class="keyword">if</span>(config.post_asset_folder)&#123;</span><br><span class="line">    <span class="keyword">var</span> link = data.permalink;</span><br><span class="line"><span class="keyword">if</span>(version.length &gt; <span class="number">0</span> &amp;&amp; <span class="built_in">Number</span>(version[<span class="number">0</span>]) == <span class="number">3</span>)</span><br><span class="line">    <span class="keyword">var</span> beginPos = getPosition(link, <span class="string">'/'</span>, <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="keyword">var</span> beginPos = getPosition(link, <span class="string">'/'</span>, <span class="number">3</span>) + <span class="number">1</span>;</span><br><span class="line"><span class="comment">// In hexo 3.1.1, the permalink of "about" page is like ".../about/index.html".</span></span><br><span class="line"><span class="keyword">var</span> endPos = link.lastIndexOf(<span class="string">'/'</span>) + <span class="number">1</span>;</span><br><span class="line">link = link.substring(beginPos, endPos);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> toprocess = [<span class="string">'excerpt'</span>, <span class="string">'more'</span>, <span class="string">'content'</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; toprocess.length; i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> key = toprocess[i];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> $ = cheerio.load(data[key], &#123;</span><br><span class="line">    ignoreWhitespace: <span class="literal">false</span>,</span><br><span class="line">    xmlMode: <span class="literal">false</span>,</span><br><span class="line">    lowerCaseTags: <span class="literal">false</span>,</span><br><span class="line">    decodeEntities: <span class="literal">false</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(<span class="string">'img'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ($(<span class="keyword">this</span>).attr(<span class="string">'src'</span>))&#123;</span><br><span class="line">        <span class="comment">// For windows style path, we replace '\' to '/'.</span></span><br><span class="line">        <span class="keyword">var</span> src = $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>).replace(<span class="string">'\\'</span>, <span class="string">'/'</span>);</span><br><span class="line">        <span class="keyword">if</span>(!<span class="regexp">/http[s]*.*|\/\/.*/</span>.test(src) &amp;&amp;</span><br><span class="line">            !<span class="regexp">/^\s*\//</span>.test(src)) &#123;</span><br><span class="line">            <span class="comment">// For "about" page, the first part of "src" can't be removed.</span></span><br><span class="line">            <span class="comment">// In addition, to support multi-level local directory.</span></span><br><span class="line">            <span class="keyword">var</span> linkArray = link.split(<span class="string">'/'</span>).filter(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> elem != <span class="string">''</span>;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">var</span> srcArray = src.split(<span class="string">'/'</span>).filter(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> elem != <span class="string">''</span> &amp;&amp; elem != <span class="string">'.'</span>;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">if</span>(srcArray.length &gt; <span class="number">1</span>)</span><br><span class="line">            srcArray.shift();</span><br><span class="line">            src = srcArray.join(<span class="string">'/'</span>);</span><br><span class="line">            $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>, config.root + link + src);</span><br><span class="line">            <span class="built_in">console</span>.info&amp;&amp;<span class="built_in">console</span>.info(<span class="string">"update link as:--&gt;"</span>+config.root + link + src);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.info&amp;&amp;<span class="built_in">console</span>.info(<span class="string">"no src attr, skipped..."</span>);</span><br><span class="line">        <span class="built_in">console</span>.info&amp;&amp;<span class="built_in">console</span>.info($(<span class="keyword">this</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    data[key] = $.html();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4><span id="2022424-增加一些渲染-包括todo清单">2022.4.24 增加一些渲染 包括todo清单</span></h4><p>使用这个仓库：<a href="https://github.com/hexojs/hexo-renderer-marked" target="_blank" rel="noopener">https://github.com/hexojs/hexo-renderer-marked</a></p>
 
                 
                 <hr>
@@ -337,7 +343,7 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2021/01/29/git-liaoxuefeng-note/" data-toggle="tooltip" data-placement="top" title="廖雪峰git课程笔记">&larr; Previous Post</a>
+                        <a href="/2021/01/29/CO-P0-logisim状态机搭建/" data-toggle="tooltip" data-placement="top" title="计组笔记-P0-logisim状态机搭建">&larr; Previous Post</a>
                     </li>
                     
                     
