@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="A hexo theme">
+    <meta name="keyword"  content="BUAADreamer, hexo-theme-snail">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          动手学深度学习笔记-提升篇 - BUAADreamer&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://BUAADreamer.top/2022/05/15/动手学深度学习笔记-提升篇/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../../../img/default.jpg')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#DeepLearning" title="DeepLearning">DeepLearning</a>
+                            
+                        </div>
+                        <h1>动手学深度学习笔记-提升篇</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by BUAADreamer on
+                            2022-05-15
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">2.3k</span> and
+                                Reading Time <span class="post-count">9</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BUAADreamer&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+                    
+                    
+                    <li>
+                        <a href="https://www.cnblogs.com/BUAADreamer/" target="_blank">Chinese Blog</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1><span id="8循环神经网络rnn">8.循环神经网络（RNN）</span></h1>
+<p>CNN：处理空间信息</p>
+<p>RNN-recurrent neural network：处理序列信息</p>
+<h2><span id="序列模型">序列模型</span></h2>
+<h3><span id="统计工具">统计工具</span></h3>
+<h4><span id="自回归模型">自回归模型</span></h4>
+<p>输入数据的数量 $x_{t-1},…,x_1$ 随着 $t$ 而异，而不是不变的</p>
+<p>策略1：满足某个长度为 $\tau$ 的时间跨度，即使用观测序列 $x_{t-1},…,x_{t-\tau}$，参数数量不变，可以训练一个网络</p>
+<p>策略2：$h_t=g(h_{t-1},x_{t-1})\rightarrow x_t=P(x_t|h_t),$ 更新模型，由于$h_t$没有被观测到，因此称为隐变量自回归模型（latent autoregressive models）</p>
+<p>如何生成训练数据？一般是利用历史观测来预测下一个未来观测。常见的一个假设是虽然$x_t$可能会变，序列本身动力学不改变，不变的动力学称为静止的，即整个序列估计值用以下方式获得：$P(x_1,…,x_t)=\prod <em>{t=1}^T P(x_t|x</em>{t-1},…,x_1)$</p>
+<h4><span id="马尔可夫模型">马尔可夫模型</span></h4>
+<p>上文提到的 $x_{t-1},…,x_{t-\tau}$ 来估计 $x_t$ 时如果时近似精确的，则称满足马尔可夫条件，如果$\tau=1$，则可以得到一阶马尔可夫模型</p>
+<p>$P(x_1,…,x_T)=\prod_{t=1}^T P(x_t|x_{t-1})$</p>
+<p>此时可以得到$P(x_{t+1}|x_{t-1})=\frac {\sum_{x_t} P(x_{t+1},x_t,x_{t-1})} {P(x_{t-1})}=\frac {P(x_{t-1})\sum_{x_t} P(x_{t+1}|x_t)P(x_t|x_{t-1})} {P(x_{t-1})}=\sum_{x_t}P(x_{t+1}|x_t)P(x_t|x_{t-1})$</p>
+<h4><span id="因果关系">因果关系</span></h4>
+<p>基于马尔可夫模型我们还可以得到一个反向条件概率分布，不过一般这不好解释</p>
+<h3><span id="训练">训练</span></h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">from</span> torch <span class="keyword">import</span> nn</span><br><span class="line"><span class="keyword">from</span> torch.utils <span class="keyword">import</span> data</span><br><span class="line">T=<span class="number">1000</span></span><br><span class="line">time = torch.arange(<span class="number">1</span>, T + <span class="number">1</span>, dtype=torch.float32)</span><br><span class="line">x = torch.sin(<span class="number">0.01</span> * time) + torch.normal(<span class="number">0</span>, <span class="number">0.2</span>, (T,))</span><br><span class="line">t=<span class="number">5</span></span><br><span class="line">train_data=torch.zeros(T-t,t)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(t):</span><br><span class="line">    train_data[:,i]=x[i:T-t+i]</span><br><span class="line">train_labels=x[t:].reshape(<span class="number">-1</span>,<span class="number">1</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init_weights</span><span class="params">(m)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> type(m) == nn.Linear:</span><br><span class="line">        nn.init.xavier_uniform_(m.weight)</span><br><span class="line">batch_size, n_train,epoch,lr = <span class="number">16</span>, <span class="number">600</span>,<span class="number">100</span>,<span class="number">0.1</span></span><br><span class="line"></span><br><span class="line">net=nn.Sequential(</span><br><span class="line">    nn.Linear(<span class="number">5</span>,<span class="number">10</span>),</span><br><span class="line">    nn.ReLU(),</span><br><span class="line">    nn.Linear(<span class="number">10</span>,<span class="number">1</span>)</span><br><span class="line">)</span><br><span class="line">net.apply(init_weights)</span><br><span class="line">loss=nn.MSELoss(reduction=<span class="string">'none'</span>)</span><br><span class="line">optimizer=torch.optim.Adam(net.parameters(), lr)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_array</span><span class="params">(data_arrays, batch_size, is_train=True)</span>:</span> </span><br><span class="line">    <span class="string">"""构造一个PyTorch数据迭代器。"""</span></span><br><span class="line">    dataset = data.TensorDataset(*data_arrays)</span><br><span class="line">    <span class="keyword">return</span> data.DataLoader(dataset, batch_size, shuffle=is_train)</span><br><span class="line">train_iter=load_array((train_data[:n_train],train_labels[:n_train]),batch_size)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(epoch):</span><br><span class="line">    <span class="keyword">for</span> X,y <span class="keyword">in</span> train_iter:</span><br><span class="line">        l=loss(net(X),y)</span><br><span class="line">        optimizer.zero_grad()</span><br><span class="line">        l.sum().backward()</span><br><span class="line">        optimizer.step()</span><br><span class="line">    cnt=<span class="number">0</span></span><br><span class="line">    loss_sum=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> X,y <span class="keyword">in</span> train_iter:</span><br><span class="line">        l=loss(net(X),y)</span><br><span class="line">        loss_sum+=l.sum()</span><br><span class="line">        cnt+=<span class="number">1</span></span><br><span class="line">    print(<span class="string">f'epoch<span class="subst">&#123;i+<span class="number">1</span>&#125;</span> loss: <span class="subst">&#123;float(loss_sum)/cnt&#125;</span>'</span>)</span><br></pre></td></tr></table></figure>
+<p>进行下一个时间的预测到下$t$个时间的预测都相对较精准，但$t+1$及之后的时间的预测就不精准了，因为需要不断用预测的数据去预测更之后的数据，会造成误差积累。</p>
+<h2><span id="文本预处理">文本预处理</span></h2>
+<p>最常见的序列数据就是文本，一篇文章可以看为是一串单词序列，甚至是一串字符序列。</p>
+<p>常见预处理步骤：</p>
+<ul>
+<li>文本作为字符串加载到内存中</li>
+<li>字符串拆分为词元（单词和字符）</li>
+<li>建立一个词表，将拆分的词元映射到数字索引</li>
+<li>将文本转换为数字索引序列，方便模型操作</li>
+</ul>
+<p>此部分在https://github.com/BUAADreamer/nnplayer/tree/master/nlputil处进行了一些实践</p>
+<h2><span id="语言模型和数据集">语言模型和数据集</span></h2>
+<p>语言模型的目标：估计序列的联合概率 $P(x_1,x_2,…,x_T)$</p>
+<p>简单统计相对词频，执行某种形式的拉普拉斯平滑</p>
+<h3><span id="马尔可夫模型与n元语法">马尔可夫模型与<em>n</em>元语法</span></h3>
+<p>涉及⼀个、两个和三个变量的概率公式分别被称为“⼀元语法”（unigram）、“⼆元语法”（bigram）和“三元语法”（trigram）模型</p>
+<h3><span id="自然语言统计">自然语言统计</span></h3>
+<p>词频最高的词都是类似 <code>the/i/and</code> 这样的词，被称为停用词，可以被过滤掉</p>
+<p>词频衰减迅速，齐普夫定律：第 $i$ 个最常用的单词频率$n_i$为 $n_i\propto \frac 1 {i^\alpha}$</p>
+<h2><span id="循环神经网络">循环神经网络</span></h2>
+<h3><span id="有隐状态的循环神经网络">有隐状态的循环神经网络</span></h3>
+<p>$H_t=\phi(X_tW_{xh}+H_{t-1}W_{hh}+b_h)$</p>
+<h3><span id="困惑度perplexity">困惑度（<strong>Perplexity</strong>）</span></h3>
+<p>$exp(-\frac 1 n \sum_{t=1}^n log P(x_t|x_{t-1},…,x_{1}))$</p>
+<h3><span id="梯度裁剪">梯度裁剪</span></h3>
+<p>将梯度映射到$\theta$范围内，比如以下代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">grad_clipping</span><span class="params">(net, theta)</span>:</span> <span class="comment">#@save</span></span><br><span class="line">    <span class="string">"""裁剪梯度"""</span></span><br><span class="line">    <span class="keyword">if</span> isinstance(net, nn.Module):</span><br><span class="line">    	params = [p <span class="keyword">for</span> p <span class="keyword">in</span> net.parameters() <span class="keyword">if</span> p.requires_grad]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">    	params = net.params</span><br><span class="line">    norm = torch.sqrt(sum(torch.sum((p.grad ** <span class="number">2</span>)) <span class="keyword">for</span> p <span class="keyword">in</span> params)) <span class="comment">#梯度平方和开根号</span></span><br><span class="line">    <span class="keyword">if</span> norm &gt; theta:</span><br><span class="line">    	<span class="keyword">for</span> param <span class="keyword">in</span> params:</span><br><span class="line">    		param.grad[:] *= theta / norm <span class="comment">#映射到theta范围内</span></span><br></pre></td></tr></table></figure>
+<h2><span id="简洁实现">简洁实现</span></h2>
+<p>参考实现的代码：https://github.com/BUAADreamer/nlpkiller/blob/master/main.py</p>
+<h1><span id="9现代循环神经网络">9.现代循环神经网络</span></h1>
+<h2><span id="门控循环单元gru">门控循环单元（GRU）</span></h2>
+<h3><span id="重置门和更新门">重置门和更新门</span></h3>
+<p>R：重置门 接近0时重置隐状态，接近1时是普通RNN</p>
+<p>Z：更新门 接近0时接近隐状态，接近1时倾向于保留旧状态，来自X的信息基本被忽略，跳过时间步t</p>
+<p><img src="/2022/05/15/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8F%90%E5%8D%87%E7%AF%87/E:%5Ccode%5Cblog%5Csource_posts%5C2022-03-19-%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5C5.png" alt></p>
+<p><img src="/2022/05/15/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8F%90%E5%8D%87%E7%AF%87/E:%5Ccode%5Cblog%5Csource_posts%5C2022-03-19-%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5C9-2.png" alt></p>
+<p><img src="/2022/05/15/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8F%90%E5%8D%87%E7%AF%87/E:%5Ccode%5Cblog%5Csource_posts%5C2022-03-19-%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5C9-3.png" alt></p>
+<p>重置门有助于捕捉序列的短期依赖关系</p>
+<p>更新门有助于捕捉序列的长期依赖关系</p>
+<h2><span id="长短期记忆网络lstm">长短期记忆网络（LSTM）</span></h2>
+<h3><span id="输入门遗忘门输出门">输入门，遗忘门，输出门</span></h3>
+<p><img src="/2022/05/15/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8F%90%E5%8D%87%E7%AF%87/E:%5Ccode%5Cblog%5Csource_posts%5C2022-03-19-%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5C9-4.png" alt></p>
+<p>值的范围都在[0,1]内</p>
+<h3><span id="候选记忆元">候选记忆元</span></h3>
+<p><img src="/2022/05/15/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8F%90%E5%8D%87%E7%AF%87/E:%5Ccode%5Cblog%5Csource_posts%5C2022-03-19-%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5C9-5.png" alt></p>
+<p>值的范围是[-1,1]</p>
+<h3><span id="记忆元">记忆元</span></h3>
+<p><img src="/2022/05/15/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8F%90%E5%8D%87%E7%AF%87/E:%5Ccode%5Cblog%5Csource_posts%5C2022-03-19-%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5C9-6.png" alt></p>
+<h3><span id="隐状态">隐状态</span></h3>
+<p><img src="/2022/05/15/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8F%90%E5%8D%87%E7%AF%87/E:%5Ccode%5Cblog%5Csource_posts%5C2022-03-19-%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5C9-7.png" alt></p>
+<h2><span id="深度循环神经网络">深度循环神经网络</span></h2>
+<p>堆叠隐藏层来实现</p>
+<p><img src="/2022/05/15/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8F%90%E5%8D%87%E7%AF%87/E:%5Ccode%5Cblog%5Csource_posts%5C2022-03-19-%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5C9-8.png" alt></p>
+<p><img src="/2022/05/15/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8F%90%E5%8D%87%E7%AF%87/E:%5Ccode%5Cblog%5Csource_posts%5C2022-03-19-%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5C9-9.png" alt></p>
+<p><img src="/2022/05/15/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8F%90%E5%8D%87%E7%AF%87/E:%5Ccode%5Cblog%5Csource_posts%5C2022-03-19-%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%5C9-10.png" alt></p>
+<h2><span id="双向循环神经网络">双向循环神经网络</span></h2>
+<h2><span id="机器翻译与数据集">机器翻译与数据集</span></h2>
+<p>对语言数据集的source（比如英文）和target（比如中文）同时进行统计和建模</p>
+<h2><span id="编码器-解码器架构">编码器-解码器架构</span></h2>
+<p>将一个长度可变的序列作为输入，转换为有固定形状的编码状态。之后解码，将固定形状的编码状态映射到长度可变的序列。</p>
+<h2><span id="序列到序列学习seq2seq">序列到序列学习（seq2seq）</span></h2>
+<h2><span id="束搜索">束搜索</span></h2>
+<h1><span id="10注意力机制">10.注意力机制</span></h1>
+<h2><span id="101-注意力提示">10.1 注意力提示</span></h2>
+<p>人类注意力是有限的，有价值，稀缺的</p>
+<p>人通过非自主性和自主性提示有选择性地引导注意力，前者基于自然的突出性，比如一个红色杯子和4个灰色物体，很容易注意红色杯子。后者则需要人主观投入更多注意力，比如：我要认真写作业。</p>
+<p>注意力机制与全连接层/汇聚层的区别在于增加了自主提示</p>
+<p>注意力机制通过注意力汇聚使得选择偏向于值（感官输入），其中包含查询（自主性提示），键（非自主性提示），键和值是成对的。</p>
+<p>这里的注意力汇聚其实是通过调整不同参数的权重来实现的。</p>
+<h2><span id="102-注意力汇聚nadaraya-watson-核回归">10.2 注意力汇聚：Nadaraya-Watson 核回归</span></h2>
+<h3><span id="非参数型注意力汇聚">非参数型注意力汇聚</span></h3>
+<p><img src="/2022/05/15/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8F%90%E5%8D%87%E7%AF%87/E:%5Ccode%5Cblog%5Csource_posts%5C2022-05-15-%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8F%90%E5%8D%87%E7%AF%87%5C10-1.png" alt></p>
+<h3><span id="参数型非注意力汇聚加入一个权重可以被训练">参数型非注意力汇聚（加入一个权重，可以被训练）</span></h3>
+<p><img src="/2022/05/15/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8F%90%E5%8D%87%E7%AF%87/E:%5Ccode%5Cblog%5Csource_posts%5C2022-05-15-%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8F%90%E5%8D%87%E7%AF%87%5C10-2.png" alt></p>
+<h2><span id="103-注意力评分函数">10.3 注意力评分函数</span></h2>
+<p>假设一个查询$q\in R^q$和m个键值对$(k_1,v_1),…,(k_m,v_m)$，其中$k_i\in R^k,v_i\in R^v$，注意力汇聚函数$f$被表示为值的加权和：</p>
+<p>$f(q,(k_1,v_1),…,(k_m,v_m))=\sum_{i=1}^m\alpha (q,k_i)v_i \in R^v$</p>
+<p>其中查询$q$和键$k_i$的注意力权重（标量）是通过注意力评分函数$a$将两个向量映射成标量，再经过softmax运算得到。</p>
+<p>$\alpha (q,k_i)=softmax(a(q,k_i))=\frac {exp(a(q,k_i))} {\sum_{j=1}^mexp(a(q,k_j))}\in R$</p>
+<h3><span id="遮掩softmax操作">遮掩softmax操作</span></h3>
+<p>指定一个有效序列长度，即词元个数，从而过滤掉超出指定范围的位置</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">masked_softmax</span><span class="params">(X, valid_lens)</span>:</span></span><br><span class="line">    <span class="string">"""通过在最后⼀个轴上掩蔽元素来执⾏softmax操作"""</span></span><br><span class="line">    <span class="comment"># X:3D张量，valid_lens:1D或2D张量</span></span><br><span class="line">    <span class="keyword">if</span> valid_lens <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">    	<span class="keyword">return</span> nn.functional.softmax(X, dim=<span class="number">-1</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">    	shape = X.shape</span><br><span class="line">    <span class="keyword">if</span> valid_lens.dim() == <span class="number">1</span>:</span><br><span class="line">    	valid_lens = torch.repeat_interleave(valid_lens, shape[<span class="number">1</span>])</span><br><span class="line">        <span class="comment">#repeat_interleave([2,3],2)==&gt;[2,2,3,3]</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">    	valid_lens = valid_lens.reshape(<span class="number">-1</span>) </span><br><span class="line">        <span class="comment"># 最后⼀轴上被掩蔽的元素使⽤⼀个⾮常⼤的负值替换，从⽽其softmax输出为0 </span></span><br><span class="line">        X = d2l.sequence_mask(X.reshape(<span class="number">-1</span>, shape[<span class="number">-1</span>]), valid_lens,</span><br><span class="line">    	value=<span class="number">-1e6</span>)</span><br><span class="line">    <span class="comment">#对处理后的X做softmax运算</span></span><br><span class="line">    <span class="keyword">return</span> nn.functional.softmax(X.reshape(shape), dim=<span class="number">-1</span>)</span><br><span class="line">masked_softmax(torch.rand(<span class="number">2</span>, <span class="number">2</span>, <span class="number">4</span>), torch.tensor([<span class="number">2</span>, <span class="number">3</span>]))</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">得到结果:</span></span><br><span class="line"><span class="string">tensor([[[0.3412, 0.6588, 0.0000, 0.0000],</span></span><br><span class="line"><span class="string">        [0.4643, 0.5357, 0.0000, 0.0000]],</span></span><br><span class="line"><span class="string">        [[0.1967, 0.3512, 0.4522, 0.0000],</span></span><br><span class="line"><span class="string">        [0.3580, 0.3092, 0.3328, 0.0000]]])</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+<h3><span id="加性注意力">加性注意力</span></h3>
+<p>当查询和键是不同长度的矢量时，可以使用加性注意力作为评分函数。给定查询$q\in R^q$和键$k\in R^k$，加性注意力评分函数为
+$$
+a(q,k)=w_v^Ttanh(W_qq+W_kk)\in R
+$$
+其中可学习的参数是$W_q\in R^{h\times q},W_k\in R^{h\times k}$和$w_v\in R^h$</p>
+<h3><span id="缩放点积注意力">缩放点积注意力</span></h3>
+<p>$$
+a(q,k)=q^Tk/\sqrt d
+$$</p>
+<p>基于n个查询和m个键值对计算注意力，查询和键的长度为d，值的长度为v，查询$Q\in R^{n\times d}$，键$K\in R^{m\times d}$ 和值$V\in R^{m\times v}$的缩放点积注意力为
+$$
+softmax(\frac {QK^T} {\sqrt d})V\in R^{n\times v}
+$$</p>
+<h2><span id="104-bahdanau注意力">10.4 Bahdanau注意力</span></h2>
+<h2><span id="105-多头注意力">10.5 多头注意力</span></h2>
+<p>将多个注意力汇聚输出进行连结，每个注意力汇聚都被称为一个头</p>
+<h2><span id="106-自注意力和位置编码">10.6 自注意力和位置编码</span></h2>
+<h2><span id="107-transformer">10.7 Transformer</span></h2>
+<h1><span id="11优化算法">11.优化算法</span></h1>
+<h1><span id="12计算性能">12.计算性能</span></h1>
+<h1><span id="13计算机视觉">13.计算机视觉</span></h1>
+<h1><span id="14自然语言处理预训练">14.自然语言处理：预训练</span></h1>
+<h1><span id="15自然语言处理应用">15.自然语言处理：应用</span></h1>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2022/04/17/x86-Learning-Note/" data-toggle="tooltip" data-placement="top" title="x86学习笔记">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      
+        <aside id="sidebar">
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">Contents</strong>
+          
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">8.循环神经网络（RNN）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">序列模型</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">统计工具</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">自回归模型</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">马尔可夫模型</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">因果关系</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">训练</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">文本预处理</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">语言模型和数据集</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">马尔可夫模型与n元语法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">自然语言统计</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">循环神经网络</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">有隐状态的循环神经网络</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">困惑度（Perplexity）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">梯度裁剪</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">简洁实现</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">9.现代循环神经网络</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">门控循环单元（GRU）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">重置门和更新门</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">长短期记忆网络（LSTM）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">输入门，遗忘门，输出门</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">候选记忆元</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">记忆元</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">隐状态</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">深度循环神经网络</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">双向循环神经网络</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">机器翻译与数据集</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">编码器-解码器架构</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">序列到序列学习（seq2seq）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">束搜索</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">10.注意力机制</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">10.1 注意力提示</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">10.2 注意力汇聚：Nadaraya-Watson 核回归</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">非参数型注意力汇聚</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">参数型非注意力汇聚（加入一个权重，可以被训练）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">10.3 注意力评分函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">遮掩softmax操作</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">加性注意力</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">缩放点积注意力</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">10.4 Bahdanau注意力</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">10.5 多头注意力</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">10.6 自注意力和位置编码</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">10.7 Transformer</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">11.优化算法</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">12.计算性能</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">13.计算机视觉</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">14.自然语言处理：预训练</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">15.自然语言处理：应用</span></a></li></ol>
+            
+          
+          </div>
+        </aside>
+      
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#DeepLearning" title="DeepLearning">DeepLearning</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://roife.github.io" target="_blank">Roife</a></li>
+                    
+                        <li><a href="https://coekjan.cn" target="_blank">Coekjan</a></li>
+                    
+                        <li><a href="https://www.dusign.net/" target="_blank">Dusign</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+<script src="https://utteranc.es/client.js"
+        repo="buaadreamer/buaadreamer.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/BUAADreamer">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BUAADreamer 2022 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=dusign&repo=hexo-theme-snail&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://BUAADreamer.top/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects line -->
+        
+
+        
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it&quot;,&quot;🍀&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
+        
+
+        <!-- background effects end -->
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>
