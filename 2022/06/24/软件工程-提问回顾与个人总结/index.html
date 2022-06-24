@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="A hexo theme">
+    <meta name="keyword"  content="BUAADreamer, hexo-theme-snail">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          软工尾声-提问回顾与个人总结 - BUAADreamer&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://BUAADreamer.top/2022/06/24/软件工程-提问回顾与个人总结/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../../../img/default.jpg')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                        </div>
+                        <h1>软工尾声-提问回顾与个人总结</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by BUAADreamer on
+                            2022-06-24
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">7.5k</span> and
+                                Reading Time <span class="post-count">25</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BUAADreamer&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+                    
+                    
+                    <li>
+                        <a href="https://www.cnblogs.com/BUAADreamer/" target="_blank">Chinese Blog</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1><span id="软工尾声-提问回顾与个人总结">软工尾声-提问回顾与个人总结</span></h1>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>这个作业属于哪个课程</td>
+<td><a href="https://bbs.csdn.net/forums/BH-SE" target="_blank" rel="noopener">2022春季软件工程（罗杰 任健）</a></td>
+</tr>
+<tr>
+<td>这个作业的要求在哪里</td>
+<td><a href="https://bbs.csdn.net/topics/607080413" target="_blank" rel="noopener">个人作业-提问回顾与个人总结</a></td>
+</tr>
+</tbody>
+</table>
+<h2><span id="part1-提问回顾">Part1 提问回顾</span></h2>
+<p><a href="https://blog.csdn.net/weixin_45783724/article/details/123366232" target="_blank" rel="noopener">以前问题的博客</a></p>
+<h3><span id="1专业软件开发师仅需要按照流程理性地工作">1.专业软件开发师仅需要按照流程理性地工作？</span></h3>
+<h4><span id="问题">问题</span></h4>
+<ul>
+<li>
+<p>仅仅按部就班地理性工作，真的能保证大部分工程师有所成就吗？</p>
+</li>
+<li>
+<p>个人认为对于著名的艺术家或者成功人士来说，他们本身就已经具有了很高的天赋或者很高的热情，因此对他们来说，也许只要按部就班进行工作就已经可以完成很高质量的代码，但是对于一般的工程师来说，每天重复差不多低质量的工作，没有任何激情和推动，可能最后只能带来较低质量的产品。而且对于一些重大复杂的算法问题或者架构问题，很多时候依赖于突发奇想或者灵机一动，如果单纯仅仅是机械做一样的工作，能解决这样的问题吗？同时这样的工作模式也很难催生新的问题发现和技术创新</p>
+</li>
+<li>
+<p>因此这一点我个人认为更适合的是大多时候理性，但该有激情的时候需要热情投入。</p>
+</li>
+</ul>
+<h4><span id="解答">解答</span></h4>
+<ul>
+<li>实际开发的时候，除了日常的按部就班工作，还需要给出一些方向目标上的激励，比如需要让每个人从软件开发中收获资源，收获荣誉，得到成长，单纯理性地枯燥工作是不能维持每个人的工作质量的</li>
+</ul>
+<h3><span id="2结对编程能更加灵活吗">2.结对编程能更加灵活吗？</span></h3>
+<h4><span id="问题">问题</span></h4>
+<ul>
+<li>
+<p>能否有两个人先讨论好然后再一起写不同模块或者同一个文件中不同代码，之后再互相测试？</p>
+</li>
+<li>
+<p>形式能否更加灵活？</p>
+</li>
+<li>
+<p>原文中的结对编程描述貌似必须有一个人是领航，一个人是驾驶，但是事实上对于太复杂的需求，驾驶员在写代码的时候被监视就好比是面试中做算法题一样难受，甚至发挥失常（虽然这个和人的心理素质和代码能力密不可分）。而面对过于简单的需求，大部分时候不太需要领航员一直检查和review或者帮助理解文档，这个时候领航员似乎就无所事事了</p>
+</li>
+<li>
+<p>结对编程能不能采用两个人先一起研究需求，并行编程，写微小的模块，之后一起检查测试代码的模式？这样似乎也可以提高效率，而且每个人负责的微小部分代码更精细，同时两个人互相测试也能测试效率更高。</p>
+</li>
+</ul>
+<h4><span id="解答">解答</span></h4>
+<ul>
+<li>根据个人结对编程经验，是可以更加灵活的，不一定需要死板的遵守某个人领航，某个人写代码的形式，对于不复杂的需求，只需要某个人自己写就好，这时另一位同学可以同步进行相应开发</li>
+</ul>
+<h3><span id="3团队的强弱与scrum">3.团队的强弱与scrum</span></h3>
+<h4><span id="问题">问题</span></h4>
+<ul>
+<li>
+<p>如何衡量一个团队的强弱？从技术角度还是从努力角度还是综合起来？如果是参差不齐的队伍呢？</p>
+</li>
+<li>
+<p>强大的个人组合成的队伍就不需要scrum来开发软件了吗？</p>
+</li>
+<li>
+<p>首先这里的团队的强弱本身是一个很主观而且很难给出答案的定义。比如一个队伍可能每个人技术上都很强，甚至每个人都做过全栈开发。但是他们的团队合作能力和意识不一定好，以及可能有些人在这次开发中与团队愿景不一致，那又如何定义这样的队伍的强弱呢？同时一个队伍可能技术比较平均甚至平庸，但每个人的学习能力较强，愿景类似，而且能投入的精力都很多，那这个团队是强还是弱呢。同时参差不齐的队伍又该如何计算？个人认为大多数队伍都可以实现scrum，只是可能对于不同队伍，目标和具体细节做出相应改动罢了。</p>
+</li>
+<li>
+<p>假设已经满足了作者关于强的team的定义，那这个scrum流程就不需要了，那大家敏捷开发就一锅乱炖，看心情来完成代码吗？显然不太合理吧，所以要么有相应的简化处理，要么就换一种方法论，但显然似乎也不是完全不需要scrum了</p>
+</li>
+</ul>
+<h4><span id="解答">解答</span></h4>
+<ul>
+<li>经过实际的团队开发实践，个人认为scrum是一种高效地推进项目的手段，不仅是对个人能力强的团队，也对一般的团队有着重要价值。只有经常的更新自己的工作计划和事项，不断进行开会，集成，测试，才能稳步快速推进项目。</li>
+</ul>
+<h3><span id="4敏捷仅仅适用于简单的应用">4.敏捷仅仅适用于简单的应用？</span></h3>
+<h4><span id="问题">问题</span></h4>
+<ul>
+<li>
+<p>只有简单的变化多的网站适合敏捷，而复杂且稳定软件就不适合甚至不需要吗？</p>
+</li>
+<li>
+<p>当下的很多项目都需要开发者在短时间内开发集成了众多AI算法且质量很高的软件，这时候如果不使用敏捷思想的话难道需要磨洋工吗，显然也不太可能。这个时候如果单纯用本书提到的scrum不行的话，能不能采用相似的或者以本书的敏捷方法为内核的稍加修改后的方法呢？笔者认为可以分配更多的角色，比如算法工程师，模型部署测试等角色来扩充现有的模型。</p>
+</li>
+<li>
+<p>像开发底层正则表达式解析模块其实也需要不断做测试以及迅速交付，如果恰恰有项目需要做一个底层的库而用户还需要定期检查呢？那似乎这个时候敏捷也没什么不好。而且很多bug都必须在真实的大量场景测试才能找到问题</p>
+</li>
+</ul>
+<h4><span id="解答">解答</span></h4>
+<ul>
+<li>我们的项目是一个以unity作为前端的社交app，需要处理前端后端的很多问题，同时作为一个合作项目，我们需要处理和中传同学的沟通。我们实际只有6周时间开发，且还需要考虑考试和疫情带来的影响，那么可以预见这个项目是很复杂困难的。然而实际上我们还是较好的完成了既定目标。可见并不是说敏捷仅适合简单的应用，比如一个简易小程序或网站，也能适合这种具有较大体量的比较困难的app的开发。只是具体开发过程中要明确优先级，决定好哪些事项需要优先处理，同时对一些短期内无法解决的任务，可以考虑搁置，或干脆放弃，有舍才有得。</li>
+</ul>
+<h3><span id="5人类学调查的具体方式">5.人类学调查的具体方式？</span></h3>
+<h4><span id="问题">问题</span></h4>
+<ul>
+<li>真实世界这么大，我们该走到哪，走多深呢？</li>
+<li>很多时候我们进入生活就迷茫了，这么大的世界，随便走走就眼花缭乱了，具体的真实需求可能就找不到了。具体操作时似乎不能泛泛的撒网了解真实世界，而是寻找其中的若干个有意思的点深入挖掘探索才会更有效率一些。而具体应该探索哪些行业，做哪些具体的事情呢？我个人认为最好的方式是和真实世界中的用户或者客户直接对话或者体验他们的应用场景，这样似乎比出去走走要更加具体实在一些。</li>
+</ul>
+<h4><span id="解答">解答</span></h4>
+<ul>
+<li>这里的调查更多的是指进入生活，发现真实的需求，了解周围的人们的所思所想，以及缺少的内容，从而更好地和自己的实践相结合。同时，也需要进行详尽的调研，了解用户需要什么，哪些功能他们会认真使用。</li>
+</ul>
+<h3><span id="6赢者真的能通吃吗">6.赢者真的能通吃吗？</span></h3>
+<h4><span id="问题">问题</span></h4>
+<ul>
+<li>软件行业赢家真的可以通吃吗？</li>
+<li>比如：360vs电脑管家vs鲁大师，饿了吗vs美团外卖，腾讯视频vs爱奇艺vs优酷，至今都没有分出胜负，而最近的统计似乎也显示这些公司互有胜负，所以赢者通吃这种说法似乎有待商榷，这个游戏的合理性似乎也需要讨论。似乎很多时候并不能做到作者说的赢家通吃。</li>
+</ul>
+<h4><span id="解答">解答</span></h4>
+<ul>
+<li>很多时候的确不是赢者通吃，但是这个和具体的领域细分有关，在一些具体的划分上，确实存在赢者通吃的现象。比如虽然QQ音乐和网易云音乐存在竞争，但是QQ音乐在全年龄段具有优势，基本通吃，而网易云在原创，说唱方面基本做到了通吃。</li>
+</ul>
+<h3><span id="7手工写代码和银弹">7.手工写代码和银弹</span></h3>
+<h4><span id="问题">问题</span></h4>
+<ul>
+<li>
+<p>自动代码平台与软工似乎越来越普及，如何看待？</p>
+</li>
+<li>
+<p>随着AI发展，未来自动写软工的机器人和低代码甚至0代码平台会成为银弹吗？</p>
+</li>
+<li>
+<p>似乎在当下2022年和未来非手工写代码或者自动软件工程渐渐成为现实，包括腾讯和华为在内的很多公司的云服务都提供了低代码甚至自动部署的云建站服务，这些服务很多时候已经可以满足用户的需求了，那么这是不是认为就可以取代手工写代码了呢？</p>
+</li>
+<li>
+<p>最近 <code>Alphacode</code> 在很多算法平台获得了突破，以后的AI是否也可以在软工领域取得突破呢，包括甚至有机器人模拟scrum的过程，完整地进行高效编码，那这会不会成为软工领域的银弹呢？</p>
+</li>
+</ul>
+<h4><span id="解答">解答</span></h4>
+<ul>
+<li>经过软工实践，发现银弹确实不容易，在我们调研测试工具时，一直找不到一个合适的能够方便自动测试APP的工具，现有工具都存在一些问题。包括我们选用的开发平台coding，也存在一些缺陷。可以预见，人们的需求总是在变化，总有东西是平台考虑不到的，所以很难出现银弹。</li>
+</ul>
+<h2><span id="part2-新的问题">Part2 新的问题</span></h2>
+<h3><span id="如何权衡公平与效率">如何权衡公平与效率？</span></h3>
+<p>实际开发过程中，作为PM，有时候我会希望项目进度得到快速稳步推进，有时候会过于独断。对于一些认为不重要的事务，没有征得每个人同意。然而如果每件事都要征得他人同意，那么可以想象效率会非常低下。那么真正开发中，这样的平衡点应该如何寻找？怎么样才能让公平与效率达到完美平衡？</p>
+<h2><span id="part3-做中学">Part3 做中学</span></h2>
+<h3><span id="1需求">1.需求</span></h3>
+<p>在获取需求时，我们本次课程主要采用和外部合作的方式。一开始的时候，看到了中传同学提出的这个很棒的点子，我们马上联系，并得到了合作机会。Alpha阶段，中传同学主要是客户和市场分析者，需求主要由他们提出，经过我们双方的商议，分析和定义完整具体的需求，并在不断的迭代中完善和验证需求。Beta阶段，我们在项目的参与中越来越深入，于是渐渐将需求的分析和我们自身相结合，通过我们自己的观察、发放调查问卷、收集用户反馈建议等方式，不断增加和完善需求。</p>
+<p>同时，在两次需求分析文档中，我们使用了NABCD方式，即需求，做法，好处，竞争，推广五个方面进行分析。也定义了杀手级功能。</p>
+<h3><span id="2设计">2.设计</span></h3>
+<p>对于设计而言，简单的需求，并不一定需要完备的设计文档。但是对于系统整体的设计，以及一些比较复杂的功能，文档的设计很有必要。在Beta阶段，我们主要要求每个同学需要在完成某个特定任务时，编写任务描述，实现策略和测试计划。这样有助于让每个同学在实现之前先有清晰的设计，也让流程管理和代码设计很自然连接在一起。同时，在前期的设计中，我们也通过技术规格说明书，技术博客的方式进行了详尽的技术调研，框架选择，数据库设计等。</p>
+<h3><span id="3实现">3.实现</span></h3>
+<p>实现过程应当首先遵循基本的代码规范和文件组织规范。比如Unity中的脚本文件、资源文件放在什么具体的位置。后端的实体类，用户视图类，接口视图类需要放在哪些位置，整体的架构是什么样的，这些都需要进行明确的定义。</p>
+<p>遵循了代码规范后，开始实现时尽量对所有内容做到解耦，尽可能多的复用中间件，让路由过滤，鉴权控制，控制器，接口，接口实现，工具类相互隔离，互不影响。对一些常用的辅助类做好完善的封装供多次复用。</p>
+<p>同时，不管是代码自动生成，还是已有资源利用，需要满足不重复造轮子和最佳实践两个条件，最大限度地利用框架本身带来的便利。</p>
+<h3><span id="4测试">4.测试</span></h3>
+<p>测试主要包含前端，后端两部分。对于前端来说，经过我们的调研，app只有少量的工具可以使用，并且只能是以图像识别的基础来进行，模拟相关的点击操作。Unity本身也带有相关的测试框架，可以进行C#代码的单元测试，逻辑测试等。对于后端而言，测试手段比较多，包含压力测试，单元测试，功能测试多个维度。</p>
+<p>测试应当是持续进行的。我们要求每个同学在开发完自己的功能之后，都需要进行自己的正确性测试，至少提供一个测试正例，之后提交给测试人员进行更深入测试。测试人员发现问题后，提出缺陷，让开发人员进行修复。</p>
+<p>发布前的一段时间，需要全员深入参与测试，并提出相关问题，而不能只有几名测试人员，或者自己对自己的功能进行测试。</p>
+<h3><span id="5发布">5.发布</span></h3>
+<p>我们认为，发布并不只是发一篇博客这么简单，更多的还在于各个平台的宣传，我们在Alpha，Beta两次迭代结束后，都在微信朋友圈，QQ空间，B站进行了一定程度的宣传，从而对于吸引积累用户起到了良好效果。截止此时，我们已经拥有200名用户，日活最高可以达到100人，基本达到了我们最开始定下的目标。这和我们的大力推广发布是离不开的。</p>
+<p>同时，我们在发布过程中学到的是，尽量让用户以最简单最直接的方式，获取到我们的产品。比如通过直链下载，或者简便的某个公测链接。同时，发布尽量提前，不然可能会出现类似苹果官网挂了这种意外情况导致发布延期。</p>
+<h3><span id="6维护">6.维护</span></h3>
+<p>产品发布之后，项目就结束了吗？当然不是。我们还需要通过一些手段，让项目持续生存下去，比如通过外围的比赛，活动参与，投资引入，让项目继续生存。同时，对于用户提出的问题，及时整理，及时处理，及时反馈，让软件质量得到不断提升。</p>
+<p>我们提供了团队邮箱stulingjing@126.com，也提供了团队博客地址，官网地址，用户可以很轻易联系我们提出建议。</p>
+<h2><span id="part4-个人总结">Part4 个人总结</span></h2>
+<h3><span id="作为developer">作为Developer</span></h3>
+<h4><span id="团队项目">团队项目</span></h4>
+<p>本次软工我主要负责后端和前端的聊天功能开发。在一开始的技术选型中，可靠稳定的SpringBoot进入了我们的视野，同时与之相关的自动部署打包我也进行了相关研究，并让后端的持续集成部署完美实现。我们采用的SpringBoot+Mybatis-Plus+Netty+Websocket+Redis+Swagger后端组合，让我们的整个开发流程十分顺利，后端没有遇到太大的开发问题，效率，稳定性都相对较高。这也让我们意识到，<strong>好的技术框架选型</strong>能节省很多不必要的时间，能让我们把精力放在核心业务逻辑上，而不用处理太多和环境，部署，工具相关的问题上。同时，实际开发让我知道<strong>Warm Up的重要性</strong>，后端开发虽然不存在太强的接口之间的依赖关系，但是一开始的接口往往是比较困难的，因为没有太多参考。而这就需要在开发之初，先进行初期的一些简单接口编写，让后端先运行起来，之后不断发现问题，从而让后端的其他接口能渐渐顺利开发。</p>
+<p>具体代码设计上，我们没有<strong>遵循某种特定的代码规范</strong>，这也带来一些显而易见的问题，比如前后端接口对接上出现一些争议，后端的部分类设计的不统一。虽然对于本次项目没有产生太大的影响，但是后续如果要迭代开发，需要解决相关的问题。</p>
+<p><strong>和前端的沟通</strong>对接是后端开发的一个必然工作，我们采用的做法是，先由前端同学大致提出接口需求和数据需求，如果已经足够清晰，那么直接由后端同学实现，如果不够清晰，由双方进行直接的电话或者面对面交流，对需求进行完善的描述，对接口进行清晰的定义，再由后端同学根据接口定义进行相应数据库设计，接口实现。很多时候，打字半天不如直接电话交流。前后端人员其实是统一的，只有两部分人员对于同一个接口，同一个功能逻辑都有一致的认知，才能把功能实现的比较好。</p>
+<p>前端的聊天功能开发。由于我个人对unity的兴趣，以及后期unity开发难度的提升，我在Beta阶段在前端也担任了聊天功能设计。由于我之前没有完整学习实践过unity项目开发，因此我在资源商店找到了聊天的UI界面，并直接在此基础上，融合网络层设计，对消息收发进行了补充，再经过我自己和其他同学的页面修改，最后得到了现在的聊天室。整个过程，可以概括为，demo开发，集成开发，预制体封装，测试完善，每个过程都看着聊天室一步步更加完整。通过这个实践也让我感觉到在客户端开发中，可以<strong>先建立demo，再进行不断完善，之后再集成</strong>的思路。</p>
+<h4><span id="结对项目">结对项目</span></h4>
+<p>结对过程中，我最大的体会是，两个人共行确实可以大幅提升效率。而且结对编程不仅仅是两人合作，而更像是两人合作达到1+1&gt;2的目的开发。遇到困难问题，一起讨论，集两人之所长解决，很少出现反工现象。简单问题，各自开发，互不干扰。这样的合作方式也适用于很多其他的项目。</p>
+<h3><span id="作为project-manager">作为Project Manager</span></h3>
+<p>PM的工作，可以概括为，<strong>前期规划磨合，中期日常管理，后期维护运营</strong>。</p>
+<h4><span id="前期">前期</span></h4>
+<p>在我们的开发实践中，采用了2位PM，1名测试人员，2名后端开发，4名前端开发的组织结构。我们充分考虑了每个同学的兴趣，技能点，通过两次会议明确了每个同学的职责。</p>
+<p>我作为主要负责测试和后端的PM，主要带领tsq和xwq进行后端开发，软件测试的工作。在前期主要精力放在了服务器的数据库搭建，后端持续集成部署，对象存储选用上，同时和xwq进行后端开发的磨合，和tsq商议好后端测试，前端测试的基本方式。</p>
+<p>同时，我还负责协作平台的维护与外部对接。平台方面，根据之前经验，我初期就认为可以选用coding，并在上面进行了较多尝试，帮助同学们快速上手，提升开发效率。外部对接上，开始的时候和中传的同学确立好了每周一发布的计划，制定了每周一次的全员会议，及时发现需求和实现的问题。和用户，客户，市场营销同学的深度合作和不断联系，是我们本次软工项目的亮点。</p>
+<h4><span id="中期">中期</span></h4>
+<p>日常管理中，我在第一次博客的时候编写了<strong>会议记录生成和数据分析脚本</strong>，帮助我们高效的完成会议记录以及实现对大家完成事项的追踪。</p>
+<p>平时的会议中，我和yrb交替主持会议和会议记录。基本的流程是每个人轮流描述自己的工作和之后两天计划，并提出自己的疑问，直接找相关人员交流，提升效率。个人认为每个人的进度及时让他人知道对于敏捷开发是必须的，对于项目进度和自己的开发质量都有很大促进作用。</p>
+<p>任务分配上，我们在Alpha和Beta阶段试验了两种方式。</p>
+<p><strong>Alpha阶段</strong>，由会议主持者在会后进行任务分配，这样的问题是PM有时候不知道具体要做哪些任务，分配的粒度不好把控。同时，我们没有使用缺陷和用户故事这两个coding的功能。</p>
+<p><strong>Beta阶段</strong>，我们采用了<strong>开发需求-任务-测试需求-缺陷-任务完成-开发需求完成</strong>的工作流程，并让每个同学绑定coding公众号，及时接收雄安锡推送。让整体效率有了一定提升，但是实际上仍然有些不足。我们主要由PM划分开发需求，之后由成员自己给自己分配任务，完成后再给测试人员提出测试需求，这样就出现了有些成员不会及时查看和更新自己任务的情况，也会懒得去发测试需求。同时，缺陷无法和需求绑定，整体流程稍显奇怪。</p>
+<p>现在回想，可能更好的方式是，将所有的需要测试的功能需求全部用用户故事提出，由每个同学自行划分子工作项。这样缺陷提出时也可以和需求绑定。测试人员也可以直接查看需求就可以知道哪些任务需要测试。而类似文档，服务器维护，项目部署之类的工作，调研这一类的工作，可以安排在任务中，和功能需求的实现隔离开。也就是<strong>任务主要是和具体的需求无关的杂活</strong>，而用户故事主要是用来<strong>核心的开发，测试</strong>。</p>
+<p><strong>完整的流程</strong>应当是，PM在例会之后<strong>分配开发需求</strong>，每个成员<strong>对开发需求进行具体</strong>化，并<strong>给自己划分子任务项</strong>。之后每个子任务完成后，给测试人员发布一个<strong>测试任务</strong>，对整个需求进行测试，有问题提出缺陷，<strong>缺陷和具体的开发需求相关联</strong>。而和用户使用没有具体关系的调研，文档，部署等各种任务需要使用任务进行提出。保证用户故事是和用户直接打交道。同时，整个过程的开发需求，任务，缺陷的提出都需要遵循特定的规范。</p>
+<p>而整个流程也是没有最优解，需要不断尝试和思考，才能得到更优的解决方案。再次证明了，软工没有银弹！</p>
+<p>而资源平衡，团队日常协调等，就需要在每天的开发中，根据实际情况，灵活调整，之前听过一个大佬讲过，只有深度参与开发，才能成为真正的leader，而不是口头上的巨人，行动上的矮子。只要有能力，每个人都应当勤恳的参与到各个方面的工作中。</p>
+<h4><span id="后期">后期</span></h4>
+<p>虽然这里使用了后期的表述，但是实际上一些工作也贯穿整个生命周期。</p>
+<p>后期的一个工作就是<strong>发布和维护</strong>。发布过程中，需要在初期根据用户建议，迅速修改重大缺陷，发布新版本。稳定之后，要及时统计日活，做好宣传，吸引更多用户的使用，并产生相应的价值，而不能出现做完即扔的工作态度。同时，也要不断使用自己的产品，提出新的需求和缺陷。此外，也需要给出具体方便的产品获取方式，官方联系方式。包括不限于官网，邮箱，用户群等。</p>
+<p>后期的另一个工作就是<strong>运营</strong>。对于本科生软工团队来说，很容易遇到的就是<strong>没法坚持</strong>。项目结束了，没有参与比赛，没有资源支持，大多数人都不会有动力继续坚持。因此我们在本学期的实践中，积极的参与各种比赛，和中传同学合作交流，参加大创计划，参加创业比赛，申请软著，诚然，一味追求这些是功利的，但是一味的埋头苦干，也是百害而无一利的。我们的目的是让大家在软工这样一个团队工程，社会工程中，得到个人软件开发能力，团队协作能力，资源人脉等多个方面的综合提升，而不仅仅只是，我写了一堆没人用的代码。同时，最关键的是，收获快乐，当我们自己在利用我们的app团建时，当我们在看到有不少用户给出了好评时，我们内心的快乐，是软工课程的最大收获！</p>
+<p>后期的最后一项工作就是总结提升，我们在Alpha和Beta的会议上都畅所欲言，对项目的未来进行了深入讨论。值得一提的是，一定要有组内互评的环节。我们在Beta阶段的总结会议上，每个同学都对其他的6位同学做出了批评和表扬，让彼此深刻理解了自己的优点和缺点，同时也让大家敞开了心扉，增进了感情。</p>
+<h4><span id="经验教训">经验教训</span></h4>
+<p>对于我个人来说，最大的问题就是有时候比较急躁，尤其面临产品发布等一些重大时间点时，会偶尔无能狂怒，不够冷静，对一些同学造成了伤害，在之后的软件开发中，我还是要不断保持平和的心态，在任何时候，都采用最和谐，最适当的方式进行解决。</p>
+<p>同时，这次合作中，我也暴露出有时候会稍显独断的弱点，对于一些事项，我无法把握公平与效率，过程正义与结果正义的权衡，导致了很多问题。之后的项目我都要以此为戒，找到最舒服的平衡点，真正尊重每个同学，让大家都能做项目的主人，而不是时不时的独断专权。</p>
+<p>软件工程，说到底是一个关于人的工程，我们平时每一次的交流，每一次的表决，每一次的开发，都需要和人合作，最终的产品，一定是每个人智慧和勤劳的结晶，只有充分尊重每个人的劳动成果，及时和每个人沟通，我们才能真正的做好软工。</p>
+<h2><span id="part5-最后也是开始">Part5 最后，也是开始</span></h2>
+<p>回顾这一学期，我不仅对于软件工程的整个流程有了深入认识和实践，更重要的是认识了一群有着同样抱负、同样爱好的极客朋友们，从他们身上，我知道了如何与人更好地交流沟通，学到了更多的知识技能，收获了鼓励和关心，这些都是宝贵的财富。也许课程已经结束了，但是我们的软件开发道路才刚刚开始，我们的友谊，也正扬帆起航，飘向远方！希望未来，能够和志同道合的小伙伴们互相鼓励，共同进步，实现各自的理想！</p>
+<p>以灵境产品展示视频作为结束吧！！</p>
+<center><iframe src="//player.bilibili.com/player.html?aid=897568627&bvid=BV1jA4y1d7gq&cid=750449374&page=1" scrolling="no" border="0" height="600" width="60%" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe></center>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2022/06/04/信号处理与信息推断/" data-toggle="tooltip" data-placement="top" title="信号处理与信息推断">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      
+        <aside id="sidebar">
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">Contents</strong>
+          
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">软工尾声-提问回顾与个人总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Part1 提问回顾</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">1.专业软件开发师仅需要按照流程理性地工作？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">问题</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">解答</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.结对编程能更加灵活吗？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">问题</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">解答</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">3.团队的强弱与scrum</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">问题</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">解答</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">4.敏捷仅仅适用于简单的应用？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">问题</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">解答</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.人类学调查的具体方式？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">问题</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">解答</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">6.赢者真的能通吃吗？</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">问题</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">解答</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">7.手工写代码和银弹</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">问题</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">解答</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Part2 新的问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">如何权衡公平与效率？</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Part3 做中学</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">1.需求</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.设计</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">3.实现</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">4.测试</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.发布</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">6.维护</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Part4 个人总结</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">作为Developer</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">团队项目</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">结对项目</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">作为Project Manager</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">前期</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">中期</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">后期</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">经验教训</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Part5 最后，也是开始</span></a></li></ol></li></ol>
+            
+          
+          </div>
+        </aside>
+      
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://roife.github.io" target="_blank">Roife</a></li>
+                    
+                        <li><a href="https://coekjan.cn" target="_blank">Coekjan</a></li>
+                    
+                        <li><a href="https://www.dusign.net/" target="_blank">Dusign</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+<script src="https://utteranc.es/client.js"
+        repo="buaadreamer/buaadreamer.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/BUAADreamer">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BUAADreamer 2022 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=dusign&repo=hexo-theme-snail&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://BUAADreamer.top/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects line -->
+        
+
+        
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it&quot;,&quot;🍀&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
+        
+
+        <!-- background effects end -->
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>
