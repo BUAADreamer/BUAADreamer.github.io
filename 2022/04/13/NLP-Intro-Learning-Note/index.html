@@ -125,8 +125,8 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">883</span> and
-                                Reading Time <span class="post-count">3</span> Minutes
+                                Words <span class="post-count">1.3k</span> and
+                                Reading Time <span class="post-count">5</span> Minutes
                             </span>
                             <div class="blank_box"></div>
                             <!-- 不蒜子统计 start -->
@@ -274,88 +274,103 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="part0">Part0</span></h1>
-<p>本文是笔者为了准备暑期实验室实习而写的NLP入门学习纲要，学习的内容和分类主要来自老师的建议和这篇原北航学姐的文章：https://mp.weixin.qq.com/s/49k1NLxfTSXK185RCoASxA</p>
-<p>学习过程中参考了<a href="https://zh-v2.d2l.ai/" target="_blank" rel="noopener">李沐老师的课程</a>，同时也有<a href="https://buaadreamer.top/2022/03/19/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">另一博客</a>记录具体学习内容，本文仅作为一个纲要梳理学习的大致内容，以及记录一些实践练习收获。</p>
-<h2><span id="时间节点">时间节点</span></h2>
-<h3><span id="413-427">4.13-4.27</span></h3>
+                <h1><span id="part0-简介">Part0 简介</span></h1><p>本文是笔者为了准备暑期实验室实习而写的NLP入门学习纲要，学习的内容和分类主要来自老师的建议和这篇原北航学姐的文章：<a href="https://mp.weixin.qq.com/s/49k1NLxfTSXK185RCoASxA" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/49k1NLxfTSXK185RCoASxA</a></p>
+<p>学习过程中参考了<a href="https://zh-v2.d2l.ai/" target="_blank" rel="noopener">李沐老师的课程</a>，本文仅作为一个纲要梳理学习的大致内容，以及记录一些实践练习收获。</p>
+<p>用以下<strong>两个博客</strong>记录具体学习内容：</p>
 <ul>
-<li>
-<p>学习了动手学习深度学习前8章除了现代CNN之外的内容，大致有pytorch基本应用，mlp,cnn,rnn等。</p>
-</li>
-<li>
-<p>编写了nn框架 <a href="https://github.com/BUAADreamer/nnplayer" target="_blank" rel="noopener">nnplayer</a></p>
-</li>
-<li>
-<p>学习d2l代码实现了基本的rnn语言模型，包含预处理与模型训练预测。<a href="https://github.com/BUAADreamer/nlpkiller" target="_blank" rel="noopener">nlpkiller</a></p>
-</li>
+<li><a href="https://buaadreamer.top/2022/03/19/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">动手学深度学习笔记-基础篇</a></li>
+<li><a href="https://buaadreamer.top/2022/05/15/%E5%8A%A8%E6%89%8B%E5%AD%A6%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E6%8F%90%E5%8D%87%E7%AF%87/">动手学深度学习笔记-提升篇</a></li>
 </ul>
-<h3><span id="428-511">4.28-5.11</span></h3>
-<ul>
+<p>完成了一系列的代码实践，放在一个仓库里，作为<strong>NLP武器库</strong>：<a href="https://github.com/BUAADreamer/nlpkiller" target="_blank" rel="noopener">nlpkiller</a>，基本实现了本文提到的算法，大多参考或直接复制自沐神的代码。</p>
+<h2><span id="时间节点-简要记录">时间节点-简要记录</span></h2><h3><span id="413-427">4.13-4.27</span></h3><ul>
+<li><p>学习了动手学习深度学习前8章除了现代CNN之外的内容，大致有pytorch基本应用，mlp,cnn,rnn等。</p>
+</li>
+<li><p>编写了nn框架 <a href="https://github.com/BUAADreamer/nnplayer" target="_blank" rel="noopener">nnplayer</a></p>
+</li>
+<li>学习d2l代码实现了基本的rnn语言模型，包含预处理与模型训练预测。</li>
+</ul>
+<h3><span id="428-511">4.28-5.11</span></h3><ul>
 <li>学习了动手学习深度学习第9章内容，熟悉GRU,LSTM</li>
 </ul>
-<h3><span id="512-525">5.12-5.25</span></h3>
-<ul>
+<h3><span id="512-525">5.12-5.25</span></h3><ul>
 <li>学习动手学习深度学习第10章内容，熟悉了注意力机制</li>
 <li>结合软件杯的摘要生成任务，学习了相关的一些seq2seq语言模型，了解了一种先抽取后生成的摘要生成模型</li>
-<li>熟悉了act实验室的GPU集群的用法，并在上面完整训练了2个端到端模型并做了测试，在华为云服务器上部署了摘要生成模型，提供了接口</li>
+<li>熟悉了ACT实验室的GPU集群的用法，并在上面完整训练了2个端到端模型并做了测试，在华为云服务器上部署了摘要生成模型，提供了接口</li>
 </ul>
-<h3><span id="526-68">5.26-6.8</span></h3>
-<ul>
+<h3><span id="526-68">5.26-6.8</span></h3><ul>
 <li>进一步学习注意力机制和transformer</li>
 <li>结合摘要生成题目进行相关实践</li>
 </ul>
-<h1><span id="part1-基础原理">Part1 基础原理</span></h1>
-<h2><span id="todo">todo</span></h2>
-<ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled type="checkbox"> 词向量
-<ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled type="checkbox"> Word2Vec</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled type="checkbox"> GloVe</li>
+<h3><span id="68-71">6.8-7.1</span></h3><p>复习准备考试，没有学习</p>
+<h3><span id="71-817">7.1-8.17</span></h3><ul>
+<li><p>完成了中国软件杯智能创作平台的比赛</p>
+</li>
+<li><p>学习了常见的<strong>摘要抽取</strong>算法：</p>
+<ul>
+<li><p>TextRank </p>
+</li>
+<li><p>基于Bert的句子编码+聚类/DGCNN </p>
+</li>
 </ul>
 </li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked disabled type="checkbox"> CNN</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked disabled type="checkbox"> RNN</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked disabled type="checkbox"> LSTM</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled type="checkbox"> BERT</li>
+<li><p>学习了常见的<strong>NLP数据预处理</strong>方法，一般来说就是</p>
+<ul>
+<li><p>数据获取（爬虫/广泛搜索）</p>
+</li>
+<li><p>数据清洗（去除一些句子/字词，替换一些句子/字词）</p>
+</li>
+<li><p>数据增强（同/反义词替换，随机替换词/句，随机去除词语）</p>
+</li>
+<li><p>分词（jieba，Bert分词器），去除停用词</p>
+</li>
 </ul>
-<h2><span id="神经网络">神经网络</span></h2>
-<p><img src="/2022/04/13/NLP-Intro-Learning-Note/1.jpg" alt></p>
-<h3><span id="词向量">词向量</span></h3>
-<h4><span id="word2vec">Word2Vec</span></h4>
-<h4><span id="glove">Glove</span></h4>
-<h3><span id="cnn">CNN</span></h3>
-<p>总的来说CNN的知识包含：</p>
+</li>
+<li><p>学习了目前比较流行的<strong>标题/摘要生成</strong>方式，发现很少那种长文本-长文本的数据集。最终采用基于<strong>T5-Pegasus的预训练模型</strong>对我们的数据集进行调整的方式。学习了利用FastT5对模型进行了onnx转换和量化压缩。</p>
+</li>
+<li>完整的完成了一个NLP项目，从模型设计训练，模型压缩部署，后端构建都有所收获</li>
+</ul>
+<h3><span id="818-827">8.18-8.27</span></h3><ul>
+<li>复习了CNN，RNN。补充了RNN、注意力机制的代码实现和阅读理解</li>
+<li>学习了编码器-解码器架构</li>
+<li>学习预训练相关知识：Word2Vec，GloVe，BERT，并简单学习和运行了代码</li>
+</ul>
+<h1><span id="part1-基础原理">Part1 基础原理</span></h1><h2><span id="todo">todo</span></h2><ul>
+<li>[x] 词向量<ul>
+<li>[x] Word2Vec</li>
+<li>[x] GloVe</li>
+<li>[x] 子词嵌入：fastText，字节对编码</li>
+</ul>
+</li>
+<li>[x] CNN</li>
+<li>[x] RNN</li>
+<li>[x] LSTM</li>
+<li>[x] GRU</li>
+<li>[x] BERT（简要了解GPT、ELMo）</li>
+</ul>
+<h2><span id="神经网络">神经网络</span></h2><p><img src="/2022/04/13/NLP-Intro-Learning-Note/1.jpg" alt></p>
+<h3><span id="词向量">词向量</span></h3><h4><span id="word2vec">Word2Vec</span></h4><h4><span id="glove">Glove</span></h4><h3><span id="cnn">CNN</span></h3><p>总的来说CNN的知识包含：</p>
 <ul>
 <li>卷积操作（实际用起来是互相关运算），其中会有填充，步幅等内容，多输入通道会汇合成一个输出通道（求和）</li>
 <li>汇聚（池化），其中也有填充，步幅等内容，每个输入通道单独有一个输出通道</li>
 <li>各种成熟的CNN网络结构</li>
 </ul>
-<h3><span id="rnn">RNN</span></h3>
-<p>基本的RNN就是对MLP加入了隐变量输出H，同时对时间步进行循环，对隐变量进行预测和更新。</p>
-<p>参考d2l实现的rnn代码：<a href="https://github.com/BUAADreamer/nlpkiller/blob/master/main.py" target="_blank" rel="noopener">https://github.com/BUAADreamer/nlpkiller/blob/master/main.py</a></p>
-<h3><span id="lstm">LSTM</span></h3>
-<p>包含输入门，遗忘门，输出门，候选记忆元，隐状态等。</p>
-<h3><span id="bert">BERT</span></h3>
-<h1><span id="part2-经典模型与技巧">Part2 经典模型与技巧</span></h1>
-<h2><span id="todo">todo</span></h2>
-<h3><span id="文本分类">文本分类</span></h3>
-<ul class="contains-task-list">
-<li class="task-list-item"><input class="task-list-item-checkbox" checked disabled type="checkbox"> MLP</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked disabled type="checkbox"> CNN</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked disabled type="checkbox"> RNN</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked disabled type="checkbox"> LSTM</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" checked disabled type="checkbox"> Attention</li>
-<li class="task-list-item"><input class="task-list-item-checkbox" disabled type="checkbox"> Transformer</li>
+<h3><span id="rnn">RNN</span></h3><p>基本的RNN就是对MLP加入了隐变量输出H，同时对时间步进行循环，对隐变量进行预测和更新。</p>
+<h3><span id="lstm">LSTM</span></h3><p>包含输入门，遗忘门，输出门，候选记忆元，隐状态等。</p>
+<h3><span id="bert">BERT</span></h3><p>通过使⽤预训练的Transformer编码器，BERT能够基于其双向上下⽂表⽰任何词元。</p>
+<p><img src="https://umeta-model.oss-cn-beijing.aliyuncs.com/documents/image-20220823213359539.png" alt="image-20220823213359539"></p>
+<h1><span id="part2-经典模型与技巧">Part2 经典模型与技巧</span></h1><h2><span id="todo">todo</span></h2><h3><span id="文本分类">文本分类</span></h3><ul>
+<li>[x] MLP</li>
+<li>[x] CNN</li>
+<li>[x] RNN</li>
+<li>[x] LSTM</li>
+<li>[x] Attention</li>
+<li>[x] Transformer</li>
 </ul>
-<h2><span id="文本分类">文本分类</span></h2>
-<p><img src="/2022/04/13/NLP-Intro-Learning-Note/2.jpg" alt></p>
-<h3><span id="mlp">MLP</span></h3>
-<p>此部分<strong>要求手写</strong>，不用现成模型。为了学习多层感知机，以及复习神经网络相关内容，笔者在参考一些博客和源码后，实现了一个微型深度学习框架，地址如下：<a href="https://github.com/BUAADreamer/nnplayer" target="_blank" rel="noopener">https://github.com/BUAADreamer/nnplayer</a>，使用方式基本和pytorch类似，之后有时间会不断完善，作为学习各种深度学习模型的一个实践方式，主要使用了numpy库进行矩阵计算和操作，采用面向对象的方式进行编写。目前使用这个框架实现基本的多层感知机demo代码如下：</p>
+<h2><span id="文本分类">文本分类</span></h2><p><img src="/2022/04/13/NLP-Intro-Learning-Note/2.jpg" alt></p>
+<h3><span id="mlp">MLP</span></h3><p>此部分<strong>要求手写</strong>，不用现成模型。为了学习多层感知机，以及复习神经网络相关内容，笔者在参考一些博客和源码后，实现了一个微型深度学习框架，地址如下：<a href="https://github.com/BUAADreamer/nnplayer" target="_blank" rel="noopener">https://github.com/BUAADreamer/nnplayer</a>，使用方式基本和pytorch类似，之后有时间会不断完善，作为学习各种深度学习模型的一个实践方式，主要使用了numpy库进行矩阵计算和操作，采用面向对象的方式进行编写。目前使用这个框架实现基本的多层感知机demo代码如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> nnplayer <span class="keyword">as</span> npl</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment"># build net</span></span><br><span class="line">net = npl.Sequence(npl.Linear(<span class="number">10</span>, <span class="number">6</span>), npl.Sigmoid(), npl.Linear(<span class="number">6</span>, <span class="number">4</span>), npl.Sigmoid())</span><br><span class="line"><span class="comment"># calculate loss </span></span><br><span class="line">loss = npl.MSELoss(net)</span><br><span class="line"><span class="comment"># optimizer</span></span><br><span class="line">optimizer = npl.SGD(net.getParamsList())</span><br><span class="line"><span class="comment"># build the dataset</span></span><br><span class="line">X = np.arange(<span class="number">40</span>).reshape(<span class="number">4</span>, <span class="number">10</span>)</span><br><span class="line">Y = np.arange(<span class="number">16</span>).reshape(<span class="number">4</span>, <span class="number">4</span>)</span><br><span class="line"><span class="comment"># train</span></span><br><span class="line">epoch = <span class="number">100</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(epoch):</span><br><span class="line">    Y_predict = net.forward(X)</span><br><span class="line">    l = loss.loss(Y_predict, Y)</span><br><span class="line">    print(<span class="string">f'epoch<span class="subst">&#123;i + <span class="number">1</span>&#125;</span> loss:<span class="subst">&#123;l.mean()&#125;</span>'</span>)</span><br><span class="line">    loss.backward()</span><br><span class="line">    optimizer.step()</span><br><span class="line">l = loss.loss(net.forward(X), Y)</span><br><span class="line">print(l.mean())</span><br></pre></td></tr></table></figure>
-<h3><span id="attention">Attention</span></h3>
-<p>注意力汇聚，注意力评分函数，Bahdanau注意力，多头注意力，自注意力和位置编码，Transformer</p>
-<h3><span id="transformer">Transformer</span></h3>
+<h3><span id="attention">Attention</span></h3><p>注意力汇聚，注意力评分函数，Bahdanau注意力，多头注意力，自注意力和位置编码，Transformer</p>
+<h3><span id="transformer">Transformer</span></h3><p><img src="https://umeta-model.oss-cn-beijing.aliyuncs.com/documents/image-20220822100053869.png" alt="image-20220822100053869"></p>
 
                 
                 <hr>
@@ -415,7 +430,7 @@
           <strong class="toc-title">Contents</strong>
           
             
-              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Part0</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">时间节点</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">4.13-4.27</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">4.28-5.11</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.12-5.25</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.26-6.8</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Part1 基础原理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">todo</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">神经网络</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">词向量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Word2Vec</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Glove</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">CNN</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">RNN</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">LSTM</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">BERT</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Part2 经典模型与技巧</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">todo</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">文本分类</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">文本分类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">MLP</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Attention</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Transformer</span></a></li></ol></li></ol></li></ol>
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Part0 简介</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">时间节点-简要记录</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">4.13-4.27</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">4.28-5.11</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.12-5.25</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.26-6.8</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">6.8-7.1</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">7.1-8.17</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">8.18-8.27</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Part1 基础原理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">todo</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">神经网络</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">词向量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Word2Vec</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Glove</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">CNN</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">RNN</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">LSTM</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">BERT</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Part2 经典模型与技巧</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">todo</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">文本分类</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">文本分类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">MLP</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Attention</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Transformer</span></a></li></ol></li></ol></li></ol>
             
           
           </div>
