@@ -515,6 +515,7 @@
 <p>本次Gitlab使用了OO的gitlab的CI进行测试，由于相关服务器刚刚迁移到校内，因此需要重新配置runner，这部分除了CI部分顺便记录一下创建个人项目和配置runner的过程</p>
 <h3><span id="创建group与project">创建Group与Project</span></h3>
 <p>首先gitlab是基于group进行操作的，因此第一步首先需要建立group才能在内部进行项目创建，为了方便组员的CI测试，我单独创建了一个setest group并拉进了所有的软工小组成员，截止目前有两个项目，其中Setest是我的项目，里面有一个python文件实现了快速排序</p>
+<p><img src="/2022/03/05/SE%E9%9B%86%E7%BB%93%E5%8F%B7-%E9%98%85%E8%AF%BB%E5%92%8C%E8%B0%83%E7%A0%94/Users/fzc/AppData/Roaming/Typora/typora-user-images/image-20230131001637674.png" alt="image-20230131001637674"></p>
 <p><img src="/2022/03/05/SE%E9%9B%86%E7%BB%93%E5%8F%B7-%E9%98%85%E8%AF%BB%E5%92%8C%E8%B0%83%E7%A0%94/1.png" alt></p>
 <p><img src="/2022/03/05/SE%E9%9B%86%E7%BB%93%E5%8F%B7-%E9%98%85%E8%AF%BB%E5%92%8C%E8%B0%83%E7%A0%94/2.png" alt></p>
 <h3><span id="配置runner">配置runner</span></h3>
@@ -590,7 +591,7 @@
                     
                     
                     <li class="next">
-                        <a href="/2021/08/30/2-BigData-Tools/" data-toggle="tooltip" data-placement="top" title="2_BigData_Tools">Next Post &rarr;</a>
+                        <a href="/2021/08/09/算法导论笔记/" data-toggle="tooltip" data-placement="top" title="算法导论笔记">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -765,7 +766,7 @@
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; BUAADreamer 2022 
+                    Copyright &copy; BUAADreamer 2024 
                     <br>
                     Powered by 
                     <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
@@ -901,7 +902,7 @@
         
 
         
-            <script type="text/javascript" src="/js/mouse-click.js" content='[&#34;🌱&#34;,&#34;just do it&#34;,&#34;🍀&#34;]' color='[&#34;rgb(121,93,179)&#34; ,&#34;rgb(76,180,231)&#34; ,&#34;rgb(184,90,154)&#34;]'></script>
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it&quot;,&quot;🍀&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
         
 
         <!-- background effects end -->
@@ -911,6 +912,21 @@
     
         <script src="/js/ribbonDynamic.js"></script>
     
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 
 </html>

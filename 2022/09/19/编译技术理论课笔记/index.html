@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="A hexo theme">
+    <meta name="keyword"  content="BUAADreamer, hexo-theme-snail">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          编译技术理论课笔记 - BUAADreamer&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://BUAADreamer.top/2022/09/19/编译技术理论课笔记/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../../../img/default.jpg')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                        </div>
+                        <h1>编译技术理论课笔记</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by BUAADreamer on
+                            2022-09-19
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">9.4k</span> and
+                                Reading Time <span class="post-count">34</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BUAADreamer&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+                    
+                    
+                    <li>
+                        <a href="https://www.cnblogs.com/BUAADreamer/" target="_blank">Chinese Blog</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2><span id="工具准备">工具准备</span></h2>
+<p>https://wenku.baidu.com/view/b8b4510bba1aa8114431d96c.html</p>
+<p>https://max.book118.com/html/2018/1224/7166031033001166.shtm</p>
+<p>https://wenku.baidu.com/view/d846931e6bec0975f465e295?bfetype=new</p>
+<p>C语言栈方向从高到低延申，字符串拷贝数组操作不对数据长度做审核，实际数据长度超过栈中预留空间，则会栈溢出</p>
+<p>龙书 虎书 鲸书</p>
+<p>模型驱动 MDA MDE MDT MBSE</p>
+<p>建模即编程—低代码，程序自动生成</p>
+<h2><span id="编译知识结构图">编译知识结构图</span></h2>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/13.png" style="zoom:80%;">
+<h1><span id="一-编译基础">一、编译基础</span></h1>
+<h2><span id="11-基本概念">1.1 基本概念</span></h2>
+<p><strong>源程序</strong>：用<strong>汇编语言</strong>或<strong>高级语言</strong>编写的程序称为源程序。</p>
+<p><strong>目标程序</strong>：用目标语言所表示的程序。<strong>机器语言</strong>，或某机器的<strong>汇编语言</strong>。</p>
+<p><strong>翻译程序</strong>：将<strong>源程序转换为目标程序</strong>的程序称为翻译程序。是<strong>汇编程序、编译程序以及各种变换程序</strong>的总称</p>
+<p>编译 ==&gt; <strong>Compile</strong> ==&gt; 将高级语言经过加工得到目标程序，这样的翻译过程</p>
+<p>汇编 ==&gt; <strong>Assemble</strong> ==&gt; 汇编语言书写，经过翻译程序得到机器语言表示的程序，这时的<strong>翻译程序</strong>称为汇编程序</p>
+<p>分为两种：<strong>编译运行</strong>和<strong>编译-解释执行</strong></p>
+<h2><span id="12-编译过程">1.2 编译过程</span></h2>
+<p>词法分析–&gt;语法分析–&gt;语义分析、生成中间代码–&gt;代码优化–&gt;生成目标程序</p>
+<h3><span id="词法分析">词法分析</span></h3>
+<p>分析和识别<strong>单词</strong> 单词是语言的基本单位 ==&gt; <strong>线性分析</strong></p>
+<h3><span id="语法分析">语法分析</span></h3>
+<p>根据语法规则<strong>分析并识别</strong>各种<strong>语法成分</strong>，并进行<strong>语法正确性检查</strong> ==&gt; <strong>层次分析</strong></p>
+<h3><span id="语义分析">语义分析</span></h3>
+<p>生成 <strong>中间代码</strong>==&gt;一种介于<strong>源语言和目标语言之间</strong>的<strong>中间语言</strong>形式</p>
+<p>分析语义上的正确性然后翻译成等价的另一种语言</p>
+<p>便于<strong>做优化</strong>，便于<strong>编译程序的移植</strong></p>
+<p>中间代码常用的有<strong>四元式</strong>、<strong>三元式</strong>、<strong>逆波兰表示</strong></p>
+<h3><span id="代码优化">代码优化</span></h3>
+<p>得到高质量的目标程序</p>
+<h3><span id="生成目标程序">生成目标程序</span></h3>
+<h3><span id="建表查表">建表查表</span></h3>
+<p>符号表管理</p>
+<h3><span id="出错处理">出错处理</span></h3>
+<h3><span id="遍pass">遍（pass）</span></h3>
+<p>对源程序（包括源程序中间形式）<strong>从头到尾扫描一次</strong>， 并做有关的加工处理 ，<strong>生成</strong>新的<strong>源程序中间形式</strong>或<strong>目标程序</strong></p>
+<h3><span id="典型编译程序7个逻辑部分">典型编译程序7个逻辑部分</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/11.png" style="zoom:50%;">
+<h3><span id="前端和后端">前端和后端</span></h3>
+<p>与<strong>源程序</strong>有关的编译部分称为前端 ==&gt; 词法分析，语法分析，语义分析，中间代码生成，代码优化</p>
+<p>与<strong>目标机</strong>有关的部分称为后端 ==&gt;目标程序生成(与目标机有关的优化)</p>
+<h3><span id="编译程序的前后处理器">编译程序的前后处理器</span></h3>
+<p><strong>源程序</strong>：<strong>多文件、宏定义和宏调用</strong>，包含文件</p>
+<p><strong>目标程序</strong>：一般为<strong>汇编程序</strong>或<strong>可重定位的机器代码</strong></p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/12.png" style="zoom:67%;">
+<h2><span id="作业">作业</span></h2>
+<p>P21： 1,2,3,4,5</p>
+<h1><span id="二-文法与语言">二、文法与语言</span></h1>
+<h2><span id="21-预备知识">2.1 预备知识</span></h2>
+<h3><span id="字母表与符号串">字母表与符号串</span></h3>
+<p><strong>字母表</strong>：符号的非空有限集</p>
+<p><strong>符号</strong>：字母表中的元素</p>
+<p><strong>符号串</strong>：符号的有穷序列</p>
+<p><strong>空符号串</strong>：无任何符号的符号串</p>
+<h3><span id="符号串运算">符号串运算</span></h3>
+<p><strong>符号串相等</strong> 每个字符依次相等</p>
+<p><strong>符号串的长度</strong>（符号串中符号的个数）</p>
+<p><strong>符号串联接</strong></p>
+<p><strong>符号串乘积运算</strong> $AB={xy|x\in A,y\in B}$</p>
+<p><strong>幂运算</strong> $A^n=A*…*A$  $A^0=\epsilon$</p>
+<p><strong>闭包，正闭包</strong></p>
+<p>$闭包A<sup>*:A</sup>0\cup A^1\cup …\cup A^n\cup …$</p>
+<p>$正闭包A<sup>+:A</sup>1\cup …\cup A^n\cup …$</p>
+<p>某语言分为字符集A和单词集B</p>
+<p>单词是定义在字符集上的字符串，句子是定义在单词集上的字符串</p>
+<h2><span id="22-文法的非形式讨论">2.2 文法的非形式讨论</span></h2>
+<h3><span id="221-文法">2.2.1 文法</span></h3>
+<p>文法和语言&lt;句子&gt;::=&lt;主语&gt;&lt;谓语&gt;</p>
+<p><code>::=</code> 由…组成</p>
+<p><code>|</code>表示或</p>
+<p><code>BNF</code>表示法</p>
+<p>&lt;句子&gt;::=&lt;主语&gt;&lt;谓语&gt;</p>
+<p>&lt;主语&gt;::=&lt;代词&gt;|&lt;名语&gt;</p>
+<p>文法是<strong>形式上描述和推导句子</strong>，形式上对句子结构进行定义和描述，但<strong>不涉及语义</strong></p>
+<h3><span id="222-语法规则">2.2.2 语法规则</span></h3>
+<p><strong>建立一组规则</strong>，来描述句子的语法结构</p>
+<p>比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;A&gt;::&#x3D;&lt;B&gt;&lt;C&gt;</span><br><span class="line">&lt;B&gt;::&#x3D;a</span><br><span class="line">&lt;C&gt;::&#x3D;d|e</span><br></pre></td></tr></table></figure>
+<h3><span id="223-由规则推导句子">2.2.3 由规则推导句子</span></h3>
+<p>有了一组规则，可以按照一定方式推导句子</p>
+<p>即从一个要识别的符号开始推导，用<strong>相应的规则右部</strong>代替<strong>左部</strong>，每次<strong>仅用一条规则</strong>，直到<strong>所有非终结符</strong>均<strong>被终结符</strong>替代</p>
+<p><strong>最左推导</strong> ==&gt; 有若干语法成分同时存在，先从最左的语法成分进行推导</p>
+<p>最右推导类似</p>
+<p>例子同上，比如上面的文法推出<strong>ad</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">#最左推导</span><br><span class="line">A&#x3D;&gt;BC&#x3D;&gt;aC&#x3D;&gt;ad</span><br><span class="line">#最右推导</span><br><span class="line">A&#x3D;&gt;BC&#x3D;&gt;Bd&#x3D;&gt;ad</span><br></pre></td></tr></table></figure>
+<h3><span id="224-语法树描述语法结构">2.2.4 语法树——描述语法结构</span></h3>
+<p>识别符号=&gt;开始符号，属于非终结符</p>
+<p>非终结符==&gt;语法成分</p>
+<p>终结符==&gt;单词符号</p>
+<h2><span id="23-文法和语言的形式定义">2.3 文法和语言的形式定义</span></h2>
+<h3><span id="231-文法的形式定义">2.3.1 文法的形式定义</span></h3>
+<h4><span id="定义1">定义1</span></h4>
+<p>文法定义：$G=(V_n,V_t,P,Z)$</p>
+<p>$V_n$ 非终结符号集</p>
+<p>$V_t$ 终结符号集</p>
+<p>$V=V_n\cup V_t$称为文法的<strong>字汇表</strong></p>
+<p>$P$ 产生式或规则的集合</p>
+<p>$Z$ 开始符号（识别符号）$Z\in V_n$</p>
+<p>规则定义：$U\rightarrow x 或 U::=x$  $U\in V_n ,x\in V^*$</p>
+<h4><span id="说明">说明</span></h4>
+<ul>
+<li>产生式左边符号构成集合$V_n$</li>
+<li>有些产生式<strong>左部相同</strong>，可以<strong>合并</strong> 类似<code>A-&gt;B|C</code>这样的，也称为文法的<strong>BNF表示</strong></li>
+<li>给定一个文法，需给出<strong>产生式（规则）集合</strong>，并指定<strong>识别符号</strong></li>
+</ul>
+<h3><span id="232-推导的形式定义">2.3.2 推导的形式定义</span></h3>
+<h4><span id="定义2">定义2</span></h4>
+<p>$文法G:v=xUy,w=xuy.其中x,y,u\in V^*,U\in V_n$</p>
+<p>$若U::=u\in P,则v\Rightarrow w$</p>
+<p>$若x=y=\epsilon，有U::=u，则U\stackrel G\Rightarrow u$</p>
+<h4><span id="定义3-vstackrelrightarrow-w">定义3 $v\stackrel{+}\Rightarrow  w$</span></h4>
+<p>$文法G，u_0,u_1,…,u_n\in V^+$</p>
+<p>$若 v=u_0\Rightarrow u_1\Rightarrow u_2…\Rightarrow u_n=w$，则$v\stackrel{+}\Rightarrow  w$</p>
+<h4><span id="定义4-vstackrel-rightarrow-w">定义4 $v\stackrel * \Rightarrow w$</span></h4>
+<p>$若v\stackrel + \Rightarrow w或v=w$，则$v\stackrel * \Rightarrow w$</p>
+<h4><span id="定义5-规范推导">定义5 规范推导</span></h4>
+<p>$有xUy\Rightarrow xuy，若y\in V_t^*$，则此推导为规范的，记为$xUy\nRightarrow xuy$</p>
+<p>直观：规范推导=最右推导</p>
+<h3><span id="233-语言的形式定义">2.3.3 语言的形式定义</span></h3>
+<h4><span id="定义6-文法gz">定义6 文法G[Z]</span></h4>
+<ol>
+<li><font color="red">句型 </font> $x是句型\Leftrightarrow Z\stackrel * \Rightarrow x，且x\in V^*$</li>
+<li><font color="red">句子</font> $x是句子\Leftrightarrow Z\stackrel + \Rightarrow x，且x\in V_t^*$</li>
+<li><font color="red">语言 </font> $L(G[Z])={x|x\in V_t^*,Z\stackrel + \Rightarrow x}$</li>
+</ol>
+<p>形式语言理论可证明以下两点：</p>
+<ol>
+<li>$G\rightarrow L(G)$</li>
+<li>$L(G)\rightarrow G1,G2…Gn$</li>
+</ol>
+<p><strong>已知文法求语言</strong>通过<strong>推导</strong>即可，但是<strong>已知语言求文法无形式化方法</strong>，一般是凭借经验</p>
+<h4><span id="定义7-等价文法">定义7 等价文法</span></h4>
+<p>$G和G’是两个不同文法，若L(G)=L(G’),则G与G’为等价文法$</p>
+<p><font color="red">编译感兴趣的问题</font>： 给定句子以及文法G，求$x\in L(G)?$</p>
+<h3><span id="234-递归文法">2.3.4 递归文法</span></h3>
+<p><strong>规则右部</strong>有和<strong>左部相同</strong>的符号比如 <code>U::=bUc</code> <code>U::=aU</code> <code>U::=Ua</code> 分别代表<strong>递归，左递归，右递归</strong></p>
+<h3><span id="235-句型的短语-简单短语和句柄">2.3.5 句型的短语、简单短语和句柄</span></h3>
+<h4><span id="定义8-短语与简单短语">定义8 短语与简单短语</span></h4>
+<p>$给定文法G[Z]，w=xuy\in V^+，为该文法的句型$</p>
+<p>$若Z\stackrel * \Rightarrow xUy，且U\stackrel + \Rightarrow u，则u是句型w相对于U的短语$</p>
+<p>$若Z\stackrel * \Rightarrow xUy，且U\Rightarrow u(即单步推出)，则u是句型w相对于U的简单短语$</p>
+<p>其中$U\in V_n，u\in V^+，x,y\in V^*$</p>
+<h5><span id="说明">说明</span></h5>
+<p>短语是前面句型的<strong>某个非终结符所能推出</strong>的符号串</p>
+<p>任何句型本身一定是<strong>相对于识别符号Z</strong>的短语</p>
+<h4><span id="定义9-任一句型的最左简单短语称为句柄">定义9 任一句型的最左简单短语称为<font color="red">句柄</font></span></h4>
+<h2><span id="24-语法树与二义性文法">2.4 语法树与二义性文法</span></h2>
+<h3><span id="241-推导与语法推导树">2.4.1 推导与语法（推导）树</span></h3>
+<h4><span id="语法树">语法树</span></h4>
+<p>句子（句型）结构的<strong>图示表示法</strong>，<strong>有向图</strong>，由<strong>结点</strong>和<strong>有向边</strong>组成</p>
+<p><strong>结点</strong>：符号</p>
+<p><strong>根结点</strong>：识别符号（编译单元）</p>
+<p><strong>中间结点</strong>：非终结符（各个语法成分）</p>
+<p><strong>叶结点</strong>：终结符或非终结符（推导过程的每一步的句型或句子都可以以语法树表示，所以中间过程的语法树叶结点可以是非终结符）</p>
+<p><strong>有向边</strong>：结点间派生关系</p>
+<p>比如下列的树：</p>
+<pre class="mermaid">graph TD
+Z-->U
+Z-->V
+U-->a
+U-->b
+V-->c
+V-->d</pre>
+<h4><span id="子树与短语">子树与短语</span></h4>
+<p><strong>子树</strong>：语法树中某个结点（也就是子树的根）连同它向下的派生部分所组成</p>
+<p>子树末端结点自左至右顺序为句型的符号串，这个符号串即为<strong>相对于该子树根的短语</strong>。</p>
+<h4><span id="短语和简单短语"><font color="red">短语和简单短语？？</font></span></h4>
+<p>简单区分：看语法树</p>
+<p><strong>短语</strong>：对于原语法树中<strong>所有节点数大于1的子树</strong>，将<strong>所有叶子结点从左往右连接起来</strong>组成短语。</p>
+<p><strong>简单短语</strong>：短语中，可以由一个中间句子成分直接推导出来的</p>
+<p><strong>句柄</strong>：最左边的第一个简单短语</p>
+<p>下图中，短语有D F DFE，简单短语有D F 句柄为D</p>
+<pre class="mermaid">graph TD
+a[A]-->b[B]
+a-->c[C]
+b-->d[D]
+a-->e[E]
+c-->f(F)</pre>
+<h4><span id="树与推导">树与推导</span></h4>
+<p>语法树生长过程 &lt;=&gt; 句型推导过程</p>
+<h5><span id="从推导构造语法树">从推导构造语法树</span></h5>
+<p>一般采用<strong>规范推导</strong>即<strong>最右推导</strong></p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/21.png" style="zoom:50%;">
+<h5><span id="由语法树构造推导">由语法树构造推导</span></h5>
+<p>每次修建都剪掉句柄</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/22.png" style="zoom: 50%;">
+<p><strong>规范归约</strong>和<strong>规范推导</strong>互为<strong>逆过程</strong></p>
+<p><strong>规范规约</strong>：对句型中最左简单短语（句柄）进行的归约</p>
+<p><strong>规范句型</strong>：通过<strong>规范推导</strong>或<strong>规范归约</strong>所得到的句型</p>
+<h4><span id="二义性文法">二义性文法</span></h4>
+<p>一个文法</p>
+<ul>
+<li>某句子存在<strong>两种不同的语法树</strong>，则此文法为二义性文法，否则是无二义性文法</li>
+<li>某句子存在<strong>两个不同的规范推导</strong>，则此文法为二义性文法，否则是无二义性文法</li>
+<li>某<strong>规范句型的句柄不唯一</strong>，则此文法为二义性文法，否则是无二义性文法</li>
+</ul>
+<h2><span id="25-句子的分析">2.5 句子的分析</span></h2>
+<p>给定一个$G[Z]:S\in V_t^*，判断S\in L(G[Z])是否成立$</p>
+<p><strong>词法分析</strong>和<strong>语法分析</strong>的工作</p>
+<h2><span id="26-有关文法的实用限制">2.6 有关文法的实用限制</span></h2>
+<h4><span id="有害规则">有害规则</span></h4>
+<p>类似<code>U::=U</code>，会引起二义性和无穷递归</p>
+<p>一般左递归就是有害规则</p>
+<h4><span id="多余规则">多余规则</span></h4>
+<ol>
+<li>在推导文法的所有句子中，<strong>始终用不到的规则</strong>。 即该规则的<strong>左部非终结符不出现在任何句型</strong>中（<strong>不可达符号</strong>）</li>
+<li>在推导句子的过程中，一旦使用了该规则，将推不出任何终结符号串。即该规则中含有<strong>推不出任何终结符号串</strong>的非终结符（<strong>不活动符号</strong>）</li>
+</ol>
+<p>若某文法中<strong>没有有害规则或者多余规则</strong>，则称该文法是<font color="blue">压缩过的</font></p>
+<h4><span id="删除文法中多余结点算法"><font color="red">删除文法中多余结点算法？</font></span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1.jpg" style="zoom:50%;">
+<h2><span id="27-文法的其他表示法">2.7 文法的其他表示法</span></h2>
+<h3><span id="扩充的bnf表示">扩充的BNF表示</span></h3>
+<p>BNF元符号：<code>&lt; </code> <code>&gt;</code> <code>::=</code> <code>|</code></p>
+<p>扩充的BNF元符号：<code>&lt; </code> <code>&gt;</code> <code>::=</code> <code>|</code> <code>{</code> <code>}</code> <code>[</code> <code>]</code> <code>(</code> <code>) </code> 后面几个分别是<strong>0-无穷次</strong> <strong>1-无穷次</strong> <strong>0-1次</strong></p>
+<h3><span id="语法图">语法图</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/23.png" style="zoom:50%;">
+<h2><span id="28-文法和语言分类">2.8 文法和语言分类</span></h2>
+<h3><span id="形式语言文法语言">形式语言，文法，语言</span></h3>
+<p><strong>形式语言</strong>：用文法和自动机描述的没有语义的语言</p>
+<p><strong>乔姆斯基文法定义</strong>：</p>
+<p>$G=(V_n,V_t,P,Z)$</p>
+<p>​			$V_n$ 非终结符号集	$V_t$ 终结符号集</p>
+<p>​			$P$ 产生式或规则的集合	$Z$ 开始符号（识别符号）$Z\in V_n$</p>
+<p><strong>语言定义</strong>：$L(G[Z])={x|x\in V_t^*,Z\stackrel + \Rightarrow x}$</p>
+<h3><span id="文法和语言分类">文法和语言分类</span></h3>
+<p>分为0、1、2、3型，差别在于<strong>对产生式（语法规则）的不同限制</strong></p>
+<h4><span id="0型-短语结构文法">0型 短语结构文法</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/24.png" style="zoom:50%;">
+<h4><span id="1型-上下文有关文法">1型 上下文有关文法</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/25.png" alt="25" style="zoom:50%;">
+<h4><span id="2型-上下文无关文法">2型 上下文无关文法</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/26.png" alt="26" style="zoom:50%;">
+<h4><span id="3型-正则文法">3型 正则文法</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/27.png" alt="27" style="zoom:50%;">
+<ul>
+<li>根据上述讨论，$L0 \supset L1 \supset L2 \supset L3 $</li>
+<li><strong>0型文法</strong>可以产生$L0、L1、L2、L3$，</li>
+<li>但<strong>2型文法</strong>只能产生$L2，L3$ 不能产生$L0，L1$</li>
+<li><strong>3型文法</strong>只能产生$L3$</li>
+</ul>
+<h2><span id="作业">作业</span></h2>
+<p>p29 3,4</p>
+<p>习题2-3：p38 1-9</p>
+<p>习题2-4： P46-47 1,5,6,8,9</p>
+<p>p53 3</p>
+<h1><span id="三-词法分析">三、词法分析</span></h1>
+<h2><span id="31-词法分析程序的功能及实现方案">3.1 词法分析程序的功能及实现方案</span></h2>
+<h3><span id="功能识别单词返回单词的类别和值">功能：识别单词，返回单词的类别和值</span></h3>
+<ul>
+<li>词法分析：根据词法规则<strong>识别及组合</strong>单词，进行<strong>词法检查</strong></li>
+<li><strong>删去</strong>空格字符和注释</li>
+<li>对<strong>数字常数</strong>完成从数字字符串到二进制数值的<strong>转换</strong></li>
+</ul>
+<h3><span id="实现方案">实现方案</span></h3>
+<ul>
+<li>
+<p>词法分析<strong>单独一遍</strong></p>
+</li>
+<li>
+<p>作为一个<strong>子程序</strong>被语法分析程序调用</p>
+</li>
+</ul>
+<h2><span id="32-单词的种类及词法分析程序的输出形式">3.2 单词的种类及词法分析程序的输出形式</span></h2>
+<h3><span id="单词种类">单词种类</span></h3>
+<p>保留字，标识符（用户定义），常数，分界符(+ - * / …)</p>
+<h3><span id="单词内部形式">单词内部形式</span></h3>
+<h4><span id="按单词种类分类">按单词种类分类</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/31.png" style="zoom:50%;">
+<h4><span id="保留字和分界符采用一符一类">保留字和分界符采用一符一类</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/32.png" style="zoom:50%;">
+<h2><span id="33-正则文法和状态图">3.3 正则文法和状态图</span></h2>
+<h3><span id="左线性文法状态图画法">左线性文法状态图画法</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/33.png" style="zoom:50%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/34.png" style="zoom:50%;">
+<h4><span id="识别算法">识别算法</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/35.png" style="zoom:50%;">
+<h2><span id="34-词法分析程序的设计与实现">3.4 词法分析程序的设计与实现</span></h2>
+<pre class="mermaid">graph LR
+词法规则-->状态图
+状态图-->词法分析程序</pre>
+<h2><span id="作业">作业</span></h2>
+<p>P73 1,2,3(词法见65-67页)</p>
+<h1><span id="四-语法分析">四、语法分析</span></h1>
+<h2><span id="41-语法分析概述">4.1 语法分析概述</span></h2>
+<p><strong>功能</strong>：根据文法规则，从源程序单词符号串中<strong>识别出语法成分</strong>，并<strong>进行语法检查</strong>。</p>
+<p><strong>基本任务</strong>：识别符号串S<strong>是否为某语法成分</strong></p>
+<pre class="mermaid">graph LR
+a[两大类分析方法]
+a-->b[自顶向下分析]
+a-->c[自底向上分析]
+b-->b1[主要解决问题]
+b1-->b11[左递归问题]
+b1-->b12[回溯问题]
+b-->b2[主要方法]
+b2-->b21[递归子程序法]
+b2-->b22[LL分析法]
+c-->c1[主要问题]
+c1-->c11[句柄的识别问题]
+c-->c2[主要方法]
+c2-->c21[算法优先分析法]
+c2-->c22[LR分析法]</pre>
+<h2><span id="42-自顶向下分析">4.2 自顶向下分析</span></h2>
+<h3><span id="421-自顶向下分析的一般过程">4.2.1 自顶向下分析的一般过程</span></h3>
+<p>预测某一符号串为某一语法成分，根据其文法，<strong>为S构造一棵语法树</strong>，若成功，则S被识别为某一语法成分，即</p>
+<p>$S\in L(G[Z])$，否则，$S\notin L(G[Z])$</p>
+<p>分析过程带预测，是试探过程，有时需要回溯</p>
+<h3><span id="422-自顶向下分析存在的问题及解决方法">4.2.2 自顶向下分析存在的问题及解决方法</span></h3>
+<h4><span id="1左递归文法">1.左递归文法</span></h4>
+<p>比如<code>E::=E+T|T</code></p>
+<h5><span id="消除直接左递归">消除直接左递归</span></h5>
+<h6><span id="方法1-使用扩充bnf表示改写文法">方法1 使用扩充BNF表示改写文法</span></h6>
+<p><strong>规则1：提因子</strong></p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/36.png" style="zoom:50%;">
+<p><strong>规则2</strong></p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/41.png" style="zoom:50%;">
+<h6><span id="方法2-将左递归规则改为右递归规则">方法2 将左递归规则改为右递归规则</span></h6>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/42.png" style="zoom:50%;">
+<h5><span id="消除一般左递归">消除一般左递归</span></h5>
+<p><strong>消除所有左递归的算法</strong></p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/43.png" style="zoom:50%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/44.png" style="zoom:50%;">
+<h4><span id="2回溯问题">2.回溯问题</span></h4>
+<p>$FIRST(\alpha_i)={a|\alpha_i\stackrel *\Rightarrow a…,a\in V_t}$</p>
+<p>避免回溯，文法需要满足 $\forall \ i\neq j,FIRST(\alpha_i)\cap FIRST(\alpha_j)=\varnothing$</p>
+<h5><span id="改写文法">改写文法</span></h5>
+<p>对具有多个右部的规则反复提取左因子</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/45.png" style="zoom:50%;">
+<h5><span id="超前扫描">超前扫描</span></h5>
+<p>向前多看几个符号</p>
+<h4><span id="文法的两个条件">文法的两个条件</span></h4>
+<p>为了在<strong>不采取超前扫描的前提下</strong>实现<strong>不带回溯的自顶向下分析</strong>，文法需要满足两个条件</p>
+<ul>
+<li>
+<p>非左递归（递归下降都需要）</p>
+</li>
+<li>
+<p>不含回溯</p>
+</li>
+<li></li>
+</ul>
+  <img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/46.png" style="zoom:50%;">
+<h3><span id="423-递归子程序法递归下降分析法">4.2.3 递归子程序法（递归下降分析法）</span></h3>
+<ul>
+<li>检查并改写文法</li>
+<li>检查文法的递归性</li>
+<li>递归调用各个子函数来识别语法成分</li>
+</ul>
+<h2><span id="作业">作业</span></h2>
+<p>p91: 1-3</p>
+<h1><span id="五-符号表管理技术">五、符号表管理技术</span></h1>
+<h2><span id="51-概述">5.1 概述</span></h2>
+<p><strong>符号表</strong>：编译程序记录各种名字的特性信息，<strong>名字特性表</strong></p>
+<p>源程序中变量要<strong>先声明，再引用</strong>。引用声明的变量时需要<strong>语法语义正确性检查</strong>以及<strong>生成相应的目标程序</strong></p>
+<h2><span id="52-符号表的组织与内容">5.2 符号表的组织与内容</span></h2>
+<h3><span id="符号表内容">符号表内容</span></h3>
+<p><strong>名字域</strong>：标识符字符串</p>
+<p><strong>特性域</strong>：可包括多个子域</p>
+<p>可以有以下内容：</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/51.png" style="zoom: 33%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/52.png" style="zoom: 33%;">
+<h3><span id="符号表组织方式">符号表组织方式</span></h3>
+<ol>
+<li><strong>统一符号表</strong>==&gt;查表方便，<strong>结构简单</strong>，浪费空间</li>
+<li>不同种类名字建立<strong>各种符号表</strong>==&gt;<strong>节省空间</strong>，填表查表不方便</li>
+<li><strong>折中办法</strong>==&gt;大部分共同信息组成<strong>统一格式符号表</strong>，特殊信息<strong>另外附表</strong>，两者指针相连</li>
+</ol>
+<h3><span id="53-非分程序结构语言的符号表组织">5.3 非分程序结构语言的符号表组织</span></h3>
+<p>分为<strong>全局</strong>和<strong>局部</strong>符号表，分别管理全局变量函数定义，和局部的变量</p>
+<p>无序符号表，有序符号表，散列符号表</p>
+<h3><span id="54-分程序结构语言的符号表组织">5.4 分程序结构语言的符号表组织</span></h3>
+<p>分程序结构语言:模块内<strong>可嵌入</strong>子模块</p>
+<p>查表需要从当前层查起，一直往外层查</p>
+<h2><span id="作业">作业</span></h2>
+<p>作业：P115-116 3,5</p>
+<p><strong>非分程序</strong>：名字，类型，维数</p>
+<p><strong>分程序</strong>：序号，名字，属性，外接一个索引的栈</p>
+<h1><span id="六-运行时的存储组织及管理">六、运行时的存储组织及管理</span></h1>
+<h2><span id="61-概述">6.1 概述</span></h2>
+<h3><span id="运行时的存储组织及管理">运行时的存储组织及管理</span></h3>
+<p><strong>目标程序</strong>运行时<strong>需要存储空间</strong>的组织管理，<strong>源程序</strong>中<strong>变量存储空间</strong>的分配</p>
+<h4><span id="静态存储分配">静态存储分配</span></h4>
+<p>在<strong>编译阶段</strong>由<strong>编译程序</strong>实现<strong>对存储空间的管理</strong>和<strong>为源程序中的变量分配存储</strong>的方法。</p>
+<p>必须在编译时能够确定<strong>源程序中变量分配存储</strong>的方法</p>
+<h4><span id="动态存储分配">动态存储分配</span></h4>
+<p>在目标程序运行阶段由<strong>目标程序</strong>实现对<strong>存储空间的组织与管理</strong>，和为源程序中的变量<strong>分配存储</strong>的方法。</p>
+<p>需要生成进行动态分配的目标指令</p>
+<h2><span id="62-静态存储分配">6.2 静态存储分配</span></h2>
+<h3><span id="fortran子程序典型数据区">FORTRAN子程序典型数据区</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/53.png" style="zoom:50%;">
+<h2><span id="63-动态存储分配">6.3 动态存储分配</span></h2>
+<p>栈式动态存储分配</p>
+<p>整个数据区为<strong>一个堆栈</strong>
+(1) 当<strong>进入一个过程</strong>时，在<strong>栈顶</strong>为其<strong>分配</strong>一个数据区。
+(2) <strong>退出</strong>时，<strong>撤消</strong>过程数据区。</p>
+<h3><span id="631-活动记录">6.3.1 活动记录</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/54.png" style="zoom:50%;">
+<p><strong>局部数据区</strong>：存放模块中定义各个<strong>局部变量</strong></p>
+<p><strong>参数区</strong>：存放<strong>隐式参数</strong>和<strong>显式参数</strong></p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/55.png" style="zoom:50%;">
+<p><strong>display区</strong>：存放各<strong>外层模块活动记录</strong>的基地址 =&gt;为了能够利用符号表索引各个块的变量</p>
+<h4><span id="c语言运行时存储管理">C语言运行时存储管理</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/56.png" style="zoom:50%;">
+<h2><span id="作业">作业</span></h2>
+<p>p119 1
+P133 2,3</p>
+<h1><span id="七-源程序的中间形式">七、源程序的中间形式</span></h1>
+<h2><span id="71-波兰表示">7.1 波兰表示</span></h2>
+<p>比如<code>a*b*c+d*(e+f)</code> 波兰表示是：<code>abc**def+*+</code></p>
+<p>即中缀转后缀</p>
+<p>操作符栈和操作数栈</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/71.png" style="zoom:50%;">
+<p>波兰表示的代码不易于代码优化</p>
+<h3><span id="if-语句的波兰表示">if 语句的波兰表示</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/76.png" style="zoom:50%;">
+<h2><span id="72-n元表示">7.2 N元表示</span></h2>
+<p>常用<strong>三元式</strong>和<strong>四元式</strong></p>
+<h3><span id="三元式">三元式</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/72.png" style="zoom: 33%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/73.png" style="zoom: 33%;">
+<h4><span id="间接三元式">间接三元式</span></h4>
+<p>执行次序和三元式代码分成两张表进行表示</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/74.png" style="zoom:33%;">
+<h3><span id="四元式">四元式</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/75.png" style="zoom: 33%;">
+<h2><span id="73-抽象机代码">7.3 抽象机代码</span></h2>
+<p>许多 <code>pascel</code> 编译器生成的中间代码是称为 <code>Pcode</code> 的抽象代码。<code>P</code> 即为 <code>Pseudo</code></p>
+<p><strong>Pcode</strong>实际上是<strong>波兰表示形式</strong>的中间代码</p>
+<p>Pcode生成后，可以用<strong>解释执行程序</strong>来解释执行Pcode，也可以再把Pcode变成某一机器的目标代码</p>
+<h2><span id="作业">作业</span></h2>
+<p>P144 1,2,3,4</p>
+<h1><span id="八-错误处理">八、错误处理</span></h1>
+<h2><span id="81-概述">8.1 概述</span></h2>
+<p>错误的源程序可以通过编译发现并指出错误</p>
+<p>正确则生成目标代码</p>
+<h3><span id="错误处理能力">错误处理能力</span></h3>
+<p>侦察错误、报错及时准确、一次编译找出错误、改正能力、遏制重复报错信息</p>
+<h2><span id="82-错误分类">8.2 错误分类</span></h2>
+<p><strong>语法错误</strong>：源程序<strong>语法上</strong>不合乎文法</p>
+<p>比如源文法：<code>A::=B{+B} B::=C{*C} C::=a</code></p>
+<p>而出现了 <code>a+*a</code> 这样的句子</p>
+<p><strong>语义错误</strong>：程序<strong>不符合语义</strong>规则或者<strong>超出了计算机系统的限制</strong></p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/81.png" style="zoom:40%;">
+<h2><span id="83-错误的诊察和报告">8.3 错误的诊察和报告</span></h2>
+<h3><span id="错误侦察">错误侦察</span></h3>
+<p><strong>违反语法和语义规则</strong>以及<strong>超出编译系统限制</strong> ==&gt; 语义分析需要<strong>借助符号表</strong></p>
+<p><strong>下标越界</strong> ==&gt; <strong>计算结果溢出</strong>以及<strong>动态存储数据区溢出</strong></p>
+<h3><span id="错误报告">错误报告</span></h3>
+<p>行号计数器 <code>line_no</code>，单词序号计数器 <code>char_no</code></p>
+<p>显示文字信息，给出错误编码</p>
+<h3><span id="报告错误的两种方式">报告错误的两种方式</span></h3>
+<ul>
+<li>分析完以后再报告(显示或者打印)</li>
+<li>边分析边报告</li>
+</ul>
+<h2><span id="84-错误处理技术">8.4 错误处理技术</span></h2>
+<p><strong>错误改正</strong>：编译侦察出错误，根据文法改正错误</p>
+<p><strong>错误局部化处理</strong>：尽可能把错误影响限制在一个局部范围，避免其扩散影响</p>
+<h3><span id="一般原则">一般原则</span></h3>
+<p>发现错误，暂停对后面符号分析，跳过错误所在语法成分</p>
+<h3><span id="错误局部化处理实现">错误局部化处理实现</span></h3>
+<p>递归下降实现</p>
+<p>遇到错误，先打印信息，再跳出一段源程序，直到右界符或此语法成分的合法后继符号</p>
+<h3><span id="目标程序运行时错误检测与处理">目标程序运行时错误检测与处理</span></h3>
+<ul>
+<li>下标变量下标值越界</li>
+<li>计算结果溢出</li>
+<li>动态存储分配数据区溢出</li>
+</ul>
+<p>目标程序运行检测到这类错误，调用异常处理程序，打印错误信息和运行现场（寄存器和存储器中的值），然后停止程序运行</p>
+<h1><span id="九-语法制导翻译技术">九、语法制导翻译技术</span></h1>
+<h2><span id="91-翻译文法tg和语法制导翻译">9.1 翻译文法(TG)和语法制导翻译</span></h2>
+<h3><span id="简单文法引入">简单文法引入</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/91.png" style="zoom:50%;">
+<p><code>@+ @* @i</code> 为动作符号。@为动作符号标记，后面为字符串</p>
+<p>这个例子里，语义子程序功能是输出<strong>打印动作符号标记后面</strong>的字符串</p>
+<p>比如$E\rightarrow E+T @+$的语义是分析E,+,T，输出+</p>
+<p>比如$i\rightarrow i @i$的语义是分析i，输出i</p>
+<h4><span id="输入文法">输入文法</span></h4>
+<p>未插入动作符号的文法，可以推出<strong>输入序列</strong></p>
+<h4><span id="翻译文法">翻译文法</span></h4>
+<p>插入动作符号的文法</p>
+<p>由翻译文法可以通过推导产生 <strong>活动序列</strong>，包含了<strong>输入序列</strong>和<strong>动作序列</strong></p>
+<h4><span id="例子">例子</span></h4>
+<p>比如用上面的文法推导<code>(i+i)*i</code></p>
+<p>先推导出活动序列</p>
+<p>$E\Rightarrow T \Rightarrow T<em>F@</em>\Rightarrow F<em>F@</em> \Rightarrow (E)<em>F@</em>\Rightarrow (E+T@+)<em>F@</em>$</p>
+<p>$\stackrel *\Rightarrow (i@i+i@i@+)<em>i@i@</em>$</p>
+<p><strong>活动序列</strong>：由<strong>翻译文法</strong>推导出的由<strong>终结符</strong>和<strong>活动符</strong>号组成的<strong>符号串</strong></p>
+<p>抽去动作符号，可得到输入序列</p>
+<p>抽去输入序列，可得动作序列</p>
+<p>执行动作序列，完成翻译任务</p>
+<h3><span id="语法制导翻译">语法制导翻译</span></h3>
+<p>按<strong>翻译文法</strong>进行的翻译。给定一<strong>输入符号串</strong>，根据翻译文法获得翻译该符号串的<strong>动作序列</strong>，并<strong>执行</strong>该序列所<strong>规定的动作</strong>的过程</p>
+<h4><span id="实现方法">实现方法</span></h4>
+<p>适当位置<strong>插入语义动作符号</strong>，当按照文法<strong>分析到动作符号</strong>就调用相应的<strong>语义子程序</strong>完成翻译任务</p>
+<h2><span id="92-属性翻译文法atg">9.2 属性翻译文法(ATG)</span></h2>
+<h3><span id="综合属性">综合属性</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/92.png" style="zoom:40%;">
+<p>自底向上进行属性计算，所以称为综合属性，用$\uparrow$表示属性计算<strong>从下往上</strong></p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/93.png" style="zoom:40%;">
+<p>可以改写文法为以下样子</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/94.png" style="zoom:40%;">
+<p><font color="blue">综合属性其实就是一个计算数值属性的过程</font></p>
+<h3><span id="继承属性">继承属性</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/95.png" style="zoom:40%;">
+<p>类型和名字可以设两个综合属性，即</p>
+<p>$Type_{\uparrow t}\ \ t存放类型值$</p>
+<p>$id_{\uparrow n} \ \ n存放变量名$</p>
+<p>填表动作符号也可以有属性</p>
+<p>即$@set_table_{\downarrow t_1,n_1}$  其中 $t_1,n_1$ 是从前面得到的，因此是继承属性，继承了前面的值</p>
+<p>同理有变量表：$&lt;变量表&gt;_{\downarrow t_2}$  <font color="blue">相当于递归的时候能够知道最开始的类型是啥</font></p>
+<p>这样就可以整理成以下的<strong>属性翻译文法</strong></p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/97.png" style="zoom:50%;">
+<p>这时的语法树和之前有区别了</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/98.png" style="zoom:40%;">
+<p>可见，继承属性求值：自左向右，自顶向下</p>
+<p>综合属性求值：自右向左，自底向上</p>
+<h3><span id="l-属性翻译文法l-atg">L-属性翻译文法（L-ATG）</span></h3>
+<p>较简单的一种属性翻译文法，要求输入文法为<strong>LL(1)文法</strong>，可用<strong>自顶向下分析构造分析器</strong>，分析过程可进行<strong>属性求值</strong></p>
+<h4><span id="l属性翻译文法定义">L属性翻译文法定义</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/99.png" style="zoom:50%;">
+<h4><span id="属性求值规则">属性求值规则</span></h4>
+<h5><span id="继承属性">继承属性</span></h5>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/910.png" style="zoom:50%;">
+<p>即，<strong>自顶向下，自左向右</strong></p>
+<h5><span id="综合属性">综合属性</span></h5>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/911.png" style="zoom:50%;">
+<p>即，<strong>自底向上，自右向左</strong></p>
+<h4><span id="简单赋值形式的l_属性翻译文法sl-atg">简单赋值形式的L_属性翻译文法(SL-ATG)</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/912.png" style="zoom:50%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/913.png" style="zoom:50%;">
+<h4><span id="改写l-atg为sl-atg">改写L-ATG为SL-ATG</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/914.png" style="zoom:50%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/915.png" style="zoom:50%;">
+<p>改成如下的样子</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/916.png" style="zoom:50%;">
+<p>无参函数过程作为常数处理</p>
+<h2><span id="93-自顶向下语法制导翻译">9.3 自顶向下语法制导翻译</span></h2>
+<h3><span id="翻译文法的自顶向下语法制导翻译递归下降翻译器">翻译文法的自顶向下语法制导翻译——递归下降翻译器</span></h3>
+<p>即在递归下降语法分析程序中加入处理动作符号，输出动作符号字符串的部分</p>
+<h3><span id="属性翻译文法的自顶向下语法制导翻译递归下降属性翻译器">属性翻译文法的自顶向下语法制导翻译——递归下降属性翻译器</span></h3>
+<p>对每一个非终结符编写一个翻译子程序</p>
+<p>继承属性==&gt;声明为<strong>赋值形参</strong></p>
+<p>综合属性==&gt;声明为<strong>变量形参</strong>，以<strong>指针或者地址</strong>的形式传参数到函数内，之后在函数内赋值后自然传回调用位置</p>
+<p>属性名约定：产生式<strong>左部同名非终结符</strong>使用<strong>相同的属性名</strong></p>
+<p>具有相同值的属性取相同的属性名。这样可以删除属性求值规则</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/917.png" style="zoom: 50%;">
+<h2><span id="作业">作业</span></h2>
+<p>PPT42页例子</p>
+<p>P166 1.(前缀式), 2, 3, 4, 5</p>
+<h1><span id="十-语义分析和代码生成">十、语义分析和代码生成</span></h1>
+<h2><span id="101-语义分析的概念">10.1 语义分析的概念</span></h2>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/101.png" style="zoom:50%;">
+<h2><span id="102-栈式抽象机及其汇编指令">10.2 栈式抽象机及其汇编指令</span></h2>
+<pre class="mermaid">graph LR
+a[栈式抽象机]
+a-->a1[指令寄存器]
+a-->a2[地址寄存器]
+a1-->一个
+a2-->多个
+a-->b[存储器]
+b-->b1[数据存储器-存放AR的运行栈]
+b-->b2[操作存储器-操作数栈]
+b-->b3[指令存储器]</pre>
+<h2><span id="103-声明的处理">10.3 声明的处理</span></h2>
+<h2><span id="104-表达式的处理">10.4 表达式的处理</span></h2>
+<h2><span id="105-赋值语句的处理">10.5 赋值语句的处理</span></h2>
+<h2><span id="106-控制语句的处理">10.6 控制语句的处理</span></h2>
+<h2><span id="107-过程调用和返回">10.7 过程调用和返回</span></h2>
+<h2><span id="作业">作业</span></h2>
+<p>试设计Pascal记录变量（无变体）的属性翻译文法，并构造相应的语义动/作程序。</p>
+<p>写出for语句在执行循环体之前先做循环条件测试的属性翻译文法及其处理动作程序</p>
+<h1><span id="十一-词法自动化">十一、词法自动化</span></h1>
+<h2><span id="111-正则表达式">11.1 正则表达式</span></h2>
+<p>正则表达式相等&lt;=&gt;这两个正则表达式的语言相等</p>
+<p>正则表达式与3型文法等价</p>
+<h2><span id="112-自动机">11.2 自动机</span></h2>
+<h3><span id="1121-dfa">11.2.1 DFA</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/111.png" style="zoom:50%;">
+<h3><span id="1122-nfa">11.2.2 NFA</span></h3>
+<p>在某个状态下，对于某个输入字符存在多个后继状态</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/112.png" style="zoom:50%;">
+<h3><span id="1123-nfa的确定化">11.2.3 NFA的确定化</span></h3>
+<p>不确定的有穷自动机与确定的有穷自动机<strong>从功能上来说是等价</strong>的</p>
+<h4><span id="定义1-集合i的epsilon-闭包">定义1 集合I的$\epsilon$-闭包</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/113.png" style="zoom:67%;">
+<h4><span id="定义2">定义2</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/114.png" style="zoom:67%;">
+<h3><span id="1124-dfa的最小化">11.2.4 DFA的最小化</span></h3>
+<p><strong>消除多余状态</strong>和<strong>合并等价状态</strong></p>
+<h4><span id="合并等价状态">合并等价状态</span></h4>
+<p>先根据终态和非终态拆分成两个区</p>
+<p>再在每个区内分别根据每个符号的状态转移，划分更小的区</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/115.png" style="zoom: 67%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/116.png" alt="116" style="zoom: 67%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/117.png" alt="117" style="zoom: 67%;">
+<h3><span id="1125-正则表达式与dfa的等价性">11.2.5 正则表达式与DFA的等价性</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/119.png" style="zoom:67%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/118.png" style="zoom: 50%;">
+<p>四个都对</p>
+<h2><span id="113-词法分析程序的自动生成器-lexlexical">11.3 词法分析程序的自动生成器 —LEX（LEXICAL）</span></h2>
+<p>词法分析程序包含<strong>状态转移矩阵</strong>和<strong>控制执行程序</strong>。</p>
+<h2><span id="作业">作业</span></h2>
+<p>P254-255 1,2,4,5</p>
+<h1><span id="十二-语法分析提高部分">十二、语法分析（提高部分）</span></h1>
+<p>功能：根据<strong>文法规则</strong>，从源程序<strong>单词符号串</strong>中识别出<strong>语法成分</strong>，并进行语法检查。</p>
+<h2><span id="自顶向下分析法">自顶向下分析法</span></h2>
+<h3><span id="基本思想">基本思想</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/121.png" style="zoom:80%;">
+<h4><span id="主要方法">主要方法</span></h4>
+<ol>
+<li>递归子程序法</li>
+<li>LL分析法</li>
+</ol>
+<h4><span id="一般过程">一般过程</span></h4>
+<p>对于一个符号串，预测其为某一语法成分，根据其文法设法构造相应语法树</p>
+<h4><span id="特点">特点</span></h4>
+<ul>
+<li>带预测</li>
+<li>试探过程，可能会有回溯</li>
+<li>最左推导可用程序实现，带回溯自顶向下分析方法实际上价值不大，效率低</li>
+</ul>
+<h3><span id="ll分析法">LL分析法</span></h3>
+<p>自左向右<strong>扫描，分析和匹配</strong>输入串。分析过程有<strong>最左推导</strong>的性质。</p>
+<p>三部分组成：分析表，执行程序，符号栈（分析栈）</p>
+<h5><span id="分析表二维矩阵">分析表：二维矩阵</span></h5>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/123.png" style="zoom:80%;">
+<p>$A::=a_i$表示<code>A</code>去匹配输入串且当前输入符号为<code>a</code>时可以用<code>A</code>的第<code>i</code>个选择去匹配</p>
+<p>$a_i\neq \epsilon$ 则 $a_i\Rightarrow a… $</p>
+<p>$a_i= \epsilon$ 则 $a$ 为 $A$ 的后继符号</p>
+<p><code>error</code>表示不能匹配</p>
+<h5><span id="符号栈">符号栈</span></h5>
+<p><strong>开始、工作、出错、结束</strong>四种状态</p>
+<h4><span id="1执行程序">1.执行程序</span></h4>
+<ol>
+<li>
+<p>把#和文法识别符号E推进栈, 读入下一个符号， 重复下述过程直到正常结束或出错。</p>
+</li>
+<li>
+<p>测定栈顶符号X和当前输入符号a,执行如下操作:</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/124.png" style="zoom:80%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/125.png" style="zoom:80%;">
+</li>
+</ol>
+<h4><span id="2分析表构造">2.分析表构造</span></h4>
+<p>需要确定后继符号和能够推导出的符号==&gt;$First$集和$Follow$集</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/126.png" style="zoom:80%;">
+<h5><span id="构造first集与follow集">构造FIRST集与FOLLOW集</span></h5>
+<p>​                                       <img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/128.png" style="zoom:60%;"><img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/129.png" alt="129" style="zoom:60%;"></p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1210.png" alt="1210" style="zoom:60%;">
+<h5><span id="根据first和follow集构造分析表">根据FIRST和FOLLOW集构造分析表</span></h5>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1244.png" style="zoom:50%;">
+<h4><span id="3ll1文法">3.LL(1)文法</span></h4>
+<p>一个文法G，其分析表M<strong>不含多重定义入口</strong>(即分析表中无二条以上规则)，则称它是一个<strong>LL(1)文法</strong>。</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/127.png" style="zoom: 67%;">
+<p>可以证明：如果G是<strong>左递归</strong>的,或者是<strong>二义性</strong>的文法,则<strong>至少有一个多重入口</strong>。</p>
+<h2><span id="自底向上分析法">自底向上分析法</span></h2>
+<h3><span id="基本思想">基本思想</span></h3>
+<p><img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/122.png" alt></p>
+<h4><span id="主要方法">主要方法</span></h4>
+<ol>
+<li>算符优先分析法</li>
+<li>LR分析法</li>
+</ol>
+<h4><span id="基本算法思想">基本算法思想</span></h4>
+<p>若采用自左向右的描述和分析输入串,那么自底向上的基本算法是：从输入符号串开始，通过重复查找当前句型的<strong>句柄(最左简单短语)</strong>，并利用有关规则进行<strong>归约</strong>，若能归约为文法的识别符号，则表示分析成功，输入符号串是文法的合法句子，否则有语法错误。</p>
+<h4><span id="分析过程">分析过程</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1211.png" style="zoom: 80%;">
+<p>关键是找到<strong>句柄</strong></p>
+<h3><span id="自底向上分析的一般过程移进-归约分析">自底向上分析的一般过程（移进-归约分析）</span></h3>
+<p>建立符号栈记录分析<strong>历史和现状</strong>，根据当前状态，确定下一步<strong>移进</strong>还是<strong>规约</strong>。</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1212.png" style="zoom:80%;">
+<p>防止一个终结符可以被两个规则规约成不同句型，引入下列的分析法。</p>
+<h3><span id="算符优先分析法">算符优先分析法</span></h3>
+<p><strong>预先</strong>规定<strong>相邻终结符</strong>之间的<strong>优先关系</strong>，利用这种关系来确定<strong>句型的句柄</strong>并进行规约</p>
+<h4><span id="分析过程">分析过程</span></h4>
+<p>当栈顶(或次栈顶)终结符的优先级大于栈外的终结符的优先级，则进行归约，否则移进。</p>
+<p>分析过程不一定是严格的最左规约（即不一定是规范规约），即每次规约不一定是规约当前句型的句柄，而是句柄的变形，即短语。</p>
+<p><strong>出错情况</strong>:</p>
+<ol>
+<li>相邻终结符之间<strong>无优先关系</strong></li>
+<li>对双目运行符进行<strong>归约时</strong>,符号栈中<strong>无足够元素</strong></li>
+<li><strong>非正常结束</strong>状态</li>
+</ol>
+<h4><span id="算符优先分析法的进一步讨论">算符优先分析法的进一步讨论</span></h4>
+<h5><span id="1-算符优先文法opg">(1) 算符优先文法(OPG)</span></h5>
+<p>OPG－Operator Precedence Grammar</p>
+<p><strong>算符文法（OG）的定义</strong>：若文法中<strong>无</strong>形如$U∷ = ·¨VW·¨$的规则，这里$V,W∈V_n$ 则称G为<strong>OG文法</strong>，也就是<strong>算符文法</strong>。</p>
+<p><strong>优先关系的定义</strong></p>
+<p>若G是一<strong>OG文法</strong>，$a,b∈V_t , U,V,W∈V_n$ 分别有以下三种情况:</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1213.png" style="zoom: 80%;">
+<p><strong>算符优先文法（OPG）的定义</strong></p>
+<p>设有一OG文法，如果在<strong>任意两个终结符</strong>之间，至多只有<strong>上述关系中的一种</strong>，则称该文法为<strong>算符优先文法(OPG)</strong></p>
+<p><strong>几点说明</strong></p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1214.png" style="zoom: 80%;">
+<h5><span id="2-构造优先关系矩阵">(2) 构造优先关系矩阵</span></h5>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1215.png" style="zoom: 80%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1216.png" style="zoom: 80%;">
+<p>​                                     <img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1217.png" style="zoom: 80%;"> 具体实现参看P14-第6张PPT</p>
+<p>​                                    <img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1218.png" style="zoom:80%;"> 具体实现参看P15-第2张PPT</p>
+<h6><span id="构造优先关系矩阵的算法">构造优先关系矩阵的算法</span></h6>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1219.png" style="zoom: 67%;">
+<h5><span id="3-算符优先分析算法的设计">(3) 算符优先分析算法的设计</span></h5>
+<p>先定义优先级，在分析过程中通过<strong>比较相邻运算符之间的优先级</strong>来确定句型的**“句柄”<strong>并进行归约。这里的句柄指的是</strong>最左素短语**。</p>
+<p><strong>素短语</strong>：文法G的句型的素短语是一个短语，它<strong>至少包含</strong>有<strong>一个终结符号</strong>，并且除它自身以外<strong>不再包含其他素短语</strong>。</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1220.png" style="zoom: 67%;">
+<h6><span id="寻找最左素短语">寻找最左素短语</span></h6>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1221.png" style="zoom:67%;">
+<h5><span id="算符优先分析法的实现">算符优先分析法的实现</span></h5>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1222.png" style="zoom:80%;">
+<h3><span id="lr分析法">LR分析法</span></h3>
+<h4><span id="概述">概述</span></h4>
+<p><strong>从左到右</strong>扫描(L)自底向上进行归约® (是<strong>规范归约</strong>）, 是自底向上分析方法的高度概括和集中</p>
+<p><strong>三部分</strong>：状态栈，分析表，控制程序</p>
+<p><strong>状态栈</strong>：放置<strong>分析器状态</strong>和<strong>文法符号</strong>。</p>
+<p><strong>分析表</strong>：由两个矩阵组成，其功能是<strong>指示分析器的动作</strong>， 是<strong>移进</strong>还是<strong>归约</strong>，根据不同的文法类要采用不同的构造方法。</p>
+<p><strong>控制程序</strong>：执行分析表所规定的动作，对栈进行操作。</p>
+<h5><span id="分析表的种类">分析表的种类</span></h5>
+<ul>
+<li>SLR分析表(简单LR分析表) 最易实现，高实用价值</li>
+<li>LR分析表(规范LR分析表) 实用价值不大</li>
+<li>LALR分析表(超前LR分析表)  难度介于上述两者之间</li>
+</ul>
+<p><strong>使用SLR分析表进行语法分析</strong>的分析器叫<strong>SLR分析器</strong>。</p>
+<p><strong>使用LALR分析表进行语法分析</strong>的分析器叫<strong>LALR分析器</strong>。</p>
+<p>例如UNIX的YACC，根据文法规则YACC源文件，得到某语言的LALR分析器</p>
+<h5><span id="几点说明">几点说明</span></h5>
+<ol>
+<li>三种分析表对应三类文法</li>
+<li>一个SLR文法<strong>必定是</strong>LALR文法和LR文法</li>
+<li>仅讨论SLR分析表的构造方法</li>
+</ol>
+<h4><span id="lr分析">LR分析</span></h4>
+<h5><span id="逻辑结构">逻辑结构</span></h5>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1223.png" style="zoom:80%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1224.png" style="zoom: 80%;">
+<p>​													规范规约：规约当前的句柄</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1225.png" style="zoom:80%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1226.png" style="zoom:80%;">	                                                                    
+<h5><span id="分析表1-状态转移表-goto表">分析表1-状态转移表 (GOTO表)</span></h5>
+<p>一个矩阵： 行—分析器的状态 列—文法符号</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1227.png" style="zoom:80%;">
+<h5><span id="分析表2-分析动作表action表">分析表2-分析动作表(ACTION表)</span></h5>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1229.png" style="zoom:80%;">
+<p><img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1230.png" style="zoom: 67%;"><img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1231.png" alt="1231" style="zoom:67%;"></p>
+<h5><span id="控制程序">控制程序</span></h5>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1232.png" style="zoom: 80%;">
+<h4><span id="lr分析过程例子">LR分析过程例子</span></h4>
+ <img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1233.png" style="zoom: 67%;">
+<p><img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1234.png" style="zoom: 67%;"><img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1235.png" style="zoom:67%;"></p>
+<p><img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1236.png" alt="1236" style="zoom: 60%;"><img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1237.png" alt="1237" style="zoom:67%;"></p>
+<h4><span id="构造slr分析表">构造SLR分析表</span></h4>
+<ul>
+<li>根据文法构造识别规范句型活前缀的<strong>有穷自动机DFA</strong></li>
+<li>由<strong>DFA</strong>构造<strong>分析表</strong></li>
+</ul>
+<h5><span id="求lr0">求LR(0)</span></h5>
+<ol>
+<li>
+<p>列出项目集</p>
+</li>
+<li>
+<p>求出闭包</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1242.png" style="zoom:80%;">
+</li>
+<li>
+<p>从初始状态<code>S'--&gt;.S</code>的闭包开始计算得到DFA</p>
+</li>
+</ol>
+<h5><span id="得到goto表和action表">得到GOTO表和ACTION表</span></h5>
+<p>GOTO表就是DFA</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1243.png" style="zoom:80%;">
+<p>ACTION根据以下算法求解</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1238.png" style="zoom:67%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1239.png" alt="1239" style="zoom:67%;">
+<h2><span id="作业">作业</span></h2>
+<p>p264:1,2,6，补充题</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1240.png" style="zoom: 67%;">
+<p>P279 2(2)，4, 5</p>
+<p><img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1241.png" alt></p>
+<p>P282</p>
+<p>P288</p>
+<p>P297 1，2，6, 9</p>
+<p>P304 1</p>
+<h1><span id="十四-代码优化">十四、代码优化</span></h1>
+<h2><span id="140-概述">14.0 概述</span></h2>
+<p>进行优化必须严格遵循“<strong>不能改变原有程序语义</strong>”原则。</p>
+<p>循环：程序中的8-2原则</p>
+<h3><span id="优化方法分类1">优化方法分类1</span></h3>
+<h4><span id="与机器无关的优化技术">与机器无关的优化技术</span></h4>
+<p>数据流分析 ，常量传播，公共子表达式删除，死代码删除，循环交换，代码内联等等</p>
+<h4><span id="与机器相关的优化技术">与机器相关的优化技术</span></h4>
+<p><strong>面向</strong>超标量超流水线<strong>架构</strong>、VLIW或者EPIC架构的指令调度方法；面向SMP架构的同步负载优化方法；面向SIMD、 MIMD或者SPMD架构的数据级并行优化方法等</p>
+<p>特点：仅在<strong>特定体系结构</strong>下有效</p>
+<h3><span id="优化方法分类2">优化方法分类2</span></h3>
+<h4><span id="局部优化技术">局部优化技术</span></h4>
+<p>指在<strong>基本块内</strong>进行的优化</p>
+<p>例如，局部公共子表达式删除</p>
+<h4><span id="全局优化技术">全局优化技术</span></h4>
+<p><strong>函数/过程内</strong>进行的优化</p>
+<p>跨越基本块</p>
+<p>例如，全局数据流分析</p>
+<h4><span id="跨函数优化技术">跨函数优化技术</span></h4>
+<p>整个程序</p>
+<p>例如，跨函数别名分析 ，逃逸分析等</p>
+<h2><span id="141-基本块与流图">14.1 基本块与流图</span></h2>
+<h3><span id="基本块">基本块</span></h3>
+<p>基本块中代码是连续的语句序列</p>
+<p>程序的执行只能从基本块第一条语句进入</p>
+<p>程序执行只能从基本块最后一条语句离开</p>
+<h4><span id="算法141-划分基本块">算法14.1 划分基本块</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/141.png" style="zoom:50%;">
+<h4><span id="流图">流图</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/142.png" style="zoom:50%;">
+<p>一般，编译器按照以下结构来组织代码，注意这里的<strong>程序</strong>在C语言里其实就是<strong>函数</strong></p>
+<pre class="mermaid">graph LR
+程序-->流图
+流图-->基本块
+基本块-->中间代码</pre>
+<h2><span id="142-基本块内优化">14.2 基本块内优化</span></h2>
+<p>常数合并与传播</p>
+<p>运算强度削减（乘除优化）</p>
+<p>删除冗余代码（死代码，无用代码）</p>
+<h3><span id="消除公共子表达式">消除公共子表达式</span></h3>
+<h4><span id="基本块的dag图表示">基本块的DAG图表示</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/143.png" style="zoom:50%;">
+<h4><span id="dag图的定义">DAG图的定义</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/144.png" style="zoom:50%;">
+<h4><span id="算法142-构建dag图的算法-消除公共子表达式">算法14.2 构建DAG图的算法-消除公共子表达式</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/145.png" style="zoom: 50%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/146.png" style="zoom:50%;">
+<h4><span id="算法143-从dag导出中间代码的启发式算法">算法14.3 从DAG导出中间代码的启发式算法</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/147.png" style="zoom:50%;">
+<h3><span id="窥孔优化">窥孔优化</span></h3>
+<p>关注在目标指令的一个较短的序列上，删除冗余代码，或者用更高效代码替代</p>
+<h2><span id="143-全局优化">14.3 全局优化</span></h2>
+<p>受到控制流影响</p>
+<p>消除死代码，变量活性</p>
+<p>主要手段：<strong>数据流分析</strong></p>
+<h3><span id="到达定义reaching-definition分析">到达定义（reaching definition）分析</span></h3>
+<h4><span id="基本块b的到达定义数据流方程">基本块B的到达定义数据流方程</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/148.png" style="zoom:50%;">
+<h4><span id="算法">算法</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/149.png" style="zoom:50%;">
+<h3><span id="活跃变量分析">活跃变量分析</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1410.png" style="zoom:50%;">
+<h4><span id="算法">算法</span></h4>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1411.png" style="zoom:50%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1412.png" style="zoom:50%;">
+<p>活跃变量分析——死代码删除、寄存器分配</p>
+<p>到达定义分析——变量传播</p>
+<h3><span id="定义-使用链-网和冲突图">定义-使用链、网和冲突图</span></h3>
+<p>活跃变量到冲突图</p>
+<p>变量的<strong>定义-使用链</strong>，是指变量的<strong>某一定义点</strong>，以及所有可能使用该定义点所定义变量值的使用点所组成的一个链</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/1413.png" style="zoom:50%;">
+<h2><span id="144-循环优化">14.4 循环优化</span></h2>
+<h3><span id="循环不变式的代码外提">循环不变式的代码外提</span></h3>
+<p>循环中不随循环改变的表达式</p>
+<h3><span id="循环展开">循环展开</span></h3>
+<p>代码重复很多次，省去了条件判断和分支语句还有部分的自增语句</p>
+<h3><span id="归纳变量的优化和条件判断的替换">归纳变量的优化和条件判断的替换</span></h3>
+<p>归纳变量: 在<strong>每一次执行循环迭代</strong>的过程中，若某变量的值<strong>固定增加（或减少）一个常量值</strong>，则称该变量为<strong>归纳变量</strong>(induction variable)。</p>
+<p>可以利用归纳变量对一些表达式做优化</p>
+<h3><span id="inline展开">inline展开</span></h3>
+<p>某些函数可以内联形式展开</p>
+<h3><span id="其他">其他</span></h3>
+<p>多重循环转单层 多个相同结构循环合并</p>
+<h2><span id="作业">作业</span></h2>
+<p>1到6题</p>
+<h1><span id="十五-目标代码生成">十五、目标代码生成</span></h1>
+<h2><span id="151-现代微处理器体系结构简介">15.1 现代微处理器体系结构简介</span></h2>
+<h3><span id="1-栈式指令集架构">1、栈式指令集架构</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/151.png" style="zoom:50%;">
+<h3><span id="2-累加器式指令集架构">2、累加器式指令集架构</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/152.png" style="zoom:50%;">
+<h3><span id="3-寄存器架构">3、寄存器架构</span></h3>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/153.png" style="zoom:50%;">
+<h4><span id="寄存器-寄存器架构">寄存器-寄存器架构</span></h4>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">load $1 A</span><br><span class="line">load $2 B</span><br><span class="line">add $1 $2 $1</span><br><span class="line">store $1 C</span><br></pre></td></tr></table></figure>
+<h4><span id="寄存器-内存架构">寄存器-内存架构</span></h4>
+<p>即地址可以作为操作数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">load $1 A</span><br><span class="line">add $2 $1 B</span><br><span class="line">store $2 C</span><br></pre></td></tr></table></figure>
+<h2><span id="122-地址空间">12.2 地址空间</span></h2>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/154.png" style="zoom:50%;">
+<h2><span id="124-寄存器的分配和指派作业">12.4 寄存器的分配和指派作业</span></h2>
+<h3><span id="引用计数">引用计数</span></h3>
+<p>给引用次数排序，前面的分配</p>
+<h3><span id="图着色寄存器分配">图着色寄存器分配</span></h3>
+<p>先利用活跃变量分析，每个基本块入口处活跃变量之间定义相互冲突</p>
+<p>建立冲突图之后，使用<strong>Chaitin-Briggs算法</strong>进行图着色寄存器分配。</p>
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/155.png" style="zoom:50%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/156.png" alt="156" style="zoom:50%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/157.png" alt="157" style="zoom:50%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/158.png" alt="158" style="zoom:50%;">
+<img src="/2022/09/19/%E7%BC%96%E8%AF%91%E6%8A%80%E6%9C%AF%E7%90%86%E8%AE%BA%E8%AF%BE%E7%AC%94%E8%AE%B0/159.png" alt="159" style="zoom:50%;">
+<p>新编教材第十五章 1,4,5,6</p>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2022/09/19/CO理论课笔记/" data-toggle="tooltip" data-placement="top" title="计算机组成理论复习">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      
+        <aside id="sidebar">
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">Contents</strong>
+          
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">工具准备</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">编译知识结构图</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">一、编译基础</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">1.1 基本概念</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">1.2 编译过程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">词法分析</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">语法分析</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">语义分析</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">代码优化</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">生成目标程序</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">建表查表</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">出错处理</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">遍（pass）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">典型编译程序7个逻辑部分</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">前端和后端</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">编译程序的前后处理器</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">作业</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">二、文法与语言</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.1 预备知识</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">字母表与符号串</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">符号串运算</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.2 文法的非形式讨论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.2.1 文法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.2.2 语法规则</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.2.3 由规则推导句子</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.2.4 语法树——描述语法结构</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.3 文法和语言的形式定义</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.3.1 文法的形式定义</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义1</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">说明</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.3.2 推导的形式定义</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义2</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义3 $v\stackrel{+}\Rightarrow  w$</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义4 $v\stackrel * \Rightarrow w$</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义5 规范推导</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.3.3 语言的形式定义</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义6 文法G[Z]</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义7 等价文法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.3.4 递归文法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.3.5 句型的短语、简单短语和句柄</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义8 短语与简单短语</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">说明</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义9 任一句型的最左简单短语称为句柄</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.4 语法树与二义性文法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.4.1 推导与语法（推导）树</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">语法树</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">子树与短语</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">短语和简单短语？？</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">树与推导</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">从推导构造语法树</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">由语法树构造推导</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">二义性文法</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.5 句子的分析</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.6 有关文法的实用限制</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">有害规则</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">多余规则</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">删除文法中多余结点算法？</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.7 文法的其他表示法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">扩充的BNF表示</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">语法图</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.8 文法和语言分类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">形式语言，文法，语言</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">文法和语言分类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">0型 短语结构文法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">1型 上下文有关文法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2型 上下文无关文法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">3型 正则文法</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">作业</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">三、词法分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">3.1 词法分析程序的功能及实现方案</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">功能：识别单词，返回单词的类别和值</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">实现方案</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">3.2 单词的种类及词法分析程序的输出形式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">单词种类</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">单词内部形式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">按单词种类分类</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">保留字和分界符采用一符一类</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">3.3 正则文法和状态图</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">左线性文法状态图画法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">识别算法</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">3.4 词法分析程序的设计与实现</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">作业</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">四、语法分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">4.1 语法分析概述</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">4.2 自顶向下分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">4.2.1 自顶向下分析的一般过程</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">4.2.2 自顶向下分析存在的问题及解决方法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">1.左递归文法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">消除直接左递归</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#"><span class="toc-nav-text">方法1 使用扩充BNF表示改写文法</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#"><span class="toc-nav-text">方法2 将左递归规则改为右递归规则</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">消除一般左递归</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.回溯问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">改写文法</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">超前扫描</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">文法的两个条件</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">4.2.3 递归子程序法（递归下降分析法）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">作业</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">五、符号表管理技术</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.1 概述</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.2 符号表的组织与内容</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">符号表内容</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">符号表组织方式</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.3 非分程序结构语言的符号表组织</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.4 分程序结构语言的符号表组织</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">作业</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">六、运行时的存储组织及管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">6.1 概述</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">运行时的存储组织及管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">静态存储分配</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">动态存储分配</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">6.2 静态存储分配</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">FORTRAN子程序典型数据区</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">6.3 动态存储分配</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">6.3.1 活动记录</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">C语言运行时存储管理</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">作业</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">七、源程序的中间形式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">7.1 波兰表示</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">if 语句的波兰表示</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">7.2 N元表示</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">三元式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">间接三元式</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">四元式</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">7.3 抽象机代码</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">作业</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">八、错误处理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">8.1 概述</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">错误处理能力</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">8.2 错误分类</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">8.3 错误的诊察和报告</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">错误侦察</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">错误报告</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">报告错误的两种方式</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">8.4 错误处理技术</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">一般原则</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">错误局部化处理实现</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">目标程序运行时错误检测与处理</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">九、语法制导翻译技术</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">9.1 翻译文法(TG)和语法制导翻译</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">简单文法引入</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">输入文法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">翻译文法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">例子</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">语法制导翻译</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">实现方法</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">9.2 属性翻译文法(ATG)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">综合属性</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">继承属性</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L-属性翻译文法（L-ATG）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L属性翻译文法定义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">属性求值规则</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">继承属性</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">综合属性</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">简单赋值形式的L_属性翻译文法(SL-ATG)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">改写L-ATG为SL-ATG</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">9.3 自顶向下语法制导翻译</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">翻译文法的自顶向下语法制导翻译——递归下降翻译器</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">属性翻译文法的自顶向下语法制导翻译——递归下降属性翻译器</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">作业</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">十、语义分析和代码生成</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">10.1 语义分析的概念</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">10.2 栈式抽象机及其汇编指令</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">10.3 声明的处理</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">10.4 表达式的处理</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">10.5 赋值语句的处理</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">10.6 控制语句的处理</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">10.7 过程调用和返回</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">作业</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">十一、词法自动化</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">11.1 正则表达式</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">11.2 自动机</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">11.2.1 DFA</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">11.2.2 NFA</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">11.2.3 NFA的确定化</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义1 集合I的$\epsilon$-闭包</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义2</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">11.2.4 DFA的最小化</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">合并等价状态</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">11.2.5 正则表达式与DFA的等价性</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">11.3 词法分析程序的自动生成器 —LEX（LEXICAL）</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">作业</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">十二、语法分析（提高部分）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">自顶向下分析法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">基本思想</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">主要方法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">一般过程</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">特点</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">LL分析法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">分析表：二维矩阵</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">符号栈</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">1.执行程序</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.分析表构造</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">构造FIRST集与FOLLOW集</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">根据FIRST和FOLLOW集构造分析表</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">3.LL(1)文法</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">自底向上分析法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">基本思想</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">主要方法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">基本算法思想</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">分析过程</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">自底向上分析的一般过程（移进-归约分析）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">算符优先分析法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">分析过程</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">算符优先分析法的进一步讨论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">(1) 算符优先文法(OPG)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">(2) 构造优先关系矩阵</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#"><span class="toc-nav-text">构造优先关系矩阵的算法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">(3) 算符优先分析算法的设计</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#"><span class="toc-nav-text">寻找最左素短语</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">算符优先分析法的实现</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">LR分析法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">概述</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">分析表的种类</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">几点说明</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">LR分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">逻辑结构</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">分析表1-状态转移表 (GOTO表)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">分析表2-分析动作表(ACTION表)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">控制程序</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">LR分析过程例子</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">构造SLR分析表</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">求LR(0)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">得到GOTO表和ACTION表</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">作业</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">十四、代码优化</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">14.0 概述</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">优化方法分类1</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">与机器无关的优化技术</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">与机器相关的优化技术</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">优化方法分类2</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">局部优化技术</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">全局优化技术</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">跨函数优化技术</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">14.1 基本块与流图</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">基本块</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">算法14.1 划分基本块</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">流图</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">14.2 基本块内优化</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">消除公共子表达式</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">基本块的DAG图表示</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">DAG图的定义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">算法14.2 构建DAG图的算法-消除公共子表达式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">算法14.3 从DAG导出中间代码的启发式算法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">窥孔优化</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">14.3 全局优化</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">到达定义（reaching definition）分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">基本块B的到达定义数据流方程</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">算法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">活跃变量分析</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">算法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义-使用链、网和冲突图</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">14.4 循环优化</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">循环不变式的代码外提</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">循环展开</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">归纳变量的优化和条件判断的替换</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">inline展开</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">其他</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">作业</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">十五、目标代码生成</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">15.1 现代微处理器体系结构简介</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">1、栈式指令集架构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2、累加器式指令集架构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">3、寄存器架构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">寄存器-寄存器架构</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">寄存器-内存架构</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">12.2 地址空间</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">12.4 寄存器的分配和指派作业</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">引用计数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">图着色寄存器分配</span></a></li></ol></li></ol>
+            
+          
+          </div>
+        </aside>
+      
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://roife.github.io" target="_blank">Roife</a></li>
+                    
+                        <li><a href="https://coekjan.cn" target="_blank">Coekjan</a></li>
+                    
+                        <li><a href="https://www.dusign.net/" target="_blank">Dusign</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+<script src="https://utteranc.es/client.js"
+        repo="buaadreamer/buaadreamer.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/BUAADreamer">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BUAADreamer 2024 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=dusign&repo=hexo-theme-snail&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://BUAADreamer.top/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects line -->
+        
+
+        
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it&quot;,&quot;🍀&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
+        
+
+        <!-- background effects end -->
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>
