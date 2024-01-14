@@ -201,13 +201,6 @@
 
                         
                         <li>
-                            <a href="/categories/">Categories</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/tags/">Tags</a>
                         </li>
                         
@@ -216,6 +209,13 @@
                         
                         <li>
                             <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
                         </li>
                         
                     
@@ -276,7 +276,7 @@
 
                 <p>近期操作系统课上测试因为C语言的薄弱基础接连受到暴击，笔者痛下决心一定要开始一篇C语言基础总结的博客，时间有限，本次先将OS两次课上的坑总结一下，以后再补充其他的。</p>
 <a id="more"></a>
-<h2><span id="数据类型与移位运算">数据类型与移位运算</span></h2>
+<h2 id="数据类型与移位运算">数据类型与移位运算<a class="anchor" href="#数据类型与移位运算">·</a></h2>
 <p><code>unsigned int</code> 是无符号整数</p>
 <p><code>int</code>有符号整数</p>
 <p>对上述两者赋值时，都是将右边的数字的补码存入相应地址中。</p>
@@ -285,7 +285,7 @@
 <p>同理对于其他的<code>char/unsigned char</code> <code>long/unsigned long</code>等。</p>
 <p>同时，在C语言中默认为十进制数字，可以直接用0x开头表示十六进制，0开头表示8进制，0b开头表示二进制数字。如：<code>0x1af 0176 0b101</code></p>
 <p>同时建立起一个意识就是OS课中C语言中的最小单位可以认为是char，即一个字节</p>
-<h2><span id="大小端转换">大小端转换</span></h2>
+<h2 id="大小端转换">大小端转换<a class="anchor" href="#大小端转换">·</a></h2>
 <p>那么再有了移位的运算符知识我们就可以实现lab1-1课上的Extra的大小端转换问题了。</p>
 <p>大小端是针对字节来说的，对于一个数字0x12345678来说下图是一个<strong>小端存储</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">           -------------------------------------</span><br><span class="line">首地址0x4000|00010010|00110100|01010110|01111000|末尾地址0x4004</span><br><span class="line">           -------------------------------------</span><br></pre></td></tr></table></figure>
@@ -296,7 +296,7 @@
 <p>有了这些就可以进行转换了。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a1 = <span class="number">0xff</span>&lt;&lt;<span class="number">24</span>;</span><br><span class="line"><span class="keyword">int</span> a2 = <span class="number">0xff</span>&lt;&lt;<span class="number">16</span>;</span><br><span class="line"><span class="keyword">int</span> a3 = <span class="number">0xff</span>&lt;&lt;<span class="number">8</span>;</span><br><span class="line"><span class="keyword">int</span> a4 = <span class="number">0xff</span>; <span class="comment">//本来以为必须要定义成unsigned，结果其实不用也可以</span></span><br><span class="line"><span class="keyword">int</span> a = <span class="number">0x12345678</span>;</span><br><span class="line"><span class="comment">//注意优先级，可以输出一下这个看看 a = (a &lt;&lt; 24) &amp; a1 + (a &lt;&lt; 8) &amp; a2 + (a &gt;&gt; 8) &amp; a3 + (a &gt;&gt; 24) &amp; a4; 结果为0</span></span><br><span class="line">a = ((a&lt;&lt;<span class="number">24</span>)&amp;a1) + ((a&lt;&lt;<span class="number">8</span>)&amp;a2) + ((a&gt;&gt;<span class="number">8</span>)&amp;a3) + ((a&gt;&gt;<span class="number">24</span>)&amp;a4); </span><br><span class="line"><span class="comment">// a = 0x78563412</span></span><br></pre></td></tr></table></figure>
 <p>一旦遇到移位运算符，逻辑运算符，多加括号是个好习惯。</p>
-<h2><span id="指针与结构体">指针与结构体</span></h2>
+<h2 id="指针与结构体">指针与结构体<a class="anchor" href="#指针与结构体">·</a></h2>
 <p><code>sizeof(type)</code> 返回该变量所占字节数</p>
 <p>指针本质上可以理解为一个<code>int</code>型变量，存着一个32位的地址数据，因为有内存里其他数据的辅助，可以解析相应地址的变量。</p>
 <p>而数组和指针没有本质区别，即如下面所示</p>

@@ -201,13 +201,6 @@
 
                         
                         <li>
-                            <a href="/categories/">Categories</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/tags/">Tags</a>
                         </li>
                         
@@ -216,6 +209,13 @@
                         
                         <li>
                             <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
                         </li>
                         
                     
@@ -276,8 +276,8 @@
 
                 <p>关于OO作业评测机搭建的探索</p>
 <a id="more"></a>
-<h3><span id="将java项目打包成jar文件并运行">将java项目打包成jar文件并运行</span></h3>
-<h4><span id="在idea中打包">在IDEA中打包</span></h4>
+<h3 id="将java项目打包成jar文件并运行">将java项目打包成jar文件并运行<a class="anchor" href="#将java项目打包成jar文件并运行">·</a></h3>
+<h4 id="在IDEA中打包">在IDEA中打包<a class="anchor" href="#在IDEA中打包">·</a></h4>
 <p><code>File-&gt;project structure</code></p>
 <p>在弹窗最左侧选中 <code>Artifacts-&gt;&quot;+&quot;</code> ,选 <code>jar</code>，选择 <code>from modules with dependencies</code></p>
 <p>此处需要注意两点：</p>
@@ -286,13 +286,13 @@
 <li>需要设置MANIFEST.MF的位置</li>
 </ul>
 <p>之后点<code>Build-&gt;Build Artifacts-&gt;在选项中点击build即可</code></p>
-<h4><span id="运行">运行</span></h4>
+<h4 id="运行">运行<a class="anchor" href="#运行">·</a></h4>
 <p><code>java -jar hello.jar</code></p>
-<h3><span id="生成数据xeger">生成数据—xeger</span></h3>
+<h3 id="生成数据—xeger">生成数据—xeger<a class="anchor" href="#生成数据—xeger">·</a></h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> xeger <span class="keyword">import</span> Xeger</span><br><span class="line">str=<span class="string">"你的正则表达式"</span></span><br><span class="line">x=Xeger(limit=<span class="number">10</span>) <span class="comment">#初始化，设置最大长度</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">	x.xeger(str) <span class="comment">#循环生成字符串</span></span><br></pre></td></tr></table></figure>
-<h3><span id="驱动文件获得输出subprocess">驱动文件获得输出—subprocess</span></h3>
+<h3 id="驱动文件获得输出—subprocess">驱动文件获得输出—subprocess<a class="anchor" href="#驱动文件获得输出—subprocess">·</a></h3>
 <p>最简单的就用<code>os.system(&quot;java 1.jar &lt;&lt; 1.txt &gt;&gt; out.txt&quot;)</code>的方式即可</p>
-<h3><span id="正确性判定sympy">正确性判定—sympy</span></h3>
+<h3 id="正确性判定—sympy">正确性判定—sympy<a class="anchor" href="#正确性判定—sympy">·</a></h3>
 <p>用到的<code>sympy</code>库函数有 <code>Symbol、diff、sympify</code></p>
 <p>此外可能需要<code>eval</code>来去掉字符串的外围双引号</p>
 

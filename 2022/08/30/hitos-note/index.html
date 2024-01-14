@@ -201,13 +201,6 @@
 
                         
                         <li>
-                            <a href="/categories/">Categories</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/tags/">Tags</a>
                         </li>
                         
@@ -216,6 +209,13 @@
                         
                         <li>
                             <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
                         </li>
                         
                     
@@ -274,8 +274,8 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="操作系统基础">操作系统基础</span></h1>
-<h2><span id="l1-什么是操作系统">L1 什么是操作系统</span></h2>
+                <h1 id="操作系统基础">操作系统基础<a class="anchor" href="#操作系统基础">·</a></h1>
+<h2 id="L1-什么是操作系统">L1 什么是操作系统<a class="anchor" href="#L1-什么是操作系统">·</a></h2>
 <img src="https://umeta-model.oss-cn-beijing.aliyuncs.com/documents/image-20220907103122241.png" alt="image-20220907103122241" style="zoom: 67%;">
 <p>操作系统是计算机硬件和应用之间的一层软件</p>
 <p>管理哪些硬件？CPU 内存 终端 磁盘 文件 网络 电源 多核</p>
@@ -285,28 +285,28 @@
 <li>从应用软件出发进入OS</li>
 <li>设计并实现OS</li>
 </ul>
-<h2><span id="lab0-准备工作">Lab0 准备工作</span></h2>
-<h3><span id="相关链接">相关链接</span></h3>
+<h2 id="Lab0-准备工作">Lab0 准备工作<a class="anchor" href="#Lab0-准备工作">·</a></h2>
+<h3 id="相关链接">相关链接<a class="anchor" href="#相关链接">·</a></h3>
 <p>github：https://github.com/DeathKing/hit-oslab</p>
 <p>mooc地址：https://www.icourse163.org/course/HIT-1002531008</p>
 <p>实践平台：https://www.lanqiao.cn/courses/115</p>
 <p>GDB调试器教程：https://www.lanqiao.cn/courses/496</p>
 <p>Bocus虚拟机主页：https://www.lanqiao.cn/courses/496</p>
 <p>linux内核完全注释：http://www.oldlinux.org/</p>
-<h3><span id="配置">配置</span></h3>
+<h3 id="配置-3">配置<a class="anchor" href="#配置-3">·</a></h3>
 <p>准备好ubuntu20.04的机器</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">安装环境</span></span><br><span class="line">git clone https://github.com/Wangzhike/HIT-Linux-0.11.git ~/hit-oslab</span><br><span class="line">cd hit-oslab</span><br><span class="line">./setup.sh</span><br><span class="line"><span class="meta">#</span><span class="bash">可能还需要安装这几个32位版本的软件</span></span><br><span class="line">sudo apt-get install libsm6:i386 </span><br><span class="line">sudo apt-get install libx11-6:i386</span><br><span class="line">sudo apt-get install libxpm4:i386</span><br><span class="line"><span class="meta">#</span><span class="bash">编译</span></span><br><span class="line">cd ~/code</span><br><span class="line">tar -zxvf hit-oslab-linux-20110823.tar.gz</span><br><span class="line">cd ~/code/oslab/linux-0.11</span><br><span class="line">make all </span><br><span class="line"><span class="meta">#</span><span class="bash"> make自动跳过未被修改的文件，链接时直接使用上次编译生成的目标文件，从而节约编译时间</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> make -j 2 多处理器加速并行编译</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> make clean &amp;&amp; make all</span></span><br><span class="line">cd ..</span><br><span class="line">./run</span><br></pre></td></tr></table></figure>
-<h3><span id="调试">调试</span></h3>
+<h3 id="调试">调试<a class="anchor" href="#调试">·</a></h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">汇编调试</span></span><br><span class="line">./dbg-asm</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">help</span>查看基本命令，更详细查看Bochs使用手册</span></span><br><span class="line"><span class="meta">#</span><span class="bash">C语言调试</span></span><br><span class="line">./dbg-c</span><br><span class="line">./rungdb</span><br></pre></td></tr></table></figure>
-<h3><span id="文件交换">文件交换</span></h3>
+<h3 id="文件交换">文件交换<a class="anchor" href="#文件交换">·</a></h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">挂载hdc</span></span><br><span class="line">sudo ./mount-hdc</span><br><span class="line">cd hdc</span><br><span class="line">ls -al</span><br><span class="line">vi hello.txt</span><br><span class="line"><span class="meta">#</span><span class="bash">卸载hdc文件系统</span></span><br><span class="line">sudo umount hdc</span><br></pre></td></tr></table></figure>
-<h2><span id="l2-开始揭开钢琴的盖子">L2 开始揭开钢琴的盖子</span></h2>
+<h2 id="L2-开始揭开钢琴的盖子">L2 开始揭开钢琴的盖子<a class="anchor" href="#L2-开始揭开钢琴的盖子">·</a></h2>
 <p>计算机本质：计算模型 类似人-笔-纸 给一张纸，人用笔不断地按顺序算每一道题</p>
 <p>图灵机就是一个控制器+一个纸袋</p>
 <p>通用图灵机是复杂的控制器控制复杂的纸带，纸带上地数据包含设置控制器动作和状态的指令以及数据对象</p>
 <p>冯诺依曼存储程序思想：将数据和程序存放在计算机内部的存储器中，计算机在程序的控制下一步步处理</p>
 <p><img src="https://umeta-model.oss-cn-beijing.aliyuncs.com/documents/image-20220907103759295.png" alt="image-20220907103759295"></p>
-<h3><span id="打开电源">打开电源</span></h3>
+<h3 id="打开电源">打开电源<a class="anchor" href="#打开电源">·</a></h3>
 <p>x86 PC：</p>
 <p>(1)x86 PC刚开机时CPU处于<strong>实模式</strong>（寻址方式为CS左移四位+IP，CS是段地址，和保护模式不一样）</p>
 <p>(2)开机时，CS=0xFFFF; IP=0x0000</p>
@@ -314,39 +314,39 @@
 <p>(4)检查RAM，键盘，显示器，软硬磁盘</p>
 <p>(5)将磁盘0磁道0扇区读入0x7c00处</p>
 <p>(6)设置cs=0x07c0，ip=0x0000</p>
-<h3><span id="0x7c00处存放的代码">0x7c00处存放的代码</span></h3>
+<h3 id="0x7c00处存放的代码">0x7c00处存放的代码<a class="anchor" href="#0x7c00处存放的代码">·</a></h3>
 <p>是从磁盘引导扇区读入的512个字节，也就是启动设备的第一个扇区</p>
 <p>启动设备信息被设置在CMOS（互补金属氧化物半导体，用来存储实时钟和硬件配置信息）中</p>
 <p>硬盘<strong>第一个扇区上</strong>存放着开机后<strong>执行的第一段</strong>可以控制的程序</p>
 <p>bootsect.s载入setup（四个扇区）模块和system模块（OS代码）</p>
 <p>之后跳到setup执行</p>
-<h2><span id="l3-操作系统启动">L3 操作系统启动</span></h2>
-<h3><span id="setups">setup.s</span></h3>
+<h2 id="L3-操作系统启动">L3 操作系统启动<a class="anchor" href="#L3-操作系统启动">·</a></h2>
+<h3 id="setup-s">setup.s<a class="anchor" href="#setup-s">·</a></h3>
 <p>完成OS启动前的设置</p>
 <p>取出光标位置以及其他硬件参数，比如扩展内存大小</p>
 <p>将system模块移到0地址</p>
 <p><strong>进入保护模式</strong>，用<strong>GDT</strong>将cs:ip变成物理地址</p>
 <p>保护模式下有专门的<strong>地址翻译表</strong>和<strong>中断处理函数入口</strong></p>
 <p>之后跳到system模块执行</p>
-<h3><span id="heads">head.s</span></h3>
+<h3 id="head-s">head.s<a class="anchor" href="#head-s">·</a></h3>
 <p>设置各种数据结构，比如数据段，系统栈，内存管理的必要数据结构，且此时是32位汇编代码，和之前16位8086不一样</p>
 <p>设置idt，gdt</p>
 <p>函数调用设置页表，之后进入main函数</p>
-<h3><span id="main函数">main函数</span></h3>
+<h3 id="main函数">main函数<a class="anchor" href="#main函数">·</a></h3>
 <p>main的工作就是xx_init: 内存、中断、设备、 时钟、CPU等内容的初始化…</p>
-<h3><span id="关于汇编">关于汇编</span></h3>
-<h4><span id="1-as86汇编能产生16位代码的intel-8086386汇编">(1) as86汇编：能产生16位代码的Intel 8086(386)汇编</span></h4>
+<h3 id="关于汇编">关于汇编<a class="anchor" href="#关于汇编">·</a></h3>
+<h4 id="1-as86汇编：能产生16位代码的Intel-8086-386-汇编">(1) as86汇编：能产生16位代码的Intel 8086(386)汇编<a class="anchor" href="#1-as86汇编：能产生16位代码的Intel-8086-386-汇编">·</a></h4>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mov ax, cs &#x2F;&#x2F;cs--&gt;ax, 目标操作数在前</span><br></pre></td></tr></table></figure>
-<h4><span id="2-gnu-as汇编产生32位代码使用atampt系统v语法">(2) GNU as汇编：产生32位代码，使用AT&amp;T系统V语法</span></h4>
+<h4 id="2-GNU-as汇编：产生32位代码，使用AT-T系统V语法">(2) GNU as汇编：产生32位代码，使用AT&amp;T系统V语法<a class="anchor" href="#2-GNU-as汇编：产生32位代码，使用AT-T系统V语法">·</a></h4>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">movl var, %eax&#x2F;&#x2F;(var)--&gt;%eax</span><br><span class="line">movb -4(%ebp), %al &#x2F;&#x2F;取出一字节</span><br></pre></td></tr></table></figure>
 <p>AT&amp;T美国电话电报公司， 包含贝尔实验室等，1983年AT&amp;T UNIX支持组发布了系统V</p>
-<h4><span id="3-内嵌汇编gcc编译xc会产生中间结果as汇编文件xs">(3) 内嵌汇编，gcc编译x.c会产生中间结果as汇编文件x.s</span></h4>
+<h4 id="3-内嵌汇编，gcc编译x-c会产生中间结果as汇编文件x-s">(3) 内嵌汇编，gcc编译x.c会产生中间结果as汇编文件x.s<a class="anchor" href="#3-内嵌汇编，gcc编译x-c会产生中间结果as汇编文件x-s">·</a></h4>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">__asm__(“汇编语句”</span><br><span class="line">: 输出</span><br><span class="line">: 输入</span><br><span class="line">: 破坏部分描述);</span><br><span class="line"></span><br><span class="line">__asm__(“movb </span><br><span class="line">%%fs:%2, %%al”</span><br><span class="line">:”&#x3D;a”(_res)</span><br><span class="line">:”0”(seg),”m”(*(addr))</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 <p>0或空表示使用与 相应输出一样的 寄存器</p>
 <p>a表示使用eax， 并编号%0</p>
 <p>%2表示addr，m 表示使用内存</p>
-<h2><span id="lab1-操作系统的引导">Lab1 操作系统的引导</span></h2>
-<h3><span id="实验介绍">实验介绍</span></h3>
+<h2 id="Lab1-操作系统的引导">Lab1 操作系统的引导<a class="anchor" href="#Lab1-操作系统的引导">·</a></h2>
+<h3 id="实验介绍">实验介绍<a class="anchor" href="#实验介绍">·</a></h3>
 <p>此次实验的基本内容是：</p>
 <ol>
 <li>阅读《Linux 内核完全注释》的第 6 章，对计算机和 Linux 0.11 的引导过程进行初步的了解；</li>
@@ -363,11 +363,11 @@
 <li>setup.s 能获取至少一个基本的硬件参数（如内存参数、显卡参数、硬盘参数等），将其存放在内存的特定地址，并输出到屏幕上。</li>
 <li>setup.s 不再加载 Linux 内核，保持上述信息显示在屏幕上即可。</li>
 </ol>
-<h3><span id="编译与运行bootsects">编译与运行bootsect.s</span></h3>
+<h3 id="编译与运行bootsect-s">编译与运行bootsect.s<a class="anchor" href="#编译与运行bootsect-s">·</a></h3>
 <p>汇编+链接</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">as86 -0 -a -o bootsect.o bootsect.s</span><br><span class="line">ld86 -0 -s -o bootsect bootsect.o</span><br><span class="line">dd bs=1 if=bootsect of=Image skip=32 #跳过最开始的32字节的文件头信息</span><br><span class="line">cp ./Image ../Image</span><br></pre></td></tr></table></figure>
 <p>其中 <code>-0</code>（注意：这是数字 0，不是字母 O）表示生成 8086 的 16 位目标程序，<code>-a</code> 表示生成与 GNU as 和 ld 部分兼容的代码，<code>-s</code> 告诉链接器 ld86 去除最后生成的可执行文件中的符号信息。</p>
-<h2><span id="l4-操作系统接口">L4 操作系统接口</span></h2>
+<h2 id="L4-操作系统接口">L4 操作系统接口<a class="anchor" href="#L4-操作系统接口">·</a></h2>
 <p>接口：连接两个东西，信号转换，屏蔽细节</p>
 <p>操作系统接口：连接上层用户和操作系统软件</p>
 <p>用户使用计算机：命令行，图形按钮，应用程序</p>
@@ -377,7 +377,7 @@
 <p>OS接口：普通C代码加上一些重要的函数，OS提供这些函数 也就是操作系统接口，表现为函数调用，由系统提供，称为系统调用</p>
 <p>POSIX: Portable Operating System Interface of Unix(IEEE制定的一个标准族)</p>
 <p><img src="https://umeta-model.oss-cn-beijing.aliyuncs.com/documents/image-20220907160816856.png" alt="image-20220907160816856"></p>
-<h2><span id="l5-系统调用的实现">L5 系统调用的实现</span></h2>
+<h2 id="L5-系统调用的实现">L5 系统调用的实现<a class="anchor" href="#L5-系统调用的实现">·</a></h2>
 <p>需要将内核程序和用户程序隔离 区分内核态和用户态</p>
 <p>用CS最低两位表示执行在什么态 0是内核态，3是用户态</p>
 <p>必须CPL（CS）RPL（DS）&lt;=DPL时才允许访问</p>
@@ -392,8 +392,8 @@
 <p>进入set_system_gate函数，设置0x80的中断处理</p>
 <p>进入system_call中断处理程序 找到相应系统调用处理函数入口（全局数组_sys_call_table中寻找）</p>
 <p>之后调用相应系统调用处理函数</p>
-<h2><span id="l6-操作系统历史">L6 操作系统历史</span></h2>
-<h3><span id="上古神机ibm70941955-1965">上古神机IBM7094(1955-1965)</span></h3>
+<h2 id="L6-操作系统历史">L6 操作系统历史<a class="anchor" href="#L6-操作系统历史">·</a></h2>
+<h3 id="上古神机IBM7094-1955-1965">上古神机IBM7094(1955-1965)<a class="anchor" href="#上古神机IBM7094-1955-1965">·</a></h3>
 <p>计算机昂贵 造价在250万美元以上</p>
 <ul>
 <li>专注于计算</li>
@@ -401,84 +401,84 @@
 </ul>
 <p>一个作业完成，自动读入下一个作业</p>
 <p><img src="https://umeta-model.oss-cn-beijing.aliyuncs.com/documents/image-20220907161921309.png" alt="image-20220907161921309"></p>
-<h3><span id="从ibsys到os3601965-1980">从IBSYS到OS/360(1965-1980)</span></h3>
+<h3 id="从IBSYS到OS-360-1965-1980">从IBSYS到OS/360(1965-1980)<a class="anchor" href="#从IBSYS到OS-360-1965-1980">·</a></h3>
 <p>计算机开始进入多个行业：科学计算(IBM 7094)，银行(IBM 1401)</p>
 <p>需要干多件事 多道程序</p>
 <p>作业的切换和调度成为核心 既有IO任务，又有计算任务，需要让CPU忙碌</p>
 <p>IBM OS/360 表示全方位服务，开发周期 5000人年</p>
-<h3><span id="从os360到multics1965-1980">从OS/360到MULTICS(1965-1980)</span></h3>
+<h3 id="从OS-360到MULTICS-1965-1980">从OS/360到MULTICS(1965-1980)<a class="anchor" href="#从OS-360到MULTICS-1965-1980">·</a></h3>
 <p>使用人数增加 作业之间需要快速切换</p>
 <p>分时系统产生 代表：MIT MULTICS (MULTiplexed Information and Computer Service)</p>
 <p>核心仍然是任务切换</p>
-<h3><span id="从multics到unix1980-1990">从MULTICS到UNIX(1980-1990)</span></h3>
+<h3 id="从MULTICS到UNIX-1980-1990">从MULTICS到UNIX(1980-1990)<a class="anchor" href="#从MULTICS到UNIX-1980-1990">·</a></h3>
 <p>小型计算机出现</p>
 <p>1969年：贝尔实验室的Ken Thompson、 Dennis Ritchi等在一 台没人使用的PDP-7上开发一个简化
 MULTICS，就是后来的UNIX</p>
 <p>UNIX是一个简化的MULTICS，核心概念差不多，但更灵活和成功</p>
-<h3><span id="从unix到linux1990-2000">从UNIX到Linux(1990-2000)</span></h3>
+<h3 id="从UNIX到Linux-1990-2000">从UNIX到Linux(1990-2000)<a class="anchor" href="#从UNIX到Linux-1990-2000">·</a></h3>
 <p>1981，IBM推出IBM PC；个人计算机开始普及</p>
 <p>1987年Andrew Tanenbaum发布了MINIX(非常类似UNIX)用于教学</p>
 <p>Linus Torvalds在386sx兼容微机上学习minix，作出小Linux于1991年发布</p>
 <p>1994年，Linux 1.0发布并采用GPL协议，1998年以后互联网世界里展开了一场历史性的Linux产业化运动</p>
-<h3><span id="ibsy-gt-os360-gt-multics-gt-unix-gt-linux">IBSY ==&gt; OS/360 ==&gt; MULTICS ==&gt; Unix ==&gt; Linux</span></h3>
-<h4><span id="核心思想-技术">核心思想、技术</span></h4>
+<h3 id="IBSY-OS-360-MULTICS-Unix-Linux">IBSY ==&gt; OS/360 ==&gt; MULTICS ==&gt; Unix ==&gt; Linux<a class="anchor" href="#IBSY-OS-360-MULTICS-Unix-Linux">·</a></h3>
+<h4 id="核心思想、技术">核心思想、技术<a class="anchor" href="#核心思想、技术">·</a></h4>
 <ul>
 <li>用户通过<strong>执行程序</strong>来使用计算机(吻合冯诺依曼的思想)</li>
 <li>作为管理者，操作系统要让<strong>多个程序合理推进</strong>，就是<strong>进程管理</strong></li>
 <li>多进程(用户)推进时需要<strong>内存复用</strong>等等</li>
 </ul>
-<h4><span id="软件实现">软件实现</span></h4>
+<h4 id="软件实现">软件实现<a class="anchor" href="#软件实现">·</a></h4>
 <ul>
 <li>对于操作系统，实现很重要OS/360==&gt;UNIX</li>
 <li>需要真正的群体智慧 UNIX==&gt;Linux</li>
 </ul>
 <p>多进程结构是操作系统基本图谱 对于OS 实现概念比理解概念更重要</p>
-<h3><span id="pc与dos">PC与DOS</span></h3>
+<h3 id="PC与DOS">PC与DOS<a class="anchor" href="#PC与DOS">·</a></h3>
 <p>1975年Digital Research为Altair 8800开发了操作系统<strong>CP/M</strong></p>
 <p>CP/M：<strong>写命令</strong>让用户用，<strong>执行命令对应的程序</strong>，单任务执行</p>
 <p>1980出现了<strong>8086 16位芯片</strong>，从<strong>CP/M基础</strong>上开发了<strong>QDOS</strong>(Quick and Dirty OS)</p>
-<h3><span id="从qdos到ms-dos">从QDOS到MS-DOS</span></h3>
+<h3 id="从QDOS到MS-DOS">从QDOS到MS-DOS<a class="anchor" href="#从QDOS到MS-DOS">·</a></h3>
 <p>1975年，22岁的Paul Allen和20岁的 Bill Gates为Altair 8800开发了<strong>BASIC解释器</strong>，据此开创了微软</p>
 <p>1977年Bill Gates开发FAT管理磁盘</p>
 <p>QDOS的成功在于以CP/M为基础将BASIC和FAT包含了进来 <strong>文件管理和编程环境…都是用户关心</strong>的!</p>
 <p>1980年IBM想和Digital Research协议授权使用CP/M，但没有达成，转向和微软合作；1981微软买下QDOS，改名为MS-DOS(Disk OS)，和IBM PC打包一起出售</p>
-<h3><span id="从ms-dos到windows">从MS-DOS到Windows</span></h3>
+<h3 id="从MS-DOS到Windows">从MS-DOS到Windows<a class="anchor" href="#从MS-DOS到Windows">·</a></h3>
 <p>MS-DOS的磁盘、文件、命令让用方便，但似乎可以更方便</p>
 <p>1989年，MS-DOS 4.0出现， 支持了鼠标和键盘，此时微软已经决定要放弃MS-DOS</p>
 <p>不久后Windows 3.0大获成功</p>
 <p>后来就是一发不可收拾了，95，XP，Vista，Win 7，Win 8…</p>
 <p><strong>文件、开发环境、图形界面</strong>对于OS的重要性</p>
-<h3><span id="mac-os与ios">Mac OS与iOS</span></h3>
+<h3 id="Mac-OS与iOS">Mac OS与iOS<a class="anchor" href="#Mac-OS与iOS">·</a></h3>
 <p>1984年，苹果推出PC(麦金塔机，Macintosh)， 简称Mac机，其处理器使用IBM、Intel或AMD等，核心在于屏幕、能耗等</p>
 <p>与Mac机一起发布System X系统，一上来就是GUI</p>
 <p>在System 7以后改名为Mac OS 8</p>
 <p>2007年发布iOS，核心仍然是Mac OS，专为移动设备，如手势等</p>
 <p>Mac OS核心是UNIX，专注于界面、文件、媒体等和用户有关的内容</p>
-<h3><span id="cpm-gt-qdos-gt-ms-dos-gt-windows-gt-unix-gt-system-gt-mac-os-gt-ios">CP/M ==&gt; QDOS ==&gt; MS-DOS ==&gt; Windows ==&gt; Unix ==&gt; System ==&gt; Mac OS ==&gt; iOS</span></h3>
-<h4><span id="核心思想-技术">核心思想、技术</span></h4>
+<h3 id="CP-M-QDOS-MS-DOS-Windows-Unix-System-Mac-OS-iOS">CP/M ==&gt; QDOS ==&gt; MS-DOS ==&gt; Windows ==&gt; Unix ==&gt; System ==&gt; Mac OS ==&gt; iOS<a class="anchor" href="#CP-M-QDOS-MS-DOS-Windows-Unix-System-Mac-OS-iOS">·</a></h3>
+<h4 id="核心思想、技术-2">核心思想、技术<a class="anchor" href="#核心思想、技术-2">·</a></h4>
 <ul>
 <li>仍然是程序执行、多进程、程序执行带动其他设备使用的基本结构</li>
 <li>但用户的使用感觉倍加重视了：各种文件、编程环境、图形界面</li>
 </ul>
-<h4><span id="软件实现">软件实现</span></h4>
+<h4 id="软件实现-2">软件实现<a class="anchor" href="#软件实现-2">·</a></h4>
 <ul>
 <li>如何通过文件存储代码、执行代码、操作屏幕…</li>
 <li>如何让文件和操作变成图标、点击或触碰…</li>
 </ul>
 <p>掌握、实现操作系统的<strong>多进程图谱</strong></p>
 <p>掌握、实现操作系统的<strong>文件操作</strong>视图</p>
-<h2><span id="l7-学习任务">L7 学习任务</span></h2>
+<h2 id="L7-学习任务">L7 学习任务<a class="anchor" href="#L7-学习任务">·</a></h2>
 <img src="https://umeta-model.oss-cn-beijing.aliyuncs.com/documents/image-20220907163625373.png" alt="image-20220907163625373" style="zoom:67%;">
 <img src="https://umeta-model.oss-cn-beijing.aliyuncs.com/documents/image-20220907163658377.png" alt="image-20220907163658377" style="zoom:67%;">
-<h2><span id="lab2-系统调用">Lab2 系统调用</span></h2>
-<h1><span id="进程与线程">进程与线程</span></h1>
-<h2><span id="l8-cpu-管理的直观想法">L8 CPU 管理的直观想法</span></h2>
+<h2 id="Lab2-系统调用">Lab2 系统调用<a class="anchor" href="#Lab2-系统调用">·</a></h2>
+<h1 id="进程与线程">进程与线程<a class="anchor" href="#进程与线程">·</a></h1>
+<h2 id="L8-CPU-管理的直观想法">L8 CPU 管理的直观想法<a class="anchor" href="#L8-CPU-管理的直观想法">·</a></h2>
 <p>让CPU工作：取指执行</p>
 <p>让CPU充分利用：启动多个程序，交替执行</p>
 <p>一个CPU上交替的执行多个程序：并发。让IO和计算利用率都提升</p>
 <p>记录每个程序的信息的结构：PCB 这样才能正常切换程序</p>
 <p>运行的程序：进程，和静态程序不一样</p>
-<h2><span id="l9-多进程图像">L9 多进程图像</span></h2>
+<h2 id="L9-多进程图像">L9 多进程图像<a class="anchor" href="#L9-多进程图像">·</a></h2>
 <p>main中的fork创建了第一个进程，init执行了shell（windows桌面），shell再根据命令启动其他基本进程，返回shell再启动其他进程</p>
 <p>Process Control Block：记录进程信息的数据结构</p>
 <p>PCB的列表：一些进程在执行（运行），一些进程在等待执行（就绪队列），一些进程在等待某事件（硬件等待队列…）</p>
@@ -492,7 +492,7 @@ c-->b</pre>
 <p>交替的三个部分：队列操作+调度（选择下一个进程）+切换（PCB信息存储和切换 <strong>schedule函数</strong>）</p>
 <p>通过内存管理来隔绝多个进程的地址空间，地址映射，每个进程的地址被映射到特定的一块物理内存</p>
 <p>多个进程合作：进程同步（合理的推进） 给共享变量上锁</p>
-<h3><span id="如何形成多进程图像">如何形成多进程图像？</span></h3>
+<h3 id="如何形成多进程图像？">如何形成多进程图像？<a class="anchor" href="#如何形成多进程图像？">·</a></h3>
 <ul>
 <li>读写PCB，OS中最重要结构</li>
 <li>操作寄存器完成切换（L10,L11,L12）</li>
@@ -500,8 +500,8 @@ c-->b</pre>
 <li>进程同步与合作（L16,L17）</li>
 <li>地址映射（L20）</li>
 </ul>
-<h2><span id="lab3-进程运行轨迹的跟踪与统计">Lab3 进程运行轨迹的跟踪与统计</span></h2>
-<h2><span id="l10-用户级线程">L10 用户级线程</span></h2>
+<h2 id="Lab3-进程运行轨迹的跟踪与统计">Lab3 进程运行轨迹的跟踪与统计<a class="anchor" href="#Lab3-进程运行轨迹的跟踪与统计">·</a></h2>
+<h2 id="L10-用户级线程">L10 用户级线程<a class="anchor" href="#L10-用户级线程">·</a></h2>
 <p>User Threads</p>
 <p>是否可以资源不动切换指令序列</p>
 <p>进程=资源+指令执行序列 1个资源+多个指令执行序列</p>
@@ -511,25 +511,25 @@ c-->b</pre>
 <p>Yield函数先切换栈指针，再直接函数结束返回栈顶地址，不用主动jmp切换PC。需要TCB（Thread Control Block），有栈指针</p>
 <p><strong>两个线程</strong>：两个TCB，两个栈，切换的PC在栈中</p>
 <p>用户级线程不会进入内核，当遇到硬件阻塞时就丧失作用。内核级线程是系统调用，会进入内核，内核知道TCB</p>
-<h2><span id="l11-内核级线程">L11 内核级线程</span></h2>
+<h2 id="L11-内核级线程">L11 内核级线程<a class="anchor" href="#L11-内核级线程">·</a></h2>
 <p>多处理器：每个cpu有相应的Cache和MMU</p>
 <p>多核：多个CPU使用相同的Cache核MMU</p>
 <p>多进程适用于多处理器的情况，核心级线程适用于多核</p>
 <p>核心级线程：一个栈到一套栈，包含<strong>用户栈，代码和数据，内核栈，线程控制块</strong>。TCB关联内核栈</p>
 <p>用户栈在有中断时启动内核栈，通过TCB切换到另一个线程的TCB，再切换到B的内核栈，并通过中断返回iret到相应的B用户栈和用户代码。从一套栈切换到另一套栈</p>
-<h3><span id="内核线程switch_to的五段论">内核线程switch_to的五段论</span></h3>
+<h3 id="内核线程switch-to的五段论">内核线程switch_to的五段论<a class="anchor" href="#内核线程switch-to的五段论">·</a></h3>
 <p>中断入口：进入切换</p>
 <p>中断处理：引发切换</p>
 <p>找到目的TCB，线程调度</p>
 <p>完成内核栈切换</p>
 <p>完成第二级切换，切换用户栈和用户执行地址</p>
-<h2><span id="l12-核心级线程实现实例">L12 核心级线程实现实例</span></h2>
+<h2 id="L12-核心级线程实现实例">L12 核心级线程实现实例<a class="anchor" href="#L12-核心级线程实现实例">·</a></h2>
 <p>tss：task structure segment</p>
 <p>长跳转至TSS段选择符造成CPU执行任务切换操作，相当于把当前所有寄存器内容放在当前TR寄存器所在的段中，之后将TR切换到新的描述符，从而同时切换所有的寄存器值</p>
 <p>fork中的函数copy_process，创建栈：申请内存空间，创建TCB，创建内核栈和用户栈，填写两个stack，关联栈和TCB</p>
 <p>fork是父进程创建子进程/子内核级线程 可以共用用户栈</p>
 <p>子进程中fork返回值为0，父进程不为0 修改%eax的值！！</p>
-<h2><span id="l13-操作系统的那棵树">L13 操作系统的那棵树</span></h2>
+<h2 id="L13-操作系统的那棵树">L13 操作系统的那棵树<a class="anchor" href="#L13-操作系统的那棵树">·</a></h2>
 <p>研究复杂系统：从一个小点出发，做成一颗大树。从一个小想法开始，提出新问题，解决新问题并不断完善。</p>
 <p>运转CPU：取指执行。</p>
 <p>没有好好运转？交替执行，引入多进程。切换跳转需要使用栈来实现。</p>
@@ -537,7 +537,7 @@ c-->b</pre>
 <p>遇到中断阻塞就麻烦了，引入内核栈的切换。</p>
 <p>实现idea，从一个简单清晰目标出发，交替打印A和B</p>
 <p>发散思维适合创新，线性思维适合执行工作</p>
-<h2><span id="l14-cpu调度策略">L14 CPU调度策略</span></h2>
+<h2 id="L14-CPU调度策略">L14 CPU调度策略<a class="anchor" href="#L14-CPU调度策略">·</a></h2>
 <p>获得next进程</p>
 <p>FIFO 先进先出：简单有效 银行食堂常用</p>
 <p>需要优先级，任务很短/很长的应该怎么调度</p>
@@ -551,21 +551,21 @@ c-->b</pre>
 <p>吞吐量和响应时间有矛盾（响应时间小，切换时间多，系统内耗大，吞吐量小）</p>
 <p>前台任务和后台任务关注点不同（前台关注响应时间，后台关注周转时间）</p>
 <p>IO约束型任务和CPU约束型任务有各自特点</p>
-<h3><span id="first-come-first-served-fcfs-先来先服务">First Come First Served FCFS 先来先服务</span></h3>
+<h3 id="First-Come-First-Served-FCFS-先来先服务">First Come First Served FCFS 先来先服务<a class="anchor" href="#First-Come-First-Served-FCFS-先来先服务">·</a></h3>
 <p>类似FIFO</p>
-<h3><span id="sjf-短作业优先">SJF 短作业优先</span></h3>
+<h3 id="SJF-短作业优先">SJF 短作业优先<a class="anchor" href="#SJF-短作业优先">·</a></h3>
 <p>平均周转时间最短</p>
-<h3><span id="考虑响应时间rr-按照时间片来轮转调度">考虑响应时间：RR 按照时间片来轮转调度</span></h3>
+<h3 id="考虑响应时间：RR-按照时间片来轮转调度">考虑响应时间：RR 按照时间片来轮转调度<a class="anchor" href="#考虑响应时间：RR-按照时间片来轮转调度">·</a></h3>
 <p>时间片大响应时间太长，时间片小，吞吐量小</p>
-<h3><span id="同时考虑响应时间和周转时间">同时考虑响应时间和周转时间</span></h3>
+<h3 id="同时考虑响应时间和周转时间">同时考虑响应时间和周转时间<a class="anchor" href="#同时考虑响应时间和周转时间">·</a></h3>
 <p>定义前台任务和后台任务两个队列，前台RR，后台SJF 前台任务没有时才调度后台任务</p>
 <p>后台有可能一直分配不到</p>
-<h2><span id="l15-一个实际的schedule函数">L15 一个实际的schedule函数</span></h2>
+<h2 id="L15-一个实际的schedule函数">L15 一个实际的schedule函数<a class="anchor" href="#L15-一个实际的schedule函数">·</a></h2>
 <p>counter既用来表示优先级，也表示时间片</p>
 <p>经过IO以后，counter变大，IO时间越长，counter越大，照顾了IO进程。IO进程每次中断阻塞时，会被设置成counter初值+当前counter的一半，从而越来越大，从而提高优先级</p>
 <p>后台进程一直按照counter轮转，近似了SJF调度。每次时间片用完才重置，因为<strong>没有IO，不需要阻塞</strong>！</p>
-<h2><span id="lab4-基于内核栈切换的进程切换">Lab4 基于内核栈切换的进程切换</span></h2>
-<h2><span id="l16-进程同步与信号量">L16 进程同步与信号量</span></h2>
+<h2 id="Lab4-基于内核栈切换的进程切换">Lab4 基于内核栈切换的进程切换<a class="anchor" href="#Lab4-基于内核栈切换的进程切换">·</a></h2>
+<h2 id="L16-进程同步与信号量">L16 进程同步与信号量<a class="anchor" href="#L16-进程同步与信号量">·</a></h2>
 <p>进程合作：多进程共同完成一个任务</p>
 <p>生产者消费者实例</p>
 <p>核心：等待</p>
@@ -573,9 +573,9 @@ c-->b</pre>
 <p>例子：一种资源的数量是8，这个资源对应的信号量的当前值是2，说明<strong>有2个资源可以使用</strong></p>
 <p>如果是-2，说明有2个进程在等待这个资源</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">semaphore</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">int</span> value;<span class="comment">//记录资源个数</span></span><br><span class="line">    PCB* <span class="built_in">queue</span>;<span class="comment">//记录等待在该信号量上的进程</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">P(semaphore s)<span class="comment">//消费资源</span></span><br><span class="line">&#123;</span><br><span class="line">    s.value--;</span><br><span class="line">    <span class="keyword">if</span>(s.value&lt;<span class="number">0</span>)&#123;</span><br><span class="line">        sleep(s.<span class="built_in">queue</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">V(semaphore s)<span class="comment">//产生资源</span></span><br><span class="line">&#123;</span><br><span class="line">    s.value++;</span><br><span class="line">    <span class="keyword">if</span>(s.value&lt;=<span class="number">0</span>)&#123;</span><br><span class="line">        wakeup(s.<span class="built_in">queue</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="生产者消费者模式实例">生产者消费者模式实例</span></h3>
+<h3 id="生产者消费者模式实例">生产者消费者模式实例<a class="anchor" href="#生产者消费者模式实例">·</a></h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">semaphore full = <span class="number">0</span>; </span><br><span class="line">semaphore empty = BUFFER_SIZE;</span><br><span class="line">semaphore mutex = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">Producer(item) </span><br><span class="line">&#123;</span><br><span class="line">    P(empty);</span><br><span class="line">    P(mutex); </span><br><span class="line">    读入in;将item写入到in的位置上;</span><br><span class="line">    V(mutex);</span><br><span class="line">    V(full); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Consumer() </span><br><span class="line">&#123;</span><br><span class="line">    P(full); </span><br><span class="line">    P(mutex);</span><br><span class="line">    读入out;从文件中的out位置读出到item;打印item;</span><br><span class="line">    V(mutex);</span><br><span class="line">    V(empty); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2><span id="l17-对信号量的临界区保护">L17 对信号量的临界区保护</span></h2>
+<h2 id="L17-对信号量的临界区保护">L17 对信号量的临界区保护<a class="anchor" href="#L17-对信号量的临界区保护">·</a></h2>
 <p>多个生产者共同修改信号量可能会出问题</p>
 <p>解决竞争条件：给共享变量上锁</p>
 <p>一段代码一次只允许一个进程进入 原子操作</p>
@@ -588,36 +588,36 @@ c-->b</pre>
 <li>有限等待</li>
 </ul>
 <p>以下代码<strong>临界区表示进入条件</strong></p>
-<h3><span id="进入临界区一个尝试轮换法">进入临界区一个尝试：轮换法</span></h3>
+<h3 id="进入临界区一个尝试：轮换法">进入临界区一个尝试：轮换法<a class="anchor" href="#进入临界区一个尝试：轮换法">·</a></h3>
 <p>一个跑完了修改标志让另一个可以进入</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//A</span></span><br><span class="line"><span class="comment">//临界区</span></span><br><span class="line"><span class="keyword">while</span> (turn!=<span class="number">0</span>); </span><br><span class="line"><span class="comment">//剩余区</span></span><br><span class="line">turn = <span class="number">1</span>;</span><br><span class="line"><span class="comment">//B</span></span><br><span class="line"><span class="comment">//临界区</span></span><br><span class="line"><span class="keyword">while</span> (turn!=<span class="number">1</span>);</span><br><span class="line"><span class="comment">//剩余区</span></span><br><span class="line">turn = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-<h3><span id="改进标记法">改进：标记法</span></h3>
+<h3 id="改进：标记法">改进：标记法<a class="anchor" href="#改进：标记法">·</a></h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//A</span></span><br><span class="line"><span class="comment">//临界区</span></span><br><span class="line">flag[<span class="number">0</span>]=<span class="literal">true</span></span><br><span class="line"><span class="keyword">while</span>(flag[<span class="number">1</span>]);</span><br><span class="line"><span class="comment">//剩余区</span></span><br><span class="line">flag[<span class="number">0</span>]=<span class="literal">false</span>;</span><br><span class="line"><span class="comment">//B</span></span><br><span class="line"><span class="comment">//临界区</span></span><br><span class="line">flag[<span class="number">1</span>]=<span class="literal">true</span></span><br><span class="line"><span class="keyword">while</span>(flag[<span class="number">0</span>]);</span><br><span class="line"><span class="comment">//剩余区</span></span><br><span class="line">flag[<span class="number">1</span>]=<span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
 <p>再一次尝试：非对称标记</p>
-<h3><span id="进入临界区peterson算法">进入临界区Peterson算法</span></h3>
+<h3 id="进入临界区Peterson算法">进入临界区Peterson算法<a class="anchor" href="#进入临界区Peterson算法">·</a></h3>
 <p>结合标记和轮状两种思想</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//临界区</span></span><br><span class="line">flag[i]=<span class="literal">true</span></span><br><span class="line">turn=j</span><br><span class="line"><span class="keyword">while</span>(flag[j]&amp;&amp;turn==j);</span><br><span class="line"><span class="comment">//剩余区</span></span><br><span class="line">flag[i]=<span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
-<h3><span id="多个进程面包店算法">多个进程：面包店算法</span></h3>
+<h3 id="多个进程：面包店算法">多个进程：面包店算法<a class="anchor" href="#多个进程：面包店算法">·</a></h3>
 <p>轮转：每个进程都获得一个序号，序号最小的进入</p>
 <p>标记：进程离开时序号为0，不为0的序号即为标记</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">choosing[i] = <span class="literal">true</span>; num[i] = max(num[<span class="number">0</span>], …, num[n<span class="number">-1</span>])+<span class="number">1</span>;</span><br><span class="line">choosing[i] = <span class="literal">false</span>; </span><br><span class="line"><span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;n; j++) </span><br><span class="line">&#123; </span><br><span class="line">    <span class="keyword">while</span>(choosing[j]);</span><br><span class="line">	<span class="keyword">while</span> ((num[j] != <span class="number">0</span>) &amp;&amp; (num[j], j)&lt;(num[i], i])); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">num[i] = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-<h3><span id="临界区保护的另一类解法">临界区保护的另一类解法</span></h3>
+<h3 id="临界区保护的另一类解法">临界区保护的另一类解法<a class="anchor" href="#临界区保护的另一类解法">·</a></h3>
 <p>硬件实现：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//临界区</span></span><br><span class="line">cli(); </span><br><span class="line"><span class="comment">//剩余区</span></span><br><span class="line">sti();</span><br></pre></td></tr></table></figure>
 <p>多CPU不能使用</p>
 <p>控制能否产生中断，阻止被调度</p>
-<h3><span id="硬件原子指令法">硬件原子指令法</span></h3>
+<h3 id="硬件原子指令法">硬件原子指令法<a class="anchor" href="#硬件原子指令法">·</a></h3>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">boolean <span class="title">TestAndSet</span><span class="params">(boolean &amp;x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    boolean rv = x;</span><br><span class="line">    x = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">return</span> rv;</span><br><span class="line">&#125; <span class="comment">//一次执行完毕 不管是什么都设置成true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(TestAndSet(&amp;lock)) ;</span><br><span class="line"><span class="comment">//临界区</span></span><br><span class="line">lock = <span class="literal">false</span>;</span><br><span class="line"><span class="comment">//剩余区</span></span><br></pre></td></tr></table></figure>
-<h2><span id="l18-信号量的代码实现">L18 信号量的代码实现</span></h2>
+<h2 id="L18-信号量的代码实现">L18 信号量的代码实现<a class="anchor" href="#L18-信号量的代码实现">·</a></h2>
 <p>if lock导致只能逐个唤醒</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sys_sem_wait(<span class="keyword">int</span> sd)&#123;</span><br><span class="line">    cli();</span><br><span class="line">    <span class="keyword">if</span>(semtable[sd].value -- &lt; <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        设置自己为阻塞;</span><br><span class="line">        将自己加入semtable[sd].<span class="built_in">queue</span>中;</span><br><span class="line">        schedule();</span><br><span class="line">    &#125;</span><br><span class="line">    sti(); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>while lock可以让许多进程一起竞争，同时唤醒 因为中断返回可以继续竞争锁</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lock_buffer(buffer_head*bh)</span><br><span class="line">&#123;</span><br><span class="line">	cli();</span><br><span class="line">    <span class="keyword">while</span>(bh-&gt;b_lock)</span><br><span class="line">    	sleep_on(&amp;bh-&gt;b_wait);</span><br><span class="line">    bh-&gt;b_lock = <span class="number">1</span>;</span><br><span class="line">    sti(); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2><span id="l19-死锁处理">L19 死锁处理</span></h2>
+<h2 id="L19-死锁处理">L19 死锁处理<a class="anchor" href="#L19-死锁处理">·</a></h2>
 <p><strong>互相等待对方持有的资源</strong>造成所有进程<strong>都无法执行</strong>的情况</p>
 <p>死锁必要条件：互斥使用 不可抢占（只能资源放弃） 请求和保持（占有资源了，再去申请其他资源） 循环等待</p>
 <p>处理方法：死锁预防（破坏死锁出现的条件） 死锁避免（检测每个资源请求，如果造成死锁就拒绝） 死锁检测+恢复（检测到，让一些进程回滚，让出资源）  死锁忽略</p>
-<h3><span id="死锁预防">死锁预防</span></h3>
+<h3 id="死锁预防">死锁预防<a class="anchor" href="#死锁预防">·</a></h3>
 <ul>
 <li>一次性申请所有需要的资源，不会占有资源再申请其他资源
 <ul>
@@ -631,20 +631,20 @@ c-->b</pre>
 </ul>
 </li>
 </ul>
-<h3><span id="死锁避免">死锁避免</span></h3>
+<h3 id="死锁避免">死锁避免<a class="anchor" href="#死锁避免">·</a></h3>
 <p>如果系统中所有进程存在一个可完成的执行序列P1，P2…,Pn，则称系统处于安全状态</p>
 <p>安全序列：执行序列P1…Pn</p>
-<h4><span id="找安全序列的银行家算法">找安全序列的银行家算法</span></h4>
+<h4 id="找安全序列的银行家算法">找安全序列的银行家算法<a class="anchor" href="#找安全序列的银行家算法">·</a></h4>
 <p>每次根据每种资源剩余数量和每个进程需要资源数量，寻找一个可以完成的进程，并把它的资源释放，再观察是否有可以完成的，直到找不到或者全部进程完成。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> Available[<span class="number">1.</span>.m]; <span class="comment">//每种资源剩余数量</span></span><br><span class="line"><span class="keyword">int</span> Allocation[<span class="number">1.</span>.n,<span class="number">1.</span>.m]; <span class="comment">//已分配资源数量</span></span><br><span class="line"><span class="keyword">int</span> Need[<span class="number">1.</span>.n,<span class="number">1.</span>.m];<span class="comment">//进程还需的各种资源数量</span></span><br><span class="line"><span class="keyword">int</span> Work[<span class="number">1.</span>.m]; <span class="comment">//工作向量</span></span><br><span class="line"><span class="keyword">bool</span> Finish [<span class="number">1.</span>.n]; <span class="comment">//进程是否结束</span></span><br><span class="line">Work = Available; Finish[<span class="number">1.</span>.n] = <span class="literal">false</span>; </span><br><span class="line"><span class="keyword">while</span>(<span class="literal">true</span>)&#123; </span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=n; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(Finish[i]==<span class="literal">false</span> &amp;&amp; Need[i]£Work)&#123;</span><br><span class="line">            Work = Work + Allocation[i];</span><br><span class="line">            Finish[i] = <span class="literal">true</span>; </span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">goto</span> <span class="built_in">end</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br><span class="line">End: <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) </span><br><span class="line"><span class="keyword">if</span>(Finish[i]==<span class="literal">false</span>) <span class="keyword">return</span> “deadlock”;</span><br></pre></td></tr></table></figure>
 <p>实际使用：每次有新进程进入，就将它和当前其他进程做计算。每次都是$O(mn^2)$复杂度</p>
-<h3><span id="死锁检测恢复发现问题再处理">死锁检测+恢复：发现问题再处理</span></h3>
+<h3 id="死锁检测-恢复：发现问题再处理">死锁检测+恢复：发现问题再处理<a class="anchor" href="#死锁检测-恢复：发现问题再处理">·</a></h3>
 <p>发现问题再处理。定时检测或者发现资源利用率低时检测</p>
 <p>实现回滚比较困难</p>
 <p>许多通用操作系统上都采用死锁忽略方法，可以用重新启动的方式解决死锁问题</p>
-<h2><span id="lab5-信号量的实现和应用">Lab5 信号量的实现和应用</span></h2>
-<h1><span id="内存管理">内存管理</span></h1>
-<h2><span id="l20-内存使用与分段">L20 内存使用与分段</span></h2>
+<h2 id="Lab5-信号量的实现和应用">Lab5 信号量的实现和应用<a class="anchor" href="#Lab5-信号量的实现和应用">·</a></h2>
+<h1 id="内存管理">内存管理<a class="anchor" href="#内存管理">·</a></h1>
+<h2 id="L20-内存使用与分段">L20 内存使用与分段<a class="anchor" href="#L20-内存使用与分段">·</a></h2>
 <p>内存使用：程序放在内存中，执行程序</p>
 <p>程序中的地址是逻辑地址（相对地址） 需要<strong>转换为</strong>内存中<strong>真实的物理地址</strong> 也就是<strong>重定位</strong></p>
 <p>什么时候完成重定位？编译时（嵌入式，静态硬件设备） 载入时（更加灵活）</p>
@@ -660,7 +660,7 @@ c-->b</pre>
 <p>PCB中要存储<strong>进程段表（LDT）</strong> OS对应的进程段表也就是<strong>GDT表</strong></p>
 <p>包含 段号 基址 长度 允许操作（读/写）</p>
 <p>ldtr 段表寄存器</p>
-<h2><span id="l21-内存分区与分页">L21 内存分区与分页</span></h2>
+<h2 id="L21-内存分区与分页">L21 内存分区与分页<a class="anchor" href="#L21-内存分区与分页">·</a></h2>
 <p>如何找到空闲的区域？</p>
 <p>程序分段，找到空闲分区，PCB中存储映射段和内存地址的映射表</p>
 <p>固定分区：OS初始化时，内存等分成k个分区  但需求不一样</p>
@@ -678,7 +678,7 @@ c-->b</pre>
 <p>利用mmu将逻辑地址转换为页号（物理实现）</p>
 <p><strong>逻辑地址向右移12位得到页号，查表得到页框号，利用页框号和逻辑地址低12位相拼接得到物理地址</strong></p>
 <p>每个段放在多个页</p>
-<h2><span id="l22-多级页表和快表">L22 多级页表和快表</span></h2>
+<h2 id="L22-多级页表和快表">L22 多级页表和快表<a class="anchor" href="#L22-多级页表和快表">·</a></h2>
 <p>页比较小则页表就大了</p>
 <p>页表放置成了问题 <strong>基本想法</strong>：<strong>连续存放所有逻辑页</strong>号对应的物理页号</p>
 <p>大部分逻辑地址根本不会使用 <strong>第一种尝试</strong>：只存放用到的页 <strong>用到的逻辑页</strong>才有页表项</p>
@@ -691,45 +691,45 @@ c-->b</pre>
 <p>利用物理电路将<strong>页号直接映射到物理页号</strong>，速度快</p>
 <p>有效访问时间=HitR*(TLB+MA)+(1-HitR)*(TLB+2MA) HitR命中率</p>
 <p>程序地址访问存在局部性 空间局部性，每次对某一段内存访问率高</p>
-<h2><span id="l23-段页结合的实际内存管理">L23 段页结合的实际内存管理</span></h2>
+<h2 id="L23-段页结合的实际内存管理">L23 段页结合的实际内存管理<a class="anchor" href="#L23-段页结合的实际内存管理">·</a></h2>
 <p>程序段映射到地址空间 地址空间再映射到物理页</p>
 <p>也就是将<strong>程序段和虚拟内存映射</strong>，再将<strong>虚拟内存和物理内存映射</strong>（多级页表机制）</p>
 <p>段面向用户，页面向硬件</p>
 <p>代码中的cs:ip是虚拟内存</p>
 <p>用户眼里包含操作系统段，用户数据段，用户代码段，用户堆栈段</p>
-<h3><span id="地址翻译">地址翻译</span></h3>
+<h3 id="地址翻译">地址翻译<a class="anchor" href="#地址翻译">·</a></h3>
 <p>用户：cs:ip 段号+偏移</p>
 <p>映射到段表，段表中包含<strong>段号 基址 长度 保护标记</strong> 获得了<strong>基址之后加上偏移</strong>得到了<strong>虚拟地址</strong></p>
 <p>再将<strong>虚拟地址</strong>用<strong>多级页表映射</strong>到<strong>物理内存地址</strong></p>
-<h3><span id="实际内存管理">实际内存管理</span></h3>
+<h3 id="实际内存管理">实际内存管理<a class="anchor" href="#实际内存管理">·</a></h3>
 <p>分配段 建段表 找到空闲物理页 分配页 页表映射</p>
 <p>进程带动内存使用</p>
 <p>段表和页表设置好，执行指令时MMU自动完成地址翻译</p>
 <p>fork：将一段新的虚拟内存分配给子进程（LDT），同时和父进程的物理内存完成映射，复制父进程页表</p>
-<h2><span id="l24-内存换入-请求调页">L24 内存换入-请求调页</span></h2>
+<h2 id="L24-内存换入-请求调页">L24 内存换入-请求调页<a class="anchor" href="#L24-内存换入-请求调页">·</a></h2>
 <p>为了实现虚拟内存，需要实现换入换出</p>
 <p>换入换出实现大内存 比如虚拟内存是4G，物理内存为2G</p>
 <p>将不同的虚拟内存地址映射到相同地址的物理内存 请求的时候才映射（换入）</p>
 <p>请求一个地址，地址缺页，对页做标记，需要中断来调入页面 即<strong>页错误处理程序</strong></p>
 <p>从<strong>磁盘中找到</strong>相应程序，将<strong>程序载入</strong>换入对应的物理内存页中，<strong>设置好页表中的映射</strong></p>
 <p>实际的<strong>请求调页</strong></p>
-<h2><span id="l25-内存换出页表置换">L25 内存换出（页表置换）</span></h2>
+<h2 id="L25-内存换出（页表置换）">L25 内存换出（页表置换）<a class="anchor" href="#L25-内存换出（页表置换）">·</a></h2>
 <p>如果找不到空闲的物理页，则需要选择一页进行淘汰，换出到磁盘</p>
 <p>实例：分配3个页框，页面引用序列为：A B C A B D A D B C B</p>
-<h3><span id="fifo-最简单">FIFO 最简单</span></h3>
+<h3 id="FIFO-最简单">FIFO 最简单<a class="anchor" href="#FIFO-最简单">·</a></h3>
 <p>A AB ABC ABC ABC DBC DAC DAC DAB CAB CAB</p>
 <p>每次换出<strong>最早来</strong>的页面</p>
 <p>存在7次缺页</p>
-<h3><span id="min-最优">MIN 最优</span></h3>
+<h3 id="MIN-最优">MIN 最优<a class="anchor" href="#MIN-最优">·</a></h3>
 <p>A AB ABC ABC ABC ABD ABD ABD ABD CBD CBD</p>
 <p>选<strong>最远将使用的页</strong>淘汰，是最优方案</p>
 <p>存在5次缺页</p>
-<h3><span id="lru-折中最优">LRU 折中最优</span></h3>
+<h3 id="LRU-折中最优">LRU 折中最优<a class="anchor" href="#LRU-折中最优">·</a></h3>
 <p>用过去的历史预测未来 LRU：选取<strong>最近最长一段时间没有使用</strong>的页<strong>淘汰</strong>（最近最少使用）</p>
 <p>A AB ABC ABC ABC ABD ABD ABD ABD CBD CBD</p>
 <p>LRU是对局部性的认识和归纳</p>
 <p>5次缺页</p>
-<h3><span id="lru-准确实现-用时间戳">LRU 准确实现 用时间戳</span></h3>
+<h3 id="LRU-准确实现-用时间戳">LRU 准确实现 用时间戳<a class="anchor" href="#LRU-准确实现-用时间戳">·</a></h3>
 <p>每页维护一个时间戳</p>
 <p>每个时间周期使用某一页时将这个页的时间戳更新为当前时间</p>
 <p>之后需要替换时，将时间戳最小的淘汰</p>
@@ -805,36 +805,36 @@ c-->b</pre>
 </tbody>
 </table>
 <p>每次地址访问都需要修改时间戳，需要维护一个全局时钟，需要找到最小值，实现代价很大</p>
-<h3><span id="lru-准确实现-用页面栈">LRU 准确实现 用页面栈</span></h3>
+<h3 id="LRU-准确实现-用页面栈">LRU 准确实现 用页面栈<a class="anchor" href="#LRU-准确实现-用页面栈">·</a></h3>
 <p>维护一个页码队列</p>
 <p>每次淘汰队头</p>
 <p>每次地址访问需要修改栈（比如修改指针）</p>
-<h3><span id="lru近似实现-将时间计数变为是和否">LRU近似实现-将时间计数变为是和否</span></h3>
+<h3 id="LRU近似实现-将时间计数变为是和否">LRU近似实现-将时间计数变为是和否<a class="anchor" href="#LRU近似实现-将时间计数变为是和否">·</a></h3>
 <p>每页增加一个引用位（reference bit）</p>
 <p>每次访问一页时，硬件自动设置该位</p>
 <p>选择淘汰页：扫描该位，是1时清零，并继续扫描，是0时淘汰该页</p>
 <p>组织成循环队列</p>
 <p>再给一次机会（second chance replacement）算法</p>
 <p>更改为最近没有使用</p>
-<h3><span id="clock算法的分析和改造">clock算法的分析和改造</span></h3>
+<h3 id="clock算法的分析和改造">clock算法的分析和改造<a class="anchor" href="#clock算法的分析和改造">·</a></h3>
 <p><strong>缺页很少</strong>，就会导致所有的R=1，从而退化成FIFO</p>
 <p>不能记录太长的历史信息 定时清除R位 再来一个扫描指针</p>
 <p>清除R位的移动速度快</p>
 <p>选择淘汰页的指针移动速度慢</p>
-<h3><span id="给进程分配多少页框帧frame">给进程分配多少页框（帧frame）</span></h3>
+<h3 id="给进程分配多少页框（帧frame）">给进程分配多少页框（帧frame）<a class="anchor" href="#给进程分配多少页框（帧frame）">·</a></h3>
 <p>分配太多，请求调页导致内存高效利用就没用了</p>
 <p>分配太少，缺页太多，系统颠簸</p>
 <p>计算工作集，设置进程的页框</p>
 <p>进程数量，页框数量都要进行限制</p>
-<h3><span id="补充clock算法">补充：Clock算法</span></h3>
+<h3 id="补充：Clock算法">补充：Clock算法<a class="anchor" href="#补充：Clock算法">·</a></h3>
 <p>是一种LRU的近似算法，是一种性能和开销较均衡的算法。由于LRU算法需要较多的硬件支持，采用CLOCK置换算法只需相对较少的硬件支持。又称为最近未用算法（NRU）</p>
-<h4><span id="简单的clock置换算法">简单的CLOCK置换算法</span></h4>
+<h4 id="简单的CLOCK置换算法">简单的CLOCK置换算法<a class="anchor" href="#简单的CLOCK置换算法">·</a></h4>
 <p>实现方法：</p>
 <p>（1）为每个页面设置一个访问位，再将内存中的页面都通过链接指针链接成一个循环队列</p>
 <p>（2）当某页被访问时，其访问位置为1</p>
 <p>（3）当需要淘汰一个页面时，只需检查页的访问位：如果是0，选择此页换出；如果是1，将它置0，暂不换出，继续检查下一个页面</p>
 <p>（4）若第一轮扫描中所有页面都是1，则将这些页面的访问位依次置为0，再进行第二轮扫描，第二轮扫描中一定会有访问位为0的页面，因此简单的CLOCK算法选择一个淘汰页面最多会经过两轮扫描</p>
-<h4><span id="改进型的clock置换算法">改进型的CLOCK置换算法</span></h4>
+<h4 id="改进型的CLOCK置换算法">改进型的CLOCK置换算法<a class="anchor" href="#改进型的CLOCK置换算法">·</a></h4>
 <ol>
 <li>
 <p>引入：简单的时钟置换算法仅考虑到一个页面最近是否被访问过。事实上，如果被淘汰的页面没有被修改过，就不需要执行I/O操作写回外存。只有被淘汰的页面被修改过时，才需要写回外存。</p>
@@ -854,9 +854,9 @@ c-->b</pre>
 <p>第三轮:若第二轮扫描失败，则重新扫描，查找第一个（0,0）的帧用于替换。本轮扫描不修改任何标志位</p>
 <p>第四轮:若第三轮扫描失败，则重新扫描，查找第一个(0,1）的帧用于替换</p>
 <p>注意：由于第二轮已将所有帧的访问位设为0，因此经过第三轮、第四轮扫描一定会有一个帧被选中，因此改进型CLOCK置换算法选择一个淘汰页面最多会进行四轮扫描</p>
-<h2><span id="lab6-地址映射与共享">Lab6 地址映射与共享</span></h2>
-<h1><span id="设备驱动与文件系统">设备驱动与文件系统</span></h1>
-<h2><span id="l26-io-与显示器">L26 I/O 与显示器</span></h2>
+<h2 id="Lab6-地址映射与共享">Lab6 地址映射与共享<a class="anchor" href="#Lab6-地址映射与共享">·</a></h2>
+<h1 id="设备驱动与文件系统">设备驱动与文件系统<a class="anchor" href="#设备驱动与文件系统">·</a></h1>
+<h2 id="L26-I-O-与显示器">L26 I/O 与显示器<a class="anchor" href="#L26-I-O-与显示器">·</a></h2>
 <p>让外设工作起来 发出写命令到总线上，显卡或硬件驱动设备收到就进行相应操作 也就是向设备控制器的寄存器写（out指令）</p>
 <ul>
 <li>发出写命令（输出）</li>
@@ -868,28 +868,28 @@ c-->b</pre>
 <p>不管什么设备都是open read write close</p>
 <p>根据设备文件名进行相应处理 open(“/dev/xxx”) 找到控制器的地址、内容格式等等</p>
 <p>系统调用-相应文件的处理程序-具体设备的操作</p>
-<h3><span id="open系统调用">open系统调用</span></h3>
+<h3 id="open系统调用">open系统调用<a class="anchor" href="#open系统调用">·</a></h3>
 <p>解析目录，找到inode 文件信息</p>
 <p>PCB中的filp列表对应于一个文件指针列表，每个文件指针对应了一个文件的信息</p>
-<h3><span id="向屏幕输出">向屏幕输出</span></h3>
+<h3 id="向屏幕输出">向屏幕输出<a class="anchor" href="#向屏幕输出">·</a></h3>
 <p>sys_write判断是否为字符设备 转到rw_char函数</p>
 <p>crw_table字符接口设备中找到相应读写函数地址tty_write 实现输出的核心函数</p>
 <p>往缓冲区写字符 最终读入缓冲区内容 放入tty的队列中</p>
 <p>最后通过con_write方法 将字符放到显存的寄存器中 统一编址用mov，独立编址使用out</p>
-<h2><span id="l27-键盘">L27 键盘</span></h2>
+<h2 id="L27-键盘">L27 键盘<a class="anchor" href="#L27-键盘">·</a></h2>
 <p>从键盘中断开始</p>
 <p>inb指令读入扫描码 即对应了哪个按键</p>
 <p>跳转到相应函数，根据相应函数得到key_map</p>
 <p>从key_map中取出ASCII码 将ASCII码放入缓冲队列头部 con.read_q</p>
 <p>键盘中断处理程序 再将ASCII码回写</p>
 <img src="https://umeta-model.oss-cn-beijing.aliyuncs.com/documents/image-20220913100129347.png" alt="image-20220913100129347" style="zoom: 67%;">
-<h2><span id="lab7-终端设备的控制">Lab7 终端设备的控制</span></h2>
-<h2><span id="l28-生磁盘的使用">L28 生磁盘的使用</span></h2>
+<h2 id="Lab7-终端设备的控制">Lab7 终端设备的控制<a class="anchor" href="#Lab7-终端设备的控制">·</a></h2>
+<h2 id="L28-生磁盘的使用">L28 生磁盘的使用<a class="anchor" href="#L28-生磁盘的使用">·</a></h2>
 <p>移动<strong>机械臂</strong>到相应<strong>柱面（磁道）</strong> 旋转磁盘将<strong>扇区和磁头</strong>对应，之后<strong>确定缓存位置</strong> 磁生电读，电生磁写</p>
 <p>head：其实是磁盘圆柱的横截面中的每个扇形的标志（很多个圆）</p>
 <p>cyl：是柱面，也就是一个圆柱体的侧面（展开是矩形）</p>
 <p>sec：扇区</p>
-<h3><span id="通过盘块号读写磁盘一层抽象">通过盘块号读写磁盘（一层抽象）</span></h3>
+<h3 id="通过盘块号读写磁盘（一层抽象）">通过盘块号读写磁盘（一层抽象）<a class="anchor" href="#通过盘块号读写磁盘（一层抽象）">·</a></h3>
 <p>磁盘驱动将block计算出cyl head sec</p>
 <p><strong>磁盘访问时间=写入控制器时间+寻道时间+旋转时间+传输时间</strong>  <strong>寻道时间最长，且无法显著提升</strong></p>
 <p>block相邻的盘块应该可以快速读出 ==&gt; 相邻盘块尽量在同一个磁道上</p>
@@ -897,10 +897,10 @@ c-->b</pre>
 <p>应用读入的单位是盘块 OS将盘块转为连续的若干个扇区CHS，从而读入连续的多个扇区，连续的扇区数是固定的，相当于一个盘块=n个扇区</p>
 <p>block=C*(Heads*Sectors)+H*Sectors+S</p>
 <p>S=block%Sectors</p>
-<h3><span id="多个进程通过队列使用磁盘二层抽象">多个进程通过队列使用磁盘（二层抽象）</span></h3>
+<h3 id="多个进程通过队列使用磁盘（二层抽象）">多个进程通过队列使用磁盘（二层抽象）<a class="anchor" href="#多个进程通过队列使用磁盘（二层抽象）">·</a></h3>
 <p>多个请求将盘块号放在请求队列上</p>
 <p>磁盘中断从队列中取出</p>
-<h4><span id="磁盘调度">磁盘调度</span></h4>
+<h4 id="磁盘调度">磁盘调度<a class="anchor" href="#磁盘调度">·</a></h4>
 <p>调度目标是平均访问延迟小 寻道时间是主要矛盾</p>
 <p>对磁道进行考查 看总的磁道移动数量</p>
 <ul>
@@ -916,24 +916,24 @@ c-->b</pre>
 <p>(4) 磁盘中断处理，唤醒进程</p>
 <p>(5) do_hd_request算出cyl,head,sector</p>
 <p>(6) hd_out调用outp(…)完成端口写</p>
-<h2><span id="l29-从生磁盘到文件">L29 从生磁盘到文件</span></h2>
-<h3><span id="引入文件对磁盘使用的第三层抽象">引入文件，对磁盘使用的第三层抽象</span></h3>
+<h2 id="L29-从生磁盘到文件">L29 从生磁盘到文件<a class="anchor" href="#L29-从生磁盘到文件">·</a></h2>
+<h3 id="引入文件，对磁盘使用的第三层抽象">引入文件，对磁盘使用的第三层抽象<a class="anchor" href="#引入文件，对磁盘使用的第三层抽象">·</a></h3>
 <p>文件抽象成一个<strong>字符流</strong>，按照行和列的形式组织成书-文件</p>
 <p>建立字符流到盘块集合的映射关系</p>
-<h3><span id="连续结构来实现文件">连续结构来实现文件</span></h3>
+<h3 id="连续结构来实现文件">连续结构来实现文件<a class="anchor" href="#连续结构来实现文件">·</a></h3>
 <p>文件的FCB：文件名 起始块 块数</p>
 <p>将文件中的某个字符和某一块中的某个数据做映射</p>
-<h3><span id="链式结构实现文件">链式结构实现文件</span></h3>
+<h3 id="链式结构实现文件">链式结构实现文件<a class="anchor" href="#链式结构实现文件">·</a></h3>
 <p>文件FCB：文件名 起始块</p>
 <p>文件长度增减容易，顺序访问慢</p>
-<h3><span id="索引结构实现文件">索引结构实现文件</span></h3>
+<h3 id="索引结构实现文件">索引结构实现文件<a class="anchor" href="#索引结构实现文件">·</a></h3>
 <p>inode==&gt;文件FCB：文件名 索引块</p>
 <p>索引块处有文件的每个块的索引</p>
 <p>先读入索引块位置，再找在哪个具体的位置查</p>
-<h3><span id="实际系统是多级索引">实际系统是多级索引</span></h3>
+<h3 id="实际系统是多级索引">实际系统是多级索引<a class="anchor" href="#实际系统是多级索引">·</a></h3>
 <p>重要且少的文件直接读，有的文件有一阶，二阶，三阶间接索引</p>
 <p>很小的文件高效访问，也可以表示很大的文件</p>
-<h2><span id="l30-文件使用磁盘的实现">L30 文件使用磁盘的实现</span></h2>
+<h2 id="L30-文件使用磁盘的实现">L30 文件使用磁盘的实现<a class="anchor" href="#L30-文件使用磁盘的实现">·</a></h2>
 <p>file_write(inode,file,buf,count)</p>
 <p>inode==&gt;FCB 找到盘块号</p>
 <p>file==&gt;有一个读写指针，是开始地址，再加上count（fseek就是修改这个指针）</p>
@@ -941,9 +941,9 @@ c-->b</pre>
 <p>设备文件的inode和普通文件不一样 包含文件类型属性</p>
 <p>从文件/路径名找到inode  根据inode找到盘块号 根据盘块号放入请求队列 根据请求队列算出CHS 根据out发到磁盘驱动器上</p>
 <p>第一条路 读写磁盘 第二条路 输出到显示器</p>
-<h2><span id="l31-目录与文件系统">L31 目录与文件系统</span></h2>
+<h2 id="L31-目录与文件系统">L31 目录与文件系统<a class="anchor" href="#L31-目录与文件系统">·</a></h2>
 <p>文件，抽象一个磁盘块集合 建立字符流到盘块集合的映射</p>
-<h3><span id="文件系统抽象整个磁盘-第四层抽象">文件系统抽象整个磁盘 第四层抽象</span></h3>
+<h3 id="文件系统抽象整个磁盘-第四层抽象">文件系统抽象整个磁盘 第四层抽象<a class="anchor" href="#文件系统抽象整个磁盘-第四层抽象">·</a></h3>
 <p>所有文件一层 太乱</p>
 <p>引入目录树 k次划分后，每次集合中的文件数为$O(log_kN)$ 引入目录，表示一个文件集合</p>
 <p>目录树中完成从路径名到FCB的映射</p>
@@ -955,15 +955,15 @@ c-->b</pre>
 <p>FCB数组第一个是根目录 “/” 找到数据块，匹配里面的每个文件名，再找到相应的FCB，循环往复一直找到对应的文件</p>
 <p>inode位图：哪些inode空闲，哪些被占用 盘块位图：哪些盘块空闲，硬盘大小不同这个位图大小不同 空闲位图：位向量</p>
 <p>超级块：记录两个位图有多大等信息</p>
-<h2><span id="l32-目录解析代码实现">L32 目录解析代码实现</span></h2>
+<h2 id="L32-目录解析代码实现">L32 目录解析代码实现<a class="anchor" href="#L32-目录解析代码实现">·</a></h2>
 <p>其实目录解析就是如何open 找到inode读入内存</p>
 <p>get_dir完成目录解析</p>
 <p>初始化将根目录挂载进来</p>
-<h3><span id="操作系统全图">操作系统全图</span></h3>
+<h3 id="操作系统全图">操作系统全图<a class="anchor" href="#操作系统全图">·</a></h3>
 <p><strong>多进程视图</strong> 多进程交替执行程序 CPU忙碌起来 取指执行</p>
 <p>程序执行需要操作内存，从而对内存进行管理 段页合作</p>
 <p>程序执行还需要操作磁盘或者其他外设，需要将他们抽象成文件 <strong>文件视图</strong></p>
-<h2><span id="lab8-proc文件系统的实现">Lab8 proc文件系统的实现</span></h2>
+<h2 id="Lab8-proc文件系统的实现">Lab8 proc文件系统的实现<a class="anchor" href="#Lab8-proc文件系统的实现">·</a></h2>
 
                 
                 <hr>
@@ -1023,7 +1023,7 @@ c-->b</pre>
           <strong class="toc-title">Contents</strong>
           
             
-              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">操作系统基础</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L1 什么是操作系统</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Lab0 准备工作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">相关链接</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">配置</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">调试</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">文件交换</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L2 开始揭开钢琴的盖子</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">打开电源</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">0x7c00处存放的代码</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L3 操作系统启动</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">setup.s</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">head.s</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">main函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">关于汇编</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">(1) as86汇编：能产生16位代码的Intel 8086(386)汇编</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">(2) GNU as汇编：产生32位代码，使用AT&amp;T系统V语法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">(3) 内嵌汇编，gcc编译x.c会产生中间结果as汇编文件x.s</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Lab1 操作系统的引导</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">实验介绍</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">编译与运行bootsect.s</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L4 操作系统接口</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L5 系统调用的实现</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L6 操作系统历史</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">上古神机IBM7094(1955-1965)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">从IBSYS到OS&#x2F;360(1965-1980)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">从OS&#x2F;360到MULTICS(1965-1980)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">从MULTICS到UNIX(1980-1990)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">从UNIX到Linux(1990-2000)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">IBSY &#x3D;&#x3D;&gt; OS&#x2F;360 &#x3D;&#x3D;&gt; MULTICS &#x3D;&#x3D;&gt; Unix &#x3D;&#x3D;&gt; Linux</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">核心思想、技术</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">软件实现</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">PC与DOS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">从QDOS到MS-DOS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">从MS-DOS到Windows</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Mac OS与iOS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">CP&#x2F;M &#x3D;&#x3D;&gt; QDOS &#x3D;&#x3D;&gt; MS-DOS &#x3D;&#x3D;&gt; Windows &#x3D;&#x3D;&gt; Unix &#x3D;&#x3D;&gt; System &#x3D;&#x3D;&gt; Mac OS &#x3D;&#x3D;&gt; iOS</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">核心思想、技术</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">软件实现</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L7 学习任务</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Lab2 系统调用</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">进程与线程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L8 CPU 管理的直观想法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L9 多进程图像</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">如何形成多进程图像？</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Lab3 进程运行轨迹的跟踪与统计</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L10 用户级线程</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L11 内核级线程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">内核线程switch_to的五段论</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L12 核心级线程实现实例</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L13 操作系统的那棵树</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L14 CPU调度策略</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">First Come First Served FCFS 先来先服务</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">SJF 短作业优先</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">考虑响应时间：RR 按照时间片来轮转调度</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">同时考虑响应时间和周转时间</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L15 一个实际的schedule函数</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Lab4 基于内核栈切换的进程切换</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L16 进程同步与信号量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">生产者消费者模式实例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L17 对信号量的临界区保护</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">进入临界区一个尝试：轮换法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">改进：标记法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">进入临界区Peterson算法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">多个进程：面包店算法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">临界区保护的另一类解法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">硬件原子指令法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L18 信号量的代码实现</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L19 死锁处理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">死锁预防</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">死锁避免</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">找安全序列的银行家算法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">死锁检测+恢复：发现问题再处理</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Lab5 信号量的实现和应用</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">内存管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L20 内存使用与分段</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L21 内存分区与分页</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L22 多级页表和快表</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L23 段页结合的实际内存管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">地址翻译</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">实际内存管理</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L24 内存换入-请求调页</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L25 内存换出（页表置换）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">FIFO 最简单</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">MIN 最优</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">LRU 折中最优</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">LRU 准确实现 用时间戳</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">LRU 准确实现 用页面栈</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">LRU近似实现-将时间计数变为是和否</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">clock算法的分析和改造</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">给进程分配多少页框（帧frame）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">补充：Clock算法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">简单的CLOCK置换算法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">改进型的CLOCK置换算法</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Lab6 地址映射与共享</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">设备驱动与文件系统</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L26 I&#x2F;O 与显示器</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">open系统调用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">向屏幕输出</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L27 键盘</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Lab7 终端设备的控制</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L28 生磁盘的使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">通过盘块号读写磁盘（一层抽象）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">多个进程通过队列使用磁盘（二层抽象）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">磁盘调度</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L29 从生磁盘到文件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">引入文件，对磁盘使用的第三层抽象</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">连续结构来实现文件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">链式结构实现文件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">索引结构实现文件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">实际系统是多级索引</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L30 文件使用磁盘的实现</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L31 目录与文件系统</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">文件系统抽象整个磁盘 第四层抽象</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">L32 目录解析代码实现</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">操作系统全图</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Lab8 proc文件系统的实现</span></a></li></ol></li></ol>
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#操作系统基础"><span class="toc-nav-text">操作系统基础</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L1-什么是操作系统"><span class="toc-nav-text">L1 什么是操作系统</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Lab0-准备工作"><span class="toc-nav-text">Lab0 准备工作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#相关链接"><span class="toc-nav-text">相关链接</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#配置-3"><span class="toc-nav-text">配置</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#调试"><span class="toc-nav-text">调试</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#文件交换"><span class="toc-nav-text">文件交换</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L2-开始揭开钢琴的盖子"><span class="toc-nav-text">L2 开始揭开钢琴的盖子</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#打开电源"><span class="toc-nav-text">打开电源</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#0x7c00处存放的代码"><span class="toc-nav-text">0x7c00处存放的代码</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L3-操作系统启动"><span class="toc-nav-text">L3 操作系统启动</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#setup-s"><span class="toc-nav-text">setup.s</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#head-s"><span class="toc-nav-text">head.s</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#main函数"><span class="toc-nav-text">main函数</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#关于汇编"><span class="toc-nav-text">关于汇编</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-as86汇编：能产生16位代码的Intel-8086-386-汇编"><span class="toc-nav-text">(1) as86汇编：能产生16位代码的Intel 8086(386)汇编</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-GNU-as汇编：产生32位代码，使用AT-T系统V语法"><span class="toc-nav-text">(2) GNU as汇编：产生32位代码，使用AT&amp;T系统V语法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-内嵌汇编，gcc编译x-c会产生中间结果as汇编文件x-s"><span class="toc-nav-text">(3) 内嵌汇编，gcc编译x.c会产生中间结果as汇编文件x.s</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Lab1-操作系统的引导"><span class="toc-nav-text">Lab1 操作系统的引导</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#实验介绍"><span class="toc-nav-text">实验介绍</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#编译与运行bootsect-s"><span class="toc-nav-text">编译与运行bootsect.s</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L4-操作系统接口"><span class="toc-nav-text">L4 操作系统接口</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L5-系统调用的实现"><span class="toc-nav-text">L5 系统调用的实现</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L6-操作系统历史"><span class="toc-nav-text">L6 操作系统历史</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#上古神机IBM7094-1955-1965"><span class="toc-nav-text">上古神机IBM7094(1955-1965)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#从IBSYS到OS-360-1965-1980"><span class="toc-nav-text">从IBSYS到OS&#x2F;360(1965-1980)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#从OS-360到MULTICS-1965-1980"><span class="toc-nav-text">从OS&#x2F;360到MULTICS(1965-1980)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#从MULTICS到UNIX-1980-1990"><span class="toc-nav-text">从MULTICS到UNIX(1980-1990)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#从UNIX到Linux-1990-2000"><span class="toc-nav-text">从UNIX到Linux(1990-2000)</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#IBSY-OS-360-MULTICS-Unix-Linux"><span class="toc-nav-text">IBSY &#x3D;&#x3D;&gt; OS&#x2F;360 &#x3D;&#x3D;&gt; MULTICS &#x3D;&#x3D;&gt; Unix &#x3D;&#x3D;&gt; Linux</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#核心思想、技术"><span class="toc-nav-text">核心思想、技术</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#软件实现"><span class="toc-nav-text">软件实现</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#PC与DOS"><span class="toc-nav-text">PC与DOS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#从QDOS到MS-DOS"><span class="toc-nav-text">从QDOS到MS-DOS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#从MS-DOS到Windows"><span class="toc-nav-text">从MS-DOS到Windows</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Mac-OS与iOS"><span class="toc-nav-text">Mac OS与iOS</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#CP-M-QDOS-MS-DOS-Windows-Unix-System-Mac-OS-iOS"><span class="toc-nav-text">CP&#x2F;M &#x3D;&#x3D;&gt; QDOS &#x3D;&#x3D;&gt; MS-DOS &#x3D;&#x3D;&gt; Windows &#x3D;&#x3D;&gt; Unix &#x3D;&#x3D;&gt; System &#x3D;&#x3D;&gt; Mac OS &#x3D;&#x3D;&gt; iOS</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#核心思想、技术-2"><span class="toc-nav-text">核心思想、技术</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#软件实现-2"><span class="toc-nav-text">软件实现</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L7-学习任务"><span class="toc-nav-text">L7 学习任务</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Lab2-系统调用"><span class="toc-nav-text">Lab2 系统调用</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#进程与线程"><span class="toc-nav-text">进程与线程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L8-CPU-管理的直观想法"><span class="toc-nav-text">L8 CPU 管理的直观想法</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L9-多进程图像"><span class="toc-nav-text">L9 多进程图像</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#如何形成多进程图像？"><span class="toc-nav-text">如何形成多进程图像？</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Lab3-进程运行轨迹的跟踪与统计"><span class="toc-nav-text">Lab3 进程运行轨迹的跟踪与统计</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L10-用户级线程"><span class="toc-nav-text">L10 用户级线程</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L11-内核级线程"><span class="toc-nav-text">L11 内核级线程</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#内核线程switch-to的五段论"><span class="toc-nav-text">内核线程switch_to的五段论</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L12-核心级线程实现实例"><span class="toc-nav-text">L12 核心级线程实现实例</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L13-操作系统的那棵树"><span class="toc-nav-text">L13 操作系统的那棵树</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L14-CPU调度策略"><span class="toc-nav-text">L14 CPU调度策略</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#First-Come-First-Served-FCFS-先来先服务"><span class="toc-nav-text">First Come First Served FCFS 先来先服务</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#SJF-短作业优先"><span class="toc-nav-text">SJF 短作业优先</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#考虑响应时间：RR-按照时间片来轮转调度"><span class="toc-nav-text">考虑响应时间：RR 按照时间片来轮转调度</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#同时考虑响应时间和周转时间"><span class="toc-nav-text">同时考虑响应时间和周转时间</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L15-一个实际的schedule函数"><span class="toc-nav-text">L15 一个实际的schedule函数</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Lab4-基于内核栈切换的进程切换"><span class="toc-nav-text">Lab4 基于内核栈切换的进程切换</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L16-进程同步与信号量"><span class="toc-nav-text">L16 进程同步与信号量</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#生产者消费者模式实例"><span class="toc-nav-text">生产者消费者模式实例</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L17-对信号量的临界区保护"><span class="toc-nav-text">L17 对信号量的临界区保护</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#进入临界区一个尝试：轮换法"><span class="toc-nav-text">进入临界区一个尝试：轮换法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#改进：标记法"><span class="toc-nav-text">改进：标记法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#进入临界区Peterson算法"><span class="toc-nav-text">进入临界区Peterson算法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#多个进程：面包店算法"><span class="toc-nav-text">多个进程：面包店算法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#临界区保护的另一类解法"><span class="toc-nav-text">临界区保护的另一类解法</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#硬件原子指令法"><span class="toc-nav-text">硬件原子指令法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L18-信号量的代码实现"><span class="toc-nav-text">L18 信号量的代码实现</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L19-死锁处理"><span class="toc-nav-text">L19 死锁处理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#死锁预防"><span class="toc-nav-text">死锁预防</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#死锁避免"><span class="toc-nav-text">死锁避免</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#找安全序列的银行家算法"><span class="toc-nav-text">找安全序列的银行家算法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#死锁检测-恢复：发现问题再处理"><span class="toc-nav-text">死锁检测+恢复：发现问题再处理</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Lab5-信号量的实现和应用"><span class="toc-nav-text">Lab5 信号量的实现和应用</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#内存管理"><span class="toc-nav-text">内存管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L20-内存使用与分段"><span class="toc-nav-text">L20 内存使用与分段</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L21-内存分区与分页"><span class="toc-nav-text">L21 内存分区与分页</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L22-多级页表和快表"><span class="toc-nav-text">L22 多级页表和快表</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L23-段页结合的实际内存管理"><span class="toc-nav-text">L23 段页结合的实际内存管理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#地址翻译"><span class="toc-nav-text">地址翻译</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#实际内存管理"><span class="toc-nav-text">实际内存管理</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L24-内存换入-请求调页"><span class="toc-nav-text">L24 内存换入-请求调页</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L25-内存换出（页表置换）"><span class="toc-nav-text">L25 内存换出（页表置换）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#FIFO-最简单"><span class="toc-nav-text">FIFO 最简单</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#MIN-最优"><span class="toc-nav-text">MIN 最优</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#LRU-折中最优"><span class="toc-nav-text">LRU 折中最优</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#LRU-准确实现-用时间戳"><span class="toc-nav-text">LRU 准确实现 用时间戳</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#LRU-准确实现-用页面栈"><span class="toc-nav-text">LRU 准确实现 用页面栈</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#LRU近似实现-将时间计数变为是和否"><span class="toc-nav-text">LRU近似实现-将时间计数变为是和否</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#clock算法的分析和改造"><span class="toc-nav-text">clock算法的分析和改造</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#给进程分配多少页框（帧frame）"><span class="toc-nav-text">给进程分配多少页框（帧frame）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#补充：Clock算法"><span class="toc-nav-text">补充：Clock算法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#简单的CLOCK置换算法"><span class="toc-nav-text">简单的CLOCK置换算法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#改进型的CLOCK置换算法"><span class="toc-nav-text">改进型的CLOCK置换算法</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Lab6-地址映射与共享"><span class="toc-nav-text">Lab6 地址映射与共享</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#设备驱动与文件系统"><span class="toc-nav-text">设备驱动与文件系统</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L26-I-O-与显示器"><span class="toc-nav-text">L26 I&#x2F;O 与显示器</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#open系统调用"><span class="toc-nav-text">open系统调用</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#向屏幕输出"><span class="toc-nav-text">向屏幕输出</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L27-键盘"><span class="toc-nav-text">L27 键盘</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Lab7-终端设备的控制"><span class="toc-nav-text">Lab7 终端设备的控制</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L28-生磁盘的使用"><span class="toc-nav-text">L28 生磁盘的使用</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#通过盘块号读写磁盘（一层抽象）"><span class="toc-nav-text">通过盘块号读写磁盘（一层抽象）</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#多个进程通过队列使用磁盘（二层抽象）"><span class="toc-nav-text">多个进程通过队列使用磁盘（二层抽象）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#磁盘调度"><span class="toc-nav-text">磁盘调度</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L29-从生磁盘到文件"><span class="toc-nav-text">L29 从生磁盘到文件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#引入文件，对磁盘使用的第三层抽象"><span class="toc-nav-text">引入文件，对磁盘使用的第三层抽象</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#连续结构来实现文件"><span class="toc-nav-text">连续结构来实现文件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#链式结构实现文件"><span class="toc-nav-text">链式结构实现文件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#索引结构实现文件"><span class="toc-nav-text">索引结构实现文件</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#实际系统是多级索引"><span class="toc-nav-text">实际系统是多级索引</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L30-文件使用磁盘的实现"><span class="toc-nav-text">L30 文件使用磁盘的实现</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L31-目录与文件系统"><span class="toc-nav-text">L31 目录与文件系统</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#文件系统抽象整个磁盘-第四层抽象"><span class="toc-nav-text">文件系统抽象整个磁盘 第四层抽象</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#L32-目录解析代码实现"><span class="toc-nav-text">L32 目录解析代码实现</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#操作系统全图"><span class="toc-nav-text">操作系统全图</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Lab8-proc文件系统的实现"><span class="toc-nav-text">Lab8 proc文件系统的实现</span></a></li></ol></li></ol>
             
           
           </div>

@@ -199,13 +199,6 @@
 
                         
                         <li>
-                            <a href="/categories/">Categories</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/tags/">Tags</a>
                         </li>
                         
@@ -214,6 +207,13 @@
                         
                         <li>
                             <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
                         </li>
                         
                     
@@ -272,7 +272,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2><span id="后端配置">后端配置</span></h2>
+                <h2 id="后端配置">后端配置<a class="anchor" href="#后端配置">·</a></h2>
 <p><a href="https://blog.csdn.net/freezingxu/article/details/77074075" target="_blank" rel="noopener">在Ubuntu/Linux环境下使用MySQL：启动和关闭MySQL服务</a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">service mysql start</span><br><span class="line">service mysql status</span><br><span class="line">service mysql stop</span><br></pre></td></tr></table></figure>
 <p>修改.cnf文件的方法：直接 <code>sudo vim my.cnf</code></p>
@@ -290,14 +290,14 @@
 <p>https://blog.csdn.net/leacock1991/article/details/110406708</p>
 <p>解决OSError: mysql_config not found问题：https://blog.csdn.net/zy_whynot/article/details/106960087</p>
 <p>mongo远程连接：https://www.cnblogs.com/kimkat/p/9192785.html</p>
-<h3><span id="ngnix配置">ngnix配置</span></h3>
+<h3 id="ngnix配置">ngnix配置<a class="anchor" href="#ngnix配置">·</a></h3>
 <p>https://www.cnblogs.com/niehaidong111/p/11208492.html</p>
 <p>https://www.cnblogs.com/NAG2020/p/12920154.html</p>
 <p>安装ngnix：https://blog.csdn.net/qq_23832313/article/details/83578836</p>
 <p>https://www.cnblogs.com/gede/p/11011693.html</p>
 <p>sudo vim /etc/nginx/conf.d/istic.conf</p>
-<h2><span id="前端配置">前端配置</span></h2>
-<h3><span id="安装npm">安装npm</span></h3>
+<h2 id="前端配置">前端配置<a class="anchor" href="#前端配置">·</a></h2>
+<h3 id="安装npm">安装npm<a class="anchor" href="#安装npm">·</a></h3>
 <p>sudo apt update</p>
 <p>sudo apt install npm</p>
 <p>git clone https://gitee.com/muller2020/BUAACrawler.git</p>
@@ -306,17 +306,17 @@
 <p>npm install</p>
 <p>npm run build:prod</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ps -aux |grep uwsgi</span><br><span class="line">kill -9 3539 #最后这个号码是最上面那个</span><br><span class="line">uwsgi --ini mywsgi.ini #再重启uwsgi就好了</span><br></pre></td></tr></table></figure>
-<h3><span id="前端问题解决">前端问题解决</span></h3>
+<h3 id="前端问题解决">前端问题解决<a class="anchor" href="#前端问题解决">·</a></h3>
 <p><a href="http://blog.itblood.com/2455.html" target="_blank" rel="noopener">Error:Rule can only have resource source(provided resource test include exclude【解决办法】</a> 重装webpack</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm cache clean --force #清除缓存</span><br></pre></td></tr></table></figure>
 <p>npm install一定要保证全局的存储地址有充足的空间！！！（默认在C盘）</p>
-<h2><span id="部署完成">部署完成</span></h2>
-<h3><span id="修改用户密码">修改用户密码</span></h3>
+<h2 id="部署完成">部署完成<a class="anchor" href="#部署完成">·</a></h2>
+<h3 id="修改用户密码">修改用户密码<a class="anchor" href="#修改用户密码">·</a></h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py shell</span><br><span class="line"><span class="keyword">from</span> django.contrib.auth <span class="keyword">import</span> get_user_model</span><br><span class="line">User = get_user_model()</span><br><span class="line">user=User.objects.get(username=<span class="string">'XXX'</span>)</span><br><span class="line">user.set_password(<span class="string">'new_password'</span>)</span><br><span class="line">user.save()</span><br><span class="line">或者</span><br><span class="line">python3 manage.py changepassword username</span><br></pre></td></tr></table></figure>
-<h3><span id="连接远程服务器">连接远程服务器</span></h3>
+<h3 id="连接远程服务器">连接远程服务器<a class="anchor" href="#连接远程服务器">·</a></h3>
 <p>https://www.cnblogs.com/zhuminghui/p/10947930.html</p>
-<h3><span id="自动部署">自动部署</span></h3>
-<h4><span id="生成公私钥">生成公私钥</span></h4>
+<h3 id="自动部署">自动部署<a class="anchor" href="#自动部署">·</a></h3>
+<h4 id="生成公私钥">生成公私钥<a class="anchor" href="#生成公私钥">·</a></h4>
 <figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -o</span><br></pre></td></tr></table></figure>
 <p>将公钥放到仓库的公钥列表中，并将.git文件夹下的config文件中的url改为ssh地址</p>
 
@@ -378,7 +378,7 @@
           <strong class="toc-title">Contents</strong>
           
             
-              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">后端配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">ngnix配置</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">前端配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">安装npm</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">前端问题解决</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">部署完成</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">修改用户密码</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">连接远程服务器</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">自动部署</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">生成公私钥</span></a></li></ol></li></ol></li></ol>
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#后端配置"><span class="toc-nav-text">后端配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#ngnix配置"><span class="toc-nav-text">ngnix配置</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#前端配置"><span class="toc-nav-text">前端配置</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#安装npm"><span class="toc-nav-text">安装npm</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#前端问题解决"><span class="toc-nav-text">前端问题解决</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#部署完成"><span class="toc-nav-text">部署完成</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#修改用户密码"><span class="toc-nav-text">修改用户密码</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#连接远程服务器"><span class="toc-nav-text">连接远程服务器</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#自动部署"><span class="toc-nav-text">自动部署</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#生成公私钥"><span class="toc-nav-text">生成公私钥</span></a></li></ol></li></ol></li></ol>
             
           
           </div>

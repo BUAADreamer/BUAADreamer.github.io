@@ -201,13 +201,6 @@
 
                         
                         <li>
-                            <a href="/categories/">Categories</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/tags/">Tags</a>
                         </li>
                         
@@ -216,6 +209,13 @@
                         
                         <li>
                             <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
                         </li>
                         
                     
@@ -276,14 +276,14 @@
 
                 <p>OS课程Lab0学习笔记</p>
 <a id="more"></a>
-<h1><span id="基础操作">基础操作</span></h1>
-<h2><span id="命令行">命令行</span></h2>
+<h1 id="基础操作">基础操作<a class="anchor" href="#基础操作">·</a></h1>
+<h2 id="命令行">命令行<a class="anchor" href="#命令行">·</a></h2>
 <p>命令格式：<code>命令名 [选项] [参数]</code></p>
 <p>Linux命令在系统中有两种类型：<code>内置Shell（外壳）命令</code>和<code>Linux命令</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm -rf #删除所有文件</span><br></pre></td></tr></table></figure>
-<h3><span id="os常用命令">OS常用命令</span></h3>
+<h3 id="OS常用命令">OS常用命令<a class="anchor" href="#OS常用命令">·</a></h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">find ./ test.md 	#查找文件</span><br><span class="line">grep -r printf ./ 	#查找函数变量。。</span><br></pre></td></tr></table></figure>
-<h3><span id="vim常用命令">vim常用命令</span></h3>
+<h3 id="vim常用命令">vim常用命令<a class="anchor" href="#vim常用命令">·</a></h3>
 <img src="/2021/03/10/OS-Lab0%E7%AC%94%E8%AE%B0/vim常用操作.jpg" style="zoom: 80%;">
 <p>撤销重做：<code>u</code> <code>Ctrl+r</code></p>
 <p>复制粘贴：<code>y</code> <code>p</code></p>
@@ -292,13 +292,13 @@
 <p>查看某一行代码：<code>:n</code></p>
 <p><strong>永久配置</strong>vim：在<code>~/.vimrc</code>文件中进行配置</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set nu</span><br><span class="line">set mouse=a</span><br><span class="line">set tabstop=2</span><br><span class="line">set tags=~/19373573-lab/tags</span><br></pre></td></tr></table></figure>
-<h4><span id="ctags使用">Ctags使用</span></h4>
-<h5><span id="配置">配置</span></h5>
+<h4 id="Ctags使用">Ctags使用<a class="anchor" href="#Ctags使用">·</a></h4>
+<h5 id="配置-2">配置<a class="anchor" href="#配置-2">·</a></h5>
 <ol>
 <li>首先，在项目根目录（例如 <code>19373573-lab</code>）下面建立索引，即在根目录下敲：<code>ctags -R *</code></li>
 <li>在 vim 配置文件 <code>.vimrc</code> 里面加上这句话，告诉 vim 我们 tags 文件的位置：<code>set tags=~/19373573-lab/tags</code></li>
 </ol>
-<h5><span id="使用">使用</span></h5>
+<h5 id="使用">使用<a class="anchor" href="#使用">·</a></h5>
 <ul>
 <li>
 <p>光标放在某函数/变量上，<code>Ctrl+N</code>或者<code>Ctrl+P</code>进行代码补全。<code>Ctrl+]</code>进入代码的定义位置，<code>Ctrl+T</code>返回。</p>
@@ -307,9 +307,9 @@
 <p>同时，<code>Ctrl+W+]</code>可以在新窗口打开其他代码。<code>Ctrl+W K</code>/<code>Ctrl+W J</code>在窗口间移动 <code>:q</code>退出窗口</p>
 </li>
 </ul>
-<h3><span id="git">git</span></h3>
+<h3 id="git">git<a class="anchor" href="#git">·</a></h3>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">回退版本时常用</span></span><br><span class="line">git reset hashid --hard</span><br><span class="line">git checkout .</span><br><span class="line">git add . &amp;&amp; git commit -m "1" &amp;&amp; git push --force</span><br></pre></td></tr></table></figure>
-<h2><span id="运行小操作系统">运行小操作系统</span></h2>
+<h2 id="运行小操作系统">运行小操作系统<a class="anchor" href="#运行小操作系统">·</a></h2>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/OSLAB/gxemul -E testmips -C R3000 -M 64 gxemul/vmlinux #直接运行</span><br><span class="line">/OSLAB/gxemul -E testmips -C R3000 -M 64 -V gxemul/vmlinux #调试</span><br></pre></td></tr></table></figure>
 <p>由于OS实验经常需要使用<code>gexmul</code>模拟器，所以我直接写了一个<code>test</code>脚本封装这个指令，如下所示。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash </span></span><br><span class="line">if [$1 = ''];then</span><br><span class="line">/OSLAB/gxemul -E testmips -C R3000 -M 64 gxemul/vmlinux</span><br><span class="line">else</span><br><span class="line">/OSLAB/gxemul -E testmips -C R3000 -M 64 -V gxemul/vmlinux</span><br><span class="line">fi</span><br><span class="line"><span class="meta">#</span><span class="bash">breakpoint add addr (addr--&gt;usually <span class="keyword">function</span> name)</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">continue</span> (<span class="built_in">continue</span> execute to next breakpoint)</span></span><br><span class="line"><span class="meta">#</span><span class="bash">step n   (execute n steps asm code)</span></span><br><span class="line"><span class="meta">#</span><span class="bash">lookup name|addr</span></span><br><span class="line"><span class="meta">#</span><span class="bash">dump addr</span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="built_in">help</span> (get cmd <span class="built_in">help</span>)</span></span><br><span class="line"><span class="meta">#</span><span class="bash">quit</span></span><br></pre></td></tr></table></figure>

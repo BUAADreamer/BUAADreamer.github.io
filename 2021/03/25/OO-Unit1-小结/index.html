@@ -201,13 +201,6 @@
 
                         
                         <li>
-                            <a href="/categories/">Categories</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/tags/">Tags</a>
                         </li>
                         
@@ -216,6 +209,13 @@
                         
                         <li>
                             <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
                         </li>
                         
                     
@@ -277,14 +277,14 @@
                 <p>2021年北航OO课程的第一单元—表达式求导作业项目总结。</p>
 <p>本单元中，有过因为疏忽大意出现重大错误导致被hack惨的痛苦经历，也有未被hack成功的喜悦体验，下面就来对这一单元的内容做一下梳理和回顾。</p>
 <a id="more"></a>
-<h1><span id="oo-unit1-总结">OO-Unit1-总结</span></h1>
-<h2><span id="一-程序结构分析">一、程序结构分析</span></h2>
-<h3><span id="第一次作业">第一次作业</span></h3>
-<h4><span id="代码可视化与数据统计">代码可视化与数据统计</span></h4>
-<h5><span id="程序类图">程序类图</span></h5>
+<h1 id="OO-Unit1-总结">OO-Unit1-总结<a class="anchor" href="#OO-Unit1-总结">·</a></h1>
+<h2 id="一、程序结构分析">一、程序结构分析<a class="anchor" href="#一、程序结构分析">·</a></h2>
+<h3 id="第一次作业">第一次作业<a class="anchor" href="#第一次作业">·</a></h3>
+<h4 id="代码可视化与数据统计">代码可视化与数据统计<a class="anchor" href="#代码可视化与数据统计">·</a></h4>
+<h5 id="程序类图">程序类图<a class="anchor" href="#程序类图">·</a></h5>
 <img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit1/hw1.png" style="zoom:80%;">
 <p>可以看出，本次作业<code>Item</code>类中含有两个多余的方法，而整体架构上并没有严格遵循高内聚低耦合的原则，需要对各个类进行化简。</p>
-<h5><span id="程序复杂度分析">程序复杂度分析</span></h5>
+<h5 id="程序复杂度分析">程序复杂度分析<a class="anchor" href="#程序复杂度分析">·</a></h5>
 <table>
 <thead>
 <tr>
@@ -316,25 +316,25 @@
 </tbody>
 </table>
 <p>可以看出，在<code>Item</code>类和<code>Poly</code>类中代码复杂度较高，含有过多的判断语句。</p>
-<h5><span id="程序行数统计">程序行数统计</span></h5>
+<h5 id="程序行数统计">程序行数统计<a class="anchor" href="#程序行数统计">·</a></h5>
 <img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit1/hw1_sta.png" style="zoom:80%;">
 <p>本次的<code>Main</code>类中的有效行数达到了31行，过多。</p>
-<h4><span id="代码分析">代码分析</span></h4>
-<h5><span id="原理分析">原理分析</span></h5>
+<h4 id="代码分析">代码分析<a class="anchor" href="#代码分析">·</a></h4>
+<h5 id="原理分析">原理分析<a class="anchor" href="#原理分析">·</a></h5>
 <p><code>Main</code>类中含有对字符串的预处理<code>process</code>方法，包含去除空白字符和对加减号的替换。</p>
 <p><code>Item</code>类中记录了一个项的系数和幂指数。</p>
 <p><code>Poly</code>类中记录了一个多项式的系数和幂指数的幂指数到系数的<code>HashMap</code>，以及相应的求导化简方法。</p>
 <p>具体运行时，先对输入的字符串做好预处理，同时产生一个<code>Item</code>类的列表，之后将这个列表存入<code>Poly</code>类中利用<code>initMap</code>方法转换成<code>HashMap</code>，转换同时进行了化简，之后再完成求导方法。</p>
-<h5><span id="优点">优点</span></h5>
+<h5 id="优点">优点<a class="anchor" href="#优点">·</a></h5>
 <p>针对本次任务，字符串处理后根据符号分割的速度快，操作简便。之后将表达式每一项先进行化简再进行求导操作，类之间耦合程度较低，同时化简效果较好。</p>
-<h5><span id="缺点">缺点</span></h5>
+<h5 id="缺点">缺点<a class="anchor" href="#缺点">·</a></h5>
 <p>可扩展性较弱，字符串处理的方法仅仅适用于本次作业，之后两次作业均不适用。</p>
-<h3><span id="第二次作业">第二次作业</span></h3>
-<h4><span id="代码可视化与数据统计">代码可视化与数据统计</span></h4>
-<h5><span id="程序类图">程序类图</span></h5>
+<h3 id="第二次作业">第二次作业<a class="anchor" href="#第二次作业">·</a></h3>
+<h4 id="代码可视化与数据统计-2">代码可视化与数据统计<a class="anchor" href="#代码可视化与数据统计-2">·</a></h4>
+<h5 id="程序类图-2">程序类图<a class="anchor" href="#程序类图-2">·</a></h5>
 <img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit1/hw2.png" style="zoom: 50%;">
 <p>本次作业基本达到了高内聚低耦合的目的，每个类的功能相对独立，除了<code>Expression</code>类外没有特别臃肿的类。</p>
-<h5><span id="程序复杂度分析">程序复杂度分析</span></h5>
+<h5 id="程序复杂度分析-2">程序复杂度分析<a class="anchor" href="#程序复杂度分析-2">·</a></h5>
 <table>
 <thead>
 <tr>
@@ -402,11 +402,11 @@
 </tbody>
 </table>
 <p>可以看出<code>Expression</code>和<code>Item</code>类的复杂度较高。</p>
-<h5><span id="程序行数统计">程序行数统计</span></h5>
+<h5 id="程序行数统计-2">程序行数统计<a class="anchor" href="#程序行数统计-2">·</a></h5>
 <img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit1/hw2_sta.png" style="zoom:80%;">
 <p>本次作业代码量较大，总有效行数是751行，其中代码行数最长地就是<code>Expression</code>类</p>
-<h4><span id="代码分析">代码分析</span></h4>
-<h5><span id="原理分析">原理分析</span></h5>
+<h4 id="代码分析-2">代码分析<a class="anchor" href="#代码分析-2">·</a></h4>
+<h5 id="原理分析-2">原理分析<a class="anchor" href="#原理分析-2">·</a></h5>
 <p>本次作业使用了多叉树作为数据结构建立表达式树。采用了递归下降的方式对输入的表达式进行解析。</p>
 <p>表达式树分为三个层次，如下图所示。</p>
 <img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit1/pic.png" style="zoom:80%;">
@@ -416,16 +416,16 @@
 <p><code>ExprNode</code>类定义了表达式树的根节点。里面也含有<code>diff</code>、<code>simplify</code>方法。求导方法拼接每个项的求导输出，化简方法则是将相同的项进行合并。</p>
 <p><code>Expression</code>类包含了一个<code>ExprNode</code>对象，具体的求导输出也是调用了相关接口。同时<code>Expression</code>类也包含了对输入字符串的递归下降的解析过程和相关方法。包含了<code>getExpression、getItem、getFactor、getExprFactor、getTriFun、getPowFun、getNumber、getConstant</code>等方法。最后调用<code>getExpression</code>方法对输入进行解析并将结果存入<code>exprNode</code>对象中。</p>
 <p>求导之后，将导数的字符串重新进行解析化简，得到较为简单的结果。</p>
-<h5><span id="优点">优点</span></h5>
+<h5 id="优点-2">优点<a class="anchor" href="#优点-2">·</a></h5>
 <p>利用递归下降和表达式树对输入字符串进行了快速准确的解析，同时对同类项进行了一定程度的合并，可以达到较好的化简效果。</p>
 <p>求导方法自下而上，各层之间关系清晰，且可以简便的使用同一种方式遍历所有的项和因子进行操作。</p>
-<h5><span id="缺点">缺点</span></h5>
+<h5 id="缺点-2">缺点<a class="anchor" href="#缺点-2">·</a></h5>
 <p>对于表达式的深合并和化简没有完成，同时没有定义清晰的复合求导，嵌套求导接口，对于比第三次作业更复杂的合并方式（比如增加各种嵌套）本次作业代码可扩展性一般。</p>
-<h3><span id="第三次作业">第三次作业</span></h3>
-<h4><span id="代码可视化与数据统计">代码可视化与数据统计</span></h4>
-<h5><span id="程序类图">程序类图</span></h5>
+<h3 id="第三次作业">第三次作业<a class="anchor" href="#第三次作业">·</a></h3>
+<h4 id="代码可视化与数据统计-3">代码可视化与数据统计<a class="anchor" href="#代码可视化与数据统计-3">·</a></h4>
+<h5 id="程序类图-3">程序类图<a class="anchor" href="#程序类图-3">·</a></h5>
 <img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit1/hw3.png" style="zoom: 33%;">
-<h5><span id="程序复杂度分析">程序复杂度分析</span></h5>
+<h5 id="程序复杂度分析-3">程序复杂度分析<a class="anchor" href="#程序复杂度分析-3">·</a></h5>
 <table>
 <thead>
 <tr>
@@ -504,52 +504,52 @@
 </tr>
 </tbody>
 </table>
-<h5><span id="程序行数统计">程序行数统计</span></h5>
+<h5 id="程序行数统计-3">程序行数统计<a class="anchor" href="#程序行数统计-3">·</a></h5>
 <img src="https://fzc-1300590701.cos.ap-nanjing.myqcloud.com/blogImages/OO-Unit1/hw3_sta.png" style="zoom:80%;">
 <p>本次代码量较上次增加了150行，主要是增加了格式正确性判断的逻辑以及修改了部分解析表达式的代码。</p>
-<h4><span id="代码分析">代码分析</span></h4>
-<h5><span id="原理分析">原理分析</span></h5>
+<h4 id="代码分析-3">代码分析<a class="anchor" href="#代码分析-3">·</a></h4>
+<h5 id="原理分析-3">原理分析<a class="anchor" href="#原理分析-3">·</a></h5>
 <p>本次代码在上次的代码基础上修改了对三角函数的解析函数以及增加了嵌套求导、正确格式检查（包含了对空白字符，非法字符的解析），改动量较小。具体原理与上次作业类似。</p>
 <p>具体方法上，增加了<code>getWhite</code>方法读入空白字符而没有做预处理，同时如果代码中遇到了不符合格式规范的输入序列，直接抛出异常，在<code>Main</code>类中进行接受和处理。</p>
-<h5><span id="优点">优点</span></h5>
+<h5 id="优点-3">优点<a class="anchor" href="#优点-3">·</a></h5>
 <p>格式检查正确性较好，检查的比较完整。较上次作业改动不大，可以认为是比较符合设计模式中的开放-封闭原则。</p>
-<h5><span id="缺点">缺点</span></h5>
+<h5 id="缺点-3">缺点<a class="anchor" href="#缺点-3">·</a></h5>
 <p>为了求稳，化简效果较差，仅完成了和上次程度一样的化简。</p>
-<h2><span id="二-bug分析">二、bug分析</span></h2>
-<h3><span id="第一次作业">第一次作业</span></h3>
-<h4><span id="自己的bug">自己的bug</span></h4>
-<h5><span id="bug描述">bug描述</span></h5>
+<h2 id="二、bug分析">二、bug分析<a class="anchor" href="#二、bug分析">·</a></h2>
+<h3 id="第一次作业-2">第一次作业<a class="anchor" href="#第一次作业-2">·</a></h3>
+<h4 id="自己的bug">自己的bug<a class="anchor" href="#自己的bug">·</a></h4>
+<h5 id="bug描述">bug描述<a class="anchor" href="#bug描述">·</a></h5>
 <p>本次作业在强测中AK，在互测中被找出一个bug</p>
 <p>被一些比较长且负号很多的用例测的时候有可能会产生下述bug：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Exception in thread <span class="string">"main"</span> java.lang.IllegalArgumentException: Comparison method violates its general contract!</span><br><span class="line">	at java.util.TimSort.mergeLo(TimSort.java:<span class="number">777</span>)</span><br><span class="line">	at java.util.TimSort.mergeAt(TimSort.java:<span class="number">514</span>)</span><br><span class="line">	at java.util.TimSort.mergeCollapse(TimSort.java:<span class="number">441</span>)</span><br><span class="line">	at java.util.TimSort.sort(TimSort.java:<span class="number">245</span>)</span><br><span class="line">	at java.util.Arrays.sort(Arrays.java:<span class="number">1512</span>)</span><br><span class="line">	at java.util.ArrayList.sort(ArrayList.java:<span class="number">1462</span>)</span><br><span class="line">	at java.util.Collections.sort(Collections.java:<span class="number">175</span>)</span><br><span class="line">	at Poly.getOutput(Poly.java:<span class="number">51</span>)</span><br><span class="line">	at Poly.diff(Poly.java:<span class="number">42</span>)</span><br><span class="line">	at Main.main(Main.java:<span class="number">17</span>)</span><br></pre></td></tr></table></figure>
 <p>问题原因其实就是源于以下的代码。以下代码位于<code>Poly.java</code>的输出函数中。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Collections.sort(ls, (Comparator) (o1, o2) -&gt; &#123;</span><br><span class="line">    BigInteger i1 = (BigInteger) o1;</span><br><span class="line">    BigInteger i2 = (BigInteger) o2;</span><br><span class="line">    <span class="keyword">if</span> (miXiMap.get(i1).compareTo(BigInteger.valueOf(<span class="number">0</span>)) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (miXiMap.get(i2).compareTo(BigInteger.valueOf(<span class="number">0</span>)) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> i2.compareTo(i1);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>简单来说就是对一个容器进行排序时（首先本次作业排序就没必要，但笔者非常脑残地进行了降幂排序），比较函数里不能出现两个相互矛盾返回值逻辑，或者至少不要调用除了这个对象外部的变量。比如我的上述代码例子里，其实就是想降幂排序的同时将负号的移到后面去以此来简化长度，这个过程调用了外部的<code>HashMap</code>中对应幂指数的系数，这就会和JDK的底层实现相矛盾，于是造成了错误。</p>
-<h5><span id="bug修复总结">bug修复总结</span></h5>
+<h5 id="bug修复总结">bug修复总结<a class="anchor" href="#bug修复总结">·</a></h5>
 <p>和找出我这个bug的同学交流了一下，其实该大佬根本没看出我这个代码有啥问题，单纯用大规模的随机数据把我刀了，所以建议大家如果遇到没有必要的需求千万不要一时兴起随意加入，即使要加入也要好好翻翻文档看看能不能这么用。</p>
 <p>那么我是怎么修改的呢，其实非常简单，我只需要查找整个序列找到一个系数为负的把他和第一个交换一下就好了。</p>
 <p>这次bug修复也让我意识到了，简单的功能用更少的代码不一定能实现更好的效果，有时候偷懒其实会害了自己。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (miXiMap.get(ls.get(<span class="number">0</span>)).compareTo(BigInteger.ZERO) &lt; <span class="number">0</span>) &#123;</span><br><span class="line">    <span class="keyword">int</span> j = -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; ls.size(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (miXiMap.get(ls.get(i)).compareTo(BigInteger.ZERO) &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            j = i;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (j != -<span class="number">1</span>) &#123;</span><br><span class="line">        BigInteger x = ls.get(j);</span><br><span class="line">        ls.remove(j);</span><br><span class="line">        ls.add(<span class="number">0</span>, x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4><span id="他人的bug">他人的bug</span></h4>
-<h5><span id="bug描述">bug描述</span></h5>
+<h4 id="他人的bug">他人的bug<a class="anchor" href="#他人的bug">·</a></h4>
+<h5 id="bug描述-2">bug描述<a class="anchor" href="#bug描述-2">·</a></h5>
 <p>本次共分别找到两个人的共计三个bug，由于不太了解OO玩法，第一次多交了一些错误类型差不多的数据（第二次作业我交的少多了），这里向两位同学抱歉了，以后我保证不交那么多同质用例了，纯属浪费时间。</p>
 <p>具体hack用例和结果</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">1 符号parse有问题 hack 2人</span></span><br><span class="line">input:+++8*x*x**+78+x**6504-+-3313147-++69209*x**-7375*x+--837214</span><br><span class="line">output:510347166*x**-7375-6504*x**-6505+632*x**78</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span><span class="bash">2 对于没有指数的数字parse有误 抛出了异常 hack 1人</span></span><br><span class="line">input:-+-2048*52*x++9-++6*-6*x**+138-x*x+x*+406*x**36+1-+-7320*+01+x**266*-530*4---458-+-622+x*5872*+51+-1343+x**13*x**0*x**465+x*x*579713++x**-8029*x*353*9463-+79*x**+239*x-+-681--x*-8200+++9223*x+x**867*851*1*-5--x**0*-4</span><br><span class="line">output:</span><br><span class="line">Exception in thread "main" java.lang.NumberFormatException: Zero length BigInteger</span><br><span class="line">	at java.math.BigInteger.&lt;init&gt;(BigInteger.java:420)</span><br><span class="line">	at java.math.BigInteger.&lt;init&gt;(BigInteger.java:606)</span><br><span class="line">	at Term.&lt;init&gt;(Term.java:53)</span><br><span class="line">	at Box.&lt;init&gt;(Box.java:26)</span><br><span class="line">	at Main.main(Main.java:14)</span><br></pre></td></tr></table></figure>
 <p>第一个bug主要是这两位同学都采用了字符串预处理的方式，但是并没有涵盖所有的情况，比如<code>---</code>、<code>-+-</code>这样的三符号情况导致出错。</p>
 <p>第二个bug因为一位同学在解析数字时将空串传给了<code>BigInteger</code>对象。</p>
-<h5><span id="测试方式">测试方式</span></h5>
+<h5 id="测试方式">测试方式<a class="anchor" href="#测试方式">·</a></h5>
 <p>本次采用了<strong>大规模随机数据生成和评测</strong>寻找不同类型bug，遇到有错误的再<strong>查看代码进行定点爆破</strong>的方式。</p>
 <p>由于第一次的表达式较简单，直接采用了<code>sympy</code>库的<code>sympify</code>方法转换每个<code>jar</code>文件的输出和<code>sympy</code>库的输出进行比对进行测试。</p>
 <p>同时由于这种方式有时候会parse错误，我还采用了比对房内7个人地结果找少数派的方式，加大了找到bug的概率。</p>
 <p>笔者对生成输入数据的正则表达式加以控制，让每个可以重复的地方次数不超过4次以此控制复杂度。共生成了6组数据，每组有1000个表达式。这样的测试方式就找到了上述的bug。</p>
-<h3><span id="第二次作业">第二次作业</span></h3>
-<h4><span id="自己的bug">自己的bug</span></h4>
-<h5><span id="bug描述">bug描述</span></h5>
+<h3 id="第二次作业-2">第二次作业<a class="anchor" href="#第二次作业-2">·</a></h3>
+<h4 id="自己的bug-2">自己的bug<a class="anchor" href="#自己的bug-2">·</a></h4>
+<h5 id="bug描述-3">bug描述<a class="anchor" href="#bug描述-3">·</a></h5>
 <p>本次作业在强测中<code>WA</code>了五个点，互测被刀了12下，全是一个同质bug。</p>
 <p>在遇到以下用例时会出现问题</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">-(x)</span><br><span class="line">错误输出:(<span class="number">1</span>)</span><br><span class="line">-(-(x))</span><br><span class="line">错误输出:((<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
 <p>简单来说就是一个负号与一个表达式因子相连时，求导会无视负号的存在。</p>
-<h5><span id="bug修复总结">bug修复总结</span></h5>
+<h5 id="bug修复总结-2">bug修复总结<a class="anchor" href="#bug修复总结-2">·</a></h5>
 <p>这个bug根植于设计的不够合理。我的设计是先parse输入获得一个简单的表达式树，再对每一项进行化简，而化简时将项内的每个因子的符号进行连乘（代码中是符号因子的异或运算）得到项的符号，而最后将项的符号设置到这一项的系数因子上。而实际写代码时对于表达式因子的符号，不小心写出了如下代码。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fact.setNeg(flag != fact.getNeg());</span><br></pre></td></tr></table></figure>
 <p><code>flag</code>即是项的符号，这里本应将<code>flag</code>的值更新，然后将<code>fact</code>的<code>neg</code>符号设置为<code>false</code>，但是却手残写成了这样。</p>
@@ -558,42 +558,42 @@
 <p>同时，我的这种方法必须要化简后才能对表达式因子做出正确输出，而表达式因子类中并没有调用化简方法，导致了表达式因子中的表达式因子输出有误。</p>
 <p>只需要在<code>ExprFactor</code>类中增加两行代码即可</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">exprNode.simplify();</span><br><span class="line">exprNode.mergeItems();</span><br></pre></td></tr></table></figure>
-<h4><span id="他人的bug">他人的bug</span></h4>
-<h5><span id="bug描述">bug描述</span></h5>
+<h4 id="他人的bug-2">他人的bug<a class="anchor" href="#他人的bug-2">·</a></h4>
+<h5 id="bug描述-4">bug描述<a class="anchor" href="#bug描述-4">·</a></h5>
 <p>本次一共找出两个人共3个bug</p>
 <p>用例和结果如下</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">1 对常数求导处理有误 hack了1人</span></span><br><span class="line">in:--1837*-4816</span><br><span class="line">out:</span><br><span class="line"></span><br><span class="line">in:-6489+--595*x**8245*7592*-7893</span><br><span class="line">out:595*(+8245*x**8244*(7592*-7893)+x**8245*())</span><br><span class="line"> </span><br><span class="line"><span class="meta">#</span><span class="bash">2 对表达式因子符号处理有误 hack了1人</span></span><br><span class="line">in:-(-x**-2-(-x**-2-(-x-(-x-(-x-sin(x))))))</span><br><span class="line">out:((0*(x)+1*(-1))+(0+((0*(x)+1*(-1))+(0+((0*(x)+1*(-1))+(0*(sin(x))+cos(x)*(-1)))))))</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">3 表达式因子求导错误 hack了1人</span></span><br><span class="line">in:--(+cos(x)**+4219*+7970+3497*-8451*x**8072*x)-+(+6179)</span><br><span class="line">out:(0+0)</span><br></pre></td></tr></table></figure>
 <p>本次作业较上次作业主要增加的难度就在于表达式因子。需要格外注意表达式因子的<code>parse</code>和求导的符号输出。</p>
-<h5><span id="测试方式">测试方式</span></h5>
+<h5 id="测试方式-2">测试方式<a class="anchor" href="#测试方式-2">·</a></h5>
 <p>本次代码量太大且复杂，仍然采用了一定规模数据集测试+有针对性阅读代码的方式进行测试，仍然使用<code>python</code>评测机。</p>
 <p>测试时将用例进行了分类，分为了多层表达式因子嵌套类，三角函数类，常数类，杂类。测试数据构造也采用递归下降的方式，简单来说也是<code>get a Expression--&gt;get many Items--&gt;get many Factors</code>这样的形式，对于每个因子采用正则表达式生成字母加上<code>python</code>随机数生成指数的方式。同时使用全局变量来记录调用<code>getExprFactor</code>方法的次数，以及在<code>getExpression</code>方法内通过判断当前字符串长度来决定是否直接返回当前字符串还是继续获得随机生成的项，同时生成数据时如果大于了长度限制就继续生成，直到长度小于等于50。用这两个方法就可以构造出符合第二次作业互测数据要求的数据点了。</p>
 <p>对拍数据采用了官方给出的评测方式即在$[-10,10]$上随机生成$1000$个点将这些结果和<code>sympy</code>求导结果进行比对的方式，必须要全对才算这个点通过。</p>
 <p>同时由于本次作业表达式较复杂，求导时间长，采用了多个点复用一组1000个点的数据的方式加快评测进度。同时每一组表达式的用例个数从之前的1000个降到了100个。</p>
-<h3><span id="第三次作业">第三次作业</span></h3>
-<h4><span id="自己的bug">自己的bug</span></h4>
+<h3 id="第三次作业-2">第三次作业<a class="anchor" href="#第三次作业-2">·</a></h3>
+<h4 id="自己的bug-3">自己的bug<a class="anchor" href="#自己的bug-3">·</a></h4>
 <p>本次作业强测和互测中均未发现bug</p>
-<h4><span id="他人的bug">他人的bug</span></h4>
-<h5><span id="bug描述">bug描述</span></h5>
+<h4 id="他人的bug-3">他人的bug<a class="anchor" href="#他人的bug-3">·</a></h4>
+<h5 id="bug描述-5">bug描述<a class="anchor" href="#bug描述-5">·</a></h5>
 <p>找出了一个同学的一个bug</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">1 输出的字符串中右括号未输出导致错误</span></span><br><span class="line">in:-((-cos((-sin(x)))*x+cos(85)**48*x*-25))</span><br><span class="line">out:(-x*sin((-sin(x)))*cos(x)-cos((-sin(x)))-25*cos(85)**48</span><br></pre></td></tr></table></figure>
-<h5><span id="测试方式">测试方式</span></h5>
+<h5 id="测试方式-3">测试方式<a class="anchor" href="#测试方式-3">·</a></h5>
 <p>本次测试方式与上次类似，只是修改了测试数据生成的程序，加入了对空白字符的生成以及三角嵌套的生成，同时针对这次作业与上次作业的主要不同点三角嵌套进行了重点生成，获得了三角多层嵌套数据，然而有些数据因为长度过长，实在无法缩减，最后没有成功hack到人。</p>
-<h2><span id="三-重构经历总结">三、重构经历总结</span></h2>
-<h3><span id="第二次作业重构">第二次作业重构</span></h3>
-<h4><span id="重构过程">重构过程</span></h4>
+<h2 id="三、重构经历总结">三、重构经历总结<a class="anchor" href="#三、重构经历总结">·</a></h2>
+<h3 id="第二次作业重构">第二次作业重构<a class="anchor" href="#第二次作业重构">·</a></h3>
+<h4 id="重构过程">重构过程<a class="anchor" href="#重构过程">·</a></h4>
 <p>本单元主要在第二次作业开发时被迫重构了<strong>输入的解析方式</strong>和整个<strong>求导的数据结构和方法</strong>。</p>
 <p>第一次作业时，由于表达式结构简单，笔者并没有考虑递归下降，表达式树这些方法，而是直接采用了字符串预处理和简单的项求导合并的方式。然而到了第二次作业，引入了表达式因子和三角函数，简单的正负号替换等预处理方式已经解决不了问题，而且对于表达式因子这样的嵌套求导规则并不能用简单的每项直接求导这样简单的方式了。</p>
 <p>于是进行了重构，基本是整个项目<strong>推倒重来</strong>。</p>
 <p>定义了因子的抽象类，以及各个具体的因子类。同时在<code>Expression</code>类中用递归下降的方式对表达式的输入进行了解析。</p>
 <p>重构时曾经纠结过表达式树的结构问题，曾经在一个晚上想了很久二叉树应该如何建立，最终也没有想的很完善，考虑到二叉树建树和<strong>化简求导操作比较麻烦</strong>，在时间紧急的情况下，抛弃了二叉树，转而采用了<strong>多叉树</strong>的方式。而多叉树开始建立时已经到了周六上午，时间所剩无几，决定边做边思考，最终参考助教在讨论区的帖子，解析出了表达式，并利用多叉树进行了求导，效果还可以，1个上午就通过了中测。</p>
-<h4><span id="经验总结">经验总结</span></h4>
+<h4 id="经验总结">经验总结<a class="anchor" href="#经验总结">·</a></h4>
 <ul>
 <li>一开始就要将之后的几次作业内容大概了解，知道最终需要做成什么样子，不要在一开始就随心所欲地设计一个简单的只符合该次要求的结构。</li>
 <li>如果一开始并不明确之后会做成什么样子，那么应该对程序的各个部分进行解耦，比如本单元作业的字符串解析，求导，化简其实可以分属为三个部分，如果将每一部分都解开，之后重构或者增量开发时思路也会更清晰，效率也会更高。</li>
 <li>对于一个需求，尽可能不要钻这个需求的空子寻求捷径去完成，而要寻求本质的一般性解决办法，比如本单元作业中的表达式解析，指导书中明确给出了符号形式化表达，目的就是在于提示我们使用一般化的方法对输入进行处理。</li>
 <li>同时，重构时也不能要求过高，如果时间紧迫时，拿出一种现阶段最可行最好实现的方式进行实现就好。同时，最好边实践边思考，不要空想，有时候，做出来比做完美更重要，一定要把思路落实到纸上或者电脑上。</li>
 </ul>
-<h2><span id="四-心得体会">四、心得体会</span></h2>
+<h2 id="四、心得体会">四、心得体会<a class="anchor" href="#四、心得体会">·</a></h2>
 <ul>
 <li>
 <p>本单元的作业着眼于表达式求导这个基本问题，从第一次的简单的幂函数求导延申到最后的幂函数和三角嵌套的求导，增量开发的过程中，涉及了一个软件从开发到测试到交付的各个环节，体验了重构，测试代码，bug修复等多个以后会经常遇到的环节，对于软件设计开发的流程有了一定的认识。</p>

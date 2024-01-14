@@ -125,7 +125,7 @@
                         
                             <div class="blank_box"></div>
                             <span class="meta">
-                                Words <span class="post-count">1.6k</span> and
+                                Words <span class="post-count">1.8k</span> and
                                 Reading Time <span class="post-count">7</span> Minutes
                             </span>
                             <div class="blank_box"></div>
@@ -201,13 +201,6 @@
 
                         
                         <li>
-                            <a href="/categories/">Categories</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/tags/">Tags</a>
                         </li>
                         
@@ -216,6 +209,13 @@
                         
                         <li>
                             <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
                         </li>
                         
                     
@@ -277,10 +277,10 @@
                 <p>经过了好几天的摸索，终于大概部署好了个人博客，之后会把所学的一些CS知识技术整理成笔记记录在这里，欢迎大家时不时来踩一踩！</p>
 <p>这篇博客主要是关于个人博客搭建和更新方法的笔记，怕之后忘了所以赶紧记一下。目前博客仅仅是实现了基本功能，之后可能会视情况设置一下评论区，点赞，社交等功能。</p>
 <a id="more"></a>
-<h3><span id="个人博客搭建总结">个人博客搭建总结</span></h3>
-<h4><span id="jekyll">Jekyll</span></h4>
+<h3 id="个人博客搭建总结">个人博客搭建总结<a class="anchor" href="#个人博客搭建总结">·</a></h3>
+<h4 id="Jekyll">Jekyll<a class="anchor" href="#Jekyll">·</a></h4>
 <p>这段时间为了搭建一下自己的博客尝试了两种方式，一种是基于<code>Jekyll</code>的，这种方式比较简单，但是有时过于简单了，之前试过用一个cayman的主题，但由于本人太菜，这个模板需要配置太多，只好放弃了，改用hexo搭建。如果想用<code>Jekyll</code>的可以参考这个网站：http://jekyllcn.com/ ，此站目标是<strong>成为 Jekyll 的全面指南</strong>，内容详细，值得看一看。</p>
-<h4><span id="hexo搭建大致流程">hexo搭建大致流程</span></h4>
+<h4 id="hexo搭建大致流程">hexo搭建大致流程<a class="anchor" href="#hexo搭建大致流程">·</a></h4>
 <p>大致参考了以下几篇博客</p>
 <p>https://blog.csdn.net/jinxiaonian11/article/details/82900119（这个作者有两篇这方面的博客，讲的挺详细的）</p>
 <p>https://blog.csdn.net/qq_37210523/article/details/80909983</p>
@@ -320,25 +320,25 @@
 </ul>
 </li>
 </ol>
-<h4><span id="问题和个人用法总结">问题和个人用法总结</span></h4>
+<h4 id="问题和个人用法总结">问题和个人用法总结<a class="anchor" href="#问题和个人用法总结">·</a></h4>
 <ol>
 <li>图片用的腾讯云对象存储</li>
 <li>md文件配置时一定是类似<code>tags: 123</code>这样的格式。<code>tags</code>和<code>123</code>之间<strong>一定要有空格</strong>！！！</li>
 </ol>
-<h4><span id="评论功能">评论功能</span></h4>
+<h4 id="评论功能">评论功能<a class="anchor" href="#评论功能">·</a></h4>
 <p>我的博客使用的<code>Utterances</code>，配置非常简单，并且也比较安全简洁。</p>
 <p>可以参考这篇文章：https://roife.github.io/2021/02/12/use-utterances-for-comment/</p>
 <p>其他的还有<code>Gitalk</code>,<code>Valine</code>，也可以用，但是<code>Gitalk</code>配置麻烦且很容易挂，后者貌似需要花钱。</p>
-<h4><span id="更换代理">更换代理</span></h4>
+<h4 id="更换代理">更换代理<a class="anchor" href="#更换代理">·</a></h4>
 <p>同时参考下面这<strong>两篇</strong>文章，因为都有些不全面。记得要实名认证+获取证书+域名解析</p>
 <p>https://blog.csdn.net/obsession753/article/details/84110360</p>
 <p>https://blog.csdn.net/i042416/article/details/89926005</p>
-<h4><span id="2021424">2021.4.24</span></h4>
+<h4 id="2021-4-24">2021.4.24<a class="anchor" href="#2021-4-24">·</a></h4>
 <p>更换了主题，换成了感觉更美观的huxblog主题</p>
 <p>更换过程很简单，只需要到https://github.com/Kaijun/hexo-theme-huxblog 这个网站下载代码，之后将themes里的huxblog文件夹copy到你自己的themes目录下，然后在根目录下的_config.xml修改themes名字为huxblog即可。</p>
-<h4><span id="2021425">2021.4.25</span></h4>
+<h4 id="2021-4-25">2021.4.25<a class="anchor" href="#2021-4-25">·</a></h4>
 <p>调换过程很简单，但是由于hexo版的黄玄主题作者已经不维护了，出现了各式各样的问题，于是决定换成长得差不多的snail主题，这个主题作者给了详细的说明文档。https://github.com/dusign/hexo-theme-snail</p>
-<h4><span id="202163-图片配置">2021.6.3 图片配置</span></h4>
+<h4 id="2021-6-3-图片配置">2021.6.3 图片配置<a class="anchor" href="#2021-6-3-图片配置">·</a></h4>
 <p>以下内容搬运自：https://blog.csdn.net/qq_36408085/article/details/104117319</p>
 <p>修改 hexo 目录下的 .config.yml 文件，将 post_asset_folder: false 修改为 post_asset_folder: true。</p>
 <p>安装一个图片路径转换的插件。在hexo文件夹下打开 Git bush。</p>
@@ -349,10 +349,17 @@
 <p>如果你之前安装了这个错误的插件，请将 /node_modules/hexo-asset-image/index.js
 这个文件替换成下面的代码：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> cheerio = <span class="built_in">require</span>(<span class="string">'cheerio'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPosition</span>(<span class="params">str, m, i</span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> str.split(m, i).join(m).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> version = <span class="built_in">String</span>(hexo.version).split(<span class="string">'.'</span>);</span><br><span class="line">hexo.extend.filter.register(<span class="string">'after_post_render'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line"><span class="keyword">var</span> config = hexo.config;</span><br><span class="line"><span class="keyword">if</span>(config.post_asset_folder)&#123;</span><br><span class="line">    <span class="keyword">var</span> link = data.permalink;</span><br><span class="line"><span class="keyword">if</span>(version.length &gt; <span class="number">0</span> &amp;&amp; <span class="built_in">Number</span>(version[<span class="number">0</span>]) == <span class="number">3</span>)</span><br><span class="line">    <span class="keyword">var</span> beginPos = getPosition(link, <span class="string">'/'</span>, <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    <span class="keyword">var</span> beginPos = getPosition(link, <span class="string">'/'</span>, <span class="number">3</span>) + <span class="number">1</span>;</span><br><span class="line"><span class="comment">// In hexo 3.1.1, the permalink of "about" page is like ".../about/index.html".</span></span><br><span class="line"><span class="keyword">var</span> endPos = link.lastIndexOf(<span class="string">'/'</span>) + <span class="number">1</span>;</span><br><span class="line">link = link.substring(beginPos, endPos);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> toprocess = [<span class="string">'excerpt'</span>, <span class="string">'more'</span>, <span class="string">'content'</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; toprocess.length; i++)&#123;</span><br><span class="line">    <span class="keyword">var</span> key = toprocess[i];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> $ = cheerio.load(data[key], &#123;</span><br><span class="line">    ignoreWhitespace: <span class="literal">false</span>,</span><br><span class="line">    xmlMode: <span class="literal">false</span>,</span><br><span class="line">    lowerCaseTags: <span class="literal">false</span>,</span><br><span class="line">    decodeEntities: <span class="literal">false</span></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    $(<span class="string">'img'</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ($(<span class="keyword">this</span>).attr(<span class="string">'src'</span>))&#123;</span><br><span class="line">        <span class="comment">// For windows style path, we replace '\' to '/'.</span></span><br><span class="line">        <span class="keyword">var</span> src = $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>).replace(<span class="string">'\\'</span>, <span class="string">'/'</span>);</span><br><span class="line">        <span class="keyword">if</span>(!<span class="regexp">/http[s]*.*|\/\/.*/</span>.test(src) &amp;&amp;</span><br><span class="line">            !<span class="regexp">/^\s*\//</span>.test(src)) &#123;</span><br><span class="line">            <span class="comment">// For "about" page, the first part of "src" can't be removed.</span></span><br><span class="line">            <span class="comment">// In addition, to support multi-level local directory.</span></span><br><span class="line">            <span class="keyword">var</span> linkArray = link.split(<span class="string">'/'</span>).filter(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> elem != <span class="string">''</span>;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">var</span> srcArray = src.split(<span class="string">'/'</span>).filter(<span class="function"><span class="keyword">function</span>(<span class="params">elem</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> elem != <span class="string">''</span> &amp;&amp; elem != <span class="string">'.'</span>;</span><br><span class="line">            &#125;);</span><br><span class="line">            <span class="keyword">if</span>(srcArray.length &gt; <span class="number">1</span>)</span><br><span class="line">            srcArray.shift();</span><br><span class="line">            src = srcArray.join(<span class="string">'/'</span>);</span><br><span class="line">            $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>, config.root + link + src);</span><br><span class="line">            <span class="built_in">console</span>.info&amp;&amp;<span class="built_in">console</span>.info(<span class="string">"update link as:--&gt;"</span>+config.root + link + src);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.info&amp;&amp;<span class="built_in">console</span>.info(<span class="string">"no src attr, skipped..."</span>);</span><br><span class="line">        <span class="built_in">console</span>.info&amp;&amp;<span class="built_in">console</span>.info($(<span class="keyword">this</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    data[key] = $.html();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h4><span id="2022424-增加一些渲染-包括todo清单">2022.4.24 增加一些渲染 包括todo清单</span></h4>
+<h4 id="2022-4-24-增加一些渲染-包括todo清单">2022.4.24 增加一些渲染 包括todo清单<a class="anchor" href="#2022-4-24-增加一些渲染-包括todo清单">·</a></h4>
 <p>使用这个仓库：https://github.com/hexojs/hexo-renderer-marked</p>
 <p>发现图片居然和todo不能同时渲染</p>
 <p>换用：https://blog.bugimg.com/works/hexo-renderer-markdown-it_and_plugins_config.html</p>
+<h4 id="2024-1-14-修复目录跳转问题">2024.1.14 修复目录跳转问题<a class="anchor" href="#2024-1-14-修复目录跳转问题">·</a></h4>
+<p>原因：toc插件与hexo自带的toc函数有冲突，不能同时使用。</p>
+<p>解决方法：如果使用已经支持目录的主题，卸载掉toc插件即可。执行以下命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm remove hexo-toc --save</span><br><span class="line">hexo cl #清除缓存</span><br></pre></td></tr></table></figure>
+<h4 id="2024-1-15-修复公式渲染问题（Nunjucks-Error-expected-variable-end）">2024.1.15 修复公式渲染问题（Nunjucks Error expected variable end）<a class="anchor" href="#2024-1-15-修复公式渲染问题（Nunjucks-Error-expected-variable-end）">·</a></h4>
+<p>官网说明是如下问题：即对有两个大括号包起来的内容会产生渲染问题，需要特殊处理。latex可以直接改成其他表达形式</p>
+<img src="/2021/01/29/hello-myblog/2020070122580072.png" alt="2020070122580072" style="zoom:50%;">
 
                 
                 <hr>

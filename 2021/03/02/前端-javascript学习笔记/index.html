@@ -203,13 +203,6 @@
 
                         
                         <li>
-                            <a href="/categories/">Categories</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/tags/">Tags</a>
                         </li>
                         
@@ -218,6 +211,13 @@
                         
                         <li>
                             <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
                         </li>
                         
                     
@@ -278,41 +278,41 @@
 
                 <p>前端的javascript资源整理和学习笔记</p>
 <a id="more"></a>
-<h2><span id="资源整理">资源整理</span></h2>
-<h3><span id="菜鸟教程">菜鸟教程</span></h3>
+<h2 id="资源整理-2">资源整理<a class="anchor" href="#资源整理-2">·</a></h2>
+<h3 id="菜鸟教程">菜鸟教程<a class="anchor" href="#菜鸟教程">·</a></h3>
 <p>https://www.runoob.com/js/js-tutorial.html</p>
-<h3><span id="w3school">w3school</span></h3>
+<h3 id="w3school">w3school<a class="anchor" href="#w3school">·</a></h3>
 <p>https://www.w3school.com.cn/js/index.asp</p>
-<h2><span id="慕课网教程笔记">慕课网教程笔记</span></h2>
+<h2 id="慕课网教程笔记-2">慕课网教程笔记<a class="anchor" href="#慕课网教程笔记-2">·</a></h2>
 <p>教程网站：</p>
 <p>https://www.imooc.com/learn/36  入门篇—对应本部分1-3</p>
 <p>https://www.imooc.com/learn/10  进阶篇—对应本部分4-8</p>
-<h3><span id="1入门">1.入门</span></h3>
-<h4><span id="引入js">引入JS</span></h4>
+<h3 id="1-入门">1.入门<a class="anchor" href="#1-入门">·</a></h3>
+<h4 id="引入JS">引入JS<a class="anchor" href="#引入JS">·</a></h4>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1.插入<span class="selector-tag">JS</span></span><br><span class="line">&lt;script type="text/javascript"&gt;表示:</span><br><span class="line">在&lt;script&gt;&lt;/script&gt;之间的是文本类型(text)</span><br><span class="line"><span class="selector-tag">javascript</span>是为了告诉浏览器里面的文本是属于<span class="selector-tag">JavaScript</span>语言</span><br><span class="line"></span><br><span class="line">&lt;script type="text/javascript"&gt;</span><br><span class="line">	<span class="selector-tag">document</span><span class="selector-class">.write</span>("开启<span class="selector-tag">JS</span>之旅!"); </span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">2.外部引用 使用<span class="selector-tag">src</span></span><br><span class="line">&lt;script src="script.js"&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">3.页面中位置</span><br><span class="line">一般放在<span class="selector-tag">head</span>或<span class="selector-tag">body</span>部分</span><br><span class="line">放在&lt;<span class="selector-tag">head</span>&gt;部分:</span><br><span class="line">最常用的方式是在页面中<span class="selector-tag">head</span>部分放置&lt;<span class="selector-tag">script</span>&gt;元素，浏览器解析<span class="selector-tag">head</span>部分就会执行这个代码，然后才解析页面的其余部分。</span><br><span class="line">放在&lt;<span class="selector-tag">body</span>&gt;部分:</span><br><span class="line"><span class="selector-tag">JavaScript</span>代码在网页读取到该语句的时候就会执行。</span><br></pre></td></tr></table></figure>
 <p>注意: javascript作为一种脚本语言<strong>可以放在html页面中任何位置</strong>，但是浏览器<strong>解释html</strong>时是<strong>按先后顺序</strong>的，所以前面的script就先被执行。比如进行<strong>页面显示初始化的js必须放在head里面</strong>，因为初始化都要求提前进行（如给页面body设置css等）；而如果是通过<strong>事件调用</strong>执行的function那么<strong>对位置没什么要求</strong>的。</p>
-<h4><span id="语句和符号">语句和符号</span></h4>
+<h4 id="语句和符号">语句和符号<a class="anchor" href="#语句和符号">·</a></h4>
 <p>基本格式：<code>语句;</code> 分号也可不加</p>
-<h4><span id="注释">注释</span></h4>
+<h4 id="注释">注释<a class="anchor" href="#注释">·</a></h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单行</span></span><br><span class="line"><span class="comment">/* 多行 */</span></span><br></pre></td></tr></table></figure>
-<h4><span id="变量声明">变量声明</span></h4>
+<h4 id="变量声明">变量声明<a class="anchor" href="#变量声明">·</a></h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="keyword">var</span> b,c;</span><br><span class="line">a=<span class="number">1</span>;</span><br><span class="line">b=<span class="string">"abs"</span></span><br><span class="line">c=<span class="literal">true</span>;</span><br><span class="line">c=<span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
-<h4><span id="基本语句-和java-c一样">基本语句 和java、C一样</span></h4>
+<h4 id="基本语句-和java、C一样">基本语句 和java、C一样<a class="anchor" href="#基本语句-和java、C一样">·</a></h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件)</span><br><span class="line">&#123; 条件成立时执行的代码 &#125;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>()</span><br><span class="line">&#123; 条件不成立时执行的代码 &#125;</span><br><span class="line"><span class="keyword">else</span>&#123; &#125;</span><br><span class="line">还有<span class="keyword">do</span>...while/<span class="keyword">while</span>/<span class="keyword">for</span>/<span class="keyword">switch</span>-<span class="keyword">case</span></span><br></pre></td></tr></table></figure>
-<h4><span id="函数">函数</span></h4>
+<h4 id="函数">函数<a class="anchor" href="#函数">·</a></h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     函数代码;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//可以有返回值</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add2</span>(<span class="params">x,y</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   sum = x + y;</span><br><span class="line">   <span class="keyword">return</span> sum; <span class="comment">//返回函数值,return后面的值叫做返回值。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="2常用互动方法">2.常用互动方法</span></h3>
-<h4><span id="输出内容documentwrite">输出内容（document.write）</span></h4>
-<h5><span id="第一种输出内容用quot括起直接输出quot号内的内容">第一种:输出内容用&quot;“括起，直接输出”&quot;号内的内容。</span></h5>
+<h3 id="2-常用互动方法">2.常用互动方法<a class="anchor" href="#2-常用互动方法">·</a></h3>
+<h4 id="输出内容（document-write）">输出内容（document.write）<a class="anchor" href="#输出内容（document-write）">·</a></h4>
+<h5 id="第一种-输出内容用-“括起，直接输出”-号内的内容。">第一种:输出内容用&quot;“括起，直接输出”&quot;号内的内容。<a class="anchor" href="#第一种-输出内容用-“括起，直接输出”-号内的内容。">·</a></h5>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type="text/javascript"&gt;</span><br><span class="line">  document.write("I love JavaScript！"); //内容用""括起来，""里的内容直接输出。</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h5><span id="第二种通过变量输出内容">第二种:通过变量，输出内容</span></h5>
+<h5 id="第二种-通过变量，输出内容">第二种:通过变量，输出内容<a class="anchor" href="#第二种-通过变量，输出内容">·</a></h5>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type="text/javascript"&gt;</span><br><span class="line">  var mystr="hello world!";</span><br><span class="line">  document.write(mystr);  //直接写变量名，输出变量存储的内容。</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h5><span id="第三种输出多项内容内容之间用号连接">第三种:输出多项内容，内容之间用+号连接。</span></h5>
+<h5 id="第三种-输出多项内容，内容之间用-号连接。">第三种:输出多项内容，内容之间用+号连接。<a class="anchor" href="#第三种-输出多项内容，内容之间用-号连接。">·</a></h5>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type="text/javascript"&gt;</span><br><span class="line">  var mystr="hello";</span><br><span class="line">  document.write(mystr+"I love JavaScript"); //多项内容之间用+号连接</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h5><span id="第四种输出html标签并起作用标签使用quotquot括起来">第四种:输出HTML标签，并起作用，标签使用&quot;&quot;括起来。</span></h5>
+<h5 id="第四种-输出HTML标签，并起作用，标签使用-括起来。">第四种:输出HTML标签，并起作用，标签使用&quot;&quot;括起来。<a class="anchor" href="#第四种-输出HTML标签，并起作用，标签使用-括起来。">·</a></h5>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type="text/javascript"&gt;</span><br><span class="line">  var mystr="hello";</span><br><span class="line">document.write(mystr+"&lt;br&gt;");//输出hello后，输出一个换行符</span><br><span class="line">  <span class="selector-tag">document</span><span class="selector-class">.write</span>("<span class="selector-tag">JavaScript</span>");</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <p>关于JS输出空格问题，请查看wiki中&quot; <a href="http://www.imooc.com/wiki/view?pid=167" target="_blank" rel="noopener">JS如何输出空格</a> &quot;</p>
-<h4><span id="警告alert-消息对话框">警告（alert 消息对话框）</span></h4>
+<h4 id="警告（alert-消息对话框）">警告（alert 消息对话框）<a class="anchor" href="#警告（alert-消息对话框）">·</a></h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(字符串或变量);</span><br></pre></td></tr></table></figure>
 <p><strong>注意</strong>:</p>
 <ol>
@@ -320,24 +320,24 @@
 <li>消息对话框通常可以用于调试程序。</li>
 <li>alert输出内容，可以是字符串或变量，与document.write 相似。</li>
 </ol>
-<h4><span id="确认confirm-消息对话框">确认（confirm 消息对话框）</span></h4>
-<h5><span id="语法">语法:</span></h5>
+<h4 id="确认（confirm-消息对话框）">确认（confirm 消息对话框）<a class="anchor" href="#确认（confirm-消息对话框）">·</a></h4>
+<h5 id="语法">语法:<a class="anchor" href="#语法">·</a></h5>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">confirm(str);</span><br></pre></td></tr></table></figure>
-<h5><span id="参数说明">参数说明:</span></h5>
+<h5 id="参数说明">参数说明:<a class="anchor" href="#参数说明">·</a></h5>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str：在消息对话框中要显示的文本</span><br><span class="line">返回值: <span class="built_in">Boolean</span>值</span><br></pre></td></tr></table></figure>
-<h5><span id="返回值">返回值:</span></h5>
+<h5 id="返回值">返回值:<a class="anchor" href="#返回值">·</a></h5>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">当用户点击<span class="string">"确定"</span>按钮时，返回<span class="literal">true</span></span><br><span class="line">当用户点击<span class="string">"取消"</span>按钮时，返回<span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <p><strong>注1:</strong> 通过返回值可以判断用户点击了什么按钮</p>
 <p><strong>注2</strong>: 消息对话框是排它的，即用户在点击对话框按钮前，不能进行任何其它操作。</p>
-<h4><span id="提问prompt-消息对话框">提问（prompt 消息对话框）</span></h4>
+<h4 id="提问（prompt-消息对话框）">提问（prompt 消息对话框）<a class="anchor" href="#提问（prompt-消息对话框）">·</a></h4>
 <p>弹出消息对话框（包含一个<strong>确定按钮</strong>、<strong>取消按钮</strong>与一个<strong>文本输入框</strong>）。</p>
-<h5><span id="语法">语法:</span></h5>
+<h5 id="语法-2">语法:<a class="anchor" href="#语法-2">·</a></h5>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">prompt(str1, str2);</span><br></pre></td></tr></table></figure>
-<h5><span id="参数说明">参数说明：</span></h5>
+<h5 id="参数说明：">参数说明：<a class="anchor" href="#参数说明：">·</a></h5>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str1: 要显示在消息对话框中的文本，不可修改</span><br><span class="line">str2：文本框中的内容，可以修改</span><br></pre></td></tr></table></figure>
-<h5><span id="返回值">返回值:</span></h5>
+<h5 id="返回值-2">返回值:<a class="anchor" href="#返回值-2">·</a></h5>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 点击确定按钮，文本框中的内容将作为函数返回值</span><br><span class="line"><span class="number">2.</span> 点击取消按钮，将返回<span class="literal">null</span></span><br></pre></td></tr></table></figure>
-<h4><span id="打开新窗口windowopen">打开新窗口（window.open）</span></h4>
+<h4 id="打开新窗口（window-open）">打开新窗口（window.open）<a class="anchor" href="#打开新窗口（window-open）">·</a></h4>
 <p>open() 方法可以查找一个已经存在或者新建的浏览器窗口。</p>
 <p><strong>语法：</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.open([URL], [窗口名称], [参数字符串])</span><br></pre></td></tr></table></figure>
@@ -348,56 +348,56 @@
 <p>例如:打开http://www.imooc.com网站，大小为300px * 200px，无菜单，无工具栏，无状态栏，有滚动条窗口：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type="text/javascript"&gt; window.open('http://www.imooc.com','_blank','width=300,height=200,menubar=no,toolbar=no, status=no,scrollbars=yes')</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;script type="text/javascript"&gt;</span><br><span class="line">  <span class="selector-tag">function</span> <span class="selector-tag">Wopen</span>()&#123;</span><br><span class="line">    window.open("http://www.imooc.com","_blank"); </span><br><span class="line">  &#125; </span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;input name="button" type="button" onClick="Wopen()" value="点击我，打开新窗口!" /&gt;</span><br></pre></td></tr></table></figure>
 <p>**注意：**运行结果考虑浏览器兼容问题。</p>
-<h4><span id="关闭窗口windowclose">关闭窗口（window.close）</span></h4>
+<h4 id="关闭窗口（window-close）">关闭窗口（window.close）<a class="anchor" href="#关闭窗口（window-close）">·</a></h4>
 <p><strong>用法：</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.close();   <span class="comment">//关闭本窗口</span></span><br></pre></td></tr></table></figure>
 <p>或</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;窗口对象&gt;.close();   <span class="comment">//关闭指定的窗口</span></span><br></pre></td></tr></table></figure>
-<h3><span id="3dom操作">3.DOM操作</span></h3>
-<h4><span id="dom介绍">DOM介绍</span></h4>
+<h3 id="3-DOM操作">3.DOM操作<a class="anchor" href="#3-DOM操作">·</a></h3>
+<h4 id="DOM介绍">DOM介绍<a class="anchor" href="#DOM介绍">·</a></h4>
 <p>文档对象模型<strong>DOM</strong>（Document Object Model）定义访问和处理HTML文档的标准方法。</p>
 <p>DOM 将HTML文档呈现为<strong>带有元素、属性和文本</strong>的<strong>树结构</strong>（<strong>节点树</strong>）。</p>
-<h4><span id="通过id获取元素">通过ID获取元素</span></h4>
+<h4 id="通过ID获取元素">通过ID获取元素<a class="anchor" href="#通过ID获取元素">·</a></h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mychar= <span class="built_in">document</span>.getElementById(<span class="string">"con"</span>);</span><br></pre></td></tr></table></figure>
 <p>注:获取的元素是一个对象，如想对元素进行操作，我们要通过它的属性或方法。</p>
-<h4><span id="innerhtml-属性">innerHTML 属性</span></h4>
+<h4 id="innerHTML-属性">innerHTML 属性<a class="anchor" href="#innerHTML-属性">·</a></h4>
 <p>用于获取或替换 HTML 元素的内容</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type="text/javascript"&gt;</span><br><span class="line">  var mychar=document.getElementById("con");</span><br><span class="line">  mychar.innerHTML="hello world!"; //利用innerHTML属性修改标签内容</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<h4><span id="改变-html-样式">改变 HTML 样式</span></h4>
+<h4 id="改变-HTML-样式">改变 HTML 样式<a class="anchor" href="#改变-HTML-样式">·</a></h4>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Object.style.property=new style;</span><br><span class="line">var mychar = document.getElementById("pcon");</span><br><span class="line">mychar.style.color="red";</span><br><span class="line">mychar.style.fontSize="20";</span><br></pre></td></tr></table></figure>
 <p>**注意:**Object是获取的元素对象，如通过document.getElementById(“id”)获取的元素。</p>
 <p><strong>基本属性表（property）:</strong></p>
 <p><strong><a href="http://img.mukewang.com/52e4d4240001dd6c04850229.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/52e4d4240001dd6c04850229.jpg" alt="img"></a></strong></p>
 <p>**注意:**该表只是一小部分CSS样式属性，其它样式也可以通过该方法设置和修改。</p>
-<h4><span id="显示和隐藏display属性">显示和隐藏（display属性）</span></h4>
+<h4 id="显示和隐藏（display属性）">显示和隐藏（display属性）<a class="anchor" href="#显示和隐藏（display属性）">·</a></h4>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object.style.display = value</span><br></pre></td></tr></table></figure>
-<h5><span id="value取值">value取值:</span></h5>
+<h5 id="value取值">value取值:<a class="anchor" href="#value取值">·</a></h5>
 <p><strong><a href="http://img.mukewang.com/52e4dba5000179da04110095.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/52e4dba5000179da04110095.jpg" alt="img"></a></strong></p>
-<h4><span id="控制类名classname-属性">控制类名（className 属性）</span></h4>
+<h4 id="控制类名（className-属性）">控制类名（className 属性）<a class="anchor" href="#控制类名（className-属性）">·</a></h4>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">object.className = classname</span><br></pre></td></tr></table></figure>
-<h4><span id="本章思路小结">本章思路小结</span></h4>
+<h4 id="本章思路小结">本章思路小结<a class="anchor" href="#本章思路小结">·</a></h4>
 <pre class="mermaid">graph LR
 a[document.getElementById方法通过ID获取元素-即DOM对象]-->b[修改对象的属性]
 b-->c[Object.innerHTML改变代码]
 b-->d[Object.style.property改变样式]
 b-->e[Object.display改变隐藏与否]
 b-->f[Object.classname改变类名]</pre>
-<h3><span id="4数组">4.数组</span></h3>
+<h3 id="4-数组">4.数组<a class="anchor" href="#4-数组">·</a></h3>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myarray=<span class="keyword">new</span> <span class="built_in">Array</span>(); <span class="comment">//创建 括号内可以设置个数</span></span><br><span class="line"><span class="keyword">var</span> myarray = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">66</span>,<span class="number">80</span>,<span class="number">90</span>,<span class="number">77</span>,<span class="number">59</span>);<span class="comment">//创建数组同时赋值</span></span><br><span class="line"><span class="keyword">var</span> myarray = [<span class="number">66</span>,<span class="number">80</span>,<span class="number">90</span>,<span class="number">77</span>,<span class="number">59</span>];<span class="comment">//直接输入一个数组（称 “字面量数组”）</span></span><br><span class="line"><span class="comment">//数组存储的数据可以是任何类型（数字、字符、布尔值等）</span></span><br><span class="line">myarray[<span class="number">5</span>]=<span class="number">88</span>; <span class="comment">//使用一个新索引，为数组增加一个新元素</span></span><br><span class="line">myarray.length; <span class="comment">//获得数组myarray的长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//二维数组的定义方法一</span></span><br><span class="line"><span class="keyword">var</span> myarr=<span class="keyword">new</span> <span class="built_in">Array</span>();  <span class="comment">//先声明一维 </span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)&#123;   <span class="comment">//一维长度为2</span></span><br><span class="line">   myarr[i]=<span class="keyword">new</span> <span class="built_in">Array</span>();  <span class="comment">//再声明二维 </span></span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">var</span> j=<span class="number">0</span>;j&lt;<span class="number">3</span>;j++)&#123;   <span class="comment">//二维长度为3</span></span><br><span class="line">   myarr[i][j]=i+j;   <span class="comment">// 赋值，每个数组元素的值为i+j</span></span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line"><span class="comment">//二维数组的定义方法二</span></span><br><span class="line"><span class="keyword">var</span> Myarr = [[<span class="number">0</span> , <span class="number">1</span> , <span class="number">2</span> ],[<span class="number">1</span> , <span class="number">2</span> , <span class="number">3</span>]]</span><br></pre></td></tr></table></figure>
-<h3><span id="5事件响应">5.事件响应</span></h3>
+<h3 id="5-事件响应">5.事件响应<a class="anchor" href="#5-事件响应">·</a></h3>
 <p>事件是<strong>可以被 JavaScript 侦测到的行为</strong>。 网页中的每个元素都可以产生某些可以触发 JavaScript 函数或程序的事件。</p>
-<h5><span id="主要事件表">主要事件表</span></h5>
+<h5 id="主要事件表">主要事件表<a class="anchor" href="#主要事件表">·</a></h5>
 <p><a href="http://img.mukewang.com/53e198540001b66404860353.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/53e198540001b66404860353.jpg" alt="img"></a></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">form</span>&gt;</span><br><span class="line">	&lt;input name="button" type="button" value="点击提交" onclick="add2()" /&gt;</span><br><span class="line">	&lt;input name="确定" type="button" value="确定" onmouseover="add()"/&gt; </span><br><span class="line">	&lt;a href="http://www.imooc.com" onmouseout="message()"&gt;点击我&lt;/a&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
 <p>onfocus和onblur是相对于一个区域的焦点说的</p>
-<h5><span id="加载事件onload">加载事件（onload）</span></h5>
+<h5 id="加载事件（onload）">加载事件（onload）<a class="anchor" href="#加载事件（onload）">·</a></h5>
 <p>事件会在页面加载完成后，立即发生，同时执行被调用的程序。</p>
 <p>注意：加载页面时，触发onload事件，事件写在<code>&lt;body&gt;</code>标签内。</p>
-<h5><span id="卸载事件onunload">卸载事件（onunload）</span></h5>
+<h5 id="卸载事件（onunload）">卸载事件（onunload）<a class="anchor" href="#卸载事件（onunload）">·</a></h5>
 <p>当用户退出页面时（页面关闭、页面刷新等），触发onUnload事件，同时执行被调用的程序。</p>
 <p>注意：不同浏览器对onunload事件支持不同。</p>
-<h3><span id="6js内置对象">6.JS内置对象</span></h3>
-<h4><span id="date日期对象">Date日期对象</span></h4>
+<h3 id="6-JS内置对象">6.JS内置对象<a class="anchor" href="#6-JS内置对象">·</a></h3>
+<h4 id="Date日期对象">Date日期对象<a class="anchor" href="#Date日期对象">·</a></h4>
 <p>定义一个时间对象 :</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Udate=<span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">/*使 Udate 成为日期对象，并且已有初始值：当前时间(当前电脑系统时间)。*/</span></span><br></pre></td></tr></table></figure>
 <p><strong>注意</strong>:使用关键字new，Date()的首字母必须大写。</p>
@@ -407,19 +407,19 @@ b-->f[Object.classname改变类名]</pre>
 <p><strong>访问方法语法：</strong>“&lt;日期对象&gt;.&lt;方法&gt;”</p>
 <p>Date对象中处理时间和日期的常用方法：</p>
 <p><a href="http://img.mukewang.com/555c650d0001ae7b04180297.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/555c650d0001ae7b04180297.jpg" alt="img"></a></p>
-<h4><span id="string-字符串对象">String 字符串对象</span></h4>
+<h4 id="String-字符串对象">String 字符串对象<a class="anchor" href="#String-字符串对象">·</a></h4>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str=<span class="string">"I Love Beijing"</span>;</span><br><span class="line">str=str.toUpperCase(); <span class="comment">//转换为大写字母 还有toLowerCase()</span></span><br><span class="line"><span class="keyword">var</span> len=str.length; <span class="comment">//获取长度</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//获取指定位置字符</span></span><br><span class="line">stringObject.charAt(index)</span><br><span class="line"></span><br><span class="line"><span class="comment">//返回指定的字符串首次出现的位置</span></span><br><span class="line">stringObject.indexOf(substring, startpos)</span><br><span class="line"></span><br><span class="line"><span class="comment">//字符串分割split()</span></span><br><span class="line">stringObject.split(separator,limit) <span class="comment">//limit--&gt;分割的最大次数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//提取字符串substring()</span></span><br><span class="line">stringObject.substring(startPos,stopPos) </span><br><span class="line"></span><br><span class="line"><span class="comment">//提取指定数目的字符substr()</span></span><br><span class="line">stringObject.substr(startPos,length) <span class="comment">//提取从 startPos位置开始的指定数目的字符串。</span></span><br></pre></td></tr></table></figure>
-<h4><span id="math对象">Math对象</span></h4>
+<h4 id="Math对象">Math对象<a class="anchor" href="#Math对象">·</a></h4>
 <p>Math 对象是一个<strong>固有的对象</strong>，<strong>无需创建它</strong>，<strong>直接</strong>把 Math <strong>作为对象使用</strong>就<strong>可以调用</strong>其所有属性和方法。这是它与Date,String对象的<strong>区别</strong>。</p>
-<h5><span id="常用的属性-方法">常用的属性、方法</span></h5>
+<h5 id="常用的属性、方法">常用的属性、方法<a class="anchor" href="#常用的属性、方法">·</a></h5>
 <p>属性：<code>Math.PI</code></p>
 <p>方法：<code>Math.ceil()</code> (向上取整)  <code>Math.floor()</code> (向下取整) <code>Math.round()</code> (四舍五入)  <code>Math.random()</code> (随机数，返回一个$[0,1]$区间内的随机数)</p>
-<h5><span id="math-对象属性">Math 对象属性</span></h5>
+<h5 id="Math-对象属性">Math 对象属性<a class="anchor" href="#Math-对象属性">·</a></h5>
 <p><a href="http://img.mukewang.com/532fe7cf0001e7b505170269.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/532fe7cf0001e7b505170269.jpg" alt="img"></a></p>
-<h5><span id="math-对象方法">Math 对象方法</span></h5>
+<h5 id="Math-对象方法">Math 对象方法<a class="anchor" href="#Math-对象方法">·</a></h5>
 <p><a href="http://img.mukewang.com/532fe841000174db05160622.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/532fe841000174db05160622.jpg" alt="img"></a></p>
-<h4><span id="array-数组对象">Array 数组对象</span></h4>
-<h5><span id="数组定义的方法">数组定义的方法</span></h5>
+<h4 id="Array-数组对象">Array 数组对象<a class="anchor" href="#Array-数组对象">·</a></h4>
+<h5 id="数组定义的方法">数组定义的方法<a class="anchor" href="#数组定义的方法">·</a></h5>
 <p>1.定义了一个空数组:</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> 数组名= <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br></pre></td></tr></table></figure>
 <p>2.定义时指定有n个空元素的数组：</p>
@@ -429,14 +429,14 @@ b-->f[Object.classname改变类名]</pre>
 <p>我们定义myArray数组，并赋值，<strong>代码如下：</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myArray = [<span class="number">2</span>, <span class="number">8</span>, <span class="number">6</span>];</span><br></pre></td></tr></table></figure>
 <p>**说明：**定义了一个数组 myArray，里边的元素是：<code>myArray[0] = 2; myArray[1] = 8; myArray[2] = 6。</code></p>
-<h5><span id="数组元素使用">数组元素使用</span></h5>
+<h5 id="数组元素使用">数组元素使用<a class="anchor" href="#数组元素使用">·</a></h5>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数组名[下标] = 值;</span><br></pre></td></tr></table></figure>
 <p><strong>注意</strong>: 数组的下标用方括号括起来，从0开始。</p>
-<h5><span id="数组属性">数组属性</span></h5>
+<h5 id="数组属性">数组属性<a class="anchor" href="#数组属性">·</a></h5>
 <p>length 用法：&lt;数组对象&gt;.length；返回：数组的长度，即数组里有多少个元素。它等于数组里最后一个元素的下标加一。</p>
-<h5><span id="数组方法">数组方法</span></h5>
+<h5 id="数组方法">数组方法<a class="anchor" href="#数组方法">·</a></h5>
 <p><a href="http://img.mukewang.com/533295ab0001dead05190599.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/533295ab0001dead05190599.jpg" alt="img"></a></p>
-<h5><span id="常用方法">常用方法</span></h5>
+<h5 id="常用方法">常用方法<a class="anchor" href="#常用方法">·</a></h5>
 <p><code>arrayObject.concat(array1,array2,...,arrayN)</code>  返回一个新数组，原数组不改变</p>
 <p><code>arrayObject.join(分隔符)</code>  把数组中的<strong>所有元素放入一个字符串</strong>。元素是通过<strong>指定的分隔符</strong>进行<strong>分隔</strong>的。</p>
 <p><code>arrayObject.reverse()</code>  颠倒数组中元素的顺序。原数组改变</p>
@@ -445,20 +445,20 @@ b-->f[Object.classname改变类名]</pre>
 <p><strong>注意</strong>: 该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下：</p>
 <p>若返回值**&lt;=-1**，则表示 <strong>A</strong> 在排序后的序列中<strong>出现在 B 之前</strong>。若返回值**&gt;-1 &amp;&amp; &lt;1**，则表示 <strong>A 和 B</strong> 具有<strong>相同</strong>的排序顺序。若返回值**&gt;=1**，则表示 <strong>A</strong> 在排序后的序列中<strong>出现在 B 之后</strong>。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sortNum</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> a - b;</span><br><span class="line"> <span class="comment">//升序，如降序，把“a - b”改成“b - a”</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> myarr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"80"</span>,<span class="string">"16"</span>,<span class="string">"50"</span>,<span class="string">"6"</span>,<span class="string">"100"</span>,<span class="string">"1"</span>);</span><br><span class="line"><span class="built_in">document</span>.write(myarr + <span class="string">"&lt;br&gt;"</span>);</span><br><span class="line"><span class="built_in">document</span>.write(myarr.sort(sortNum));</span><br></pre></td></tr></table></figure>
-<h3><span id="7window对象">7.window对象</span></h3>
+<h3 id="7-window对象">7.window对象<a class="anchor" href="#7-window对象">·</a></h3>
 <p>window对象是BOM的核心，window对象指<strong>当前的浏览器窗口</strong>。</p>
-<h4><span id="window对象方法">window对象方法</span></h4>
+<h4 id="window对象方法">window对象方法<a class="anchor" href="#window对象方法">·</a></h4>
 <p><strong><a href="http://img.mukewang.com/535483720001a54506670563.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/535483720001a54506670563.jpg" alt="img"></a></strong></p>
-<h3><span id="8认识dom">8.认识DOM</span></h3>
+<h3 id="8-认识DOM">8.认识DOM<a class="anchor" href="#8-认识DOM">·</a></h3>
 <p>HTML文档可以说由节点构成的集合，DOM节点有:</p>
 <p><strong>1.</strong> <strong>元素节点：</strong><code>&lt;html&gt;、&lt;body&gt;、&lt;p&gt;</code>等都是元素节点，即标签。</p>
 <p><strong>2.</strong> **文本节点:**向用户展示的内容，如<code>&lt;li&gt;...&lt;/li&gt;</code>中的文本。</p>
 <p><strong>3.</strong> **属性节点:**元素属性，如<code>&lt;a&gt;</code>标签的链接属性href=“http://www.imooc.com”。</p>
-<h5><span id="节点属性">节点属性</span></h5>
+<h5 id="节点属性">节点属性<a class="anchor" href="#节点属性">·</a></h5>
 <p><a href="http://img.mukewang.com/5375c953000117ee05240129.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/5375c953000117ee05240129.jpg" alt="img"></a></p>
-<h5><span id="遍历节点树">遍历节点树</span></h5>
+<h5 id="遍历节点树">遍历节点树<a class="anchor" href="#遍历节点树">·</a></h5>
 <p><a href="http://img.mukewang.com/53f17a6400017d2905230219.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/53f17a6400017d2905230219.jpg" alt="img"></a></p>
-<h5><span id="dom操作">DOM操作</span></h5>
+<h5 id="DOM操作">DOM操作<a class="anchor" href="#DOM操作">·</a></h5>
 <p><a href="http://img.mukewang.com/538d29da000152db05360278.jpg" target="_blank" rel="noopener"><img src="http://img.mukewang.com/538d29da000152db05360278.jpg" alt="img"></a></p>
 <p>**注意:**前两个是document方法。</p>
 

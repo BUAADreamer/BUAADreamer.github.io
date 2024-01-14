@@ -199,13 +199,6 @@
 
                         
                         <li>
-                            <a href="/categories/">Categories</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/tags/">Tags</a>
                         </li>
                         
@@ -214,6 +207,13 @@
                         
                         <li>
                             <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
                         </li>
                         
                     
@@ -272,50 +272,50 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1><span id="离散数学2">离散数学2</span></h1>
-<h1><span id="集合论">集合论</span></h1>
-<h2><span id="第五章-集合">第五章 集合</span></h2>
-<h3><span id="51-集合与元素">5.1 集合与元素</span></h3>
+                <h1 id="离散数学2">离散数学2<a class="anchor" href="#离散数学2">·</a></h1>
+<h1 id="集合论">集合论<a class="anchor" href="#集合论">·</a></h1>
+<h2 id="第五章-集合">第五章 集合<a class="anchor" href="#第五章-集合">·</a></h2>
+<h3 id="5-1-集合与元素">5.1 集合与元素<a class="anchor" href="#5-1-集合与元素">·</a></h3>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#在python中生成n个元素集合(构建集合)</span></span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createset</span><span class="params">(m,n)</span>:</span></span><br><span class="line">    A=random.sample(range(m), n)</span><br><span class="line">    A=set(A)</span><br><span class="line">    <span class="keyword">return</span> A</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">( )</span>:</span></span><br><span class="line">    m=<span class="number">200</span></span><br><span class="line">    n=<span class="number">100</span></span><br><span class="line">    A=createset(m,n)</span><br><span class="line">    <span class="keyword">return</span> A</span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
-<h4><span id="归纳定义法">归纳定义法</span></h4>
-<h5><span id="1-基本项">1) 基本项</span></h5>
+<h4 id="归纳定义法">归纳定义法<a class="anchor" href="#归纳定义法">·</a></h4>
+<h5 id="1-基本项">1) 基本项<a class="anchor" href="#1-基本项">·</a></h5>
 <p>非空集 S0 $\subseteq$ A；</p>
-<h5><span id="2-归纳项">2) 归纳项</span></h5>
+<h5 id="2-归纳项">2) 归纳项<a class="anchor" href="#2-归纳项">·</a></h5>
 <p>一组规则，从A中元素出发，依据这些规则 所获得的元素仍然是A中的元素；</p>
-<h5><span id="3-极小化">3) 极小化</span></h5>
+<h5 id="3-极小化">3) 极小化<a class="anchor" href="#3-极小化">·</a></h5>
 <p>保证 A中每个元素都可通过有限次使用 1) 或 2) 来获得。如果集合 S $\subseteq$ A 也满足 1)和 2)，则 A $\subseteq$ S 。（如果集合 S $\subseteq$ A 也满足 1)和 2)，则 S = A ）</p>
 <ul>
 <li>极小化保证 A 是满足 1) 和 2) 的<strong>最小集合</strong>。</li>
 </ul>
-<h3><span id="52-集合间的相等和包含关系">5.2 集合间的相等和包含关系</span></h3>
-<h4><span id="集合相等">集合相等</span></h4>
+<h3 id="5-2-集合间的相等和包含关系">5.2 集合间的相等和包含关系<a class="anchor" href="#5-2-集合间的相等和包含关系">·</a></h3>
+<h4 id="集合相等">集合相等<a class="anchor" href="#集合相等">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.2.1.png" style="zoom: 33%;">
-<h4><span id="集合的包含关系真子集子集">集合的包含关系（真子集，子集）</span></h4>
+<h4 id="集合的包含关系（真子集，子集）">集合的包含关系（真子集，子集）<a class="anchor" href="#集合的包含关系（真子集，子集）">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.2.2.png" style="zoom: 50%;">
-<h4><span id="空集是唯一的">空集是唯一的</span></h4>
-<h3><span id="53-幂集">5.3 幂集</span></h3>
-<h4><span id="幂集">幂集</span></h4>
+<h4 id="空集是唯一的">空集是唯一的<a class="anchor" href="#空集是唯一的">·</a></h4>
+<h3 id="5-3-幂集">5.3 幂集<a class="anchor" href="#5-3-幂集">·</a></h3>
+<h4 id="幂集">幂集<a class="anchor" href="#幂集">·</a></h4>
 <p>集合 A 的全部子集构成的集合称为<strong>A的幂集</strong>, 记作$\rho(A)$。	ρ (A) = { X│X $\subseteq$A }</p>
 <p>$B\subseteq C \Leftrightarrow B\in \rho©$</p>
-<h4><span id="基数">基数</span></h4>
+<h4 id="基数">基数<a class="anchor" href="#基数">·</a></h4>
 <p>有穷集合A中所含有元素的个数称为<strong>A的基数</strong>。 记作**#A**</p>
-<h4><span id="幂集特征">幂集特征</span></h4>
+<h4 id="幂集特征">幂集特征<a class="anchor" href="#幂集特征">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.3.1.png" style="zoom:50%;">
-<h3><span id="54-集合的运算">5.4 集合的运算</span></h3>
+<h3 id="5-4-集合的运算">5.4 集合的运算<a class="anchor" href="#5-4-集合的运算">·</a></h3>
 <ul>
 <li>集合运算：∩、∪、~（补，也称绝对补）、$-$（差 ，也称相对补）、$\oplus$（对称差）</li>
 <li>n个集合的∩和∪，集合的聚合上的∩和∪。</li>
 </ul>
-<h4><span id="集合族或集合的聚合">集合族或集合的聚合</span></h4>
+<h4 id="集合族或集合的聚合">集合族或集合的聚合<a class="anchor" href="#集合族或集合的聚合">·</a></h4>
 <p>如果一个集合的所有元素都是集合，则称该集合为集合族或集合的聚合。</p>
-<h4><span id="等值式模式">等值式模式</span></h4>
+<h4 id="等值式模式">等值式模式<a class="anchor" href="#等值式模式">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.4.4.png" style="zoom:50%;">
-<h4><span id="集合恒等式">集合恒等式</span></h4>
+<h4 id="集合恒等式">集合恒等式<a class="anchor" href="#集合恒等式">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.4.1.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.4.2.png" alt="5.4.2" style="zoom:50%;">
-<h4><span id="对集合恒等式的说明">对集合恒等式的说明</span></h4>
+<h4 id="对集合恒等式的说明">对集合恒等式的说明<a class="anchor" href="#对集合恒等式的说明">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.4.3.png" style="zoom:50%;">
-<h4><span id="其他常用性质">其他常用性质</span></h4>
+<h4 id="其他常用性质">其他常用性质<a class="anchor" href="#其他常用性质">·</a></h4>
 <ol>
 <li>
 <p>$A-B=A\cap \sim B$</p>
@@ -335,36 +335,36 @@
 <p>证明（I）两个集合相等常用以下两种方法：
 1）集合相等定义 (元素分析法）
 2）集合恒等式 （等式推理）</p>
-<h3><span id="55-有穷集的计数原理">5.5 有穷集的计数原理</span></h3>
+<h3 id="5-5-有穷集的计数原理">5.5 有穷集的计数原理<a class="anchor" href="#5-5-有穷集的计数原理">·</a></h3>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.5.1.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.5.2.png" alt="5.5.2" style="zoom:50%;">
-<h3><span id="56-集合的归纳定义法">5.6 集合的归纳定义法</span></h3>
-<h4><span id="定义程式">定义程式</span></h4>
+<h3 id="5-6-集合的归纳定义法">5.6 集合的归纳定义法<a class="anchor" href="#5-6-集合的归纳定义法">·</a></h3>
+<h4 id="定义程式">定义程式<a class="anchor" href="#定义程式">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.6.1.png" style="zoom:50%;">
-<h4><span id="字符串">字符串</span></h4>
+<h4 id="字符串">字符串<a class="anchor" href="#字符串">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.6.2.png" style="zoom:50%;">
-<h5><span id="字符串相等与连接">字符串相等与连接</span></h5>
+<h5 id="字符串相等与连接">字符串相等与连接<a class="anchor" href="#字符串相等与连接">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.6.3.png" style="zoom:50%;">
-<h5><span id="字符串前缀后缀子串sum-sum">字符串前缀，后缀，子串，$\sum *$，$\sum +$</span></h5>
+<h5 id="字符串前缀，后缀，子串，-sum-，-sum">字符串前缀，后缀，子串，$\sum *$，$\sum +$<a class="anchor" href="#字符串前缀，后缀，子串，-sum-，-sum">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.6.4.png" alt="5.6.4" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.6.5.png" alt="5.6.5" style="zoom:50%;">
-<h5><span id="语言语言的运算关系性质">语言，语言的运算，关系性质</span></h5>
+<h5 id="语言，语言的运算，关系性质">语言，语言的运算，关系性质<a class="anchor" href="#语言，语言的运算，关系性质">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.6.6.png" alt="5.6.6" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.6.7.png" alt="5.6.7" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.6.8.png" alt="5.6.8" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.6.9.png" alt="5.6.9" style="zoom:50%;">
-<h3><span id="57-有序偶和笛卡儿乘积">5.7 有序偶和笛卡儿乘积</span></h3>
-<h4><span id="有序偶">有序偶</span></h4>
-<h5><span id="定义">定义</span></h5>
+<h3 id="5-7-有序偶和笛卡儿乘积">5.7 有序偶和笛卡儿乘积<a class="anchor" href="#5-7-有序偶和笛卡儿乘积">·</a></h3>
+<h4 id="有序偶">有序偶<a class="anchor" href="#有序偶">·</a></h4>
+<h5 id="定义-18">定义<a class="anchor" href="#定义-18">·</a></h5>
 <p>任给两个对象 x 和 y，将它们按规定的顺序构成的序列，称之为有序偶，记为**〈 x，y 〉**。</p>
 <p>x 称为有序偶的第一元，y 称为第二元。</p>
-<h5><span id="有序偶的集合表示">有序偶的集合表示</span></h5>
+<h5 id="有序偶的集合表示">有序偶的集合表示<a class="anchor" href="#有序偶的集合表示">·</a></h5>
 <p>〈 x，y 〉= { { x }，{ x，y } }</p>
-<h5><span id="n元序偶">n元序偶</span></h5>
-<h4><span id="笛卡儿乘积">笛卡儿乘积</span></h4>
-<h5><span id="定义">定义</span></h5>
+<h5 id="n元序偶">n元序偶<a class="anchor" href="#n元序偶">·</a></h5>
+<h4 id="笛卡儿乘积">笛卡儿乘积<a class="anchor" href="#笛卡儿乘积">·</a></h4>
+<h5 id="定义-19">定义<a class="anchor" href="#定义-19">·</a></h5>
 <p>A×B = {〈x，y〉| x$\in$A $\wedge$ y $\in$ B }</p>
-<h5><span id="性质">性质</span></h5>
+<h5 id="性质-3">性质<a class="anchor" href="#性质-3">·</a></h5>
 <p>(1) 不满足 交换律
 (2) 不满足 结合律
 (3) 当A = $\varnothing$ 或 B = $\varnothing$ 时，A×B = $\varnothing$
@@ -373,88 +373,88 @@
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.7.2.png" alt="5.7.2" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.7.3.png" alt="5.7.3" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/5.7.4.png" alt="5.7.4" style="zoom:50%;">
-<h2><span id="第六章-关系">第六章 关系</span></h2>
-<h3><span id="61-关系及其性质">6.1 关系及其性质</span></h3>
-<h4><span id="一-关系的定义">一、关系的定义</span></h4>
+<h2 id="第六章-关系">第六章 关系<a class="anchor" href="#第六章-关系">·</a></h2>
+<h3 id="6-1-关系及其性质">6.1 关系及其性质<a class="anchor" href="#6-1-关系及其性质">·</a></h3>
+<h4 id="一、关系的定义">一、关系的定义<a class="anchor" href="#一、关系的定义">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.1.2.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.1.3.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.1.1.png" style="zoom:50%;">
-<h4><span id="二-关系的表示">二、关系的表示</span></h4>
-<h5><span id="关系矩阵">关系矩阵</span></h5>
+<h4 id="二、关系的表示">二、关系的表示<a class="anchor" href="#二、关系的表示">·</a></h4>
+<h5 id="关系矩阵">关系矩阵<a class="anchor" href="#关系矩阵">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.1.4.png" style="zoom:50%;">
-<h5><span id="关系图">关系图</span></h5>
+<h5 id="关系图">关系图<a class="anchor" href="#关系图">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.1.5.png" style="zoom:50%;">
-<h4><span id="三-关系的性质自反-反自反-对称-反对称-传递">三、关系的性质(自反、反自反、对称、反对称、传递)</span></h4>
+<h4 id="三、关系的性质-自反、反自反、对称、反对称、传递">三、关系的性质(自反、反自反、对称、反对称、传递)<a class="anchor" href="#三、关系的性质-自反、反自反、对称、反对称、传递">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.1.6.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.1.7.png" alt="6.1.7" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.1.8.png" alt="6.1.8" style="zoom: 50%;">
-<h5><span id="关系图和关系矩阵中五种性质的表述">关系图和关系矩阵中五种性质的表述</span></h5>
+<h5 id="关系图和关系矩阵中五种性质的表述">关系图和关系矩阵中五种性质的表述<a class="anchor" href="#关系图和关系矩阵中五种性质的表述">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.1.9.png" style="zoom:50%;">
-<h5><span id="思考题设-a-为恰有-n-个元素的有限集a">思考题：设 A 为恰有 n 个元素的有限集A</span></h5>
+<h5 id="思考题：设-A-为恰有-n-个元素的有限集A">思考题：设 A 为恰有 n 个元素的有限集A<a class="anchor" href="#思考题：设-A-为恰有-n-个元素的有限集A">·</a></h5>
 <p>可以以3个元素的集合=={1,2,3}==举例</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.1.10.png" style="zoom: 67%;">
-<h3><span id="62-关系的运算">6.2 关系的运算</span></h3>
-<h4><span id="关系的交并差补集">关系的交并差补集</span></h4>
+<h3 id="6-2-关系的运算">6.2 关系的运算<a class="anchor" href="#6-2-关系的运算">·</a></h3>
+<h4 id="关系的交并差补集">关系的交并差补集<a class="anchor" href="#关系的交并差补集">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.2.1.png" style="zoom:50%;">
-<h4><span id="复合关系">复合关系</span></h4>
+<h4 id="复合关系">复合关系<a class="anchor" href="#复合关系">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.2.2.png" style="zoom:50%;">
-<h5><span id="复合关系的结合律">复合关系的结合律</span></h5>
+<h5 id="复合关系的结合律">复合关系的结合律<a class="anchor" href="#复合关系的结合律">·</a></h5>
 <p>设R，S，P分别是X 到 Y、 Y 到 Z、 Z 到 W的关系，则 ( R · S ) · P ＝ R · ( S · P ) 。</p>
-<h5><span id="关系的幂运算">关系的幂运算</span></h5>
+<h5 id="关系的幂运算">关系的幂运算<a class="anchor" href="#关系的幂运算">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.2.3.png" style="zoom:50%;">
-<h5><span id="用矩阵运算来表示两个关系的复合">用矩阵运算来表示两个关系的复合</span></h5>
+<h5 id="用矩阵运算来表示两个关系的复合">用矩阵运算来表示两个关系的复合<a class="anchor" href="#用矩阵运算来表示两个关系的复合">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.2.4.png" style="zoom:50%;">
-<h5><span id="关系复合的性质">关系复合的性质</span></h5>
+<h5 id="关系复合的性质">关系复合的性质<a class="anchor" href="#关系复合的性质">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.2.8.png" style="zoom:50%;">
-<h4><span id="关系的逆">关系的逆</span></h4>
+<h4 id="关系的逆">关系的逆<a class="anchor" href="#关系的逆">·</a></h4>
 <p>将关系R中每个有序偶的第一元和第二元对换所得到的关系, 称为R的逆关系，记作$R^{-1}$，</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.2.5.png" style="zoom:50%;">
-<h5><span id="关系的一个逆运算定理">关系的一个逆运算定理</span></h5>
+<h5 id="关系的一个逆运算定理">关系的一个逆运算定理<a class="anchor" href="#关系的一个逆运算定理">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.2.9.png" style="zoom:50%;">
-<h4><span id="思考题">思考题</span></h4>
+<h4 id="思考题">思考题<a class="anchor" href="#思考题">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.2.6.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.2.7.png" style="zoom:50%;">
-<h4><span id="二元关系性质的判断条件">二元关系性质的判断条件</span></h4>
+<h4 id="二元关系性质的判断条件">二元关系性质的判断条件<a class="anchor" href="#二元关系性质的判断条件">·</a></h4>
 <p>利用<strong>矩阵</strong>思考更方便</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.2.10.png" style="zoom:50%;">
-<h4><span id="闭包">闭包</span></h4>
+<h4 id="闭包">闭包<a class="anchor" href="#闭包">·</a></h4>
 <p>记忆：$r-&gt;reverse,s-&gt;symmetric,t-&gt;transmit$</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.2.11.png" style="zoom:50%;">
-<h5><span id="用闭包来判断是否自反-对称-传递">用闭包来判断是否自反、对称、传递</span></h5>
+<h5 id="用闭包来判断是否自反、对称、传递">用闭包来判断是否自反、对称、传递<a class="anchor" href="#用闭包来判断是否自反、对称、传递">·</a></h5>
 <p>1）R是自反的 当且仅当 r® ＝ R；</p>
 <p>2）R是对称的 当且仅当 s® ＝ R；</p>
 <p>3）R是传递的 当且仅当 t® ＝ R 。</p>
-<h5><span id="定理-63-设-r-是集合a上的关系则-r-ri_a">定理 6.3 设 R 是集合A上的关系，则 $r ® ＝ R∪I_A$。</span></h5>
-<h5><span id="定理-64-设-r-是集合-a-上的关系则-s-rr-1">定理 6.4 设 R 是集合 A 上的关系，则 $s ® ＝ R∪R^{-1}$ 。</span></h5>
-<h5><span id="定理-65-设-r-是集合a上的关系则-t-rr2r3rn">定理 6.5 设 R 是集合A上的关系，则 $t® = R∪R<sup>2∪R</sup>3∪…∪R^n$</span></h5>
-<h5><span id="闭包的性质注意rssrrttrstts">闭包的性质(注意rs/sr/rt/tr/st/ts)</span></h5>
+<h5 id="定理-6-3-设-R-是集合A上的关系，则-r-®-＝-R∪I-A-。">定理 6.3 设 R 是集合A上的关系，则 $r ® ＝ R∪I_A$。<a class="anchor" href="#定理-6-3-设-R-是集合A上的关系，则-r-®-＝-R∪I-A-。">·</a></h5>
+<h5 id="定理-6-4-设-R-是集合-A-上的关系，则-s-®-＝-R∪R-1-。">定理 6.4 设 R 是集合 A 上的关系，则 $s ® ＝ R∪R^{-1}$ 。<a class="anchor" href="#定理-6-4-设-R-是集合-A-上的关系，则-s-®-＝-R∪R-1-。">·</a></h5>
+<h5 id="定理-6-5-设-R-是集合A上的关系，则-t®-R∪R2∪R3∪…∪R-n">定理 6.5 设 R 是集合A上的关系，则 $t® = R∪R<sup>2∪R</sup>3∪…∪R^n$<a class="anchor" href="#定理-6-5-设-R-是集合A上的关系，则-t®-R∪R2∪R3∪…∪R-n">·</a></h5>
+<h5 id="闭包的性质-注意rs-sr-rt-tr-st-ts">闭包的性质(注意rs/sr/rt/tr/st/ts)<a class="anchor" href="#闭包的性质-注意rs-sr-rt-tr-st-ts">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.2.12.png" style="zoom:50%;">
 <p>巧记结论：有自反的交换顺序后仍然相等</p>
 <p><strong>计算顺序</strong>：比如$st®$，先算$s®$，再算$t®$。</p>
 <p>$R^*=自反传递闭包=rt®$</p>
 <p>$R^+=传递闭包=t®$</p>
-<h3><span id="63-次序关系">6.3 次序关系</span></h3>
-<h4><span id="偏序半序关系">偏序（半序）关系</span></h4>
+<h3 id="6-3-次序关系">6.3 次序关系<a class="anchor" href="#6-3-次序关系">·</a></h3>
+<h4 id="偏序（半序）关系">偏序（半序）关系<a class="anchor" href="#偏序（半序）关系">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.3.1.png" style="zoom:50%;">
-<h4><span id="全序关系也称线序">全序关系（也称线序）</span></h4>
+<h4 id="全序关系（也称线序）">全序关系（也称线序）<a class="anchor" href="#全序关系（也称线序）">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.3.2.png" style="zoom:50%;">
-<h5><span id="可比的">可比的</span></h5>
+<h5 id="可比的">可比的<a class="anchor" href="#可比的">·</a></h5>
 <p>对于偏序集合〈P , ≤〉，x , y ∈P，如果有 x≤y 或者 y≤x，就说P的元素 x 和 y 是<strong>可比</strong>的。</p>
 <p><strong>例</strong>：〈N , ≤〉,〈N , ≥ 〉都是全序结构。它们中的任意元素 x 和 y 都是可比的，而〈 P(A) , $\subseteq$ 〉,〈 $I^+$ , | 〉都不是 全序结构</p>
-<h4><span id="严格偏序关系又称拟序关系">严格偏序关系，又称拟序关系</span></h4>
+<h4 id="严格偏序关系，又称拟序关系">严格偏序关系，又称拟序关系<a class="anchor" href="#严格偏序关系，又称拟序关系">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.3.3.png" style="zoom:50%;">
-<h5><span id="反自反-传递gt反对称">反自反、传递==&gt;反对称</span></h5>
-<h4><span id="遮盖">遮盖</span></h4>
+<h5 id="反自反、传递-反对称">反自反、传递==&gt;反对称<a class="anchor" href="#反自反、传递-反对称">·</a></h5>
+<h4 id="遮盖">遮盖<a class="anchor" href="#遮盖">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.3.4.png" style="zoom:50%;">
-<h4><span id="哈斯图">哈斯图</span></h4>
+<h4 id="哈斯图">哈斯图<a class="anchor" href="#哈斯图">·</a></h4>
 <p>偏序结构通常用简化的关系图来表示，这种关系图称为偏序结构图或哈斯图。</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.3.5.png" style="zoom:50%;">
-<h4><span id="偏序结构中的特殊元素最大元最小元极大元极小元最大上界最小下界">偏序结构中的特殊元素（最大元，最小元，极大元，极小元，最大上界，最小下界）</span></h4>
+<h4 id="偏序结构中的特殊元素（最大元，最小元，极大元，极小元，最大上界，最小下界）">偏序结构中的特殊元素（最大元，最小元，极大元，极小元，最大上界，最小下界）<a class="anchor" href="#偏序结构中的特殊元素（最大元，最小元，极大元，极小元，最大上界，最小下界）">·</a></h4>
 <p>极大元，极小元——仅仅是不存在比这些更大（小）的元素，可以是因为关系并不是全序产生的</p>
 <p>最大元，最小元，最大上界，最小下界——每个元素（上下界）都要比这个元素（上下界）小（大），条件更强</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.3.6.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/6.3.7.png" alt="6.3.7" style="zoom:50%;">
-<h4><span id="良序结构">良序结构</span></h4>
+<h4 id="良序结构">良序结构<a class="anchor" href="#良序结构">·</a></h4>
 <ul>
 <li>一个偏序结构〈P , ≤〉，如果 P的<strong>每一个非空子集都有一个最小元</strong>，则称<strong>≤</strong>为<strong>良序关系</strong>，〈P , ≤〉为<strong>良序结构</strong>。</li>
 <li>每个良序结构都是全序结构（因为对于任意非空子集都有最小元）</li>
@@ -464,45 +464,45 @@
 </ul>
 </li>
 </ul>
-<h5><span id="良序的充要条件">良序的充要条件</span></h5>
+<h5 id="良序的充要条件">良序的充要条件<a class="anchor" href="#良序的充要条件">·</a></h5>
 <p><strong>定理A</strong> 若≤为集合P上的偏序关系，则 ≤ 为P上良序关系，当且仅当  1）≤为P上的全序关系； 2）P 的每个非空子集都有最小元。</p>
 <p><strong>定理B</strong> 设〈A, ≤〉为全序结构，则〈A, ≤〉是良序结构的充要条件是：不存在 A 中元素的无穷序列 a0 , a1 , a2 , … ,使得对每个 i$\in$N，皆有  $a_{i+1}&lt;a_i$——简单地说就是<strong>不存在 A 中元素的无穷递降序列</strong>。</p>
-<h3><span id="64-等价关系与划分">6.4 等价关系与划分</span></h3>
-<h4><span id="等价关系">等价关系</span></h4>
+<h3 id="6-4-等价关系与划分">6.4 等价关系与划分<a class="anchor" href="#6-4-等价关系与划分">·</a></h3>
+<h4 id="等价关系">等价关系<a class="anchor" href="#等价关系">·</a></h4>
 <p>集合A上的关系R是<strong>自反，对称，传递</strong>的，则称R为A上的等价关系。</p>
 <p>对于任意正整数 m，<strong>模m同余关系</strong>是<strong>等价关系</strong>。</p>
-<h4><span id="等价类">等价类</span></h4>
+<h4 id="等价类">等价类<a class="anchor" href="#等价类">·</a></h4>
 <p>设 R 是集合A上的等价关系。对于每个x∈A，<strong>A中与 x 有关系 R 的元素的集合</strong> 称为 <strong>x关于R的等价类</strong>，简称为 x 的等价类，记作 <strong>[ x ] $_R$</strong>，</p>
 <p>[ x ] $_R$ ＝｛ y｜y∈A ∧ x R y ｝</p>
-<h5><span id="等价类相关定理">等价类相关定理</span></h5>
+<h5 id="等价类相关定理">等价类相关定理<a class="anchor" href="#等价类相关定理">·</a></h5>
 <p>(1) 对于每个 x∈A，x∈[x] $_R$ ，即 [x]$_R$ 是A的非空子集。</p>
 <p>(2) [x]$_R$＝[y]$_R$当且仅当 x R y 。</p>
 <p>(3) 若 x, y∈A 且 x$\overline R$y，则 [x]$_R$$\cap$ [y]$_R$ = $\varnothing$ 。</p>
 <p>(4) $\bigcup_{x \in A} [x]_R$＝ A, 其中 [x]$_R$ 表示所有等价类的并集。</p>
-<h4><span id="商集全体元素等价类集合组成的集合">商集（全体元素等价类集合组成的集合）</span></h4>
+<h4 id="商集（全体元素等价类集合组成的集合）">商集（全体元素等价类集合组成的集合）<a class="anchor" href="#商集（全体元素等价类集合组成的集合）">·</a></h4>
 <p>定义 设 R是集合A上的等价关系，所有等价类组成的集合称为 A 关于 R 的商集，记作 A / R，即:  A / R ＝｛ [x]$_R$｜ x ∈A ｝</p>
-<h4><span id="划分">划分</span></h4>
+<h4 id="划分">划分<a class="anchor" href="#划分">·</a></h4>
 <p>设 A 是非空集合, π$\subseteq$ρ(A) (即π包含 A 的若干子集)。 若π满足以下三个条件，则称π为 A上的一个划分: (1) 对于每个 S∈π，S ≠ $\varnothing$； (2) 对于任意 B, C ∈π，若 B≠C，则 B $\cap$ C＝$\varnothing$； （若 B $\cap$ C ≠$\varnothing$，则B ＝ C） (3) $\cup \pi$ ＝ A 。</p>
 <p>把π中的元素称为<strong>划分块</strong>，π中<strong>划分块的个数</strong>称为<strong>秩</strong>, 有<strong>有穷个划分块</strong>的划分称为<strong>有穷划分</strong>, 否则称为<strong>无穷划分</strong>.</p>
-<h4><span id="等价关系划分商集等价类的关系">等价关系，划分，商集，等价类的关系</span></h4>
+<h4 id="等价关系，划分，商集，等价类的关系">等价关系，划分，商集，等价类的关系<a class="anchor" href="#等价关系，划分，商集，等价类的关系">·</a></h4>
 <p>非空集合 A 上的<strong>等价关系 R</strong>, 决定了<strong>A上的一个划分</strong>，这个<strong>划分</strong>就是<strong>商集 A / R</strong> 。</p>
-<h5><span id="由π确定的等价关系">由π确定的等价关系</span></h5>
+<h5 id="由π确定的等价关系">由π确定的等价关系<a class="anchor" href="#由π确定的等价关系">·</a></h5>
 <p>定理 设<strong>π是非空集合 A 上的一个划分</strong>，若令：R$<em>{\pi}$ ＝ {〈x, y〉| 存在 S∈π使得 x, y ∈ S ｝ 即: x R$</em>{\pi}$ y 当且仅当 x 和 y 在π的同一个划分块中，则 R$<em>{\pi}$ 必是 A 上的等价关系 且 A／R$</em>{\pi}$ = π。 称 <strong>R$_{\pi}$</strong> 为 由<strong>π确定的等价关系</strong>。</p>
 <p>上述定理表明，由<strong>等价关系能够产生一个划分</strong>。同样，<strong>由一个划分也可以产生一个等价关系</strong>。</p>
 <p>例: U$_X$, I$_X$ 分别是 X 上的全域关系和恒等关系，则 X / U$_X$ = { X }， X / I$_X$ = { {x} | x$\in$X }</p>
 <p>I/$_{=m}$—代表模m同余的等价关系</p>
-<h2><span id="第七章-函数">第七章 函数</span></h2>
+<h2 id="第七章-函数">第七章 函数<a class="anchor" href="#第七章-函数">·</a></h2>
 <p><mark>一般考试中函数指全函数</mark></p>
-<h3><span id="71-基本概念">7.1 基本概念</span></h3>
-<h4><span id="函数的定义和判定">函数的定义和判定</span></h4>
+<h3 id="7-1-基本概念-2">7.1 基本概念<a class="anchor" href="#7-1-基本概念-2">·</a></h3>
+<h4 id="函数的定义和判定">函数的定义和判定<a class="anchor" href="#函数的定义和判定">·</a></h4>
 <p>函数是特殊类型的<mark>二元关系</mark>，关系允许，但函数<mark>不允许一对多</mark>。关系和函数都允许多对一。</p>
 <p>函数概念本质是<strong>约束二义性</strong>，主要<strong>限制</strong>的是关系概念中<strong>一对多</strong>。</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7.1.1.png" style="zoom:50%;">
-<h5><span id="定义域值域">定义域值域</span></h5>
+<h5 id="定义域值域">定义域值域<a class="anchor" href="#定义域值域">·</a></h5>
 <p>定义域——$Domain \ of \ definition$</p>
 <p>值域——$Range$</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7.1.2.png" style="zoom:50%;">
-<h5><span id="部分函数">部分函数</span></h5>
+<h5 id="部分函数">部分函数<a class="anchor" href="#部分函数">·</a></h5>
 <p>如果从集合 X 到 Y 的二元关系是<strong>单值的</strong></p>
 <p>即 f 满足以下条件： 若〈x，y1〉∈f 且〈x，y2〉∈f，则 y1 = y2 。就称 <strong>f</strong> 为从<mark>X 到 Y 的 部分函数(partial function)</mark>。 若 f 是部分函数且〈x , y〉∈f，则称 y 是 f 在 x处的值（在 f 作用下x的<strong>像点</strong>)，记为 y = f (x)，并称 x 为 y 的一个<strong>源像点</strong>。</p>
 <p>部分函数——<strong>部分有定义</strong>的函数——即  $dom(f)\subseteq X$</p>
@@ -514,9 +514,9 @@
 <li>若$ran(f)\subset Y$，则称f为从X到Y<mark>内</mark>的一个部分函数。</li>
 <li>若对任意的 x1，x2∈dom (f ) ， 当 x1 ≠ x2 时, 皆有 f ( x1 ) ≠ f ( x2 )， 即: 当 f ( x1 ) = f ( x2 ) 时, 皆有 x1 = x2 ,当 ƒ 为 X 到 Y 的全函数时, f 既满足单值性，且处处有定义</li>
 </ul>
-<h4><span id="函数的限制即限制定义域">函数的限制(即限制定义域)</span></h4>
+<h4 id="函数的限制-即限制定义域">函数的限制(即限制定义域)<a class="anchor" href="#函数的限制-即限制定义域">·</a></h4>
 <p>设函数ƒ : X→Y，A $\subseteq$ X，则ƒ∩ (A×Y) 是 从 A 到 Y 的函数，称为 ƒ 在 A上的限制 ，记作 ƒ│$_A$ , 又称 ƒ 为 ƒ│$_A$到 X 的 延拓 。 ƒ│$_A$可表示为：ƒ│$_A$ ＝｛〈x , y〉│〈x , y〉∈ƒ ∧ x∈A｝</p>
-<h4><span id="部分函数的像和源像">部分函数的像和源像</span></h4>
+<h4 id="部分函数的像和源像">部分函数的像和源像<a class="anchor" href="#部分函数的像和源像">·</a></h4>
 <p>设 f 为从集合 X 到集合 Y 的部分函数，A $\subseteq$X 且 B$\subseteq$ Y。</p>
 <p>令f [A] = { y｜有 x ∈A 使 y = f (x) }
 f$^{-1}$[ B ] = { x ∈X｜有 y ∈B 使 y = f (x) }</p>
@@ -524,84 +524,84 @@ f$^{-1}$[ B ] = { x ∈X｜有 y ∈B 使 y = f (x) }</p>
 <p>即： f [A] = { f (x)｜x ∈A 且 f (x)↓ }	f $^{-1}$ [ B ] = { x ∈X ｜ f (x)↓ 且 f (x) $\subseteq$ B }</p>
 <p>dom (f ) = { x ∈X｜有 y ∈Y 使 y = f (x) } = f $^{-1}$[Y]
 ran (f ) = { y ｜有 x ∈X 使 y = f (x) } = f [X]</p>
-<h4><span id="小结从集合-x-到-y-的二元关系-f-几个重要知识点">小结：从集合 X 到 Y 的二元关系 f 几个重要知识点</span></h4>
+<h4 id="小结：从集合-X-到-Y-的二元关系-f-几个重要知识点">小结：从集合 X 到 Y 的二元关系 f 几个重要知识点<a class="anchor" href="#小结：从集合-X-到-Y-的二元关系-f-几个重要知识点">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7.1.3.png" style="zoom:50%;">
-<h4><span id="定理">定理</span></h4>
-<h5><span id="设-f-为从集合-x-到集合-y-的部分函数">设 f 为从集合 X 到集合 Y 的部分函数</span></h5>
+<h4 id="定理-2">定理<a class="anchor" href="#定理-2">·</a></h4>
+<h5 id="设-f-为从集合-X-到集合-Y-的部分函数">设 f 为从集合 X 到集合 Y 的部分函数<a class="anchor" href="#设-f-为从集合-X-到集合-Y-的部分函数">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7.1.4.png" style="zoom: 50%;">
-<h5><span id="设-f-为从集合x到y的部分函数-a-subseteq-ρ-x-в-subseteq-ρ-y">设 f 为从集合X到Y的部分函数, Ａ $\subseteq$ ρ (X), В $\subseteq$ ρ (Y)</span></h5>
+<h5 id="设-f-为从集合X到Y的部分函数-A-subseteq-ρ-X-В-subseteq-ρ-Y">设 f 为从集合X到Y的部分函数, Ａ $\subseteq$ ρ (X), В $\subseteq$ ρ (Y)<a class="anchor" href="#设-f-为从集合X到Y的部分函数-A-subseteq-ρ-X-В-subseteq-ρ-Y">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7.1.5.png" style="zoom:50%;">
-<h5><span id="定理-若-f-为从集合-x-到-y-的部分函数-且-a-subseteq-x-则">定理 若 f 为从集合 X 到 Y 的部分函数 且 A $\subseteq$ X ，则</span></h5>
+<h5 id="定理-若-f-为从集合-X-到-Y-的部分函数-且-A-subseteq-X-，则">定理 若 f 为从集合 X 到 Y 的部分函数 且 A $\subseteq$ X ，则<a class="anchor" href="#定理-若-f-为从集合-X-到-Y-的部分函数-且-A-subseteq-X-，则">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7.1.6.png" style="zoom:50%;">
-<h4><span id="x到y的全函数集合">X到Y的全函数集合</span></h4>
+<h4 id="X到Y的全函数集合">X到Y的全函数集合<a class="anchor" href="#X到Y的全函数集合">·</a></h4>
 <p>$Y^X=$ {$f|f:X \rightarrow Y$} 从X到Y的函数个数？    $Y^X$个 即：#$Y$^(#$X$)个</p>
-<h4><span id="两道例题">两道例题</span></h4>
+<h4 id="两道例题">两道例题<a class="anchor" href="#两道例题">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7.1.7.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/718.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/719.png" alt="719" style="zoom:50%;">
-<h3><span id="72-函数的复合">7.2 函数的复合</span></h3>
-<h4><span id="复合关系与对应函数">复合关系与对应函数</span></h4>
+<h3 id="7-2-函数的复合">7.2 函数的复合<a class="anchor" href="#7-2-函数的复合">·</a></h3>
+<h4 id="复合关系与对应函数">复合关系与对应函数<a class="anchor" href="#复合关系与对应函数">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7110.png" style="zoom:50%;">
-<h4><span id="函数复合的约定写法">函数复合的约定写法</span></h4>
+<h4 id="函数复合的约定写法">函数复合的约定写法<a class="anchor" href="#函数复合的约定写法">·</a></h4>
 <p>$h(x)=f(g(x))$</p>
 <p>关系：内层的函数符号$g$在左</p>
 <p>函数：内层的函数符号$g$在右</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7111.png" style="zoom:50%;">
-<h4><span id="函数复合的定义">函数复合的定义</span></h4>
+<h4 id="函数复合的定义">函数复合的定义<a class="anchor" href="#函数复合的定义">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7112.png" style="zoom:50%;">
-<h4><span id="复合函数的定义域与值域">复合函数的定义域与值域</span></h4>
+<h4 id="复合函数的定义域与值域">复合函数的定义域与值域<a class="anchor" href="#复合函数的定义域与值域">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7113.png" style="zoom:50%;">
-<h4><span id="函数复合运算的性质">函数复合运算的性质</span></h4>
-<h5><span id="恒等函数">恒等函数</span></h5>
+<h4 id="函数复合运算的性质">函数复合运算的性质<a class="anchor" href="#函数复合运算的性质">·</a></h4>
+<h5 id="恒等函数">恒等函数<a class="anchor" href="#恒等函数">·</a></h5>
 <p>集合 X上的恒等关系 $I_X$ = {〈x, x〉| x∈X } 为 X 到 X 的恒等函数。</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7114.png" style="zoom:50%;">
-<h5><span id="结合律">结合律</span></h5>
+<h5 id="结合律">结合律<a class="anchor" href="#结合律">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7115.png" style="zoom:50%;">
-<h5><span id="函数的幂运算">函数的幂运算</span></h5>
+<h5 id="函数的幂运算">函数的幂运算<a class="anchor" href="#函数的幂运算">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7116.png" style="zoom:50%;">
-<h3><span id="73-特殊性质的函数和逆函数">7.3 特殊性质的函数和逆函数</span></h3>
-<h4><span id="满射-单射-双射">满射、单射、双射</span></h4>
+<h3 id="7-3-特殊性质的函数和逆函数">7.3 特殊性质的函数和逆函数<a class="anchor" href="#7-3-特殊性质的函数和逆函数">·</a></h3>
+<h4 id="满射、单射、双射">满射、单射、双射<a class="anchor" href="#满射、单射、双射">·</a></h4>
 <p>全函数：$f:X\rightarrow Y $</p>
 <p>满射：$ran(f)=Y$</p>
 <p>单射：$\forall x_1 \in X ,\forall x_2 \in X (x_1\neq x_2\rightarrow f(x_1)\neq f(x_2))$</p>
 <p>双射：单满射</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7.1.8.png" style="zoom: 33%;">
 <p>常值函数：$\forall x\in X,\exists c \in Y,f(x)=c$</p>
-<h4><span id="函数与复合函数-之间的性质关系-定理">函数与复合函数 之间的性质关系 定理</span></h4>
+<h4 id="函数与复合函数-之间的性质关系-定理">函数与复合函数 之间的性质关系 定理<a class="anchor" href="#函数与复合函数-之间的性质关系-定理">·</a></h4>
 <p>$f:X\rightarrow Y ,g:X\rightarrow Y$</p>
 <p>(1) $若f、g是满射,g\circ f也是满射$</p>
 <p>(2) $若f、g是单射,g\circ f也是单射$</p>
 <p>(3) $若f、g是双射,g\circ f也是双射$</p>
-<h5><span id="规则左满-右单">规则：左满 右单</span></h5>
+<h5 id="规则：左满-右单">规则：左满 右单<a class="anchor" href="#规则：左满-右单">·</a></h5>
 <p>(1) $若g\circ f是满射,则g是满射$</p>
 <p>(2) $若g\circ f是单射,则f是单射$</p>
 <p>(3) $若g\circ f双射,则g是满射且f是单射$</p>
-<h4><span id="左逆-右逆-逆逆ltgt一个函数同时为左逆和右逆">左逆、右逆、逆（逆&lt;=&gt;一个函数同时为左逆和右逆）</span></h4>
-<h5><span id="定义">定义</span></h5>
+<h4 id="左逆、右逆、逆（逆-一个函数同时为左逆和右逆）">左逆、右逆、逆（逆&lt;=&gt;一个函数同时为左逆和右逆）<a class="anchor" href="#左逆、右逆、逆（逆-一个函数同时为左逆和右逆）">·</a></h4>
+<h5 id="定义-20">定义<a class="anchor" href="#定义-20">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7.1.9.png" style="zoom:33%;">
-<h5><span id="唯一逆">唯一逆</span></h5>
+<h5 id="唯一逆">唯一逆<a class="anchor" href="#唯一逆">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7.1.11.png" style="zoom:33%;">
-<h5><span id="4个可逆的等价条件">4个可逆的等价条件</span></h5>
+<h5 id="4个可逆的等价条件">4个可逆的等价条件<a class="anchor" href="#4个可逆的等价条件">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7.1.12.png" alt="7.1.12" style="zoom:33%;">
-<h5><span id="复合函数的逆">复合函数的逆</span></h5>
+<h5 id="复合函数的逆">复合函数的逆<a class="anchor" href="#复合函数的逆">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/7.1.13.png" alt="7.1.13" style="zoom:33%;">
-<h3><span id="74-集合的特征函数">7.4 集合的特征函数</span></h3>
-<h4><span id="定义">定义</span></h4>
+<h3 id="7-4-集合的特征函数">7.4 集合的特征函数<a class="anchor" href="#7-4-集合的特征函数">·</a></h3>
+<h4 id="定义-21">定义<a class="anchor" href="#定义-21">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/741.png" style="zoom: 50%;">
-<h4><span id="特征函数的性质">特征函数的性质</span></h4>
+<h4 id="特征函数的性质">特征函数的性质<a class="anchor" href="#特征函数的性质">·</a></h4>
 <p><img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/742.png" style="zoom:33%;"><img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/743.png" style="zoom:33%;"></p>
-<h4><span id="用特征函数证明集合恒等式">用特征函数证明集合恒等式</span></h4>
+<h4 id="用特征函数证明集合恒等式">用特征函数证明集合恒等式<a class="anchor" href="#用特征函数证明集合恒等式">·</a></h4>
 <p><img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/744.png" style="zoom:33%;"> <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/745.png" style="zoom:33%;"></p>
-<h2><span id="第八章-自然数和基数">第八章 自然数和基数</span></h2>
-<h3><span id="81-自然数及数学归纳法">8.1 自然数及数学归纳法</span></h3>
+<h2 id="第八章-自然数和基数">第八章 自然数和基数<a class="anchor" href="#第八章-自然数和基数">·</a></h2>
+<h3 id="8-1-自然数及数学归纳法">8.1 自然数及数学归纳法<a class="anchor" href="#8-1-自然数及数学归纳法">·</a></h3>
 <p><strong>主要概念</strong>：集合的后继
 <strong>主要方法</strong>：归纳原理、第一归纳法、第二归纳法</p>
-<h4><span id="自然数引进方法">自然数引进方法</span></h4>
+<h4 id="自然数引进方法">自然数引进方法<a class="anchor" href="#自然数引进方法">·</a></h4>
 <ul>
 <li>公理化方法：皮亚诺公理</li>
 <li>构造性方法：借助集合论，具体构造出N</li>
 </ul>
-<h4><span id="自然数构造的出发点">自然数构造的出发点</span></h4>
+<h4 id="自然数构造的出发点">自然数构造的出发点<a class="anchor" href="#自然数构造的出发点">·</a></h4>
 <ol>
 <li>
 <p>自然数的<mark>各种性质</mark>( 运算、大小次序 及 基本定律 ) ,都可以从 Peano 公理一一推导出来；</p>
@@ -610,56 +610,56 @@ ran (f ) = { y ｜有 x ∈X 使 y = f (x) } = f [X]</p>
 <p>证明构造出来的 “自然数” <mark>满足Peano公理</mark>，因此具有普通自然数的一切性质。</p>
 </li>
 </ol>
-<h4><span id="后继集合">后继集合</span></h4>
+<h4 id="后继集合">后继集合<a class="anchor" href="#后继集合">·</a></h4>
 <ul>
 <li>后继集合<strong>定义</strong>：$A^+=A \cup {A}$</li>
 <li>每个集合都有<strong>唯一的一个后继</strong>。</li>
 </ul>
-<h5><span id="引理">引理</span></h5>
+<h5 id="引理-2">引理<a class="anchor" href="#引理-2">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/811.png" style="zoom: 33%;">
-<h4><span id="构造自然数系统ltngt">构造自然数系统&lt;N,+,*&gt;</span></h4>
-<h5><span id="法1冯诺依曼von-neumann方案">法1：冯诺依曼（Von Neumann）方案</span></h5>
+<h4 id="构造自然数系统-N">构造自然数系统&lt;N,+,*&gt;<a class="anchor" href="#构造自然数系统-N">·</a></h4>
+<h5 id="法1：冯诺依曼（Von-Neumann）方案">法1：冯诺依曼（Von Neumann）方案<a class="anchor" href="#法1：冯诺依曼（Von-Neumann）方案">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/812.png" style="zoom: 33%;">
-<h5><span id="法2自然数集合-n归纳定义法">法2：自然数集合 N——归纳定义法</span></h5>
+<h5 id="法2：自然数集合-N——归纳定义法">法2：自然数集合 N——归纳定义法<a class="anchor" href="#法2：自然数集合-N——归纳定义法">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/813.png" style="zoom:33%;">
-<h5><span id="小于-关系">“小于” 关系</span></h5>
+<h5 id="“小于”-关系">“小于” 关系<a class="anchor" href="#“小于”-关系">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/814.png" style="zoom: 33%;">
-<h5><span id="定义和quot">定义“+”和“×&quot;</span></h5>
+<h5 id="定义“-”和“×">定义“+”和“×&quot;<a class="anchor" href="#定义“-”和“×">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/815.png" alt="815" style="zoom:33%;">
-<h5><span id="引理2">引理2</span></h5>
+<h5 id="引理2">引理2<a class="anchor" href="#引理2">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/816.png" alt="816" style="zoom:33%;">
-<h5><span id="peano公理">Peano公理</span></h5>
+<h5 id="Peano公理">Peano公理<a class="anchor" href="#Peano公理">·</a></h5>
 <p><img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/817.png" style="zoom:33%;"> <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/818.png" style="zoom:33%;"></p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/8115.png" style="zoom:33%;">
-<h4><span id="作为集合的自然数的性质">作为集合的自然数的性质</span></h4>
+<h4 id="作为集合的自然数的性质">作为集合的自然数的性质<a class="anchor" href="#作为集合的自然数的性质">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/8110.png" style="zoom:33%;">
-<h4><span id="数学归纳法">数学归纳法</span></h4>
+<h4 id="数学归纳法">数学归纳法<a class="anchor" href="#数学归纳法">·</a></h4>
 <p><img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/8111.png" style="zoom:33%;"><img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/8112.png" alt="8112" style="zoom:33%;"></p>
 <p><img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/8114.png" alt="8114" style="zoom:33%;"><img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/8113.png" alt="8113" style="zoom:33%;"></p>
-<h3><span id="82-基数">8.2 基数</span></h3>
+<h3 id="8-2-基数">8.2 基数<a class="anchor" href="#8-2-基数">·</a></h3>
 <p>本节讨论度量和比较两个集合大小的方法。</p>
-<h4><span id="1等势">1.等势</span></h4>
+<h4 id="1-等势">1.等势<a class="anchor" href="#1-等势">·</a></h4>
 <p>设 A 和 B 为二集合，若存在从 A 到 B 的<strong>双射</strong>，则称 <strong>A 和 B 对等</strong>，或称 <strong>A 和 B 等势</strong>，记为 <strong>A ～ B</strong>。</p>
-<h5><span id="等势关系的性质">等势关系的性质</span></h5>
+<h5 id="等势关系的性质">等势关系的性质<a class="anchor" href="#等势关系的性质">·</a></h5>
 <p>对于任何集合 A , B , C ，均有：
 (1) A ~ A；
 (2) 若 A ~ B , 则 B ~ A；
 (3) 若 A ~ B , B ~ C , 则 A ~ C。</p>
 <p>即等势关系有自反性 , 对称性和传递性，因此等势是集合族上的等价关系。</p>
-<h5><span id="集合有穷可数的定义">集合有穷（可数）的定义</span></h5>
+<h5 id="集合有穷（可数）的定义">集合有穷（可数）的定义<a class="anchor" href="#集合有穷（可数）的定义">·</a></h5>
 <p>集合是有穷（可数）的，当且仅当它<strong>与某个自然数集合等势</strong>，否则就是无穷的。</p>
-<h4><span id="2无限集">2.无限集</span></h4>
+<h4 id="2-无限集">2.无限集<a class="anchor" href="#2-无限集">·</a></h4>
 <p>无穷集合可以与它本身的真子集等势</p>
 <p>任何无限集都如此，这正是无限集与有限集之间的<strong>本质区别</strong>，也可以把它作为无限集的定义。</p>
-<h5><span id="鸽笼原理抽屉原理">鸽笼原理（抽屉原理）</span></h5>
+<h5 id="鸽笼原理（抽屉原理）">鸽笼原理（抽屉原理）<a class="anchor" href="#鸽笼原理（抽屉原理）">·</a></h5>
 <p>任何有限集都不能与它的真子集对等 =&gt;导出有穷集合与无穷集合的根本差别：=&gt;任何与自身真子集等势的集合均是无穷集合 。</p>
 <p>这个定理也叫抽屉原理，可通俗表述为：“如果把 n+1 本书放进 n 个抽屉里，至少在一个抽屉里有两本或两本以上的书。”</p>
-<h5><span id="定理81-任意有穷集合-a-唯一地与一个自然数等势">定理8.1 任意有穷集合 A 唯一地与一个自然数等势 。</span></h5>
-<h5><span id="定义87-有穷集合的基数">定义8.7 ( 有穷集合的基数 )</span></h5>
+<h5 id="定理8-1-任意有穷集合-A-唯一地与一个自然数等势-。">定理8.1 任意有穷集合 A 唯一地与一个自然数等势 。<a class="anchor" href="#定理8-1-任意有穷集合-A-唯一地与一个自然数等势-。">·</a></h5>
+<h5 id="定义8-7-有穷集合的基数">定义8.7 ( 有穷集合的基数 )<a class="anchor" href="#定义8-7-有穷集合的基数">·</a></h5>
 <p>对于任意有穷集合 A , 存在唯一的自然数 n , 使得 A ~ n, 称 n 为 A 的基数 , 记为 #A （ card (A) 或｜A｜）</p>
 <p>对于无限集的基数，我们规定特殊的记号，例如令#( N ) = $\aleph_0$  是希伯来语的第一个字母，念作阿列夫。</p>
-<h4><span id="3集合的基数">3.集合的基数</span></h4>
-<h5><span id="基数相等和大小顺序">基数相等和大小顺序</span></h5>
+<h4 id="3-集合的基数">3.集合的基数<a class="anchor" href="#3-集合的基数">·</a></h4>
+<h5 id="基数相等和大小顺序">基数相等和大小顺序<a class="anchor" href="#基数相等和大小顺序">·</a></h5>
 <p>定义： 设 A 和 B 为二集合。</p>
 <ul>
 <li>
@@ -678,150 +678,150 @@ ran (f ) = { y ｜有 x ∈X 使 y = f (x) } = f [X]</p>
 </ol>
 </li>
 </ul>
-<h5><span id="任何两个基数都可以比较大小">任何两个基数都可以比较大小</span></h5>
+<h5 id="任何两个基数都可以比较大小">任何两个基数都可以比较大小<a class="anchor" href="#任何两个基数都可以比较大小">·</a></h5>
 <p>设 A 和 B 为任意两个集合，则#(A) $\leq$ #(B) ，或 #(B) $\leq$ #(A) ，二者之中至少有一个成立。</p>
-<h5><span id="基数的相等关系-是等价关系">基数的相等关系 “ = ” 是等价关系</span></h5>
+<h5 id="基数的相等关系-“-”-是等价关系">基数的相等关系 “ = ” 是等价关系<a class="anchor" href="#基数的相等关系-“-”-是等价关系">·</a></h5>
 <p>设 A、B 和 C为三集合，则有
 1） #(A) = #(A)； 2）若 #(A) = #(B)，则 #(B) = #(A)； 3）若 #(A) = #(B) 且 #(B) = #©， 则 #(A) = #©</p>
-<h5><span id="基数的小于等于关系-leq-是半序关系">基数的小于等于关系“ $\leq$ ”是半序关系</span></h5>
+<h5 id="基数的小于等于关系“-leq-”是半序关系">基数的小于等于关系“ $\leq$ ”是半序关系<a class="anchor" href="#基数的小于等于关系“-leq-”是半序关系">·</a></h5>
 <p>设 A，B 和 C 为三集合，则有</p>
 <ol>
 <li>#(A) $\leq$ #(A)；</li>
 <li>若 #(A) $\leq$ #(B) 且 #(B) $\leq$ #(A)，则#(A) = #(B)；</li>
 <li>若 #(A) $\leq$ #(B) 且 #(B) $\leq$ #©，则#(A) $\leq$ #©。其中， 2）为著名的 Bernstein 定理。</li>
 </ol>
-<h5><span id="定义88-基数">定义8.8 ( 基数 )</span></h5>
+<h5 id="定义8-8-基数">定义8.8 ( 基数 )<a class="anchor" href="#定义8-8-基数">·</a></h5>
 <p>设 F 是集合族 , ~ 是 F 上的等势关系。关系 ~ 在 F 上的等价类 称为 基数。对于 A $\in$ F , A 所属的等价类用 #A 表示 , 称之为 A 的基数。对于 A , B $\in$ F ： #A = #B $&lt;=&gt;$ A ~ B 。</p>
-<h5><span id="定义89可数无穷集合">定义8.9（可数无穷集合）</span></h5>
+<h5 id="定义8-9（可数无穷集合）">定义8.9（可数无穷集合）<a class="anchor" href="#定义8-9（可数无穷集合）">·</a></h5>
 <p>任何与自然数集合等势的集合称为可数无穷集合。可数无穷集合的基数 ， 用 $\aleph_0$ 表示 ，读作阿列夫零 。</p>
-<h5><span id="定义810可数-不可数集合">定义8.10（可数、不可数集合 ）</span></h5>
+<h5 id="定义8-10（可数、不可数集合-）">定义8.10（可数、不可数集合 ）<a class="anchor" href="#定义8-10（可数、不可数集合-）">·</a></h5>
 <p>如果一个集合是有穷集合或是 可数无穷集合 , 就称它为可数集合 ； 如果一个集合是无穷的，而且不是可数的 ，就称它为不可数集合 。</p>
-<h5><span id="无穷集的等价条件">无穷集的等价条件</span></h5>
+<h5 id="无穷集的等价条件">无穷集的等价条件<a class="anchor" href="#无穷集的等价条件">·</a></h5>
 <p>定理：以下三个条件等价：</p>
 <ol>
 <li>A 为无穷集；</li>
 <li>A 有可数无穷子集；</li>
 <li>A 有与它对等的真子集。</li>
 </ol>
-<h5><span id="定理82任何无穷集合-必含有-可数无穷子集">定理8.2：任何无穷集合 必含有 可数无穷子集。</span></h5>
-<h5><span id="定理83可数无穷集合的无穷子集-必是-可数无穷的">定理8.3：可数无穷集合的无穷子集 必是 可数无穷的。</span></h5>
+<h5 id="定理8-2：任何无穷集合-必含有-可数无穷子集。">定理8.2：任何无穷集合 必含有 可数无穷子集。<a class="anchor" href="#定理8-2：任何无穷集合-必含有-可数无穷子集。">·</a></h5>
+<h5 id="定理8-3：可数无穷集合的无穷子集-必是-可数无穷的。">定理8.3：可数无穷集合的无穷子集 必是 可数无穷的。<a class="anchor" href="#定理8-3：可数无穷集合的无穷子集-必是-可数无穷的。">·</a></h5>
 <p>可数无穷集合的并集和可数无穷集合的笛卡儿乘积都仍然是可数无穷集合 =&gt;可以证明：偶数集<strong>E ~ N , N$\times$N ~ N , Q~N , Z ~ N</strong>
 可见：偶数集合、平面上整格点的集合、有理数集合、整数集合都是可数无穷集合。</p>
-<h5><span id="定理实数集合-r-是-不可数的">定理：实数集合 R 是 不可数的 。</span></h5>
+<h5 id="定理：实数集合-R-是-不可数的-。">定理：实数集合 R 是 不可数的 。<a class="anchor" href="#定理：实数集合-R-是-不可数的-。">·</a></h5>
 <p>基数的个数也是无限的，且无最大者</p>
-<h5><span id="定理84实数集合-r-是不可数的">定理8.4：实数集合 R 是不可数的</span></h5>
+<h5 id="定理8-4：实数集合-R-是不可数的">定理8.4：实数集合 R 是不可数的<a class="anchor" href="#定理8-4：实数集合-R-是不可数的">·</a></h5>
 <p>与集合 R 等势的集合的基数 , 用 $\aleph$来表示 , 并称为连续统的势 . #$\rho$ (N) 记为 $\aleph$</p>
-<h5><span id="定义-814若a-alpha-b-beta-且-a-lt-b-则称-alpha-小于-beta-记为-alpha-lt-beta">定义 8.14：若#A = $\alpha$ , #B = $\beta$, 且 A $&lt;$ B , 则称 $\alpha$ 小于 $\beta$ , 记为 $\alpha$ &lt; $\beta$ .</span></h5>
+<h5 id="定义-8-14：若-A-alpha-B-beta-且-A-B-则称-alpha-小于-beta-记为-alpha-beta">定义 8.14：若#A = $\alpha$ , #B = $\beta$, 且 A $&lt;$ B , 则称 $\alpha$ 小于 $\beta$ , 记为 $\alpha$ &lt; $\beta$ .<a class="anchor" href="#定义-8-14：若-A-alpha-B-beta-且-A-B-则称-alpha-小于-beta-记为-alpha-beta">·</a></h5>
 <p>因为自然数集合是实数集合的真子集 , 由定理 8.4的证明 可知 , 有 N $&lt;$ R 和  $\aleph_0$ &lt; C ;又因为任何无穷集合都包含一个可数无穷子集 , 故 $\aleph_0$ 是最小的无穷基数 . 即对于任何无穷集合 A , 有 N$\leq$A ; 对任何无穷基数 k , 有$\aleph_0\leq$k .</p>
-<h5><span id="定理-85-对于任意集合-a-a-ltrho-a-rho-a是-a-的幂集">定理 8.5 对于任意集合 A , A $&lt;\rho$ (A) , $\rho$ (A)是 A 的幂集.</span></h5>
-<h4><span id="4常用结论">4.常用结论</span></h4>
+<h5 id="定理-8-5-对于任意集合-A-A-rho-A-rho-A-是-A-的幂集">定理 8.5 对于任意集合 A , A $&lt;\rho$ (A) , $\rho$ (A)是 A 的幂集.<a class="anchor" href="#定理-8-5-对于任意集合-A-A-rho-A-rho-A-是-A-的幂集">·</a></h5>
+<h4 id="4-常用结论">4.常用结论<a class="anchor" href="#4-常用结论">·</a></h4>
 <p>$#(N)=#(N^{+})=#(Q)=\aleph_0$</p>
 <p>$#®=#(\rho(N))=\aleph$</p>
-<h1><span id="图论">图论</span></h1>
-<h2><span id="第九章">第九章</span></h2>
-<h3><span id="第九章其他资料">第九章其他资料</span></h3>
+<h1 id="图论">图论<a class="anchor" href="#图论">·</a></h1>
+<h2 id="第九章">第九章<a class="anchor" href="#第九章">·</a></h2>
+<h3 id="第九章其他资料">第九章其他资料<a class="anchor" href="#第九章其他资料">·</a></h3>
 <p>Python工具库：networkx</p>
 <p>官网：https://networkx.org/</p>
 <p>教程：https://blog.csdn.net/qq_32284189/article/details/80134768</p>
-<h3><span id="91图论的基本概念-92-图的基本结构">9.1图论的基本概念  9.2 图的基本结构</span></h3>
-<h4><span id="无向图-有向图">无向图、有向图</span></h4>
+<h3 id="9-1图论的基本概念-9-2-图的基本结构">9.1图论的基本概念  9.2 图的基本结构<a class="anchor" href="#9-1图论的基本概念-9-2-图的基本结构">·</a></h3>
+<h4 id="无向图、有向图">无向图、有向图<a class="anchor" href="#无向图、有向图">·</a></h4>
 <p>$\Psi:E\rightarrow V \times V:边集到点集的笛卡尔积映射$</p>
 <p>注：V是点集，E是边的集合 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/910.png" style="zoom: 50%;"></p>
-<h4><span id="自圈-平行边-简单图-多重图">自圈、平行边、简单图、多重图</span></h4>
+<h4 id="自圈、平行边、简单图、多重图">自圈、平行边、简单图、多重图<a class="anchor" href="#自圈、平行边、简单图、多重图">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/911.png" style="zoom:50%;">
 <p>图的最本质内容：结点和边的对应关系。=&gt; 用几何图形表示图，小圆圈表示结点</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/912.png" style="zoom:50%;">
-<h4><span id="关联-邻接-结点和边的关系">关联、邻接 —— 结点和边的关系</span></h4>
+<h4 id="关联、邻接-——-结点和边的关系">关联、邻接 —— 结点和边的关系<a class="anchor" href="#关联、邻接-——-结点和边的关系">·</a></h4>
 <p>关联：边与点相连的关系</p>
 <p>临接：边与边，或点与点相连的关系</p>
 <p><img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/913.png" style="zoom:50%;"> <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/914.png" style="zoom:50%;"></p>
-<h4><span id="度">度</span></h4>
+<h4 id="度">度<a class="anchor" href="#度">·</a></h4>
 <p><img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/915.png" style="zoom:50%;"> <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/916.png" style="zoom:50%;"></p>
-<h4><span id="奇结点-偶结点-孤立点-端点">奇结点、偶结点、孤立点、端点</span></h4>
+<h4 id="奇结点、偶结点、孤立点、端点">奇结点、偶结点、孤立点、端点<a class="anchor" href="#奇结点、偶结点、孤立点、端点">·</a></h4>
 <ul>
 <li>度为奇数的结点称为奇结点；</li>
 <li>度为偶数的结点称为偶结点。</li>
 <li>度为 0 的结点称为孤立点；</li>
 <li>度为 1 的结点称为端点。</li>
 </ul>
-<h4><span id="零图-平凡图-d度正则图-完全图">零图、平凡图、d度正则图、完全图</span></h4>
+<h4 id="零图、平凡图、d度正则图、完全图">零图、平凡图、d度正则图、完全图<a class="anchor" href="#零图、平凡图、d度正则图、完全图">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/917.png" style="zoom:50%;">
-<h4><span id="同-构">同 构</span></h4>
+<h4 id="同-构">同 构<a class="anchor" href="#同-构">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/918.png" style="zoom:50%;">
-<h5><span id="两个图同构的必要条件">两个图同构的必要条件</span></h5>
+<h5 id="两个图同构的必要条件">两个图同构的必要条件<a class="anchor" href="#两个图同构的必要条件">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/919.png" style="zoom:50%;">
 <p>以上三条同时成立则是充分条件</p>
-<h3><span id="92子图和图的运算">9.2子图和图的运算</span></h3>
-<h4><span id="子图-真子图-生成子图">子图、真子图、生成子图</span></h4>
+<h3 id="9-2子图和图的运算">9.2子图和图的运算<a class="anchor" href="#9-2子图和图的运算">·</a></h3>
+<h4 id="子图、真子图、生成子图">子图、真子图、生成子图<a class="anchor" href="#子图、真子图、生成子图">·</a></h4>
 <p>生成子图：点集与母图一样</p>
 <p>其他两个：点集包含于母图点集</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/930.png" style="zoom:50%;">
-<h4><span id="由结点集导出的子图-gvg-vgv-v">由结点集导出的子图 ($G[V’],G-V’=G[V-V’]$)</span></h4>
+<h4 id="由结点集导出的子图-G-V’-G-V’-G-V-V’">由结点集导出的子图 ($G[V’],G-V’=G[V-V’]$)<a class="anchor" href="#由结点集导出的子图-G-V’-G-V’-G-V-V’">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/931.png" style="zoom:50%;">
-<h4><span id="由边集导出的子图">由边集导出的子图</span></h4>
+<h4 id="由边集导出的子图">由边集导出的子图<a class="anchor" href="#由边集导出的子图">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/932.png" style="zoom:50%;">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-<h4><span id="子图的几个特点">子图的几个特点</span></h4>
+<h4 id="子图的几个特点">子图的几个特点<a class="anchor" href="#子图的几个特点">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/933.png" style="zoom:50%;">
-<h4><span id="可运算-不相交">可运算、不相交</span></h4>
+<h4 id="可运算、不相交">可运算、不相交<a class="anchor" href="#可运算、不相交">·</a></h4>
 <p>不相交或者边不相交仍然是可运算的</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/934.png" style="zoom: 50%;">
-<h4><span id="交-并-环和">交、并、环和</span></h4>
+<h4 id="交、并、环和">交、并、环和<a class="anchor" href="#交、并、环和">·</a></h4>
 <p>注意：环合和并仅只有<strong>边集</strong>不同，点集和$\Psi$运算都为两个图的并集</p>
  <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/935.png" style="zoom:50%;">
-<h4><span id="定理图的唯一性">定理：图的唯一性</span></h4>
+<h4 id="定理：图的唯一性">定理：图的唯一性<a class="anchor" href="#定理：图的唯一性">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/936.png" style="zoom:50%;">
-<h4><span id="运算-g-e">运算 G – E’</span></h4>
+<h4 id="运算-G-–-E’">运算 G – E’<a class="anchor" href="#运算-G-–-E’">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/937.png" style="zoom:50%;">
-<h4><span id="运算-g-e_psi其实就是并运算">运算 G + E’$_{\psi’}$（其实就是并运算）</span></h4>
+<h4 id="运算-G-E’-psi’-（其实就是并运算）">运算 G + E’$_{\psi’}$（其实就是并运算）<a class="anchor" href="#运算-G-E’-psi’-（其实就是并运算）">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/938.png" style="zoom:50%;">
-<h4><span id="补图">补图</span></h4>
+<h4 id="补图">补图<a class="anchor" href="#补图">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/939.png" style="zoom:50%;">
-<h4><span id="自补图与其补图同构的简单无向图">自补图：与其补图同构的简单无向图</span></h4>
-<h4><span id="图同构的必要条件">图同构的必要条件</span></h4>
+<h4 id="自补图：与其补图同构的简单无向图">自补图：与其补图同构的简单无向图<a class="anchor" href="#自补图：与其补图同构的简单无向图">·</a></h4>
+<h4 id="图同构的必要条件">图同构的必要条件<a class="anchor" href="#图同构的必要条件">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/920.png" style="zoom:50%;">
-<h3><span id="93路径-回路和连通性">9.3路径、回路和连通性</span></h3>
-<h4><span id="路径">路径</span></h4>
-<h5><span id="定义路径路径长度开-闭路径简单路径基本路径">定义（路径，路径长度，开、闭路径，简单路径，基本路径）</span></h5>
+<h3 id="9-3路径、回路和连通性">9.3路径、回路和连通性<a class="anchor" href="#9-3路径、回路和连通性">·</a></h3>
+<h4 id="路径">路径<a class="anchor" href="#路径">·</a></h4>
+<h5 id="定义（路径，路径长度，开、闭路径，简单路径，基本路径）">定义（路径，路径长度，开、闭路径，简单路径，基本路径）<a class="anchor" href="#定义（路径，路径长度，开、闭路径，简单路径，基本路径）">·</a></h5>
 <p>简单路径——边无重复</p>
 <p>基本路径——点无重复</p>
 <p>开路径——起点$\neq$终点</p>
 <p>闭路径——起点$=$终点</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/940.png" style="zoom:40%;">
-<h5><span id="路径的另一组术语">路径的另一组术语</span></h5>
+<h5 id="路径的另一组术语">路径的另一组术语<a class="anchor" href="#路径的另一组术语">·</a></h5>
 <ul>
 <li><strong>链（chain or walk）</strong>：<strong>顶点和边交错出现的序列</strong>称为链，在序列中边的前后两个顶点正好是边的端点，序列的<mark>第一个顶点</mark>和<mark>最后一个顶点</mark>为链的<mark>端点</mark>，其余的点为<mark>内点</mark>。</li>
 <li><strong>迹（trail）</strong>：<strong>边互不相同</strong>的链称为迹。即<strong>迹中无重边</strong>。——迹是简单路径</li>
 <li><strong>路（path）</strong>：内部点互不相同的链称为路。即<strong>路中无重点</strong>。——路是基本路径</li>
 </ul>
-<h5><span id="路径的基本性质">路径的基本性质</span></h5>
+<h5 id="路径的基本性质">路径的基本性质<a class="anchor" href="#路径的基本性质">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/941.png" style="zoom:40%;">
-<h5><span id="两个路径的基本定理731732">两个路径的基本定理（7.3.1,7.3.2）</span></h5>
+<h5 id="两个路径的基本定理（7-3-1-7-3-2）">两个路径的基本定理（7.3.1,7.3.2）<a class="anchor" href="#两个路径的基本定理（7-3-1-7-3-2）">·</a></h5>
  <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/942.png" style="zoom:50%;">
-<h6><span id="证明731">证明7.3.1</span></h6>
+<h6 id="证明7-3-1">证明7.3.1<a class="anchor" href="#证明7-3-1">·</a></h6>
  <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/921.png" style="zoom:40%;">
  <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/943.png" style="zoom:40%;">
-<h6><span id="证明732">证明7.3.2</span></h6>
+<h6 id="证明7-3-2">证明7.3.2<a class="anchor" href="#证明7-3-2">·</a></h6>
 <p>（ 因为基本路径中的结点互不相同，即最多仅含 n个结点， 所以所经过的边数必定小于 n。）</p>
-<h5><span id="可达注意rv从v可以到达的全体结点的集合">可达（注意R(v)——从v可以到达的全体结点的集合）</span></h5>
+<h5 id="可达（注意R-v-——从v可以到达的全体结点的集合）">可达（注意R(v)——从v可以到达的全体结点的集合）<a class="anchor" href="#可达（注意R-v-——从v可以到达的全体结点的集合）">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/944.png" style="zoom:40%;">
-<h5><span id="距离测地线距离图的直径">距离（测地线，距离，图的直径）</span></h5>
+<h5 id="距离（测地线，距离，图的直径）">距离（测地线，距离，图的直径）<a class="anchor" href="#距离（测地线，距离，图的直径）">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/945.png" style="zoom:40%;">
-<h4><span id="加权图加权长度最短路径加权距离">加权图（加权长度，最短路径，加权距离）</span></h4>
+<h4 id="加权图（加权长度，最短路径，加权距离）">加权图（加权长度，最短路径，加权距离）<a class="anchor" href="#加权图（加权长度，最短路径，加权距离）">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/946.png" style="zoom:40%;">
-<h5><span id="迪杰斯特拉dijkstra算法">迪杰斯特拉（Dijkstra）算法</span></h5>
+<h5 id="迪杰斯特拉（Dijkstra）算法">迪杰斯特拉（Dijkstra）算法<a class="anchor" href="#迪杰斯特拉（Dijkstra）算法">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/947.png" style="zoom:40%;">
-<h5><span id="dijkstra的python实现个人向">Dijkstra的python实现（个人向）</span></h5>
+<h5 id="Dijkstra的python实现（个人向）">Dijkstra的python实现（个人向）<a class="anchor" href="#Dijkstra的python实现（个人向）">·</a></h5>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#n--&gt;有n个点 m--&gt;有m条有向边</span></span><br><span class="line"><span class="comment">#s--&gt;起点 t--&gt;终点</span></span><br><span class="line"><span class="comment">#a--&gt;边的起点 b--&gt;边的终点 c--&gt;边的权值</span></span><br><span class="line">n,m,s,t=map(int,input().split()) </span><br><span class="line">cos=[[float(<span class="string">'inf'</span>) <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>,n+<span class="number">1</span>)] <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,n+<span class="number">1</span>)]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,n+<span class="number">1</span>):</span><br><span class="line">    cos[i][i]=<span class="number">0</span></span><br><span class="line">parent=[s <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,n+<span class="number">1</span>)]</span><br><span class="line">ap=[<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,n+<span class="number">1</span>)]</span><br><span class="line">dis=[float(<span class="string">'inf'</span>) <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">0</span>,n+<span class="number">1</span>)]</span><br><span class="line">dis[s]=<span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">    a,b,c=map(int,input().split())</span><br><span class="line">    cos[a][b]=c</span><br><span class="line">    <span class="keyword">if</span>(a==s <span class="keyword">and</span> c&lt;dis[b]):</span><br><span class="line">        dis[b]=c</span><br><span class="line">ap[s]=<span class="number">1</span></span><br><span class="line"><span class="keyword">while</span>(<span class="number">1</span>):</span><br><span class="line">    mind=float(<span class="string">'inf'</span>)</span><br><span class="line">    mini=<span class="number">-1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> dis[i]&lt;mind <span class="keyword">and</span> ap[i]==<span class="number">0</span>:</span><br><span class="line">            mini=i</span><br><span class="line">            mind=dis[i]</span><br><span class="line">    ap[mini]=<span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span>(mini==<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span>(ap[i]==<span class="number">0</span> <span class="keyword">and</span> dis[i]&gt;dis[mini]+cos[mini][i]):</span><br><span class="line">            parent[i]=mini</span><br><span class="line">            dis[i]=dis[mini]+cos[mini][i]</span><br><span class="line">path=[]</span><br><span class="line">e=t</span><br><span class="line"><span class="keyword">while</span>(e!=s):</span><br><span class="line">    path.append(e)</span><br><span class="line">    e=parent[e]</span><br><span class="line">path.append(s)</span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> reversed(path):</span><br><span class="line">    print(x,end=<span class="string">" "</span>)</span><br><span class="line">print()</span><br><span class="line">print(dis[t])</span><br></pre></td></tr></table></figure>
-<h4><span id="联通">联通</span></h4>
-<h5><span id="无向图的联通">无向图的联通</span></h5>
+<h4 id="联通">联通<a class="anchor" href="#联通">·</a></h4>
+<h5 id="无向图的联通">无向图的联通<a class="anchor" href="#无向图的联通">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/948.png" style="zoom:40%;">
-<h5><span id="有向图的联通基础图有向图和无向图的联系把有向边全部改为无向边">有向图的联通—基础图（有向图和无向图的联系）把有向边全部改为无向边</span></h5>
+<h5 id="有向图的联通—基础图（有向图和无向图的联系）把有向边全部改为无向边">有向图的联通—基础图（有向图和无向图的联系）把有向边全部改为无向边<a class="anchor" href="#有向图的联通—基础图（有向图和无向图的联系）把有向边全部改为无向边">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/949.png" style="zoom:40%;">
-<h5><span id="有向图的联通强连通单向联通弱联通">有向图的联通（强连通，单向联通，弱联通）</span></h5>
+<h5 id="有向图的联通（强连通，单向联通，弱联通）">有向图的联通（强连通，单向联通，弱联通）<a class="anchor" href="#有向图的联通（强连通，单向联通，弱联通）">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/9410.png" style="zoom:40%;">
-<h5><span id="极大子图分支强分支rightarrow单向分支rightarrow弱分支">极大子图，分支（强分支$\rightarrow$单向分支$\rightarrow$弱分支）</span></h5>
+<h5 id="极大子图，分支（强分支-rightarrow-单向分支-rightarrow-弱分支）">极大子图，分支（强分支$\rightarrow$单向分支$\rightarrow$弱分支）<a class="anchor" href="#极大子图，分支（强分支-rightarrow-单向分支-rightarrow-弱分支）">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/9411.png" style="zoom:40%;">
-<h5><span id="关于分支的定理734无向图">关于分支的定理（7.3.4）——无向图</span></h5>
+<h5 id="关于分支的定理（7-3-4）——无向图">关于分支的定理（7.3.4）——无向图<a class="anchor" href="#关于分支的定理（7-3-4）——无向图">·</a></h5>
 <ol>
 <li>
 <p>连通无向图恰有一个分支。（即是原图本身）</p>
@@ -831,7 +831,7 @@ ran (f ) = { y ｜有 x ∈X 使 y = f (x) } = f [X]</p>
 </li>
 </ol>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/9412.png" style="zoom:40%;">
-<h5><span id="关于强-弱-单向分支的定理735有向图">关于强、弱、单向分支的定理（7.3.5）——有向图</span></h5>
+<h5 id="关于强、弱、单向分支的定理（7-3-5）——有向图">关于强、弱、单向分支的定理（7.3.5）——有向图<a class="anchor" href="#关于强、弱、单向分支的定理（7-3-5）——有向图">·</a></h5>
 <ol>
 <li>
 <p>强连通 (单向连通，弱连通 ) 有向图恰有一个强分支(单向分支，弱分支)。（即是原图本身）</p>
@@ -840,12 +840,12 @@ ran (f ) = { y ｜有 x ∈X 使 y = f (x) } = f [X]</p>
 <p>非强连通 (非单向连通，非弱连通) 有向图有一个以上强分支 (单向分支，弱分支)。</p>
 </li>
 </ol>
-<h5><span id="例题">例题</span></h5>
+<h5 id="例题-4">例题<a class="anchor" href="#例题-4">·</a></h5>
 <p>有向图的每个结点（每条边）是否处于一个强分支中？是否恰处于一个单向分支中？</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/9413.png" style="zoom:40%;">
-<h5><span id="半路径">半路径</span></h5>
+<h5 id="半路径">半路径<a class="anchor" href="#半路径">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/9414.png" style="zoom:40%;">
-<h4><span id="回路半回路有向回路">回路，半回路，有向回路</span></h4>
+<h4 id="回路，半回路，有向回路">回路，半回路，有向回路<a class="anchor" href="#回路，半回路，有向回路">·</a></h4>
 <ol>
 <li>
 <p>连通2度正则图称为回路；</p>
@@ -861,9 +861,9 @@ ran (f ) = { y ｜有 x ∈X 使 y = f (x) } = f [X]</p>
 </li>
 </ol>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/950.png" style="zoom:50%;">
-<h5><span id="部分概念关系图">部分概念关系图</span></h5>
+<h5 id="部分概念关系图">部分概念关系图<a class="anchor" href="#部分概念关系图">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/951.png" style="zoom:50%;">
-<h5><span id="回路的等价条件">回路的等价条件</span></h5>
+<h5 id="回路的等价条件">回路的等价条件<a class="anchor" href="#回路的等价条件">·</a></h5>
 <p>设v是图G的任意结点，<strong>G是回路</strong>（或有向回路），当且仅当</p>
 <ol>
 <li>G的阶与边数相等，并且</li>
@@ -871,7 +871,7 @@ ran (f ) = { y ｜有 x ∈X 使 y = f (x) } = f [X]</p>
 </ol>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/922.png" style="zoom:40%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/923.png" style="zoom:40%;">
-<h4><span id="有回路-非循环图">有回路、非循环图</span></h4>
+<h4 id="有回路、非循环图">有回路、非循环图<a class="anchor" href="#有回路、非循环图">·</a></h4>
 <ol>
 <li>
 <p>如果回路 (有向回路，半回路) C 是图 G 的子图，则称G 有回路 (有向回路，半回路) C。</p>
@@ -884,17 +884,17 @@ ran (f ) = { y ｜有 x ∈X 使 y = f (x) } = f [X]</p>
 <p><strong>半回路</strong>：基础图是回路的有向图</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/952.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/924.png" style="zoom:50%;">
-<h5><span id="w-过程判断一个有向图是否有有向回路">W-过程：判断一个有向图是否有有向回路</span></h5>
+<h5 id="W-过程：判断一个有向图是否有有向回路">W-过程：判断一个有向图是否有有向回路<a class="anchor" href="#W-过程：判断一个有向图是否有有向回路">·</a></h5>
 <p>设 v 是有向图G的结点且$d_G^+(v)=0$ 或 $d_G^- (v)=0$。</p>
 <p>从G中去掉 v 和与之关联的边得到有向图 $G-{v}$ 的过程称为<strong>W-过程</strong>。</p>
 <ul>
 <li>G有有向回路当且仅当 G – {v} 有有向回路；</li>
 <li>若 n 阶有向图 G 没有有向回路，则经过 n–1 次W-过程得到平凡图。</li>
 </ul>
-<h5><span id="判断一个图是否是非循环图">判断一个图是否是非循环图</span></h5>
+<h5 id="判断一个图是否是非循环图">判断一个图是否是非循环图<a class="anchor" href="#判断一个图是否是非循环图">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/953.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/925.png" style="zoom:50%;">
-<h4><span id="连通的充分条件">连通的充分条件</span></h4>
+<h4 id="连通的充分条件">连通的充分条件<a class="anchor" href="#连通的充分条件">·</a></h4>
 <p>设 G 为 n 阶简单无向图，</p>
 <ol>
 <li>
@@ -905,35 +905,35 @@ ran (f ) = { y ｜有 x ∈X 使 y = f (x) } = f [X]</p>
 </li>
 </ol>
 <p>证明：设u, v是图G中任意两个结点且u,v不临接（否则已经可达），则$d_G(u)+d_G(v)≥n-1$。由于G为简单无向图, 因此 u, v只能与剩下的n-2个结点相连。 由抽屉原理得，至少存在一个结点既与u相连，又与v相连，得u从 v可达。因此，G是连通无向图。</p>
-<h5><span id="例设-g为-n-阶简单无向图且g有k个分支m条边-则至多有多少条边">例：设 G为 n 阶简单无向图，且G有k个分支，m条边 ，则至多有多少条边？</span></h5>
+<h5 id="例：设-G为-n-阶简单无向图，且G有k个分支，m条边-，则至多有多少条边？">例：设 G为 n 阶简单无向图，且G有k个分支，m条边 ，则至多有多少条边？<a class="anchor" href="#例：设-G为-n-阶简单无向图，且G有k个分支，m条边-，则至多有多少条边？">·</a></h5>
 <p>$m&lt;=(n-k+1)(n-k)/2$</p>
 <p>即当有k-1个孤立点，且有一个分支有n-k+1个点时</p>
 <p>证明：$若a+b=c，则a(a+1)/2+b(b+1)/2&lt;a(a-1)/2+(b+1)(b+2)/2$ 所以最大为$(c-1)(c-2)/2$</p>
-<h4><span id="点割集的定义">点割集的定义</span></h4>
+<h4 id="点割集的定义">点割集的定义<a class="anchor" href="#点割集的定义">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/954.png" style="zoom:40%;">
-<h4><span id="无向图的点连通度">无向图的点连通度</span></h4>
+<h4 id="无向图的点连通度">无向图的点连通度<a class="anchor" href="#无向图的点连通度">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/955.png" style="zoom:40%;">
-<h4><span id="边割集">边割集</span></h4>
+<h4 id="边割集">边割集<a class="anchor" href="#边割集">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/956.png" style="zoom:40%;">
-<h5><span id="割边必定不存在于一个简单回路中">割边必定不存在于一个简单回路中！！！</span></h5>
+<h5 id="割边必定不存在于一个简单回路中！！！">割边必定不存在于一个简单回路中！！！<a class="anchor" href="#割边必定不存在于一个简单回路中！！！">·</a></h5>
 <p>当且仅当图 G 的一条边 e 不含在 G 的简单回路中时，e 才是 G 的割边</p>
-<h4><span id="边连通度">边连通度</span></h4>
+<h4 id="边连通度">边连通度<a class="anchor" href="#边连通度">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/957.png" style="zoom:40%;">
-<h4><span id="割点割边的充分必要条件">割点割边的充分必要条件</span></h4>
+<h4 id="割点割边的充分必要条件">割点割边的充分必要条件<a class="anchor" href="#割点割边的充分必要条件">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/958.png" style="zoom:40%;">
-<h3><span id="94欧拉图和哈密顿图">9.4欧拉图和哈密顿图</span></h3>
-<h4><span id="欧拉路径欧拉闭路">欧拉路径，欧拉闭路</span></h4>
+<h3 id="9-4欧拉图和哈密顿图">9.4欧拉图和哈密顿图<a class="anchor" href="#9-4欧拉图和哈密顿图">·</a></h3>
+<h4 id="欧拉路径，欧拉闭路">欧拉路径，欧拉闭路<a class="anchor" href="#欧拉路径，欧拉闭路">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/959.png" style="zoom:50%;">
-<h4><span id="一笔画">一笔画</span></h4>
+<h4 id="一笔画">一笔画<a class="anchor" href="#一笔画">·</a></h4>
 <p>一张连通图能由一笔画出来的充要条件是：</p>
 <p>每个交点处的线条数都是偶数；或 （欧拉闭路）</p>
 <p>恰有两个交点处的线条数是奇数。 （欧拉路径）</p>
-<h4><span id="欧拉图欧拉有向图">欧拉图，欧拉有向图</span></h4>
+<h4 id="欧拉图，欧拉有向图">欧拉图，欧拉有向图<a class="anchor" href="#欧拉图，欧拉有向图">·</a></h4>
 <p>(i) 每个结点都是偶结点的无向图称为欧拉图。</p>
 <p>(ii)每个结点的出度和入度都相等的有向图称为欧拉有向图。</p>
-<h5><span id="欧拉图无割边">欧拉图无割边！！！</span></h5>
-<h4><span id="欧拉定理">欧拉定理</span></h4>
-<h5><span id="定理741设-g-是连通无向图-g是欧拉图每个结点都是偶结点当且仅当g有欧拉闭路">定理7.4.1设 G 是连通无向图， G是欧拉图(每个结点都是偶结点)<strong>当且仅当</strong>G有欧拉闭路。</span></h5>
+<h5 id="欧拉图无割边！！！">欧拉图无割边！！！<a class="anchor" href="#欧拉图无割边！！！">·</a></h5>
+<h4 id="欧拉定理">欧拉定理<a class="anchor" href="#欧拉定理">·</a></h4>
+<h5 id="定理7-4-1设-G-是连通无向图，-G是欧拉图-每个结点都是偶结点-当且仅当G有欧拉闭路。">定理7.4.1设 G 是连通无向图， G是欧拉图(每个结点都是偶结点)<strong>当且仅当</strong>G有欧拉闭路。<a class="anchor" href="#定理7-4-1设-G-是连通无向图，-G是欧拉图-每个结点都是偶结点-当且仅当G有欧拉闭路。">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/926.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/927.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/928.png" style="zoom:50%;">
@@ -943,15 +943,15 @@ ran (f ) = { y ｜有 x ∈X 使 y = f (x) } = f [X]</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/101.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/961.png" alt="961" style="zoom:40%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/962.png" alt="962" style="zoom:40%;">
-<h4><span id="哈密顿回路">哈密顿回路</span></h4>
+<h4 id="哈密顿回路">哈密顿回路<a class="anchor" href="#哈密顿回路">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/963.png" style="zoom:40%;">
-<h5><span id="必要条件哈密顿图子集">必要条件：哈密顿图子集</span></h5>
+<h5 id="必要条件：哈密顿图子集">必要条件：哈密顿图子集<a class="anchor" href="#必要条件：哈密顿图子集">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/964.png" style="zoom:40%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/965.png" style="zoom:40%;">
-<h3><span id="95图的矩阵表示">9.5图的矩阵表示</span></h3>
-<h4><span id="邻接矩阵">邻接矩阵</span></h4>
+<h3 id="9-5图的矩阵表示">9.5图的矩阵表示<a class="anchor" href="#9-5图的矩阵表示">·</a></h3>
+<h4 id="邻接矩阵">邻接矩阵<a class="anchor" href="#邻接矩阵">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/966.png" style="zoom:40%;">
-<h5><span id="n阶图g和xg之间的联系">n阶图G和X(G)之间的联系</span></h5>
+<h5 id="n阶图G和X-G-之间的联系">n阶图G和X(G)之间的联系<a class="anchor" href="#n阶图G和X-G-之间的联系">·</a></h5>
 <ol>
 <li>无向图G的邻接矩阵 X(G) 是对称的。</li>
 <li>图G没有平行边 iff X(G)的元素都是0和1。</li>
@@ -960,137 +960,137 @@ ran (f ) = { y ｜有 x ∈X 使 y = f (x) } = f [X]</p>
 <li>图G是零图 iff X(G)是零矩阵 (即所有元素都是0的矩阵)。</li>
 </ol>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/967.png" style="zoom:40%;">
-<h5><span id="xmxm">$X<sup>m,x</sup>m$</span></h5>
+<h5 id="Xm-xm">$X<sup>m,x</sup>m$<a class="anchor" href="#Xm-xm">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/968.png" style="zoom:40%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/969.png" style="zoom:50%;">
-<h4><span id="路径矩阵-可达性矩阵">路径矩阵、可达性矩阵</span></h4>
+<h4 id="路径矩阵、可达性矩阵">路径矩阵、可达性矩阵<a class="anchor" href="#路径矩阵、可达性矩阵">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/970.png" style="zoom:40%;">
-<h5><span id="由邻接矩阵求路径矩阵">由邻接矩阵求路径矩阵</span></h5>
+<h5 id="由邻接矩阵求路径矩阵">由邻接矩阵求路径矩阵<a class="anchor" href="#由邻接矩阵求路径矩阵">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/971.png" style="zoom:40%;">
-<h4><span id="距离矩阵">距离矩阵</span></h4>
+<h4 id="距离矩阵">距离矩阵<a class="anchor" href="#距离矩阵">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/972.png" style="zoom:40%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/973.png" style="zoom:40%;">
-<h4><span id="几个矩阵的特点">几个矩阵的特点</span></h4>
+<h4 id="几个矩阵的特点">几个矩阵的特点<a class="anchor" href="#几个矩阵的特点">·</a></h4>
 <ul>
 <li>图的路径矩阵和距离矩阵<strong>不能给出图的全部信息</strong>；</li>
 <li>图的邻接矩阵可以<strong>给出图的全部信息</strong>；</li>
 <li><strong>无自圈图的关联矩阵</strong>可以给出无自圈图的<strong>全部信息</strong>。</li>
 </ul>
-<h4><span id="回顾关联-临接结点与边的关系">回顾——关联、临接——结点与边的关系</span></h4>
+<h4 id="回顾——关联、临接——结点与边的关系">回顾——关联、临接——结点与边的关系<a class="anchor" href="#回顾——关联、临接——结点与边的关系">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/974.png" style="zoom:40%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/975.png" style="zoom:40%;">
-<h4><span id="几个无自圈的图的矩阵举例">几个无自圈的图的矩阵举例</span></h4>
-<h5><span id="无自圈的无向图的关联矩阵">无自圈的无向图的关联矩阵</span></h5>
+<h4 id="几个无自圈的图的矩阵举例">几个无自圈的图的矩阵举例<a class="anchor" href="#几个无自圈的图的矩阵举例">·</a></h4>
+<h5 id="无自圈的无向图的关联矩阵">无自圈的无向图的关联矩阵<a class="anchor" href="#无自圈的无向图的关联矩阵">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/976.png" style="zoom:40%;">
-<h5><span id="无自圈的有向图的关联矩阵">无自圈的有向图的关联矩阵</span></h5>
+<h5 id="无自圈的有向图的关联矩阵">无自圈的有向图的关联矩阵<a class="anchor" href="#无自圈的有向图的关联矩阵">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/977.png" style="zoom:40%;">
-<h5><span id="无自圈有m条边的n阶图g与ag之间的关系">无自圈有m条边的n阶图G与A(G)之间的关系</span></h5>
+<h5 id="无自圈有m条边的n阶图G与A-G-之间的关系">无自圈有m条边的n阶图G与A(G)之间的关系<a class="anchor" href="#无自圈有m条边的n阶图G与A-G-之间的关系">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/978.png" style="zoom:40%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/979.png" style="zoom:40%;">
-<h4><span id="主要知识点图">主要知识点图</span></h4>
+<h4 id="主要知识点图">主要知识点图<a class="anchor" href="#主要知识点图">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/980.png" style="zoom:40%;">
-<h3><span id="96树">9.6树</span></h3>
-<h4><span id="树定义树平凡树分支节点">树定义（树，平凡树，分支节点）</span></h4>
+<h3 id="9-6树">9.6树<a class="anchor" href="#9-6树">·</a></h3>
+<h4 id="树定义（树，平凡树，分支节点）">树定义（树，平凡树，分支节点）<a class="anchor" href="#树定义（树，平凡树，分支节点）">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/9070.png" style="zoom:40%;">
-<h5><span id="定理761-树定义的等价条件">定理7.6.1 树定义的等价条件</span></h5>
+<h5 id="定理7-6-1-树定义的等价条件">定理7.6.1 树定义的等价条件<a class="anchor" href="#定理7-6-1-树定义的等价条件">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/9071.png" style="zoom:40%;">
-<h5><span id="证明">证明</span></h5>
+<h5 id="证明">证明<a class="anchor" href="#证明">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/102.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/103.png" alt="103" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/104.png" alt="104" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/105.png" alt="105" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/106.png" alt="106" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/107.png" alt="107" style="zoom:50%;">
-<h5><span id="定理745-如果g1和g2是可运算的欧拉图则g1-bigoplus-g2环合是欧拉图">定理7.4.5 如果G1和G2是可运算的欧拉图，则G1 $\bigoplus$ G2（环合）是欧拉图。</span></h5>
-<h5><span id="三个基本条件">三个基本条件</span></h5>
+<h5 id="定理7-4-5-如果G1和G2是可运算的欧拉图，则G1-bigoplus-G2（环合）是欧拉图。">定理7.4.5 如果G1和G2是可运算的欧拉图，则G1 $\bigoplus$ G2（环合）是欧拉图。<a class="anchor" href="#定理7-4-5-如果G1和G2是可运算的欧拉图，则G1-bigoplus-G2（环合）是欧拉图。">·</a></h5>
+<h5 id="三个基本条件">三个基本条件<a class="anchor" href="#三个基本条件">·</a></h5>
 <p>i. G是连通的，
 ii. G是非循环的，
 iii.有 n – 1 条边。</p>
 <p>给定其中两个条件，可证明第三个条件</p>
-<h5><span id="定理-762-阶大于-1-的树至少有两个端点">定理 7.6.2 阶大于 1 的树至少有两个端点。</span></h5>
-<h4><span id="森林">森林</span></h4>
-<h5><span id="定义">定义</span></h5>
+<h5 id="定理-7-6-2-阶大于-1-的树至少有两个端点。">定理 7.6.2 阶大于 1 的树至少有两个端点。<a class="anchor" href="#定理-7-6-2-阶大于-1-的树至少有两个端点。">·</a></h5>
+<h4 id="森林">森林<a class="anchor" href="#森林">·</a></h4>
+<h5 id="定义-22">定义<a class="anchor" href="#定义-22">·</a></h5>
 <p>树是非循环的连通无向图，如果去掉对连通性的要求，就得到森林的概念。</p>
-<h5><span id="定义762-每个分支都是树的无向图称为森林">定义7.6.2 每个分支都是树的无向图称为森林。</span></h5>
-<h5><span id="定理-763-如果森林-f-有-n-个结点m-条边和-k-个分支-则mn-k">定理 7.6.3 如果森林 F 有 n 个结点，m 条边和 k 个分支， 则m=n-k。</span></h5>
-<h4><span id="生成树生成森林">生成树，生成森林</span></h4>
+<h5 id="定义7-6-2-每个分支都是树的无向图称为森林。">定义7.6.2 每个分支都是树的无向图称为森林。<a class="anchor" href="#定义7-6-2-每个分支都是树的无向图称为森林。">·</a></h5>
+<h5 id="定理-7-6-3-如果森林-F-有-n-个结点，m-条边和-k-个分支，-则m-n-k。">定理 7.6.3 如果森林 F 有 n 个结点，m 条边和 k 个分支， 则m=n-k。<a class="anchor" href="#定理-7-6-3-如果森林-F-有-n-个结点，m-条边和-k-个分支，-则m-n-k。">·</a></h5>
+<h4 id="生成树，生成森林">生成树，生成森林<a class="anchor" href="#生成树，生成森林">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/9072.png" style="zoom:40%;">
-<h5><span id="生成树示例">生成树示例</span></h5>
+<h5 id="生成树示例">生成树示例<a class="anchor" href="#生成树示例">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/9073.png" style="zoom:40%;">
-<h5><span id="连通图的生成树构造方法">连通图的生成树构造方法</span></h5>
+<h5 id="连通图的生成树构造方法">连通图的生成树构造方法<a class="anchor" href="#连通图的生成树构造方法">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/9074.png" style="zoom:40%;">
-<h5><span id="定理设无向图g连通则g至少有一个生成树">定理：设无向图G连通，则G至少有一个生成树。</span></h5>
+<h5 id="定理：设无向图G连通，则G至少有一个生成树。">定理：设无向图G连通，则G至少有一个生成树。<a class="anchor" href="#定理：设无向图G连通，则G至少有一个生成树。">·</a></h5>
 <p>该定理的证明过程实际上是求生成树的算法：</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/9075.png" style="zoom:40%;">
-<h5><span id="用破圈法求图g的生成树">用破圈法求图G的生成树</span></h5>
+<h5 id="用破圈法求图G的生成树">用破圈法求图G的生成树<a class="anchor" href="#用破圈法求图G的生成树">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/9076.png" style="zoom:40%;">
-<h4><span id="最小生成树">最小生成树</span></h4>
+<h4 id="最小生成树">最小生成树<a class="anchor" href="#最小生成树">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/9077.png" style="zoom:40%;">
-<h5><span id="最小生成树求法避圈法-破圈法">最小生成树求法（避圈法、破圈法）</span></h5>
+<h5 id="最小生成树求法（避圈法、破圈法）">最小生成树求法（避圈法、破圈法）<a class="anchor" href="#最小生成树求法（避圈法、破圈法）">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/9078.png" style="zoom:40%;">
-<h5><span id="prims-algorithm-robert-clay-prim-1957">Prim’s Algorithm (Robert Clay Prim, 1957)</span></h5>
+<h5 id="Prim’s-Algorithm-Robert-Clay-Prim-1957">Prim’s Algorithm (Robert Clay Prim, 1957)<a class="anchor" href="#Prim’s-Algorithm-Robert-Clay-Prim-1957">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/9079.png" style="zoom:50%;">
-<h5><span id="最小生成树求法prim算法">最小生成树求法（prim算法）</span></h5>
+<h5 id="最小生成树求法（prim算法）">最小生成树求法（prim算法）<a class="anchor" href="#最小生成树求法（prim算法）">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90710.png" style="zoom: 50%;">
-<h5><span id="kruskals-algorithm-joseph-bernard-kruskal-1956">Kruskal’s Algorithm (Joseph Bernard Kruskal, 1956)</span></h5>
+<h5 id="Kruskal’s-Algorithm-Joseph-Bernard-Kruskal-1956">Kruskal’s Algorithm (Joseph Bernard Kruskal, 1956)<a class="anchor" href="#Kruskal’s-Algorithm-Joseph-Bernard-Kruskal-1956">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90711.png" style="zoom:40%;">
-<h5><span id="kruskal算法要点">Kruskal算法要点</span></h5>
+<h5 id="Kruskal算法要点">Kruskal算法要点<a class="anchor" href="#Kruskal算法要点">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90712.png" style="zoom:40%;">
-<h4><span id="枝-弦">枝、弦</span></h4>
+<h4 id="枝、弦">枝、弦<a class="anchor" href="#枝、弦">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90713.png" style="zoom:50%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90714.png" style="zoom:40%;">
-<h4><span id="圈秩-余圈秩">圈秩、余圈秩</span></h4>
+<h4 id="圈秩、余圈秩">圈秩、余圈秩<a class="anchor" href="#圈秩、余圈秩">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90715.png" style="zoom:40%;">
-<h4><span id="基本回路圈">基本回路（圈）</span></h4>
+<h4 id="基本回路（圈）">基本回路（圈）<a class="anchor" href="#基本回路（圈）">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90716.png" style="zoom:40%;">
-<h4><span id="有向树">有向树</span></h4>
+<h4 id="有向树">有向树<a class="anchor" href="#有向树">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90717.png" style="zoom:40%;">
-<h5><span id="定理767-设-v0-是有向图-d-的结点-d-是以-v0-为根的有向树当且仅当从-v0-至-d-的任意结点恰有一条路径">定理7.6.7 设 v0 是有向图 D 的结点。 D 是以 v0 为根的有向树当且仅当从 v0 至 D 的任意结点恰有一条路径。</span></h5>
-<h5><span id="有向树的定义">有向树的定义</span></h5>
+<h5 id="定理7-6-7-设-v0-是有向图-D-的结点。-D-是以-v0-为根的有向树当且仅当从-v0-至-D-的任意结点恰有一条路径。">定理7.6.7 设 v0 是有向图 D 的结点。 D 是以 v0 为根的有向树当且仅当从 v0 至 D 的任意结点恰有一条路径。<a class="anchor" href="#定理7-6-7-设-v0-是有向图-D-的结点。-D-是以-v0-为根的有向树当且仅当从-v0-至-D-的任意结点恰有一条路径。">·</a></h5>
+<h5 id="有向树的定义">有向树的定义<a class="anchor" href="#有向树的定义">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90718.png" style="zoom:40%;">
-<h4><span id="有向森林">有向森林</span></h4>
-<h5><span id="定义7610-每个弱分支都是有向树的有向图称为有向森林">定义7.6.10 每个弱分支都是有向树的有向图，称为有向森林。</span></h5>
-<h5><span id="m元有向树">m元有向树</span></h5>
+<h4 id="有向森林">有向森林<a class="anchor" href="#有向森林">·</a></h4>
+<h5 id="定义7-6-10-每个弱分支都是有向树的有向图，称为有向森林。">定义7.6.10 每个弱分支都是有向树的有向图，称为有向森林。<a class="anchor" href="#定义7-6-10-每个弱分支都是有向树的有向图，称为有向森林。">·</a></h5>
+<h5 id="m元有向树">m元有向树<a class="anchor" href="#m元有向树">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90719.png" style="zoom:40%;">
-<h4><span id="两个问题">两个问题</span></h4>
+<h4 id="两个问题">两个问题<a class="anchor" href="#两个问题">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90720.png" style="zoom: 40%;">
-<h5><span id="叶加权二叉树算法的平均执行时间">叶加权二叉树——算法的平均执行时间</span></h5>
+<h5 id="叶加权二叉树——算法的平均执行时间">叶加权二叉树——算法的平均执行时间<a class="anchor" href="#叶加权二叉树——算法的平均执行时间">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90721.png" style="zoom:40%;">
-<h5><span id="求解最优二叉树的算法huffman算法">求解最优二叉树的算法—Huffman算法</span></h5>
+<h5 id="求解最优二叉树的算法—Huffman算法">求解最优二叉树的算法—Huffman算法<a class="anchor" href="#求解最优二叉树的算法—Huffman算法">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90722.png" style="zoom:50%;">
-<h6><span id="最优二叉树求取">最优二叉树求取</span></h6>
+<h6 id="最优二叉树求取">最优二叉树求取<a class="anchor" href="#最优二叉树求取">·</a></h6>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90723.png" style="zoom:40%;">
-<h6><span id="定位有序树">定位有序树</span></h6>
+<h6 id="定位有序树">定位有序树<a class="anchor" href="#定位有序树">·</a></h6>
 <p>定义7.6.15 为每个分支结点的儿子规定了位置的有序树称为定位有序树。</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90724.png" style="zoom:40%;">
-<h6><span id="最优二叉树">最优二叉树</span></h6>
+<h6 id="最优二叉树">最优二叉树<a class="anchor" href="#最优二叉树">·</a></h6>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90725.png" style="zoom:40%;">
-<h5><span id="例在计算机通信中要传输a-b-c-d-e-f-g-h八个字母他们出现频率为a30-b20-c15-d10-e10-f6-g5-h4-给出一个最佳编码使得通讯中出现的二进制数字尽可能少">例：在计算机通信中要传输A, B, C, D, E, F, G, H八个字母，他们出现频率为A:30%, B:20%, C:15%, D:10%, E:10%, F:6%, G:5%, H:4%。给出一个最佳编码，使得通讯中出现的二进制数字尽可能少。</span></h5>
+<h5 id="例：在计算机通信中要传输A-B-C-D-E-F-G-H八个字母，他们出现频率为A-30-B-20-C-15-D-10-E-10-F-6-G-5-H-4-。给出一个最佳编码，使得通讯中出现的二进制数字尽可能少。">例：在计算机通信中要传输A, B, C, D, E, F, G, H八个字母，他们出现频率为A:30%, B:20%, C:15%, D:10%, E:10%, F:6%, G:5%, H:4%。给出一个最佳编码，使得通讯中出现的二进制数字尽可能少。<a class="anchor" href="#例：在计算机通信中要传输A-B-C-D-E-F-G-H八个字母，他们出现频率为A-30-B-20-C-15-D-10-E-10-F-6-G-5-H-4-。给出一个最佳编码，使得通讯中出现的二进制数字尽可能少。">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90726.png" style="zoom:40%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90727.png" alt="90727" style="zoom:40%;">
-<h4><span id="有序树有序森林">有序树，有序森林</span></h4>
+<h4 id="有序树，有序森林">有序树，有序森林<a class="anchor" href="#有序树，有序森林">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90728.png" style="zoom:40%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90729.png" style="zoom:40%;">
-<h5><span id="借用家族树的名称来称呼有序树的结点">借用家族树的名称来称呼有序树的结点。</span></h5>
+<h5 id="借用家族树的名称来称呼有序树的结点。">借用家族树的名称来称呼有序树的结点。<a class="anchor" href="#借用家族树的名称来称呼有序树的结点。">·</a></h5>
 <p>称v1是v2和v3的父亲，v2是v1的长子，v2是v3的哥哥，v6是 v5的弟弟等等。</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90730.png" style="zoom:40%;">
-<h5><span id="定位有序树">定位有序树</span></h5>
+<h5 id="定位有序树-2">定位有序树<a class="anchor" href="#定位有序树-2">·</a></h5>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90731.png" style="zoom: 40%;">
 <ul>
 <li>G与G’是相同的有序树，因为同一级上结点的次序相同。</li>
 <li>如果考虑结点之间的相对位置，G与G’不相同</li>
 <li>G与G’是不同的定位有序树</li>
 </ul>
-<h5><span id="有序森林与有序树的关系">有序森林与有序树的关系</span></h5>
+<h5 id="有序森林与有序树的关系">有序森林与有序树的关系<a class="anchor" href="#有序森林与有序树的关系">·</a></h5>
 <p>可以用定位二元有序树 表示有序森林。</p>
 <p>有序森林和定位二元有序树之间建立一一对应关系。</p>
 <p>• 称位于左边的有序树之根为位于右边的有序树之根的哥哥</p>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90732.png" style="zoom:40%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90733.png" style="zoom:40%;">
-<h4><span id="概念图谱">概念图谱</span></h4>
+<h4 id="概念图谱">概念图谱<a class="anchor" href="#概念图谱">·</a></h4>
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90734.png" style="zoom:40%;">
 <img src="/2022/09/19/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A62/../../../Learn/大二上/2020年秋季学期课程学习/离散数学2/picture/90735.png" style="zoom:40%;">
-<h1><span id="期末专项复习">期末专项复习</span></h1>
+<h1 id="期末专项复习">期末专项复习<a class="anchor" href="#期末专项复习">·</a></h1>
 <p>二叉树定义——即完全二叉树，每个结点的分支非0即2</p>
 
                 
@@ -1151,7 +1151,7 @@ iii.有 n – 1 条边。</p>
           <strong class="toc-title">Contents</strong>
           
             
-              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">离散数学2</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">集合论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">第五章 集合</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.1 集合与元素</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">归纳定义法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">1) 基本项</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2) 归纳项</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">3) 极小化</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.2 集合间的相等和包含关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">集合相等</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">集合的包含关系（真子集，子集）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">空集是唯一的</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.3 幂集</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">幂集</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">基数</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">幂集特征</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.4 集合的运算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">集合族或集合的聚合</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">等值式模式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">集合恒等式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">对集合恒等式的说明</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">其他常用性质</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.5 有穷集的计数原理</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.6 集合的归纳定义法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义程式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">字符串</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">字符串相等与连接</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">字符串前缀，后缀，子串，$\sum *$，$\sum +$</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">语言，语言的运算，关系性质</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">5.7 有序偶和笛卡儿乘积</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">有序偶</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">有序偶的集合表示</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">n元序偶</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">笛卡儿乘积</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">性质</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">第六章 关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">6.1 关系及其性质</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">一、关系的定义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">二、关系的表示</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">关系矩阵</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">关系图</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">三、关系的性质(自反、反自反、对称、反对称、传递)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">关系图和关系矩阵中五种性质的表述</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">思考题：设 A 为恰有 n 个元素的有限集A</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">6.2 关系的运算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">关系的交并差补集</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">复合关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">复合关系的结合律</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">关系的幂运算</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">用矩阵运算来表示两个关系的复合</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">关系复合的性质</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">关系的逆</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">关系的一个逆运算定理</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">思考题</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">二元关系性质的判断条件</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">闭包</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">用闭包来判断是否自反、对称、传递</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理 6.3 设 R 是集合A上的关系，则 $r ® ＝ R∪I_A$。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理 6.4 设 R 是集合 A 上的关系，则 $s ® ＝ R∪R^{-1}$ 。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理 6.5 设 R 是集合A上的关系，则 $t® &#x3D; R∪R2∪R3∪…∪R^n$</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">闭包的性质(注意rs&#x2F;sr&#x2F;rt&#x2F;tr&#x2F;st&#x2F;ts)</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">6.3 次序关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">偏序（半序）关系</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">全序关系（也称线序）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">可比的</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">严格偏序关系，又称拟序关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">反自反、传递&#x3D;&#x3D;&gt;反对称</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">遮盖</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">哈斯图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">偏序结构中的特殊元素（最大元，最小元，极大元，极小元，最大上界，最小下界）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">良序结构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">良序的充要条件</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">6.4 等价关系与划分</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">等价关系</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">等价类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">等价类相关定理</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">商集（全体元素等价类集合组成的集合）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">划分</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">等价关系，划分，商集，等价类的关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">由π确定的等价关系</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">第七章 函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">7.1 基本概念</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">函数的定义和判定</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义域值域</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">部分函数</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">函数的限制(即限制定义域)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">部分函数的像和源像</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">小结：从集合 X 到 Y 的二元关系 f 几个重要知识点</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">设 f 为从集合 X 到集合 Y 的部分函数</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">设 f 为从集合X到Y的部分函数, Ａ $\subseteq$ ρ (X), В $\subseteq$ ρ (Y)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理 若 f 为从集合 X 到 Y 的部分函数 且 A $\subseteq$ X ，则</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">X到Y的全函数集合</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">两道例题</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">7.2 函数的复合</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">复合关系与对应函数</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">函数复合的约定写法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">函数复合的定义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">复合函数的定义域与值域</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">函数复合运算的性质</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">恒等函数</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">结合律</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">函数的幂运算</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">7.3 特殊性质的函数和逆函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">满射、单射、双射</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">函数与复合函数 之间的性质关系 定理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">规则：左满 右单</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">左逆、右逆、逆（逆&lt;&#x3D;&gt;一个函数同时为左逆和右逆）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">唯一逆</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">4个可逆的等价条件</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">复合函数的逆</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">7.4 集合的特征函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">特征函数的性质</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">用特征函数证明集合恒等式</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">第八章 自然数和基数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">8.1 自然数及数学归纳法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">自然数引进方法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">自然数构造的出发点</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">后继集合</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">引理</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">构造自然数系统&lt;N,+,*&gt;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">法1：冯诺依曼（Von Neumann）方案</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">法2：自然数集合 N——归纳定义法</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">“小于” 关系</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义“+”和“×&quot;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">引理2</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Peano公理</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">作为集合的自然数的性质</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">数学归纳法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">8.2 基数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">1.等势</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">等势关系的性质</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">集合有穷（可数）的定义</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">2.无限集</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">鸽笼原理（抽屉原理）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理8.1 任意有穷集合 A 唯一地与一个自然数等势 。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义8.7 ( 有穷集合的基数 )</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">3.集合的基数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">基数相等和大小顺序</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">任何两个基数都可以比较大小</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">基数的相等关系 “ &#x3D; ” 是等价关系</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">基数的小于等于关系“ $\leq$ ”是半序关系</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义8.8 ( 基数 )</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义8.9（可数无穷集合）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义8.10（可数、不可数集合 ）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">无穷集的等价条件</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理8.2：任何无穷集合 必含有 可数无穷子集。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理8.3：可数无穷集合的无穷子集 必是 可数无穷的。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理：实数集合 R 是 不可数的 。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理8.4：实数集合 R 是不可数的</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义 8.14：若#A &#x3D; $\alpha$ , #B &#x3D; $\beta$, 且 A $&lt;$ B , 则称 $\alpha$ 小于 $\beta$ , 记为 $\alpha$ &lt; $\beta$ .</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理 8.5 对于任意集合 A , A $&lt;\rho$ (A) , $\rho$ (A)是 A 的幂集.</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">4.常用结论</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">图论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#"><span class="toc-nav-text">第九章</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">第九章其他资料</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">9.1图论的基本概念  9.2 图的基本结构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">无向图、有向图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">自圈、平行边、简单图、多重图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">关联、邻接 —— 结点和边的关系</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">度</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">奇结点、偶结点、孤立点、端点</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">零图、平凡图、d度正则图、完全图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">同 构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">两个图同构的必要条件</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">9.2子图和图的运算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">子图、真子图、生成子图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">由结点集导出的子图 ($G[V’],G-V’&#x3D;G[V-V’]$)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">由边集导出的子图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">子图的几个特点</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">可运算、不相交</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">交、并、环和</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理：图的唯一性</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">运算 G – E’</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">运算 G + E’$_{\psi’}$（其实就是并运算）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">补图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">自补图：与其补图同构的简单无向图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">图同构的必要条件</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">9.3路径、回路和连通性</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">路径</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义（路径，路径长度，开、闭路径，简单路径，基本路径）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">路径的另一组术语</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">路径的基本性质</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">两个路径的基本定理（7.3.1,7.3.2）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#"><span class="toc-nav-text">证明7.3.1</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#"><span class="toc-nav-text">证明7.3.2</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">可达（注意R(v)——从v可以到达的全体结点的集合）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">距离（测地线，距离，图的直径）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">加权图（加权长度，最短路径，加权距离）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">迪杰斯特拉（Dijkstra）算法</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Dijkstra的python实现（个人向）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">联通</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">无向图的联通</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">有向图的联通—基础图（有向图和无向图的联系）把有向边全部改为无向边</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">有向图的联通（强连通，单向联通，弱联通）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">极大子图，分支（强分支$\rightarrow$单向分支$\rightarrow$弱分支）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">关于分支的定理（7.3.4）——无向图</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">关于强、弱、单向分支的定理（7.3.5）——有向图</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">例题</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">半路径</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">回路，半回路，有向回路</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">部分概念关系图</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">回路的等价条件</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">有回路、非循环图</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">W-过程：判断一个有向图是否有有向回路</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">判断一个图是否是非循环图</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">连通的充分条件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">例：设 G为 n 阶简单无向图，且G有k个分支，m条边 ，则至多有多少条边？</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">点割集的定义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">无向图的点连通度</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">边割集</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">割边必定不存在于一个简单回路中！！！</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">边连通度</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">割点割边的充分必要条件</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">9.4欧拉图和哈密顿图</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">欧拉路径，欧拉闭路</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">一笔画</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">欧拉图，欧拉有向图</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">欧拉图无割边！！！</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">欧拉定理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理7.4.1设 G 是连通无向图， G是欧拉图(每个结点都是偶结点)当且仅当G有欧拉闭路。</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">哈密顿回路</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">必要条件：哈密顿图子集</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">9.5图的矩阵表示</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">邻接矩阵</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">n阶图G和X(G)之间的联系</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">$Xm,xm$</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">路径矩阵、可达性矩阵</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">由邻接矩阵求路径矩阵</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">距离矩阵</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">几个矩阵的特点</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">回顾——关联、临接——结点与边的关系</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">几个无自圈的图的矩阵举例</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">无自圈的无向图的关联矩阵</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">无自圈的有向图的关联矩阵</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">无自圈有m条边的n阶图G与A(G)之间的关系</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">主要知识点图</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#"><span class="toc-nav-text">9.6树</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">树定义（树，平凡树，分支节点）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理7.6.1 树定义的等价条件</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">证明</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理7.4.5 如果G1和G2是可运算的欧拉图，则G1 $\bigoplus$ G2（环合）是欧拉图。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">三个基本条件</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理 7.6.2 阶大于 1 的树至少有两个端点。</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">森林</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义7.6.2 每个分支都是树的无向图称为森林。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理 7.6.3 如果森林 F 有 n 个结点，m 条边和 k 个分支， 则m&#x3D;n-k。</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">生成树，生成森林</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">生成树示例</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">连通图的生成树构造方法</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理：设无向图G连通，则G至少有一个生成树。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">用破圈法求图G的生成树</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">最小生成树</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">最小生成树求法（避圈法、破圈法）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Prim’s Algorithm (Robert Clay Prim, 1957)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">最小生成树求法（prim算法）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Kruskal’s Algorithm (Joseph Bernard Kruskal, 1956)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">Kruskal算法要点</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">枝、弦</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">圈秩、余圈秩</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">基本回路（圈）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">有向树</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定理7.6.7 设 v0 是有向图 D 的结点。 D 是以 v0 为根的有向树当且仅当从 v0 至 D 的任意结点恰有一条路径。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">有向树的定义</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">有向森林</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定义7.6.10 每个弱分支都是有向树的有向图，称为有向森林。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">m元有向树</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">两个问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">叶加权二叉树——算法的平均执行时间</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">求解最优二叉树的算法—Huffman算法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#"><span class="toc-nav-text">最优二叉树求取</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定位有序树</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#"><span class="toc-nav-text">最优二叉树</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">例：在计算机通信中要传输A, B, C, D, E, F, G, H八个字母，他们出现频率为A:30%, B:20%, C:15%, D:10%, E:10%, F:6%, G:5%, H:4%。给出一个最佳编码，使得通讯中出现的二进制数字尽可能少。</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">有序树，有序森林</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">借用家族树的名称来称呼有序树的结点。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">定位有序树</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#"><span class="toc-nav-text">有序森林与有序树的关系</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#"><span class="toc-nav-text">概念图谱</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#"><span class="toc-nav-text">期末专项复习</span></a></li></ol>
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#离散数学2"><span class="toc-nav-text">离散数学2</span></a></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#集合论"><span class="toc-nav-text">集合论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第五章-集合"><span class="toc-nav-text">第五章 集合</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-1-集合与元素"><span class="toc-nav-text">5.1 集合与元素</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#归纳定义法"><span class="toc-nav-text">归纳定义法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#1-基本项"><span class="toc-nav-text">1) 基本项</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#2-归纳项"><span class="toc-nav-text">2) 归纳项</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#3-极小化"><span class="toc-nav-text">3) 极小化</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-2-集合间的相等和包含关系"><span class="toc-nav-text">5.2 集合间的相等和包含关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#集合相等"><span class="toc-nav-text">集合相等</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#集合的包含关系（真子集，子集）"><span class="toc-nav-text">集合的包含关系（真子集，子集）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#空集是唯一的"><span class="toc-nav-text">空集是唯一的</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-3-幂集"><span class="toc-nav-text">5.3 幂集</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#幂集"><span class="toc-nav-text">幂集</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#基数"><span class="toc-nav-text">基数</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#幂集特征"><span class="toc-nav-text">幂集特征</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-4-集合的运算"><span class="toc-nav-text">5.4 集合的运算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#集合族或集合的聚合"><span class="toc-nav-text">集合族或集合的聚合</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#等值式模式"><span class="toc-nav-text">等值式模式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#集合恒等式"><span class="toc-nav-text">集合恒等式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#对集合恒等式的说明"><span class="toc-nav-text">对集合恒等式的说明</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#其他常用性质"><span class="toc-nav-text">其他常用性质</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-5-有穷集的计数原理"><span class="toc-nav-text">5.5 有穷集的计数原理</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-6-集合的归纳定义法"><span class="toc-nav-text">5.6 集合的归纳定义法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#定义程式"><span class="toc-nav-text">定义程式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#字符串"><span class="toc-nav-text">字符串</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#字符串相等与连接"><span class="toc-nav-text">字符串相等与连接</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#字符串前缀，后缀，子串，-sum-，-sum"><span class="toc-nav-text">字符串前缀，后缀，子串，$\sum *$，$\sum +$</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#语言，语言的运算，关系性质"><span class="toc-nav-text">语言，语言的运算，关系性质</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#5-7-有序偶和笛卡儿乘积"><span class="toc-nav-text">5.7 有序偶和笛卡儿乘积</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#有序偶"><span class="toc-nav-text">有序偶</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定义-18"><span class="toc-nav-text">定义</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#有序偶的集合表示"><span class="toc-nav-text">有序偶的集合表示</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#n元序偶"><span class="toc-nav-text">n元序偶</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#笛卡儿乘积"><span class="toc-nav-text">笛卡儿乘积</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定义-19"><span class="toc-nav-text">定义</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#性质-3"><span class="toc-nav-text">性质</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第六章-关系"><span class="toc-nav-text">第六章 关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-1-关系及其性质"><span class="toc-nav-text">6.1 关系及其性质</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#一、关系的定义"><span class="toc-nav-text">一、关系的定义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#二、关系的表示"><span class="toc-nav-text">二、关系的表示</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#关系矩阵"><span class="toc-nav-text">关系矩阵</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#关系图"><span class="toc-nav-text">关系图</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#三、关系的性质-自反、反自反、对称、反对称、传递"><span class="toc-nav-text">三、关系的性质(自反、反自反、对称、反对称、传递)</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#关系图和关系矩阵中五种性质的表述"><span class="toc-nav-text">关系图和关系矩阵中五种性质的表述</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#思考题：设-A-为恰有-n-个元素的有限集A"><span class="toc-nav-text">思考题：设 A 为恰有 n 个元素的有限集A</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-2-关系的运算"><span class="toc-nav-text">6.2 关系的运算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#关系的交并差补集"><span class="toc-nav-text">关系的交并差补集</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#复合关系"><span class="toc-nav-text">复合关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#复合关系的结合律"><span class="toc-nav-text">复合关系的结合律</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#关系的幂运算"><span class="toc-nav-text">关系的幂运算</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#用矩阵运算来表示两个关系的复合"><span class="toc-nav-text">用矩阵运算来表示两个关系的复合</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#关系复合的性质"><span class="toc-nav-text">关系复合的性质</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#关系的逆"><span class="toc-nav-text">关系的逆</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#关系的一个逆运算定理"><span class="toc-nav-text">关系的一个逆运算定理</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#思考题"><span class="toc-nav-text">思考题</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#二元关系性质的判断条件"><span class="toc-nav-text">二元关系性质的判断条件</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#闭包"><span class="toc-nav-text">闭包</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#用闭包来判断是否自反、对称、传递"><span class="toc-nav-text">用闭包来判断是否自反、对称、传递</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理-6-3-设-R-是集合A上的关系，则-r-®-＝-R∪I-A-。"><span class="toc-nav-text">定理 6.3 设 R 是集合A上的关系，则 $r ® ＝ R∪I_A$。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理-6-4-设-R-是集合-A-上的关系，则-s-®-＝-R∪R-1-。"><span class="toc-nav-text">定理 6.4 设 R 是集合 A 上的关系，则 $s ® ＝ R∪R^{-1}$ 。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理-6-5-设-R-是集合A上的关系，则-t®-R∪R2∪R3∪…∪R-n"><span class="toc-nav-text">定理 6.5 设 R 是集合A上的关系，则 $t® &#x3D; R∪R2∪R3∪…∪R^n$</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#闭包的性质-注意rs-sr-rt-tr-st-ts"><span class="toc-nav-text">闭包的性质(注意rs&#x2F;sr&#x2F;rt&#x2F;tr&#x2F;st&#x2F;ts)</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-3-次序关系"><span class="toc-nav-text">6.3 次序关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#偏序（半序）关系"><span class="toc-nav-text">偏序（半序）关系</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#全序关系（也称线序）"><span class="toc-nav-text">全序关系（也称线序）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#可比的"><span class="toc-nav-text">可比的</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#严格偏序关系，又称拟序关系"><span class="toc-nav-text">严格偏序关系，又称拟序关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#反自反、传递-反对称"><span class="toc-nav-text">反自反、传递&#x3D;&#x3D;&gt;反对称</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#遮盖"><span class="toc-nav-text">遮盖</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#哈斯图"><span class="toc-nav-text">哈斯图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#偏序结构中的特殊元素（最大元，最小元，极大元，极小元，最大上界，最小下界）"><span class="toc-nav-text">偏序结构中的特殊元素（最大元，最小元，极大元，极小元，最大上界，最小下界）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#良序结构"><span class="toc-nav-text">良序结构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#良序的充要条件"><span class="toc-nav-text">良序的充要条件</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#6-4-等价关系与划分"><span class="toc-nav-text">6.4 等价关系与划分</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#等价关系"><span class="toc-nav-text">等价关系</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#等价类"><span class="toc-nav-text">等价类</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#等价类相关定理"><span class="toc-nav-text">等价类相关定理</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#商集（全体元素等价类集合组成的集合）"><span class="toc-nav-text">商集（全体元素等价类集合组成的集合）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#划分"><span class="toc-nav-text">划分</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#等价关系，划分，商集，等价类的关系"><span class="toc-nav-text">等价关系，划分，商集，等价类的关系</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#由π确定的等价关系"><span class="toc-nav-text">由π确定的等价关系</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第七章-函数"><span class="toc-nav-text">第七章 函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#7-1-基本概念-2"><span class="toc-nav-text">7.1 基本概念</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#函数的定义和判定"><span class="toc-nav-text">函数的定义和判定</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定义域值域"><span class="toc-nav-text">定义域值域</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#部分函数"><span class="toc-nav-text">部分函数</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#函数的限制-即限制定义域"><span class="toc-nav-text">函数的限制(即限制定义域)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#部分函数的像和源像"><span class="toc-nav-text">部分函数的像和源像</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#小结：从集合-X-到-Y-的二元关系-f-几个重要知识点"><span class="toc-nav-text">小结：从集合 X 到 Y 的二元关系 f 几个重要知识点</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#定理-2"><span class="toc-nav-text">定理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#设-f-为从集合-X-到集合-Y-的部分函数"><span class="toc-nav-text">设 f 为从集合 X 到集合 Y 的部分函数</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#设-f-为从集合X到Y的部分函数-A-subseteq-ρ-X-В-subseteq-ρ-Y"><span class="toc-nav-text">设 f 为从集合X到Y的部分函数, Ａ $\subseteq$ ρ (X), В $\subseteq$ ρ (Y)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理-若-f-为从集合-X-到-Y-的部分函数-且-A-subseteq-X-，则"><span class="toc-nav-text">定理 若 f 为从集合 X 到 Y 的部分函数 且 A $\subseteq$ X ，则</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#X到Y的全函数集合"><span class="toc-nav-text">X到Y的全函数集合</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#两道例题"><span class="toc-nav-text">两道例题</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#7-2-函数的复合"><span class="toc-nav-text">7.2 函数的复合</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#复合关系与对应函数"><span class="toc-nav-text">复合关系与对应函数</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#函数复合的约定写法"><span class="toc-nav-text">函数复合的约定写法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#函数复合的定义"><span class="toc-nav-text">函数复合的定义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#复合函数的定义域与值域"><span class="toc-nav-text">复合函数的定义域与值域</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#函数复合运算的性质"><span class="toc-nav-text">函数复合运算的性质</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#恒等函数"><span class="toc-nav-text">恒等函数</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#结合律"><span class="toc-nav-text">结合律</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#函数的幂运算"><span class="toc-nav-text">函数的幂运算</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#7-3-特殊性质的函数和逆函数"><span class="toc-nav-text">7.3 特殊性质的函数和逆函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#满射、单射、双射"><span class="toc-nav-text">满射、单射、双射</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#函数与复合函数-之间的性质关系-定理"><span class="toc-nav-text">函数与复合函数 之间的性质关系 定理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#规则：左满-右单"><span class="toc-nav-text">规则：左满 右单</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#左逆、右逆、逆（逆-一个函数同时为左逆和右逆）"><span class="toc-nav-text">左逆、右逆、逆（逆&lt;&#x3D;&gt;一个函数同时为左逆和右逆）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定义-20"><span class="toc-nav-text">定义</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#唯一逆"><span class="toc-nav-text">唯一逆</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#4个可逆的等价条件"><span class="toc-nav-text">4个可逆的等价条件</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#复合函数的逆"><span class="toc-nav-text">复合函数的逆</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#7-4-集合的特征函数"><span class="toc-nav-text">7.4 集合的特征函数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#定义-21"><span class="toc-nav-text">定义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#特征函数的性质"><span class="toc-nav-text">特征函数的性质</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#用特征函数证明集合恒等式"><span class="toc-nav-text">用特征函数证明集合恒等式</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第八章-自然数和基数"><span class="toc-nav-text">第八章 自然数和基数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#8-1-自然数及数学归纳法"><span class="toc-nav-text">8.1 自然数及数学归纳法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自然数引进方法"><span class="toc-nav-text">自然数引进方法</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自然数构造的出发点"><span class="toc-nav-text">自然数构造的出发点</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#后继集合"><span class="toc-nav-text">后继集合</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#引理-2"><span class="toc-nav-text">引理</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#构造自然数系统-N"><span class="toc-nav-text">构造自然数系统&lt;N,+,*&gt;</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#法1：冯诺依曼（Von-Neumann）方案"><span class="toc-nav-text">法1：冯诺依曼（Von Neumann）方案</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#法2：自然数集合-N——归纳定义法"><span class="toc-nav-text">法2：自然数集合 N——归纳定义法</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#“小于”-关系"><span class="toc-nav-text">“小于” 关系</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定义“-”和“×"><span class="toc-nav-text">定义“+”和“×&quot;</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#引理2"><span class="toc-nav-text">引理2</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Peano公理"><span class="toc-nav-text">Peano公理</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#作为集合的自然数的性质"><span class="toc-nav-text">作为集合的自然数的性质</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#数学归纳法"><span class="toc-nav-text">数学归纳法</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#8-2-基数"><span class="toc-nav-text">8.2 基数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-等势"><span class="toc-nav-text">1.等势</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#等势关系的性质"><span class="toc-nav-text">等势关系的性质</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#集合有穷（可数）的定义"><span class="toc-nav-text">集合有穷（可数）的定义</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-无限集"><span class="toc-nav-text">2.无限集</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#鸽笼原理（抽屉原理）"><span class="toc-nav-text">鸽笼原理（抽屉原理）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理8-1-任意有穷集合-A-唯一地与一个自然数等势-。"><span class="toc-nav-text">定理8.1 任意有穷集合 A 唯一地与一个自然数等势 。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定义8-7-有穷集合的基数"><span class="toc-nav-text">定义8.7 ( 有穷集合的基数 )</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-集合的基数"><span class="toc-nav-text">3.集合的基数</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#基数相等和大小顺序"><span class="toc-nav-text">基数相等和大小顺序</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#任何两个基数都可以比较大小"><span class="toc-nav-text">任何两个基数都可以比较大小</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#基数的相等关系-“-”-是等价关系"><span class="toc-nav-text">基数的相等关系 “ &#x3D; ” 是等价关系</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#基数的小于等于关系“-leq-”是半序关系"><span class="toc-nav-text">基数的小于等于关系“ $\leq$ ”是半序关系</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定义8-8-基数"><span class="toc-nav-text">定义8.8 ( 基数 )</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定义8-9（可数无穷集合）"><span class="toc-nav-text">定义8.9（可数无穷集合）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定义8-10（可数、不可数集合-）"><span class="toc-nav-text">定义8.10（可数、不可数集合 ）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#无穷集的等价条件"><span class="toc-nav-text">无穷集的等价条件</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理8-2：任何无穷集合-必含有-可数无穷子集。"><span class="toc-nav-text">定理8.2：任何无穷集合 必含有 可数无穷子集。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理8-3：可数无穷集合的无穷子集-必是-可数无穷的。"><span class="toc-nav-text">定理8.3：可数无穷集合的无穷子集 必是 可数无穷的。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理：实数集合-R-是-不可数的-。"><span class="toc-nav-text">定理：实数集合 R 是 不可数的 。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理8-4：实数集合-R-是不可数的"><span class="toc-nav-text">定理8.4：实数集合 R 是不可数的</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定义-8-14：若-A-alpha-B-beta-且-A-B-则称-alpha-小于-beta-记为-alpha-beta"><span class="toc-nav-text">定义 8.14：若#A &#x3D; $\alpha$ , #B &#x3D; $\beta$, 且 A $&lt;$ B , 则称 $\alpha$ 小于 $\beta$ , 记为 $\alpha$ &lt; $\beta$ .</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理-8-5-对于任意集合-A-A-rho-A-rho-A-是-A-的幂集"><span class="toc-nav-text">定理 8.5 对于任意集合 A , A $&lt;\rho$ (A) , $\rho$ (A)是 A 的幂集.</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#4-常用结论"><span class="toc-nav-text">4.常用结论</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#图论"><span class="toc-nav-text">图论</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#第九章"><span class="toc-nav-text">第九章</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#第九章其他资料"><span class="toc-nav-text">第九章其他资料</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#9-1图论的基本概念-9-2-图的基本结构"><span class="toc-nav-text">9.1图论的基本概念  9.2 图的基本结构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#无向图、有向图"><span class="toc-nav-text">无向图、有向图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自圈、平行边、简单图、多重图"><span class="toc-nav-text">自圈、平行边、简单图、多重图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#关联、邻接-——-结点和边的关系"><span class="toc-nav-text">关联、邻接 —— 结点和边的关系</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#度"><span class="toc-nav-text">度</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#奇结点、偶结点、孤立点、端点"><span class="toc-nav-text">奇结点、偶结点、孤立点、端点</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#零图、平凡图、d度正则图、完全图"><span class="toc-nav-text">零图、平凡图、d度正则图、完全图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#同-构"><span class="toc-nav-text">同 构</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#两个图同构的必要条件"><span class="toc-nav-text">两个图同构的必要条件</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#9-2子图和图的运算"><span class="toc-nav-text">9.2子图和图的运算</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#子图、真子图、生成子图"><span class="toc-nav-text">子图、真子图、生成子图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#由结点集导出的子图-G-V’-G-V’-G-V-V’"><span class="toc-nav-text">由结点集导出的子图 ($G[V’],G-V’&#x3D;G[V-V’]$)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#由边集导出的子图"><span class="toc-nav-text">由边集导出的子图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#子图的几个特点"><span class="toc-nav-text">子图的几个特点</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#可运算、不相交"><span class="toc-nav-text">可运算、不相交</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#交、并、环和"><span class="toc-nav-text">交、并、环和</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#定理：图的唯一性"><span class="toc-nav-text">定理：图的唯一性</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#运算-G-–-E’"><span class="toc-nav-text">运算 G – E’</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#运算-G-E’-psi’-（其实就是并运算）"><span class="toc-nav-text">运算 G + E’$_{\psi’}$（其实就是并运算）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#补图"><span class="toc-nav-text">补图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#自补图：与其补图同构的简单无向图"><span class="toc-nav-text">自补图：与其补图同构的简单无向图</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#图同构的必要条件"><span class="toc-nav-text">图同构的必要条件</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#9-3路径、回路和连通性"><span class="toc-nav-text">9.3路径、回路和连通性</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#路径"><span class="toc-nav-text">路径</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定义（路径，路径长度，开、闭路径，简单路径，基本路径）"><span class="toc-nav-text">定义（路径，路径长度，开、闭路径，简单路径，基本路径）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#路径的另一组术语"><span class="toc-nav-text">路径的另一组术语</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#路径的基本性质"><span class="toc-nav-text">路径的基本性质</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#两个路径的基本定理（7-3-1-7-3-2）"><span class="toc-nav-text">两个路径的基本定理（7.3.1,7.3.2）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#证明7-3-1"><span class="toc-nav-text">证明7.3.1</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#证明7-3-2"><span class="toc-nav-text">证明7.3.2</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#可达（注意R-v-——从v可以到达的全体结点的集合）"><span class="toc-nav-text">可达（注意R(v)——从v可以到达的全体结点的集合）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#距离（测地线，距离，图的直径）"><span class="toc-nav-text">距离（测地线，距离，图的直径）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#加权图（加权长度，最短路径，加权距离）"><span class="toc-nav-text">加权图（加权长度，最短路径，加权距离）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#迪杰斯特拉（Dijkstra）算法"><span class="toc-nav-text">迪杰斯特拉（Dijkstra）算法</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Dijkstra的python实现（个人向）"><span class="toc-nav-text">Dijkstra的python实现（个人向）</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#联通"><span class="toc-nav-text">联通</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#无向图的联通"><span class="toc-nav-text">无向图的联通</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#有向图的联通—基础图（有向图和无向图的联系）把有向边全部改为无向边"><span class="toc-nav-text">有向图的联通—基础图（有向图和无向图的联系）把有向边全部改为无向边</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#有向图的联通（强连通，单向联通，弱联通）"><span class="toc-nav-text">有向图的联通（强连通，单向联通，弱联通）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#极大子图，分支（强分支-rightarrow-单向分支-rightarrow-弱分支）"><span class="toc-nav-text">极大子图，分支（强分支$\rightarrow$单向分支$\rightarrow$弱分支）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#关于分支的定理（7-3-4）——无向图"><span class="toc-nav-text">关于分支的定理（7.3.4）——无向图</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#关于强、弱、单向分支的定理（7-3-5）——有向图"><span class="toc-nav-text">关于强、弱、单向分支的定理（7.3.5）——有向图</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#例题-4"><span class="toc-nav-text">例题</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#半路径"><span class="toc-nav-text">半路径</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#回路，半回路，有向回路"><span class="toc-nav-text">回路，半回路，有向回路</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#部分概念关系图"><span class="toc-nav-text">部分概念关系图</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#回路的等价条件"><span class="toc-nav-text">回路的等价条件</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#有回路、非循环图"><span class="toc-nav-text">有回路、非循环图</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#W-过程：判断一个有向图是否有有向回路"><span class="toc-nav-text">W-过程：判断一个有向图是否有有向回路</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#判断一个图是否是非循环图"><span class="toc-nav-text">判断一个图是否是非循环图</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#连通的充分条件"><span class="toc-nav-text">连通的充分条件</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#例：设-G为-n-阶简单无向图，且G有k个分支，m条边-，则至多有多少条边？"><span class="toc-nav-text">例：设 G为 n 阶简单无向图，且G有k个分支，m条边 ，则至多有多少条边？</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#点割集的定义"><span class="toc-nav-text">点割集的定义</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#无向图的点连通度"><span class="toc-nav-text">无向图的点连通度</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#边割集"><span class="toc-nav-text">边割集</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#割边必定不存在于一个简单回路中！！！"><span class="toc-nav-text">割边必定不存在于一个简单回路中！！！</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#边连通度"><span class="toc-nav-text">边连通度</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#割点割边的充分必要条件"><span class="toc-nav-text">割点割边的充分必要条件</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#9-4欧拉图和哈密顿图"><span class="toc-nav-text">9.4欧拉图和哈密顿图</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#欧拉路径，欧拉闭路"><span class="toc-nav-text">欧拉路径，欧拉闭路</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#一笔画"><span class="toc-nav-text">一笔画</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#欧拉图，欧拉有向图"><span class="toc-nav-text">欧拉图，欧拉有向图</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#欧拉图无割边！！！"><span class="toc-nav-text">欧拉图无割边！！！</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#欧拉定理"><span class="toc-nav-text">欧拉定理</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理7-4-1设-G-是连通无向图，-G是欧拉图-每个结点都是偶结点-当且仅当G有欧拉闭路。"><span class="toc-nav-text">定理7.4.1设 G 是连通无向图， G是欧拉图(每个结点都是偶结点)当且仅当G有欧拉闭路。</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#哈密顿回路"><span class="toc-nav-text">哈密顿回路</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#必要条件：哈密顿图子集"><span class="toc-nav-text">必要条件：哈密顿图子集</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#9-5图的矩阵表示"><span class="toc-nav-text">9.5图的矩阵表示</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#邻接矩阵"><span class="toc-nav-text">邻接矩阵</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#n阶图G和X-G-之间的联系"><span class="toc-nav-text">n阶图G和X(G)之间的联系</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Xm-xm"><span class="toc-nav-text">$Xm,xm$</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#路径矩阵、可达性矩阵"><span class="toc-nav-text">路径矩阵、可达性矩阵</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#由邻接矩阵求路径矩阵"><span class="toc-nav-text">由邻接矩阵求路径矩阵</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#距离矩阵"><span class="toc-nav-text">距离矩阵</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#几个矩阵的特点"><span class="toc-nav-text">几个矩阵的特点</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#回顾——关联、临接——结点与边的关系"><span class="toc-nav-text">回顾——关联、临接——结点与边的关系</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#几个无自圈的图的矩阵举例"><span class="toc-nav-text">几个无自圈的图的矩阵举例</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#无自圈的无向图的关联矩阵"><span class="toc-nav-text">无自圈的无向图的关联矩阵</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#无自圈的有向图的关联矩阵"><span class="toc-nav-text">无自圈的有向图的关联矩阵</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#无自圈有m条边的n阶图G与A-G-之间的关系"><span class="toc-nav-text">无自圈有m条边的n阶图G与A(G)之间的关系</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#主要知识点图"><span class="toc-nav-text">主要知识点图</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#9-6树"><span class="toc-nav-text">9.6树</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#树定义（树，平凡树，分支节点）"><span class="toc-nav-text">树定义（树，平凡树，分支节点）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理7-6-1-树定义的等价条件"><span class="toc-nav-text">定理7.6.1 树定义的等价条件</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#证明"><span class="toc-nav-text">证明</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理7-4-5-如果G1和G2是可运算的欧拉图，则G1-bigoplus-G2（环合）是欧拉图。"><span class="toc-nav-text">定理7.4.5 如果G1和G2是可运算的欧拉图，则G1 $\bigoplus$ G2（环合）是欧拉图。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#三个基本条件"><span class="toc-nav-text">三个基本条件</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理-7-6-2-阶大于-1-的树至少有两个端点。"><span class="toc-nav-text">定理 7.6.2 阶大于 1 的树至少有两个端点。</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#森林"><span class="toc-nav-text">森林</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定义-22"><span class="toc-nav-text">定义</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定义7-6-2-每个分支都是树的无向图称为森林。"><span class="toc-nav-text">定义7.6.2 每个分支都是树的无向图称为森林。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理-7-6-3-如果森林-F-有-n-个结点，m-条边和-k-个分支，-则m-n-k。"><span class="toc-nav-text">定理 7.6.3 如果森林 F 有 n 个结点，m 条边和 k 个分支， 则m&#x3D;n-k。</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#生成树，生成森林"><span class="toc-nav-text">生成树，生成森林</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#生成树示例"><span class="toc-nav-text">生成树示例</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#连通图的生成树构造方法"><span class="toc-nav-text">连通图的生成树构造方法</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理：设无向图G连通，则G至少有一个生成树。"><span class="toc-nav-text">定理：设无向图G连通，则G至少有一个生成树。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#用破圈法求图G的生成树"><span class="toc-nav-text">用破圈法求图G的生成树</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#最小生成树"><span class="toc-nav-text">最小生成树</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#最小生成树求法（避圈法、破圈法）"><span class="toc-nav-text">最小生成树求法（避圈法、破圈法）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Prim’s-Algorithm-Robert-Clay-Prim-1957"><span class="toc-nav-text">Prim’s Algorithm (Robert Clay Prim, 1957)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#最小生成树求法（prim算法）"><span class="toc-nav-text">最小生成树求法（prim算法）</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Kruskal’s-Algorithm-Joseph-Bernard-Kruskal-1956"><span class="toc-nav-text">Kruskal’s Algorithm (Joseph Bernard Kruskal, 1956)</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Kruskal算法要点"><span class="toc-nav-text">Kruskal算法要点</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#枝、弦"><span class="toc-nav-text">枝、弦</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#圈秩、余圈秩"><span class="toc-nav-text">圈秩、余圈秩</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#基本回路（圈）"><span class="toc-nav-text">基本回路（圈）</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#有向树"><span class="toc-nav-text">有向树</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定理7-6-7-设-v0-是有向图-D-的结点。-D-是以-v0-为根的有向树当且仅当从-v0-至-D-的任意结点恰有一条路径。"><span class="toc-nav-text">定理7.6.7 设 v0 是有向图 D 的结点。 D 是以 v0 为根的有向树当且仅当从 v0 至 D 的任意结点恰有一条路径。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#有向树的定义"><span class="toc-nav-text">有向树的定义</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#有向森林"><span class="toc-nav-text">有向森林</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定义7-6-10-每个弱分支都是有向树的有向图，称为有向森林。"><span class="toc-nav-text">定义7.6.10 每个弱分支都是有向树的有向图，称为有向森林。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#m元有向树"><span class="toc-nav-text">m元有向树</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#两个问题"><span class="toc-nav-text">两个问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#叶加权二叉树——算法的平均执行时间"><span class="toc-nav-text">叶加权二叉树——算法的平均执行时间</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#求解最优二叉树的算法—Huffman算法"><span class="toc-nav-text">求解最优二叉树的算法—Huffman算法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#最优二叉树求取"><span class="toc-nav-text">最优二叉树求取</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#定位有序树"><span class="toc-nav-text">定位有序树</span></a></li><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#最优二叉树"><span class="toc-nav-text">最优二叉树</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#例：在计算机通信中要传输A-B-C-D-E-F-G-H八个字母，他们出现频率为A-30-B-20-C-15-D-10-E-10-F-6-G-5-H-4-。给出一个最佳编码，使得通讯中出现的二进制数字尽可能少。"><span class="toc-nav-text">例：在计算机通信中要传输A, B, C, D, E, F, G, H八个字母，他们出现频率为A:30%, B:20%, C:15%, D:10%, E:10%, F:6%, G:5%, H:4%。给出一个最佳编码，使得通讯中出现的二进制数字尽可能少。</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#有序树，有序森林"><span class="toc-nav-text">有序树，有序森林</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#借用家族树的名称来称呼有序树的结点。"><span class="toc-nav-text">借用家族树的名称来称呼有序树的结点。</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#定位有序树-2"><span class="toc-nav-text">定位有序树</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#有序森林与有序树的关系"><span class="toc-nav-text">有序森林与有序树的关系</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#概念图谱"><span class="toc-nav-text">概念图谱</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#期末专项复习"><span class="toc-nav-text">期末专项复习</span></a></li></ol>
             
           
           </div>
