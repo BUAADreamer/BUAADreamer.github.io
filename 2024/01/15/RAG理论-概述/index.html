@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="A hexo theme">
+    <meta name="keyword"  content="BUAADreamer, hexo-theme-snail">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          RAG理论-概述 - BUAADreamer&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://BUAADreamer.top/2024/01/15/RAG理论-概述/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../../../img/default.jpg')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#RAG" title="RAG">RAG</a>
+                            
+                        </div>
+                        <h1>RAG理论-概述</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by BUAADreamer on
+                            2024-01-15
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">4.3k</span> and
+                                Reading Time <span class="post-count">17</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BUAADreamer&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
+                        </li>
+                        
+                    
+                    
+                    
+                    <li>
+                        <a href="https://www.cnblogs.com/BUAADreamer/" target="_blank">Chinese Blog</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="RAG理论-概述">RAG理论-概述<a class="anchor" href="#RAG理论-概述">·</a></h1>
+<h2 id="0-前言">0.前言<a class="anchor" href="#0-前言">·</a></h2>
+<p>本系列以同济大学的检索增强生成（RAG）综述[1]，ACL2023 检索增强语言模型（RALLM） Tutorial[2]作为参考材料，讲解RAG的前世今身，包含概述，评估方法，检索器，生成器，增强方法，多模态RAG等内容。</p>
+<p>本节为<strong>概述篇</strong>，介绍RAG的<strong>基本概念</strong>和<strong>技术分类</strong>。</p>
+<h2 id="1-介绍">1.介绍<a class="anchor" href="#1-介绍">·</a></h2>
+<p>GPT系列，LLaMA，Gemini等取得了很好的效果，但是对于<strong>特定领域或高度专业化的用户查询</strong>，尤其是查询<strong>超出了模型的训练数据</strong>或者<strong>需要最新的信息</strong>时，大模型很容易产生<strong>错误的信息或幻觉现象</strong>，从而使得大模型的落地较为困难，一个缓解这些限制的方法是检索增强生成（RAG）。RAG将<strong>外部的数据检索</strong>整合到生成过程中，从而使模型能够提供<strong>准确且相关</strong>的回复。</p>
+<p>[3]提出了RAG的概念，如下图，给定query先用最小内积搜索（MIPS）检索最相关的k个文档，得到相应的文档编码z，利用查询编码x和z组合输入生成器得到最终的输出。</p>
+<p><img src="/2024/01/15/RAG%E7%90%86%E8%AE%BA-%E6%A6%82%E8%BF%B0/RAG%E5%BC%80%E5%B1%B1%E9%BC%BB%E7%A5%96.png" alt="image-20240114154436478"></p>
+<p>RAG发展经历了几个阶段，最开始以基于<strong>Transformer</strong>的<strong>预训练阶段的优化</strong>为主，接下来是一段<strong>沉寂期</strong>。直到ChatGPT的出现，RAG研究重点转向为利用LLM的能力获得更高的可控性和解决不断发展的需求，主流的研究集中在<strong>推理</strong>上，<strong>微调</strong>的研究相对较少。随着GPT4的出现，研究重点再次转变为<strong>混合方法</strong>，即推理，微调和预训练三种方法及结合。</p>
+<p><img src="/2024/01/15/RAG%E7%90%86%E8%AE%BA-%E6%A6%82%E8%BF%B0/RAG%E5%8F%91%E5%B1%95%E6%A0%91.png" alt="image-20240114154741484"></p>
+<h2 id="2-定义">2.定义<a class="anchor" href="#2-定义">·</a></h2>
+<p>下图是[1]中一个简单的RAG应用流。包含<strong>用户输入，文档查询，文档与提示组合，获得输出</strong>四个步骤。</p>
+<img src="/2024/01/15/RAG%E7%90%86%E8%AE%BA-%E6%A6%82%E8%BF%B0/RAG定义1.png" alt="image-20240114155729001" style="zoom: 80%;">
+<p>下图是[2]中定义的检索增强生成的基本组成，即必要条件为：<strong>推理阶段</strong>使用<strong>外部数据库</strong>进行<strong>辅助生成</strong>。</p>
+<p><img src="/2024/01/15/RAG%E7%90%86%E8%AE%BA-%E6%A6%82%E8%BF%B0/RAG%E5%AE%9A%E4%B9%892.png" alt="RALLM"></p>
+<p>[2]中主要认为检索增强生成主要需要解决3个问题，即<strong>检索什么，怎样使用检索结果，什么时候检索</strong>。下列小括号中为代表性方法。</p>
+<ul>
+<li>检索什么分为文本块（REALM[8] ICRALM[4]），词语（KNN-LM[5]），实体（EASE[9]），知识图谱（KGALM[10]）等。综合来看效率最高的方法为文本块。</li>
+<li>怎样使用检索结果分为输入层使用（REALM[8] ICRALM[4] DSP[12]），中间层使用（RETRO[11]），输出层使用（REPLUG[7] KNN-LM[5] InterGen[13]）。其中中间层使用往往需要修改模型结构以及重新训练，因此一般使用输入层和输出层使用的方法。</li>
+<li>什么时候检索分为单次检索（REALM[8] REPLUG[7] SKR[14]），多次检索（ICRALM[4] Atlas[17]），适应性检索（Adapt-KNN-LM[6] FLARE[15] RAVEN[16]）。</li>
+</ul>
+<p><img src="/2024/01/15/RAG%E7%90%86%E8%AE%BA-%E6%A6%82%E8%BF%B0/3problemanswer.png" alt="3problemanswer"></p>
+<p>总的来说RAG融合了<strong>信息检索技术</strong>和<strong>上下文学习技术</strong>来提升LLM能力。现在的研究一般将RAG分为三步进行：</p>
+<ul>
+<li>语料被<strong>分割</strong>为多个离散的文本块，同时创建<strong>向量索引</strong></li>
+<li>RAG使用向量<strong>检索</strong>得到相关的文本块</li>
+<li>模型结合用户输入与检索到的文档进行推理<strong>生成</strong>获得相应的<strong>输出</strong></li>
+</ul>
+<h2 id="3-RAG框架">3.RAG框架<a class="anchor" href="#3-RAG框架">·</a></h2>
+<p>下图为三种RAG框架的展示与对比。三种RAG从左至右逐渐扩大范围，<strong>右边包含了左边的技术</strong>。此部分内容也可参考IVAN ILIN大佬的博客<a href="https://pub.towardsai.net/advanced-rag-techniques-an-illustrated-overview-04d193d8fec6" target="_blank" rel="noopener">Advanced RAG Techniques: an Illustrated Overview</a></p>
+<p>Naive RAG主要包含了<strong>检索</strong>和<strong>阅读</strong>两个模块，而Advanced RAG在Naive RAG基础上主要增加了<strong>查询重写</strong>和<strong>重排序</strong>，而Modular RAG在Advance RAG基础上更加<strong>多样化</strong>且更加<strong>灵活</strong>。</p>
+<p><img src="/2024/01/15/RAG%E7%90%86%E8%AE%BA-%E6%A6%82%E8%BF%B0/%E4%B8%89%E7%A7%8DRAG%E6%A1%86%E6%9E%B6.png" alt="image-20240114163830249"></p>
+<h3 id="Naive-RAG">Naive RAG<a class="anchor" href="#Naive-RAG">·</a></h3>
+<p>Naive RAG是基本的“检索-阅读”框架：<strong>索引，检索，生成</strong>三步走。</p>
+<p>索引包括<strong>文档转换</strong>（将pdf，html，word，markdown等内容转换为纯文本），<strong>分块</strong>，<strong>编码得到文本块向量</strong>，<strong>索引建立</strong>（一般使用向量数据库比如Faiss，Milvus等）</p>
+<p>存在的问题：</p>
+<ul>
+<li>检索：低召回率，文本不相关或过时，重要性和相关性如何衡量</li>
+<li>生成：仍然产生幻觉，毒性，过度依赖检索文档</li>
+<li>增强：产生不连贯不一致的回复，重复内容</li>
+</ul>
+<h3 id="Advanced-RAG">Advanced RAG<a class="anchor" href="#Advanced-RAG">·</a></h3>
+<p>Advanced RAG主要优化Naive RAG中的<strong>检索</strong>流程</p>
+<ol>
+<li><strong>检索前处理</strong>：即优化数据索引
+<ul>
+<li>增强数据粒度。增加文本标准化，一致性，事实准确性与丰富的上下文。包含无关信息去除，实体消歧，事实核查，更新过时文档</li>
+<li>优化索引结构：块大小调整，多个索引路径查询，从图数据中捕捉相关上下文</li>
+<li>加入元数据信息：加入日期，用途，章节号等信息</li>
+<li>对齐优化：SANTA[18]引入假设性问题解决文档的差异性（对齐结构化和非结构化文档）</li>
+</ul>
+</li>
+<li><strong>检索模型优化</strong>
+<ul>
+<li>微调编码：定制特定领域的编码模型。可以使用BGE模型作为基础，使用GPT和领域语料针对语料的文本块生成查询，构成查询-文档对组成训练数据。</li>
+<li>动态编码：与静态嵌入（word2vec，glove）不同，动态嵌入（BERT，GPT）使用Transformer对每个词语根据上下文不同得到不同的特征</li>
+</ul>
+</li>
+<li><strong>检索后处理</strong>：将检索文档与查询合并为LLM的输入，解决上下文长度限制。直接添加文档会引入噪音，且失去了对关键信息的关注。
+<ul>
+<li>重排序：将<strong>检索信息进行重排序</strong>并将最相关内容放在<strong>提示词的末尾</strong>是一个关键的策略。这个概念在许多框架比如<a href="https://www.llamaindex.ai" target="_blank" rel="noopener">LlamaIndex</a>，<a href="https://www.langchain.com/" target="_blank" rel="noopener">LangChain</a>，<a href="https://haystack.deepset.ai/blog/enhancing-rag-pipelines-in-haystack" target="_blank" rel="noopener">HayStack</a>。<a href="https://haystack.deepset.ai/blog/enhancing-rag-pipelines-in-haystack" target="_blank" rel="noopener">Diversity Ranker</a>根据文档多样性进行重排序，LostInTheMiddleRanker将最佳文档放在上下文窗口的<strong>最开始和最末尾</strong>。还有<a href="https://txt.cohere.com/rerank/" target="_blank" rel="noopener">cohereAI rerank</a>，<a href="https://huggingface.co/BAAI/bge-reranker-large" target="_blank" rel="noopener">bge-rerank</a>，LongLLMLingua[19]等根据查询与文档的语义相似度进行重新计算与排序，这些模型一般采用效率低但精读高的<strong>跨注意力编码器</strong>。</li>
+<li>提示压缩：压缩不相关的上下文，突出关键段落，并减少整体上下文长度。 Selective Context[20]和LLMLingua[21]使用小模型计算互信息或复杂度，估计每个元素的重要性，留下<strong>重要的token序列</strong>。Recomp[22]，LongContext[23]和<em>Walking down the Memory Maze</em>[24]设计了文本摘要模块来增强LLM的关键信息感知能力。</li>
+</ul>
+</li>
+</ol>
+<h3 id="Modular-RAG">Modular RAG<a class="anchor" href="#Modular-RAG">·</a></h3>
+<p>Modular RAG结合了各种方法来提升各个模块性能。模块化的RAG范式正日益成为RAG领域的规范，允许使用<strong>序列化流水线</strong>或<strong>跨多个模块的端到端训练</strong>方法。</p>
+<h4 id="新模块">新模块<a class="anchor" href="#新模块">·</a></h4>
+<ul>
+<li><strong>搜索模块</strong>：与相似度检索不同，这部分可以被应用于特定的场景并在一些特殊语料上进行检索。一般使用LLM代码生成SQL或Cypher或使用其他工具进行查询。这部分数据源包括<strong>搜索引擎，文本数据，表格数据和知识图谱</strong>。</li>
+<li><strong>存储模块</strong>：使用LLM的存储能力来指导检索。一般需要找出LLM存储中和当前输入最相似的部分。Selfmem[25]使用了一个检索增强的生成器来迭代创建一个无上限的存储池（即很多个自己的回复），并用检索器选择最合适的存储来改进自己（和用户输入拼接在一起），文本在推理过程中与数据分布更加一致。检索部分利用模型生成的文本与标注输出文本之间的BLEU分数作为每个存储内容的分数标签。</li>
+<li><strong>融合模块</strong>：RAG-Fusion[26]使用LLM将用户查询扩展为多个查询。这个方法不仅捕捉了用户需要的显示信息，也揭示了更深层次的知识。融合过程包括对原始查询和扩展查询的并行向量搜索，智能重排序，并得到最佳搜索结果。这种复杂的方法确保了搜索结果与用户的显式和隐含的意图保持紧密一致，从而能找到更深刻和更相关的信息。</li>
+<li><strong>路由</strong>：RAG系统的检索流程使用了各种来源的内容，包含不同领域、语言、形式。这些内容都可以根据需要进行修改或合并[27]。查询路由决定对用户查询的<strong>后续操作</strong>，其选项包括<strong>摘要</strong>、<strong>搜索特定数据库</strong>或<strong>将不同的路径合并到单个响应</strong>中。查询路由器还为查询选择适当的数据库，其中可能包括各种来源内容，如<strong>向量数据库、图数据库或关系数据库，或层次结构索引</strong>。开发者需要<strong>预先定义好</strong>查询路由器的<strong>决策</strong>方式，并通过<strong>LLM调用执行</strong>，它将查询指向所选的索引。</li>
+<li><strong>预测</strong>：这个技术减少了检索内容中的<strong>冗余和噪声</strong>。该模块不是直接进行检索，而是利用LLM来<strong>生成必要的上下文</strong>[28]。与通过直接检索获得的内容相比，LLM生成上下文后检索得到的内容更有可能包含相关信息。</li>
+<li><strong>任务适配器</strong>：本模块侧重于使RAG适应各种下游任务。UPRISE[29]可以从预先构建好的提示词池中自动检索零样本任务输入的提示词，从而增强了模型的不同任务通用性。同时，Promptagator[30]利用LLM作为少样本查询生成器，并基于生成的数据创建特定于任务的检索器。通过利用LLM的泛化能力，它可以通过最小的示例开发特定于任务的端到端检索器。</li>
+</ul>
+<h4 id="新模式">新模式<a class="anchor" href="#新模式">·</a></h4>
+<ul>
+<li><strong>添加或替换模块</strong>：这部分一般保留RAG的主要框架，增加或替换其中某些模块。可以添加模块，RRR[31]提出了重写-检索-阅读过程，利用LLM作为重写模块的强化学习激励信号或直接用于重写模块，使得重写器能够修改和<strong>完善检索查询</strong>，从而提高阅读过程中下游任务性能。可以替换模块，Generate-Read[28]方法使用<strong>LLM生成模块代替了检索模块</strong>。 Recite-Read[32]方法将外部搜索转换为<strong>从模型自身权重进行搜索</strong>，要求LLM首先训练一个背诵LM，用于根据问题生成相应的段落提示词和背诵内容，之后利用背诵LM对不同问题生成不同的背诵内容，并与用户输入拼接后生成回复。</li>
+<li><strong>调整模块间的顺序</strong>：这部分重点关注如何增强语言模型和检索模型间的联系。DSP[12]提出了Demonstrate-Search-Predict框架，将上下文学习当作一个程序而不只是简单的提示词组成，每一个问题都含有几个示例，先对<strong>示例中的问题尝试进行检索与生成</strong>，筛选出较好的示例；之后利用这些示例，利用<strong>LLM生成查询进行检索</strong>得到检索结果；最终利用示例，检索结果生成答案。ITER-RETGEN [33]该方法利用生成的内容来指导检索，即先进行一次<strong>检索增强生成</strong>，将生成结果与用户查询拼接在一起进行检索（即<strong>生成增强检索</strong>），再利用检索到的结果进行<strong>检索增强生成</strong>，如此<strong>反复迭代</strong>，该方法展示了一种使用一个模块的输出来改进另一个模块的功能。</li>
+</ul>
+<h4 id="优化RAG流水线">优化RAG流水线<a class="anchor" href="#优化RAG流水线">·</a></h4>
+<p>这一部分主要优化了检索流程，力求取得检索效率和上下文信息含量的平衡。</p>
+<ul>
+<li><strong>混合搜索</strong>：使用关键词搜索，语义搜索，向量搜索多种方式</li>
+<li><strong>递归检索</strong>：递归检索先检索文档的小文本块，之后利用小块与大块之间的关系得到相应的大文本块</li>
+<li><strong>溯源提示</strong>：这部分内容主要让LLM不仅利用具体的实例，还能利用更多的概念和定理[34]，主要思想是对问题进行抽象化，得到其根问题，比如对一道具体的物理题得到根问题为“问题背后的物理原理是什么？”，之后利用这一根问题让模型背诵自己固有知识中的相应原理，根据原理得到更准确的答案。</li>
+<li><strong>子查询</strong>：将查询利用LLM分解成几个子查询再进行检索。</li>
+<li><strong>查询引擎</strong>：LlamaIndex使用了树查询，向量查询或简单的顺序块查询</li>
+<li><strong>假设文档嵌入</strong>：一种方式是对每个文本块使用LLM生成相应的<strong>假设问题</strong>。另一种是HyDE[35]，利用查询输入LLM生成可能的<strong>假设返回结果</strong>，利用<strong>假设返回结果</strong>检索更准确的文档。但当语言模型本身没见过这类问题时，这种方法效果较差。</li>
+</ul>
+<h2 id="4-引用">4.引用<a class="anchor" href="#4-引用">·</a></h2>
+<p>[1]Gao Y, Xiong Y, Gao X, et al. Retrieval-augmented generation for large language models: A survey[J]. arXiv preprint arXiv:2312.10997, 2023.</p>
+<p>[2]Asai A, Min S, Zhong Z, et al. Retrieval-based language models and applications[C]//Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 6: Tutorial Abstracts). 2023: 41-46.</p>
+<p>[3]Lewis P, Perez E, Piktus A, et al. Retrieval-augmented generation for knowledge-intensive nlp tasks[J]. Advances in Neural Information Processing Systems, 2020, 33: 9459-9474.</p>
+<p>[4]Ram O, Levine Y, Dalmedigos I, et al. In-context retrieval-augmented language models[J]. arXiv preprint arXiv:2302.00083, 2023.</p>
+<p>[5]Khandelwal U, Levy O, Jurafsky D, et al. Generalization through Memorization: Nearest Neighbor Language Models[C]//International Conference on Learning Representations. 2019.</p>
+<p>[6]He J, Neubig G, Berg-Kirkpatrick T. Efficient Nearest Neighbor Language Models[C]//Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing. 2021: 5703-5714.</p>
+<p>[7]Shi W, Min S, Yasunaga M, et al. Replug: Retrieval-augmented black-box language models[J]. arXiv preprint arXiv:2301.12652, 2023.</p>
+<p>[8]Guu K, Lee K, Tung Z, et al. Retrieval augmented language model pre-training[C]//International conference on machine learning. PMLR, 2020: 3929-3938.</p>
+<p>[9]Nishikawa S, Ri R, Yamada I, et al. EASE: Entity-Aware Contrastive Learning of Sentence Embedding[C]//Proceedings of the 2022 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies. 2022: 3870-3885.</p>
+<p>[10]Kang M, Kwak J M, Baek J, et al. Knowledge Graph-Augmented Language Models for Knowledge-Grounded Dialogue Generation[J]. arXiv preprint arXiv:2305.18846, 2023.</p>
+<p>[11]Borgeaud S, Mensch A, Hoffmann J, et al. Improving language models by retrieving from trillions of tokens[C]//International conference on machine learning. PMLR, 2022: 2206-2240.</p>
+<p>[12]Khattab O, Santhanam K, Li X L, et al. Demonstrate-Search-Predict: Composing retrieval and language models for knowledge-intensive NLP[J]. arXiv preprint arXiv:2212.14024, 2022.</p>
+<p>[13]Liang H, Zhang W, Li W, et al. InterGen: Diffusion-based Multi-human Motion Generation under Complex Interactions[J]. arXiv preprint arXiv:2304.05684, 2023.</p>
+<p>[14]Wang Y, Li P, Sun M, et al. Self-knowledge guided retrieval augmentation for large language models[J]. arXiv preprint arXiv:2310.05002, 2023.</p>
+<p>[15]Jiang Z, Xu F F, Gao L, et al. Active retrieval augmented generation[J]. arXiv preprint arXiv:2305.06983, 2023.</p>
+<p>[16]Huang J, Ping W, Xu P, et al. Raven: In-context learning with retrieval augmented encoder-decoder language models[J]. arXiv preprint arXiv:2308.07922, 2023.</p>
+<p>[17]Izacard G, Lewis P, Lomeli M, et al. Few-shot learning with retrieval augmented language models[J]. arXiv preprint arXiv:2208.03299, 2022.</p>
+<p>[18]Li X, Liu Z, Xiong C, et al. Structure-Aware Language Model Pretraining Improves Dense Retrieval on Structured Data[J]. arXiv preprint arXiv:2305.19912, 2023.</p>
+<p>[19]Jiang H, Wu Q, Lin C Y, et al. Llmlingua: Compressing prompts for accelerated inference of large language models[J]. arXiv preprint arXiv:2310.05736, 2023.</p>
+<p>[20]Litman R, Anschel O, Tsiper S, et al. Scatter: selective context attentional scene text recognizer[C]//proceedings of the IEEE/CVF conference on computer vision and pattern recognition. 2020: 11962-11972.</p>
+<p>[21]Jiang H, Wu Q, Lin C Y, et al. LLMLingua: Compressing Prompts for Accelerated Inference of Large Language Models[C]//Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing. 2023: 13358-13376.</p>
+<p>[22]Xu F, Shi W, Choi E. Recomp: Improving retrieval-augmented lms with compression and selective augmentation[J]. arXiv preprint arXiv:2310.04408, 2023.</p>
+<p>[23]Xu P, Ping W, Wu X, et al. Retrieval meets long context large language models[J]. arXiv preprint arXiv:2310.03025, 2023.</p>
+<p>[24]Chen H, Pasunuru R, Weston J, et al. Walking down the memory maze: Beyond context limit through interactive reading[J]. arXiv preprint arXiv:2310.05029, 2023.</p>
+<p>[25]Cheng X, Luo D, Chen X, et al. Lift Yourself Up: Retrieval-augmented Text Generation with Self Memory[J]. arXiv preprint arXiv:2305.02437, 2023.</p>
+<p>[26]Adrian H. Raudaschl. Forget rag, the future is rag-fusion. https://towardsdatascience.com/forget-rag-the-future-is-rag-fusion-1147298d8ad1, 2023.</p>
+<p>[27]Li X, Nie E, Liang S. From classification to generation: Insights into crosslingual retrieval augmented icl[J]. arXiv preprint arXiv:2311.06595, 2023.</p>
+<p>[28]Yu W, Iter D, Wang S, et al. Generate rather than retrieve: Large language models are strong context generators[J]. arXiv preprint arXiv:2209.10063, 2022.</p>
+<p>[29]Cheng D, Huang S, Bi J, et al. UPRISE: Universal Prompt Retrieval for Improving Zero-Shot Evaluation[J]. arXiv preprint arXiv:2303.08518, 2023.</p>
+<p>[30]Dai Z, Zhao V Y, Ma J, et al. Promptagator: Few-shot Dense Retrieval From 8 Examples[C]//The Eleventh International Conference on Learning Representations. 2022.</p>
+<p>[31]Ma X, Gong Y, He P, et al. Query Rewriting for Retrieval-Augmented Large Language Models[J]. arXiv preprint arXiv:2305.14283, 2023.</p>
+<p>[32]Sun Z, Wang X, Tay Y, et al. Recitation-augmented language models[J]. arXiv preprint arXiv:2210.01296, 2022.</p>
+<p>[33]Shao Z, Gong Y, Shen Y, et al. Enhancing Retrieval-Augmented Large Language Models with Iterative Retrieval-Generation Synergy[J]. arXiv preprint arXiv:2305.15294, 2023.</p>
+<p>[34]Zheng H S, Mishra S, Chen X, et al. Take a step back: evoking reasoning via abstraction in large language models[J]. arXiv preprint arXiv:2310.06117, 2023.</p>
+<p>[35]Gao L, Ma X, Lin J, et al. Precise zero-shot dense retrieval without relevance labels[J]. arXiv preprint arXiv:2212.10496, 2022.</p>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2024/01/15/RAG理论-评估/" data-toggle="tooltip" data-placement="top" title="RAG理论-评估">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2022/09/19/编译技术理论课笔记/" data-toggle="tooltip" data-placement="top" title="编译技术理论课笔记">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      
+        <aside id="sidebar">
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">Contents</strong>
+          
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#RAG理论-概述"><span class="toc-nav-text">RAG理论-概述</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0-前言"><span class="toc-nav-text">0.前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-介绍"><span class="toc-nav-text">1.介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-定义"><span class="toc-nav-text">2.定义</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-RAG框架"><span class="toc-nav-text">3.RAG框架</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Naive-RAG"><span class="toc-nav-text">Naive RAG</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Advanced-RAG"><span class="toc-nav-text">Advanced RAG</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Modular-RAG"><span class="toc-nav-text">Modular RAG</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#新模块"><span class="toc-nav-text">新模块</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#新模式"><span class="toc-nav-text">新模式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#优化RAG流水线"><span class="toc-nav-text">优化RAG流水线</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-引用"><span class="toc-nav-text">4.引用</span></a></li></ol></li></ol>
+            
+          
+          </div>
+        </aside>
+      
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#RAG" title="RAG">RAG</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://roife.github.io" target="_blank">Roife</a></li>
+                    
+                        <li><a href="https://coekjan.cn" target="_blank">Coekjan</a></li>
+                    
+                        <li><a href="https://www.dusign.net/" target="_blank">Dusign</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+<script src="https://utteranc.es/client.js"
+        repo="buaadreamer/buaadreamer.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/BUAADreamer">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BUAADreamer 2024 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=dusign&repo=hexo-theme-snail&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://BUAADreamer.top/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects line -->
+        
+
+        
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it&quot;,&quot;🍀&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
+        
+
+        <!-- background effects end -->
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>
