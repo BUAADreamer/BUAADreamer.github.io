@@ -16,7 +16,7 @@
     <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
     <title>
         
-          RAG理论-概述 - BUAADreamer&#39;s Blog
+          RAG理论-第一篇-概述 - BUAADreamer&#39;s Blog
         
     </title>
 
@@ -115,7 +115,7 @@
                               <a class="tag" href="/tags/#RAG" title="RAG">RAG</a>
                             
                         </div>
-                        <h1>RAG理论-概述</h1>
+                        <h1>RAG理论-第一篇-概述</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by BUAADreamer on
@@ -274,10 +274,10 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1 id="RAG理论-概述">RAG理论-概述<a class="anchor" href="#RAG理论-概述">·</a></h1>
+                <h1 id="RAG理论-第一篇-概述">RAG理论-第一篇-概述<a class="anchor" href="#RAG理论-第一篇-概述">·</a></h1>
 <h2 id="0-前言">0.前言<a class="anchor" href="#0-前言">·</a></h2>
 <p>本系列以同济大学的检索增强生成（RAG）综述[1]，ACL2023 检索增强语言模型（RALLM） Tutorial[2]作为参考材料，讲解RAG的前世今身，包含概述，评估方法，检索器，生成器，增强方法，多模态RAG等内容。</p>
-<p>本节为<strong>概述篇</strong>，介绍RAG的<strong>基本概念</strong>和<strong>技术分类</strong>。</p>
+<p>本篇为<strong>概述篇</strong>，介绍RAG的<strong>基本概念</strong>和<strong>技术分类</strong>。</p>
 <h2 id="1-介绍">1.介绍<a class="anchor" href="#1-介绍">·</a></h2>
 <p>GPT系列，LLaMA，Gemini等取得了很好的效果，但是对于<strong>特定领域或高度专业化的用户查询</strong>，尤其是查询<strong>超出了模型的训练数据</strong>或者<strong>需要最新的信息</strong>时，大模型很容易产生<strong>错误的信息或幻觉现象</strong>，从而使得大模型的落地较为困难，一个缓解这些限制的方法是检索增强生成（RAG）。RAG将<strong>外部的数据检索</strong>整合到生成过程中，从而使模型能够提供<strong>准确且相关</strong>的回复。</p>
 <p>[3]提出了RAG的概念，如下图，给定query先用最小内积搜索（MIPS）检索最相关的k个文档，得到相应的文档编码z，利用查询编码x和z组合输入生成器得到最终的输出。</p>
@@ -408,12 +408,12 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/2024/01/15/RAG理论-评估/" data-toggle="tooltip" data-placement="top" title="RAG理论-评估">&larr; Previous Post</a>
+                        <a href="/2024/01/15/RAG理论-评估/" data-toggle="tooltip" data-placement="top" title="RAG理论-第二篇-评估">&larr; Previous Post</a>
                     </li>
                     
                     
                     <li class="next">
-                        <a href="/2022/09/19/编译技术理论课笔记/" data-toggle="tooltip" data-placement="top" title="编译技术理论课笔记">Next Post &rarr;</a>
+                        <a href="/2023/01/13/机器学习导论/" data-toggle="tooltip" data-placement="top" title="机器学习导论">Next Post &rarr;</a>
                     </li>
                     
                 </ul>
@@ -460,7 +460,7 @@
           <strong class="toc-title">Contents</strong>
           
             
-              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#RAG理论-概述"><span class="toc-nav-text">RAG理论-概述</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0-前言"><span class="toc-nav-text">0.前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-介绍"><span class="toc-nav-text">1.介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-定义"><span class="toc-nav-text">2.定义</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-RAG框架"><span class="toc-nav-text">3.RAG框架</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Naive-RAG"><span class="toc-nav-text">Naive RAG</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Advanced-RAG"><span class="toc-nav-text">Advanced RAG</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Modular-RAG"><span class="toc-nav-text">Modular RAG</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#新模块"><span class="toc-nav-text">新模块</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#新模式"><span class="toc-nav-text">新模式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#优化RAG流水线"><span class="toc-nav-text">优化RAG流水线</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-引用"><span class="toc-nav-text">4.引用</span></a></li></ol></li></ol>
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#RAG理论-第一篇-概述"><span class="toc-nav-text">RAG理论-第一篇-概述</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0-前言"><span class="toc-nav-text">0.前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-介绍"><span class="toc-nav-text">1.介绍</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-定义"><span class="toc-nav-text">2.定义</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-RAG框架"><span class="toc-nav-text">3.RAG框架</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Naive-RAG"><span class="toc-nav-text">Naive RAG</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Advanced-RAG"><span class="toc-nav-text">Advanced RAG</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Modular-RAG"><span class="toc-nav-text">Modular RAG</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#新模块"><span class="toc-nav-text">新模块</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#新模式"><span class="toc-nav-text">新模式</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#优化RAG流水线"><span class="toc-nav-text">优化RAG流水线</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-引用"><span class="toc-nav-text">4.引用</span></a></li></ol></li></ol>
             
           
           </div>
