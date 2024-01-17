@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="baidu-site-verification" content="093lY4ziMu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="A hexo theme">
+    <meta name="keyword"  content="BUAADreamer, hexo-theme-snail">
+    <link rel="shortcut icon" href="/img/ironman-draw.png">
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!--<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+    <title>
+        
+          RAG理论-检索器 - BUAADreamer&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://BUAADreamer.top/2024/01/17/RAG理论-检索器/">
+
+    <!-- Bootstrap Core CSS -->
+    
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+
+
+    <!-- Custom CSS --> 
+    
+        
+<link rel="stylesheet" href="/css/dusign-light.css">
+
+        
+<link rel="stylesheet" href="/css/dusign-common-light.css">
+
+        
+<link rel="stylesheet" href="/css/font-awesome.css">
+
+        
+<link rel="stylesheet" href="/css/toc.css">
+
+        <!-- background effects end -->
+    
+    
+    <!-- Pygments Highlight CSS -->
+    
+<link rel="stylesheet" href="/css/highlight.css">
+
+
+    
+<link rel="stylesheet" href="/css/widget.css">
+
+
+    
+<link rel="stylesheet" href="/css/rocket.css">
+
+
+    
+<link rel="stylesheet" href="/css/signature.css">
+
+
+    
+<link rel="stylesheet" href="/css/fonts.googleapis.css">
+
+
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <!-- photography -->
+    
+<link rel="stylesheet" href="/css/photography.css">
+
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- background effects start -->
+    
+    <!-- background effects end -->
+
+	<!-- Modified by Yu-Hsuan Yen -->
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        
+            
+                background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../../../img/default.jpg')
+                /*post*/
+            
+        
+    }
+    
+    #signature{
+        background-image: url('/img/signature/dusign.png');
+    }
+    
+</style>
+
+<header class="intro-header" >
+    <!-- Signature -->
+    <div id="signature">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                
+                    <div class="post-heading">
+                        <div class="tags">
+                            
+                              <a class="tag" href="/tags/#RAG" title="RAG">RAG</a>
+                            
+                        </div>
+                        <h1>RAG理论-检索器</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by BUAADreamer on
+                            2024-01-17
+                        </span>
+
+                        
+                            <div class="blank_box"></div>
+                            <span class="meta">
+                                Words <span class="post-count">4.1k</span> and
+                                Reading Time <span class="post-count">17</span> Minutes
+                            </span>
+                            <div class="blank_box"></div>
+                            <!-- 不蒜子统计 start -->
+                            <span class="meta">
+                                Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+                            </span>
+                            <!-- 不蒜子统计 end -->
+                        
+
+                    </div>
+                
+
+                </div>
+            </div>
+        </div>      
+    </div>
+
+    
+    <div class="waveWrapper">
+        <div class="wave wave_before" style="background-image: url('/img/wave-light.png')"></div>
+        <div class="wave wave_after" style="background-image: url('/img/wave-light.png')"></div>
+    </div>
+    
+</header>
+
+	
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">BUAADreamer&#39;s Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/photography/">Photography</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/categories/">Categories</a>
+                        </li>
+                        
+                    
+                    
+                    
+                    <li>
+                        <a href="https://www.cnblogs.com/BUAADreamer/" target="_blank">Chinese Blog</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    <!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            
+            <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="RAG理论-第三篇-检索">RAG理论-第三篇-检索<a class="anchor" href="#RAG理论-第三篇-检索">·</a></h1>
+<h2 id="0-前言-3">0.前言<a class="anchor" href="#0-前言-3">·</a></h2>
+<p>本系列以同济大学的检索增强生成（RAG）综述[1]，ACL2023 检索增强语言模型（RALM） Tutorial[2]作为参考材料，讲解RAG的前世今身，包含概述，评估方法，检索器，生成器，增强方法，多模态RAG等内容。</p>
+<p>本篇为<strong>检索篇</strong>，介绍RAG<strong>检索器概述</strong>和三种<strong>检索器优化方法</strong>。</p>
+<h2 id="1-检索器概述">1.检索器概述<a class="anchor" href="#1-检索器概述">·</a></h2>
+<p>检索的目的是给定一个查询和一个文档集合，检索器需要对文档进行相关性排序，返回在特定需求下与查询最相关的文档列表。根据[2]，文本检索中主要包含<strong>稀疏检索</strong>和<strong>稠密检索</strong>两大类。此外还有<strong>后交互检索</strong>[6]，即使用跨注意力编码器直接得到两个文档的相似度，由于这种检索方式效率较低，一般用于重排，本文不单独探讨这种技术。</p>
+<h3 id="稀疏检索">稀疏检索<a class="anchor" href="#稀疏检索">·</a></h3>
+<p>稀疏检索<strong>不需要训练</strong>，直接通过<strong>词语重叠</strong>计算相似度，如下图。</p>
+<p><img src="/2024/01/17/RAG%E7%90%86%E8%AE%BA-%E6%A3%80%E7%B4%A2%E5%99%A8/image-20240117120600021.png" alt="image-20240117120600021"></p>
+<p>稀疏检索用于检索一般分为如下步骤：</p>
+<ul>
+<li>对所有的文档进行分词，确定<strong>词表</strong></li>
+<li>计算每个文档词表中每个词的<strong>词频</strong></li>
+<li>利用合适算法结合词频信息将文档<strong>转换为向量</strong></li>
+<li>计算<strong>向量相似度</strong>从而进行排序检索</li>
+</ul>
+<p>接下来简要介绍两个最常见算法：</p>
+<ol>
+<li><strong>TF-IDF</strong>（<strong>t</strong>erm <strong>f</strong>requency–<strong>i</strong>nverse <strong>d</strong>ocument <strong>f</strong>requency）[3]
+<ul>
+<li><strong>词频</strong>（TF）是<strong>一个给定词语在某个文档</strong>中出现频率，度量<strong>词语</strong>在<strong>某个文件中的重要性</strong>。词频是对<strong>词数的标准化</strong>，防止偏向长文档（因为长文档中可能出现更多次某个词语，即使该词语并不重要）。</li>
+<li>假设文档$d_j$中有K个词语，$n_{k,j}$是词语$t_k$在文档$d_j$中出现次数，则对于词语$t_i$，其<strong>词频计算公式</strong>为$tf_{i,j}=\frac {n_{i,j}} {\sum_{k=1}^Kn_{k,j}}$。</li>
+<li><strong>逆向文档频率</strong>（IDF）是一个<strong>词语普遍重要性</strong>的度量。</li>
+<li>假设一共有D个文档，$df_i$表示含有词语$t_i$的文档数量，即<strong>文档频率</strong>，则对于词语$t_i$，其<strong>逆向文档频率计算公式</strong>为$idf_i=\log_2(D/df_i)$</li>
+<li>最终某个文档$d_j$中词语$t_i$的TF-IDF分数为$tdidf_{i,j}=tf_{i,j}\times idf_i$</li>
+<li>词表中每个词的TF-IDF分数拼成一个列表，组成了这个文档的向量</li>
+<li>TF-IDF倾向于<strong>过滤常见</strong>的词语，<strong>保留重要</strong>的词语。</li>
+</ul>
+</li>
+<li><strong>BM25</strong>（Okapi BM25）[4]
+<ul>
+<li>BM25在TF-IDF基础上进行改进，主要面向信息检索。</li>
+<li>假设一个查询Q含有n个词语$q_1,q_2,…,q_n$，对于文档$d_j$，$f(q_i,d_j)$表示$q_i$在$d_j$中出现次数，$|d_j|$表示文档长度，$avgdl$表示文档集合中文档的平均长度，$k_1,b$为超参数，BM25分数计算公式为： $score(d_j,Q)=\sum_{i=1}^nIDF(q_i)\cdot\frac {f(q_i,d_j)\cdot (k_1+1)} {f(q_i,d_j)+k_1\cdot(1-b+b\cdot\frac {|d_j|} {avgdl})}$</li>
+<li>$IDF(q_i)=\ln(\frac {N-df_{q_i}+0.5} {df_{q_i}+0.5}+1)$，N表示文档数量，$df_{q_i}$表示含有$q_i$的文档数量</li>
+</ul>
+</li>
+</ol>
+<h3 id="稠密检索">稠密检索<a class="anchor" href="#稠密检索">·</a></h3>
+<p>稠密检索需要训练，一般来说使用单编码器或双编码器架构，将查询和文档分别编码为相同维度向量，并计算相似度。有代表性的工作比如DPR[5]，SimCSE[9]，Contriever[6]。下图演示了<strong>DPR</strong>的推理过程：</p>
+<p><img src="/2024/01/17/RAG%E7%90%86%E8%AE%BA-%E6%A3%80%E7%B4%A2%E5%99%A8/image-20240117162453398.png" alt="image-20240117162453398"></p>
+<p>DPR采用<strong>有监督</strong>的批内对比学习的方法把查询与相关文档拉近，和不相关文档推远，如下图所示（注意，对比学习中每个相似度计算后应当除以温度参数$\tau$，图中可以认为是$\tau=1$时的情况）：</p>
+<p><img src="/2024/01/17/RAG%E7%90%86%E8%AE%BA-%E6%A3%80%E7%B4%A2%E5%99%A8/image-20240117162855041.png" alt="image-20240117162855041"></p>
+<p>此外也可以通过<strong>无监督训练</strong>，<strong>Contriever</strong>[6]从文档中随机选取两段没有重叠的词语序列组成两个子文档，这两个子文档互相作为正例。而一个文档的子文档和其他文档的子文档互相构成了负例对，如下图所示：</p>
+<p><img src="/2024/01/17/RAG%E7%90%86%E8%AE%BA-%E6%A3%80%E7%B4%A2%E5%99%A8/image-20240117163912537.png" alt="image-20240117163912537"></p>
+<h3 id="检索评估">检索评估<a class="anchor" href="#检索评估">·</a></h3>
+<h4 id="英文基准">英文基准<a class="anchor" href="#英文基准">·</a></h4>
+<ol>
+<li><strong>BEIR</strong>（Benchmarking-IR）[7]：包含18个检索数据集，9个任务以及不同领域。大部分不包含训练集，评估时直接进行<strong>零样本检索</strong>。开源地址：https://github.com/UKPLab/beir</li>
+<li><strong>MTEB</strong>（Massive Text Embedding Benchmark）[16]：扩展了BEIR数据集，集成了56个数据集，可以对所有重要的文本编码功能进行评估，如检索、排序、聚类等。开源地址：https://github.com/embeddings-benchmark/mteb</li>
+<li><strong>MS MARCO</strong>（Machine Reading Comprehension Dataset）[8]：大规模的机器阅读理解数据集，可以使用这个基准中的<strong>段落排序</strong>任务评估检索。开源地址：https://microsoft.github.io/msmarco/</li>
+<li><strong>STS</strong>（semantic textual similarity）任务：STS2012-2016[13]，STS-Benchmark[14]，SICK-Relatedness [15]，GitHub Issues Similarity Dataset[10]。此任务要求给出一对句子, 使用1~5的评分评价两者在语义上的相似程度，一般用来评估<strong>编码的质量</strong>。</li>
+</ol>
+<h4 id="中文基准">中文基准<a class="anchor" href="#中文基准">·</a></h4>
+<ol>
+<li><strong>C-MTEB</strong>[12]：作为MTEB的扩充，C-MTEB收集了包含6种任务类型的35个公共数据集。由于C-MTEB的规模和多样性，中文编码的所有主要功能都可以被可靠地评估，使其成为评估中文编码通用性的最合适的基准。开源地址：https://huggingface.co/C-MTEB</li>
+<li><strong>MTEB-zh</strong>：选取了常用的若干中文数据集，使用MTEB的方式进行评测。开源地址：https://github.com/wangyuxinwhy/uniem/tree/main/mteb-zh</li>
+</ol>
+<h2 id="2-增强语义表示">2.增强语义表示<a class="anchor" href="#2-增强语义表示">·</a></h2>
+<p>语义表示空间对于检索至关重要，需要通过优化文本分块和微调编码模型来提升语义表示效果。</p>
+<h3 id="文本分块优化">文本分块优化<a class="anchor" href="#文本分块优化">·</a></h3>
+<p>选择合适的文本分块策略，需要考虑<strong>内容的性质</strong>、<strong>编码模型</strong>及其<strong>最佳块大小</strong>、用户<strong>查询的预期长度</strong>和<strong>复杂度</strong>，以及<strong>特定应用程序</strong>对检索结果的<strong>利用情况</strong>。比如对于sentence-transformer选用单句话最佳，而对于OpenAI的 text-embedding-ada-002，尽量选取256-512token长度的文本块。对于问答任务和语义检索任务来说最佳文本分块策略也不一样。一般来说对于每一个特定的场景，都存在相应的最优分块策略，<strong>没有通用的最优解</strong>。</p>
+<p>本文介绍常见的几种策略：</p>
+<ul>
+<li><strong>滑动窗口</strong>：用一个固定长度的上下文窗口输入语言模型进行生成，不断根据当前窗口内的上下文多次检索相应的内容。</li>
+<li><strong>递归分块</strong>（small2big）：检索小的文本块，每个小的文本块对应于一个大文本块，将大文本块输入语言模型。</li>
+<li><strong>摘要编码</strong>：检索文档的摘要对检索结果进行精排。</li>
+<li><strong>元数据过滤</strong>：使用文档的元数据来过滤无关文档。</li>
+<li><strong>图索引</strong>：将实体和关系转换为节点和边，用于解决多跳问题。</li>
+</ul>
+<h3 id="微调编码模型">微调编码模型<a class="anchor" href="#微调编码模型">·</a></h3>
+<p>一般来说需要使用<strong>预训练的编码模型</strong>将文本块转换为向量。下面介绍常见的几个模型：</p>
+<ol>
+<li><strong>AngIE</strong>[10]：提出了复数空间角度优化，与之前的批内对比学习，余弦目标结合，缓解了一般的余弦相似度优化中的梯度消失问题。模型架构为BERT-base。</li>
+<li><strong>Voyage</strong>[11]：面向特定领域和特定公司创建编码模型。</li>
+<li><strong>BGE</strong>[12]
+<ul>
+<li>模型架构为BERT，分为small，base，large等若干尺寸。</li>
+<li>训练分为三步。第一步是<strong>预训练</strong>，在Wudao语料[17]上利用类似MAE的方式进行文本重建，即将没被遮挡的文本编码输入一个轻量解码器还原遮挡的文本。第二步是<strong>通用微调</strong>，在C-MTP[12]的无标注文本对数据集上进行对比学习。第三步是<strong>特定任务微调</strong>，在C-MTP[12]的有标注文本对数据集上进行<strong>指令编码微调</strong>，针对不同任务指令得到不同的编码。</li>
+<li>开源工具：https://github.com/FlagOpen/FlagEmbedding</li>
+</ul>
+</li>
+<li><strong>M3E</strong>[13]：
+<ul>
+<li>在2200万中文句子对上进行了批内对比学习训练。</li>
+<li>开源工具：https://github.com/wangyuxinwhy/uniem</li>
+</ul>
+</li>
+</ol>
+<p>选择好了合适的编码模型，根据<strong>不同的领域</strong>和<strong>下游任务</strong>有时需要进行相应的微调。</p>
+<ol>
+<li><strong>领域知识微调</strong>：需要构造特定领域的编码微调数据集，包含文档集合，查询-文档对。LlamaIndex[18]开发了一系列类和函数来简化微调过程。</li>
+<li><strong>下游任务微调</strong>：有的方法利用LLM的能力来微调编码模型，Promptagator[19]利用LLM作为少样本查询生成器，并基于生成的数据创建特定于任务的检索器；LLM-Embedder[20]使用LLM对许多下游任务生成奖励信号，检索器使用数据集中的硬标签和LLM产生的软标签进行监督微调，这种方式让下游任务微调更高效。</li>
+</ol>
+<h2 id="3-对齐查询和文档">3.对齐查询和文档<a class="anchor" href="#3-对齐查询和文档">·</a></h2>
+<p>用户查询有时不够精确或缺少信息，需要对用户查询进行重写或查询向量进行转换以适配特定需求。</p>
+<h3 id="查询重写">查询重写<a class="anchor" href="#查询重写">·</a></h3>
+<p>用户查询有时缺少语义信息或不够精确，因此需要重写。</p>
+<ul>
+<li>Qurey2Doc[21]和ITER-RETGEN[22]提示LLM为查询<strong>创建伪文档</strong>。</li>
+<li>HyDE[23]提示LLM为查询生成包含核心要素的<strong>假设文档</strong>。</li>
+<li>RRR[24]提出了重写-检索-阅读过程，利用LLM作为重写模块的强化学习激励信号或直接用于重写模块，使得重写器能够修改和<strong>完善检索查询</strong>。</li>
+<li>STEP-BACKPROMPTING[25]让语言模型发现用户查询<strong>背后的定理</strong>来完善查询。<strong>多查询方法</strong>用LLM生成多个查询来检索相关文档，可以被用于复杂问题的<strong>子问题拆解</strong>。</li>
+</ul>
+<h3 id="编码转换">编码转换<a class="anchor" href="#编码转换">·</a></h3>
+<ul>
+<li>LlamaIndex[18]开发了查询编码适配器模块，微调适配器将查询编码转换为对特定任务更好的编码。</li>
+<li>SANTA[26]使用两种预训练策略（利用内在关系对齐结构化文本和非结构化文本；遮蔽实体预测）将查询与结构化文本对齐，解决了结构化文本与非结构化文本的异质问题。</li>
+</ul>
+<h2 id="4-对齐检索器和LLM">4.对齐检索器和LLM<a class="anchor" href="#4-对齐检索器和LLM">·</a></h2>
+<p>仅优化检索器有时不一定可以提升最终效果，因为检索结果可能和LLM的需求不一致，因此需要研究如何将检索器和LLM的偏好对齐。</p>
+<h3 id="微调检索器">微调检索器<a class="anchor" href="#微调检索器">·</a></h3>
+<p>许多方法使用来自LLM的反馈信号来优化检索模型。</p>
+<ul>
+<li>AAR[27]使用FiD<strong>跨注意力</strong>分数来判断LLM的偏好文档，并使用难负例挖掘和传统的交叉熵损失，对检索器进行优化，这篇工作还发现LLM更喜欢易读的而不是信息丰富的文本。</li>
+<li>REPLUG[28]使用一个检索器和一个<strong>冻结的LLM</strong>来计算不同文档的概率分布（每个文档拼接进上下文后输入LLM，得到的正确答案token概率作为这个文档的概率），并用KL散度对检索器进行监督训练，<strong>不需要跨注意力机制</strong>。</li>
+<li>UPRISE[29]也使用冻结的LLM和一个可微调的<strong>提示词检索器</strong>，检索器用LLM返回的信号来优化。</li>
+<li>Atlas[30]提出了四种方法来微调编码模型：<strong>注意力蒸馏</strong>（利用LLM跨注意力分数），<strong>EMDR2</strong>（使用EM算法，将检索结果作为隐变量），<strong>复杂度蒸馏</strong>（使用生成token的复杂度作为监督信号），<strong>LOOP</strong>（利用文档删除对于LLM预测结果的影响设计损失函数）。</li>
+</ul>
+<h3 id="适配器">适配器<a class="anchor" href="#适配器">·</a></h3>
+<ul>
+<li>PRCA[31]通过<strong>自回归策略来训练适配器</strong>，优化检索器输出的向量。</li>
+<li>[32]通过查询<strong>token过滤</strong>的方法来删去一些用户查询中信息含量低的token。</li>
+<li>RECOMP[33]使用<strong>文本摘要</strong>技术来压缩文档。</li>
+<li>PKG[34]将检索模块直接替换为一个白盒语言模型（比如llama），将知识注入白盒语言模型的方式，并通过<strong>白盒语言模型的输出作为增强知识</strong>给黑盒LLM提供输入。</li>
+</ul>
+<h2 id="5-引用">5.引用<a class="anchor" href="#5-引用">·</a></h2>
+<p>[1]Gao Y, Xiong Y, Gao X, et al. Retrieval-augmented generation for large language models: A survey[J]. arXiv preprint arXiv:2312.10997, 2023.</p>
+<p>[2]Asai A, Min S, Zhong Z, et al. Retrieval-based language models and applications[C]//Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 6: Tutorial Abstracts). 2023: 41-46.</p>
+<p>[3]Ramos J. Using tf-idf to determine word relevance in document queries[C]//Proceedings of the first instructional conference on machine learning. 2003, 242(1): 29-48.</p>
+<p>[4]Robertson S, Zaragoza H. The probabilistic relevance framework: BM25 and beyond[J]. Foundations and Trends® in Information Retrieval, 2009, 3(4): 333-389.</p>
+<p>[5]Karpukhin V, Oguz B, Min S, et al. Dense Passage Retrieval for Open-Domain Question Answering[C]//Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP). 2020: 6769-6781.</p>
+<p>[6]Izacard G, Caron M, Hosseini L, et al. Unsupervised Dense Information Retrieval with Contrastive Learning[J]. Transactions on Machine Learning Research, 2022.</p>
+<p>[7]Thakur N, Reimers N, Rücklé A, et al. BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models[C]//Thirty-fifth Conference on Neural Information Processing Systems Datasets and Benchmarks Track (Round 2). 2021.</p>
+<p>[8]Bajaj P, Campos D, Craswell N, et al. Ms marco: A human generated machine reading comprehension dataset[J]. arXiv preprint arXiv:1611.09268, 2016.</p>
+<p>[9]Gao T, Yao X, Chen D. SimCSE: Simple Contrastive Learning of Sentence Embeddings[C]//Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing. 2021: 6894-6910.</p>
+<p>[10]Li X, Li J. Angle-optimized text embeddings[J]. arXiv preprint arXiv:2309.12871, 2023.</p>
+<p>[11]VoyageAI. Voyage’s embedding models.https://docs.voyageai.com/embeddings/, 2023.</p>
+<p>[12]Xiao S, Liu Z, Zhang P, et al. C-pack: Packaged resources to advance general chinese embedding[J]. arXiv preprint arXiv:2309.07597, 2023.</p>
+<p>[13]Agirre E, Banea C, Cer D, et al. SemEval-2016 Task 1: Semantic Textual Similarity, Monolingual and Cross-Lingual Evaluation[C]//Proceedings of the 10th International Workshop on Semantic Evaluation (SemEval-2016). 2016: 497-511.</p>
+<p>[14]Cer D, Diab M, Agirre E, et al. Semeval-2017 task 1: Semantic textual similarity-multilingual and cross-lingual focused evaluation[J]. arXiv preprint arXiv:1708.00055, 2017.</p>
+<p>[15]Marelli M, Bentivogli L, Baroni M, et al. Semeval-2014 task 1: Evaluation of compositional distributional semantic models on full sentences through semantic relatedness and textual entailment[C]//Proceedings of the 8th international workshop on semantic evaluation (SemEval 2014). 2014: 1-8.</p>
+<p>[16]Muennighoff N, Tazi N, Magne L, et al. MTEB: Massive Text Embedding Benchmark[C]//Proceedings of the 17th Conference of the European Chapter of the Association for Computational Linguistics. 2023: 2006-2029.</p>
+<p>[17]Yuan S, Zhao H, Du Z, et al. Wudaocorpora: A super large-scale chinese corpora for pre-training language models[J]. AI Open, 2021, 2: 65-68.</p>
+<p>[18]Jerry Liu. Building production-ready rag applications. https://www.ai.engineer/summit/schedule/building-production-ready-rag-applications, 2023.</p>
+<p>[19]Dai Z, Zhao V Y, Ma J, et al. Promptagator: Few-shot Dense Retrieval From 8 Examples[C]//The Eleventh International Conference on Learning Representations. 2022.</p>
+<p>[20]Zhang P, Xiao S, Liu Z, et al. Retrieve anything to augment large language models[J]. arXiv preprint arXiv:2310.07554, 2023.</p>
+<p>[21]Wang L, Yang N, Wei F. Query2doc: Query Expansion with Large Language Models[J]. arXiv preprint arXiv:2303.07678, 2023.</p>
+<p>[22]Shao Z, Gong Y, Shen Y, et al. Enhancing Retrieval-Augmented Large Language Models with Iterative Retrieval-Generation Synergy[J]. arXiv preprint arXiv:2305.15294, 2023.</p>
+<p>[23]Gao L, Ma X, Lin J, et al. Precise zero-shot dense retrieval without relevance labels[J]. arXiv preprint arXiv:2212.10496, 2022.</p>
+<p>[24]Ma X, Gong Y, He P, et al. Query Rewriting for Retrieval-Augmented Large Language Models[J]. arXiv preprint arXiv:2305.14283, 2023.</p>
+<p>[25]Zheng H S, Mishra S, Chen X, et al. Take a step back: evoking reasoning via abstraction in large language models[J]. arXiv preprint arXiv:2310.06117, 2023.</p>
+<p>[26]Li X, Liu Z, Xiong C, et al. Structure-Aware Language Model Pretraining Improves Dense Retrieval on Structured Data[J]. arXiv preprint arXiv:2305.19912, 2023.</p>
+<p>[27]Yu Z, Xiong C, Yu S, et al. Augmentation-Adapted Retriever Improves Generalization of Language Models as Generic Plug-In[J]. arXiv preprint arXiv:2305.17331, 2023.</p>
+<p>[28]Shi W, Min S, Yasunaga M, et al. Replug: Retrieval-augmented black-box language models[J]. arXiv preprint arXiv:2301.12652, 2023.</p>
+<p>[29]Cheng D, Huang S, Bi J, et al. UPRISE: Universal Prompt Retrieval for Improving Zero-Shot Evaluation[J]. arXiv preprint arXiv:2303.08518, 2023.</p>
+<p>[30]Izacard G, Lewis P, Lomeli M, et al. Few-shot learning with retrieval augmented language models[J]. arXiv preprint arXiv:2208.03299, 2022.</p>
+<p>[31]Yang H, Li Z, Zhang Y, et al. PRCA: Fitting Black-Box Large Language Models for Retrieval Question Answering via Pluggable Reward-Driven Contextual Adapter[C]//Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing. 2023: 5364-5375.</p>
+<p>[32]Berchansky M, Izsak P, Caciularu A, et al. Optimizing Retrieval-augmented Reader Models via Token Elimination[C]//Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing. 2023: 1506-1524.</p>
+<p>[33]Recomp: Improving retrieval-augmented lms with compression and selective augmentation[J]. arXiv preprint arXiv:2310.04408, 2023.</p>
+<p>[34]Luo Z, Xu C, Zhao P, et al. Augmented Large Language Models with Parametric Knowledge Guiding[J]. arXiv preprint arXiv:2305.04757, 2023.</p>
+
+                
+                <hr>
+                <!-- Pager -->
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2024/01/17/RAG理论-生成器/" data-toggle="tooltip" data-placement="top" title="RAG理论-生成器">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2024/01/16/RAG理论-评估2/" data-toggle="tooltip" data-placement="top" title="RAG理论-评估2">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                <!-- tip start -->
+                
+
+                
+                <!-- tip end -->
+
+                <!-- Music start-->
+                
+                <!-- Music end -->
+
+                <!-- Sharing -->
+                
+                <div class="social-share"  data-wechat-qrcode-helper="" align="center"></div>
+                <!--  css & js -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+                
+                <!-- Sharing -->
+
+                <!-- gitment start -->
+                
+                <!-- gitment end -->
+
+                <!-- 来必力City版安装代码 -->
+                
+                <!-- City版安装代码已完成 -->
+
+                <!-- disqus comment start -->
+                
+                <!-- disqus comment end -->
+            </div>
+            
+            <!-- Tabe of Content -->
+            <!-- Table of Contents -->
+
+    
+      
+        <aside id="sidebar">
+          <div id="toc" class="toc-article">
+          <strong class="toc-title">Contents</strong>
+          
+            
+              <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#RAG理论-第三篇-检索"><span class="toc-nav-text">RAG理论-第三篇-检索</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#0-前言-3"><span class="toc-nav-text">0.前言</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#1-检索器概述"><span class="toc-nav-text">1.检索器概述</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#稀疏检索"><span class="toc-nav-text">稀疏检索</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#稠密检索"><span class="toc-nav-text">稠密检索</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#检索评估"><span class="toc-nav-text">检索评估</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#英文基准"><span class="toc-nav-text">英文基准</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#中文基准"><span class="toc-nav-text">中文基准</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#2-增强语义表示"><span class="toc-nav-text">2.增强语义表示</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#文本分块优化"><span class="toc-nav-text">文本分块优化</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#微调编码模型"><span class="toc-nav-text">微调编码模型</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#3-对齐查询和文档"><span class="toc-nav-text">3.对齐查询和文档</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#查询重写"><span class="toc-nav-text">查询重写</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#编码转换"><span class="toc-nav-text">编码转换</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#4-对齐检索器和LLM"><span class="toc-nav-text">4.对齐检索器和LLM</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#微调检索器"><span class="toc-nav-text">微调检索器</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#适配器"><span class="toc-nav-text">适配器</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#5-引用"><span class="toc-nav-text">5.引用</span></a></li></ol></li></ol>
+            
+          
+          </div>
+        </aside>
+      
+    
+
+                
+            <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#RAG" title="RAG">RAG</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="https://roife.github.io" target="_blank">Roife</a></li>
+                    
+                        <li><a href="https://coekjan.cn" target="_blank">Coekjan</a></li>
+                    
+                        <li><a href="https://www.dusign.net/" target="_blank">Dusign</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+<script src="https://utteranc.es/client.js"
+        repo="buaadreamer/buaadreamer.github.io"
+        issue-term="pathname"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'left',
+          icon: 'ℬ'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+
+
+<style  type="text/css">
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/BUAADreamer">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; BUAADreamer 2024 
+                    <br>
+                    Powered by 
+                    <a href="https://github.com/dusign/hexo-theme-snail" target="_blank" rel="noopener">
+                        <i>hexo-theme-snail</i>
+                    </a> | 
+                    <iframe name="star" style="margin-left: 2px; margin-bottom:-5px;" frameborder="0" scrolling="0"
+                        width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=dusign&repo=hexo-theme-snail&type=star&count=true">
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<!-- jQuery -->
+
+<script src="/js/jquery.min.js"></script>
+
+
+<!-- Bootstrap Core JavaScript -->
+
+<script src="/js/bootstrap.min.js"></script>
+
+
+<!-- Custom Theme JavaScript -->
+
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- Search -->
+
+<script src="/js/search.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://BUAADreamer.top/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-XXXXXXXX-X';
+    var _gaDomain = 'yoursite';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Search -->
+
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+            search_path = "search.xml";
+        }
+    var path = "/" + search_path;
+    searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+
+<!-- busuanzi -->
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+  <script src='https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+
+
+
+
+
+
+
+	<a id="rocket" href="#top" class=""></a>
+	<script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+    <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
+
+    
+        <!-- background effects line -->
+        
+
+        
+            <script type="text/javascript" src="/js/mouse-click.js" content='[&quot;🌱&quot;,&quot;just do it&quot;,&quot;🍀&quot;]' color='[&quot;rgb(121,93,179)&quot; ,&quot;rgb(76,180,231)&quot; ,&quot;rgb(184,90,154)&quot;]'></script>
+        
+
+        <!-- background effects end -->
+    
+
+    <!--<script size="50" alpha='0.3' zIndex="-999" src="/js/ribbonStatic.js"></script>-->
+    
+        <script src="/js/ribbonDynamic.js"></script>
+    
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>
